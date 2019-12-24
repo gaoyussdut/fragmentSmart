@@ -90,16 +90,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC\XtraUC库存一览.cs">
+    <Compile Include="UC\库存\XtraUC库存一览.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\XtraUC库存一览.Designer.cs">
+    <Compile Include="UC\库存\XtraUC库存一览.Designer.cs">
       <DependentUpon>XtraUC库存一览.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\XtraUC条码打印.cs">
+    <Compile Include="UC\标签列印\XtraUC条码打印.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\XtraUC条码打印.Designer.cs">
+    <Compile Include="UC\标签列印\XtraUC条码打印.Designer.cs">
       <DependentUpon>XtraUC条码打印.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\DBUtil.cs" />
@@ -119,7 +119,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC\XtraUC库存一览.resx">
+    <EmbeddedResource Include="UC\库存\XtraUC库存一览.resx">
       <DependentUpon>XtraUC库存一览.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
