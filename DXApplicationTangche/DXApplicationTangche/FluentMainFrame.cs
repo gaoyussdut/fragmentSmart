@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using DiaoPaiDaYin;
 using DXApplicationTangche.UC;
 using System;
 using System.Collections.Generic;
@@ -31,9 +32,24 @@ namespace DXApplicationTangche
             this.navigationFrame.Pages[0].Show();
         }
 
+        /// <summary>
+        /// 初始化panel
+        /// </summary>
+        /// <param name="frm"></param>
+        private void initPanel(Form frm)
+        {
+            this.navigationPage库存.Controls.Clear();
+            //指示窗体显示是否为顶级窗口
+            frm.TopLevel = false;
+            this.navigationPage库存.Controls.Add(frm);
+            frm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            frm.Dock = System.Windows.Forms.DockStyle.Fill;
+            frm.Show();
+        }
+
         private void ElementBarCode_Click(object sender, EventArgs e)
         {
-            this.initNavigationPage(new XtraUC条码打印());
+            this.initPanel(new Form1());
         }
 
 
