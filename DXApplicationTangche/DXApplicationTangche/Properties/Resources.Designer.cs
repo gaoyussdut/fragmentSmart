@@ -59,5 +59,15 @@ namespace DXApplicationTangche.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap QQ图片20190724112541 {
+            get {
+                object obj = ResourceManager.GetObject("QQ图片20190724112541", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

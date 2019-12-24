@@ -58,6 +58,9 @@
     <Reference Include="MySql.Data, Version=8.0.18.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.18\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Npgsql, Version=4.0.5.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
       <HintPath>..\packages\Npgsql.4.0.5\lib\net451\Npgsql.dll</HintPath>
     </Reference>
@@ -116,7 +119,127 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC\SQLmtm.cs" />
+    <Compile Include="UC\门店下单\ChiCunHead.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\ChiCunHead.designer.cs">
+      <DependentUpon>ChiCunHead.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\AllSheJiDian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\AllSheJiDian.designer.cs">
+      <DependentUpon>AllSheJiDian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\Change.designer.cs">
+      <DependentUpon>Change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\ChiCunCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\ChiCunCard.designer.cs">
+      <DependentUpon>ChiCunCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\DBuil\Card.cs" />
+    <Compile Include="UC\门店下单\DBuil\ListToDatatable.cs" />
+    <Compile Include="UC\门店下单\DBuil\PanelLocition.cs" />
+    <Compile Include="UC\门店下单\DBuil\RestCall.cs" />
+    <Compile Include="UC\门店下单\DBuil\Yuanshujv.cs" />
+    <Compile Include="UC\门店下单\CreateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\CreateCustomer.designer.cs">
+      <DependentUpon>CreateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\CustomerChoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\CustomerChoose.designer.cs">
+      <DependentUpon>CustomerChoose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\CustomerInformation.cs" />
+    <Compile Include="UC\门店下单\DealXML.cs" />
+    <Compile Include="UC\门店下单\DefaultSheJiDian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\DefaultSheJiDian.designer.cs">
+      <DependentUpon>DefaultSheJiDian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\DTO\FitValueCalculate.cs" />
+    <Compile Include="UC\门店下单\DTO\Fit_ValueDTo.cs" />
+    <Compile Include="UC\门店下单\DTO\MianLiaoPic.cs" />
+    <Compile Include="UC\门店下单\DTO\MianLiaoPicList.cs" />
+    <Compile Include="UC\门店下单\DTO\SheJiDianPic.cs" />
+    <Compile Include="UC\门店下单\DTO\SheJiDianPicList.cs" />
+    <Compile Include="UC\门店下单\DTO\SizeChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\DTO\SizeChange.designer.cs">
+      <DependentUpon>SizeChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\DTO\StyleChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\DTO\StyleChange.designer.cs">
+      <DependentUpon>StyleChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\DTO\StylePic.cs" />
+    <Compile Include="UC\门店下单\DTO\StylePicList.cs" />
+    <Compile Include="UC\门店下单\DTO\StyleSize.cs" />
+    <Compile Include="UC\门店下单\FenYeLan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\FenYeLan.designer.cs">
+      <DependentUpon>FenYeLan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\ImpService.cs" />
+    <Compile Include="UC\门店下单\Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\Index.designer.cs">
+      <DependentUpon>Index.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\MianLiaoCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\MianLiaoCard.designer.cs">
+      <DependentUpon>MianLiaoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\MianLiaochoose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\MianLiaochoose.designer.cs">
+      <DependentUpon>MianLiaochoose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\SheJiDianCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\SheJiDianCard.designer.cs">
+      <DependentUpon>SheJiDianCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\SheJiDianChooseCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\SheJiDianChooseCard.designer.cs">
+      <DependentUpon>SheJiDianChooseCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\SQLmtm.cs" />
+    <Compile Include="UC\门店下单\StyleCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\StyleCard.Designer.cs">
+      <DependentUpon>StyleCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\WaitForm.designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\SQLmtm.cs" />
     <Compile Include="UC\库存\XtraUC库存一览.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,11 +278,59 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC\门店下单\ChiCunHead.resx">
+      <DependentUpon>ChiCunHead.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\库存\XtraUC库存一览.resx">
       <DependentUpon>XtraUC库存一览.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\标签列印\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\AllSheJiDian.resx">
+      <DependentUpon>AllSheJiDian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\Change.resx">
+      <DependentUpon>Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\ChiCunCard.resx">
+      <DependentUpon>ChiCunCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\CreateCustomer.resx">
+      <DependentUpon>CreateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\CustomerChoose.resx">
+      <DependentUpon>CustomerChoose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\DefaultSheJiDian.resx">
+      <DependentUpon>DefaultSheJiDian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\DTO\SizeChange.resx">
+      <DependentUpon>SizeChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\DTO\StyleChange.resx">
+      <DependentUpon>StyleChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\FenYeLan.resx">
+      <DependentUpon>FenYeLan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\Index.resx">
+      <DependentUpon>Index.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\MianLiaoCard.resx">
+      <DependentUpon>MianLiaoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\MianLiaochoose.resx">
+      <DependentUpon>MianLiaochoose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\SheJiDianCard.resx">
+      <DependentUpon>SheJiDianCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\SheJiDianChooseCard.resx">
+      <DependentUpon>SheJiDianChooseCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\StyleCard.resx">
+      <DependentUpon>StyleCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -172,6 +343,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QQ图片20190724112541.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

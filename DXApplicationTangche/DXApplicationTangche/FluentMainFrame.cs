@@ -2,6 +2,7 @@
 using DevExpress.XtraEditors;
 using DiaoPaiDaYin;
 using DXApplicationTangche.UC;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,11 @@ namespace DXApplicationTangche
         private void ElementStockOut_Click(object sender, EventArgs e)
         {
             this.initNavigationPage(new XtraUC库存一览());
+        }
+
+        private void ElementStoreOrder_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Index());
         }
     }
 }
