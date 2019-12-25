@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class AllSheJiDian : Form
+    public partial class AllSheJiDian : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
         private SheJiDianChooseCard card;
         private PanelLocition panelLocition;

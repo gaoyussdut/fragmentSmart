@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -187,6 +188,10 @@ namespace mendian
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
+            //if (!Directory.Exists("C:\xml\"))
+            //{
+            //    Directory.CreateDirectory(@"xml");
+            //}
             //款式图片更新
             StylePicList spl = new StylePicList();
             List<StylePic> styleOldlist = DealXML.XMLFlieToObject<List<StylePic>>(@"xml\stylepicxml.xml", Encoding.UTF8);

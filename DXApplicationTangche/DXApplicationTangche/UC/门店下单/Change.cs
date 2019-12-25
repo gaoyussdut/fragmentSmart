@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class Change : Form
+    public partial class Change : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
         public static int styleid { get; set; }
         public static DataTable StyleDesign { get; set; }

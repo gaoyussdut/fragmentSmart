@@ -10,8 +10,8 @@ namespace mendian
 {
     class SQLmtm
     {
-        public static string ConnStr = "server=rm-8vb733a3r2o1oxjsjno.mysql.zhangbei.rds.aliyuncs.com;port=3306;user id=root;password=Win2003@;database=fragsmart-mtm;charset=utf8";
-        //public static string ConnStr = "server=rm-8vb733a3r2o1oxjsjno.mysql.zhangbei.rds.aliyuncs.com;port=3306;user id=root;password=Win2003@;database=fragsmart-mtm-test;charset=utf8";
+        //public static string ConnStr = "server=rm-8vb733a3r2o1oxjsjno.mysql.zhangbei.rds.aliyuncs.com;port=3306;user id=root;password=Win2003@;database=fragsmart-mtm;charset=utf8";
+        public static string ConnStr = "server=rm-8vb733a3r2o1oxjsjno.mysql.zhangbei.rds.aliyuncs.com;port=3306;user id=root;password=Win2003@;database=fragsmart-mtm-test;charset=utf8";
         public static DataTable GetDataTable(string SQL)
         {
             DataTable ADt = new DataTable();

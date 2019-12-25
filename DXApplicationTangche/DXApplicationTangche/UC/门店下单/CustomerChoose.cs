@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class CustomerChoose : Form
+    public partial class CustomerChoose : DevExpress.XtraEditors.XtraForm
     {
         public CustomerChoose()
         {
