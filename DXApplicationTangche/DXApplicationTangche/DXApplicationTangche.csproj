@@ -116,6 +116,19 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC\库存\BarCodeInfoDto.cs" />
+    <Compile Include="UC\库存\XtraFrm出货预览.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\库存\XtraFrm出货预览.designer.cs">
+      <DependentUpon>XtraFrm出货预览.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\库存\XtraFrm门店出库.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\库存\XtraFrm门店出库.designer.cs">
+      <DependentUpon>XtraFrm门店出库.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\门店下单\ChiCunHead.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -223,7 +236,6 @@
     <Compile Include="UC\门店下单\SheJiDianChooseCard.designer.cs">
       <DependentUpon>SheJiDianChooseCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\SQLmtm.cs" />
     <Compile Include="UC\门店下单\StyleCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +248,7 @@
     <Compile Include="UC\门店下单\WaitForm.designer.cs">
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\FunctionHelper.cs" />
     <Compile Include="Utils\SQLmtm.cs" />
     <Compile Include="UC\库存\XtraUC库存一览.cs">
       <SubType>UserControl</SubType>
@@ -275,6 +288,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC\库存\XtraFrm出货预览.resx">
+      <DependentUpon>XtraFrm出货预览.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\库存\XtraFrm门店出库.resx">
+      <DependentUpon>XtraFrm门店出库.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\ChiCunHead.resx">
       <DependentUpon>ChiCunHead.cs</DependentUpon>
     </EmbeddedResource>

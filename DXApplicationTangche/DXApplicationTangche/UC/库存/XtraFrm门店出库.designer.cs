@@ -1,0 +1,578 @@
+﻿namespace DXApplicationTangche.UC.库存
+{
+    partial class XtraFrm门店出库
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFrm门店出库));
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
+            this.tileBarGroup2 = new DevExpress.XtraBars.Navigation.TileBarGroup();
+            this.tileBarItem1 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarItem2 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.tablePanel2 = new DevExpress.Utils.Layout.TablePanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textEdit扫码 = new DevExpress.XtraEditors.TextEdit();
+            this.bar1 = new DevExpress.XtraBars.Bar();
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.bar4 = new DevExpress.XtraBars.Bar();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colORDER_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_PUBLISH_CATEGORY_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYTLE_SEASON = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYTLE_YEAR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colORDER_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYTLE_FABRIC_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel3.SuspendLayout();
+            this.dockPanel3_Container.SuspendLayout();
+            this.dockPanel1.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
+            this.dockPanel2.SuspendLayout();
+            this.dockPanel2_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
+            this.tablePanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // textEdit1
+            // 
+            this.tablePanel1.SetColumn(this.textEdit1, 2);
+            this.textEdit1.Location = new System.Drawing.Point(101, 5);
+            this.textEdit1.Name = "textEdit1";
+            this.tablePanel1.SetRow(this.textEdit1, 0);
+            this.textEdit1.Size = new System.Drawing.Size(245, 24);
+            this.textEdit1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label1, 1);
+            this.label1.Location = new System.Drawing.Point(19, 8);
+            this.label1.Name = "label1";
+            this.tablePanel1.SetRow(this.label1, 0);
+            this.label1.Size = new System.Drawing.Size(68, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "出库单号";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label2, 1);
+            this.label2.Location = new System.Drawing.Point(19, 44);
+            this.label2.Name = "label2";
+            this.tablePanel1.SetRow(this.label2, 1);
+            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "出库时间";
+            // 
+            // dateTimePicker1
+            // 
+            this.tablePanel1.SetColumn(this.dateTimePicker1, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(101, 40);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.tablePanel1.SetRow(this.dateTimePicker1, 1);
+            this.dateTimePicker1.Size = new System.Drawing.Size(245, 26);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label3, 1);
+            this.label3.Location = new System.Drawing.Point(19, 80);
+            this.label3.Name = "label3";
+            this.tablePanel1.SetRow(this.label3, 2);
+            this.label3.Size = new System.Drawing.Size(68, 18);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "选择门店";
+            // 
+            // searchLookUpEdit1
+            // 
+            this.tablePanel1.SetColumn(this.searchLookUpEdit1, 2);
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(101, 77);
+            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
+            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.PopupView = this.searchLookUpEdit1View;
+            this.tablePanel1.SetRow(this.searchLookUpEdit1, 2);
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(245, 24);
+            this.searchLookUpEdit1.TabIndex = 5;
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 26.02F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 78.98F)});
+            this.tablePanel1.Controls.Add(this.searchLookUpEdit1);
+            this.tablePanel1.Controls.Add(this.label3);
+            this.tablePanel1.Controls.Add(this.dateTimePicker1);
+            this.tablePanel1.Controls.Add(this.label2);
+            this.tablePanel1.Controls.Add(this.label1);
+            this.tablePanel1.Controls.Add(this.textEdit1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 34.79999F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 36.39999F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 35.59999F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(349, 140);
+            this.tablePanel1.TabIndex = 1;
+            // 
+            // dockManager1
+            // 
+            this.dockManager1.Form = this;
+            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel1,
+            this.dockPanel2,
+            this.dockPanel3});
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl",
+            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
+            "DevExpress.XtraBars.Navigation.TileNavPane",
+            "DevExpress.XtraBars.TabFormControl",
+            "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
+            "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
+            // 
+            // dockPanel3
+            // 
+            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
+            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel3.FloatVertical = true;
+            this.dockPanel3.ID = new System.Guid("8bb75970-a564-4276-9014-a38ceca2deff");
+            this.dockPanel3.Location = new System.Drawing.Point(0, 403);
+            this.dockPanel3.Name = "dockPanel3";
+            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 158);
+            this.dockPanel3.Size = new System.Drawing.Size(880, 158);
+            this.dockPanel3.Text = "操作";
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Controls.Add(this.tileBar1);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 39);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(872, 115);
+            this.dockPanel3_Container.TabIndex = 0;
+            // 
+            // tileBar1
+            // 
+            this.tileBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar1.Groups.Add(this.tileBarGroup2);
+            this.tileBar1.Location = new System.Drawing.Point(0, 0);
+            this.tileBar1.MaxId = 2;
+            this.tileBar1.Name = "tileBar1";
+            this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar1.Size = new System.Drawing.Size(872, 115);
+            this.tileBar1.TabIndex = 0;
+            this.tileBar1.Text = "tileBar1";
+            // 
+            // tileBarGroup2
+            // 
+            this.tileBarGroup2.Items.Add(this.tileBarItem1);
+            this.tileBarGroup2.Items.Add(this.tileBarItem2);
+            this.tileBarGroup2.Name = "tileBarGroup2";
+            // 
+            // tileBarItem1
+            // 
+            this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            tileItemElement3.Text = "预览";
+            this.tileBarItem1.Elements.Add(tileItemElement3);
+            this.tileBarItem1.Id = 0;
+            this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItem1.Name = "tileBarItem1";
+            this.tileBarItem1.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileBarItem1_ItemClick);
+            // 
+            // tileBarItem2
+            // 
+            this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage1")));
+            tileItemElement4.Text = "提交";
+            this.tileBarItem2.Elements.Add(tileItemElement4);
+            this.tileBarItem2.Id = 1;
+            this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItem2.Name = "tileBarItem2";
+            // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.ID = new System.Guid("228f3f7b-1edd-4acc-820f-4d300fd36026");
+            this.dockPanel1.Location = new System.Drawing.Point(880, 0);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(359, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(359, 561);
+            this.dockPanel1.Text = "发货信息";
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.tablePanel1);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(6, 37);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(349, 520);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
+            this.dockPanel2.ID = new System.Guid("e4583d00-1333-49b5-90e2-8860358d24e5");
+            this.dockPanel2.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 125);
+            this.dockPanel2.Size = new System.Drawing.Size(880, 125);
+            this.dockPanel2.Text = "扫码";
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Controls.Add(this.tablePanel2);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 37);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(872, 82);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // tablePanel2
+            // 
+            this.tablePanel2.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 0.52F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 59.48F)});
+            this.tablePanel2.Controls.Add(this.label4);
+            this.tablePanel2.Controls.Add(this.textEdit扫码);
+            this.tablePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel2.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel2.Name = "tablePanel2";
+            this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel2.Size = new System.Drawing.Size(872, 82);
+            this.tablePanel2.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.tablePanel2.SetColumn(this.label4, 1);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(11, 4);
+            this.label4.Name = "label4";
+            this.tablePanel2.SetRow(this.label4, 0);
+            this.label4.Size = new System.Drawing.Size(98, 18);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "请扫描条形码";
+            // 
+            // textEdit扫码
+            // 
+            this.tablePanel2.SetColumn(this.textEdit扫码, 1);
+            this.textEdit扫码.Location = new System.Drawing.Point(11, 42);
+            this.textEdit扫码.Name = "textEdit扫码";
+            this.tablePanel2.SetRow(this.textEdit扫码, 1);
+            this.textEdit扫码.Size = new System.Drawing.Size(858, 24);
+            this.textEdit扫码.TabIndex = 0;
+            this.textEdit扫码.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit扫码_KeyDown);
+            // 
+            // bar1
+            // 
+            this.bar1.BarName = "Custom 2";
+            this.bar1.DockCol = 0;
+            this.bar1.DockRow = 0;
+            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar1.Text = "Custom 2";
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Custom 3";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 1;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.Text = "Custom 3";
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Custom 2";
+            this.bar3.DockCol = 0;
+            this.bar3.DockRow = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar3.Text = "Custom 2";
+            // 
+            // bar4
+            // 
+            this.bar4.BarName = "Custom 3";
+            this.bar4.DockCol = 0;
+            this.bar4.DockRow = 1;
+            this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar4.Text = "Custom 3";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 125);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(880, 278);
+            this.gridControl1.TabIndex = 5;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colORDER_NO,
+            this.colSTYLE_PUBLISH_CATEGORY_CD,
+            this.colSTYLE_NAME_CN,
+            this.colSYTLE_SEASON,
+            this.colSYTLE_YEAR,
+            this.colMATERIAL_NAME_CN,
+            this.colORDER_DATE,
+            this.colSTYLE_ID,
+            this.colSYTLE_FABRIC_ID});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colId
+            // 
+            this.colId.Caption = "gridColumn1";
+            this.colId.FieldName = "Id";
+            this.colId.MinWidth = 25;
+            this.colId.Name = "colId";
+            this.colId.Width = 94;
+            // 
+            // colORDER_NO
+            // 
+            this.colORDER_NO.Caption = "订单号";
+            this.colORDER_NO.FieldName = "ORDER_NO";
+            this.colORDER_NO.MinWidth = 25;
+            this.colORDER_NO.Name = "colORDER_NO";
+            this.colORDER_NO.Visible = true;
+            this.colORDER_NO.VisibleIndex = 0;
+            this.colORDER_NO.Width = 94;
+            // 
+            // colSTYLE_PUBLISH_CATEGORY_CD
+            // 
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Caption = "服装种类";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 25;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 1;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
+            // 
+            // colSTYLE_NAME_CN
+            // 
+            this.colSTYLE_NAME_CN.Caption = "款式";
+            this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.MinWidth = 25;
+            this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.Visible = true;
+            this.colSTYLE_NAME_CN.VisibleIndex = 2;
+            this.colSTYLE_NAME_CN.Width = 94;
+            // 
+            // colSYTLE_SEASON
+            // 
+            this.colSYTLE_SEASON.Caption = "季节";
+            this.colSYTLE_SEASON.FieldName = "SYTLE_SEASON";
+            this.colSYTLE_SEASON.MinWidth = 25;
+            this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
+            this.colSYTLE_SEASON.Visible = true;
+            this.colSYTLE_SEASON.VisibleIndex = 3;
+            this.colSYTLE_SEASON.Width = 94;
+            // 
+            // colSYTLE_YEAR
+            // 
+            this.colSYTLE_YEAR.Caption = "年份";
+            this.colSYTLE_YEAR.FieldName = "SYTLE_YEAR";
+            this.colSYTLE_YEAR.MinWidth = 25;
+            this.colSYTLE_YEAR.Name = "colSYTLE_YEAR";
+            this.colSYTLE_YEAR.Visible = true;
+            this.colSYTLE_YEAR.VisibleIndex = 4;
+            this.colSYTLE_YEAR.Width = 94;
+            // 
+            // colMATERIAL_NAME_CN
+            // 
+            this.colMATERIAL_NAME_CN.Caption = "面料";
+            this.colMATERIAL_NAME_CN.FieldName = "MATERIAL_NAME_CN";
+            this.colMATERIAL_NAME_CN.MinWidth = 25;
+            this.colMATERIAL_NAME_CN.Name = "colMATERIAL_NAME_CN";
+            this.colMATERIAL_NAME_CN.Visible = true;
+            this.colMATERIAL_NAME_CN.VisibleIndex = 5;
+            this.colMATERIAL_NAME_CN.Width = 94;
+            // 
+            // colORDER_DATE
+            // 
+            this.colORDER_DATE.Caption = "下单时间";
+            this.colORDER_DATE.FieldName = "ORDER_DATE";
+            this.colORDER_DATE.MinWidth = 25;
+            this.colORDER_DATE.Name = "colORDER_DATE";
+            this.colORDER_DATE.Visible = true;
+            this.colORDER_DATE.VisibleIndex = 6;
+            this.colORDER_DATE.Width = 94;
+            // 
+            // colSTYLE_ID
+            // 
+            this.colSTYLE_ID.Caption = "gridColumn1";
+            this.colSTYLE_ID.FieldName = "STYLE_ID";
+            this.colSTYLE_ID.MinWidth = 25;
+            this.colSTYLE_ID.Name = "colSTYLE_ID";
+            this.colSTYLE_ID.Width = 94;
+            // 
+            // colSYTLE_FABRIC_ID
+            // 
+            this.colSYTLE_FABRIC_ID.Caption = "gridColumn1";
+            this.colSYTLE_FABRIC_ID.FieldName = "SYTLE_FABRIC_ID";
+            this.colSYTLE_FABRIC_ID.MinWidth = 25;
+            this.colSYTLE_FABRIC_ID.Name = "colSYTLE_FABRIC_ID";
+            this.colSYTLE_FABRIC_ID.Width = 94;
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // XtraFrm门店出库
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1239, 561);
+            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.dockPanel3);
+            this.Controls.Add(this.dockPanel2);
+            this.Controls.Add(this.dockPanel1);
+            this.Name = "XtraFrm门店出库";
+            this.Text = "XtraFrm门店出库";
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel3.ResumeLayout(false);
+            this.dockPanel3_Container.ResumeLayout(false);
+            this.dockPanel1.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
+            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel2_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).EndInit();
+            this.tablePanel2.ResumeLayout(false);
+            this.tablePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.Bar bar4;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.Utils.Layout.TablePanel tablePanel2;
+        private DevExpress.XtraEditors.TextEdit textEdit扫码;
+        private System.Windows.Forms.Label label4;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colORDER_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_PUBLISH_CATEGORY_CD;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_NAME_CN;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_SEASON;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_YEAR;
+        private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_NAME_CN;
+        private DevExpress.XtraGrid.Columns.GridColumn colORDER_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_FABRIC_ID;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar1;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup2;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem1;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem2;
+    }
+}
