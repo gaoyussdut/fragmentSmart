@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit出库单号 = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -75,7 +75,7 @@
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit出库单号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -97,14 +97,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).BeginInit();
             this.SuspendLayout();
             // 
-            // textEdit1
+            // textEdit出库单号
             // 
-            this.tablePanel1.SetColumn(this.textEdit1, 2);
-            this.textEdit1.Location = new System.Drawing.Point(101, 5);
-            this.textEdit1.Name = "textEdit1";
-            this.tablePanel1.SetRow(this.textEdit1, 0);
-            this.textEdit1.Size = new System.Drawing.Size(245, 24);
-            this.textEdit1.TabIndex = 0;
+            this.tablePanel1.SetColumn(this.textEdit出库单号, 2);
+            this.textEdit出库单号.Enabled = false;
+            this.textEdit出库单号.Location = new System.Drawing.Point(101, 5);
+            this.textEdit出库单号.Name = "textEdit出库单号";
+            this.tablePanel1.SetRow(this.textEdit出库单号, 0);
+            this.textEdit出库单号.Size = new System.Drawing.Size(245, 24);
+            this.textEdit出库单号.TabIndex = 0;
             // 
             // label1
             // 
@@ -208,7 +209,7 @@
             this.tablePanel1.Controls.Add(this.dateTimePicker1);
             this.tablePanel1.Controls.Add(this.label2);
             this.tablePanel1.Controls.Add(this.label1);
-            this.tablePanel1.Controls.Add(this.textEdit1);
+            this.tablePanel1.Controls.Add(this.textEdit出库单号);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
             this.tablePanel1.Name = "tablePanel1";
@@ -594,7 +595,7 @@
             this.Name = "XtraFrm门店出库";
             this.Text = "XtraFrm门店出库";
             this.Load += new System.EventHandler(this.XtraFrm门店出库_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit出库单号.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
@@ -621,7 +622,7 @@
         }
 
         #endregion
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEdit出库单号;
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;

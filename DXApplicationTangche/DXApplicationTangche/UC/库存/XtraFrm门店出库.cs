@@ -120,6 +120,24 @@ namespace DXApplicationTangche.UC.库存
         {
             String sql = "select shop_id,shop_name,shop_type from t_shop";
             this.searchLookUpEdit1.Properties.DataSource = SQLmtm.GetDataTable(sql);
+
+            //  单号
+            sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , (max(godown_code) + 1)) as code from t_godown_bill "
+                +" where left(godown_code, 10) = CONCAT('CH', DATE_FORMAT(NOW(), '%Y%m%d'))";
+            DataTable dataTable = SQLmtm.GetDataTable(sql);
+            DataRow dr = dataTable.Rows[0];
+            if (dataTable.Rows.Count == 0)
+            {
+                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
+                textEdit出库单号.Text = SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
+            }
+            else if (String.IsNullOrEmpty(dataTable.Rows[0]["code"].ToString())) {
+                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
+                textEdit出库单号.Text = SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
+            }
+            else {
+                textEdit出库单号.Text = dataTable.Rows[0]["code"].ToString();
+            }
         }
 
     }
