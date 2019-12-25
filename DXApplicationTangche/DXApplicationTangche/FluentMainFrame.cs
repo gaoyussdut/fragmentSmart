@@ -50,7 +50,7 @@ namespace DXApplicationTangche
 
         private void ElementBarCode_Click(object sender, EventArgs e)
         {
-            this.initPanel(new Form1());
+            this.initPanel(new Frm吊牌打印());
         }
 
 
