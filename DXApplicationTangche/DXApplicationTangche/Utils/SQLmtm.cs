@@ -12,6 +12,29 @@ namespace DiaoPaiDaYin
     {
         //public static string ConnStr = "server=rm-8vb733a3r2o1oxjsjno.mysql.zhangbei.rds.aliyuncs.com;port=3306;user id=root;password=Win2003@;database=fragsmart-mtm;charset=utf8";
         public static string ConnStr = "server=rm-8vb733a3r2o1oxjsjno.mysql.zhangbei.rds.aliyuncs.com;port=3306;user id=root;password=Win2003@;database=fragsmart-mtm-test;charset=utf8";
+
+        public static void ExecuteSql(String sql) {
+            MySqlConnection AConn = new MySqlConnection(ConnStr);
+            MySqlCommand cmd = new MySqlCommand(sql, AConn);
+            AConn.Open();
+            try
+            {
+                int s = cmd.ExecuteNonQuery();
+            }
+            catch
+            {
+                ;
+            }
+            finally
+            {
+                AConn.Close();
+                AConn.Dispose();
+                AConn = null;
+            }
+
+            AConn.Close();
+        }
+
         public static DataTable GetDataTable(string SQL)
         {
             DataTable ADt = new DataTable();

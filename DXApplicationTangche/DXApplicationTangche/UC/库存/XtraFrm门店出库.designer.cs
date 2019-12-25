@@ -75,6 +75,8 @@
             this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit出库单号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -95,6 +97,8 @@
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
+            this.tablePanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // textEdit出库单号
@@ -254,6 +258,7 @@
             // 
             // dockPanel1_Container
             // 
+            this.dockPanel1_Container.Controls.Add(this.tablePanel3);
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(6, 37);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
@@ -584,6 +589,32 @@
             this.pivotGridField6.Name = "pivotGridField6";
             this.pivotGridField6.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Count;
             // 
+            // tablePanel3
+            // 
+            this.tablePanel3.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.27F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 32.73F)});
+            this.tablePanel3.Controls.Add(this.simpleButton1);
+            this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tablePanel3.Location = new System.Drawing.Point(0, 380);
+            this.tablePanel3.Name = "tablePanel3";
+            this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 84.40005F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel3.Size = new System.Drawing.Size(349, 140);
+            this.tablePanel3.TabIndex = 2;
+            // 
+            // simpleButton1
+            // 
+            this.tablePanel3.SetColumn(this.simpleButton1, 1);
+            this.simpleButton1.Location = new System.Drawing.Point(162, 97);
+            this.simpleButton1.Name = "simpleButton1";
+            this.tablePanel3.SetRow(this.simpleButton1, 1);
+            this.simpleButton1.Size = new System.Drawing.Size(184, 29);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "提交";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // XtraFrm门店出库
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -617,6 +648,8 @@
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
+            this.tablePanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -668,5 +701,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colshop_id;
         private DevExpress.XtraGrid.Columns.GridColumn colshop_name;
         private DevExpress.XtraGrid.Columns.GridColumn colshop_type;
+        private DevExpress.Utils.Layout.TablePanel tablePanel3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

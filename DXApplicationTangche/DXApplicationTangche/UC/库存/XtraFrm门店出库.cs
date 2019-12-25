@@ -121,24 +121,45 @@ namespace DXApplicationTangche.UC.库存
             String sql = "select shop_id,shop_name,shop_type from t_shop";
             this.searchLookUpEdit1.Properties.DataSource = SQLmtm.GetDataTable(sql);
 
-            //  单号
-            sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , (max(godown_code) + 1)) as code from t_godown_bill "
-                +" where left(godown_code, 10) = CONCAT('CH', DATE_FORMAT(NOW(), '%Y%m%d'))";
-            DataTable dataTable = SQLmtm.GetDataTable(sql);
-            DataRow dr = dataTable.Rows[0];
-            if (dataTable.Rows.Count == 0)
-            {
-                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
-                textEdit出库单号.Text = SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
-            }
-            else if (String.IsNullOrEmpty(dataTable.Rows[0]["code"].ToString())) {
-                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
-                textEdit出库单号.Text = SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
-            }
-            else {
-                textEdit出库单号.Text = dataTable.Rows[0]["code"].ToString();
-            }
+            //  单号生成
+            this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code");
         }
 
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(this.shopId)) {
+                MessageBox.Show("请选择门店");
+                return;
+            }
+            if (this.barCodeInfoDtos.Count == 0)
+            {
+                MessageBox.Show("请选择出货成衣");
+                return;
+            }
+
+            String godown_id = System.Guid.NewGuid().ToString("N");
+            //  出货单
+            SQLmtm.DoInsert(
+                "t_godown_bill"
+                , new string[] { "godown_id", "godown_date", "godown_code", "shop_id" }
+                , new string[] { godown_id, this.dateTimePicker1.Value.ToString(), this.textEdit出库单号.Text, this.shopId }
+                );
+            //  出货单分录           
+            foreach (String barcode_id in this.barCodes) {
+                SQLmtm.DoInsert(
+                    "t_godown_entry"
+                    , new string[] { "godown_entry_id", "godown_id", "barcode_id", "is_validate" }
+                    , new string[] { System.Guid.NewGuid().ToString("N"), godown_id, barcode_id, "1" }
+                    );
+            }
+            
+
+            //  单号变更
+            this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code");
+            //  清空成衣列表
+            this.barCodeInfoDtos.Clear();
+            this.barCodes.Clear();
+            //  TODO,不确定是否做清空门店
+        }
     }
 }

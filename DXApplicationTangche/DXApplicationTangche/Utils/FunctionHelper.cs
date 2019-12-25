@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DiaoPaiDaYin;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -264,6 +266,36 @@ namespace DevExpress.XtraGrid.Demos.util
                 return def;
             }
         }
-            #endregion
+        #endregion
+
+        #region 单号
+        /// <summary>
+        /// 取单号
+        /// </summary>
+        /// <param name="tableName"></param>
+        /// <param name="billNoField"></param>
+        /// <returns></returns>
+        public static String generateBillNo(String tableName,String billNoField) {
+            String sql = "select right(max("+ billNoField + "),5)+1  as code from "+ tableName +" "
+                + " where left(" + billNoField + ", 10) = CONCAT('CH', DATE_FORMAT(NOW(), '%Y%m%d'))";
+            DataTable dataTable = SQLmtm.GetDataTable(sql);
+            if (dataTable.Rows.Count == 0)
+            {
+                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
+                return SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
+            }
+            else if (String.IsNullOrEmpty(dataTable.Rows[0]["code"].ToString()))
+            {
+                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
+                return SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
+            }
+            else
+            {
+                String suffix = string.Format("{0:00000}", Convert.ToInt16(dataTable.Rows[0]["code"].ToString()));
+                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '" + suffix + "') as code";
+                return SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
+            }
+        }
+        #endregion
     }
 }
