@@ -36,6 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colshop_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colshop_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colshop_type = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -152,17 +155,47 @@
             this.searchLookUpEdit1.Name = "searchLookUpEdit1";
             this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.NullText = "";
             this.searchLookUpEdit1.Properties.PopupView = this.searchLookUpEdit1View;
             this.tablePanel1.SetRow(this.searchLookUpEdit1, 2);
             this.searchLookUpEdit1.Size = new System.Drawing.Size(245, 24);
             this.searchLookUpEdit1.TabIndex = 5;
+            this.searchLookUpEdit1.Popup += new System.EventHandler(this.searchLookUpEdit1_Popup);
+            this.searchLookUpEdit1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEdit1_CustomDisplayText);
             // 
             // searchLookUpEdit1View
             // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colshop_id,
+            this.colshop_name,
+            this.colshop_type});
             this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
+            // 
+            // colshop_id
+            // 
+            this.colshop_id.Caption = "gridColumn1";
+            this.colshop_id.FieldName = "shop_id";
+            this.colshop_id.Name = "colshop_id";
+            // 
+            // colshop_name
+            // 
+            this.colshop_name.Caption = "店名";
+            this.colshop_name.FieldName = "shop_name";
+            this.colshop_name.Name = "colshop_name";
+            this.colshop_name.Visible = true;
+            this.colshop_name.VisibleIndex = 0;
+            // 
+            // colshop_type
+            // 
+            this.colshop_type.Caption = "门店类型";
+            this.colshop_type.FieldName = "shop_type";
+            this.colshop_type.Name = "colshop_type";
+            this.colshop_type.Visible = true;
+            this.colshop_type.VisibleIndex = 1;
             // 
             // tablePanel1
             // 
@@ -560,6 +593,7 @@
             this.Controls.Add(this.dockPanel1);
             this.Name = "XtraFrm门店出库";
             this.Text = "XtraFrm门店出库";
+            this.Load += new System.EventHandler(this.XtraFrm门店出库_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
@@ -630,5 +664,8 @@
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField4;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField5;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField6;
+        private DevExpress.XtraGrid.Columns.GridColumn colshop_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colshop_name;
+        private DevExpress.XtraGrid.Columns.GridColumn colshop_type;
     }
 }

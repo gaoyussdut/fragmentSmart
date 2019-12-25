@@ -20,8 +20,10 @@ namespace DXApplicationTangche.UC.库存
 {
     public partial class XtraFrm门店出库 : DevExpress.XtraEditors.XtraForm
     {
-        BindingList<BarCodeInfoDto> barCodeInfoDtos = new BindingList<BarCodeInfoDto>();    //  条码信息
-        List<String> barCodes = new List<string>(); //  条码
+        private BindingList<BarCodeInfoDto> barCodeInfoDtos = new BindingList<BarCodeInfoDto>();    //  条码信息
+        private List<String> barCodes = new List<string>(); //  条码
+        private String shopId;
+        private String shopName;
         public XtraFrm门店出库()
         {
             InitializeComponent();
@@ -48,173 +50,38 @@ namespace DXApplicationTangche.UC.库存
                 //添加一个simplebutton控件(确认按钮)
                 LayoutControlItem myLCI = (LayoutControlItem)clearLCI.Owner.CreateLayoutItem(clearLCI.Parent);
                 myLCI.TextVisible = false;
-                SimpleButton btOK = new SimpleButton() { Name = "btOK", Text = "确定" };
-                btOK.Click += btOK_Click;
-                myLCI.Control = btOK;
-                myLCI.SizeConstraintsType = SizeConstraintsType.Custom;//控件的大小设置为自定义
-                myLCI.MaxSize = clearLCI.MaxSize;
-                myLCI.MinSize = clearLCI.MinSize;
-                myLCI.Move(clearLCI, DevExpress.XtraLayout.Utils.InsertType.Left);
             }
         }
 
-        public class LookUpMultSelectValues
+        private void searchLookUpEdit1View_Click(object sender, EventArgs e)
         {
-            public string FindText { get; set; }
-            public List<string> SelectedValues { get; set; }
-            public List<string> SelectedDisplays { get; set; }
-        }
-        //参与者
-        private List<LookUpMultSelectValues> luValues = new List<LookUpMultSelectValues>();
-        //参与者去重
-        private List<string>[] GetLuValues()
-        {
-            List<string> r = new List<string>();
-            foreach (var a in luValues)
+            var a = this.searchLookUpEdit1.Properties.View.GetSelectedRows();
+            foreach (int rowHandle in a)
             {
-                r.AddRange(a.SelectedValues);
+                this.shopId //  id
+                    = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "shop_id").ToString();//id 是 Value Member
+                this.shopName //  name
+                    = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "shop_name").ToString();//name 是 Display Member
             }
+        }
 
-            List<string> b = new List<string>();
-            foreach (var a in luValues)
-            {
-                b.AddRange(a.SelectedDisplays);
-            }
-            return new[] { r.Distinct().ToList<string>(), b.Distinct().ToList<string>() };
+        private void searchLookUpEdit1_CustomDisplayText(object sender, CustomDisplayTextEventArgs e)
+        {
+            if(null!= e.Value)
+                e.DisplayText = this.shopName;
         }
+
 
         /// <summary>
-        /// 参与者清除按钮事件
+        /// 清除按钮事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            this.luValues.Clear();
+            this.searchLookUpEdit1.ToolTip = null;
             searchLookUpEdit1.EditValue = null;
-        }
-        /// <summary>
-        /// 参与者确定按钮事件
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btOK_Click(object sender, EventArgs e)
-        {
-            searchLookUpEdit1.ClosePopup();
-        }
-
-
-        private void searchLookUpEdit1_Closed(object sender, ClosedEventArgs e)
-        {
-            var re = GetLuValues();
-            this.searchLookUpEdit1.EditValue = string.Join(",", re[1].ToArray());   //  name
-            this.searchLookUpEdit1.ToolTip = string.Join(",", re[0].ToArray()); //  id
-        }
-
-        private void searchLookUpEdit1_CustomDisplayText(object sender, CustomDisplayTextEventArgs e)
-        {
-            if (FunctionHelper.GetValue(e.Value).Contains(","))
-            {
-                e.DisplayText = e.Value.ToString();
-            }
-            else
-            {
-                var re = GetLuValues();
-                if (re[0].Count == 1)
-                {
-                    e.DisplayText = re[1].First();
-                }
-                else
-                {
-                    e.DisplayText = "";
-                }
-            }
-        }
-
-        private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            string estateId = FunctionHelper.GetValue(this.searchLookUpEdit1.EditValue);
-            //if (estateId != "")
-            //{
-            //    this.searchLookUpEdit1.Properties.Buttons[1].Visible = true;
-            //}
-            //else
-            //{
-            //    this.searchLookUpEdit1.ToolTip = null;
-            //    this.searchLookUpEdit1.Properties.View.ClearSelection();
-            //    this.searchLookUpEdit1.Properties.Buttons[1].Visible = false;
-            //}
-        }
-
-        private void searchLookUpEdit1View_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
-        {
-            var a = this.searchLookUpEdit1.Properties.View.GetSelectedRows();
-            var v = luValues.Find(b => b.FindText == this.searchLookUpEdit1.Properties.View.FindFilterText);
-            if (v == null)
-            {
-                v = new LookUpMultSelectValues();
-                v.FindText = this.searchLookUpEdit1.Properties.View.FindFilterText;
-                v.SelectedValues = new List<string>();
-                v.SelectedDisplays = new List<string>();
-                luValues.Add(v);
-            }
-            if (a.Length > 0)
-            {
-                //新增状态时
-                if (e.Action == CollectionChangeAction.Add)
-                {
-                    foreach (int rowHandle in a)
-                    {
-                        var vv = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "Id").ToString();//id 是 Value Member
-                        if (string.IsNullOrEmpty(v.SelectedValues.Find(b => b == vv)))
-                        {
-                            v.SelectedValues.Add(vv);
-                            v.SelectedDisplays.Add(this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "Name").ToString());//name 是 Display Member
-                        }
-
-                    }
-                }
-            }
-            //删除状态时
-            if (e.Action == CollectionChangeAction.Remove)
-            {
-                List<string> dels = new List<string>();
-                List<string> deld = new List<string>();
-
-                for (int i = 0; i < v.SelectedValues.Count; i++)
-                {
-                    bool finded = false;
-                    foreach (int rowHandle in a)
-                    {
-                        var vv = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "Id").ToString();//id 是 Value Member
-                        var vn = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "Name").ToString();//name 是 Display Member
-                        if (v.SelectedValues[i] == vv)
-                        {
-                            finded = true;
-                            break;
-                        }
-                    }
-
-                    if (!finded)
-                    {
-                        dels.Add(v.SelectedValues[i]);
-                        deld.Add(v.SelectedDisplays[i]);
-                    }
-                }
-
-                v.SelectedValues.RemoveAll(b => dels.Contains(b));
-                v.SelectedDisplays.RemoveAll(b => deld.Contains(b));
-
-                for (int i = 0; i < luValues.Count; i++)
-                {
-                    var ev = luValues[i];
-
-                    ev.SelectedValues.RemoveAll(b => dels.Contains(b));
-                    ev.SelectedDisplays.RemoveAll(b => deld.Contains(b));
-                }
-            }
-        }
-
+        }        
         #endregion
 
         private void textEdit扫码_KeyDown(object sender, KeyEventArgs e)
@@ -248,5 +115,12 @@ namespace DXApplicationTangche.UC.库存
                 }
             }
         }
+
+        private void XtraFrm门店出库_Load(object sender, EventArgs e)
+        {
+            String sql = "select shop_id,shop_name,shop_type from t_shop";
+            this.searchLookUpEdit1.Properties.DataSource = SQLmtm.GetDataTable(sql);
+        }
+
     }
 }
