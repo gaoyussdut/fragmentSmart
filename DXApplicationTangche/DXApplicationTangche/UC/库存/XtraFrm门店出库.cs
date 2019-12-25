@@ -122,7 +122,7 @@ namespace DXApplicationTangche.UC.库存
             this.searchLookUpEdit1.Properties.DataSource = SQLmtm.GetDataTable(sql);
 
             //  单号生成
-            this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code");
+            this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code", "00000");
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace DXApplicationTangche.UC.库存
             
 
             //  单号变更
-            this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code");
+            this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code", "00000");
             //  清空成衣列表
             this.barCodeInfoDtos.Clear();
             this.barCodes.Clear();

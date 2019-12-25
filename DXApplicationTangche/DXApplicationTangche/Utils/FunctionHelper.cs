@@ -272,26 +272,27 @@ namespace DevExpress.XtraGrid.Demos.util
         /// <summary>
         /// 取单号
         /// </summary>
-        /// <param name="tableName"></param>
-        /// <param name="billNoField"></param>
+        /// <param name="tableName">表名</param>
+        /// <param name="billNoField">单号字段</param>
+        /// <param name="formatStr">格式化后缀字段</param>
         /// <returns></returns>
-        public static String generateBillNo(String tableName,String billNoField) {
-            String sql = "select right(max("+ billNoField + "),5)+1  as code from "+ tableName +" "
+        public static String generateBillNo(String tableName,String billNoField, String formatStr) {
+            String sql = "select right(max("+ billNoField + "),"+ formatStr.Length + ")+1  as code from "+ tableName +" "
                 + " where left(" + billNoField + ", 10) = CONCAT('CH', DATE_FORMAT(NOW(), '%Y%m%d'))";
             DataTable dataTable = SQLmtm.GetDataTable(sql);
             if (dataTable.Rows.Count == 0)
             {
-                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
+                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '" + string.Format("{0:" + formatStr + "}", 1) + "') as code";
                 return SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
             }
             else if (String.IsNullOrEmpty(dataTable.Rows[0]["code"].ToString()))
             {
-                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '00001') as code";
+                sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '" + string.Format("{0:" + formatStr + "}", 1) + "') as code";
                 return SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
             }
             else
             {
-                String suffix = string.Format("{0:00000}", Convert.ToInt16(dataTable.Rows[0]["code"].ToString()));
+                String suffix = string.Format("{0:"+ formatStr + "}", Convert.ToInt16(dataTable.Rows[0]["code"].ToString()));
                 sql = "select CONCAT('CH',DATE_FORMAT(NOW(), '%Y%m%d') , '" + suffix + "') as code";
                 return SQLmtm.GetDataTable(sql).Rows[0]["code"].ToString();
             }
