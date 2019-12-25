@@ -503,7 +503,6 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 26);
             this.label8.TabIndex = 1;
-            this.label8.Text = "*";
             // 
             // label7
             // 
@@ -579,7 +578,7 @@
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
             this.simpleButton1.Location = new System.Drawing.Point(236, 665);
             this.simpleButton1.MinimumSize = new System.Drawing.Size(0, 40);
             this.simpleButton1.Name = "simpleButton1";
@@ -675,7 +674,6 @@
             this.layoutControlItem41,
             this.layoutControlItem42,
             this.emptySpaceItem7});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(645, 717);
             this.layoutControlGroup1.TextVisible = false;
@@ -1186,7 +1184,7 @@
             // 
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
             this.simpleButton2.Location = new System.Drawing.Point(236, 586);
             this.simpleButton2.MinimumSize = new System.Drawing.Size(0, 40);
             this.simpleButton2.Name = "simpleButton2";
@@ -1267,7 +1265,6 @@
             this.emptySpaceItem45,
             this.layoutControlItem23,
             this.layoutControlItem24});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Size = new System.Drawing.Size(651, 723);
             this.layoutControlGroup2.TextVisible = false;
@@ -2228,7 +2225,6 @@
             this.layoutControlItem85,
             this.layoutControlItem86,
             this.layoutControlItem87});
-            this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(645, 724);
             this.layoutControlGroup3.TextVisible = false;
