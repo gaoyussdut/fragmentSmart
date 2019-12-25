@@ -38,7 +38,7 @@ namespace mendian
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if(this.shengao.Text==""||this.tizhong.Text==""||this.xiongwei.Text==""||this.tixing.Text==""||this.jianxing.Text==""||this.fuxing.Text==""||this.beixing.Text=="")
+            if(this.shengao.Text==""||this.tizhong.Text==""||this.tixing.Text==""||this.jianxing.Text==""||this.fuxing.Text==""||this.tunxing.Text=="")
             {
                 MessageBox.Show("请填写完整");
                 return;
@@ -270,7 +270,7 @@ new string[] { cUSTOMER_ID.ToString(), "STYLE_CATEGORY-SHIRT", "SHIRT_FITMT004",
             }
             //cUSTOMER_FIT_ID++;
             //背型
-            switch(this.beixing.Text)
+            switch(this.tunxing.Text)
             {
                 case "挺胸":
                     SQLmtm.DoInsert("a_customer_fit_r", new string[] { "CUSTOMER_ID", "STYLE_CATEGORY_CD", "ITEM_CD", "ITEM_VALUE", "DELETE_FLAG", "FIT_VALUE", "FIT_COUNT_ID" },
@@ -281,6 +281,21 @@ new string[] { cUSTOMER_ID.ToString(), "STYLE_CATEGORY-SHIRT", "SHIRT_FITMT004",
                 case "驼背":
                     SQLmtm.DoInsert("a_customer_fit_r", new string[] { "CUSTOMER_ID", "STYLE_CATEGORY_CD", "ITEM_CD", "ITEM_VALUE", "DELETE_FLAG", "FIT_VALUE", "FIT_COUNT_ID" },
 new string[] { cUSTOMER_ID.ToString(), "STYLE_CATEGORY-SHIRT", "SHIRT_FITMT004", "FITMT_CODE_04", "0", "CD04_03", customer_countid.ToString() }); break;
+
+            }
+            //cUSTOMER_FIT_ID++;
+            //臀型
+            switch (this.tunxing.Text)
+            {
+                case "正常":
+                    SQLmtm.DoInsert("a_customer_fit_r", new string[] { "CUSTOMER_ID", "STYLE_CATEGORY_CD", "ITEM_CD", "ITEM_VALUE", "DELETE_FLAG", "FIT_VALUE", "FIT_COUNT_ID" },
+new string[] { cUSTOMER_ID.ToString(), "STYLE_CATEGORY-SHIRT", "SHIRT_FITMT004", "FITMT_CODE_07", "0", "1", customer_countid.ToString() }); break;
+                case "翘臀":
+                    SQLmtm.DoInsert("a_customer_fit_r", new string[] { "CUSTOMER_ID", "STYLE_CATEGORY_CD", "ITEM_CD", "ITEM_VALUE", "DELETE_FLAG", "FIT_VALUE", "FIT_COUNT_ID" },
+new string[] { cUSTOMER_ID.ToString(), "STYLE_CATEGORY-SHIRT", "SHIRT_FITMT004", "FITMT_CODE_07", "0", "2", customer_countid.ToString() }); break;
+                case "平臀":
+                    SQLmtm.DoInsert("a_customer_fit_r", new string[] { "CUSTOMER_ID", "STYLE_CATEGORY_CD", "ITEM_CD", "ITEM_VALUE", "DELETE_FLAG", "FIT_VALUE", "FIT_COUNT_ID" },
+new string[] { cUSTOMER_ID.ToString(), "STYLE_CATEGORY-SHIRT", "SHIRT_FITMT004", "FITMT_CODE_07", "0", "3", customer_countid.ToString() }); break;
 
             }
             DataRow dr_addressid = SQLmtm.GetDataRow("SELECT MAX(ADDRESS_ID) AS ADDRESS_ID FROM a_customer_address_p");
@@ -314,7 +329,7 @@ new string[] { cUSTOMER_ID.ToString(), "STYLE_CATEGORY-SHIRT", "SHIRT_FITMT004",
 
         private void simpleButton1_Click_1(object sender, EventArgs e)
         {
-            if(this.xing.Text==""||this.ming.Text==""||this.nianling.Text==""||this.shouji.Text=="")
+            if(this.xing.Text==""||this.ming.Text==""||this.shouji.Text=="")
             {
                 MessageBox.Show("请填写完整");
                 return;
