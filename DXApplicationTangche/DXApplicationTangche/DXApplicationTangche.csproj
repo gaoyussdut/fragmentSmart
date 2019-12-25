@@ -117,12 +117,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UC\库存\BarCodeInfoDto.cs" />
-    <Compile Include="UC\库存\XtraFrm出货预览.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UC\库存\XtraFrm出货预览.designer.cs">
-      <DependentUpon>XtraFrm出货预览.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC\库存\XtraFrm门店出库.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,9 +282,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC\库存\XtraFrm出货预览.resx">
-      <DependentUpon>XtraFrm出货预览.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC\库存\XtraFrm门店出库.resx">
       <DependentUpon>XtraFrm门店出库.cs</DependentUpon>
     </EmbeddedResource>

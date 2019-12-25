@@ -15,7 +15,6 @@ using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
 using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
-using DXApplicationTangche.UC.库存.门店出库;
 
 namespace DXApplicationTangche.UC.库存
 {
@@ -243,13 +242,11 @@ namespace DXApplicationTangche.UC.库存
                 else {
                     this.barCodeInfoDtos.Add(new BarCodeInfoDto(dt));
                     this.gridControl1.DataSource = this.barCodeInfoDtos;
+                    //this.pivotGridControl.ForceInitialize();
+                    this.pivotGridControl.DataSource = this.barCodeInfoDtos;
+                    this.pivotGridControl.RefreshData();
                 }
             }
-        }
-
-        private void tileBarItem1_ItemClick(object sender, TileItemEventArgs e)
-        {
-            new XtraFrm出货预览(this.barCodeInfoDtos).ShowDialog();
         }
     }
 }
