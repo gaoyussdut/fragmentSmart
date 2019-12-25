@@ -185,7 +185,7 @@
             this.jianxing = new System.Windows.Forms.ComboBox();
             this.fuxing = new System.Windows.Forms.ComboBox();
             this.tixing = new System.Windows.Forms.ComboBox();
-            this.beixing = new System.Windows.Forms.ComboBox();
+            this.tunxing = new System.Windows.Forms.ComboBox();
             this.shentitezheng = new System.Windows.Forms.ComboBox();
             this.shengao = new System.Windows.Forms.TextBox();
             this.xiongwei = new System.Windows.Forms.TextBox();
@@ -264,6 +264,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.layoutControlItem39 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.label59 = new System.Windows.Forms.Label();
+            this.layoutControlItem88 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.label60 = new System.Windows.Forms.Label();
+            this.layoutControlItem89 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.beixing = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem90 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem47 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.tabControl1.SuspendLayout();
             this.kehujibenxinxi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -412,6 +419,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem86)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem87)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem88)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem89)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem90)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem47)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1609,6 +1620,9 @@
             // 
             // layoutControl3
             // 
+            this.layoutControl3.Controls.Add(this.beixing);
+            this.layoutControl3.Controls.Add(this.label60);
+            this.layoutControl3.Controls.Add(this.label59);
             this.layoutControl3.Controls.Add(this.label58);
             this.layoutControl3.Controls.Add(this.label57);
             this.layoutControl3.Controls.Add(this.label56);
@@ -1653,7 +1667,7 @@
             this.layoutControl3.Controls.Add(this.jianxing);
             this.layoutControl3.Controls.Add(this.fuxing);
             this.layoutControl3.Controls.Add(this.tixing);
-            this.layoutControl3.Controls.Add(this.beixing);
+            this.layoutControl3.Controls.Add(this.tunxing);
             this.layoutControl3.Controls.Add(this.shentitezheng);
             this.layoutControl3.Controls.Add(this.shengao);
             this.layoutControl3.Controls.Add(this.xiongwei);
@@ -1669,9 +1683,9 @@
             // 
             this.label58.Font = new System.Drawing.Font("宋体", 15F);
             this.label58.ForeColor = System.Drawing.Color.Red;
-            this.label58.Location = new System.Drawing.Point(232, 142);
+            this.label58.Location = new System.Drawing.Point(226, 100);
             this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(21, 26);
+            this.label58.Size = new System.Drawing.Size(20, 26);
             this.label58.TabIndex = 1;
             this.label58.Text = " ";
             // 
@@ -1679,9 +1693,9 @@
             // 
             this.label57.Font = new System.Drawing.Font("宋体", 15F);
             this.label57.ForeColor = System.Drawing.Color.Red;
-            this.label57.Location = new System.Drawing.Point(232, 182);
+            this.label57.Location = new System.Drawing.Point(226, 140);
             this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(21, 26);
+            this.label57.Size = new System.Drawing.Size(20, 26);
             this.label57.TabIndex = 1;
             this.label57.Text = " ";
             // 
@@ -1689,9 +1703,9 @@
             // 
             this.label56.Font = new System.Drawing.Font("宋体", 15F);
             this.label56.ForeColor = System.Drawing.Color.Red;
-            this.label56.Location = new System.Drawing.Point(232, 222);
+            this.label56.Location = new System.Drawing.Point(226, 180);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(21, 26);
+            this.label56.Size = new System.Drawing.Size(20, 26);
             this.label56.TabIndex = 1;
             this.label56.Text = " ";
             // 
@@ -1699,9 +1713,9 @@
             // 
             this.label55.Font = new System.Drawing.Font("宋体", 15F);
             this.label55.ForeColor = System.Drawing.Color.Red;
-            this.label55.Location = new System.Drawing.Point(232, 262);
+            this.label55.Location = new System.Drawing.Point(226, 220);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(21, 26);
+            this.label55.Size = new System.Drawing.Size(20, 26);
             this.label55.TabIndex = 1;
             this.label55.Text = " ";
             // 
@@ -1709,9 +1723,9 @@
             // 
             this.label54.Font = new System.Drawing.Font("宋体", 15F);
             this.label54.ForeColor = System.Drawing.Color.Red;
-            this.label54.Location = new System.Drawing.Point(232, 302);
+            this.label54.Location = new System.Drawing.Point(226, 260);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(21, 26);
+            this.label54.Size = new System.Drawing.Size(20, 26);
             this.label54.TabIndex = 1;
             this.label54.Text = " ";
             // 
@@ -1719,9 +1733,9 @@
             // 
             this.label53.Font = new System.Drawing.Font("宋体", 15F);
             this.label53.ForeColor = System.Drawing.Color.Red;
-            this.label53.Location = new System.Drawing.Point(232, 342);
+            this.label53.Location = new System.Drawing.Point(226, 300);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(21, 26);
+            this.label53.Size = new System.Drawing.Size(20, 26);
             this.label53.TabIndex = 1;
             this.label53.Text = " ";
             // 
@@ -1729,9 +1743,9 @@
             // 
             this.label52.Font = new System.Drawing.Font("宋体", 15F);
             this.label52.ForeColor = System.Drawing.Color.Red;
-            this.label52.Location = new System.Drawing.Point(232, 422);
+            this.label52.Location = new System.Drawing.Point(226, 380);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(21, 26);
+            this.label52.Size = new System.Drawing.Size(20, 26);
             this.label52.TabIndex = 1;
             this.label52.Text = " ";
             // 
@@ -1739,9 +1753,9 @@
             // 
             this.label51.Font = new System.Drawing.Font("宋体", 15F);
             this.label51.ForeColor = System.Drawing.Color.Red;
-            this.label51.Location = new System.Drawing.Point(232, 382);
+            this.label51.Location = new System.Drawing.Point(226, 340);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(21, 26);
+            this.label51.Size = new System.Drawing.Size(20, 26);
             this.label51.TabIndex = 1;
             this.label51.Text = " ";
             // 
@@ -1749,9 +1763,9 @@
             // 
             this.label50.Font = new System.Drawing.Font("宋体", 15F);
             this.label50.ForeColor = System.Drawing.Color.Red;
-            this.label50.Location = new System.Drawing.Point(232, 582);
+            this.label50.Location = new System.Drawing.Point(226, 540);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(21, 26);
+            this.label50.Size = new System.Drawing.Size(20, 26);
             this.label50.TabIndex = 1;
             this.label50.Text = "*";
             // 
@@ -1759,9 +1773,9 @@
             // 
             this.label49.Font = new System.Drawing.Font("宋体", 15F);
             this.label49.ForeColor = System.Drawing.Color.Red;
-            this.label49.Location = new System.Drawing.Point(232, 542);
+            this.label49.Location = new System.Drawing.Point(226, 500);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(21, 26);
+            this.label49.Size = new System.Drawing.Size(20, 26);
             this.label49.TabIndex = 1;
             this.label49.Text = "*";
             // 
@@ -1769,9 +1783,9 @@
             // 
             this.label48.Font = new System.Drawing.Font("宋体", 15F);
             this.label48.ForeColor = System.Drawing.Color.Red;
-            this.label48.Location = new System.Drawing.Point(232, 502);
+            this.label48.Location = new System.Drawing.Point(226, 460);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(21, 26);
+            this.label48.Size = new System.Drawing.Size(20, 26);
             this.label48.TabIndex = 1;
             this.label48.Text = "*";
             // 
@@ -1779,18 +1793,18 @@
             // 
             this.label47.Font = new System.Drawing.Font("宋体", 15F);
             this.label47.ForeColor = System.Drawing.Color.Red;
-            this.label47.Location = new System.Drawing.Point(232, 462);
+            this.label47.Location = new System.Drawing.Point(226, 420);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(21, 26);
+            this.label47.Size = new System.Drawing.Size(20, 26);
             this.label47.TabIndex = 1;
             this.label47.Text = "*";
             // 
             // label46
             // 
             this.label46.Font = new System.Drawing.Font("宋体", 15F);
-            this.label46.Location = new System.Drawing.Point(95, 622);
+            this.label46.Location = new System.Drawing.Point(93, 620);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(157, 26);
+            this.label46.Size = new System.Drawing.Size(152, 26);
             this.label46.TabIndex = 1;
             this.label46.Text = "身体特征";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1798,19 +1812,19 @@
             // label45
             // 
             this.label45.Font = new System.Drawing.Font("宋体", 15F);
-            this.label45.Location = new System.Drawing.Point(95, 582);
+            this.label45.Location = new System.Drawing.Point(93, 540);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(133, 26);
+            this.label45.Size = new System.Drawing.Size(129, 26);
             this.label45.TabIndex = 1;
-            this.label45.Text = "背型(cm)";
+            this.label45.Text = "臀型(cm)";
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label43
             // 
             this.label43.Font = new System.Drawing.Font("宋体", 15F);
-            this.label43.Location = new System.Drawing.Point(95, 542);
+            this.label43.Location = new System.Drawing.Point(93, 500);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(133, 26);
+            this.label43.Size = new System.Drawing.Size(129, 26);
             this.label43.TabIndex = 1;
             this.label43.Text = "腹型(cm)";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1818,9 +1832,9 @@
             // label41
             // 
             this.label41.Font = new System.Drawing.Font("宋体", 15F);
-            this.label41.Location = new System.Drawing.Point(95, 502);
+            this.label41.Location = new System.Drawing.Point(93, 460);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(133, 26);
+            this.label41.Size = new System.Drawing.Size(129, 26);
             this.label41.TabIndex = 1;
             this.label41.Text = "肩型(cm)";
             this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1828,9 +1842,9 @@
             // label39
             // 
             this.label39.Font = new System.Drawing.Font("宋体", 15F);
-            this.label39.Location = new System.Drawing.Point(95, 462);
+            this.label39.Location = new System.Drawing.Point(93, 420);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(133, 26);
+            this.label39.Size = new System.Drawing.Size(129, 26);
             this.label39.TabIndex = 1;
             this.label39.Text = "体型(cm)";
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1838,9 +1852,9 @@
             // label37
             // 
             this.label37.Font = new System.Drawing.Font("宋体", 15F);
-            this.label37.Location = new System.Drawing.Point(95, 422);
+            this.label37.Location = new System.Drawing.Point(93, 380);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(133, 26);
+            this.label37.Size = new System.Drawing.Size(129, 26);
             this.label37.TabIndex = 1;
             this.label37.Text = "大臂围(cm)";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1848,9 +1862,9 @@
             // label35
             // 
             this.label35.Font = new System.Drawing.Font("宋体", 15F);
-            this.label35.Location = new System.Drawing.Point(95, 382);
+            this.label35.Location = new System.Drawing.Point(93, 340);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(133, 26);
+            this.label35.Size = new System.Drawing.Size(129, 26);
             this.label35.TabIndex = 1;
             this.label35.Text = "袖长(cm)";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1858,9 +1872,9 @@
             // label44
             // 
             this.label44.Font = new System.Drawing.Font("宋体", 15F);
-            this.label44.Location = new System.Drawing.Point(95, 342);
+            this.label44.Location = new System.Drawing.Point(93, 300);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(133, 26);
+            this.label44.Size = new System.Drawing.Size(129, 26);
             this.label44.TabIndex = 1;
             this.label44.Text = "腕围(cm)";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1868,9 +1882,9 @@
             // label42
             // 
             this.label42.Font = new System.Drawing.Font("宋体", 15F);
-            this.label42.Location = new System.Drawing.Point(95, 302);
+            this.label42.Location = new System.Drawing.Point(93, 260);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(133, 26);
+            this.label42.Size = new System.Drawing.Size(129, 26);
             this.label42.TabIndex = 1;
             this.label42.Text = "领围(cm)";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1878,9 +1892,9 @@
             // label40
             // 
             this.label40.Font = new System.Drawing.Font("宋体", 15F);
-            this.label40.Location = new System.Drawing.Point(95, 262);
+            this.label40.Location = new System.Drawing.Point(93, 220);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(133, 26);
+            this.label40.Size = new System.Drawing.Size(129, 26);
             this.label40.TabIndex = 1;
             this.label40.Text = "身长(cm)";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1888,9 +1902,9 @@
             // label38
             // 
             this.label38.Font = new System.Drawing.Font("宋体", 15F);
-            this.label38.Location = new System.Drawing.Point(95, 222);
+            this.label38.Location = new System.Drawing.Point(93, 180);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(133, 26);
+            this.label38.Size = new System.Drawing.Size(129, 26);
             this.label38.TabIndex = 1;
             this.label38.Text = "臀围(cm)";
             this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1898,9 +1912,9 @@
             // label36
             // 
             this.label36.Font = new System.Drawing.Font("宋体", 15F);
-            this.label36.Location = new System.Drawing.Point(95, 182);
+            this.label36.Location = new System.Drawing.Point(93, 140);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(133, 26);
+            this.label36.Size = new System.Drawing.Size(129, 26);
             this.label36.TabIndex = 1;
             this.label36.Text = "腰围(cm)";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1908,9 +1922,9 @@
             // label34
             // 
             this.label34.Font = new System.Drawing.Font("宋体", 15F);
-            this.label34.Location = new System.Drawing.Point(95, 142);
+            this.label34.Location = new System.Drawing.Point(93, 100);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(133, 26);
+            this.label34.Size = new System.Drawing.Size(129, 26);
             this.label34.TabIndex = 1;
             this.label34.Text = "肩宽(cm)";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1919,18 +1933,17 @@
             // 
             this.label33.Font = new System.Drawing.Font("宋体", 15F);
             this.label33.ForeColor = System.Drawing.Color.Red;
-            this.label33.Location = new System.Drawing.Point(232, 102);
+            this.label33.Location = new System.Drawing.Point(226, 60);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(21, 26);
+            this.label33.Size = new System.Drawing.Size(20, 26);
             this.label33.TabIndex = 1;
-            this.label33.Text = "*";
             // 
             // label32
             // 
             this.label32.Font = new System.Drawing.Font("宋体", 15F);
-            this.label32.Location = new System.Drawing.Point(95, 102);
+            this.label32.Location = new System.Drawing.Point(93, 60);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(133, 26);
+            this.label32.Size = new System.Drawing.Size(129, 26);
             this.label32.TabIndex = 1;
             this.label32.Text = "胸围(cm)";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1939,18 +1952,18 @@
             // 
             this.label31.Font = new System.Drawing.Font("宋体", 15F);
             this.label31.ForeColor = System.Drawing.Color.Red;
-            this.label31.Location = new System.Drawing.Point(232, 62);
+            this.label31.Location = new System.Drawing.Point(226, 20);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(21, 26);
+            this.label31.Size = new System.Drawing.Size(20, 26);
             this.label31.TabIndex = 1;
             this.label31.Text = "*";
             // 
             // label30
             // 
             this.label30.Font = new System.Drawing.Font("宋体", 15F);
-            this.label30.Location = new System.Drawing.Point(95, 62);
+            this.label30.Location = new System.Drawing.Point(93, 20);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(133, 26);
+            this.label30.Size = new System.Drawing.Size(129, 26);
             this.label30.TabIndex = 1;
             this.label30.Text = "体重(kg)";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1959,18 +1972,18 @@
             // 
             this.label29.Font = new System.Drawing.Font("宋体", 15F);
             this.label29.ForeColor = System.Drawing.Color.Red;
-            this.label29.Location = new System.Drawing.Point(232, 22);
+            this.label29.Location = new System.Drawing.Point(226, -20);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(21, 26);
+            this.label29.Size = new System.Drawing.Size(20, 26);
             this.label29.TabIndex = 1;
             this.label29.Text = "*";
             // 
             // label28
             // 
             this.label28.Font = new System.Drawing.Font("宋体", 15F);
-            this.label28.Location = new System.Drawing.Point(95, 22);
+            this.label28.Location = new System.Drawing.Point(93, -20);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(133, 26);
+            this.label28.Size = new System.Drawing.Size(129, 26);
             this.label28.TabIndex = 1;
             this.label28.Text = "身高(cm)";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1979,10 +1992,10 @@
             // 
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(203, 662);
+            this.simpleButton3.Location = new System.Drawing.Point(198, 660);
             this.simpleButton3.MinimumSize = new System.Drawing.Size(0, 40);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(284, 40);
+            this.simpleButton3.Size = new System.Drawing.Size(276, 40);
             this.simpleButton3.StyleController = this.layoutControl3;
             this.simpleButton3.TabIndex = 17;
             this.simpleButton3.Text = "保存";
@@ -1991,73 +2004,73 @@
             // tizhong
             // 
             this.tizhong.Font = new System.Drawing.Font("宋体", 14F);
-            this.tizhong.Location = new System.Drawing.Point(257, 62);
+            this.tizhong.Location = new System.Drawing.Point(250, 20);
             this.tizhong.Name = "tizhong";
-            this.tizhong.Size = new System.Drawing.Size(199, 26);
+            this.tizhong.Size = new System.Drawing.Size(244, 26);
             this.tizhong.TabIndex = 2;
             // 
             // tunwei
             // 
             this.tunwei.Font = new System.Drawing.Font("宋体", 14F);
-            this.tunwei.Location = new System.Drawing.Point(257, 222);
+            this.tunwei.Location = new System.Drawing.Point(250, 180);
             this.tunwei.Name = "tunwei";
-            this.tunwei.Size = new System.Drawing.Size(199, 26);
+            this.tunwei.Size = new System.Drawing.Size(244, 26);
             this.tunwei.TabIndex = 6;
             // 
             // shenchang
             // 
             this.shenchang.Font = new System.Drawing.Font("宋体", 14F);
-            this.shenchang.Location = new System.Drawing.Point(257, 262);
+            this.shenchang.Location = new System.Drawing.Point(250, 220);
             this.shenchang.Name = "shenchang";
-            this.shenchang.Size = new System.Drawing.Size(199, 26);
+            this.shenchang.Size = new System.Drawing.Size(244, 26);
             this.shenchang.TabIndex = 7;
             // 
             // lingwei
             // 
             this.lingwei.Font = new System.Drawing.Font("宋体", 14F);
-            this.lingwei.Location = new System.Drawing.Point(257, 302);
+            this.lingwei.Location = new System.Drawing.Point(250, 260);
             this.lingwei.Name = "lingwei";
-            this.lingwei.Size = new System.Drawing.Size(199, 26);
+            this.lingwei.Size = new System.Drawing.Size(244, 26);
             this.lingwei.TabIndex = 8;
             // 
             // wanwei
             // 
             this.wanwei.Font = new System.Drawing.Font("宋体", 14F);
-            this.wanwei.Location = new System.Drawing.Point(257, 342);
+            this.wanwei.Location = new System.Drawing.Point(250, 300);
             this.wanwei.Name = "wanwei";
-            this.wanwei.Size = new System.Drawing.Size(199, 26);
+            this.wanwei.Size = new System.Drawing.Size(244, 26);
             this.wanwei.TabIndex = 9;
             // 
             // xiuchang
             // 
             this.xiuchang.Font = new System.Drawing.Font("宋体", 14F);
-            this.xiuchang.Location = new System.Drawing.Point(257, 382);
+            this.xiuchang.Location = new System.Drawing.Point(250, 340);
             this.xiuchang.Name = "xiuchang";
-            this.xiuchang.Size = new System.Drawing.Size(199, 26);
+            this.xiuchang.Size = new System.Drawing.Size(244, 26);
             this.xiuchang.TabIndex = 10;
             // 
             // shangbixiufei
             // 
             this.shangbixiufei.Font = new System.Drawing.Font("宋体", 14F);
-            this.shangbixiufei.Location = new System.Drawing.Point(257, 422);
+            this.shangbixiufei.Location = new System.Drawing.Point(250, 380);
             this.shangbixiufei.Name = "shangbixiufei";
-            this.shangbixiufei.Size = new System.Drawing.Size(199, 26);
+            this.shangbixiufei.Size = new System.Drawing.Size(244, 26);
             this.shangbixiufei.TabIndex = 11;
             // 
             // jiankuan
             // 
             this.jiankuan.Font = new System.Drawing.Font("宋体", 14F);
-            this.jiankuan.Location = new System.Drawing.Point(257, 142);
+            this.jiankuan.Location = new System.Drawing.Point(250, 100);
             this.jiankuan.Name = "jiankuan";
-            this.jiankuan.Size = new System.Drawing.Size(199, 26);
+            this.jiankuan.Size = new System.Drawing.Size(244, 26);
             this.jiankuan.TabIndex = 4;
             // 
             // yaowei
             // 
             this.yaowei.Font = new System.Drawing.Font("宋体", 14F);
-            this.yaowei.Location = new System.Drawing.Point(257, 182);
+            this.yaowei.Location = new System.Drawing.Point(250, 140);
             this.yaowei.Name = "yaowei";
-            this.yaowei.Size = new System.Drawing.Size(199, 26);
+            this.yaowei.Size = new System.Drawing.Size(244, 26);
             this.yaowei.TabIndex = 5;
             // 
             // jianxing
@@ -2068,9 +2081,9 @@
             "正常",
             "平肩",
             "溜肩"});
-            this.jianxing.Location = new System.Drawing.Point(257, 502);
+            this.jianxing.Location = new System.Drawing.Point(250, 460);
             this.jianxing.Name = "jianxing";
-            this.jianxing.Size = new System.Drawing.Size(199, 27);
+            this.jianxing.Size = new System.Drawing.Size(244, 27);
             this.jianxing.TabIndex = 13;
             // 
             // fuxing
@@ -2083,9 +2096,9 @@
             "微凸",
             "中凸",
             "重凸"});
-            this.fuxing.Location = new System.Drawing.Point(257, 542);
+            this.fuxing.Location = new System.Drawing.Point(250, 500);
             this.fuxing.Name = "fuxing";
-            this.fuxing.Size = new System.Drawing.Size(199, 27);
+            this.fuxing.Size = new System.Drawing.Size(244, 27);
             this.fuxing.TabIndex = 14;
             // 
             // tixing
@@ -2099,23 +2112,23 @@
             "肥胖",
             "肌肉",
             "健身达人"});
-            this.tixing.Location = new System.Drawing.Point(257, 462);
+            this.tixing.Location = new System.Drawing.Point(250, 420);
             this.tixing.Name = "tixing";
-            this.tixing.Size = new System.Drawing.Size(199, 27);
+            this.tixing.Size = new System.Drawing.Size(244, 27);
             this.tixing.TabIndex = 12;
             // 
-            // beixing
+            // tunxing
             // 
-            this.beixing.Font = new System.Drawing.Font("宋体", 14F);
-            this.beixing.FormattingEnabled = true;
-            this.beixing.Items.AddRange(new object[] {
-            "挺胸",
-            "直背",
-            "驼背"});
-            this.beixing.Location = new System.Drawing.Point(257, 582);
-            this.beixing.Name = "beixing";
-            this.beixing.Size = new System.Drawing.Size(199, 27);
-            this.beixing.TabIndex = 15;
+            this.tunxing.Font = new System.Drawing.Font("宋体", 14F);
+            this.tunxing.FormattingEnabled = true;
+            this.tunxing.Items.AddRange(new object[] {
+            "正常",
+            "翘臀",
+            "平臀"});
+            this.tunxing.Location = new System.Drawing.Point(250, 540);
+            this.tunxing.Name = "tunxing";
+            this.tunxing.Size = new System.Drawing.Size(244, 27);
+            this.tunxing.TabIndex = 15;
             // 
             // shentitezheng
             // 
@@ -2128,25 +2141,25 @@
             "肩部特别宽",
             "手臂特别长",
             "臀部特别大"});
-            this.shentitezheng.Location = new System.Drawing.Point(256, 622);
+            this.shentitezheng.Location = new System.Drawing.Point(249, 620);
             this.shentitezheng.Name = "shentitezheng";
-            this.shentitezheng.Size = new System.Drawing.Size(200, 27);
+            this.shentitezheng.Size = new System.Drawing.Size(245, 27);
             this.shentitezheng.TabIndex = 16;
             // 
             // shengao
             // 
             this.shengao.Font = new System.Drawing.Font("宋体", 14F);
-            this.shengao.Location = new System.Drawing.Point(257, 22);
+            this.shengao.Location = new System.Drawing.Point(250, -20);
             this.shengao.Name = "shengao";
-            this.shengao.Size = new System.Drawing.Size(199, 26);
+            this.shengao.Size = new System.Drawing.Size(244, 26);
             this.shengao.TabIndex = 0;
             // 
             // xiongwei
             // 
             this.xiongwei.Font = new System.Drawing.Font("宋体", 14F);
-            this.xiongwei.Location = new System.Drawing.Point(257, 102);
+            this.xiongwei.Location = new System.Drawing.Point(250, 60);
             this.xiongwei.Name = "xiongwei";
-            this.xiongwei.Size = new System.Drawing.Size(199, 26);
+            this.xiongwei.Size = new System.Drawing.Size(244, 26);
             this.xiongwei.TabIndex = 3;
             // 
             // layoutControlGroup3
@@ -2224,18 +2237,22 @@
             this.layoutControlItem84,
             this.layoutControlItem85,
             this.layoutControlItem86,
-            this.layoutControlItem87});
+            this.layoutControlItem87,
+            this.layoutControlItem88,
+            this.layoutControlItem89,
+            this.layoutControlItem90,
+            this.emptySpaceItem47});
             this.layoutControlGroup3.Name = "layoutControlGroup3";
-            this.layoutControlGroup3.Size = new System.Drawing.Size(645, 724);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(628, 764);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // emptySpaceItem23
             // 
             this.emptySpaceItem23.AllowHotTrack = false;
             this.emptySpaceItem23.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem23.Location = new System.Drawing.Point(83, 0);
+            this.emptySpaceItem23.Location = new System.Drawing.Point(81, 0);
             this.emptySpaceItem23.Name = "emptySpaceItem23";
-            this.emptySpaceItem23.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem23.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem23.Text = "emptySpaceItem2";
             this.emptySpaceItem23.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -2243,11 +2260,11 @@
             // 
             this.layoutControlItem8.Control = this.tizhong;
             this.layoutControlItem8.CustomizationFormText = "体重(kg)*";
-            this.layoutControlItem8.Location = new System.Drawing.Point(245, 50);
+            this.layoutControlItem8.Location = new System.Drawing.Point(238, 50);
             this.layoutControlItem8.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem8.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem8.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.Text = "体重(kg)*";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -2257,11 +2274,11 @@
             // 
             this.layoutControlItem11.Control = this.tunwei;
             this.layoutControlItem11.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem11.Location = new System.Drawing.Point(245, 210);
+            this.layoutControlItem11.Location = new System.Drawing.Point(238, 210);
             this.layoutControlItem11.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem11.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem11.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem11.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem11.Text = "臀围(cm)";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
@@ -2271,11 +2288,11 @@
             // 
             this.layoutControlItem12.Control = this.shenchang;
             this.layoutControlItem12.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem12.Location = new System.Drawing.Point(245, 250);
+            this.layoutControlItem12.Location = new System.Drawing.Point(238, 250);
             this.layoutControlItem12.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem12.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem12.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem12.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem12.Text = "身长(cm)";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
@@ -2285,11 +2302,11 @@
             // 
             this.layoutControlItem13.Control = this.lingwei;
             this.layoutControlItem13.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem13.Location = new System.Drawing.Point(245, 290);
+            this.layoutControlItem13.Location = new System.Drawing.Point(238, 290);
             this.layoutControlItem13.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem13.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem13.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem13.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem13.Text = "领围(cm)";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(0, 0);
@@ -2299,11 +2316,11 @@
             // 
             this.layoutControlItem14.Control = this.wanwei;
             this.layoutControlItem14.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem14.Location = new System.Drawing.Point(245, 330);
+            this.layoutControlItem14.Location = new System.Drawing.Point(238, 330);
             this.layoutControlItem14.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem14.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem14.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem14.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem14.Text = "腕围(cm)";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
@@ -2313,11 +2330,11 @@
             // 
             this.layoutControlItem15.Control = this.xiuchang;
             this.layoutControlItem15.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem15.Location = new System.Drawing.Point(245, 370);
+            this.layoutControlItem15.Location = new System.Drawing.Point(238, 370);
             this.layoutControlItem15.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem15.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem15.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem15.Text = "袖长(cm)";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
@@ -2327,11 +2344,11 @@
             // 
             this.layoutControlItem16.Control = this.shangbixiufei;
             this.layoutControlItem16.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem16.Location = new System.Drawing.Point(245, 410);
+            this.layoutControlItem16.Location = new System.Drawing.Point(238, 410);
             this.layoutControlItem16.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem16.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem16.Name = "layoutControlItem16";
-            this.layoutControlItem16.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem16.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem16.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem16.Text = "上臂袖肥(cm)";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
@@ -2341,11 +2358,11 @@
             // 
             this.layoutControlItem9.Control = this.jiankuan;
             this.layoutControlItem9.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem9.Location = new System.Drawing.Point(245, 130);
+            this.layoutControlItem9.Location = new System.Drawing.Point(238, 130);
             this.layoutControlItem9.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem9.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem9.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem9.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem9.Text = "肩宽(cm)";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
@@ -2355,11 +2372,11 @@
             // 
             this.layoutControlItem10.Control = this.yaowei;
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem10.Location = new System.Drawing.Point(245, 170);
+            this.layoutControlItem10.Location = new System.Drawing.Point(238, 170);
             this.layoutControlItem10.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem10.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem10.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem10.Text = "腰围(cm)";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
@@ -2369,11 +2386,11 @@
             // 
             this.layoutControlItem18.Control = this.jianxing;
             this.layoutControlItem18.CustomizationFormText = "肩型";
-            this.layoutControlItem18.Location = new System.Drawing.Point(245, 490);
+            this.layoutControlItem18.Location = new System.Drawing.Point(238, 490);
             this.layoutControlItem18.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem18.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem18.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem18.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem18.Text = "肩型";
             this.layoutControlItem18.TextSize = new System.Drawing.Size(0, 0);
@@ -2383,11 +2400,11 @@
             // 
             this.layoutControlItem29.Control = this.fuxing;
             this.layoutControlItem29.CustomizationFormText = "腹型";
-            this.layoutControlItem29.Location = new System.Drawing.Point(245, 530);
+            this.layoutControlItem29.Location = new System.Drawing.Point(238, 530);
             this.layoutControlItem29.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem29.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem29.Name = "layoutControlItem29";
-            this.layoutControlItem29.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem29.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem29.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem29.Text = "腹型";
             this.layoutControlItem29.TextSize = new System.Drawing.Size(0, 0);
@@ -2397,11 +2414,11 @@
             // 
             this.layoutControlItem28.Control = this.tixing;
             this.layoutControlItem28.CustomizationFormText = "体型";
-            this.layoutControlItem28.Location = new System.Drawing.Point(245, 450);
+            this.layoutControlItem28.Location = new System.Drawing.Point(238, 450);
             this.layoutControlItem28.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem28.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem28.Name = "layoutControlItem28";
-            this.layoutControlItem28.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem28.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem28.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem28.Text = "体型";
             this.layoutControlItem28.TextSize = new System.Drawing.Size(0, 0);
@@ -2409,13 +2426,13 @@
             // 
             // beixingiii
             // 
-            this.beixingiii.Control = this.beixing;
+            this.beixingiii.Control = this.tunxing;
             this.beixingiii.CustomizationFormText = "背型";
-            this.beixingiii.Location = new System.Drawing.Point(245, 570);
+            this.beixingiii.Location = new System.Drawing.Point(238, 570);
             this.beixingiii.MaxSize = new System.Drawing.Size(0, 30);
             this.beixingiii.MinSize = new System.Drawing.Size(102, 30);
             this.beixingiii.Name = "beixingiii";
-            this.beixingiii.Size = new System.Drawing.Size(203, 30);
+            this.beixingiii.Size = new System.Drawing.Size(248, 30);
             this.beixingiii.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.beixingiii.Text = "背型";
             this.beixingiii.TextSize = new System.Drawing.Size(0, 0);
@@ -2425,11 +2442,11 @@
             // 
             this.身体特征.Control = this.shentitezheng;
             this.身体特征.CustomizationFormText = "身体特征";
-            this.身体特征.Location = new System.Drawing.Point(244, 610);
+            this.身体特征.Location = new System.Drawing.Point(237, 650);
             this.身体特征.MaxSize = new System.Drawing.Size(0, 30);
             this.身体特征.MinSize = new System.Drawing.Size(102, 30);
             this.身体特征.Name = "身体特征";
-            this.身体特征.Size = new System.Drawing.Size(204, 30);
+            this.身体特征.Size = new System.Drawing.Size(249, 30);
             this.身体特征.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.身体特征.TextSize = new System.Drawing.Size(0, 0);
             this.身体特征.TextVisible = false;
@@ -2438,11 +2455,11 @@
             // 
             this.layoutControlItem17.Control = this.shengao;
             this.layoutControlItem17.CustomizationFormText = "身高(cm)*";
-            this.layoutControlItem17.Location = new System.Drawing.Point(245, 10);
+            this.layoutControlItem17.Location = new System.Drawing.Point(238, 10);
             this.layoutControlItem17.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem17.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem17.Name = "layoutControlItem17";
-            this.layoutControlItem17.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem17.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem17.Text = "身高(cm)*";
             this.layoutControlItem17.TextSize = new System.Drawing.Size(0, 0);
@@ -2452,11 +2469,11 @@
             // 
             this.layoutControlItem20.Control = this.xiongwei;
             this.layoutControlItem20.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem20.Location = new System.Drawing.Point(245, 90);
+            this.layoutControlItem20.Location = new System.Drawing.Point(238, 90);
             this.layoutControlItem20.MaxSize = new System.Drawing.Size(0, 30);
             this.layoutControlItem20.MinSize = new System.Drawing.Size(102, 30);
             this.layoutControlItem20.Name = "layoutControlItem20";
-            this.layoutControlItem20.Size = new System.Drawing.Size(203, 30);
+            this.layoutControlItem20.Size = new System.Drawing.Size(248, 30);
             this.layoutControlItem20.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem20.Text = "胸围(kg)*";
             this.layoutControlItem20.TextSize = new System.Drawing.Size(0, 0);
@@ -2465,209 +2482,209 @@
             // emptySpaceItem25
             // 
             this.emptySpaceItem25.AllowHotTrack = false;
-            this.emptySpaceItem25.Location = new System.Drawing.Point(83, 600);
+            this.emptySpaceItem25.Location = new System.Drawing.Point(81, 640);
             this.emptySpaceItem25.Name = "emptySpaceItem25";
-            this.emptySpaceItem25.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem25.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem25.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem24
             // 
             this.emptySpaceItem24.AllowHotTrack = false;
             this.emptySpaceItem24.CustomizationFormText = "emptySpaceItem7";
-            this.emptySpaceItem24.Location = new System.Drawing.Point(83, 560);
+            this.emptySpaceItem24.Location = new System.Drawing.Point(81, 560);
             this.emptySpaceItem24.Name = "emptySpaceItem24";
-            this.emptySpaceItem24.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem24.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem24.Text = "emptySpaceItem7";
             this.emptySpaceItem24.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem26
             // 
             this.emptySpaceItem26.AllowHotTrack = false;
-            this.emptySpaceItem26.Location = new System.Drawing.Point(83, 520);
+            this.emptySpaceItem26.Location = new System.Drawing.Point(81, 520);
             this.emptySpaceItem26.Name = "emptySpaceItem26";
-            this.emptySpaceItem26.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem26.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem26.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem27
             // 
             this.emptySpaceItem27.AllowHotTrack = false;
-            this.emptySpaceItem27.Location = new System.Drawing.Point(83, 480);
+            this.emptySpaceItem27.Location = new System.Drawing.Point(81, 480);
             this.emptySpaceItem27.Name = "emptySpaceItem27";
-            this.emptySpaceItem27.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem27.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem27.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem28
             // 
             this.emptySpaceItem28.AllowHotTrack = false;
-            this.emptySpaceItem28.Location = new System.Drawing.Point(83, 440);
+            this.emptySpaceItem28.Location = new System.Drawing.Point(81, 440);
             this.emptySpaceItem28.Name = "emptySpaceItem28";
-            this.emptySpaceItem28.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem28.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem28.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem29
             // 
             this.emptySpaceItem29.AllowHotTrack = false;
-            this.emptySpaceItem29.Location = new System.Drawing.Point(83, 400);
+            this.emptySpaceItem29.Location = new System.Drawing.Point(81, 400);
             this.emptySpaceItem29.Name = "emptySpaceItem29";
-            this.emptySpaceItem29.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem29.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem29.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem30
             // 
             this.emptySpaceItem30.AllowHotTrack = false;
-            this.emptySpaceItem30.Location = new System.Drawing.Point(83, 360);
+            this.emptySpaceItem30.Location = new System.Drawing.Point(81, 360);
             this.emptySpaceItem30.Name = "emptySpaceItem30";
-            this.emptySpaceItem30.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem30.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem30.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem31
             // 
             this.emptySpaceItem31.AllowHotTrack = false;
-            this.emptySpaceItem31.Location = new System.Drawing.Point(83, 320);
+            this.emptySpaceItem31.Location = new System.Drawing.Point(81, 320);
             this.emptySpaceItem31.Name = "emptySpaceItem31";
-            this.emptySpaceItem31.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem31.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem31.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem32
             // 
             this.emptySpaceItem32.AllowHotTrack = false;
-            this.emptySpaceItem32.Location = new System.Drawing.Point(83, 280);
+            this.emptySpaceItem32.Location = new System.Drawing.Point(81, 280);
             this.emptySpaceItem32.Name = "emptySpaceItem32";
-            this.emptySpaceItem32.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem32.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem32.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem33
             // 
             this.emptySpaceItem33.AllowHotTrack = false;
-            this.emptySpaceItem33.Location = new System.Drawing.Point(83, 240);
+            this.emptySpaceItem33.Location = new System.Drawing.Point(81, 240);
             this.emptySpaceItem33.Name = "emptySpaceItem33";
-            this.emptySpaceItem33.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem33.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem33.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem34
             // 
             this.emptySpaceItem34.AllowHotTrack = false;
-            this.emptySpaceItem34.Location = new System.Drawing.Point(83, 200);
+            this.emptySpaceItem34.Location = new System.Drawing.Point(81, 200);
             this.emptySpaceItem34.Name = "emptySpaceItem34";
-            this.emptySpaceItem34.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem34.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem34.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem35
             // 
             this.emptySpaceItem35.AllowHotTrack = false;
-            this.emptySpaceItem35.Location = new System.Drawing.Point(83, 160);
+            this.emptySpaceItem35.Location = new System.Drawing.Point(81, 160);
             this.emptySpaceItem35.Name = "emptySpaceItem35";
-            this.emptySpaceItem35.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem35.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem35.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem36
             // 
             this.emptySpaceItem36.AllowHotTrack = false;
-            this.emptySpaceItem36.Location = new System.Drawing.Point(83, 120);
+            this.emptySpaceItem36.Location = new System.Drawing.Point(81, 120);
             this.emptySpaceItem36.Name = "emptySpaceItem36";
-            this.emptySpaceItem36.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem36.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem36.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem37
             // 
             this.emptySpaceItem37.AllowHotTrack = false;
-            this.emptySpaceItem37.Location = new System.Drawing.Point(83, 80);
+            this.emptySpaceItem37.Location = new System.Drawing.Point(81, 80);
             this.emptySpaceItem37.Name = "emptySpaceItem37";
-            this.emptySpaceItem37.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem37.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem37.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem39
             // 
             this.emptySpaceItem39.AllowHotTrack = false;
-            this.emptySpaceItem39.Location = new System.Drawing.Point(83, 650);
+            this.emptySpaceItem39.Location = new System.Drawing.Point(81, 690);
             this.emptySpaceItem39.Name = "emptySpaceItem39";
-            this.emptySpaceItem39.Size = new System.Drawing.Size(108, 44);
+            this.emptySpaceItem39.Size = new System.Drawing.Size(105, 44);
             this.emptySpaceItem39.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem38
             // 
             this.emptySpaceItem38.AllowHotTrack = false;
-            this.emptySpaceItem38.Location = new System.Drawing.Point(83, 40);
+            this.emptySpaceItem38.Location = new System.Drawing.Point(81, 40);
             this.emptySpaceItem38.Name = "emptySpaceItem38";
-            this.emptySpaceItem38.Size = new System.Drawing.Size(365, 10);
+            this.emptySpaceItem38.Size = new System.Drawing.Size(405, 10);
             this.emptySpaceItem38.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem42
             // 
             this.emptySpaceItem42.AllowHotTrack = false;
-            this.emptySpaceItem42.Location = new System.Drawing.Point(83, 694);
+            this.emptySpaceItem42.Location = new System.Drawing.Point(81, 734);
             this.emptySpaceItem42.Name = "emptySpaceItem42";
-            this.emptySpaceItem42.Size = new System.Drawing.Size(182, 10);
+            this.emptySpaceItem42.Size = new System.Drawing.Size(177, 10);
             this.emptySpaceItem42.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem41
             // 
             this.emptySpaceItem41.AllowHotTrack = false;
-            this.emptySpaceItem41.Location = new System.Drawing.Point(83, 640);
+            this.emptySpaceItem41.Location = new System.Drawing.Point(81, 680);
             this.emptySpaceItem41.Name = "emptySpaceItem41";
-            this.emptySpaceItem41.Size = new System.Drawing.Size(396, 10);
+            this.emptySpaceItem41.Size = new System.Drawing.Size(385, 10);
             this.emptySpaceItem41.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem30
             // 
             this.layoutControlItem30.Control = this.simpleButton3;
-            this.layoutControlItem30.Location = new System.Drawing.Point(191, 650);
+            this.layoutControlItem30.Location = new System.Drawing.Point(186, 690);
             this.layoutControlItem30.Name = "layoutControlItem30";
-            this.layoutControlItem30.Size = new System.Drawing.Size(288, 44);
+            this.layoutControlItem30.Size = new System.Drawing.Size(280, 44);
             this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem30.TextVisible = false;
             // 
             // layoutControlItem57
             // 
             this.layoutControlItem57.Control = this.label28;
-            this.layoutControlItem57.Location = new System.Drawing.Point(83, 10);
+            this.layoutControlItem57.Location = new System.Drawing.Point(81, 10);
             this.layoutControlItem57.Name = "layoutControlItem57";
-            this.layoutControlItem57.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem57.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem57.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem57.TextVisible = false;
             // 
             // layoutControlItem58
             // 
             this.layoutControlItem58.Control = this.label29;
-            this.layoutControlItem58.Location = new System.Drawing.Point(220, 10);
+            this.layoutControlItem58.Location = new System.Drawing.Point(214, 10);
             this.layoutControlItem58.Name = "layoutControlItem58";
-            this.layoutControlItem58.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem58.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem58.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem58.TextVisible = false;
             // 
             // layoutControlItem59
             // 
             this.layoutControlItem59.Control = this.label30;
-            this.layoutControlItem59.Location = new System.Drawing.Point(83, 50);
+            this.layoutControlItem59.Location = new System.Drawing.Point(81, 50);
             this.layoutControlItem59.Name = "layoutControlItem59";
-            this.layoutControlItem59.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem59.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem59.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem59.TextVisible = false;
             // 
             // layoutControlItem60
             // 
             this.layoutControlItem60.Control = this.label31;
-            this.layoutControlItem60.Location = new System.Drawing.Point(220, 50);
+            this.layoutControlItem60.Location = new System.Drawing.Point(214, 50);
             this.layoutControlItem60.Name = "layoutControlItem60";
-            this.layoutControlItem60.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem60.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem60.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem60.TextVisible = false;
             // 
             // layoutControlItem61
             // 
             this.layoutControlItem61.Control = this.label32;
-            this.layoutControlItem61.Location = new System.Drawing.Point(83, 90);
+            this.layoutControlItem61.Location = new System.Drawing.Point(81, 90);
             this.layoutControlItem61.Name = "layoutControlItem61";
-            this.layoutControlItem61.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem61.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem61.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem61.TextVisible = false;
             // 
             // layoutControlItem62
             // 
             this.layoutControlItem62.Control = this.label33;
-            this.layoutControlItem62.Location = new System.Drawing.Point(220, 90);
+            this.layoutControlItem62.Location = new System.Drawing.Point(214, 90);
             this.layoutControlItem62.Name = "layoutControlItem62";
-            this.layoutControlItem62.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem62.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem62.Text = "*";
             this.layoutControlItem62.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem62.TextVisible = false;
@@ -2675,162 +2692,162 @@
             // layoutControlItem63
             // 
             this.layoutControlItem63.Control = this.label34;
-            this.layoutControlItem63.Location = new System.Drawing.Point(83, 130);
+            this.layoutControlItem63.Location = new System.Drawing.Point(81, 130);
             this.layoutControlItem63.Name = "layoutControlItem63";
-            this.layoutControlItem63.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem63.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem63.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem63.TextVisible = false;
             // 
             // layoutControlItem65
             // 
             this.layoutControlItem65.Control = this.label36;
-            this.layoutControlItem65.Location = new System.Drawing.Point(83, 170);
+            this.layoutControlItem65.Location = new System.Drawing.Point(81, 170);
             this.layoutControlItem65.Name = "layoutControlItem65";
-            this.layoutControlItem65.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem65.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem65.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem65.TextVisible = false;
             // 
             // layoutControlItem67
             // 
             this.layoutControlItem67.Control = this.label38;
-            this.layoutControlItem67.Location = new System.Drawing.Point(83, 210);
+            this.layoutControlItem67.Location = new System.Drawing.Point(81, 210);
             this.layoutControlItem67.Name = "layoutControlItem67";
-            this.layoutControlItem67.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem67.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem67.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem67.TextVisible = false;
             // 
             // layoutControlItem69
             // 
             this.layoutControlItem69.Control = this.label40;
-            this.layoutControlItem69.Location = new System.Drawing.Point(83, 250);
+            this.layoutControlItem69.Location = new System.Drawing.Point(81, 250);
             this.layoutControlItem69.Name = "layoutControlItem69";
-            this.layoutControlItem69.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem69.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem69.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem69.TextVisible = false;
             // 
             // layoutControlItem71
             // 
             this.layoutControlItem71.Control = this.label42;
-            this.layoutControlItem71.Location = new System.Drawing.Point(83, 290);
+            this.layoutControlItem71.Location = new System.Drawing.Point(81, 290);
             this.layoutControlItem71.Name = "layoutControlItem71";
-            this.layoutControlItem71.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem71.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem71.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem71.TextVisible = false;
             // 
             // layoutControlItem73
             // 
             this.layoutControlItem73.Control = this.label44;
-            this.layoutControlItem73.Location = new System.Drawing.Point(83, 330);
+            this.layoutControlItem73.Location = new System.Drawing.Point(81, 330);
             this.layoutControlItem73.Name = "layoutControlItem73";
-            this.layoutControlItem73.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem73.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem73.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem73.TextVisible = false;
             // 
             // layoutControlItem64
             // 
             this.layoutControlItem64.Control = this.label35;
-            this.layoutControlItem64.Location = new System.Drawing.Point(83, 370);
+            this.layoutControlItem64.Location = new System.Drawing.Point(81, 370);
             this.layoutControlItem64.Name = "layoutControlItem64";
-            this.layoutControlItem64.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem64.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem64.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem64.TextVisible = false;
             // 
             // layoutControlItem66
             // 
             this.layoutControlItem66.Control = this.label37;
-            this.layoutControlItem66.Location = new System.Drawing.Point(83, 410);
+            this.layoutControlItem66.Location = new System.Drawing.Point(81, 410);
             this.layoutControlItem66.Name = "layoutControlItem66";
-            this.layoutControlItem66.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem66.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem66.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem66.TextVisible = false;
             // 
             // layoutControlItem68
             // 
             this.layoutControlItem68.Control = this.label39;
-            this.layoutControlItem68.Location = new System.Drawing.Point(83, 450);
+            this.layoutControlItem68.Location = new System.Drawing.Point(81, 450);
             this.layoutControlItem68.Name = "layoutControlItem68";
-            this.layoutControlItem68.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem68.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem68.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem68.TextVisible = false;
             // 
             // layoutControlItem70
             // 
             this.layoutControlItem70.Control = this.label41;
-            this.layoutControlItem70.Location = new System.Drawing.Point(83, 490);
+            this.layoutControlItem70.Location = new System.Drawing.Point(81, 490);
             this.layoutControlItem70.Name = "layoutControlItem70";
-            this.layoutControlItem70.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem70.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem70.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem70.TextVisible = false;
             // 
             // layoutControlItem72
             // 
             this.layoutControlItem72.Control = this.label43;
-            this.layoutControlItem72.Location = new System.Drawing.Point(83, 530);
+            this.layoutControlItem72.Location = new System.Drawing.Point(81, 530);
             this.layoutControlItem72.Name = "layoutControlItem72";
-            this.layoutControlItem72.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem72.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem72.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem72.TextVisible = false;
             // 
             // layoutControlItem74
             // 
             this.layoutControlItem74.Control = this.label45;
-            this.layoutControlItem74.Location = new System.Drawing.Point(83, 570);
+            this.layoutControlItem74.Location = new System.Drawing.Point(81, 570);
             this.layoutControlItem74.Name = "layoutControlItem74";
-            this.layoutControlItem74.Size = new System.Drawing.Size(137, 30);
+            this.layoutControlItem74.Size = new System.Drawing.Size(133, 30);
             this.layoutControlItem74.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem74.TextVisible = false;
             // 
             // layoutControlItem75
             // 
             this.layoutControlItem75.Control = this.label46;
-            this.layoutControlItem75.Location = new System.Drawing.Point(83, 610);
+            this.layoutControlItem75.Location = new System.Drawing.Point(81, 650);
             this.layoutControlItem75.Name = "layoutControlItem75";
-            this.layoutControlItem75.Size = new System.Drawing.Size(161, 30);
+            this.layoutControlItem75.Size = new System.Drawing.Size(156, 30);
             this.layoutControlItem75.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem75.TextVisible = false;
             // 
             // layoutControlItem76
             // 
             this.layoutControlItem76.Control = this.label47;
-            this.layoutControlItem76.Location = new System.Drawing.Point(220, 450);
+            this.layoutControlItem76.Location = new System.Drawing.Point(214, 450);
             this.layoutControlItem76.Name = "layoutControlItem76";
-            this.layoutControlItem76.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem76.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem76.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem76.TextVisible = false;
             // 
             // layoutControlItem77
             // 
             this.layoutControlItem77.Control = this.label48;
-            this.layoutControlItem77.Location = new System.Drawing.Point(220, 490);
+            this.layoutControlItem77.Location = new System.Drawing.Point(214, 490);
             this.layoutControlItem77.Name = "layoutControlItem77";
-            this.layoutControlItem77.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem77.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem77.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem77.TextVisible = false;
             // 
             // layoutControlItem78
             // 
             this.layoutControlItem78.Control = this.label49;
-            this.layoutControlItem78.Location = new System.Drawing.Point(220, 530);
+            this.layoutControlItem78.Location = new System.Drawing.Point(214, 530);
             this.layoutControlItem78.Name = "layoutControlItem78";
-            this.layoutControlItem78.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem78.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem78.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem78.TextVisible = false;
             // 
             // layoutControlItem79
             // 
             this.layoutControlItem79.Control = this.label50;
-            this.layoutControlItem79.Location = new System.Drawing.Point(220, 570);
+            this.layoutControlItem79.Location = new System.Drawing.Point(214, 570);
             this.layoutControlItem79.Name = "layoutControlItem79";
-            this.layoutControlItem79.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem79.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem79.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem79.TextVisible = false;
             // 
             // emptySpaceItem43
             // 
             this.emptySpaceItem43.AllowHotTrack = false;
-            this.emptySpaceItem43.Location = new System.Drawing.Point(448, 0);
+            this.emptySpaceItem43.Location = new System.Drawing.Point(486, 0);
             this.emptySpaceItem43.Name = "emptySpaceItem43";
-            this.emptySpaceItem43.Size = new System.Drawing.Size(177, 640);
+            this.emptySpaceItem43.Size = new System.Drawing.Size(122, 680);
             this.emptySpaceItem43.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem44
@@ -2838,85 +2855,85 @@
             this.emptySpaceItem44.AllowHotTrack = false;
             this.emptySpaceItem44.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem44.Name = "emptySpaceItem44";
-            this.emptySpaceItem44.Size = new System.Drawing.Size(83, 704);
+            this.emptySpaceItem44.Size = new System.Drawing.Size(81, 744);
             this.emptySpaceItem44.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem40
             // 
             this.emptySpaceItem40.AllowHotTrack = false;
-            this.emptySpaceItem40.Location = new System.Drawing.Point(479, 640);
+            this.emptySpaceItem40.Location = new System.Drawing.Point(466, 680);
             this.emptySpaceItem40.Name = "emptySpaceItem40";
-            this.emptySpaceItem40.Size = new System.Drawing.Size(146, 54);
+            this.emptySpaceItem40.Size = new System.Drawing.Size(142, 54);
             this.emptySpaceItem40.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem46
             // 
             this.emptySpaceItem46.AllowHotTrack = false;
-            this.emptySpaceItem46.Location = new System.Drawing.Point(265, 694);
+            this.emptySpaceItem46.Location = new System.Drawing.Point(258, 734);
             this.emptySpaceItem46.Name = "emptySpaceItem46";
-            this.emptySpaceItem46.Size = new System.Drawing.Size(360, 10);
+            this.emptySpaceItem46.Size = new System.Drawing.Size(350, 10);
             this.emptySpaceItem46.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem80
             // 
             this.layoutControlItem80.Control = this.label51;
-            this.layoutControlItem80.Location = new System.Drawing.Point(220, 370);
+            this.layoutControlItem80.Location = new System.Drawing.Point(214, 370);
             this.layoutControlItem80.Name = "layoutControlItem80";
-            this.layoutControlItem80.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem80.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem80.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem80.TextVisible = false;
             // 
             // layoutControlItem81
             // 
             this.layoutControlItem81.Control = this.label52;
-            this.layoutControlItem81.Location = new System.Drawing.Point(220, 410);
+            this.layoutControlItem81.Location = new System.Drawing.Point(214, 410);
             this.layoutControlItem81.Name = "layoutControlItem81";
-            this.layoutControlItem81.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem81.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem81.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem81.TextVisible = false;
             // 
             // layoutControlItem82
             // 
             this.layoutControlItem82.Control = this.label53;
-            this.layoutControlItem82.Location = new System.Drawing.Point(220, 330);
+            this.layoutControlItem82.Location = new System.Drawing.Point(214, 330);
             this.layoutControlItem82.Name = "layoutControlItem82";
-            this.layoutControlItem82.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem82.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem82.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem82.TextVisible = false;
             // 
             // layoutControlItem83
             // 
             this.layoutControlItem83.Control = this.label54;
-            this.layoutControlItem83.Location = new System.Drawing.Point(220, 290);
+            this.layoutControlItem83.Location = new System.Drawing.Point(214, 290);
             this.layoutControlItem83.Name = "layoutControlItem83";
-            this.layoutControlItem83.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem83.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem83.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem83.TextVisible = false;
             // 
             // layoutControlItem84
             // 
             this.layoutControlItem84.Control = this.label55;
-            this.layoutControlItem84.Location = new System.Drawing.Point(220, 250);
+            this.layoutControlItem84.Location = new System.Drawing.Point(214, 250);
             this.layoutControlItem84.Name = "layoutControlItem84";
-            this.layoutControlItem84.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem84.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem84.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem84.TextVisible = false;
             // 
             // layoutControlItem85
             // 
             this.layoutControlItem85.Control = this.label56;
-            this.layoutControlItem85.Location = new System.Drawing.Point(220, 210);
+            this.layoutControlItem85.Location = new System.Drawing.Point(214, 210);
             this.layoutControlItem85.Name = "layoutControlItem85";
-            this.layoutControlItem85.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem85.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem85.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem85.TextVisible = false;
             // 
             // layoutControlItem86
             // 
             this.layoutControlItem86.Control = this.label57;
-            this.layoutControlItem86.Location = new System.Drawing.Point(220, 170);
+            this.layoutControlItem86.Location = new System.Drawing.Point(214, 170);
             this.layoutControlItem86.Name = "layoutControlItem86";
-            this.layoutControlItem86.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem86.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem86.Text = " ";
             this.layoutControlItem86.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem86.TextVisible = false;
@@ -2924,9 +2941,9 @@
             // layoutControlItem87
             // 
             this.layoutControlItem87.Control = this.label58;
-            this.layoutControlItem87.Location = new System.Drawing.Point(220, 130);
+            this.layoutControlItem87.Location = new System.Drawing.Point(214, 130);
             this.layoutControlItem87.Name = "layoutControlItem87";
-            this.layoutControlItem87.Size = new System.Drawing.Size(25, 30);
+            this.layoutControlItem87.Size = new System.Drawing.Size(24, 30);
             this.layoutControlItem87.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem87.TextVisible = false;
             // 
@@ -2958,6 +2975,77 @@
             this.layoutControlItem39.Text = "layoutControlItem38";
             this.layoutControlItem39.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem39.TextVisible = false;
+            // 
+            // label59
+            // 
+            this.label59.Font = new System.Drawing.Font("宋体", 15F);
+            this.label59.Location = new System.Drawing.Point(93, 580);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(129, 26);
+            this.label59.TabIndex = 18;
+            this.label59.Text = "胸背型(cm)";
+            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // layoutControlItem88
+            // 
+            this.layoutControlItem88.Control = this.label59;
+            this.layoutControlItem88.Location = new System.Drawing.Point(81, 610);
+            this.layoutControlItem88.Name = "layoutControlItem88";
+            this.layoutControlItem88.Size = new System.Drawing.Size(133, 30);
+            this.layoutControlItem88.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem88.TextVisible = false;
+            // 
+            // label60
+            // 
+            this.label60.Font = new System.Drawing.Font("宋体", 15F);
+            this.label60.ForeColor = System.Drawing.Color.Red;
+            this.label60.Location = new System.Drawing.Point(226, 580);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(20, 26);
+            this.label60.TabIndex = 19;
+            this.label60.Text = "*";
+            // 
+            // layoutControlItem89
+            // 
+            this.layoutControlItem89.Control = this.label60;
+            this.layoutControlItem89.Location = new System.Drawing.Point(214, 610);
+            this.layoutControlItem89.Name = "layoutControlItem89";
+            this.layoutControlItem89.Size = new System.Drawing.Size(24, 30);
+            this.layoutControlItem89.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem89.TextVisible = false;
+            // 
+            // beixing
+            // 
+            this.beixing.Font = new System.Drawing.Font("宋体", 14F);
+            this.beixing.FormattingEnabled = true;
+            this.beixing.Items.AddRange(new object[] {
+            "挺胸",
+            "直背",
+            "驼背"});
+            this.beixing.Location = new System.Drawing.Point(250, 580);
+            this.beixing.Name = "beixing";
+            this.beixing.Size = new System.Drawing.Size(244, 27);
+            this.beixing.TabIndex = 20;
+            // 
+            // layoutControlItem90
+            // 
+            this.layoutControlItem90.Control = this.beixing;
+            this.layoutControlItem90.Location = new System.Drawing.Point(238, 610);
+            this.layoutControlItem90.MaxSize = new System.Drawing.Size(0, 30);
+            this.layoutControlItem90.MinSize = new System.Drawing.Size(102, 30);
+            this.layoutControlItem90.Name = "layoutControlItem90";
+            this.layoutControlItem90.Size = new System.Drawing.Size(248, 30);
+            this.layoutControlItem90.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem90.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem90.TextVisible = false;
+            // 
+            // emptySpaceItem47
+            // 
+            this.emptySpaceItem47.AllowHotTrack = false;
+            this.emptySpaceItem47.Location = new System.Drawing.Point(81, 600);
+            this.emptySpaceItem47.Name = "emptySpaceItem47";
+            this.emptySpaceItem47.Size = new System.Drawing.Size(405, 10);
+            this.emptySpaceItem47.TextSize = new System.Drawing.Size(0, 0);
             // 
             // CreateCustomer
             // 
@@ -3115,6 +3203,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem86)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem87)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem88)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem89)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem90)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem47)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3349,12 +3441,19 @@
         public System.Windows.Forms.ComboBox jianxing;
         public System.Windows.Forms.ComboBox fuxing;
         public System.Windows.Forms.ComboBox tixing;
-        public System.Windows.Forms.ComboBox beixing;
+        public System.Windows.Forms.ComboBox tunxing;
         public System.Windows.Forms.ComboBox shentitezheng;
         public System.Windows.Forms.TextBox shengao;
         public System.Windows.Forms.TextBox xiongwei;
         public System.Windows.Forms.ComboBox shengfen;
         public System.Windows.Forms.ComboBox qvyv;
         public System.Windows.Forms.ComboBox chengshi;
+        public System.Windows.Forms.ComboBox beixing;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label59;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem88;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem89;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem90;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem47;
     }
 }
