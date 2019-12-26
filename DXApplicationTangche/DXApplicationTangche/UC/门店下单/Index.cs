@@ -189,10 +189,14 @@ namespace mendian
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
-            //if (!Directory.Exists("C:\xml\"))
-            //{
-            //    Directory.CreateDirectory(@"xml");
-            //}
+            if (!Directory.Exists(@"xml"))
+            {
+                Directory.CreateDirectory(@"xml");
+                Directory.CreateDirectory(@"pic");
+                DealXML.ObjectToXMLFile(new List<StylePic>() { new StylePic("1","1","1","1")}, @"xml\stylepicxml.xml", Encoding.UTF8);
+                DealXML.ObjectToXMLFile(new List<MianLiaoPic>() { new MianLiaoPic("1", "1", "1", "1","1") }, @"xml\mlpicxml.xml", Encoding.UTF8);
+                DealXML.ObjectToXMLFile(new List<SheJiDianPic>() { new SheJiDianPic("1", "1", "1", "1","1") }, @"xml\shjdpicxml.xml", Encoding.UTF8);
+            }
             //款式图片更新
             StylePicList spl = new StylePicList();
             List<StylePic> styleOldlist = DealXML.XMLFlieToObject<List<StylePic>>(@"xml\stylepicxml.xml", Encoding.UTF8);

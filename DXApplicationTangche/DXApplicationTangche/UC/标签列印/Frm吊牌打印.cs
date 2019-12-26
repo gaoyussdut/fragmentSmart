@@ -98,24 +98,26 @@ namespace DiaoPaiDaYin
             this.cycc = ImpService.GetChengYiChiCun(this.impdr["SYS_STYLE_ID"].ToString());
             
         }
-
-        private void orderno_TextChanged(object sender, EventArgs e)
+        private void orderno_KeyDown(object sender, KeyEventArgs e)
         {
-            try
+            if (e.KeyValue == 13) //判断是回车键
             {
-                this.impdr = ImpService.GetDataRowFromOrder(this.orderno.Text);
-                this.logdt = ImpService.GetOrder(this.orderno.Text);
-                gridControl1.DataSource = logdt;
-                this.ordernumber = logdt.Rows.Count;
-                //this.mianliaohao.Text = this.impdr["MATERIAL_CODE"].ToString();
-                //this.chengfen.Text = this.impdr["MATERIAL_COMPOSITION"].ToString();
-                //this.shoujia.Text = "¥" + this.impdr["STYLE_SHOP_TOTAL_PRICE"].ToString();
-                this.cycc = ImpService.GetChengYiChiCun(this.impdr["SYS_STYLE_ID"].ToString());
+                try
+                {
+                    this.impdr = ImpService.GetDataRowFromOrder(this.orderno.Text);
+                    this.logdt = ImpService.GetOrder(this.orderno.Text);
+                    gridControl1.DataSource = logdt;
+                    this.ordernumber = logdt.Rows.Count;
+                    //this.mianliaohao.Text = this.impdr["MATERIAL_CODE"].ToString();
+                    //this.chengfen.Text = this.impdr["MATERIAL_COMPOSITION"].ToString();
+                    //this.shoujia.Text = "¥" + this.impdr["STYLE_SHOP_TOTAL_PRICE"].ToString();
+                    this.cycc = ImpService.GetChengYiChiCun(this.impdr["SYS_STYLE_ID"].ToString());
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("错误信息: " + ex.Message);
+                }
             }
-            catch
-            {
-            }
-
         }
     }
 

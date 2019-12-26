@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm吊牌打印));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -48,7 +49,6 @@
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -76,6 +76,24 @@
             this.layoutControl1.Size = new System.Drawing.Size(877, 784);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // tileBar1
+            // 
+            this.tileBar1.AppearanceGroupText.BackColor = System.Drawing.Color.Black;
+            this.tileBar1.AppearanceGroupText.Options.UseBackColor = true;
+            this.tileBar1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tileBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileBar1.BackgroundImage")));
+            this.tileBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tileBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar1.Location = new System.Drawing.Point(346, 653);
+            this.tileBar1.Name = "tileBar1";
+            this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar1.SelectionColor = System.Drawing.SystemColors.Control;
+            this.tileBar1.Size = new System.Drawing.Size(164, 119);
+            this.tileBar1.TabIndex = 29;
+            this.tileBar1.Text = "tileBar1";
+            this.tileBar1.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // label1
             // 
@@ -183,7 +201,7 @@
             this.orderno.Name = "orderno";
             this.orderno.Size = new System.Drawing.Size(734, 43);
             this.orderno.TabIndex = 19;
-            this.orderno.TextChanged += new System.EventHandler(this.orderno_TextChanged);
+            this.orderno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.orderno_KeyDown);
             // 
             // Root
             // 
@@ -246,24 +264,6 @@
             this.layoutControlItem3.Size = new System.Drawing.Size(119, 47);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
-            // 
-            // tileBar1
-            // 
-            this.tileBar1.AppearanceGroupText.BackColor = System.Drawing.Color.Black;
-            this.tileBar1.AppearanceGroupText.Options.UseBackColor = true;
-            this.tileBar1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.tileBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tileBar1.BackgroundImage")));
-            this.tileBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tileBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            this.tileBar1.Location = new System.Drawing.Point(346, 653);
-            this.tileBar1.Name = "tileBar1";
-            this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.SelectionColor = System.Drawing.SystemColors.Control;
-            this.tileBar1.Size = new System.Drawing.Size(164, 119);
-            this.tileBar1.TabIndex = 29;
-            this.tileBar1.Text = "tileBar1";
-            this.tileBar1.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // layoutControlItem4
             // 

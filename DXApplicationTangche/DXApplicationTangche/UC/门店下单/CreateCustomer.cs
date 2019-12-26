@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class CreateCustomer : Form
+    public partial class CreateCustomer : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
         public static int cUSTOMER_ID { get; set; }
         public String sEX_CD;

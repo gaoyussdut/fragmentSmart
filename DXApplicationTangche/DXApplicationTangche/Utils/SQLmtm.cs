@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DiaoPaiDaYin
 {
@@ -21,9 +22,9 @@ namespace DiaoPaiDaYin
             {
                 int s = cmd.ExecuteNonQuery();
             }
-            catch
+            catch(Exception ex)
             {
-                ;
+                MessageBox.Show("错误信息: " + ex.Message);
             }
             finally
             {
@@ -44,9 +45,9 @@ namespace DiaoPaiDaYin
                 MySqlDataAdapter ADp = new MySqlDataAdapter(SQL, AConn);
                 ADp.Fill(ADt);
             }
-            catch
+            catch(Exception ex)
             {
-                ;
+                MessageBox.Show("错误信息: " + ex.Message);
             }
             finally
             {
@@ -128,7 +129,7 @@ namespace DiaoPaiDaYin
             }
             catch (Exception err)
             {
-                ;
+                MessageBox.Show("错误信息: " + err.Message);
             }
             finally
             {
