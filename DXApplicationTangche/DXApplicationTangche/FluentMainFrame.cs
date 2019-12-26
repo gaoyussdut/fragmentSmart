@@ -65,5 +65,10 @@ namespace DXApplicationTangche
         {
             this.initPanel(new Index());
         }
+
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new QueryTag());
+        }
     }
 }
