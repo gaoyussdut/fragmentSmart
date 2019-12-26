@@ -19,6 +19,38 @@ namespace DXApplicationTangche.UC.库存.service
         /// </summary>
         /// <param name="LOG_ID"></param>
         /// <returns></returns>
+        public static BarCodeInfoDto getSaleBarCodeInfo(String LOG_ID)
+        {
+            //  读取订单信息
+            String sql = "select Id,LOG_ID,ORDER_ID,CUSTOMER_ID,SHOP_ID,SHOP_NAME,STYLE_ID,ORDER_DATE,STYLE_NAME_CN,SYTLE_YEAR,SYTLE_SEASON,REF_STYLE_ID,SYTLE_FABRIC_ID,MATERIAL_NAME_CN,MATERIAL_COLOR,STYLE_PUBLISH_CATEGORY_CD,ORDER_NO from a_product_log_p " +
+                "where LOG_ID = '" + LOG_ID + "'";
+
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            if (dt.Rows.Count == 0)
+            {
+                sql = "select Id,LOG_ID,ORDER_ID,CUSTOMER_ID,SHOP_ID,SHOP_NAME,STYLE_ID,ORDER_DATE,STYLE_NAME_CN,SYTLE_YEAR,SYTLE_SEASON,REF_STYLE_ID,SYTLE_FABRIC_ID,MATERIAL_NAME_CN,MATERIAL_COLOR,STYLE_PUBLISH_CATEGORY_CD,ORDER_NO from a_product_log_p " +
+                "where LOG_ID = '" + LOG_ID + "'";
+                dt = SQLmtm.GetDataTable(sql);
+                if (dt.Rows.Count == 0)
+                {
+                    throw new Exception("系统中无本产品标签列印信息");
+                }
+                else
+                {
+                    throw new Exception("本商品未出库");
+                }
+            }
+            else
+            {
+                return new BarCodeInfoDto(dt);
+            }
+        }
+
+        /// <summary>
+        /// 门店验货扫描取barcode方法
+        /// </summary>
+        /// <param name="LOG_ID"></param>
+        /// <returns></returns>
         public static BarCodeInfoDto getStockInBarCodeInfo(String LOG_ID) {
             //  读取订单信息
             String sql = "select Id,LOG_ID,ORDER_ID,CUSTOMER_ID,SHOP_ID,SHOP_NAME,STYLE_ID,ORDER_DATE,STYLE_NAME_CN,SYTLE_YEAR,SYTLE_SEASON,REF_STYLE_ID,SYTLE_FABRIC_ID,MATERIAL_NAME_CN,MATERIAL_COLOR,STYLE_PUBLISH_CATEGORY_CD,ORDER_NO from a_product_log_p " +

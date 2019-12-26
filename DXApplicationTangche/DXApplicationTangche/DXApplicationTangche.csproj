@@ -248,12 +248,6 @@
     <Compile Include="UC\门店下单\StyleCard.Designer.cs">
       <DependentUpon>StyleCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\UC\XtraUC扫码销售出库.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\门店下单\UC\XtraUC扫码销售出库.Designer.cs">
-      <DependentUpon>XtraUC扫码销售出库.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC\门店下单\WaitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +374,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\Seagull.BarTender.Print.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UC\门店下单\UC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
