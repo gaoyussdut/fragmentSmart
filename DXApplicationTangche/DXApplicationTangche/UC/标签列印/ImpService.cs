@@ -174,7 +174,7 @@ namespace DiaoPaiDaYin
 
         public static DataTable GetOrder(String orderno)
         {
-            String sql = "SELECT * FROM a_product_log_p WHERE ORDER_NO='"+orderno+"'";
+            String sql = "SELECT * FROM v_order_p WHERE ORDER_NO='" + orderno+"'";
             return SQLmtm.GetDataTable(sql);
         }
     }
