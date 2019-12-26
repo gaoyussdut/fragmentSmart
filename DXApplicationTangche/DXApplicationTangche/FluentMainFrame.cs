@@ -76,5 +76,10 @@ namespace DXApplicationTangche
         {
             this.initPanel(new XtraForm门店验货());
         }
+
+        private void accordionControlElement4_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new NotPrinted());
+        }
     }
 }

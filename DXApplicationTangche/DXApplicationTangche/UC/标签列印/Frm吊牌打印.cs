@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Demos.util;
+using mendian;
 using Seagull.BarTender.Print;
 
 namespace DiaoPaiDaYin

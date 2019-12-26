@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class Index : DevExpress.XtraBars.ToolbarForm.ToolbarForm
+    public partial class Index : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static int page { get; set; } = 1;
         public static String billid { get; set; }

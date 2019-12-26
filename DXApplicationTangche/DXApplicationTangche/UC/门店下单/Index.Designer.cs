@@ -72,12 +72,19 @@ namespace mendian
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.toolbarFormControl1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -101,8 +108,9 @@ namespace mendian
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager
@@ -122,20 +130,20 @@ namespace mendian
             this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.panel1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 30);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 166);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(749, 433, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1248, 844);
+            this.layoutControl1.Size = new System.Drawing.Size(1248, 682);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.gridControl2);
-            this.panel4.Location = new System.Drawing.Point(12, 359);
+            this.panel4.Location = new System.Drawing.Point(12, 357);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(286, 473);
+            this.panel4.Size = new System.Drawing.Size(286, 313);
             this.panel4.TabIndex = 13;
             // 
             // gridControl2
@@ -144,7 +152,7 @@ namespace mendian
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(286, 473);
+            this.gridControl2.Size = new System.Drawing.Size(286, 313);
             this.gridControl2.TabIndex = 47;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -197,17 +205,17 @@ namespace mendian
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.SkyBlue;
-            this.label5.Location = new System.Drawing.Point(302, 791);
+            this.label5.Location = new System.Drawing.Point(302, 639);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(463, 41);
+            this.label5.Size = new System.Drawing.Size(463, 31);
             this.label5.TabIndex = 10;
             // 
             // fenYeLan1
             // 
             this.fenYeLan1.BackColor = System.Drawing.Color.SkyBlue;
-            this.fenYeLan1.Location = new System.Drawing.Point(769, 791);
+            this.fenYeLan1.Location = new System.Drawing.Point(769, 639);
             this.fenYeLan1.Name = "fenYeLan1";
-            this.fenYeLan1.Size = new System.Drawing.Size(467, 41);
+            this.fenYeLan1.Size = new System.Drawing.Size(467, 31);
             this.fenYeLan1.TabIndex = 9;
             // 
             // panel3
@@ -216,7 +224,7 @@ namespace mendian
             this.panel3.Controls.Add(this.gridControl1);
             this.panel3.Location = new System.Drawing.Point(302, 38);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(934, 172);
+            this.panel3.Size = new System.Drawing.Size(934, 136);
             this.panel3.TabIndex = 8;
             // 
             // gridControl1
@@ -226,7 +234,7 @@ namespace mendian
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(932, 170);
+            this.gridControl1.Size = new System.Drawing.Size(932, 134);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -307,7 +315,7 @@ namespace mendian
             this.panel2.Controls.Add(this.simpleButton3);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(286, 343);
+            this.panel2.Size = new System.Drawing.Size(286, 341);
             this.panel2.TabIndex = 7;
             // 
             // simpleButton4
@@ -339,7 +347,7 @@ namespace mendian
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(784, 214);
+            this.simpleButton1.Location = new System.Drawing.Point(784, 178);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(180, 43);
             this.simpleButton1.StyleController = this.layoutControl1;
@@ -350,7 +358,7 @@ namespace mendian
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(302, 214);
+            this.textBox1.Location = new System.Drawing.Point(302, 178);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(478, 43);
             this.textBox1.TabIndex = 5;
@@ -360,9 +368,9 @@ namespace mendian
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(302, 261);
+            this.panel1.Location = new System.Drawing.Point(302, 225);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 526);
+            this.panel1.Size = new System.Drawing.Size(934, 410);
             this.panel1.TabIndex = 4;
             // 
             // layoutControlGroup1
@@ -383,22 +391,22 @@ namespace mendian
             this.emptySpaceItem1,
             this.layoutControlItem10});
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 844);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1248, 682);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.panel1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(290, 249);
+            this.layoutControlItem1.Location = new System.Drawing.Point(290, 213);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(938, 530);
+            this.layoutControlItem1.Size = new System.Drawing.Size(938, 414);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textBox1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(290, 202);
+            this.layoutControlItem2.Location = new System.Drawing.Point(290, 166);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(35, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -410,7 +418,7 @@ namespace mendian
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.simpleButton1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(772, 202);
+            this.layoutControlItem3.Location = new System.Drawing.Point(772, 166);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(108, 47);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -422,7 +430,7 @@ namespace mendian
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(956, 202);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(956, 166);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Size = new System.Drawing.Size(272, 47);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -434,7 +442,7 @@ namespace mendian
             this.layoutControlItem4.MaxSize = new System.Drawing.Size(290, 402);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(121, 345);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(290, 347);
+            this.layoutControlItem4.Size = new System.Drawing.Size(290, 345);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
@@ -444,18 +452,18 @@ namespace mendian
             this.layoutControlItem5.Control = this.panel3;
             this.layoutControlItem5.Location = new System.Drawing.Point(290, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(938, 176);
+            this.layoutControlItem5.Size = new System.Drawing.Size(938, 140);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.fenYeLan1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(757, 779);
+            this.layoutControlItem6.Location = new System.Drawing.Point(757, 627);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(471, 47);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(121, 28);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(471, 45);
+            this.layoutControlItem6.Size = new System.Drawing.Size(471, 35);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
@@ -463,9 +471,9 @@ namespace mendian
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.label5;
-            this.layoutControlItem7.Location = new System.Drawing.Point(290, 779);
+            this.layoutControlItem7.Location = new System.Drawing.Point(290, 627);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(467, 45);
+            this.layoutControlItem7.Size = new System.Drawing.Size(467, 35);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -498,21 +506,11 @@ namespace mendian
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.panel4;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 347);
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 345);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(290, 477);
+            this.layoutControlItem10.Size = new System.Drawing.Size(290, 317);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
-            // 
-            // toolbarFormControl1
-            // 
-            this.toolbarFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.toolbarFormControl1.Manager = this.toolbarFormManager1;
-            this.toolbarFormControl1.Name = "toolbarFormControl1";
-            this.toolbarFormControl1.Size = new System.Drawing.Size(1248, 30);
-            this.toolbarFormControl1.TabIndex = 1;
-            this.toolbarFormControl1.TabStop = false;
-            this.toolbarFormControl1.ToolbarForm = this;
             // 
             // toolbarFormManager1
             // 
@@ -526,7 +524,7 @@ namespace mendian
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.toolbarFormManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(1248, 0);
             // 
@@ -542,17 +540,79 @@ namespace mendian
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.toolbarFormManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 844);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 874);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1248, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1248, 0);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 844);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 874);
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
+            this.barEditItem1});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 2;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit1});
+            this.ribbonControl1.Size = new System.Drawing.Size(1248, 166);
+            this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "ribbonPage1";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barEditItem1);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // ribbonStatusBar1
+            // 
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 848);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1248, 26);
+            // 
+            // ribbonPage2
+            // 
+            this.ribbonPage2.Name = "ribbonPage2";
+            this.ribbonPage2.Text = "ribbonPage2";
+            // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Edit = this.repositoryItemLookUpEdit1;
+            this.barEditItem1.EditHeight = 30;
+            this.barEditItem1.EditWidth = 200;
+            this.barEditItem1.Id = 1;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
             // 
             // Index
             // 
@@ -561,14 +621,16 @@ namespace mendian
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1248, 874);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.ribbonControl1);
+            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Controls.Add(this.toolbarFormControl1);
             this.Name = "Index";
+            this.Ribbon = this.ribbonControl1;
+            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "门店下单系统";
-            this.ToolbarFormControl = this.toolbarFormControl1;
             this.Activated += new System.EventHandler(this.Index_Activated);
             this.Load += new System.EventHandler(this.Index_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -594,8 +656,9 @@ namespace mendian
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -643,11 +706,18 @@ namespace mendian
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private System.Windows.Forms.Panel panel4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraBars.ToolbarForm.ToolbarFormControl toolbarFormControl1;
         private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager1;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
     }
 }

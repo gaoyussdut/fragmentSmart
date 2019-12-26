@@ -1218,6 +1218,155 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             }
             return ci;
         }
+        /// <summary>
+        /// 查询已打印
+        /// </summary>
+        /// <param name="orderno"></param>
+        /// <returns></returns>
+        public static DataTable GetPrintedData(String orderno)
+        {
+            String sql = "SELECT * FROM a_product_log_p WHERE ORDER_NO='" + orderno + "'";
+            return SQLmtm.GetDataTable(sql);
+        }
+
+        public static DataRow GetDataFromStyleid(String id)
+        {
+            String sql = "SELECT ";
+            sql = sql + "sp.SYS_STYLE_ID, ";
+            sql = sql + "sp.STYLE_NAME_CN, ";
+            sql = sql + "imp.MATERIAL_CODE, ";
+            sql = sql + "imp.MATERIAL_COMPOSITION, ";
+            sql = sql + "sp.STYLE_SHOP_TOTAL_PRICE, ";
+            sql = sql + "sp.STYLE_FIT_CD, ";
+            sql = sql + "sp.STYLE_CATEGORY_CD, ";
+            sql = sql + "sp.STYLE_SIZE_GROUP_CD ";
+            sql = sql + "FROM ";
+            sql = sql + "s_style_p AS sp ";
+            sql = sql + "LEFT JOIN i_material_p imp ON sp.SYTLE_FABRIC_ID = imp.MATERIAL_ID ";
+            sql = sql + "WHERE ";
+            sql = sql + "sp.SYS_STYLE_ID = '" + id + "';";
+            return SQLmtm.GetDataRow(sql);
+        }
+     
+          public static DataRow GetDataRowFromOrder(String id)
+        {
+            String sql = "SELECT\n" +
+"	sp.SYS_STYLE_ID,\n" +
+"	sp.STYLE_NAME_CN,\n" +
+"	imp.MATERIAL_CODE,\n" +
+"	imp.MATERIAL_COMPOSITION,\n" +
+"	sp.STYLE_SHOP_TOTAL_PRICE,\n" +
+"	sp.STYLE_FIT_CD,\n" +
+"	sp.STYLE_CATEGORY_CD,\n" +
+"	sp.STYLE_SIZE_GROUP_CD,sp.STYLE_SIZE_CD,SUBSTRING_INDEX( sp.STYLE_SIZE_CD, '-',- 1 ) AS SIZE\n" +
+"FROM\n" +
+"	s_style_p AS sp\n" +
+"	LEFT JOIN i_material_p imp ON sp.SYTLE_FABRIC_ID = imp.MATERIAL_ID \n" +
+"WHERE\n" +
+"	sp.SYS_STYLE_ID IN ( SELECT op.STYLE_ID FROM o_order_p AS op WHERE ORDER_NO = '" + id + "' );";
+            return SQLmtm.GetDataRow(sql);
+        }
+
+        /// <summary>
+        /// 成衣尺寸数据
+        /// </summary>
+        /// <param name="styleid"></param>
+        /// <returns></returns>
+        public static List<ChengYiChiCun> GetChengYiChiCun(String styleid)
+        {
+            List<ChengYiChiCun> cycc = new List<ChengYiChiCun>();
+            String sql = "SELECT\n" +
+"	ITEM_CD AS itemCd,\n" +
+"	ITEM_VALUE AS itemValue,\n" +
+"	FIT_VALUE AS fitValue,\n" +
+"	IN_VALUE AS inValue,\n" +
+"	OUT_VALUE AS outValue \n" +
+"FROM\n" +
+"	s_style_fit_r \n" +
+"WHERE\n" +
+"	STYLE_ID = '76684'";
+            DataRow chengyidr = SQLmtm.GetDataRow(sql);
+            List<String> itemCdList = new List<String>(chengyidr["itemCd"].ToString().Split(','));
+            List<String> itemValueList = new List<String>(chengyidr["itemValue"].ToString().Split(','));
+            List<String> fitValueList = new List<String>(chengyidr["fitValue"].ToString().Split(','));
+
+            List<Tradd> itemCdHoldList = new List<Tradd>();
+            List<Tradd> itemValueHoldList = new List<Tradd>();
+            List<Tradd> fitValueHoldList = new List<Tradd>();
+            int i = 0;
+            foreach (String cdvl in itemCdList)
+            {
+                itemCdHoldList.Add(new Tradd(i, cdvl));
+                i++;
+            }
+            i = 0;
+            foreach (String cdvl in itemValueList)
+            {
+                itemValueHoldList.Add(new Tradd(i, cdvl));
+                i++;
+            }
+            i = 0;
+            foreach (String cdvl in fitValueList)
+            {
+                fitValueHoldList.Add(new Tradd(i, cdvl));
+                i++;
+            }
+            foreach (Tradd tradd1 in itemCdHoldList)
+            {
+                foreach (Tradd tradd2 in itemValueHoldList)
+                {
+                    if (tradd1.i == tradd2.i)
+                    {
+                        foreach (Tradd tradd3 in fitValueHoldList)
+                        {
+                            if (tradd2.i == tradd3.i)
+                            {
+                                cycc.Add(new ChengYiChiCun(tradd1.str, tradd2.str, tradd3.str));
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+            return cycc;
+        }
+
+        public static String GetNameCN(String itemValue)
+        {
+            DataRow dr = SQLmtm.GetDataRow("SELECT PROPERTY_NAME_CN FROM a_fit_property_p WHERE PROPERTY_VALUE='" + itemValue + "'");
+            if (dr == null)
+            {
+                return "";
+            }
+            else
+            {
+                return dr["PROPERTY_NAME_CN"].ToString();
+            }
+        }
+        /// <summary>
+        /// 查询订单
+        /// </summary>
+        /// <param name="orderno"></param>
+        /// <returns></returns>
+        public static DataTable GetOrder(String orderno)
+        {
+            String sql = "SELECT * FROM v_order_p WHERE ORDER_NO='" + orderno + "'";
+            return SQLmtm.GetDataTable(sql);
+        }
+
+        public static DataTable GetNotPrintedData(String orderno)
+        {
+            String sql = "SELECT " +
+"	*  " +
+"FROM " +
+"	v_order_p " +
+"WHERE " +
+"	ORDER_NO NOT IN ( SELECT ORDER_NO FROM a_product_log_p ) " +
+"	AND ORDER_NO LIKE '%" + orderno + "%' " +
+"	LIMIT 500";
+            return SQLmtm.GetDataTable(sql);
+        }
     }
 }
 

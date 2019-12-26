@@ -4,6 +4,7 @@ using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
 using DiaoPaiDaYin;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,7 +62,7 @@ namespace DXApplicationTangche
                 this.order_text//text
                     = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "ORDER_NO").ToString()+ this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "STYLE_NAME_CN").ToString();
             }
-            this.gridControl1.DataSource = SQLmtm.GetDataTable("SELECT * FROM a_product_log_p WHERE ORDER_NO='" + this.ORDER_NO + "'");
+            this.gridControl1.DataSource = ImpService.GetPrintedData(this.ORDER_NO);
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace DXApplicationTangche
 
         private void QueryTag_Load(object sender, EventArgs e)
         {
-            String sql = "SELECT * FROM v_printed_p  ";
+            String sql = "SELECT * FROM v_printed_p";
             this.searchLookUpEdit1.Properties.DataSource = SQLmtm.GetDataTable(sql);
         }
     }

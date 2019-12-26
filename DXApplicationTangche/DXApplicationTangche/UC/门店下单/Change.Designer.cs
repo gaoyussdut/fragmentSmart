@@ -718,7 +718,7 @@ namespace mendian
             this.toolbarFormControl1.Size = new System.Drawing.Size(1826, 37);
             this.toolbarFormControl1.TabIndex = 1;
             this.toolbarFormControl1.TabStop = false;
-            this.toolbarFormControl1.ToolbarForm = this;
+            //this.toolbarFormControl1.ToolbarForm = this;
             // 
             // toolbarFormManager1
             // 
@@ -778,7 +778,7 @@ namespace mendian
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Change";
             this.Text = "设计点尺寸";
-            this.ToolbarFormControl = this.toolbarFormControl1;
+            //this.ToolbarFormControl = this.toolbarFormControl1;
             this.Activated += new System.EventHandler(this.Change_Activated);
             this.Load += new System.EventHandler(this.Change_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

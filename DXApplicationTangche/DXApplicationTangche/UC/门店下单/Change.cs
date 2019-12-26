@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class Change : DevExpress.XtraBars.ToolbarForm.ToolbarForm
+    public partial class Change : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static int styleid { get; set; }
         public static DataTable StyleDesign { get; set; }
