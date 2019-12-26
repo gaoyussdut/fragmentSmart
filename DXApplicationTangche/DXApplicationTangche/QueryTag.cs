@@ -21,5 +21,13 @@ namespace DXApplicationTangche
         {
 
         }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13) //判断是回车键
+            {
+
+            }
+        }
     }
 }
