@@ -41,6 +41,15 @@
             this.colshop_type = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.pivotGridControl = new DevExpress.XtraPivotGrid.PivotGridControl();
+            this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.tablePanel3 = new DevExpress.Utils.Layout.TablePanel();
@@ -55,18 +64,10 @@
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar4 = new DevExpress.XtraBars.Bar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.pivotGridControl = new DevExpress.XtraPivotGrid.PivotGridControl();
-            this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOG_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colORDER_NO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_PUBLISH_CATEGORY_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -76,13 +77,15 @@
             this.colORDER_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSYTLE_FABRIC_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLOG_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit出库单号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel3.SuspendLayout();
+            this.dockPanel3_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).BeginInit();
@@ -92,9 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).BeginInit();
-            this.dockPanel3.SuspendLayout();
-            this.dockPanel3_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -244,15 +244,128 @@
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
             // 
+            // dockPanel3
+            // 
+            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
+            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel3.FloatVertical = true;
+            this.dockPanel3.ID = new System.Guid("25904e0c-3e1b-4b6b-8b92-78778587c7f0");
+            this.dockPanel3.Location = new System.Drawing.Point(0, 540);
+            this.dockPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dockPanel3.Name = "dockPanel3";
+            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel3.Size = new System.Drawing.Size(1488, 257);
+            this.dockPanel3.Text = "发货统计";
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Controls.Add(this.pivotGridControl);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 39);
+            this.dockPanel3_Container.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(1480, 214);
+            this.dockPanel3_Container.TabIndex = 0;
+            // 
+            // pivotGridControl
+            // 
+            this.pivotGridControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pivotGridControl.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pivotGridControl.DefaultFilterEditorView = DevExpress.XtraEditors.FilterEditorViewMode.VisualAndText;
+            this.pivotGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pivotGridControl.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
+            this.pivotGridField1,
+            this.pivotGridField2,
+            this.pivotGridField3,
+            this.pivotGridField4,
+            this.pivotGridField5,
+            this.pivotGridField6});
+            this.pivotGridControl.Location = new System.Drawing.Point(0, 0);
+            this.pivotGridControl.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.pivotGridControl.Name = "pivotGridControl";
+            this.pivotGridControl.OptionsCustomization.AllowDragInCustomizationForm = false;
+            this.pivotGridControl.OptionsCustomization.AllowFilterBySummary = false;
+            this.pivotGridControl.OptionsCustomization.AllowHideFields = DevExpress.XtraPivotGrid.AllowHideFieldsType.Never;
+            this.pivotGridControl.OptionsCustomization.AllowSortBySummary = false;
+            this.pivotGridControl.OptionsView.ShowColumnGrandTotalHeader = false;
+            this.pivotGridControl.OptionsView.ShowColumnHeaders = false;
+            this.pivotGridControl.OptionsView.ShowDataHeaders = false;
+            this.pivotGridControl.OptionsView.ShowFilterHeaders = false;
+            this.pivotGridControl.OptionsView.ShowRowGrandTotals = false;
+            this.pivotGridControl.Size = new System.Drawing.Size(1480, 214);
+            this.pivotGridControl.TabIndex = 5;
+            this.pivotGridControl.TabStop = false;
+            // 
+            // pivotGridField1
+            // 
+            this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField1.AreaIndex = 0;
+            this.pivotGridField1.Caption = "服装种类";
+            this.pivotGridField1.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
+            this.pivotGridField1.MinWidth = 22;
+            this.pivotGridField1.Name = "pivotGridField1";
+            this.pivotGridField1.Width = 171;
+            // 
+            // pivotGridField2
+            // 
+            this.pivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField2.AreaIndex = 1;
+            this.pivotGridField2.Caption = "年份";
+            this.pivotGridField2.FieldName = "SYTLE_YEAR";
+            this.pivotGridField2.MinWidth = 22;
+            this.pivotGridField2.Name = "pivotGridField2";
+            this.pivotGridField2.Width = 113;
+            // 
+            // pivotGridField3
+            // 
+            this.pivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField3.AreaIndex = 2;
+            this.pivotGridField3.Caption = "季节";
+            this.pivotGridField3.FieldName = "SYTLE_SEASON";
+            this.pivotGridField3.MinWidth = 22;
+            this.pivotGridField3.Name = "pivotGridField3";
+            this.pivotGridField3.Width = 113;
+            // 
+            // pivotGridField4
+            // 
+            this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField4.AreaIndex = 3;
+            this.pivotGridField4.Caption = "款式";
+            this.pivotGridField4.FieldName = "STYLE_NAME_CN";
+            this.pivotGridField4.MinWidth = 22;
+            this.pivotGridField4.Name = "pivotGridField4";
+            this.pivotGridField4.Width = 342;
+            // 
+            // pivotGridField5
+            // 
+            this.pivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.pivotGridField5.AreaIndex = 4;
+            this.pivotGridField5.Caption = "面料";
+            this.pivotGridField5.FieldName = "MATERIAL_NAME_CN";
+            this.pivotGridField5.MinWidth = 22;
+            this.pivotGridField5.Name = "pivotGridField5";
+            this.pivotGridField5.Width = 342;
+            // 
+            // pivotGridField6
+            // 
+            this.pivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField6.AreaIndex = 0;
+            this.pivotGridField6.Caption = "数量";
+            this.pivotGridField6.FieldName = "Id";
+            this.pivotGridField6.MinWidth = 22;
+            this.pivotGridField6.Name = "pivotGridField6";
+            this.pivotGridField6.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Count;
+            this.pivotGridField6.Width = 113;
+            // 
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("228f3f7b-1edd-4acc-820f-4d300fd36026");
-            this.dockPanel1.Location = new System.Drawing.Point(892, 0);
+            this.dockPanel1.Location = new System.Drawing.Point(1078, 0);
+            this.dockPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(359, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(410, 420);
+            this.dockPanel1.Size = new System.Drawing.Size(410, 540);
             this.dockPanel1.Text = "发货信息";
             // 
             // dockPanel1_Container
@@ -261,7 +374,7 @@
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(6, 37);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(400, 379);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(400, 499);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // tablePanel3
@@ -272,20 +385,22 @@
             this.tablePanel3.Controls.Add(this.simpleButton1);
             this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanel3.Location = new System.Drawing.Point(0, 140);
+            this.tablePanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tablePanel3.Name = "tablePanel3";
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 18.00007F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel3.Size = new System.Drawing.Size(400, 69);
+            this.tablePanel3.Size = new System.Drawing.Size(400, 89);
             this.tablePanel3.TabIndex = 2;
             // 
             // simpleButton1
             // 
             this.tablePanel3.SetColumn(this.simpleButton1, 1);
-            this.simpleButton1.Location = new System.Drawing.Point(185, 32);
+            this.simpleButton1.Location = new System.Drawing.Point(185, 38);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.simpleButton1.Name = "simpleButton1";
             this.tablePanel3.SetRow(this.simpleButton1, 1);
-            this.simpleButton1.Size = new System.Drawing.Size(212, 27);
+            this.simpleButton1.Size = new System.Drawing.Size(212, 35);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "提交";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -298,7 +413,7 @@
             this.dockPanel2.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2.Name = "dockPanel2";
             this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 125);
-            this.dockPanel2.Size = new System.Drawing.Size(892, 161);
+            this.dockPanel2.Size = new System.Drawing.Size(1078, 161);
             this.dockPanel2.Text = "扫码";
             // 
             // dockPanel2_Container
@@ -306,7 +421,7 @@
             this.dockPanel2_Container.Controls.Add(this.tablePanel2);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 37);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(884, 118);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1070, 118);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // tablePanel2
@@ -322,7 +437,7 @@
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel2.Size = new System.Drawing.Size(884, 118);
+            this.tablePanel2.Size = new System.Drawing.Size(1070, 118);
             this.tablePanel2.TabIndex = 0;
             // 
             // label4
@@ -330,7 +445,7 @@
             this.label4.AutoSize = true;
             this.tablePanel2.SetColumn(this.label4, 1);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(11, 7);
+            this.label4.Location = new System.Drawing.Point(12, 7);
             this.label4.Name = "label4";
             this.tablePanel2.SetRow(this.label4, 0);
             this.label4.Size = new System.Drawing.Size(98, 18);
@@ -341,10 +456,11 @@
             // 
             this.tablePanel2.SetColumn(this.textEdit扫码, 1);
             this.textEdit扫码.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textEdit扫码.Location = new System.Drawing.Point(11, 63);
+            this.textEdit扫码.Location = new System.Drawing.Point(12, 63);
+            this.textEdit扫码.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEdit扫码.Name = "textEdit扫码";
             this.tablePanel2.SetRow(this.textEdit扫码, 1);
-            this.textEdit扫码.Size = new System.Drawing.Size(870, 24);
+            this.textEdit扫码.Size = new System.Drawing.Size(1055, 24);
             this.textEdit扫码.TabIndex = 0;
             this.textEdit扫码.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit扫码_KeyDown);
             // 
@@ -385,123 +501,14 @@
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // pivotGridControl
-            // 
-            this.pivotGridControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.pivotGridControl.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pivotGridControl.DefaultFilterEditorView = DevExpress.XtraEditors.FilterEditorViewMode.VisualAndText;
-            this.pivotGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pivotGridControl.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
-            this.pivotGridField1,
-            this.pivotGridField2,
-            this.pivotGridField3,
-            this.pivotGridField4,
-            this.pivotGridField5,
-            this.pivotGridField6});
-            this.pivotGridControl.Location = new System.Drawing.Point(0, 0);
-            this.pivotGridControl.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.pivotGridControl.Name = "pivotGridControl";
-            this.pivotGridControl.OptionsCustomization.AllowDragInCustomizationForm = false;
-            this.pivotGridControl.OptionsCustomization.AllowFilterBySummary = false;
-            this.pivotGridControl.OptionsCustomization.AllowHideFields = DevExpress.XtraPivotGrid.AllowHideFieldsType.Never;
-            this.pivotGridControl.OptionsCustomization.AllowSortBySummary = false;
-            this.pivotGridControl.OptionsView.ShowColumnGrandTotalHeader = false;
-            this.pivotGridControl.OptionsView.ShowColumnHeaders = false;
-            this.pivotGridControl.OptionsView.ShowDataHeaders = false;
-            this.pivotGridControl.OptionsView.ShowFilterHeaders = false;
-            this.pivotGridControl.OptionsView.ShowRowGrandTotals = false;
-            this.pivotGridControl.Size = new System.Drawing.Size(1294, 157);
-            this.pivotGridControl.TabIndex = 5;
-            this.pivotGridControl.TabStop = false;
-            // 
-            // pivotGridField1
-            // 
-            this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField1.AreaIndex = 0;
-            this.pivotGridField1.Caption = "服装种类";
-            this.pivotGridField1.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
-            this.pivotGridField1.MinWidth = 19;
-            this.pivotGridField1.Name = "pivotGridField1";
-            this.pivotGridField1.Width = 150;
-            // 
-            // pivotGridField2
-            // 
-            this.pivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField2.AreaIndex = 1;
-            this.pivotGridField2.Caption = "年份";
-            this.pivotGridField2.FieldName = "SYTLE_YEAR";
-            this.pivotGridField2.MinWidth = 19;
-            this.pivotGridField2.Name = "pivotGridField2";
-            this.pivotGridField2.Width = 99;
-            // 
-            // pivotGridField3
-            // 
-            this.pivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField3.AreaIndex = 2;
-            this.pivotGridField3.Caption = "季节";
-            this.pivotGridField3.FieldName = "SYTLE_SEASON";
-            this.pivotGridField3.MinWidth = 19;
-            this.pivotGridField3.Name = "pivotGridField3";
-            this.pivotGridField3.Width = 99;
-            // 
-            // pivotGridField4
-            // 
-            this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField4.AreaIndex = 3;
-            this.pivotGridField4.Caption = "款式";
-            this.pivotGridField4.FieldName = "STYLE_NAME_CN";
-            this.pivotGridField4.MinWidth = 19;
-            this.pivotGridField4.Name = "pivotGridField4";
-            this.pivotGridField4.Width = 299;
-            // 
-            // pivotGridField5
-            // 
-            this.pivotGridField5.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
-            this.pivotGridField5.AreaIndex = 4;
-            this.pivotGridField5.Caption = "面料";
-            this.pivotGridField5.FieldName = "MATERIAL_NAME_CN";
-            this.pivotGridField5.MinWidth = 19;
-            this.pivotGridField5.Name = "pivotGridField5";
-            this.pivotGridField5.Width = 299;
-            // 
-            // pivotGridField6
-            // 
-            this.pivotGridField6.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
-            this.pivotGridField6.AreaIndex = 0;
-            this.pivotGridField6.Caption = "数量";
-            this.pivotGridField6.FieldName = "Id";
-            this.pivotGridField6.MinWidth = 19;
-            this.pivotGridField6.Name = "pivotGridField6";
-            this.pivotGridField6.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Count;
-            this.pivotGridField6.Width = 99;
-            // 
-            // dockPanel3
-            // 
-            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
-            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
-            this.dockPanel3.FloatVertical = true;
-            this.dockPanel3.ID = new System.Guid("25904e0c-3e1b-4b6b-8b92-78778587c7f0");
-            this.dockPanel3.Location = new System.Drawing.Point(0, 420);
-            this.dockPanel3.Name = "dockPanel3";
-            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanel3.Size = new System.Drawing.Size(1302, 200);
-            this.dockPanel3.Text = "发货统计";
-            // 
-            // dockPanel3_Container
-            // 
-            this.dockPanel3_Container.Controls.Add(this.pivotGridControl);
-            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 39);
-            this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(1294, 157);
-            this.dockPanel3_Container.TabIndex = 0;
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Location = new System.Drawing.Point(0, 161);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(892, 259);
+            this.gridControl1.Size = new System.Drawing.Size(1078, 379);
             this.gridControl1.TabIndex = 5;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -534,6 +541,16 @@
             this.colId.Name = "colId";
             this.colId.Width = 94;
             // 
+            // colLOG_ID
+            // 
+            this.colLOG_ID.Caption = "编码";
+            this.colLOG_ID.FieldName = "LOG_ID";
+            this.colLOG_ID.MinWidth = 29;
+            this.colLOG_ID.Name = "colLOG_ID";
+            this.colLOG_ID.Visible = true;
+            this.colLOG_ID.VisibleIndex = 0;
+            this.colLOG_ID.Width = 107;
+            // 
             // colORDER_NO
             // 
             this.colORDER_NO.Caption = "订单号";
@@ -542,7 +559,7 @@
             this.colORDER_NO.Name = "colORDER_NO";
             this.colORDER_NO.Visible = true;
             this.colORDER_NO.VisibleIndex = 1;
-            this.colORDER_NO.Width = 94;
+            this.colORDER_NO.Width = 107;
             // 
             // colSTYLE_PUBLISH_CATEGORY_CD
             // 
@@ -552,7 +569,7 @@
             this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
             this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
             this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 2;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 107;
             // 
             // colSTYLE_NAME_CN
             // 
@@ -562,7 +579,7 @@
             this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
             this.colSTYLE_NAME_CN.Visible = true;
             this.colSTYLE_NAME_CN.VisibleIndex = 3;
-            this.colSTYLE_NAME_CN.Width = 94;
+            this.colSTYLE_NAME_CN.Width = 107;
             // 
             // colSYTLE_SEASON
             // 
@@ -572,7 +589,7 @@
             this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
             this.colSYTLE_SEASON.Visible = true;
             this.colSYTLE_SEASON.VisibleIndex = 4;
-            this.colSYTLE_SEASON.Width = 94;
+            this.colSYTLE_SEASON.Width = 107;
             // 
             // colSYTLE_YEAR
             // 
@@ -582,7 +599,7 @@
             this.colSYTLE_YEAR.Name = "colSYTLE_YEAR";
             this.colSYTLE_YEAR.Visible = true;
             this.colSYTLE_YEAR.VisibleIndex = 5;
-            this.colSYTLE_YEAR.Width = 94;
+            this.colSYTLE_YEAR.Width = 107;
             // 
             // colMATERIAL_NAME_CN
             // 
@@ -592,7 +609,7 @@
             this.colMATERIAL_NAME_CN.Name = "colMATERIAL_NAME_CN";
             this.colMATERIAL_NAME_CN.Visible = true;
             this.colMATERIAL_NAME_CN.VisibleIndex = 6;
-            this.colMATERIAL_NAME_CN.Width = 94;
+            this.colMATERIAL_NAME_CN.Width = 107;
             // 
             // colORDER_DATE
             // 
@@ -602,7 +619,7 @@
             this.colORDER_DATE.Name = "colORDER_DATE";
             this.colORDER_DATE.Visible = true;
             this.colORDER_DATE.VisibleIndex = 7;
-            this.colORDER_DATE.Width = 94;
+            this.colORDER_DATE.Width = 107;
             // 
             // colSTYLE_ID
             // 
@@ -620,25 +637,16 @@
             this.colSYTLE_FABRIC_ID.Name = "colSYTLE_FABRIC_ID";
             this.colSYTLE_FABRIC_ID.Width = 94;
             // 
-            // colLOG_ID
-            // 
-            this.colLOG_ID.Caption = "编码";
-            this.colLOG_ID.FieldName = "LOG_ID";
-            this.colLOG_ID.MinWidth = 25;
-            this.colLOG_ID.Name = "colLOG_ID";
-            this.colLOG_ID.Visible = true;
-            this.colLOG_ID.VisibleIndex = 0;
-            this.colLOG_ID.Width = 94;
-            // 
             // XtraFrm门店出库
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1302, 620);
+            this.ClientSize = new System.Drawing.Size(1488, 797);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.dockPanel2);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.dockPanel3);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "XtraFrm门店出库";
             this.Text = "XtraFrm门店出库";
             this.Load += new System.EventHandler(this.XtraFrm门店出库_Load);
@@ -649,6 +657,9 @@
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel3.ResumeLayout(false);
+            this.dockPanel3_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel3)).EndInit();
@@ -659,9 +670,6 @@
             this.tablePanel2.ResumeLayout(false);
             this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).EndInit();
-            this.dockPanel3.ResumeLayout(false);
-            this.dockPanel3_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
