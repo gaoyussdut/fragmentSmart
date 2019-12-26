@@ -39,11 +39,11 @@
             this.ElementShopOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementBarCode = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementStoreOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
@@ -79,6 +79,7 @@
             // 
             // navigationPage库存
             // 
+            this.navigationPage库存.Caption = "navigationPage库存";
             this.navigationPage库存.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPage库存.Name = "navigationPage库存";
             this.navigationPage库存.Size = new System.Drawing.Size(493, 571);
@@ -120,6 +121,7 @@
             this.ElementShopStockIn.Name = "ElementShopStockIn";
             this.ElementShopStockIn.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ElementShopStockIn.Text = "门店验货";
+            this.ElementShopStockIn.Click += new System.EventHandler(this.ElementShopStockIn_Click);
             // 
             // ElementShopOrder
             // 
@@ -142,6 +144,13 @@
             this.ElementBarCode.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.ElementBarCode.Text = "标签列印";
             this.ElementBarCode.Click += new System.EventHandler(this.ElementBarCode_Click);
+            // 
+            // accordionControlElement3
+            // 
+            this.accordionControlElement3.Name = "accordionControlElement3";
+            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement3.Text = "吊牌信息查询";
+            this.accordionControlElement3.Click += new System.EventHandler(this.accordionControlElement3_Click);
             // 
             // accordionControlElement1
             // 
@@ -167,13 +176,6 @@
             this.fluentDesignFormControl1.Size = new System.Drawing.Size(790, 37);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            // 
-            // accordionControlElement3
-            // 
-            this.accordionControlElement3.Name = "accordionControlElement3";
-            this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement3.Text = "吊牌信息查询";
-            this.accordionControlElement3.Click += new System.EventHandler(this.accordionControlElement3_Click);
             // 
             // FluentMainFrame
             // 

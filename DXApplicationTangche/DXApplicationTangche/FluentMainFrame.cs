@@ -3,6 +3,7 @@ using DevExpress.XtraEditors;
 using DiaoPaiDaYin;
 using DXApplicationTangche.UC;
 using DXApplicationTangche.UC.库存;
+using DXApplicationTangche.UC.库存.门店验货;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -69,6 +70,11 @@ namespace DXApplicationTangche
         private void accordionControlElement3_Click(object sender, EventArgs e)
         {
             this.initPanel(new QueryTag());
+        }
+
+        private void ElementShopStockIn_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new XtraForm门店验货());
         }
     }
 }

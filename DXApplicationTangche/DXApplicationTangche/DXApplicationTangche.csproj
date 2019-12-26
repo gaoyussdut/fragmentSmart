@@ -122,12 +122,18 @@
     <Compile Include="QueryTag.Designer.cs">
       <DependentUpon>QueryTag.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\库存\BarCodeInfoDto.cs" />
-    <Compile Include="UC\库存\XtraFrm门店出库.cs">
+    <Compile Include="UC\库存\出库\BarCodeInfoDto.cs" />
+    <Compile Include="UC\库存\出库\XtraFrm门店出库.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UC\库存\XtraFrm门店出库.designer.cs">
+    <Compile Include="UC\库存\出库\XtraFrm门店出库.designer.cs">
       <DependentUpon>XtraFrm门店出库.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\库存\门店验货\XtraForm门店验货.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\库存\门店验货\XtraForm门店验货.Designer.cs">
+      <DependentUpon>XtraForm门店验货.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\ChiCunHead.cs">
       <SubType>UserControl</SubType>
@@ -290,7 +296,7 @@
     <EmbeddedResource Include="QueryTag.resx">
       <DependentUpon>QueryTag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\库存\XtraFrm门店出库.resx">
+    <EmbeddedResource Include="UC\库存\出库\XtraFrm门店出库.resx">
       <DependentUpon>XtraFrm门店出库.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\ChiCunHead.resx">
