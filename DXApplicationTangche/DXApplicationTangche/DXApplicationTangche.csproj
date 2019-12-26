@@ -132,7 +132,7 @@
     <Compile Include="UC\库存\门店验货\XtraForm门店验货.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UC\库存\门店验货\XtraForm门店验货.Designer.cs">
+    <Compile Include="UC\库存\门店验货\XtraForm门店验货.designer.cs">
       <DependentUpon>XtraForm门店验货.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\ChiCunHead.cs">
@@ -298,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\库存\出库\XtraFrm门店出库.resx">
       <DependentUpon>XtraFrm门店出库.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\库存\门店验货\XtraForm门店验货.resx">
+      <DependentUpon>XtraForm门店验货.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\ChiCunHead.resx">
       <DependentUpon>ChiCunHead.cs</DependentUpon>
