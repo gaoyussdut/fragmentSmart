@@ -26,10 +26,6 @@ namespace DXApplicationTangche.UC.库存.门店验货
         private List<String> barCodes = new List<string>(); //  条码
 
 
-        private String godown_code; //  出库单号
-        private DateTime ORDER_DATE;    //  订单时间
-        private String shopId;  //  门店id
-        private String shopName;    //  门店名称
         public XtraForm门店验货()
         {
             InitializeComponent();
@@ -58,11 +54,15 @@ namespace DXApplicationTangche.UC.库存.门店验货
                     return;
                 }
 
+                //  订单信息更新
+                if (String.IsNullOrEmpty(this.textEdit出库单号.Text))
+                {
+                    DataTable dataTable = StockService.getStockInInfo(barCodeInfo.LOG_ID);
+                    this.textEdit出库单号.Text = dataTable.Rows[0]["godown_code"].ToString();
+                    this.dateTimePicker1.Value = Convert.ToDateTime(dataTable.Rows[0]["godown_date"].ToString());
+                    this.textEdit门店.Text = dataTable.Rows[0]["shop_name"].ToString(); ;
+                }
 
-                this.godown_code = barCodeInfo.LOG_ID;
-                this.ORDER_DATE = barCodeInfo.ORDER_DATE;
-                this.shopId = barCodeInfo.SHOP_ID;
-                this.shopName = barCodeInfo.SHOP_NAME;
 
                 //  条码记录
                 this.barCodes.Add(barCodeInfo.LOG_ID);

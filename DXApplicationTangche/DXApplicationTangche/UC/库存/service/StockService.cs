@@ -46,6 +46,24 @@ namespace DXApplicationTangche.UC.库存.service
         }
 
         /// <summary>
+        /// 根据条码取得入库信息
+        /// </summary>
+        /// <param name="LOG_ID"></param>
+        /// <returns></returns>
+        public static DataTable getStockInInfo(String LOG_ID) {
+            String sql = "SELECT"
+                + " t_godown_bill.godown_code,"
+                + "	t_shop.shop_name,"
+                + " t_godown_bill.godown_date"
+                + " FROM"
+                + "    t_godown_bill " 
+                + " left join t_shop on t_godown_bill.shop_id = t_shop.shop_id"
+                + " WHERE"
+                + "    godown_id IN(SELECT godown_id FROM t_godown_entry WHERE barcode_id IN (SELECT id FROM a_product_log_p WHERE LOG_ID = '"+ LOG_ID + "') ); ";
+            return SQLmtm.GetDataTable(sql);
+        }
+
+        /// <summary>
         /// 工厂出库扫描取barcode方法
         /// </summary>
         /// <param name="LOG_ID"></param>

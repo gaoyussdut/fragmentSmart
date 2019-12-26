@@ -35,6 +35,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.textEdit门店 = new DevExpress.XtraEditors.TextEdit();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -72,10 +73,10 @@
             this.colORDER_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSYTLE_FABRIC_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textEdit门店 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit出库单号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit门店.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel3.SuspendLayout();
             this.dockPanel3_Container.SuspendLayout();
@@ -91,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit门店.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // textEdit出库单号
@@ -129,6 +129,7 @@
             // dateTimePicker1
             // 
             this.tablePanel1.SetColumn(this.dateTimePicker1, 2);
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(101, 40);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.tablePanel1.SetRow(this.dateTimePicker1, 1);
@@ -169,6 +170,16 @@
             this.tablePanel1.Size = new System.Drawing.Size(349, 140);
             this.tablePanel1.TabIndex = 1;
             // 
+            // textEdit门店
+            // 
+            this.tablePanel1.SetColumn(this.textEdit门店, 2);
+            this.textEdit门店.Enabled = false;
+            this.textEdit门店.Location = new System.Drawing.Point(101, 77);
+            this.textEdit门店.Name = "textEdit门店";
+            this.tablePanel1.SetRow(this.textEdit门店, 2);
+            this.textEdit门店.Size = new System.Drawing.Size(245, 24);
+            this.textEdit门店.TabIndex = 5;
+            // 
             // dockManager1
             // 
             this.dockManager1.Form = this;
@@ -201,7 +212,7 @@
             this.dockPanel3.Name = "dockPanel3";
             this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockPanel3.Size = new System.Drawing.Size(1488, 200);
-            this.dockPanel3.Text = "发货统计";
+            this.dockPanel3.Text = "验货统计";
             // 
             // dockPanel3_Container
             // 
@@ -312,7 +323,7 @@
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(359, 200);
             this.dockPanel1.Size = new System.Drawing.Size(359, 597);
-            this.dockPanel1.Text = "发货信息";
+            this.dockPanel1.Text = "验货信息";
             // 
             // dockPanel1_Container
             // 
@@ -583,15 +594,6 @@
             this.colSYTLE_FABRIC_ID.Name = "colSYTLE_FABRIC_ID";
             this.colSYTLE_FABRIC_ID.Width = 94;
             // 
-            // textEdit门店
-            // 
-            this.tablePanel1.SetColumn(this.textEdit门店, 2);
-            this.textEdit门店.Location = new System.Drawing.Point(101, 77);
-            this.textEdit门店.Name = "textEdit门店";
-            this.tablePanel1.SetRow(this.textEdit门店, 2);
-            this.textEdit门店.Size = new System.Drawing.Size(245, 24);
-            this.textEdit门店.TabIndex = 5;
-            // 
             // XtraForm门店验货
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -609,6 +611,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit门店.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel3.ResumeLayout(false);
             this.dockPanel3_Container.ResumeLayout(false);
@@ -625,7 +628,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit门店.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
