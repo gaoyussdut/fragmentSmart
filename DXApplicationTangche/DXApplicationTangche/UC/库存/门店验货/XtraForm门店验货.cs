@@ -24,7 +24,7 @@ namespace DXApplicationTangche.UC.库存.门店验货
     {
         private BindingList<BarCodeInfoDto> barCodeInfoDtos = new BindingList<BarCodeInfoDto>();    //  条码信息
         private List<String> barCodes = new List<string>(); //  条码
-
+        private String shopId;  //  门店id
 
         public XtraForm门店验货()
         {
@@ -60,7 +60,8 @@ namespace DXApplicationTangche.UC.库存.门店验货
                     DataTable dataTable = StockService.getStockInInfo(barCodeInfo.LOG_ID);
                     this.textEdit出库单号.Text = dataTable.Rows[0]["godown_code"].ToString();
                     this.dateTimePicker1.Value = Convert.ToDateTime(dataTable.Rows[0]["godown_date"].ToString());
-                    this.textEdit门店.Text = dataTable.Rows[0]["shop_name"].ToString(); ;
+                    this.textEdit门店.Text = dataTable.Rows[0]["shop_name"].ToString(); 
+                    this.shopId = dataTable.Rows[0]["shop_id"].ToString();
                 }
 
 
@@ -83,6 +84,30 @@ namespace DXApplicationTangche.UC.库存.门店验货
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            List<String> barIds = new List<string>();
+            foreach (BarCodeInfoDto barCodeInfo in this.barCodeInfoDtos) {
+                barIds.Add(barCodeInfo.Id);
+            }
+            if (barIds.Count == 0) {
+                MessageBox.Show("请先扫码");
+                return;
+            }
+
+
+            DialogResult dialogResult = MessageBox.Show("确认入库？", "入库提醒", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.OK)
+            {
+                //  库存明细账
+                StockService.generateInventoryLedge(barIds, this.shopId, this.textEdit出库单号.Text, "验货入库", false);
+                //  提醒
+                MessageBox.Show("出库单号" + this.textEdit出库单号.Text + "已入库完成");
+                //  单号变更
+                this.textEdit出库单号.Text = null;
+                //  清空成衣列表
+                this.barCodeInfoDtos.Clear();
+                this.barCodes.Clear();
+                //  TODO,不确定是否做清空门店
+            }
         }
     }
 }

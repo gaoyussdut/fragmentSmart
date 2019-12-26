@@ -32,8 +32,6 @@ namespace DiaoPaiDaYin
                 AConn.Dispose();
                 AConn = null;
             }
-
-            AConn.Close();
         }
 
         public static DataTable GetDataTable(string SQL)

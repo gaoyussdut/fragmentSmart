@@ -85,6 +85,7 @@ namespace DXApplicationTangche.UC.库存.service
         public static DataTable getStockInInfo(String LOG_ID) {
             String sql = "SELECT"
                 + " t_godown_bill.godown_code,"
+                + "	t_shop.shop_id,"
                 + "	t_shop.shop_name,"
                 + " t_godown_bill.godown_date"
                 + " FROM"
@@ -149,6 +150,32 @@ namespace DXApplicationTangche.UC.库存.service
                     , new string[] { System.Guid.NewGuid().ToString("N"), godown_id, barCodeInfo.Id, "1" }
                     );
             }
+        }
+
+        /// <summary>
+        /// 新增库存明细账
+        /// </summary>
+        /// <param name="barIds">条形码id</param>
+        /// <param name="shop_id">门店id</param>
+        /// <param name="bill_id">单号</param>
+        /// <param name="stockType">出入库类型</param>
+        /// <param name="isStockOut">出否出库，如果是，就是负数</param>
+        public static void generateInventoryLedge(List<String> barIds,String shop_id,String bill_id,String stockType,bool isStockOut) {
+            String sql = "INSERT INTO t_inventory_sub_ledger ( shop_id, ref_style_id, style_fabric_id, ledger_type, amount, bill_id ) SELECT"
+                + " '"+ shop_id + "' AS shop_id,"
+                + " STYLE_ID,"
+                + " SYTLE_FABRIC_ID,"
+                + " '"+ stockType + "',"
+                + (isStockOut ? " 0 - " : "") + " count(id) AS id_count,"
+                + " '"+ bill_id + "' AS bill_id"
+                + " FROM"
+                + "     a_product_log_p"
+                + " WHERE"
+                + "     a_product_log_p.id IN( '"+ String.Join("','", barIds) + "' ) "
+                + " GROUP BY"
+                + "     STYLE_ID,"
+                + "     SYTLE_FABRIC_ID";
+            SQLmtm.ExecuteSql(sql);
         }
     }
 
