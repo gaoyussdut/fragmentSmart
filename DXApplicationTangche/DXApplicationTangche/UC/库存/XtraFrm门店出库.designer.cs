@@ -54,6 +54,16 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.bar4 = new DevExpress.XtraBars.Bar();
+            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.pivotGridControl = new DevExpress.XtraPivotGrid.PivotGridControl();
+            this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,17 +76,7 @@
             this.colORDER_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSYTLE_FABRIC_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.pivotGridControl = new DevExpress.XtraPivotGrid.PivotGridControl();
-            this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField5 = new DevExpress.XtraPivotGrid.PivotGridField();
-            this.pivotGridField6 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.colLOG_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit出库单号.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -92,13 +92,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel2)).BeginInit();
             this.tablePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).BeginInit();
+            this.dockPanel3.SuspendLayout();
+            this.dockPanel3_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
-            this.xtraTabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).BeginInit();
             this.SuspendLayout();
             // 
             // textEdit出库单号
@@ -229,6 +227,7 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel3,
             this.dockPanel1,
             this.dockPanel2});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
@@ -250,10 +249,10 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("228f3f7b-1edd-4acc-820f-4d300fd36026");
-            this.dockPanel1.Location = new System.Drawing.Point(829, 0);
+            this.dockPanel1.Location = new System.Drawing.Point(892, 0);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(359, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(410, 561);
+            this.dockPanel1.Size = new System.Drawing.Size(410, 420);
             this.dockPanel1.Text = "发货信息";
             // 
             // dockPanel1_Container
@@ -262,7 +261,7 @@
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(6, 37);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(400, 520);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(400, 379);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // tablePanel3
@@ -271,22 +270,22 @@
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 27.27F),
             new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 32.73F)});
             this.tablePanel3.Controls.Add(this.simpleButton1);
-            this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tablePanel3.Location = new System.Drawing.Point(0, 380);
+            this.tablePanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tablePanel3.Location = new System.Drawing.Point(0, 140);
             this.tablePanel3.Name = "tablePanel3";
             this.tablePanel3.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 84.40005F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 18.00007F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel3.Size = new System.Drawing.Size(400, 140);
+            this.tablePanel3.Size = new System.Drawing.Size(400, 69);
             this.tablePanel3.TabIndex = 2;
             // 
             // simpleButton1
             // 
             this.tablePanel3.SetColumn(this.simpleButton1, 1);
-            this.simpleButton1.Location = new System.Drawing.Point(185, 112);
+            this.simpleButton1.Location = new System.Drawing.Point(185, 32);
             this.simpleButton1.Name = "simpleButton1";
             this.tablePanel3.SetRow(this.simpleButton1, 1);
-            this.simpleButton1.Size = new System.Drawing.Size(212, 25);
+            this.simpleButton1.Size = new System.Drawing.Size(212, 27);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "提交";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -299,7 +298,7 @@
             this.dockPanel2.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2.Name = "dockPanel2";
             this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 125);
-            this.dockPanel2.Size = new System.Drawing.Size(829, 161);
+            this.dockPanel2.Size = new System.Drawing.Size(892, 161);
             this.dockPanel2.Text = "扫码";
             // 
             // dockPanel2_Container
@@ -307,7 +306,7 @@
             this.dockPanel2_Container.Controls.Add(this.tablePanel2);
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 37);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(821, 118);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(884, 118);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // tablePanel2
@@ -323,7 +322,7 @@
             this.tablePanel2.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel2.Size = new System.Drawing.Size(821, 118);
+            this.tablePanel2.Size = new System.Drawing.Size(884, 118);
             this.tablePanel2.TabIndex = 0;
             // 
             // label4
@@ -331,7 +330,7 @@
             this.label4.AutoSize = true;
             this.tablePanel2.SetColumn(this.label4, 1);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(10, 7);
+            this.label4.Location = new System.Drawing.Point(11, 7);
             this.label4.Name = "label4";
             this.tablePanel2.SetRow(this.label4, 0);
             this.label4.Size = new System.Drawing.Size(98, 18);
@@ -342,10 +341,10 @@
             // 
             this.tablePanel2.SetColumn(this.textEdit扫码, 1);
             this.textEdit扫码.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textEdit扫码.Location = new System.Drawing.Point(10, 63);
+            this.textEdit扫码.Location = new System.Drawing.Point(11, 63);
             this.textEdit扫码.Name = "textEdit扫码";
             this.tablePanel2.SetRow(this.textEdit扫码, 1);
-            this.textEdit扫码.Size = new System.Drawing.Size(808, 24);
+            this.textEdit扫码.Size = new System.Drawing.Size(870, 24);
             this.textEdit扫码.TabIndex = 0;
             this.textEdit扫码.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit扫码_KeyDown);
             // 
@@ -381,160 +380,10 @@
             this.bar4.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar4.Text = "Custom 3";
             // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(827, 364);
-            this.gridControl1.TabIndex = 5;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colId,
-            this.colORDER_NO,
-            this.colSTYLE_PUBLISH_CATEGORY_CD,
-            this.colSTYLE_NAME_CN,
-            this.colSYTLE_SEASON,
-            this.colSYTLE_YEAR,
-            this.colMATERIAL_NAME_CN,
-            this.colORDER_DATE,
-            this.colSTYLE_ID,
-            this.colSYTLE_FABRIC_ID});
-            this.gridView1.FixedLineWidth = 3;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colId
-            // 
-            this.colId.Caption = "gridColumn1";
-            this.colId.FieldName = "Id";
-            this.colId.MinWidth = 25;
-            this.colId.Name = "colId";
-            this.colId.Width = 94;
-            // 
-            // colORDER_NO
-            // 
-            this.colORDER_NO.Caption = "订单号";
-            this.colORDER_NO.FieldName = "ORDER_NO";
-            this.colORDER_NO.MinWidth = 25;
-            this.colORDER_NO.Name = "colORDER_NO";
-            this.colORDER_NO.Visible = true;
-            this.colORDER_NO.VisibleIndex = 0;
-            this.colORDER_NO.Width = 94;
-            // 
-            // colSTYLE_PUBLISH_CATEGORY_CD
-            // 
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Caption = "服装种类";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 25;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 1;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
-            // 
-            // colSTYLE_NAME_CN
-            // 
-            this.colSTYLE_NAME_CN.Caption = "款式";
-            this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.MinWidth = 25;
-            this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.Visible = true;
-            this.colSTYLE_NAME_CN.VisibleIndex = 2;
-            this.colSTYLE_NAME_CN.Width = 94;
-            // 
-            // colSYTLE_SEASON
-            // 
-            this.colSYTLE_SEASON.Caption = "季节";
-            this.colSYTLE_SEASON.FieldName = "SYTLE_SEASON";
-            this.colSYTLE_SEASON.MinWidth = 25;
-            this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
-            this.colSYTLE_SEASON.Visible = true;
-            this.colSYTLE_SEASON.VisibleIndex = 3;
-            this.colSYTLE_SEASON.Width = 94;
-            // 
-            // colSYTLE_YEAR
-            // 
-            this.colSYTLE_YEAR.Caption = "年份";
-            this.colSYTLE_YEAR.FieldName = "SYTLE_YEAR";
-            this.colSYTLE_YEAR.MinWidth = 25;
-            this.colSYTLE_YEAR.Name = "colSYTLE_YEAR";
-            this.colSYTLE_YEAR.Visible = true;
-            this.colSYTLE_YEAR.VisibleIndex = 4;
-            this.colSYTLE_YEAR.Width = 94;
-            // 
-            // colMATERIAL_NAME_CN
-            // 
-            this.colMATERIAL_NAME_CN.Caption = "面料";
-            this.colMATERIAL_NAME_CN.FieldName = "MATERIAL_NAME_CN";
-            this.colMATERIAL_NAME_CN.MinWidth = 25;
-            this.colMATERIAL_NAME_CN.Name = "colMATERIAL_NAME_CN";
-            this.colMATERIAL_NAME_CN.Visible = true;
-            this.colMATERIAL_NAME_CN.VisibleIndex = 5;
-            this.colMATERIAL_NAME_CN.Width = 94;
-            // 
-            // colORDER_DATE
-            // 
-            this.colORDER_DATE.Caption = "下单时间";
-            this.colORDER_DATE.FieldName = "ORDER_DATE";
-            this.colORDER_DATE.MinWidth = 25;
-            this.colORDER_DATE.Name = "colORDER_DATE";
-            this.colORDER_DATE.Visible = true;
-            this.colORDER_DATE.VisibleIndex = 6;
-            this.colORDER_DATE.Width = 94;
-            // 
-            // colSTYLE_ID
-            // 
-            this.colSTYLE_ID.Caption = "gridColumn1";
-            this.colSTYLE_ID.FieldName = "STYLE_ID";
-            this.colSTYLE_ID.MinWidth = 25;
-            this.colSTYLE_ID.Name = "colSTYLE_ID";
-            this.colSTYLE_ID.Width = 94;
-            // 
-            // colSYTLE_FABRIC_ID
-            // 
-            this.colSYTLE_FABRIC_ID.Caption = "gridColumn1";
-            this.colSYTLE_FABRIC_ID.FieldName = "SYTLE_FABRIC_ID";
-            this.colSYTLE_FABRIC_ID.MinWidth = 25;
-            this.colSYTLE_FABRIC_ID.Name = "colSYTLE_FABRIC_ID";
-            this.colSYTLE_FABRIC_ID.Width = 94;
-            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
-            // 
-            // xtraTabControl1
-            // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 161);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(829, 400);
-            this.xtraTabControl1.TabIndex = 8;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
-            // 
-            // xtraTabPage1
-            // 
-            this.xtraTabPage1.Controls.Add(this.gridControl1);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(827, 364);
-            this.xtraTabPage1.Text = "成衣信息一览";
-            // 
-            // xtraTabPage2
-            // 
-            this.xtraTabPage2.Controls.Add(this.pivotGridControl);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(878, 400);
-            this.xtraTabPage2.Text = "发货统计";
             // 
             // pivotGridControl
             // 
@@ -561,7 +410,7 @@
             this.pivotGridControl.OptionsView.ShowDataHeaders = false;
             this.pivotGridControl.OptionsView.ShowFilterHeaders = false;
             this.pivotGridControl.OptionsView.ShowRowGrandTotals = false;
-            this.pivotGridControl.Size = new System.Drawing.Size(878, 400);
+            this.pivotGridControl.Size = new System.Drawing.Size(1294, 157);
             this.pivotGridControl.TabIndex = 5;
             this.pivotGridControl.TabStop = false;
             // 
@@ -626,14 +475,170 @@
             this.pivotGridField6.SummaryType = DevExpress.Data.PivotGrid.PivotSummaryType.Count;
             this.pivotGridField6.Width = 99;
             // 
+            // dockPanel3
+            // 
+            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
+            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel3.FloatVertical = true;
+            this.dockPanel3.ID = new System.Guid("25904e0c-3e1b-4b6b-8b92-78778587c7f0");
+            this.dockPanel3.Location = new System.Drawing.Point(0, 420);
+            this.dockPanel3.Name = "dockPanel3";
+            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel3.Size = new System.Drawing.Size(1302, 200);
+            this.dockPanel3.Text = "发货统计";
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Controls.Add(this.pivotGridControl);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 39);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(1294, 157);
+            this.dockPanel3_Container.TabIndex = 0;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 161);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(892, 259);
+            this.gridControl1.TabIndex = 5;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
+            this.colLOG_ID,
+            this.colORDER_NO,
+            this.colSTYLE_PUBLISH_CATEGORY_CD,
+            this.colSTYLE_NAME_CN,
+            this.colSYTLE_SEASON,
+            this.colSYTLE_YEAR,
+            this.colMATERIAL_NAME_CN,
+            this.colORDER_DATE,
+            this.colSTYLE_ID,
+            this.colSYTLE_FABRIC_ID});
+            this.gridView1.FixedLineWidth = 3;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colId
+            // 
+            this.colId.Caption = "gridColumn1";
+            this.colId.FieldName = "Id";
+            this.colId.MinWidth = 25;
+            this.colId.Name = "colId";
+            this.colId.Width = 94;
+            // 
+            // colORDER_NO
+            // 
+            this.colORDER_NO.Caption = "订单号";
+            this.colORDER_NO.FieldName = "ORDER_NO";
+            this.colORDER_NO.MinWidth = 25;
+            this.colORDER_NO.Name = "colORDER_NO";
+            this.colORDER_NO.Visible = true;
+            this.colORDER_NO.VisibleIndex = 1;
+            this.colORDER_NO.Width = 94;
+            // 
+            // colSTYLE_PUBLISH_CATEGORY_CD
+            // 
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Caption = "服装种类";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 25;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 2;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
+            // 
+            // colSTYLE_NAME_CN
+            // 
+            this.colSTYLE_NAME_CN.Caption = "款式";
+            this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.MinWidth = 25;
+            this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.Visible = true;
+            this.colSTYLE_NAME_CN.VisibleIndex = 3;
+            this.colSTYLE_NAME_CN.Width = 94;
+            // 
+            // colSYTLE_SEASON
+            // 
+            this.colSYTLE_SEASON.Caption = "季节";
+            this.colSYTLE_SEASON.FieldName = "SYTLE_SEASON";
+            this.colSYTLE_SEASON.MinWidth = 25;
+            this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
+            this.colSYTLE_SEASON.Visible = true;
+            this.colSYTLE_SEASON.VisibleIndex = 4;
+            this.colSYTLE_SEASON.Width = 94;
+            // 
+            // colSYTLE_YEAR
+            // 
+            this.colSYTLE_YEAR.Caption = "年份";
+            this.colSYTLE_YEAR.FieldName = "SYTLE_YEAR";
+            this.colSYTLE_YEAR.MinWidth = 25;
+            this.colSYTLE_YEAR.Name = "colSYTLE_YEAR";
+            this.colSYTLE_YEAR.Visible = true;
+            this.colSYTLE_YEAR.VisibleIndex = 5;
+            this.colSYTLE_YEAR.Width = 94;
+            // 
+            // colMATERIAL_NAME_CN
+            // 
+            this.colMATERIAL_NAME_CN.Caption = "面料";
+            this.colMATERIAL_NAME_CN.FieldName = "MATERIAL_NAME_CN";
+            this.colMATERIAL_NAME_CN.MinWidth = 25;
+            this.colMATERIAL_NAME_CN.Name = "colMATERIAL_NAME_CN";
+            this.colMATERIAL_NAME_CN.Visible = true;
+            this.colMATERIAL_NAME_CN.VisibleIndex = 6;
+            this.colMATERIAL_NAME_CN.Width = 94;
+            // 
+            // colORDER_DATE
+            // 
+            this.colORDER_DATE.Caption = "下单时间";
+            this.colORDER_DATE.FieldName = "ORDER_DATE";
+            this.colORDER_DATE.MinWidth = 25;
+            this.colORDER_DATE.Name = "colORDER_DATE";
+            this.colORDER_DATE.Visible = true;
+            this.colORDER_DATE.VisibleIndex = 7;
+            this.colORDER_DATE.Width = 94;
+            // 
+            // colSTYLE_ID
+            // 
+            this.colSTYLE_ID.Caption = "gridColumn1";
+            this.colSTYLE_ID.FieldName = "STYLE_ID";
+            this.colSTYLE_ID.MinWidth = 25;
+            this.colSTYLE_ID.Name = "colSTYLE_ID";
+            this.colSTYLE_ID.Width = 94;
+            // 
+            // colSYTLE_FABRIC_ID
+            // 
+            this.colSYTLE_FABRIC_ID.Caption = "gridColumn1";
+            this.colSYTLE_FABRIC_ID.FieldName = "SYTLE_FABRIC_ID";
+            this.colSYTLE_FABRIC_ID.MinWidth = 25;
+            this.colSYTLE_FABRIC_ID.Name = "colSYTLE_FABRIC_ID";
+            this.colSYTLE_FABRIC_ID.Width = 94;
+            // 
+            // colLOG_ID
+            // 
+            this.colLOG_ID.Caption = "编码";
+            this.colLOG_ID.FieldName = "LOG_ID";
+            this.colLOG_ID.MinWidth = 25;
+            this.colLOG_ID.Name = "colLOG_ID";
+            this.colLOG_ID.Visible = true;
+            this.colLOG_ID.VisibleIndex = 0;
+            this.colLOG_ID.Width = 94;
+            // 
             // XtraFrm门店出库
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 561);
-            this.Controls.Add(this.xtraTabControl1);
+            this.ClientSize = new System.Drawing.Size(1302, 620);
+            this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.dockPanel2);
             this.Controls.Add(this.dockPanel1);
+            this.Controls.Add(this.dockPanel3);
             this.Name = "XtraFrm门店出库";
             this.Text = "XtraFrm门店出库";
             this.Load += new System.EventHandler(this.XtraFrm门店出库_Load);
@@ -654,13 +659,11 @@
             this.tablePanel2.ResumeLayout(false);
             this.tablePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit扫码.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).EndInit();
+            this.dockPanel3.ResumeLayout(false);
+            this.dockPanel3_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
-            this.xtraTabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -686,22 +689,7 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel2;
         private DevExpress.XtraEditors.TextEdit textEdit扫码;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colId;
-        private DevExpress.XtraGrid.Columns.GridColumn colORDER_NO;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_PUBLISH_CATEGORY_CD;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_NAME_CN;
-        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_SEASON;
-        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_YEAR;
-        private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_NAME_CN;
-        private DevExpress.XtraGrid.Columns.GridColumn colORDER_DATE;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_FABRIC_ID;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField1;
         private DevExpress.XtraPivotGrid.PivotGridField pivotGridField2;
@@ -714,5 +702,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn colshop_type;
         private DevExpress.Utils.Layout.TablePanel tablePanel3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
+        private DevExpress.XtraGrid.Columns.GridColumn colORDER_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_PUBLISH_CATEGORY_CD;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_NAME_CN;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_SEASON;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_YEAR;
+        private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_NAME_CN;
+        private DevExpress.XtraGrid.Columns.GridColumn colORDER_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_FABRIC_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colLOG_ID;
     }
 }

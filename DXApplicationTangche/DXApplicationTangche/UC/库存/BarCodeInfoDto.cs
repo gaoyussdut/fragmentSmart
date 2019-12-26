@@ -28,6 +28,7 @@ namespace DXApplicationTangche.UC.库存
         public String MATERIAL_COLOR { get; set; }
         public String STYLE_PUBLISH_CATEGORY_CD { get; set; }
         public String ORDER_NO { get; set; }
+        public String LOG_ID { get; set; }
 
         public BarCodeInfoDto(DataTable dataTable) {
             this.Id = dataTable.Rows[0]["Id"].ToString();
@@ -46,6 +47,7 @@ namespace DXApplicationTangche.UC.库存
             this.MATERIAL_COLOR = dataTable.Rows[0]["MATERIAL_COLOR"].ToString();
             this.STYLE_PUBLISH_CATEGORY_CD = dataTable.Rows[0]["STYLE_PUBLISH_CATEGORY_CD"].ToString();
             this.ORDER_NO = dataTable.Rows[0]["ORDER_NO"].ToString();
+            this.LOG_ID = dataTable.Rows[0]["LOG_ID"].ToString();
         }
     }
 }
