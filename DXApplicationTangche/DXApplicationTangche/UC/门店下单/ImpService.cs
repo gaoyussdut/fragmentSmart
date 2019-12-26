@@ -61,7 +61,7 @@ namespace mendian
 " style.SYS_STYLE_ID \n" +
 "ORDER BY\n" +
 " style.UPDATE_DATE DESC \n" +
-" LIMIT " + ((page - 1) * 27).ToString() + ",27");
+" LIMIT " + ((page - 1) * 21).ToString() + ",21");
             return dt;
         }
         /// <summary>
@@ -1354,7 +1354,11 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             String sql = "SELECT * FROM v_order_p WHERE ORDER_NO='" + orderno + "'";
             return SQLmtm.GetDataTable(sql);
         }
-
+        /// <summary>
+        /// 查询未打印订单
+        /// </summary>
+        /// <param name="orderno"></param>
+        /// <returns></returns>
         public static DataTable GetNotPrintedData(String orderno)
         {
             String sql = "SELECT " +
@@ -1365,6 +1369,31 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "	ORDER_NO NOT IN ( SELECT ORDER_NO FROM a_product_log_p ) " +
 "	AND ORDER_NO LIKE '%" + orderno + "%' " +
 "	LIMIT 500";
+            return SQLmtm.GetDataTable(sql);
+        }
+        /// <summary>
+        /// 查询用户
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static DataTable GetCustomerData(String str)
+        {
+            String sql = "SELECT " +
+"	acp.CUSTOMER_ID AS ID, " +
+"	CONCAT( CONCAT( acp.CUSTOMER_FIRST_NAME, ' ' ), acp.CUSTOMER_LAST_NAME ) AS 微信名称, " +
+"	acp.MOBILE AS 手机, " +
+"	acp.CREATE_DATE AS 注册时间, " +
+"	cap.CONSIGNEE AS 客户姓名 " +
+"FROM " +
+"	a_customer_p AS acp " +
+"LEFT JOIN a_customer_address_p AS cap ON cap.CUSTOMER_ID = acp.CUSTOMER_ID " +
+"WHERE " +
+"	acp.CUSTOMER_FIRST_NAME LIKE '%"+str+"%'  " +
+"	OR acp.CUSTOMER_LAST_NAME LIKE '%"+str+"%'  " +
+"	OR acp.MOBILE LIKE '%" + str + "%'  " +
+"	OR cap.CONSIGNEE LIKE '%" + str + "%'  " +
+"ORDER BY " +
+"	acp.CREATE_DATE DESC  " ;
             return SQLmtm.GetDataTable(sql);
         }
     }

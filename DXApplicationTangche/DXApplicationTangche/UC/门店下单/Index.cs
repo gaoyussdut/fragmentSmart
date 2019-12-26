@@ -16,7 +16,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class Index : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Index : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
         public static String ORDER_NO;
         public static int page { get; set; } = 1;
@@ -178,7 +178,7 @@ namespace mendian
             //userControl.Size = new Size(200, 30);
             if (i != 0)
             {
-                if (i % 9 == 0)
+                if (i % 7 == 0)
                 {
                     width = 0;
                     height = height + 200;
@@ -223,35 +223,10 @@ namespace mendian
             ImpService.DownloadSheJiDianPic(shejidianDifflist);
             bool shjdyn = DealXML.ObjectToXMLFile(sjdpl.shejidianpiclist, @"xml\shjdpicxml.xml", Encoding.UTF8);
 
+            this.searchLookUpEdit1.Properties.DataSource = ImpService.GetCustomerData("");
+
             this.splashScreenManager.CloseWaitForm();
-            //String viewDtostrToken = RestCall.httpGetMethod("http://192.168.1.7:5090/bill/generalView?tokenTemplateId=" + "dingdan" + "&pageSize=" + "500" + "&pageNo=" + "1");
-            //Result previewResult = Newtonsoft.Json.JsonConvert.DeserializeObject<Result>(viewDtostrToken);
-            //PreviewDTO previewDTO = Newtonsoft.Json.JsonConvert.DeserializeObject<PreviewDTO>(previewResult.data.ToString());
-            //List<ReducedFkeyField> ssstyle = new List<ReducedFkeyField>();
-            //List<string> style = new List<string>();       
-            //foreach (ReducedTokenDataDto sstyle in previewDTO.datas.tokenDataDtoList)
-            //{
-            //    //dingDanDTO.Add(new DingDanDTO { TokenId = sstyle.tokenId });
-            //    ssstyle.AddRange(sstyle.fields);
-            //    foreach (ReducedFkeyField sssstyle in ssstyle)
-            //    {
-            //        if (sssstyle.key == "mingcheng")
-            //        {
-            //            jsData = sssstyle.jsonData;
-            //            //style.Add(sssstyle.jsonData);
-            //        }
-            //    }
-            //    dingDanDTO.Add(new DingDanDTO { TokenId = sstyle.tokenId, Mingcheng = jsData });
-            //}
-            ////foreach (ReducedFkeyField sssstyle in ssstyle)
-            ////{
-            ////    if(sssstyle.key=="mingcheng")
-            ////    {
-            ////        style.Add(sssstyle.jsonData);
-            ////    }
-            ////}
-            this.gridView1.GroupPanelText = "订单一览";
-            RefreshGridcontrol("");
+
         }
         /// <summary>
         /// 刷新gridcontrol
@@ -262,82 +237,12 @@ namespace mendian
         {
             this.gridControl2.DataSource = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
         }
-        private void RefreshGridcontrol(String str)
-        {
-            DataTable dt = SQLmtm.GetDataTable("SELECT op.ORDER_ID,op.ORDER_NO,op.CUSTOM_NAME,ap.CONSIGNEE,acp.MOBILE,sp.STYLE_NAME_CN,op.ORDER_DATE,op.STYLE_ID  FROM o_order_p AS op LEFT JOIN s_style_p AS sp ON op.STYLE_ID=sp.SYS_STYLE_ID LEFT JOIN a_customer_address_p AS ap ON op.CUSTOMER_ID=ap.CUSTOMER_ID LEFT JOIN a_customer_p AS acp ON op.CUSTOMER_ID=acp.CUSTOMER_ID WHERE op.SHOP_ID='18' AND (ap.CONSIGNEE LIKE '%"+ str + "%' OR acp.MOBILE LIKE '%"+ str + "%') ORDER BY op.ORDER_DATE DESC LIMIT 100");
-            this.gridControl1.DataSource = dt;
-            this.gridControl1.Refresh();
-        }
-
-        private void 刷新ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RefreshGridcontrol("");
-        }
-
-        private void 已付款ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int handle = this.gridView1.FocusedRowHandle;
-            DataRow dr = this.gridView1.GetDataRow(handle);
-            int i = SQLmtm.DoUpdate("o_order_p", new string[] { "ORDER_STATUS_CD" }, new string[] { "ORDER_STATUS-OS_13" }, new string[] { "ORDER_ID" }, new string[] { dr["ORDER_ID"].ToString() });
-            //DBUtil.DoUpdate("chunshan_dingdan_bill_________new", new string[] { "dingdanzhuangtai" }, new string[] { "已付款" }, new string[] { "id" }, new string[] { Convert.ToString(dr["id"]) });
-            if (i == 1)
-            {
-                MessageBox.Show("修改成功");
-            }
-            else
-            {
-                MessageBox.Show("修改失败");
-            }
-            RefreshGridcontrol("");
-        }
-
-        private void 未付款ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int handle = this.gridView1.FocusedRowHandle;
-            DataRow dr = this.gridView1.GetDataRow(handle);
-            int i = SQLmtm.DoUpdate("o_order_p", new string[] { "ORDER_STATUS_CD" }, new string[] { "ORDER_STATUS-OS_12" }, new string[] { "ORDER_ID" }, new string[] { dr["ORDER_ID"].ToString() });
-            //DBUtil.DoUpdate("chunshan_dingdan_bill_________new", new string[] { "dingdanzhuangtai" }, new string[] { "已付款" }, new string[] { "id" }, new string[] { Convert.ToString(dr["id"]) });
-            if (i == 1)
-            {
-                MessageBox.Show("修改成功");
-            }
-            else
-            {
-                MessageBox.Show("修改失败");
-            }
-            RefreshGridcontrol("");
-            //int handle = this.gridView1.FocusedRowHandle;
-            //DataRow dr = this.gridView1.GetDataRow(handle);
-            //DBUtil.DoUpdate("chunshan_dingdan_bill_________new", new string[] { "dingdanzhuangtai" }, new string[] { "未付款" }, new string[] { "id" }, new string[] { Convert.ToString(dr["id"]) });
-            //RefreshGridcontrol();
-
-        }
-
-        private void 导出ExcelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = "导出Excel";
-            saveFileDialog.Filter = "Excel文件(*.xls)|*.xls";
-            DialogResult dialogResult = saveFileDialog.ShowDialog(this);
-            if (dialogResult == DialogResult.OK)
-            {
-                DevExpress.XtraPrinting.XlsExportOptions options = new DevExpress.XtraPrinting.XlsExportOptions();
-                gridControl1.ExportToXls(saveFileDialog.FileName, options);
-                //gridControl_liangti.ExportToExcelOld(saveFileDialog.FileName);
-                DevExpress.XtraEditors.XtraMessageBox.Show("保存成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void simpleButton3_Click(object sender, EventArgs e)
-        {
-            CreateCustomer cc = new CreateCustomer();
-            cc.ShowDialog();
-        }
-
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            new CustomerChoose().ShowDialog();
-        }
+        //private void RefreshGridcontrol(String str)
+        //{
+        //    DataTable dt = SQLmtm.GetDataTable("SELECT op.ORDER_ID,op.ORDER_NO,op.CUSTOM_NAME,ap.CONSIGNEE,acp.MOBILE,sp.STYLE_NAME_CN,op.ORDER_DATE,op.STYLE_ID  FROM o_order_p AS op LEFT JOIN s_style_p AS sp ON op.STYLE_ID=sp.SYS_STYLE_ID LEFT JOIN a_customer_address_p AS ap ON op.CUSTOMER_ID=ap.CUSTOMER_ID LEFT JOIN a_customer_p AS acp ON op.CUSTOMER_ID=acp.CUSTOMER_ID WHERE op.SHOP_ID='18' AND (ap.CONSIGNEE LIKE '%"+ str + "%' OR acp.MOBILE LIKE '%"+ str + "%') ORDER BY op.ORDER_DATE DESC LIMIT 100");
+        //    this.gridControl1.DataSource = dt;
+        //    this.gridControl1.Refresh();
+        //}
         /// <summary>
         /// 下一页
         /// </summary>
@@ -461,23 +366,60 @@ namespace mendian
             this.fenYeLan1.label1.Text = Index.page.ToString();
             this.splashScreenManager.CloseWaitForm();
         }
-
-        private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        #region 选择门店
+        private void searchLookUpEdit1_Popup(object sender, EventArgs e)
         {
-            int handle = this.gridView1.FocusedRowHandle;
-            DataRow dr = this.gridView1.GetDataRow(handle);
-            //new ReviseStyle(dr["STYLE_ID"].ToString(),dr["ORDER_ID"].ToString()).ShowDialog();
+            //得到当前SearchLookUpEdit弹出窗体
+            PopupSearchLookUpEditForm form = (sender as IPopupControl).PopupWindow as PopupSearchLookUpEditForm;
+            SearchEditLookUpPopup popup = form.Controls.OfType<SearchEditLookUpPopup>().FirstOrDefault();
+            LayoutControl layout = popup.Controls.OfType<LayoutControl>().FirstOrDefault();
+            //如果窗体内空间没有确认按钮，则自定义确认simplebutton，取消simplebutton，选中结果label
+            if (layout.Controls.OfType<Control>().Where(ct => ct.Name == "btOK").FirstOrDefault() == null)
+            {
+                //得到空的空间
+                EmptySpaceItem a = layout.Items.Where(it => it.TypeName == "EmptySpaceItem").FirstOrDefault() as EmptySpaceItem;
+
+                //得到取消按钮，重写点击事件
+                Control clearBtn = layout.Controls.OfType<Control>().Where(ct => ct.Name == "btClear").FirstOrDefault();
+                LayoutControlItem clearLCI = (LayoutControlItem)layout.GetItemByControl(clearBtn);
+                clearBtn.Click += clearBtn_Click;
+
+                //添加一个simplebutton控件(确认按钮)
+                LayoutControlItem myLCI = (LayoutControlItem)clearLCI.Owner.CreateLayoutItem(clearLCI.Parent);
+                myLCI.TextVisible = false;
+            }
         }
 
-        private void simpleButton5_Click(object sender, EventArgs e)
+        private void searchLookUpEdit1View_Click(object sender, EventArgs e)
         {
-            this.splashScreenManager.ShowWaitForm();
-            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
-            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-            RefreshGridcontrol(this.textBox2.Text);
-            this.splashScreenManager.CloseWaitForm();
+            var a = this.searchLookUpEdit1.Properties.View.GetSelectedRows();
+            foreach (int rowHandle in a)
+            {
+                CreateCustomer.cUSTOMER_ID //  no
+                    = Convert.ToInt32(this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "ID").ToString());//id 是 Value Member
+                //this.style_id //  id
+                //    = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "style_id").ToString();//name 是 Display Member
+                //this.order_text//text
+                //    = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "ORDER_NO").ToString() + this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "STYLE_NAME_CN").ToString();
+            }
+            this.gridControl2.DataSource = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
         }
 
-        
+        /// <summary>
+        /// 清除按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            this.searchLookUpEdit1.ToolTip = null;
+            searchLookUpEdit1.EditValue = null;
+        }
+        private void searchLookUpEdit1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (null != e.Value)
+                e.DisplayText = CreateCustomer.cUSTOMER_ID.ToString();
+        }
+        #endregion
     }
 }
