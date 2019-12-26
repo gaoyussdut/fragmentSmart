@@ -122,7 +122,8 @@
     <Compile Include="QueryTag.Designer.cs">
       <DependentUpon>QueryTag.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\库存\出库\BarCodeInfoDto.cs" />
+    <Compile Include="UC\库存\service\StockService.cs" />
+    <Compile Include="UC\库存\dto\BarCodeInfoDto.cs" />
     <Compile Include="UC\库存\出库\XtraFrm门店出库.cs">
       <SubType>Form</SubType>
     </Compile>

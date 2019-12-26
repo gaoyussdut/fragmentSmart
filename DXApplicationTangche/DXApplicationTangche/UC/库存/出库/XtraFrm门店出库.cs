@@ -15,6 +15,7 @@ using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
 using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
+using DXApplicationTangche.UC.库存.service;
 
 namespace DXApplicationTangche.UC.库存
 {
@@ -94,44 +95,35 @@ namespace DXApplicationTangche.UC.库存
                     this.textEdit扫码.Text = "";
                     return;
                 }
-                String sql = "select Id,LOG_ID,ORDER_ID,CUSTOMER_ID,SHOP_ID,SHOP_NAME,STYLE_ID,ORDER_DATE,STYLE_NAME_CN,SYTLE_YEAR,SYTLE_SEASON,REF_STYLE_ID,SYTLE_FABRIC_ID,MATERIAL_NAME_CN,MATERIAL_COLOR,STYLE_PUBLISH_CATEGORY_CD,ORDER_NO from a_product_log_p " +
-                    "where Id not in (select barcode_id from t_godown_entry) and LOG_ID = '" + this.textEdit扫码.Text+"'";
 
-                DataTable dt = SQLmtm.GetDataTable(sql);
-                if (dt.Rows.Count == 0)
+                BarCodeInfoDto barCodeInfo;
+                try
                 {
-                    sql = "select Id,LOG_ID,ORDER_ID,CUSTOMER_ID,SHOP_ID,SHOP_NAME,STYLE_ID,ORDER_DATE,STYLE_NAME_CN,SYTLE_YEAR,SYTLE_SEASON,REF_STYLE_ID,SYTLE_FABRIC_ID,MATERIAL_NAME_CN,MATERIAL_COLOR,STYLE_PUBLISH_CATEGORY_CD,ORDER_NO from a_product_log_p " +
-                    "where LOG_ID = '" + this.textEdit扫码.Text + "'";
-                    dt = SQLmtm.GetDataTable(sql);
-                    if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show("系统中无本产品标签列印信息");
-                    }
-                    else {
-                        MessageBox.Show("本商品已出库");
-                    }
+                    barCodeInfo = StockService.getStockOutBarCodeInfo(this.textEdit扫码.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("错误信息: " + ex.Message);
                     return;
                 }
-                else {
-                    BarCodeInfoDto barCodeInfo = new BarCodeInfoDto(dt);
-                    //  条码记录
-                    this.barCodes.Add(barCodeInfo.LOG_ID);
-                    this.textEdit扫码.Text = "";
-                    //  条码信息
-                    this.barCodeInfoDtos.Add(barCodeInfo);
-                    //  刷新数据源
-                    this.gridControl1.DataSource = this.barCodeInfoDtos;
-                    //this.pivotGridControl.ForceInitialize();
-                    this.pivotGridControl.DataSource = this.barCodeInfoDtos;
-                    this.pivotGridControl.RefreshData();
-                }
+
+
+                //  条码记录
+                this.barCodes.Add(barCodeInfo.LOG_ID);
+                this.textEdit扫码.Text = "";
+                //  条码信息
+                this.barCodeInfoDtos.Add(barCodeInfo);
+                //  刷新数据源
+                this.gridControl1.DataSource = this.barCodeInfoDtos;
+                //this.pivotGridControl.ForceInitialize();
+                this.pivotGridControl.DataSource = this.barCodeInfoDtos;
+                this.pivotGridControl.RefreshData();
             }
         }
 
         private void XtraFrm门店出库_Load(object sender, EventArgs e)
         {
-            String sql = "select shop_id,shop_name,shop_type from t_shop";
-            this.searchLookUpEdit1.Properties.DataSource = SQLmtm.GetDataTable(sql);
+            this.searchLookUpEdit1.Properties.DataSource = ShopService.getShopAll();
 
             //  单号生成
             this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code","CH", "00000");
@@ -152,24 +144,9 @@ namespace DXApplicationTangche.UC.库存
 
             DialogResult dialogResult= MessageBox.Show("确认出货？", "出货提醒", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dialogResult == DialogResult.OK) {
-                String godown_id = System.Guid.NewGuid().ToString("N");
-                //  出货单
-                SQLmtm.DoInsert(
-                    "t_godown_bill"
-                    , new string[] { "godown_id", "godown_date", "godown_code", "shop_id" }
-                    , new string[] { godown_id, this.dateTimePicker1.Value.ToString(), this.textEdit出库单号.Text, this.shopId }
-                    );
-                //  出货单分录           
-                foreach (BarCodeInfoDto barCodeInfo in this.barCodeInfoDtos)
-                {
-                    SQLmtm.DoInsert(
-                        "t_godown_entry"
-                        , new string[] { "godown_entry_id", "godown_id", "barcode_id", "is_validate" }
-                        , new string[] { System.Guid.NewGuid().ToString("N"), godown_id, barCodeInfo.Id, "1" }
-                        );
-                }
-
-
+                //  出库
+                StockService.generateStockOut(this.dateTimePicker1.Value, this.textEdit出库单号.Text, this.shopId, this.barCodeInfoDtos);
+                //  提醒
                 MessageBox.Show("出库单号"+this.textEdit出库单号.Text + "已出库完成");
                 //  单号变更
                 this.textEdit出库单号.Text = FunctionHelper.generateBillNo("t_godown_bill", "godown_code", "CH", "00000");
