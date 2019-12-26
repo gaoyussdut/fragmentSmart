@@ -1,4 +1,8 @@
-﻿using DiaoPaiDaYin;
+﻿using DevExpress.Utils.Win;
+using DevExpress.XtraEditors.Popup;
+using DevExpress.XtraGrid.Editors;
+using DevExpress.XtraLayout;
+using DiaoPaiDaYin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +18,7 @@ namespace mendian
 {
     public partial class Index : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public static String ORDER_NO;
         public static int page { get; set; } = 1;
         public static String billid { get; set; }
         //private List<DingDanDTO> dingDanDTO = new List<DingDanDTO>();
@@ -472,5 +477,7 @@ namespace mendian
             RefreshGridcontrol(this.textBox2.Text);
             this.splashScreenManager.CloseWaitForm();
         }
+
+        
     }
 }

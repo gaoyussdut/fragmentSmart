@@ -114,6 +114,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotPrinted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotPrinted.Designer.cs">
+      <DependentUpon>NotPrinted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryTag.cs">
@@ -269,7 +275,6 @@
     <Compile Include="UC\标签列印\Frm吊牌打印.designer.cs">
       <DependentUpon>Frm吊牌打印.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\标签列印\ImpService.cs" />
     <Compile Include="UC\标签列印\XtraUC条码打印.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -282,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotPrinted.resx">
+      <DependentUpon>NotPrinted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
