@@ -147,7 +147,6 @@
     <Compile Include="UC\门店下单\ChiCunCard.designer.cs">
       <DependentUpon>ChiCunCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\DBuil\Card.cs" />
     <Compile Include="UC\门店下单\DBuil\ListToDatatable.cs" />
     <Compile Include="UC\门店下单\DBuil\PanelLocition.cs" />
     <Compile Include="UC\门店下单\DBuil\RestCall.cs" />

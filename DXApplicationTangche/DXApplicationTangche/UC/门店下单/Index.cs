@@ -153,19 +153,19 @@ namespace mendian
         //    return m_list;
 
         //}       
-        private List<Card> onFindKeyWord(string str, List<Card> cardlist)
-        {
-            List<Card> list = new List<Card>();
-            foreach (Card card in cardlist)
-            {
-                if (card.quanming.IndexOf(str) != -1)
-                {
-                    list.Add(card);
-                }
+        //private List<Card> onFindKeyWord(string str, List<Card> cardlist)
+        //{
+        //    List<Card> list = new List<Card>();
+        //    foreach (Card card in cardlist)
+        //    {
+        //        if (card.quanming.IndexOf(str) != -1)
+        //        {
+        //            list.Add(card);
+        //        }
 
-            }
-            return list;
-        }
+        //    }
+        //    return list;
+        //}
 
         public void generateUserControl(UserControl userControl, int i)
         {

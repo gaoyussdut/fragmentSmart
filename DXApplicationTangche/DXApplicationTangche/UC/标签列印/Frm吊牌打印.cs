@@ -113,9 +113,9 @@ namespace DiaoPaiDaYin
                     //this.shoujia.Text = "¥" + this.impdr["STYLE_SHOP_TOTAL_PRICE"].ToString();
                     this.cycc = ImpService.GetChengYiChiCun(this.impdr["SYS_STYLE_ID"].ToString());
                 }
-                catch(Exception ex)
+                catch/*(Exception ex)*/
                 {
-                    MessageBox.Show("错误信息: " + ex.Message);
+                    //MessageBox.Show("错误信息: " + ex.Message);
                 }
             }
         }

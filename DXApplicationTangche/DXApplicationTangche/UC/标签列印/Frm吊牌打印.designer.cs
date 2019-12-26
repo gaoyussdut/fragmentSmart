@@ -197,6 +197,7 @@
             // orderno
             // 
             this.orderno.Font = new System.Drawing.Font("宋体", 24F);
+            this.orderno.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.orderno.Location = new System.Drawing.Point(131, 12);
             this.orderno.Name = "orderno";
             this.orderno.Size = new System.Drawing.Size(734, 43);
