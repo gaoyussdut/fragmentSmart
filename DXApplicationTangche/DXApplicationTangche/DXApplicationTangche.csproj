@@ -36,7 +36,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Accessibility" />
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
@@ -86,8 +85,6 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -116,12 +113,6 @@
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NotPrinted.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotPrinted.Designer.cs">
-      <DependentUpon>NotPrinted.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -257,6 +248,12 @@
     <Compile Include="UC\门店下单\StyleCard.Designer.cs">
       <DependentUpon>StyleCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\门店下单\UC\XtraUC扫码销售出库.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\UC\XtraUC扫码销售出库.Designer.cs">
+      <DependentUpon>XtraUC扫码销售出库.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\门店下单\WaitForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +275,7 @@
     <Compile Include="UC\标签列印\Frm吊牌打印.designer.cs">
       <DependentUpon>Frm吊牌打印.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\标签列印\ImpService.cs" />
     <Compile Include="UC\标签列印\XtraUC条码打印.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -290,9 +288,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotPrinted.resx">
-      <DependentUpon>NotPrinted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
