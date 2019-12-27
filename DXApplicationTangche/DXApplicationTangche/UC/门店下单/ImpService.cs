@@ -1359,16 +1359,18 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// </summary>
         /// <param name="orderno"></param>
         /// <returns></returns>
-        public static DataTable GetNotPrintedData(String orderno)
+        public static DataTable GetNotPrintedData(String orderno,DateTime startTime,DateTime endTime)
         {
             String sql = "SELECT " +
-"	*  " +
-"FROM " +
-"	v_order_p " +
-"WHERE " +
-"	ORDER_NO NOT IN ( SELECT ORDER_NO FROM a_product_log_p ) " +
-"	AND ORDER_NO LIKE '%" + orderno + "%' " +
-"	LIMIT 500";
+                "	*  " +
+                "FROM " +
+                "	v_order_p " +
+                "WHERE " +
+                "	ORDER_NO NOT IN ( SELECT ORDER_NO FROM a_product_log_p ) " +
+                "	AND ORDER_NO LIKE '%" + orderno + "%' " +
+                " and shop_id <>'46'"+   //  去掉坚山
+                " and ORDER_DATE between '" +startTime.ToString()+"' and '"+endTime.ToString()+"'"+
+                "	order by ORDER_DATE";
             return SQLmtm.GetDataTable(sql);
         }
         /// <summary>

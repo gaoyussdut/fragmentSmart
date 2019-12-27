@@ -23,13 +23,23 @@ namespace DXApplicationTangche
         {
             if (e.KeyValue == 13)
             {
-                DataTable dt= ImpService.GetNotPrintedData(this.textBox1.Text);
+                DataTable dt= ImpService.GetNotPrintedData(
+                    this.textBox1.Text
+                    , this.dateTimePicker1.Value
+                    , this.dateTimePicker2.Value
+                    );
                 if(dt.Rows.Count==0)
                 {
                     MessageBox.Show("订单吊牌已打印");
                 }
                 this.gridControl1.DataSource = dt;
             }
+        }
+
+        private void NotPrinted_Load(object sender, EventArgs e)
+        {
+            this.dateTimePicker2.Value = DateTime.Now;
+            this.dateTimePicker1.Value = DateTime.Now.AddDays(-14);
         }
     }
 }
