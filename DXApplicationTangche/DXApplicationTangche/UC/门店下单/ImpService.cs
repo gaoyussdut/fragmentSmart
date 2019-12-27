@@ -1359,17 +1359,17 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// </summary>
         /// <param name="orderno"></param>
         /// <returns></returns>
-        public static DataTable GetNotPrintedData(String orderno,DateTime startTime,DateTime endTime)
+        public static DataTable GetNotPrintedData(String orderno,DateTime startTime,DateTime endTime,int order_type)
         {
             String sql = "SELECT " +
                 "	*  " +
                 "FROM " +
-                "	v_order_p " +
+                "	v_order_with_type " +
                 "WHERE " +
                 "	ORDER_NO NOT IN ( SELECT ORDER_NO FROM a_product_log_p ) " +
                 "	AND ORDER_NO LIKE '%" + orderno + "%' " +
-                " and shop_id <>'46'"+   //  去掉坚山
                 " and ORDER_DATE between '" +startTime.ToString()+"' and '"+endTime.ToString()+"'"+
+                " and order_type ='"+order_type+"'"+
                 "	order by ORDER_DATE";
             return SQLmtm.GetDataTable(sql);
         }
@@ -1480,6 +1480,11 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             customerInformation.Add(new CustomerInformation(information, value));
             customerInformation.AddRange(ci);
             return customerInformation;
+        }
+
+        public static DataTable getOrderTypeCode() {
+            String sql = "select * from t_order_type_code;";
+            return SQLmtm.GetDataTable(sql);
         }
     }
 }

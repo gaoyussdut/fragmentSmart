@@ -28,10 +28,11 @@ namespace DXApplicationTangche
                     this.textBox1.Text
                     , this.dateTimePicker1.Value
                     , this.dateTimePicker2.Value
+                    ,Convert.ToInt32(this.comboBox订单类型.SelectedValue)
                     );
                 if (dt.Rows.Count==0)
                 {
-                    MessageBox.Show("订单吊牌已打印");
+                    MessageBox.Show("未找到未打印标签数据");
                 }
                 this.gridControl1.DataSource = dt;
             }
@@ -39,10 +40,16 @@ namespace DXApplicationTangche
 
         private void NotPrinted_Load(object sender, EventArgs e)
         {
+            //  时间
             this.dateTimePicker2.Value = DateTime.Now;
             this.dateTimePicker1.Value = DateTime.Now.AddDays(-14);
+            //  UC
             this.printedView.Dock = DockStyle.Top;
             this.view.Controls.Add(printedView);
+            //  出货类型
+            this.comboBox订单类型.DataSource = ImpService.getOrderTypeCode();
+            this.comboBox订单类型.DisplayMember = "order_type_name";
+            this.comboBox订单类型.ValueMember = "order_type_id";
         }
 
         private void gridView11_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
