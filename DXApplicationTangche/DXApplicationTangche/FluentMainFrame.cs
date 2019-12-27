@@ -85,6 +85,9 @@ namespace DXApplicationTangche
             this.initPanel(new NotPrinted());
         }
 
-
+        private void accordionControlElement6_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm标准款下单());
+        }
     }
 }

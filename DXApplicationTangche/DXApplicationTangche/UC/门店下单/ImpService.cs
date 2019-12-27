@@ -719,10 +719,10 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                     ChiCunCard c = (ChiCunCard)card;
                     fitv.icadd(c.iTEM_CD);
                     fitv.ivadd(c.iTEM_VALUE);
-                    //fitv.fvadd(c.chengyi.Text);
+                    fitv.fvadd(c.chengyi.Text);
                     fitv.fmvadd(c.iTEM_VALUE);
-                    //fitv.invadd(c.jia.Text);
-                    //fitv.outvadd(c.jian.Text);
+                    fitv.invadd(c.jia.Text);
+                    fitv.outvadd(c.jian.Text);
                 }
             }
             SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString(), customername, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
@@ -1488,7 +1488,50 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             String sql = "select * from t_order_type_code;";
             return SQLmtm.GetDataTable(sql);
         }
-        
+        /// <summary>
+        /// 标准款设计点保存
+        /// </summary>
+        /// <param name="styleid"></param>
+        public static void StandardModelsDesignSive(String styleid)
+        {
+            try
+            {
+                String sql = "SELECT * FROM s_style_option_r WHERE SYS_STYLE_ID='" + styleid + "'";
+                DataTable dt = SQLmtm.GetDataTable(sql);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" },
+    new string[] { Change.styleid.ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["OPTION_VALUE"].ToString(), "1", "0" });
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("错误信息: " + ex.Message);
+                return;
+            }
+
+        }
+        /// <summary>
+        /// 标准款设计点保存
+        /// </summary>
+        /// <param name="styleid"></param>
+        /// <param name="dt"></param>
+        public static void StandardModelsSizeSive(String styleid,DataTable dt)
+        {
+            Fit_ValueDTo fitv = new Fit_ValueDTo();
+            foreach (DataRow dr in dt.Rows)
+            {
+                fitv.icadd(dr["ITEM_CD"].ToString());
+                fitv.ivadd(dr["ITEM_VALUE"].ToString());
+                fitv.fvadd(dr["ITEM_FIT_VALUE"].ToString());
+                fitv.fmvadd(dr["ITEM_VALUE"].ToString());
+                fitv.invadd("0");
+                fitv.outvadd("0");
+            }
+            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] {  "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] {  CreateCustomer.cUSTOMER_ID.ToString(), CreateCustomer.customer_name, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
+            SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
+    new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
+        }
     }
 }
 

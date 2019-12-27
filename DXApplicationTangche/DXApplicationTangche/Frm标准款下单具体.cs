@@ -64,5 +64,15 @@ namespace DXApplicationTangche
             }
 
         }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            new MianLiaochoose().ShowDialog();
+        }
+
+        private void Frm标准款下单具体_Activated(object sender, EventArgs e)
+        {
+            this.mianliaoname.Text = MianLiaochoose.mianliao;
+        }
     }
 }

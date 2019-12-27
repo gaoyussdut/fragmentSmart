@@ -17,7 +17,7 @@ namespace mendian
         public String mianliaocd;
         public String picurl;
         public String picn;
-        public Form form;
+        public MianLiaochoose form;
         public bool flag;
         public MianLiaoCard()
         {
