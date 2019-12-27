@@ -30,25 +30,16 @@ namespace mendian
         public String sYTLE_YEAR = "";
         public String sYTLE_SEASON = "";
         public String sTYLE_SIZE_CD = "";
+        public bool flag = true;
 
         public StyleCard()
         {
             InitializeComponent();
-            //try
-            //{
-            //    string url = string.Format(@"https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/ZSF-1-320.jpg", 5, 123456);
-            //    //string url = string.Format(@"https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/ZSF-1-320.jpg?size={0}&content={1}", 5, 123456);
-            //    System.Net.WebRequest webreq = System.Net.WebRequest.Create(url);
-            //    System.Net.WebResponse webres = webreq.GetResponse();
-            //    using (System.IO.Stream stream = webres.GetResponseStream())
-            //    {
-            //        stylecardpicbox.Image = Image.FromStream(stream);
-            //    }
-            //}
-            //catch
-            //{
-            //    return;
-            //}
+        }
+        public StyleCard(bool flag)
+        {
+            this.flag = flag;
+            InitializeComponent();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -58,7 +49,14 @@ namespace mendian
                 MessageBox.Show("请先选择客户");
                 return;
             }
-            new Change(this).ShowDialog();
+            if(this.flag==false)
+            {
+                
+            }
+            else
+            {
+                new Change(this).ShowDialog();
+            }
         }
 
 
