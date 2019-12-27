@@ -64,11 +64,6 @@
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.mianLiaoCard1 = new mendian.MianLiaoCard();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -85,12 +80,7 @@
             this.view.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // toolbarFormManager1
@@ -138,10 +128,10 @@
             this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 99);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(621, 270);
+            this.layoutControl1.Size = new System.Drawing.Size(681, 426);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -150,7 +140,7 @@
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 16F);
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(597, 36);
+            this.textBox1.Size = new System.Drawing.Size(657, 36);
             this.textBox1.TabIndex = 7;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
@@ -161,7 +151,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(597, 206);
+            this.gridControl1.Size = new System.Drawing.Size(657, 362);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -283,7 +273,7 @@
             this.layoutControlItem3,
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(621, 270);
+            this.Root.Size = new System.Drawing.Size(681, 426);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem3
@@ -292,7 +282,7 @@
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(601, 210);
+            this.layoutControlItem3.Size = new System.Drawing.Size(661, 366);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -303,7 +293,7 @@
             this.layoutControlItem1.MaxSize = new System.Drawing.Size(0, 50);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(24, 40);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(601, 40);
+            this.layoutControlItem1.Size = new System.Drawing.Size(661, 40);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -312,8 +302,8 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1,
-            this.view});
+            this.view,
+            this.dockPanel1});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -331,29 +321,29 @@
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dockPanel1.ID = new System.Guid("4f0bd5cc-4bed-4ba8-be4a-348060346b72");
-            this.dockPanel1.Location = new System.Drawing.Point(621, 0);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(312, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(312, 525);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(312, 99);
+            this.dockPanel1.Size = new System.Drawing.Size(681, 99);
             this.dockPanel1.Text = "筛选";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 30);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 30);
             this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(305, 492);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(675, 65);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // tablePanel1
             // 
             this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 20.6F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 39.4F)});
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 4.4F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55.6F)});
             this.tablePanel1.Controls.Add(this.label2);
             this.tablePanel1.Controls.Add(this.label1);
             this.tablePanel1.Controls.Add(this.dateTimePicker2);
@@ -366,7 +356,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(305, 109);
+            this.tablePanel1.Size = new System.Drawing.Size(675, 109);
             this.tablePanel1.TabIndex = 0;
             // 
             // label2
@@ -376,7 +366,7 @@
             this.label2.Location = new System.Drawing.Point(3, 32);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 1);
-            this.label2.Size = new System.Drawing.Size(55, 14);
+            this.label2.Size = new System.Drawing.Size(44, 14);
             this.label2.TabIndex = 3;
             this.label2.Text = "结束时间";
             // 
@@ -387,58 +377,56 @@
             this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
             this.tablePanel1.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(55, 14);
+            this.label1.Size = new System.Drawing.Size(44, 14);
             this.label1.TabIndex = 2;
             this.label1.Text = "开始时间";
             // 
             // dateTimePicker2
             // 
             this.tablePanel1.SetColumn(this.dateTimePicker2, 1);
-            this.dateTimePicker2.Location = new System.Drawing.Point(108, 28);
+            this.dateTimePicker2.Location = new System.Drawing.Point(53, 28);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.tablePanel1.SetRow(this.dateTimePicker2, 1);
-            this.dateTimePicker2.Size = new System.Drawing.Size(194, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(620, 22);
             this.dateTimePicker2.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
             this.tablePanel1.SetColumn(this.dateTimePicker1, 1);
-            this.dateTimePicker1.Location = new System.Drawing.Point(108, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(53, 2);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.tablePanel1.SetRow(this.dateTimePicker1, 0);
-            this.dateTimePicker1.Size = new System.Drawing.Size(194, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(620, 22);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // view
             // 
             this.view.Controls.Add(this.dockPanel2_Container);
-            this.view.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.view.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.view.ID = new System.Guid("bee3c7ce-a053-45ab-b918-0aaed237888a");
-            this.view.Location = new System.Drawing.Point(0, 270);
+            this.view.Location = new System.Drawing.Point(681, 0);
             this.view.Name = "view";
-            this.view.OriginalSize = new System.Drawing.Size(200, 255);
-            this.view.Size = new System.Drawing.Size(621, 255);
+            this.view.OriginalSize = new System.Drawing.Size(252, 255);
+            this.view.Size = new System.Drawing.Size(252, 525);
             this.view.Text = "预览";
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.layoutControl2);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 31);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 30);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(615, 221);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(245, 492);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.gridControl2);
-            this.layoutControl2.Controls.Add(this.mianLiaoCard1);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(615, 221);
+            this.layoutControl2.Size = new System.Drawing.Size(245, 492);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -446,54 +434,9 @@
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem2,
-            this.layoutControlItem4});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(615, 221);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(245, 492);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // mianLiaoCard1
-            // 
-            this.mianLiaoCard1.Location = new System.Drawing.Point(12, 12);
-            this.mianLiaoCard1.Name = "mianLiaoCard1";
-            this.mianLiaoCard1.Size = new System.Drawing.Size(201, 197);
-            this.mianLiaoCard1.TabIndex = 4;
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.mianLiaoCard1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(205, 201);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Location = new System.Drawing.Point(217, 12);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.MenuManager = this.toolbarFormManager1;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(386, 197);
-            this.gridControl2.TabIndex = 5;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.gridControl2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(205, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(390, 201);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
             // 
             // NotPrinted
             // 
@@ -501,8 +444,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 525);
             this.Controls.Add(this.layoutControl1);
-            this.Controls.Add(this.view);
             this.Controls.Add(this.dockPanel1);
+            this.Controls.Add(this.view);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -527,12 +470,7 @@
             this.view.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -573,11 +511,6 @@
         private DevExpress.XtraBars.Docking.DockPanel view;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private mendian.MianLiaoCard mianLiaoCard1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

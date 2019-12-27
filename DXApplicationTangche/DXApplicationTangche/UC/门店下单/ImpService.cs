@@ -1473,6 +1473,14 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "	) AS s1";
             return SQLmtm.GetDataRow(sql)["picn"].ToString();
         }
+
+        public static List<CustomerInformation> AddSomething(List<CustomerInformation> ci,String information,String value)
+        {
+            List<CustomerInformation> customerInformation = new List<CustomerInformation>();
+            customerInformation.Add(new CustomerInformation(information, value));
+            customerInformation.AddRange(ci);
+            return customerInformation;
+        }
     }
 }
 

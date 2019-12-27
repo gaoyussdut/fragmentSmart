@@ -128,6 +128,12 @@
     <Compile Include="QueryTag.Designer.cs">
       <DependentUpon>QueryTag.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ImpUC\PrintedView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ImpUC\PrintedView.Designer.cs">
+      <DependentUpon>PrintedView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\库存\service\StockService.cs" />
     <Compile Include="UC\库存\dto\BarCodeInfoDto.cs" />
     <Compile Include="UC\库存\出库\XtraFrm门店出库.cs">
@@ -305,6 +311,9 @@
     <EmbeddedResource Include="QueryTag.resx">
       <DependentUpon>QueryTag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\ImpUC\PrintedView.resx">
+      <DependentUpon>PrintedView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\库存\出库\XtraFrm门店出库.resx">
       <DependentUpon>XtraFrm门店出库.cs</DependentUpon>
     </EmbeddedResource>
@@ -384,7 +393,6 @@
     <Content Include="lib\Seagull.BarTender.Print.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UC\ImpUC\" />
     <Folder Include="UC\门店下单\UC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

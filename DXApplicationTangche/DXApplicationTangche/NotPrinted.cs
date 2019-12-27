@@ -14,6 +14,7 @@ namespace DXApplicationTangche
 {
     public partial class NotPrinted : DevExpress.XtraEditors.XtraForm
     {
+        public PrintedView printedView = new PrintedView();
         public NotPrinted()
         {
             InitializeComponent();
@@ -40,15 +41,21 @@ namespace DXApplicationTangche
         {
             this.dateTimePicker2.Value = DateTime.Now;
             this.dateTimePicker1.Value = DateTime.Now.AddDays(-14);
+            this.printedView.Dock = DockStyle.Top;
+            this.view.Controls.Add(printedView);
         }
 
         private void gridView11_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             DataRow dr = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            List<CustomerInformation> ci = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
+            ci = ImpService.AddSomething(ci, "订单时间", dr["ORDER_DATE"].ToString());
             try
             {
-                this.gridControl2.DataSource = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
-                this.mianLiaoCard1.pictureBox1.Image = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim());
+                this.printedView.refresh(
+                    @"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim()
+                    , ci
+                    );
             }
             catch
             {
