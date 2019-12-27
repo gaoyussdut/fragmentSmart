@@ -28,7 +28,6 @@ namespace DXApplicationTangche
                     , this.dateTimePicker1.Value
                     , this.dateTimePicker2.Value
                     );
-                this.mianLiaoCard1.pictureBox1.Image = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(dt.Rows[0]["SYTLE_FABRIC_ID"].ToString()).Trim());
                 if (dt.Rows.Count==0)
                 {
                     MessageBox.Show("订单吊牌已打印");
@@ -41,6 +40,20 @@ namespace DXApplicationTangche
         {
             this.dateTimePicker2.Value = DateTime.Now;
             this.dateTimePicker1.Value = DateTime.Now.AddDays(-14);
+        }
+
+        private void gridView11_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            DataRow dr = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            try
+            {
+                this.gridControl2.DataSource = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
+                this.mianLiaoCard1.pictureBox1.Image = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim());
+            }
+            catch
+            {
+            }
+
         }
     }
 }

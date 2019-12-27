@@ -384,6 +384,7 @@
     <Content Include="lib\Seagull.BarTender.Print.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="UC\ImpUC\" />
     <Folder Include="UC\门店下单\UC\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
