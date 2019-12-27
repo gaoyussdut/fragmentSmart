@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Windows.Forms;
 using DiaoPaiDaYin;
+using DXApplicationTangche;
 
 namespace mendian
 {
@@ -1487,6 +1488,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             String sql = "select * from t_order_type_code;";
             return SQLmtm.GetDataTable(sql);
         }
+        
     }
 }
 

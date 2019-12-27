@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DXApplicationTangche;
 
 namespace mendian
 {
@@ -51,7 +52,7 @@ namespace mendian
             }
             if(this.flag==false)
             {
-                
+                new Frm标准款下单具体(this).ShowDialog();
             }
             else
             {
