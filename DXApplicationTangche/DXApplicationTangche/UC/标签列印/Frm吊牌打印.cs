@@ -16,6 +16,7 @@ namespace DiaoPaiDaYin
 {
     public partial class Frm吊牌打印 : DevExpress.XtraEditors.XtraForm
     {
+        private int order_type;//   订单类型
         public DataTable stylesizedt = new DataTable();
         public DataRow impdr = null;
         public List<ChengYiChiCun> cycc = new List<ChengYiChiCun>();
@@ -23,10 +24,11 @@ namespace DiaoPaiDaYin
         public DataTable logdt = null;
         public String logid;
         public PrintedView printedView = new PrintedView();
-        public Frm吊牌打印()
+        public Frm吊牌打印(int order_type)
         {
             InitializeComponent();
 
+            this.order_type = order_type;   //订单类型
             //int n = 3;
             //string s = n.ToString().PadLeft(4, '0'); //0003
             //s = string.Format("{0:d4}", n);
@@ -124,13 +126,16 @@ namespace DiaoPaiDaYin
             {
                 try
                 {
-                    this.impdr = ImpService.GetDataRowFromOrder(this.orderno.Text);
-                    this.logdt = ImpService.GetOrder(this.orderno.Text);
+
+                    this.logdt = ImpService.GetOrder(this.orderno.Text,this.order_type);
                     gridControl1.DataSource = logdt;
                     this.ordernumber = Convert.ToInt32(Convert.ToDouble(logdt.Rows[0]["ORDER_NUMBER"].ToString()));
                     //this.mianliaohao.Text = this.impdr["MATERIAL_CODE"].ToString();
                     //this.chengfen.Text = this.impdr["MATERIAL_COMPOSITION"].ToString();
                     //this.shoujia.Text = "¥" + this.impdr["STYLE_SHOP_TOTAL_PRICE"].ToString();
+
+                    //  TODO,bug
+                    this.impdr = ImpService.GetDataRowFromOrder(this.orderno.Text);
                     this.cycc = ImpService.GetChengYiChiCun(this.impdr["SYS_STYLE_ID"].ToString());
                 }
                 catch/*(Exception ex)*/

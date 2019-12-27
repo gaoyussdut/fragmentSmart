@@ -40,11 +40,12 @@
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementBarCode = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementStoreOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
@@ -57,9 +58,10 @@
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.navigationFrame);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 30);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(297, 37);
+            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(431, 443);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(493, 571);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // navigationFrame
@@ -67,12 +69,12 @@
             this.navigationFrame.Controls.Add(this.navigationPage库存);
             this.navigationFrame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationFrame.Location = new System.Drawing.Point(0, 0);
-            this.navigationFrame.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.navigationFrame.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.navigationFrame.Name = "navigationFrame";
             this.navigationFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage库存});
             this.navigationFrame.SelectedPage = this.navigationPage库存;
-            this.navigationFrame.Size = new System.Drawing.Size(431, 443);
+            this.navigationFrame.Size = new System.Drawing.Size(493, 571);
             this.navigationFrame.TabIndex = 3;
             this.navigationFrame.Text = "navigationFrame1";
             this.navigationFrame.TransitionAnimationProperties.FrameInterval = 5000;
@@ -80,8 +82,9 @@
             // navigationPage库存
             // 
             this.navigationPage库存.Caption = "navigationPage库存";
+            this.navigationPage库存.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPage库存.Name = "navigationPage库存";
-            this.navigationPage库存.Size = new System.Drawing.Size(431, 443);
+            this.navigationPage库存.Size = new System.Drawing.Size(493, 571);
             // 
             // accordionControl1
             // 
@@ -90,10 +93,11 @@
             this.ElementStock,
             this.accordionControlElement2,
             this.accordionControlElement1});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 30);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 37);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(260, 443);
+            this.accordionControl1.Size = new System.Drawing.Size(297, 571);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -103,7 +107,6 @@
             this.ElementStockOut,
             this.ElementShopStockIn,
             this.ElementShopOrder});
-            this.ElementStock.Expanded = true;
             this.ElementStock.Name = "ElementStock";
             this.ElementStock.Text = "进销存管理";
             // 
@@ -131,6 +134,7 @@
             // 
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ElementBarCode,
+            this.accordionControlElement5,
             this.accordionControlElement3,
             this.accordionControlElement4});
             this.accordionControlElement2.Expanded = true;
@@ -141,7 +145,7 @@
             // 
             this.ElementBarCode.Name = "ElementBarCode";
             this.ElementBarCode.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ElementBarCode.Text = "标签列印";
+            this.ElementBarCode.Text = "定制标签列印";
             this.ElementBarCode.Click += new System.EventHandler(this.ElementBarCode_Click);
             // 
             // accordionControlElement3
@@ -150,6 +154,13 @@
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Text = "吊牌信息查询";
             this.accordionControlElement3.Click += new System.EventHandler(this.accordionControlElement3_Click);
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "未打印";
+            this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
             // 
             // accordionControlElement1
             // 
@@ -170,28 +181,30 @@
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
+            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(691, 30);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(790, 37);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
-            // accordionControlElement4
+            // accordionControlElement5
             // 
-            this.accordionControlElement4.Name = "accordionControlElement4";
-            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement4.Text = "未打印";
-            this.accordionControlElement4.Click += new System.EventHandler(this.accordionControlElement4_Click);
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "成衣标签列印";
+            this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
             // FluentMainFrame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 473);
+            this.ClientSize = new System.Drawing.Size(790, 608);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FluentMainFrame";
             this.NavigationControl = this.accordionControl1;
             this.Text = "春衫体验店进销存管理系统";
@@ -223,5 +236,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
     }
 }
