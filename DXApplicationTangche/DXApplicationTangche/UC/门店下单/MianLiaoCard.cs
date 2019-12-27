@@ -18,6 +18,7 @@ namespace mendian
         public String picurl;
         public String picn;
         public Form form;
+        public bool flag;
         public MianLiaoCard()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace mendian
         public MianLiaoCard(String mianliao,String mianliaoid,String mianliaocd,String picurl,String picn,MianLiaochoose form)
         {
             InitializeComponent();
+            this.flag = true;
             this.mianliao = mianliao;
             this.mianliaoid = mianliaoid;
             this.mianliaocd = mianliaocd;
@@ -40,22 +42,38 @@ namespace mendian
             {
             }
         }
+
+        public MianLiaoCard(String pic)
+        {
+            InitializeComponent();
+            this.flag = false;
+            try
+            {
+                this.pictureBox1.Image = Image.FromFile(@"pic\" + pic.Trim());
+            }
+            catch
+            {
+            }
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult =
+            if(this.flag==true)
+            {
+                DialogResult dialogResult =
 MessageBox.Show("确认保存“" + this.label1.Text + "”吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogResult == DialogResult.Yes)
-            {
-                MianLiaochoose.mianliao = this.mianliao;
-                MianLiaochoose.mianliaoid = this.mianliaoid;
-                MianLiaochoose.mianliaocd = this.mianliaocd;
-                this.form.Close();
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MianLiaochoose.mianliao = this.mianliao;
+                    MianLiaochoose.mianliaoid = this.mianliaoid;
+                    MianLiaochoose.mianliaocd = this.mianliaocd;
+                    this.form.Close();
+                }
+                else
+                {
+                    return;
+                }
             }
-            else
-            {
-                return;
-            }
-
+           
         }
 
     }

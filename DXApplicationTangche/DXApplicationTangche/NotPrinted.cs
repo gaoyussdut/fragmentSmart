@@ -28,7 +28,8 @@ namespace DXApplicationTangche
                     , this.dateTimePicker1.Value
                     , this.dateTimePicker2.Value
                     );
-                if(dt.Rows.Count==0)
+                this.mianLiaoCard1.pictureBox1.Image = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(dt.Rows[0]["SYTLE_FABRIC_ID"].ToString()).Trim());
+                if (dt.Rows.Count==0)
                 {
                     MessageBox.Show("订单吊牌已打印");
                 }
