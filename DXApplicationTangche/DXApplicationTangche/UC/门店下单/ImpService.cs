@@ -1251,19 +1251,19 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
           public static DataRow GetDataRowFromOrder(String id)
         {
             String sql = "SELECT\n" +
-"	sp.SYS_STYLE_ID,\n" +
-"	sp.STYLE_NAME_CN,\n" +
-"	imp.MATERIAL_CODE,\n" +
-"	imp.MATERIAL_COMPOSITION,\n" +
-"	sp.STYLE_SHOP_TOTAL_PRICE,\n" +
-"	sp.STYLE_FIT_CD,\n" +
-"	sp.STYLE_CATEGORY_CD,\n" +
-"	sp.STYLE_SIZE_GROUP_CD,sp.STYLE_SIZE_CD,SUBSTRING_INDEX( sp.STYLE_SIZE_CD, '-',- 1 ) AS SIZE\n" +
-"FROM\n" +
-"	s_style_p AS sp\n" +
-"	LEFT JOIN i_material_p imp ON sp.SYTLE_FABRIC_ID = imp.MATERIAL_ID \n" +
-"WHERE\n" +
-"	sp.SYS_STYLE_ID IN ( SELECT op.STYLE_ID FROM o_order_p AS op WHERE ORDER_NO = '" + id + "' );";
+                "	sp.SYS_STYLE_ID,\n" +
+                "	sp.STYLE_NAME_CN,\n" +
+                "	imp.MATERIAL_CODE,\n" +
+                "	imp.MATERIAL_COMPOSITION,\n" +
+                "	sp.STYLE_SHOP_TOTAL_PRICE,\n" +
+                "	sp.STYLE_FIT_CD,\n" +
+                "	sp.STYLE_CATEGORY_CD,\n" +
+                "	sp.STYLE_SIZE_GROUP_CD,sp.STYLE_SIZE_CD,SUBSTRING_INDEX( sp.STYLE_SIZE_CD, '-',- 1 ) AS SIZE\n" +
+                "FROM\n" +
+                "	s_style_p AS sp\n" +
+                "	LEFT JOIN i_material_p imp ON sp.SYTLE_FABRIC_ID = imp.MATERIAL_ID \n" +
+                "WHERE\n" +
+                "	sp.SYS_STYLE_ID IN ( SELECT op.STYLE_ID FROM o_order_p AS op WHERE ORDER_NO = '" + id + "' );";
             return SQLmtm.GetDataRow(sql);
         }
 

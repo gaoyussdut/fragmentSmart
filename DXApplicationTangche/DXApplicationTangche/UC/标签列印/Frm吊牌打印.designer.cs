@@ -51,6 +51,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -72,9 +73,10 @@
             this.layoutControl1.Controls.Add(this.orderno);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(877, 784);
+            this.layoutControl1.Size = new System.Drawing.Size(1002, 1008);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -87,11 +89,13 @@
             this.tileBar1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tileBar1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            this.tileBar1.Location = new System.Drawing.Point(346, 653);
+            this.tileBar1.Location = new System.Drawing.Point(395, 840);
+            this.tileBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tileBar1.Name = "tileBar1";
+            this.tileBar1.Padding = new System.Windows.Forms.Padding(25, 9, 25, 9);
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.tileBar1.SelectionColor = System.Drawing.SystemColors.Control;
-            this.tileBar1.Size = new System.Drawing.Size(164, 119);
+            this.tileBar1.Size = new System.Drawing.Size(188, 152);
             this.tileBar1.TabIndex = 29;
             this.tileBar1.Text = "tileBar1";
             this.tileBar1.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -99,19 +103,21 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Tahoma", 15F);
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(13, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 43);
+            this.label1.Size = new System.Drawing.Size(132, 54);
             this.label1.TabIndex = 28;
             this.label1.Text = "订单NO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 59);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.gridControl1.Location = new System.Drawing.Point(13, 76);
             this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(853, 590);
+            this.gridControl1.Size = new System.Drawing.Size(976, 758);
             this.gridControl1.TabIndex = 27;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -127,7 +133,10 @@
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn8,
-            this.gridColumn9});
+            this.gridColumn9,
+            this.colSTYLE_SIZE_CD});
+            this.gridView1.DetailHeight = 450;
+            this.gridView1.FixedLineWidth = 3;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -136,79 +145,98 @@
             // 
             this.gridColumn1.Caption = "Logid";
             this.gridColumn1.FieldName = "id";
+            this.gridColumn1.MinWidth = 23;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 86;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "订单号";
             this.gridColumn7.FieldName = "ORDER_NO";
+            this.gridColumn7.MinWidth = 23;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 86;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "店铺名称";
             this.gridColumn2.FieldName = "shop_name";
+            this.gridColumn2.MinWidth = 23;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 86;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "款式名称";
             this.gridColumn3.FieldName = "STYLE_NAME_CN";
+            this.gridColumn3.MinWidth = 23;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
+            this.gridColumn3.Width = 86;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "季节";
             this.gridColumn4.FieldName = "SYTLE_SEASON";
+            this.gridColumn4.MinWidth = 23;
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 86;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "年份";
             this.gridColumn5.FieldName = "SYTLE_YEAR";
+            this.gridColumn5.MinWidth = 23;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 86;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "面料";
             this.gridColumn6.FieldName = "MATERIAL_COLOR";
+            this.gridColumn6.MinWidth = 23;
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 86;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "下单时间";
             this.gridColumn8.FieldName = "ORDER_DATE";
+            this.gridColumn8.MinWidth = 23;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.VisibleIndex = 7;
+            this.gridColumn8.Width = 86;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "数量";
             this.gridColumn9.FieldName = "ORDER_NUMBER";
+            this.gridColumn9.MinWidth = 23;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
+            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.Width = 86;
             // 
             // orderno
             // 
             this.orderno.Font = new System.Drawing.Font("宋体", 24F);
             this.orderno.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.orderno.Location = new System.Drawing.Point(131, 12);
+            this.orderno.Location = new System.Drawing.Point(149, 16);
+            this.orderno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.orderno.Name = "orderno";
-            this.orderno.Size = new System.Drawing.Size(734, 43);
+            this.orderno.Size = new System.Drawing.Size(840, 54);
             this.orderno.TabIndex = 19;
             this.orderno.KeyDown += new System.Windows.Forms.KeyEventHandler(this.orderno_KeyDown);
             // 
@@ -224,17 +252,17 @@
             this.layoutControlItem3,
             this.layoutControlItem4});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(877, 784);
+            this.Root.Size = new System.Drawing.Size(1002, 1008);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.orderno;
-            this.layoutControlItem8.Location = new System.Drawing.Point(119, 0);
-            this.layoutControlItem8.MaxSize = new System.Drawing.Size(0, 47);
-            this.layoutControlItem8.MinSize = new System.Drawing.Size(35, 47);
+            this.layoutControlItem8.Location = new System.Drawing.Point(136, 0);
+            this.layoutControlItem8.MaxSize = new System.Drawing.Size(0, 60);
+            this.layoutControlItem8.MinSize = new System.Drawing.Size(40, 60);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(738, 47);
+            this.layoutControlItem8.Size = new System.Drawing.Size(844, 60);
             this.layoutControlItem8.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem8.Text = "订单NO";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
@@ -243,25 +271,25 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 641);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 824);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(334, 123);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(382, 158);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem8
             // 
             this.emptySpaceItem8.AllowHotTrack = false;
-            this.emptySpaceItem8.Location = new System.Drawing.Point(502, 641);
+            this.emptySpaceItem8.Location = new System.Drawing.Point(574, 824);
             this.emptySpaceItem8.Name = "emptySpaceItem8";
-            this.emptySpaceItem8.Size = new System.Drawing.Size(355, 123);
+            this.emptySpaceItem8.Size = new System.Drawing.Size(406, 158);
             this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.gridControl1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 47);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 60);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(857, 594);
+            this.layoutControlItem2.Size = new System.Drawing.Size(980, 764);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -270,25 +298,36 @@
             this.layoutControlItem3.Control = this.label1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(119, 47);
+            this.layoutControlItem3.Size = new System.Drawing.Size(136, 60);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.tileBar1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(334, 641);
+            this.layoutControlItem4.Location = new System.Drawing.Point(382, 824);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(168, 123);
+            this.layoutControlItem4.Size = new System.Drawing.Size(192, 158);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
+            // colSTYLE_SIZE_CD
+            // 
+            this.colSTYLE_SIZE_CD.Caption = "尺寸";
+            this.colSTYLE_SIZE_CD.FieldName = "STYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.MinWidth = 25;
+            this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.Visible = true;
+            this.colSTYLE_SIZE_CD.VisibleIndex = 2;
+            this.colSTYLE_SIZE_CD.Width = 107;
+            // 
             // Frm吊牌打印
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 784);
+            this.ClientSize = new System.Drawing.Size(1002, 1008);
             this.Controls.Add(this.layoutControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Frm吊牌打印";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -330,6 +369,7 @@
         private DevExpress.XtraBars.Navigation.TileBar tileBar1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_SIZE_CD;
     }
 }
 
