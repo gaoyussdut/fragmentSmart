@@ -59,6 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -164,7 +165,8 @@
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
-            this.gridColumn11});
+            this.gridColumn11,
+            this.colSTYLE_SIZE_CD});
             this.gridView11.FixedLineWidth = 3;
             this.gridView11.GridControl = this.gridControl1;
             this.gridView11.Name = "gridView11";
@@ -234,7 +236,7 @@
             this.gridColumn8.MinWidth = 23;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.VisibleIndex = 5;
             this.gridColumn8.Width = 86;
             // 
             // gridColumn9
@@ -244,7 +246,7 @@
             this.gridColumn9.MinWidth = 23;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.VisibleIndex = 6;
             this.gridColumn9.Width = 86;
             // 
             // gridColumn10
@@ -254,7 +256,7 @@
             this.gridColumn10.MinWidth = 23;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 6;
+            this.gridColumn10.VisibleIndex = 7;
             this.gridColumn10.Width = 86;
             // 
             // gridColumn11
@@ -264,7 +266,7 @@
             this.gridColumn11.MinWidth = 23;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 7;
+            this.gridColumn11.VisibleIndex = 8;
             this.gridColumn11.Width = 86;
             // 
             // Root
@@ -397,6 +399,16 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(192, 26);
             this.dateTimePicker1.TabIndex = 0;
             // 
+            // colSTYLE_SIZE_CD
+            // 
+            this.colSTYLE_SIZE_CD.Caption = "尺寸";
+            this.colSTYLE_SIZE_CD.FieldName = "STYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.MinWidth = 25;
+            this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.Visible = true;
+            this.colSTYLE_SIZE_CD.VisibleIndex = 4;
+            this.colSTYLE_SIZE_CD.Width = 94;
+            // 
             // NotPrinted
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -462,5 +474,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_SIZE_CD;
     }
 }
