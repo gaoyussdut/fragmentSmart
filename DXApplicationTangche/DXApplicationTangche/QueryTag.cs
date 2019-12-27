@@ -22,6 +22,7 @@ namespace DXApplicationTangche
         public String ORDER_NO;
         public String style_id;
         public String order_text;
+        public PrintedView printedView = new PrintedView();
         public QueryTag()
         {
             InitializeComponent();
@@ -86,6 +87,25 @@ namespace DXApplicationTangche
         {
             String sql = "SELECT * FROM v_printed_p";
             this.searchLookUpEdit1.Properties.DataSource = SQLmtm.GetDataTable(sql);
+            this.printedView.Dock = DockStyle.Top;
+            this.dockPanel1.Controls.Add(printedView);
+        }
+
+        private void gridView1_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            DataRow dr = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            List<CustomerInformation> ci = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
+            ci = ImpService.AddSomething(ci, "订单时间", dr["ORDER_DATE"].ToString());
+            try
+            {
+                this.printedView.refresh(
+                    @"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim()
+                    , ci
+                    );
+            }
+            catch
+            {
+            }
         }
     }
 }

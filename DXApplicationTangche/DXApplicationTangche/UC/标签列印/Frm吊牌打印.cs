@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Demos.util;
+using DXApplicationTangche;
 using mendian;
 using Seagull.BarTender.Print;
 
@@ -21,6 +22,7 @@ namespace DiaoPaiDaYin
         public int ordernumber = new int();
         public DataTable logdt = null;
         public String logid;
+        public PrintedView printedView = new PrintedView();
         public Frm吊牌打印()
         {
             InitializeComponent();
@@ -136,6 +138,29 @@ namespace DiaoPaiDaYin
                     //MessageBox.Show("错误信息: " + ex.Message);
                 }
             }
+        }
+
+        private void gridView1_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            DataRow dr = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
+            List<CustomerInformation> ci = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
+            ci = ImpService.AddSomething(ci, "订单时间", dr["ORDER_DATE"].ToString());
+            try
+            {
+                this.printedView.refresh(
+                    @"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim()
+                    , ci
+                    );
+            }
+            catch
+            {
+            }
+        }
+
+        private void Frm吊牌打印_Load(object sender, EventArgs e)
+        {
+            this.printedView.Dock = DockStyle.Top;
+            this.dockPanel1.Controls.Add(printedView);
         }
     }
 
