@@ -48,6 +48,7 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -59,7 +60,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.view = new DevExpress.XtraBars.Docking.DockPanel();
+            this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.mianLiaoCard1 = new mendian.MianLiaoCard();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -73,6 +76,8 @@
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
+            this.view.SuspendLayout();
+            this.controlContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolbarFormManager1
@@ -89,17 +94,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.toolbarFormManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1066, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(933, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 675);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 525);
             this.barDockControlBottom.Manager = this.toolbarFormManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1066, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(933, 0);
             // 
             // barDockControlLeft
             // 
@@ -107,17 +110,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.toolbarFormManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 675);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 525);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1066, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(933, 0);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 675);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 525);
             // 
             // layoutControl1
             // 
@@ -125,30 +126,29 @@
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(754, 675);
+            this.layoutControl1.Size = new System.Drawing.Size(660, 293);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Tahoma", 16F);
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.Location = new System.Drawing.Point(11, 10);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(730, 47);
+            this.textBox1.Size = new System.Drawing.Size(638, 36);
             this.textBox1.TabIndex = 7;
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // gridControl1
             // 
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(12, 63);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl1.Location = new System.Drawing.Point(11, 50);
             this.gridControl1.MainView = this.gridView11;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(730, 600);
+            this.gridControl1.Size = new System.Drawing.Size(638, 233);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView11});
@@ -167,7 +167,7 @@
             this.gridColumn10,
             this.gridColumn11,
             this.colSTYLE_SIZE_CD});
-            this.gridView11.FixedLineWidth = 3;
+            this.gridView11.DetailHeight = 272;
             this.gridView11.GridControl = this.gridControl1;
             this.gridView11.Name = "gridView11";
             this.gridView11.OptionsBehavior.Editable = false;
@@ -177,97 +177,89 @@
             // 
             this.gridColumn4.Caption = "客户id";
             this.gridColumn4.FieldName = "CUSTOMER_ID";
-            this.gridColumn4.MinWidth = 23;
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Width = 86;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "店铺名称";
             this.gridColumn5.FieldName = "shop_name";
-            this.gridColumn5.MinWidth = 23;
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 0;
-            this.gridColumn5.Width = 86;
             // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "款式id";
             this.gridColumn6.FieldName = "style_id";
-            this.gridColumn6.MinWidth = 23;
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Width = 86;
             // 
             // colSTYLE_NAME_CN
             // 
             this.colSTYLE_NAME_CN.Caption = "款式";
             this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.MinWidth = 25;
+            this.colSTYLE_NAME_CN.MinWidth = 22;
             this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
             this.colSTYLE_NAME_CN.Visible = true;
             this.colSTYLE_NAME_CN.VisibleIndex = 3;
-            this.colSTYLE_NAME_CN.Width = 107;
+            this.colSTYLE_NAME_CN.Width = 94;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "订单号";
             this.gridColumn7.FieldName = "ORDER_NO";
-            this.gridColumn7.MinWidth = 23;
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 1;
-            this.gridColumn7.Width = 86;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "数量";
             this.gridColumn1.FieldName = "ORDER_NUMBER";
-            this.gridColumn1.MinWidth = 23;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 86;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "款式时间";
             this.gridColumn8.FieldName = "SYTLE_YEAR";
-            this.gridColumn8.MinWidth = 23;
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 5;
-            this.gridColumn8.Width = 86;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "款式季节";
             this.gridColumn9.FieldName = "SYTLE_SEASON";
-            this.gridColumn9.MinWidth = 23;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 86;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "面料名称";
             this.gridColumn10.FieldName = "MATERIAL_NAME_CN";
-            this.gridColumn10.MinWidth = 23;
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 7;
-            this.gridColumn10.Width = 86;
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "面料颜色";
             this.gridColumn11.FieldName = "MATERIAL_COLOR";
-            this.gridColumn11.MinWidth = 23;
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 8;
-            this.gridColumn11.Width = 86;
+            // 
+            // colSTYLE_SIZE_CD
+            // 
+            this.colSTYLE_SIZE_CD.Caption = "尺寸";
+            this.colSTYLE_SIZE_CD.FieldName = "STYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.MinWidth = 22;
+            this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.Visible = true;
+            this.colSTYLE_SIZE_CD.VisibleIndex = 4;
+            this.colSTYLE_SIZE_CD.Width = 82;
             // 
             // Root
             // 
@@ -277,16 +269,16 @@
             this.layoutControlItem3,
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(754, 675);
+            this.Root.Size = new System.Drawing.Size(660, 293);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.gridControl1;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 51);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(734, 604);
+            this.layoutControlItem3.Size = new System.Drawing.Size(642, 237);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -294,10 +286,10 @@
             // 
             this.layoutControlItem1.Control = this.textBox1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.MaxSize = new System.Drawing.Size(0, 64);
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(27, 51);
+            this.layoutControlItem1.MaxSize = new System.Drawing.Size(0, 50);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(24, 40);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(734, 51);
+            this.layoutControlItem1.Size = new System.Drawing.Size(642, 40);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -306,7 +298,8 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
+            this.dockPanel1,
+            this.view});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -326,18 +319,20 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("4f0bd5cc-4bed-4ba8-be4a-348060346b72");
-            this.dockPanel1.Location = new System.Drawing.Point(754, 0);
+            this.dockPanel1.Location = new System.Drawing.Point(660, 0);
+            this.dockPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(312, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(312, 675);
+            this.dockPanel1.Size = new System.Drawing.Size(273, 525);
             this.dockPanel1.Text = "筛选";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(6, 37);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 30);
+            this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(302, 634);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(266, 492);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // tablePanel1
@@ -351,22 +346,23 @@
             this.tablePanel1.Controls.Add(this.dateTimePicker1);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(302, 140);
+            this.tablePanel1.Size = new System.Drawing.Size(266, 109);
             this.tablePanel1.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.tablePanel1.SetColumn(this.label2, 0);
-            this.label2.Location = new System.Drawing.Point(3, 30);
+            this.label2.Location = new System.Drawing.Point(3, 23);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 1);
-            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.Size = new System.Drawing.Size(55, 14);
             this.label2.TabIndex = 3;
             this.label2.Text = "结束时间";
             // 
@@ -374,53 +370,71 @@
             // 
             this.label1.AutoSize = true;
             this.tablePanel1.SetColumn(this.label1, 0);
-            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Location = new System.Drawing.Point(3, 3);
             this.label1.Name = "label1";
             this.tablePanel1.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(68, 18);
+            this.label1.Size = new System.Drawing.Size(55, 14);
             this.label1.TabIndex = 2;
             this.label1.Text = "开始时间";
             // 
             // dateTimePicker2
             // 
             this.tablePanel1.SetColumn(this.dateTimePicker2, 1);
-            this.dateTimePicker2.Location = new System.Drawing.Point(107, 29);
+            this.dateTimePicker2.Location = new System.Drawing.Point(94, 22);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.tablePanel1.SetRow(this.dateTimePicker2, 1);
-            this.dateTimePicker2.Size = new System.Drawing.Size(192, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(169, 22);
             this.dateTimePicker2.TabIndex = 1;
             // 
             // dateTimePicker1
             // 
             this.tablePanel1.SetColumn(this.dateTimePicker1, 1);
-            this.dateTimePicker1.Location = new System.Drawing.Point(107, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(94, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.tablePanel1.SetRow(this.dateTimePicker1, 0);
-            this.dateTimePicker1.Size = new System.Drawing.Size(192, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(169, 22);
             this.dateTimePicker1.TabIndex = 0;
             // 
-            // colSTYLE_SIZE_CD
+            // view
             // 
-            this.colSTYLE_SIZE_CD.Caption = "尺寸";
-            this.colSTYLE_SIZE_CD.FieldName = "STYLE_SIZE_CD";
-            this.colSTYLE_SIZE_CD.MinWidth = 25;
-            this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
-            this.colSTYLE_SIZE_CD.Visible = true;
-            this.colSTYLE_SIZE_CD.VisibleIndex = 4;
-            this.colSTYLE_SIZE_CD.Width = 94;
+            this.view.Controls.Add(this.controlContainer1);
+            this.view.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.view.ID = new System.Guid("e3a6bed5-297c-411f-b585-8f8ea15b8d4f");
+            this.view.Location = new System.Drawing.Point(0, 293);
+            this.view.Name = "view";
+            this.view.OriginalSize = new System.Drawing.Size(200, 232);
+            this.view.Size = new System.Drawing.Size(660, 232);
+            this.view.Text = "预览";
+            // 
+            // controlContainer1
+            // 
+            this.controlContainer1.Controls.Add(this.mianLiaoCard1);
+            this.controlContainer1.Location = new System.Drawing.Point(3, 31);
+            this.controlContainer1.Name = "controlContainer1";
+            this.controlContainer1.Size = new System.Drawing.Size(654, 198);
+            this.controlContainer1.TabIndex = 0;
+            // 
+            // mianLiaoCard1
+            // 
+            this.mianLiaoCard1.Location = new System.Drawing.Point(3, 6);
+            this.mianLiaoCard1.Name = "mianLiaoCard1";
+            this.mianLiaoCard1.Size = new System.Drawing.Size(201, 192);
+            this.mianLiaoCard1.TabIndex = 0;
             // 
             // NotPrinted
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1066, 675);
+            this.ClientSize = new System.Drawing.Size(933, 525);
             this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.view);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "NotPrinted";
             this.Text = "NotPrinted";
             this.Load += new System.EventHandler(this.NotPrinted_Load);
@@ -438,6 +452,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
+            this.view.ResumeLayout(false);
+            this.controlContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,5 +491,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_SIZE_CD;
+        private DevExpress.XtraBars.Docking.DockPanel view;
+        private DevExpress.XtraBars.Docking.ControlContainer controlContainer1;
+        private mendian.MianLiaoCard mianLiaoCard1;
     }
 }
