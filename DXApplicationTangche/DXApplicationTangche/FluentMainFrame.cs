@@ -52,9 +52,12 @@ namespace DXApplicationTangche
 
         private void ElementBarCode_Click(object sender, EventArgs e)
         {
-            this.initPanel(new Frm吊牌打印());
+            this.initPanel(new Frm吊牌打印(1));
         }
-
+        private void accordionControlElement5_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm吊牌打印(2));
+        }
 
 
         private void ElementStockOut_Click(object sender, EventArgs e)
@@ -82,9 +85,6 @@ namespace DXApplicationTangche
             this.initPanel(new NotPrinted());
         }
 
-        private void accordionControlElement5_Click(object sender, EventArgs e)
-        {
-            this.initPanel(new Frm标准款下单());
-        }
+
     }
 }

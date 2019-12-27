@@ -1349,9 +1349,10 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// </summary>
         /// <param name="orderno"></param>
         /// <returns></returns>
-        public static DataTable GetOrder(String orderno)
+        public static DataTable GetOrder(String orderno, int order_type)
         {
-            String sql = "SELECT * FROM v_order_p WHERE ORDER_NO like '%" + orderno + "%'";
+            String sql = "SELECT * FROM v_order_with_type WHERE order_type ='"+ order_type + "'" +
+                " and ORDER_NO like '%" + orderno + "%'";
             return SQLmtm.GetDataTable(sql);
         }
         /// <summary>

@@ -39,13 +39,13 @@
             this.ElementShopOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementBarCode = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementStoreOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
@@ -104,7 +104,6 @@
             this.ElementStockOut,
             this.ElementShopStockIn,
             this.ElementShopOrder});
-            this.ElementStock.Expanded = true;
             this.ElementStock.Name = "ElementStock";
             this.ElementStock.Text = "进销存管理";
             // 
@@ -132,6 +131,7 @@
             // 
             this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ElementBarCode,
+            this.accordionControlElement5,
             this.accordionControlElement3,
             this.accordionControlElement4});
             this.accordionControlElement2.Expanded = true;
@@ -142,8 +142,15 @@
             // 
             this.ElementBarCode.Name = "ElementBarCode";
             this.ElementBarCode.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ElementBarCode.Text = "标签列印";
+            this.ElementBarCode.Text = "定制标签列印";
             this.ElementBarCode.Click += new System.EventHandler(this.ElementBarCode_Click);
+            // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "成衣标签列印";
+            this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
             // accordionControlElement3
             // 
@@ -162,8 +169,7 @@
             // accordionControlElement1
             // 
             this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ElementStoreOrder,
-            this.accordionControlElement5});
+            this.ElementStoreOrder});
             this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "销售管理";
@@ -183,13 +189,6 @@
             this.fluentDesignFormControl1.Size = new System.Drawing.Size(691, 30);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            // 
-            // accordionControlElement5
-            // 
-            this.accordionControlElement5.Name = "accordionControlElement5";
-            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement5.Text = "标准款下单";
-            this.accordionControlElement5.Click += new System.EventHandler(this.accordionControlElement5_Click);
             // 
             // FluentMainFrame
             // 
