@@ -1263,7 +1263,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 "	s_style_p AS sp\n" +
                 "	LEFT JOIN i_material_p imp ON sp.SYTLE_FABRIC_ID = imp.MATERIAL_ID \n" +
                 "WHERE\n" +
-                "	sp.SYS_STYLE_ID IN ( SELECT op.STYLE_ID FROM o_order_p AS op WHERE ORDER_NO = '" + id + "' );";
+                "	sp.SYS_STYLE_ID IN ( SELECT op.STYLE_ID FROM o_order_p AS op WHERE ORDER_NO like '%" + id + "%' );";
             return SQLmtm.GetDataRow(sql);
         }
 
@@ -1351,7 +1351,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// <returns></returns>
         public static DataTable GetOrder(String orderno)
         {
-            String sql = "SELECT * FROM v_order_p WHERE ORDER_NO='" + orderno + "'";
+            String sql = "SELECT * FROM v_order_p WHERE ORDER_NO like '%" + orderno + "%'";
             return SQLmtm.GetDataTable(sql);
         }
         /// <summary>
