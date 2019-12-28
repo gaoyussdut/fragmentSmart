@@ -67,7 +67,7 @@ namespace DXApplicationTangche
 
         private void ElementStoreOrder_Click(object sender, EventArgs e)
         {
-            this.initPanel(new Index());
+            this.initPanel(new Frm定制下单());
         }
 
         private void accordionControlElement3_Click(object sender, EventArgs e)

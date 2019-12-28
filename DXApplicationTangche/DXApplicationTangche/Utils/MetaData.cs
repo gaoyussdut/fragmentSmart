@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace mendian
 {
-    class Yuanshujv
+    class MetaData
     {
         public string msg { get; set; }
 

@@ -37,6 +37,7 @@ namespace mendian
         {
             InitializeComponent();
         }
+
         public StyleCard(bool flag,DataRow dr)
         {
             this.flag = flag;

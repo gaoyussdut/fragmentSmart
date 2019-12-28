@@ -2,7 +2,7 @@
 
 namespace mendian
 {
-    partial class Index
+    partial class Frm定制下单
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace mendian
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm定制下单));
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.label5 = new System.Windows.Forms.Label();
