@@ -113,6 +113,7 @@
     <Compile Include="FluentMainFrame.Designer.cs">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="service\ResourceService.cs" />
     <Compile Include="UC\门店下单\Frm标准款下单.cs">
       <SubType>Form</SubType>
     </Compile>

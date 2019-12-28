@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DXApplicationTangche.service;
 
 namespace DXApplicationTangche
 {
@@ -22,8 +23,6 @@ namespace DXApplicationTangche
         public static String ORDER_NO;
         public static int page { get; set; } = 1;
         public static String billid { get; set; }
-        //private List<DingDanDTO> dingDanDTO = new List<DingDanDTO>();
-        private String jsData;
         private PanelLocition panelLocition;
         int height = 0;//用户控件纵坐标
         int width = 0;  //用户控件横坐标
@@ -40,37 +39,10 @@ namespace DXApplicationTangche
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
-            if (!Directory.Exists(@"xml"))
-            {
-                Directory.CreateDirectory(@"xml");
-                Directory.CreateDirectory(@"pic");
-                DealXML.ObjectToXMLFile(new List<StylePic>() { new StylePic("1", "1", "1", "1") }, @"xml\stylepicxml.xml", Encoding.UTF8);
-                DealXML.ObjectToXMLFile(new List<MianLiaoPic>() { new MianLiaoPic("1", "1", "1", "1", "1") }, @"xml\mlpicxml.xml", Encoding.UTF8);
-                DealXML.ObjectToXMLFile(new List<SheJiDianPic>() { new SheJiDianPic("1", "1", "1", "1", "1") }, @"xml\shjdpicxml.xml", Encoding.UTF8);
-            }
-            //款式图片更新
-            StylePicList spl = new StylePicList();
-            List<StylePic> styleOldlist = DealXML.XMLFlieToObject<List<StylePic>>(@"xml\stylepicxml.xml", Encoding.UTF8);
-            List<StylePic> styleDifflist = ImpService.listCompare(spl.stylepiclist, styleOldlist);
-            ImpService.DownloadDifferentPic(styleDifflist);
-            bool yn = DealXML.ObjectToXMLFile(spl.stylepiclist, @"xml\stylepicxml.xml", Encoding.UTF8);
-            //面料图片更新
-            MianLiaoPicList mlpl = new MianLiaoPicList();
-            //bool mlyn = DealXML.ObjectToXMLFile(mlpl.mianliaopiclist, @"mlpicxml.xml", Encoding.UTF8);
-            List<MianLiaoPic> mianliaoOldlist = DealXML.XMLFlieToObject<List<MianLiaoPic>>(@"xml\mlpicxml.xml", Encoding.UTF8);
-            List<MianLiaoPic> mianliaoDifflist = ImpService.mianliaolistCompare(mlpl.mianliaopiclist, mianliaoOldlist);
-            ImpService.DownloadMianliaoPic(mianliaoDifflist);
-            bool mlyn = DealXML.ObjectToXMLFile(mlpl.mianliaopiclist, @"xml\mlpicxml.xml", Encoding.UTF8);
-            //设计点图片更新
-            SheJiDianPicList sjdpl = new SheJiDianPicList();
-            //bool shjdyn = DealXML.ObjectToXMLFile(sjdpl.shejidianpiclist, @"xml\shjdpicxml.xml", Encoding.UTF8);
-            List<SheJiDianPic> shejidianOldlist = DealXML.XMLFlieToObject<List<SheJiDianPic>>(@"xml\shjdpicxml.xml", Encoding.UTF8);
-            List<SheJiDianPic> shejidianDifflist = ImpService.shejidianlistCompare(sjdpl.shejidianpiclist, shejidianOldlist);
-            ImpService.DownloadSheJiDianPic(shejidianDifflist);
-            bool shjdyn = DealXML.ObjectToXMLFile(sjdpl.shejidianpiclist, @"xml\shjdpicxml.xml", Encoding.UTF8);
+            //  同步图片资源到本地
+            ResourceService.synPictureResouces();
 
             this.searchLookUpEdit1.Properties.DataSource = ImpService.GetCustomerData("");
-
             this.splashScreenManager.CloseWaitForm();
         }
 
@@ -92,49 +64,8 @@ namespace DXApplicationTangche
 
                 );*/
 
-            //  布局方法
-            this.panel1.Controls.Clear();
-            height = 0;
-            width = 0;
-            int i = 0;
-            DataTable dt = ImpService.initStyle(this.textBox1.Text, Index.page);
-            panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-            foreach (DataRow dr in dt.Rows)
-            {
-                StyleCard sc = new StyleCard(false);
-                sc.stylecardlabel.Text = dr["styleEntity.styleNameCn"].ToString();
-                sc.kuanshiid = dr["styleId"].ToString();
-                sc.kuanshimingcheng = dr["styleEntity.styleNameCn"].ToString();
-                sc.mianliaoid = dr["materialEntity.id"].ToString();
-                sc.mianliaomingcheng = dr["materialEntity.materialNameCn"].ToString();
-                sc.sTYLE_CATEGORY_CD = dr["styleEntity.styleCategoryCd"].ToString();
-                sc.sTYLE_FIT_CD = dr["styleEntity.styleFitCd"].ToString();
-                sc.sTYLE_SIZE_GROUP_CD = dr["styleEntity.styleSizeGroupCd"].ToString();
-                sc.sTYLE_DRESS_CATEGORY = dr["styleEntity.styleDressCategory"].ToString();
-                sc.sTYLE_DESIGN_TYPE = dr["styleEntity.styleDesignType"].ToString();
-                sc.sTYLE_PUBLISH_CATEGORY_CD = dr["styleEntity.stylePublishCategoryCd"].ToString();
-                sc.sYTLE_YEAR = dr["styleEntity.sytleYear"].ToString();
-                sc.sYTLE_SEASON = dr["styleEntity.sytleSeason"].ToString();
-                sc.sTYLE_SIZE_CD = dr["styleEntity.styleSizeCd"].ToString();
-                //sc.id = cd.id;
-                //sc.banid = cd.banid;
-                //sc.jiage = cd.jiage;
-                sc.picture = @"pic\" + dr["picn"].ToString();
-                this.generateUserControl(sc, i);
-                this.panel1.Controls.Add(sc);//将控件加入panel
-                try
-                {
-                    
-                    sc.stylecardpicbox.Image = Image.FromFile(sc.picture);
-                }
-                catch
-                {
-
-                }
-                i++;
-                this.fenYeLan1.label1.Text = Index.page.ToString();
-            }
-            this.splashScreenManager.CloseWaitForm();
+            //  图片布局
+            this.generatePictureLayout();
         }
         public void generateUserControl(UserControl userControl, int i)
         {
@@ -158,10 +89,20 @@ namespace DXApplicationTangche
         /// <param name="e"></param>
         private void xiaye_Button(object sender, EventArgs e)
         {
+            //  初始化页面
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             Index.page++;
+            //  图片布局
+            this.generatePictureLayout();
+        }
+
+        /// <summary>
+        /// 图片布局
+        /// </summary>
+        private void generatePictureLayout()
+        {
             this.panel1.Controls.Clear();
             height = 0;
             width = 0;
@@ -176,25 +117,7 @@ namespace DXApplicationTangche
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
             {
-                StyleCard sc = new StyleCard(false);
-                sc.stylecardlabel.Text = dr["styleEntity.styleNameCn"].ToString();
-                sc.kuanshiid = dr["styleId"].ToString();
-                sc.kuanshimingcheng = dr["styleEntity.styleNameCn"].ToString();
-                sc.mianliaoid = dr["materialEntity.id"].ToString();
-                sc.mianliaomingcheng = dr["materialEntity.materialNameCn"].ToString();
-                sc.sTYLE_CATEGORY_CD = dr["styleEntity.styleCategoryCd"].ToString();
-                sc.sTYLE_FIT_CD = dr["styleEntity.styleFitCd"].ToString();
-                sc.sTYLE_SIZE_GROUP_CD = dr["styleEntity.styleSizeGroupCd"].ToString();
-                sc.sTYLE_DRESS_CATEGORY = dr["styleEntity.styleDressCategory"].ToString();
-                sc.sTYLE_DESIGN_TYPE = dr["styleEntity.styleDesignType"].ToString();
-                sc.sTYLE_PUBLISH_CATEGORY_CD = dr["styleEntity.stylePublishCategoryCd"].ToString();
-                sc.sYTLE_YEAR = dr["styleEntity.sytleYear"].ToString();
-                sc.sYTLE_SEASON = dr["styleEntity.sytleSeason"].ToString();
-                sc.sTYLE_SIZE_CD = dr["styleEntity.styleSizeCd"].ToString();
-                //sc.id = cd.id;
-                //sc.banid = cd.banid;
-                //sc.jiage = cd.jiage;
-                sc.picture = @"pic\" + dr["picn"].ToString();
+                StyleCard sc = new StyleCard(false, dr);
                 this.generateUserControl(sc, i);
                 this.panel1.Controls.Add(sc);//将控件加入panel
                 try
@@ -210,6 +133,7 @@ namespace DXApplicationTangche
             this.fenYeLan1.label1.Text = Index.page.ToString();
             this.splashScreenManager.CloseWaitForm();
         }
+
         /// <summary>
         /// 上一页
         /// </summary>
@@ -226,53 +150,9 @@ namespace DXApplicationTangche
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             Index.page--;
-            this.panel1.Controls.Clear();
-            height = 0;
-            width = 0;
-            int i = 0;
-            DataTable dt = ImpService.initStyle(this.textBox1.Text, Index.page);
-            //if (dt.Rows.Count == 0)
-            //{
-            //    MessageBox.Show("已经是最后一页");
-            //    ImpService.page--;
-            //    dt = ImpService.initStyle(this.textBox1.Text, ImpService.page);
-            //}
-            panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-            foreach (DataRow dr in dt.Rows)
-            {
-                StyleCard sc = new StyleCard(false);
-                sc.stylecardlabel.Text = dr["styleEntity.styleNameCn"].ToString();
-                sc.kuanshiid = dr["styleId"].ToString();
-                sc.kuanshimingcheng = dr["styleEntity.styleNameCn"].ToString();
-                sc.mianliaoid = dr["materialEntity.id"].ToString();
-                sc.mianliaomingcheng = dr["materialEntity.materialNameCn"].ToString();
-                sc.sTYLE_CATEGORY_CD = dr["styleEntity.styleCategoryCd"].ToString();
-                sc.sTYLE_FIT_CD = dr["styleEntity.styleFitCd"].ToString();
-                sc.sTYLE_SIZE_GROUP_CD = dr["styleEntity.styleSizeGroupCd"].ToString();
-                sc.sTYLE_DRESS_CATEGORY = dr["styleEntity.styleDressCategory"].ToString();
-                sc.sTYLE_DESIGN_TYPE = dr["styleEntity.styleDesignType"].ToString();
-                sc.sTYLE_PUBLISH_CATEGORY_CD = dr["styleEntity.stylePublishCategoryCd"].ToString();
-                sc.sYTLE_YEAR = dr["styleEntity.sytleYear"].ToString();
-                sc.sYTLE_SEASON = dr["styleEntity.sytleSeason"].ToString();
-                sc.sTYLE_SIZE_CD = dr["styleEntity.styleSizeCd"].ToString();
-                //sc.id = cd.id;
-                //sc.banid = cd.banid;
-                //sc.jiage = cd.jiage;
-                sc.picture = @"pic\" + dr["picn"].ToString();
-                this.generateUserControl(sc, i);
-                this.panel1.Controls.Add(sc);//将控件加入panel
-                try
-                {
-                    sc.stylecardpicbox.Image = Image.FromFile(sc.picture);
-                }
-                catch
-                {
 
-                }
-                i++;
-            }
-            this.fenYeLan1.label1.Text = Index.page.ToString();
-            this.splashScreenManager.CloseWaitForm();
+            //  图片布局
+            this.generatePictureLayout();
         }
         #region 选择门店
         private void searchLookUpEdit1_Popup(object sender, EventArgs e)

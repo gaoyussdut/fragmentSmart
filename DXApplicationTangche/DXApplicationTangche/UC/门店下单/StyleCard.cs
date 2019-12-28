@@ -37,9 +37,27 @@ namespace mendian
         {
             InitializeComponent();
         }
-        public StyleCard(bool flag)
+        public StyleCard(bool flag,DataRow dr)
         {
             this.flag = flag;
+            this.stylecardlabel.Text = dr["styleEntity.styleNameCn"].ToString();
+            this.kuanshiid = dr["styleId"].ToString();
+            this.kuanshimingcheng = dr["styleEntity.styleNameCn"].ToString();
+            this.mianliaoid = dr["materialEntity.id"].ToString();
+            this.mianliaomingcheng = dr["materialEntity.materialNameCn"].ToString();
+            this.sTYLE_CATEGORY_CD = dr["styleEntity.styleCategoryCd"].ToString();
+            this.sTYLE_FIT_CD = dr["styleEntity.styleFitCd"].ToString();
+            this.sTYLE_SIZE_GROUP_CD = dr["styleEntity.styleSizeGroupCd"].ToString();
+            this.sTYLE_DRESS_CATEGORY = dr["styleEntity.styleDressCategory"].ToString();
+            this.sTYLE_DESIGN_TYPE = dr["styleEntity.styleDesignType"].ToString();
+            this.sTYLE_PUBLISH_CATEGORY_CD = dr["styleEntity.stylePublishCategoryCd"].ToString();
+            this.sYTLE_YEAR = dr["styleEntity.sytleYear"].ToString();
+            this.sYTLE_SEASON = dr["styleEntity.sytleSeason"].ToString();
+            this.sTYLE_SIZE_CD = dr["styleEntity.styleSizeCd"].ToString();
+            //sc.id = cd.id;
+            //sc.banid = cd.banid;
+            //sc.jiage = cd.jiage;
+            this.picture = @"pic\" + dr["picn"].ToString();
             InitializeComponent();
         }
 
