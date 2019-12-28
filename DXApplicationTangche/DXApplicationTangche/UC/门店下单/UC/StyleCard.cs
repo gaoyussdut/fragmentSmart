@@ -40,6 +40,7 @@ namespace mendian
 
         public StyleCard(bool flag,DataRow dr)
         {
+            InitializeComponent();
             this.flag = flag;
             this.stylecardlabel.Text = dr["styleEntity.styleNameCn"].ToString();
             this.kuanshiid = dr["styleId"].ToString();
@@ -59,7 +60,6 @@ namespace mendian
             //sc.banid = cd.banid;
             //sc.jiage = cd.jiage;
             this.picture = @"pic\" + dr["picn"].ToString();
-            InitializeComponent();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
