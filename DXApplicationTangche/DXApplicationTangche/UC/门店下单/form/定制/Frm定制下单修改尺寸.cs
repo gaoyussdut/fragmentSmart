@@ -123,7 +123,7 @@ namespace mendian
                 int order_id = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
                 order_id++;
                 SQLmtm.DoInsert("o_order_brand_r", new string[] { "OGNIZATION_ID", "SHOP_ID", "BRAND_ID", "ORDER_ID" }, new string[] { "95", "18", "", order_id.ToString() });
-                SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "2" });
+                SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "1" });
                 if (Convert.ToInt32(this.shuliang.Text) == Convert.ToInt32(this.shuliang.Text))
                 {
                     MessageBox.Show("保存成功!");
