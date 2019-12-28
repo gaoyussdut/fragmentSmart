@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class Change : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Change : DevExpress.XtraEditors.XtraForm
     {
         public static int styleid { get; set; }
         public static DataTable StyleDesign { get; set; }
@@ -60,7 +60,7 @@ namespace mendian
             new StyleChange().ShowDialog();
         }
 
-        
+
         private void Change_Load(object sender, EventArgs e)
         {
             this.jisuan.Parent = null;
@@ -88,7 +88,7 @@ namespace mendian
         {
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
-            {              
+            {
                 if (MianLiaochoose.mianliaoid == "" || this.chicun01.Text == "" || this.shuliang.Text == "")
                 {
                     MessageBox.Show("请填写完整");
@@ -120,20 +120,20 @@ namespace mendian
                 //RestCall.httpGetMethod("https://shirtmtm.com/fragsmart-mtm/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
                 RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
                 DataRow ORDER_ID = SQLmtm.GetDataRow("SELECT MAX(ORDER_ID) AS ORDER_ID FROM `o_order_brand_r`");
-                    int oRDER_ID = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
-                    oRDER_ID++;
-                    SQLmtm.DoInsert("o_order_brand_r", new string[] { "OGNIZATION_ID", "SHOP_ID", "BRAND_ID", "ORDER_ID" }, new string[] { "95", "18", "", oRDER_ID.ToString() });
-                    
-                    if (Convert.ToInt32(this.shuliang.Text) == Convert.ToInt32(this.shuliang.Text))
-                    {
-                        MessageBox.Show("保存成功!");
-                        //this.closeForm();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("保存失败");
-                    }
+                int order_id = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
+                order_id++;
+                SQLmtm.DoInsert("o_order_brand_r", new string[] { "OGNIZATION_ID", "SHOP_ID", "BRAND_ID", "ORDER_ID" }, new string[] { "95", "18", "", order_id.ToString() });
+                SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "2" });
+                if (Convert.ToInt32(this.shuliang.Text) == Convert.ToInt32(this.shuliang.Text))
+                {
+                    MessageBox.Show("保存成功!");
+                    //this.closeForm();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("保存失败");
+                }
             }
             //else
             //{

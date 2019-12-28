@@ -1401,7 +1401,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             return SQLmtm.GetDataTable(sql);
         }
 
-        public static String GetMianLiaoFile(String mlname)
+        public static String GetMianLiaoFile(String mlid)
         {
             String sql = "SELECT\n" +
 "	*,CONCAT(s1.materialCode,':',s1.materialNameCn) AS mianliao,\n" +
@@ -1466,7 +1466,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "		WHERE\n" +
 "			a.delete_flag = 0 \n" +
 "			AND a.material_category IN ( 'MATERIAL_CATEGORY-Fabric', 'MATERIAL_CATEGORY-ButtonL', 'MATERIAL_CATEGORY-Suit_Fabric', 'MATERIAL_CATEGORY-Suit_Material' ) \n" +
-"			AND ar.SHOP_ID = 18  AND a.MATERIAL_ID ='"+mlname+"'\n" +
+"			AND ar.SHOP_ID = 18  AND a.MATERIAL_ID ='"+mlid+"'\n" +
 //"			AND ( a.material_name_cn LIKE '%" + mlname + "%' OR a.material_code LIKE '%" + mlname + "%' ) \n" +
 "           AND a.material_category ='MATERIAL_CATEGORY-Fabric'" +
 "		ORDER BY\n" +
@@ -1491,12 +1491,11 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// <summary>
         /// 标准款设计点保存
         /// </summary>
-        /// <param name="styleid"></param>
-        public static void StandardModelsDesignSive(String styleid)
+        public static void StandardModelsDesignSive()
         {
             try
             {
-                String sql = "SELECT * FROM s_style_option_r WHERE SYS_STYLE_ID='" + styleid + "'";
+                String sql = "SELECT * FROM s_style_option_r WHERE SYS_STYLE_ID='" + Change.kuanshiid + "'";
                 DataTable dt = SQLmtm.GetDataTable(sql);
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -1512,11 +1511,10 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 
         }
         /// <summary>
-        /// 标准款设计点保存
+        /// 标准款尺寸保存
         /// </summary>
-        /// <param name="styleid"></param>
         /// <param name="dt"></param>
-        public static void StandardModelsSizeSive(String styleid,DataTable dt)
+        public static void StandardModelsSizeSive(DataTable dt)
         {
             Fit_ValueDTo fitv = new Fit_ValueDTo();
             foreach (DataRow dr in dt.Rows)
@@ -1531,6 +1529,33 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             SQLmtm.DoInsert("a_customer_fit_value_r", new string[] {  "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] {  CreateCustomer.cUSTOMER_ID.ToString(), CreateCustomer.customer_name, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
             SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
     new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
+        }
+        /// <summary>
+        /// 清空个别静态变量
+        /// </summary>
+        public static void ClearStaticVariable()
+        {
+            MianLiaochoose.mianliao = "";
+            MianLiaochoose.mianliaocd = "";
+            MianLiaochoose.mianliaoid = "";
+        }
+        /// <summary>
+        /// 获得最新的styleid
+        /// </summary>
+        /// <returns></returns>
+        public static int GetNewStyleID()
+        {
+            DataRow drstyle = SQLmtm.GetDataRow("SELECT MAX(SYS_STYLE_ID) SYS_STYLE_ID FROM `s_style_p`");
+            return (Convert.ToInt32(drstyle["SYS_STYLE_ID"]) + 1);
+        }
+        /// <summary>
+        /// 标准款s_style_p写入数据
+        /// </summary>
+        /// <param name="uc"></param>
+        public static void insertS_Style_P(StyleCard uc)
+        {
+            SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" },
+    new string[] { Change.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, MianLiaochoose.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Change.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
         }
     }
 }
