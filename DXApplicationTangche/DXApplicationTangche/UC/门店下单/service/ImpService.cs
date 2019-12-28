@@ -1285,7 +1285,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "FROM\n" +
 "	s_style_fit_r \n" +
 "WHERE\n" +
-"	STYLE_ID = '76684'";
+"	STYLE_ID = '"+styleid+"'";
             DataRow chengyidr = SQLmtm.GetDataRow(sql);
             List<String> itemCdList = new List<String>(chengyidr["itemCd"].ToString().Split(','));
             List<String> itemValueList = new List<String>(chengyidr["itemValue"].ToString().Split(','));
