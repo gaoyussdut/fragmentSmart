@@ -113,36 +113,30 @@
     <Compile Include="FluentMainFrame.Designer.cs">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm标准款下单.cs">
+    <Compile Include="UC\门店下单\Frm标准款下单.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm标准款下单.Designer.cs">
+    <Compile Include="UC\门店下单\Frm标准款下单.Designer.cs">
       <DependentUpon>Frm标准款下单.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm标准款下单具体.cs">
+    <Compile Include="UC\门店下单\Frm标准款下单具体.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm标准款下单具体.Designer.cs">
+    <Compile Include="UC\门店下单\Frm标准款下单具体.Designer.cs">
       <DependentUpon>Frm标准款下单具体.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="UC\门店下单\NotPrinted.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NotPrinted.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotPrinted.Designer.cs">
+    <Compile Include="UC\门店下单\NotPrinted.Designer.cs">
       <DependentUpon>NotPrinted.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryTag.cs">
+    <Compile Include="UC\门店下单\QueryTag.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QueryTag.Designer.cs">
+    <Compile Include="UC\门店下单\QueryTag.Designer.cs">
       <DependentUpon>QueryTag.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\ImpUC\PrintedView.cs">
@@ -308,16 +302,13 @@
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm标准款下单.resx">
+    <EmbeddedResource Include="UC\门店下单\Frm标准款下单.resx">
       <DependentUpon>Frm标准款下单.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm标准款下单具体.resx">
+    <EmbeddedResource Include="UC\门店下单\Frm标准款下单具体.resx">
       <DependentUpon>Frm标准款下单具体.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotPrinted.resx">
+    <EmbeddedResource Include="UC\门店下单\NotPrinted.resx">
       <DependentUpon>NotPrinted.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -331,7 +322,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QueryTag.resx">
+    <EmbeddedResource Include="UC\门店下单\QueryTag.resx">
       <DependentUpon>QueryTag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ImpUC\PrintedView.resx">
