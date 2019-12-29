@@ -85,11 +85,18 @@
             this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colMATERIAL_COLOR = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colORDER_TYPE = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl订单分录一览)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            this.dockPanel2.SuspendLayout();
+            this.dockPanel3.SuspendLayout();
+            this.dockPanel3_Container.SuspendLayout();
             this.SuspendLayout();
             // 
             // colORDER_NUMBER
@@ -178,7 +185,9 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
+            this.dockPanel1,
+            this.dockPanel3,
+            this.dockPanel2});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -217,11 +226,11 @@
             this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             this.tileBar1.Groups.Add(this.tileBarGroup2);
             this.tileBar1.Groups.Add(this.tileBarGroup3);
-            this.tileBar1.Location = new System.Drawing.Point(322, 0);
+            this.tileBar1.Location = new System.Drawing.Point(0, 0);
             this.tileBar1.MaxId = 4;
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.Size = new System.Drawing.Size(886, 138);
+            this.tileBar1.Size = new System.Drawing.Size(878, 126);
             this.tileBar1.TabIndex = 2;
             this.tileBar1.Text = "tileBar1";
             // 
@@ -268,12 +277,12 @@
             // gridControl订单分录一览
             // 
             this.gridControl订单分录一览.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl订单分录一览.Location = new System.Drawing.Point(322, 138);
+            this.gridControl订单分录一览.Location = new System.Drawing.Point(322, 168);
             this.gridControl订单分录一览.MainView = this.tileView1;
             this.gridControl订单分录一览.Name = "gridControl订单分录一览";
             this.gridControl订单分录一览.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl订单分录一览.Size = new System.Drawing.Size(886, 551);
+            this.gridControl订单分录一览.Size = new System.Drawing.Size(576, 521);
             this.gridControl订单分录一览.TabIndex = 3;
             this.gridControl订单分录一览.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -472,13 +481,50 @@
             this.colORDER_TYPE.VisibleIndex = 8;
             this.colORDER_TYPE.Width = 94;
             // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel2.ID = new System.Guid("3e4e003d-23d7-433f-84a1-e780b7fae0a0");
+            this.dockPanel2.Location = new System.Drawing.Point(898, 168);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(310, 200);
+            this.dockPanel2.Size = new System.Drawing.Size(310, 521);
+            this.dockPanel2.Text = "设计点预览";
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Location = new System.Drawing.Point(6, 37);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(300, 480);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // dockPanel3
+            // 
+            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
+            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
+            this.dockPanel3.ID = new System.Guid("dbd6f430-9f49-4062-88bb-afe1ad422a52");
+            this.dockPanel3.Location = new System.Drawing.Point(322, 0);
+            this.dockPanel3.Name = "dockPanel3";
+            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 168);
+            this.dockPanel3.Size = new System.Drawing.Size(886, 168);
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Controls.Add(this.tileBar1);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 37);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(878, 125);
+            this.dockPanel3_Container.TabIndex = 0;
+            // 
             // Frm门店统一下单
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1208, 689);
             this.Controls.Add(this.gridControl订单分录一览);
-            this.Controls.Add(this.tileBar1);
+            this.Controls.Add(this.dockPanel2);
+            this.Controls.Add(this.dockPanel3);
             this.Controls.Add(this.dockPanel1);
             this.Name = "Frm门店统一下单";
             this.Text = "Frm门店统一下单";
@@ -487,6 +533,9 @@
             this.dockPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl订单分录一览)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel3.ResumeLayout(false);
+            this.dockPanel3_Container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -520,5 +569,9 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn colORDER_TYPE;
         private DevExpress.XtraGrid.Columns.TileViewColumn colPic;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
     }
 }
