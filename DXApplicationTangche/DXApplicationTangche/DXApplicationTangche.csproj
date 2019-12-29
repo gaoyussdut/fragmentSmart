@@ -115,6 +115,12 @@
     </Compile>
     <Compile Include="service\ResourceService.cs" />
     <Compile Include="UC\门店下单\DTO\OrderDto.cs" />
+    <Compile Include="UC\门店下单\form\Frm门店下单选款式.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\form\Frm门店下单选款式.Designer.cs">
+      <DependentUpon>Frm门店下单选款式.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\门店下单\form\Frm门店统一下单.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
     <Compile Include="Utils\DBUtil.cs" />
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\form\Frm门店下单选款式.resx">
+      <DependentUpon>Frm门店下单选款式.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\Frm门店统一下单.resx">
       <DependentUpon>Frm门店统一下单.cs</DependentUpon>

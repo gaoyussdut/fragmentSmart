@@ -98,7 +98,7 @@
             this.toolbarFormControl1.Location = new System.Drawing.Point(0, 0);
             this.toolbarFormControl1.Manager = this.toolbarFormManager1;
             this.toolbarFormControl1.Name = "toolbarFormControl1";
-            this.toolbarFormControl1.Size = new System.Drawing.Size(933, 30);
+            this.toolbarFormControl1.Size = new System.Drawing.Size(1233, 30);
             this.toolbarFormControl1.TabIndex = 0;
             this.toolbarFormControl1.TabStop = false;
             this.toolbarFormControl1.ToolbarForm = this;
@@ -117,7 +117,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 30);
             this.barDockControlTop.Manager = this.toolbarFormManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(933, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1233, 0);
             // 
             // barDockControlBottom
             // 
@@ -125,7 +125,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 525);
             this.barDockControlBottom.Manager = this.toolbarFormManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(933, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1233, 0);
             // 
             // barDockControlLeft
             // 
@@ -139,7 +139,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(933, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1233, 30);
             this.barDockControlRight.Manager = this.toolbarFormManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 495);
             // 
@@ -154,7 +154,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(235, 30);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(698, 495);
+            this.layoutControl1.Size = new System.Drawing.Size(998, 495);
             this.layoutControl1.TabIndex = 1;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -165,7 +165,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(674, 377);
+            this.panel1.Size = new System.Drawing.Size(974, 377);
             this.panel1.TabIndex = 4;
             // 
             // textBox1
@@ -173,7 +173,7 @@
             this.textBox1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(377, 43);
+            this.textBox1.Size = new System.Drawing.Size(546, 43);
             this.textBox1.TabIndex = 5;
             // 
             // simpleButton11
@@ -181,9 +181,9 @@
             this.simpleButton11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(393, 12);
+            this.simpleButton11.Location = new System.Drawing.Point(562, 12);
             this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(104, 43);
+            this.simpleButton11.Size = new System.Drawing.Size(151, 43);
             this.simpleButton11.StyleController = this.layoutControl1;
             this.simpleButton11.TabIndex = 6;
             this.simpleButton11.Text = "搜索";
@@ -194,15 +194,15 @@
             this.label5.BackColor = System.Drawing.Color.SkyBlue;
             this.label5.Location = new System.Drawing.Point(12, 440);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(324, 43);
+            this.label5.Size = new System.Drawing.Size(503, 43);
             this.label5.TabIndex = 10;
             // 
             // fenYeLan1
             // 
             this.fenYeLan1.BackColor = System.Drawing.Color.SkyBlue;
-            this.fenYeLan1.Location = new System.Drawing.Point(340, 440);
+            this.fenYeLan1.Location = new System.Drawing.Point(519, 440);
             this.fenYeLan1.Name = "fenYeLan1";
-            this.fenYeLan1.Size = new System.Drawing.Size(346, 43);
+            this.fenYeLan1.Size = new System.Drawing.Size(467, 43);
             this.fenYeLan1.TabIndex = 9;
             // 
             // Root
@@ -217,7 +217,7 @@
             this.layoutControlItem7,
             this.layoutControlItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(698, 495);
+            this.Root.Size = new System.Drawing.Size(998, 495);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -226,7 +226,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(678, 381);
+            this.layoutControlItem1.Size = new System.Drawing.Size(978, 381);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -238,7 +238,7 @@
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(35, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(381, 47);
+            this.layoutControlItem2.Size = new System.Drawing.Size(550, 47);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -247,11 +247,11 @@
             // 
             this.layoutControlItem3.Control = this.simpleButton11;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(381, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(550, 0);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(108, 47);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(108, 47);
+            this.layoutControlItem3.Size = new System.Drawing.Size(155, 47);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -260,9 +260,9 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(489, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(705, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(189, 47);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(273, 47);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
@@ -271,7 +271,7 @@
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 428);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(328, 47);
+            this.layoutControlItem7.Size = new System.Drawing.Size(507, 47);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -279,11 +279,11 @@
             // 
             this.layoutControlItem6.Control = this.fenYeLan1;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem6.Location = new System.Drawing.Point(328, 428);
+            this.layoutControlItem6.Location = new System.Drawing.Point(507, 428);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(471, 47);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(121, 28);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(350, 47);
+            this.layoutControlItem6.Size = new System.Drawing.Size(471, 47);
             this.layoutControlItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
@@ -482,7 +482,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 525);
+            this.ClientSize = new System.Drawing.Size(1233, 525);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.barDockControlLeft);
