@@ -4,6 +4,7 @@ using DiaoPaiDaYin;
 using DXApplicationTangche.UC;
 using DXApplicationTangche.UC.库存;
 using DXApplicationTangche.UC.库存.门店验货;
+using DXApplicationTangche.UC.门店下单.form;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -88,6 +89,11 @@ namespace DXApplicationTangche
         private void accordionControlElement6_Click(object sender, EventArgs e)
         {
             this.initPanel(new Frm标准款下单());
+        }
+
+        private void accordionControlElement20_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm门店统一下单());
         }
     }
 }
