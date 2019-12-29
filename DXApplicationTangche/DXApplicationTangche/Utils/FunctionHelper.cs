@@ -299,5 +299,7 @@ namespace DevExpress.XtraGrid.Demos.util
             }
         }
         #endregion
+
+        public static string uuid = System.Guid.NewGuid().ToString("N");
     }
 }
