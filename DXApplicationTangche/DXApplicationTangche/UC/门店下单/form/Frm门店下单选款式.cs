@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static DXApplicationTangche.UC.门店下单.form.Frm门店统一下单;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
@@ -17,11 +18,16 @@ namespace DXApplicationTangche.UC.门店下单.form
         private PanelLocition panelLocition;
         int height = 0;//用户控件纵坐标
         int width = 0;  //用户控件横坐标
-        public Frm门店下单选款式()
+
+        private Frm门店统一下单 frm;
+
+        public Frm门店下单选款式(Frm门店统一下单 frm, Enum下单类型 enum下单类型)
         {
             InitializeComponent();
             this.fenYeLan1.xiaye.Click += new EventHandler(this.xiaye_Button);
             this.fenYeLan1.shangye.Click += new EventHandler(this.shangye_Button);
+
+            this.frm = frm;
         }
 
         private void simpleButton11_Click(object sender, EventArgs e)
@@ -119,6 +125,11 @@ namespace DXApplicationTangche.UC.门店下单.form
 
             //  图片布局
             this.generatePictureLayout();
+        }
+
+        private void Frm门店下单选款式_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

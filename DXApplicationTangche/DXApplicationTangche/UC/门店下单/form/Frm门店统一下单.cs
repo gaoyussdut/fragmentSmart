@@ -23,6 +23,9 @@ namespace DXApplicationTangche.UC.门店下单.form
         /// 订单充血类
         /// </summary>
         private OrderModel orderModel = new OrderModel();
+
+        public enum Enum下单类型 { 服装定制下单,标准款扫码下单,标准款无码下单 };
+
         public Frm门店统一下单()
         {
             InitializeComponent();
@@ -124,7 +127,12 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void tileBarItem1_ItemClick(object sender, TileItemEventArgs e)
         {
-            new Frm门店下单选款式().ShowDialog();
+            new Frm门店下单选款式(this,Enum下单类型.服装定制下单).ShowDialog();
+        }
+
+        private void tileBarItem6_ItemClick(object sender, TileItemEventArgs e)
+        {
+            new Frm门店下单选款式(this, Enum下单类型.标准款无码下单).ShowDialog();
         }
     }
 }
