@@ -119,9 +119,9 @@ namespace mendian
                 //o_order_p
                 //RestCall.httpGetMethod("https://shirtmtm.com/fragsmart-mtm/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
                 RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
-                DataRow ORDER_ID = SQLmtm.GetDataRow("SELECT MAX(ORDER_ID) AS ORDER_ID FROM `o_order_brand_r`");
+                DataRow ORDER_ID = SQLmtm.GetDataRow("SELECT MAX(ORDER_ID) AS ORDER_ID FROM `o_order_p`");
                 int order_id = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
-                order_id++;
+                //order_id++;
                 SQLmtm.DoInsert("o_order_brand_r", new string[] { "OGNIZATION_ID", "SHOP_ID", "BRAND_ID", "ORDER_ID" }, new string[] { "95", "18", "", order_id.ToString() });
                 SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "1" });
                 if (Convert.ToInt32(this.shuliang.Text) == Convert.ToInt32(this.shuliang.Text))
