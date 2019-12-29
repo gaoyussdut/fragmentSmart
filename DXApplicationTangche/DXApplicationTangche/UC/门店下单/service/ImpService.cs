@@ -1204,7 +1204,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             DataTable dt = SQLmtm.GetDataTable(sql);
             if(dt.Rows.Count!=0)
             {
-                ci.Add(new CustomerInformation("客户姓名", dt.Rows[0]["CUSTOMER_NAME"].ToString()));
+                ci.Add(new CustomerInformation("收件人姓名", dt.Rows[0]["CUSTOMER_NAME"].ToString()));
                 foreach(DataRow dr in dt.Rows)
                 {
                     if(dr["ITEM_NAME_CN"].ToString()!="")

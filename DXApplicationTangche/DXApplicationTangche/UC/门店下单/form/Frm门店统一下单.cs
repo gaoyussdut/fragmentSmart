@@ -14,6 +14,7 @@ using DevExpress.XtraLayout;
 using DevExpress.Utils.Win;
 using mendian;
 using DiaoPaiDaYin;
+using DevExpress.XtraGrid.Demos.util;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
@@ -31,7 +32,9 @@ namespace DXApplicationTangche.UC.门店下单.form
             InitializeComponent();
             this.initData();    //  测试方法
             this.gridControl订单分录一览.DataSource = this.orderModel.OrderDtos;
-            this.textEdit订单号.Text = "";// TODO，单号
+            this.textEdit订单号.Text = FunctionHelper.generateBillNo(
+                "t_shop_order", "order_code","SALE","00000"
+                );// TODO，单号
         }
 
         //  测试方法
