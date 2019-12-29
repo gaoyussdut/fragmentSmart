@@ -14,6 +14,8 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public String STYLE_FIT_CD { get; set; } //版型
         public String STYLE_SIZE_GROUP_CD { get; set; }//尺码组
         public String STYLE_SIZE_CD { get; set; }//尺码
+        public int ORDER_NUMBER { get; set; }   //  订单数量
+
         public List<Dto设计点> Dto设计点s { get => dto设计点s; }
         public Dto尺寸 Dto尺寸 { get => dto尺寸; }
 

@@ -15,6 +15,7 @@ using DevExpress.Utils.Win;
 using mendian;
 using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
+using DXApplicationTangche.UC.门店下单.DTO;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
@@ -35,6 +36,13 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.textEdit订单号.Text = FunctionHelper.generateBillNo(
                 "t_shop_order", "order_code","SALE","00000"
                 );// TODO，单号
+        }
+
+        /// <summary>
+        /// 新增分录
+        /// </summary>
+        public void buildOrderModel(Dto定制下单 dto定制下单) {
+            this.orderModel.buildAddOrderDtos(dto定制下单);
         }
 
         //  测试方法

@@ -34,7 +34,30 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
         public Image Picture { get; set; }
 
-        public enum Enum_ORDER_TYPE {服装定制 =1,标准款=2,受托加工=3}
+        public enum Enum_ORDER_TYPE { 服装定制 = 1, 标准款 = 2, 受托加工 = 3 }
+
+        #region 设计点和量体制信息
+        public List<Dto设计点> Dto设计点s { get => dto设计点s; }
+        public Dto尺寸 Dto尺寸 { get => dto尺寸; }
+
+        private List<Dto设计点> dto设计点s = new List<Dto设计点>();   //  设计点
+        private Dto尺寸 dto尺寸;  //  尺寸
+        #endregion
+
+        public OrderDto(Dto定制下单 dto定制下单) {
+            this.ID = FunctionHelper.uuid;
+            this.dto设计点s = dto定制下单.Dto设计点s; //  设计点信息
+            this.dto尺寸 = dto定制下单.Dto尺寸; //  尺寸信息
+
+            //  款式和面料信息
+            this.style_id = dto定制下单.Style_Id;
+            this.SYTLE_FABRIC_ID = dto定制下单.SYTLE_FABRIC_ID;
+            //this.STYLE_CATEGORY_CD = dto定制下单.STYLE_CATEGORY_CD;
+            //this.STYLE_FIT_CD = dto定制下单.STYLE_FIT_CD;
+            //this.STYLE_SIZE_GROUP_CD = dto定制下单.STYLE_SIZE_GROUP_CD;
+            this.STYLE_SIZE_CD = dto定制下单.STYLE_SIZE_CD;
+            this.ORDER_NUMBER = dto定制下单.ORDER_NUMBER;
+        }
 
         /// <summary>
         /// 构造函数

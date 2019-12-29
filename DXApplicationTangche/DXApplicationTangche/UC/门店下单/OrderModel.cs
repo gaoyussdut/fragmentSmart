@@ -45,6 +45,11 @@ namespace DXApplicationTangche.UC.门店下单
             return this;
         }
 
+        public OrderModel buildAddOrderDtos(Dto定制下单 dto定制下单) {
+            this.orderDtos.Add(new OrderDto(dto定制下单));
+            return this;
+        }
+
         /// <summary>
         /// 删除订单
         /// </summary>
