@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DXApplicationTangche.UC.门店下单.form;
 
 namespace mendian
 {
@@ -19,10 +20,33 @@ namespace mendian
         public String picn;
         public MianLiaochoose form;
         public bool flag;
+
+        private Frm门店下单选款式 frm;
+
         public MianLiaoCard()
         {
             InitializeComponent();
         }
+
+        public MianLiaoCard(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form, Frm门店下单选款式 frm) {
+            this.frm = frm;
+            this.flag = true;
+            this.mianliao = mianliao;
+            this.mianliaoid = mianliaoid;
+            this.mianliaocd = mianliaocd;
+            this.picurl = picurl;
+            this.picn = picn;
+            this.form = form;
+            this.label1.Text = this.mianliao;
+            try
+            {
+                this.pictureBox1.Image = Image.FromFile(@"pic\" + this.picn.Trim());
+            }
+            catch
+            {
+            }
+        }
+
         public MianLiaoCard(String mianliao,String mianliaoid,String mianliaocd,String picurl,String picn,MianLiaochoose form)
         {
             InitializeComponent();

@@ -89,23 +89,24 @@ namespace mendian
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(CreateCustomer.cUSTOMER_ID==0)
-            {
-                MessageBox.Show("请先选择客户");
-                return;
-            }
-            if(this.flag== "标准款下单具体")
-            {
-                new Frm标准款下单具体(this).ShowDialog();
-            }
-            else if(this.flag=="Change")
-            {
-                new Change(this).ShowDialog();
-            }
-            else if(this.flag=="门店下单选款式")
-            {
+            //if(CreateCustomer.cUSTOMER_ID==0)
+            //{
+            //    MessageBox.Show("请先选择客户");
+            //    return;
+            //}
+            //if(this.flag== "标准款下单具体")
+            //{
+            //    new Frm标准款下单具体(this).ShowDialog();
+            //}
+            //else if(this.flag=="Change")
+            //{
+            //    new Change(this).ShowDialog();
+            //}
+            //else if(this.flag=="门店下单选款式")
+            //{
+                this.form.Dto定制下单.Style_Id = this.kuanshiid;
                 this.form.xtraTabControl1.SelectedTabPage = this.form.xtraTabControl1.TabPages[1];
-            }
+            //}
         }
 
 

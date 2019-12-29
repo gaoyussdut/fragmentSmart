@@ -1,4 +1,5 @@
-﻿using mendian;
+﻿using DXApplicationTangche.UC.门店下单.DTO;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,15 @@ namespace DXApplicationTangche.UC.门店下单.form
     public partial class Frm门店下单选款式 : DevExpress.XtraEditors.XtraForm
     {
         public static int page { get; set; } = 1;
+        public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
+
         private PanelLocition panelLocition;
         int height = 0;//用户控件纵坐标
         int width = 0;  //用户控件横坐标
 
         private Frm门店统一下单 frm;
+
+        private Dto定制下单 dto定制下单;
 
         public Frm门店下单选款式(Frm门店统一下单 frm, Enum下单类型 enum下单类型)
         {
@@ -28,6 +33,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.fenYeLan1.shangye.Click += new EventHandler(this.shangye_Button);
 
             this.frm = frm;
+            dto定制下单 = new Dto定制下单();
         }
 
         private void simpleButton11_Click(object sender, EventArgs e)
@@ -60,7 +66,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
             {
-                StyleCard sc = new StyleCard("门店下单选款式", dr);
+                StyleCard sc = new StyleCard(this,"门店下单选款式", dr);
                 this.generateUserControl(sc, i);
                 this.panel1.Controls.Add(sc);//将控件加入panel
                 try
