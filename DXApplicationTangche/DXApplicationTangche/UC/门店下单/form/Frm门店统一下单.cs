@@ -22,6 +22,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             InitializeComponent();
             this.initData();    //  测试方法
             this.gridControl订单分录一览.DataSource = this.orderModel.OrderDtos;
+            this.textEdit订单号.Text = "";// TODO，单号
         }
 
         //  测试方法

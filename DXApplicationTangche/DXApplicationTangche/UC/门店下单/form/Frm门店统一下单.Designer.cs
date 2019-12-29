@@ -32,6 +32,8 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
@@ -69,12 +71,19 @@
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
             this.tileBarGroup2 = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.tileBarItem2 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarItem4 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarGroup3 = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.tileBarItem1 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem3 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.tileBarGroup4 = new DevExpress.XtraBars.Navigation.TileBarGroup();
+            this.tileBarItem5 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl订单分录一览 = new DevExpress.XtraGrid.GridControl();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.colID = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -85,18 +94,29 @@
             this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colMATERIAL_COLOR = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colORDER_TYPE = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textEdit订单号 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit门店 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit总金额 = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl订单分录一览)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
-            this.dockPanel2.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
             this.dockPanel3.SuspendLayout();
             this.dockPanel3_Container.SuspendLayout();
+            this.dockPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl订单分录一览)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit订单号.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit门店.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit总金额.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // colORDER_NUMBER
@@ -215,10 +235,29 @@
             // 
             // dockPanel1_Container
             // 
+            this.dockPanel1_Container.Controls.Add(this.tablePanel1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 37);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
             this.dockPanel1_Container.Size = new System.Drawing.Size(312, 648);
             this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // dockPanel3
+            // 
+            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
+            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
+            this.dockPanel3.ID = new System.Guid("dbd6f430-9f49-4062-88bb-afe1ad422a52");
+            this.dockPanel3.Location = new System.Drawing.Point(322, 0);
+            this.dockPanel3.Name = "dockPanel3";
+            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 168);
+            this.dockPanel3.Size = new System.Drawing.Size(886, 168);
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Controls.Add(this.tileBar1);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 37);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(878, 125);
+            this.dockPanel3_Container.TabIndex = 0;
             // 
             // tileBar1
             // 
@@ -226,8 +265,9 @@
             this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             this.tileBar1.Groups.Add(this.tileBarGroup2);
             this.tileBar1.Groups.Add(this.tileBarGroup3);
+            this.tileBar1.Groups.Add(this.tileBarGroup4);
             this.tileBar1.Location = new System.Drawing.Point(0, 0);
-            this.tileBar1.MaxId = 4;
+            this.tileBar1.MaxId = 6;
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
             this.tileBar1.Size = new System.Drawing.Size(878, 126);
@@ -237,17 +277,31 @@
             // tileBarGroup2
             // 
             this.tileBarGroup2.Items.Add(this.tileBarItem2);
+            this.tileBarGroup2.Items.Add(this.tileBarItem4);
             this.tileBarGroup2.Name = "tileBarGroup2";
             this.tileBarGroup2.Text = "标准款下单";
             // 
             // tileBarItem2
             // 
+            this.tileBarItem2.AppearanceItem.Normal.BackColor = System.Drawing.Color.Aqua;
+            this.tileBarItem2.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement1.Text = "标准款下单";
+            tileItemElement1.Text = "标准款扫码下单";
             this.tileBarItem2.Elements.Add(tileItemElement1);
             this.tileBarItem2.Id = 1;
             this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem2.Name = "tileBarItem2";
+            // 
+            // tileBarItem4
+            // 
+            this.tileBarItem4.AppearanceItem.Normal.BackColor = System.Drawing.Color.Aqua;
+            this.tileBarItem4.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tileBarItem4.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement2.Text = "标准款查询库存";
+            this.tileBarItem4.Elements.Add(tileItemElement2);
+            this.tileBarItem4.Id = 4;
+            this.tileBarItem4.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItem4.Name = "tileBarItem4";
             // 
             // tileBarGroup3
             // 
@@ -258,21 +312,60 @@
             // 
             // tileBarItem1
             // 
+            this.tileBarItem1.AppearanceItem.Normal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tileBarItem1.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement2.Text = "选择面料下单";
-            this.tileBarItem1.Elements.Add(tileItemElement2);
+            tileItemElement3.Text = "选择面料下单";
+            this.tileBarItem1.Elements.Add(tileItemElement3);
             this.tileBarItem1.Id = 2;
             this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem1.Name = "tileBarItem1";
             // 
             // tileBarItem3
             // 
+            this.tileBarItem3.AppearanceItem.Normal.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tileBarItem3.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tileBarItem3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement3.Text = "上传面料图片下单";
-            this.tileBarItem3.Elements.Add(tileItemElement3);
+            tileItemElement4.Text = "上传面料图片下单";
+            this.tileBarItem3.Elements.Add(tileItemElement4);
             this.tileBarItem3.Id = 3;
             this.tileBarItem3.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem3.Name = "tileBarItem3";
+            // 
+            // tileBarGroup4
+            // 
+            this.tileBarGroup4.Items.Add(this.tileBarItem5);
+            this.tileBarGroup4.Name = "tileBarGroup4";
+            this.tileBarGroup4.Text = "客户管理";
+            // 
+            // tileBarItem5
+            // 
+            this.tileBarItem5.AppearanceItem.Normal.BackColor = System.Drawing.Color.Red;
+            this.tileBarItem5.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tileBarItem5.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement5.Text = "补充客户信息";
+            this.tileBarItem5.Elements.Add(tileItemElement5);
+            this.tileBarItem5.Id = 5;
+            this.tileBarItem5.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.tileBarItem5.Name = "tileBarItem5";
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel2.ID = new System.Guid("3e4e003d-23d7-433f-84a1-e780b7fae0a0");
+            this.dockPanel2.Location = new System.Drawing.Point(898, 168);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(310, 200);
+            this.dockPanel2.Size = new System.Drawing.Size(310, 521);
+            this.dockPanel2.Text = "设计点预览";
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Location = new System.Drawing.Point(6, 37);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(300, 480);
+            this.dockPanel2_Container.TabIndex = 0;
             // 
             // gridControl订单分录一览
             // 
@@ -305,6 +398,7 @@
             this.colSTYLE_PUBLISH_CATEGORY_CD,
             this.colORDER_TYPE,
             this.colPic});
+            this.tileView1.ColumnSet.CheckedColumn = this.colPic;
             this.tileView1.ColumnSet.GroupColumn = this.colORDER_TYPE;
             this.tileView1.GridControl = this.gridControl订单分录一览;
             this.tileView1.Name = "tileView1";
@@ -481,41 +575,114 @@
             this.colORDER_TYPE.VisibleIndex = 8;
             this.colORDER_TYPE.Width = 94;
             // 
-            // dockPanel2
+            // tablePanel1
             // 
-            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
-            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel2.ID = new System.Guid("3e4e003d-23d7-433f-84a1-e780b7fae0a0");
-            this.dockPanel2.Location = new System.Drawing.Point(898, 168);
-            this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(310, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(310, 521);
-            this.dockPanel2.Text = "设计点预览";
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 15.26F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 44.74F)});
+            this.tablePanel1.Controls.Add(this.textEdit总金额);
+            this.tablePanel1.Controls.Add(this.textEdit门店);
+            this.tablePanel1.Controls.Add(this.textEdit订单号);
+            this.tablePanel1.Controls.Add(this.dateTimePicker1);
+            this.tablePanel1.Controls.Add(this.label4);
+            this.tablePanel1.Controls.Add(this.label3);
+            this.tablePanel1.Controls.Add(this.label2);
+            this.tablePanel1.Controls.Add(this.label1);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(312, 140);
+            this.tablePanel1.TabIndex = 0;
             // 
-            // dockPanel2_Container
+            // label1
             // 
-            this.dockPanel2_Container.Location = new System.Drawing.Point(6, 37);
-            this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(300, 480);
-            this.dockPanel2_Container.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label1, 0);
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.tablePanel1.SetRow(this.label1, 0);
+            this.label1.Size = new System.Drawing.Size(53, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "订单号";
             // 
-            // dockPanel3
+            // label2
             // 
-            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
-            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
-            this.dockPanel3.ID = new System.Guid("dbd6f430-9f49-4062-88bb-afe1ad422a52");
-            this.dockPanel3.Location = new System.Drawing.Point(322, 0);
-            this.dockPanel3.Name = "dockPanel3";
-            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 168);
-            this.dockPanel3.Size = new System.Drawing.Size(886, 168);
+            this.label2.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label2, 0);
+            this.label2.Location = new System.Drawing.Point(3, 30);
+            this.label2.Name = "label2";
+            this.tablePanel1.SetRow(this.label2, 1);
+            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "下单时间";
             // 
-            // dockPanel3_Container
+            // label3
             // 
-            this.dockPanel3_Container.Controls.Add(this.tileBar1);
-            this.dockPanel3_Container.Location = new System.Drawing.Point(4, 37);
-            this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(878, 125);
-            this.dockPanel3_Container.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label3, 0);
+            this.label3.Location = new System.Drawing.Point(3, 56);
+            this.label3.Name = "label3";
+            this.tablePanel1.SetRow(this.label3, 2);
+            this.label3.Size = new System.Drawing.Size(68, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "所属门店";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 82);
+            this.label4.Name = "label4";
+            this.tablePanel1.SetRow(this.label4, 3);
+            this.label4.Size = new System.Drawing.Size(53, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "总金额";
+            // 
+            // dateTimePicker1
+            // 
+            this.tablePanel1.SetColumn(this.dateTimePicker1, 1);
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(82, 29);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.tablePanel1.SetRow(this.dateTimePicker1, 1);
+            this.dateTimePicker1.Size = new System.Drawing.Size(227, 26);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // textEdit订单号
+            // 
+            this.tablePanel1.SetColumn(this.textEdit订单号, 1);
+            this.textEdit订单号.Enabled = false;
+            this.textEdit订单号.Location = new System.Drawing.Point(82, 3);
+            this.textEdit订单号.Name = "textEdit订单号";
+            this.tablePanel1.SetRow(this.textEdit订单号, 0);
+            this.textEdit订单号.Size = new System.Drawing.Size(227, 20);
+            this.textEdit订单号.TabIndex = 7;
+            // 
+            // textEdit门店
+            // 
+            this.tablePanel1.SetColumn(this.textEdit门店, 1);
+            this.textEdit门店.Enabled = false;
+            this.textEdit门店.Location = new System.Drawing.Point(82, 55);
+            this.textEdit门店.Name = "textEdit门店";
+            this.tablePanel1.SetRow(this.textEdit门店, 2);
+            this.textEdit门店.Size = new System.Drawing.Size(227, 20);
+            this.textEdit门店.TabIndex = 8;
+            // 
+            // textEdit总金额
+            // 
+            this.tablePanel1.SetColumn(this.textEdit总金额, 1);
+            this.textEdit总金额.Enabled = false;
+            this.textEdit总金额.Location = new System.Drawing.Point(82, 81);
+            this.textEdit总金额.Name = "textEdit总金额";
+            this.tablePanel1.SetRow(this.textEdit总金额, 3);
+            this.textEdit总金额.Size = new System.Drawing.Size(227, 20);
+            this.textEdit总金额.TabIndex = 9;
             // 
             // Frm门店统一下单
             // 
@@ -531,11 +698,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl订单分录一览)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
-            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
             this.dockPanel3.ResumeLayout(false);
             this.dockPanel3_Container.ResumeLayout(false);
+            this.dockPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl订单分录一览)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit订单号.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit门店.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit总金额.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -573,5 +747,17 @@
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem4;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup4;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraEditors.TextEdit textEdit总金额;
+        private DevExpress.XtraEditors.TextEdit textEdit门店;
+        private DevExpress.XtraEditors.TextEdit textEdit订单号;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
