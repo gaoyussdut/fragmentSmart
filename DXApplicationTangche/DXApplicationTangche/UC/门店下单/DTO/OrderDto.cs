@@ -59,7 +59,14 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.STYLE_SIZE_CD = dto定制下单.STYLE_SIZE_CD;
             this.ORDER_NUMBER = dto定制下单.ORDER_NUMBER;
             this.ORDER_TYPE = Enum_ORDER_TYPE.服装定制;
-            this.Picture = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.SYTLE_FABRIC_ID));
+            try
+            {
+                this.Picture = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.SYTLE_FABRIC_ID));
+            }
+            catch
+            {
+                this.Picture = Image.FromFile(@"pic\SSHIRT.jpg");
+            }
             ImpService.generateOrderSytleInfo(this);
         }
 

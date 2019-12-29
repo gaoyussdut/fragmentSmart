@@ -33,7 +33,7 @@ namespace mendian
         public String sYTLE_SEASON = "";
         public String sTYLE_SIZE_CD = "";
         public String flag;
-        public Frm门店下单选款式 form;
+        public Frm门店下单选款式 frm;
 
         public StyleCard()
         {
@@ -66,7 +66,7 @@ namespace mendian
         public StyleCard(Frm门店下单选款式 form, String flag, DataRow dr)
         {
             InitializeComponent();
-            this.form = form;
+            this.frm = form;
             this.flag = flag;
             this.stylecardlabel.Text = dr["styleEntity.styleNameCn"].ToString();
             this.kuanshiid = dr["styleId"].ToString();
@@ -104,23 +104,25 @@ namespace mendian
             //}
             //else if(this.flag=="门店下单选款式")
             //{
-            this.form.Dto定制下单.Style_Id = this.kuanshiid;
-            this.form.Dto定制下单.STYLE_CATEGORY_CD = this.sTYLE_CATEGORY_CD;
-            this.form.Dto定制下单.STYLE_FIT_CD = this.sTYLE_FIT_CD;
-            this.form.Dto定制下单.STYLE_SIZE_GROUP_CD = this.sTYLE_SIZE_GROUP_CD;
-            this.form.Dto定制下单.STYLE_SIZE_CD = this.sTYLE_SIZE_CD;
-            ImpService.LoadChiCunCard(this.form);
-            ImpService.LoadSheJiDian(this.form, this.form.Dto定制下单.Style_Id);
-            Change.stylesizedt = ImpService.StyleCombobox(this.form.Dto定制下单.Style_Id);
+            this.frm.Dto定制下单.Style_Id = this.kuanshiid;
+            this.frm.Dto定制下单.STYLE_CATEGORY_CD = this.sTYLE_CATEGORY_CD;
+            this.frm.Dto定制下单.STYLE_FIT_CD = this.sTYLE_FIT_CD;
+            this.frm.Dto定制下单.STYLE_SIZE_GROUP_CD = this.sTYLE_SIZE_GROUP_CD;
+            this.frm.Dto定制下单.STYLE_SIZE_CD = this.sTYLE_SIZE_CD;
+            this.frm.Dto定制下单.SYTLE_FABRIC_ID = this.mianliaoid;
+            this.frm.mianliaoname.Text = this.mianliaomingcheng;
+            ImpService.LoadChiCunCard(this.frm);
+            ImpService.LoadSheJiDian(this.frm, this.frm.Dto定制下单.Style_Id);
+            Change.stylesizedt = ImpService.StyleCombobox(this.frm.Dto定制下单.Style_Id);
             if (Change.stylesizedt != null)
             {
                 foreach (DataRow dr in Change.stylesizedt.Rows)
                 {
                     //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
-                    this.form.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
+                    this.frm.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
                 }
             }
-            this.form.xtraTabControl1.SelectedTabPage = this.form.xtraTabControl1.TabPages[1];
+            this.frm.xtraTabControl1.SelectedTabPage = this.frm.xtraTabControl1.TabPages[1];
             //}
         }
 
