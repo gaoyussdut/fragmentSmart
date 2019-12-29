@@ -31,7 +31,7 @@ namespace DXApplicationTangche.UC.门店下单.form
         public Frm门店统一下单()
         {
             InitializeComponent();
-            this.initData();    //  测试方法
+            //this.initData();    //  测试方法
             this.gridControl订单分录一览.DataSource = this.orderModel.OrderDtos;
             this.textEdit订单号.Text = FunctionHelper.generateBillNo(
                 "t_shop_order", "order_code","SALE","00000"
@@ -144,6 +144,12 @@ namespace DXApplicationTangche.UC.门店下单.form
         private void tileBarItem6_ItemClick(object sender, TileItemEventArgs e)
         {
             new Frm门店下单选款式(this, Enum下单类型.标准款无码下单).ShowDialog();
+        }
+
+        public void refreshGridControl()
+        {
+            this.gridControl订单分录一览.DataSource = this.orderModel.OrderDtos;
+            this.tileView1.RefreshData();
         }
     }
 }

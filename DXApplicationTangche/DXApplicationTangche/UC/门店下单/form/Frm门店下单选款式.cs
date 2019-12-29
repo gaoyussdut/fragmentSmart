@@ -158,24 +158,15 @@ namespace DXApplicationTangche.UC.门店下单.form
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                this.dto定制下单.ORDER_NUMBER = Convert.ToInt32(this.barEditItemNumber.EditValue);
                 ImpService.DynamicSaveSize(this, this.Dto定制下单);//尺寸保存
                 ImpService.DynamicSaveDesign(this, this.Dto定制下单);//设计点保存
+                this.frm.buildOrderModel(this.Dto定制下单);
+                this.frm.refreshGridControl();
+                MessageBox.Show("保存成功");
+                this.Close();
             }
-
         }
-
-        private void simpleButton4_Click(object sender, EventArgs e)
-        {
-            //DataTable dt = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), Dto定制下单.Style_Id, Change.stylesizedt);
-            //ImpService.RefreshChiCun(this, dt);
-            //ImpService.CountChiCun(this);
-        }
-
-        private void jisuan_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataTable dt = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), Dto定制下单.Style_Id, Change.stylesizedt);

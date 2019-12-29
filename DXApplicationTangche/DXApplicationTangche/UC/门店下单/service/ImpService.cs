@@ -17,6 +17,39 @@ namespace mendian
 {
     class ImpService
     {
+        public static void generateOrderSytleInfo(OrderDto orderDto) {
+            String sql = "SELECT\n" +
+                "	SYS_STYLE_ID,\n" +
+                "	STYLE_SIZE_CD,\n" +
+                "	STYLE_NAME_CN,\n" +
+                "	SYTLE_YEAR,\n" +
+                "	( CASE `s_style_p`.`SYTLE_SEASON` WHEN 'SEASON-SEASON_10' THEN '春季' WHEN 'SEASON-SEASON_20' THEN '秋季' ELSE `s_style_p`.`SYTLE_SEASON` END ) AS `SYTLE_SEASON`,\n" +
+                "	( CASE `s_style_p`.`STYLE_PUBLISH_CATEGORY_CD` WHEN 'PUBLISH_STYLE_CATEGORY-MShirt' THEN '男士衬衫' WHEN 'PUBLISH_STYLE_CATEGORY-WShirt' THEN '女式衬衫' ELSE `s_style_p`.`STYLE_PUBLISH_CATEGORY_CD` END ) AS `STYLE_PUBLISH_CATEGORY_CD` \n" +
+                "FROM\n" +
+                "	s_style_p \n" +
+                "WHERE\n" +
+                "	SYS_STYLE_ID = '"+ orderDto.style_id + "'";
+
+            DataRow dataRow = SQLmtm.GetDataRow(sql);
+            orderDto.STYLE_SIZE_CD = dataRow["STYLE_SIZE_CD"].ToString();
+            orderDto.STYLE_NAME_CN = dataRow["STYLE_NAME_CN"].ToString();
+            orderDto.SYTLE_YEAR = dataRow["SYTLE_YEAR"].ToString();
+            orderDto.SYTLE_SEASON = dataRow["SYTLE_SEASON"].ToString();
+            orderDto.STYLE_PUBLISH_CATEGORY_CD = dataRow["STYLE_PUBLISH_CATEGORY_CD"].ToString();
+
+            sql = "SELECT\n" +
+                "	MATERIAL_ID,\n" +
+                "	MATERIAL_NAME_CN,\n" +
+                "	MATERIAL_COLOR \n" +
+                "FROM\n" +
+                "	i_material_p \n" +
+                "WHERE\n" +
+                "	MATERIAL_ID = '"+ orderDto.SYTLE_FABRIC_ID + "'";
+            dataRow = SQLmtm.GetDataRow(sql);
+            orderDto.MATERIAL_NAME_CN = dataRow["MATERIAL_NAME_CN"].ToString();
+            orderDto.MATERIAL_COLOR = dataRow["MATERIAL_COLOR"].ToString();
+        }
+
         /// <summary>
         /// 查找款式
         /// </summary>

@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Demos.util;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -57,6 +58,9 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             //this.STYLE_SIZE_GROUP_CD = dto定制下单.STYLE_SIZE_GROUP_CD;
             this.STYLE_SIZE_CD = dto定制下单.STYLE_SIZE_CD;
             this.ORDER_NUMBER = dto定制下单.ORDER_NUMBER;
+            this.ORDER_TYPE = Enum_ORDER_TYPE.服装定制;
+            this.Picture = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.SYTLE_FABRIC_ID));
+            ImpService.generateOrderSytleInfo(this);
         }
 
         /// <summary>
