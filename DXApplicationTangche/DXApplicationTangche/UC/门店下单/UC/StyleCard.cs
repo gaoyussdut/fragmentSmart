@@ -40,7 +40,7 @@ namespace mendian
             InitializeComponent();
         }
 
-        public StyleCard(String flag,DataRow dr)
+        public StyleCard(String flag, DataRow dr)
         {
             InitializeComponent();
             this.flag = flag;
@@ -63,7 +63,7 @@ namespace mendian
             //sc.jiage = cd.jiage;
             this.picture = @"pic\" + dr["picn"].ToString();
         }
-        public StyleCard(Frm门店下单选款式 form,String flag, DataRow dr)
+        public StyleCard(Frm门店下单选款式 form, String flag, DataRow dr)
         {
             InitializeComponent();
             this.form = form;
@@ -104,8 +104,23 @@ namespace mendian
             //}
             //else if(this.flag=="门店下单选款式")
             //{
-                this.form.Dto定制下单.Style_Id = this.kuanshiid;
-                this.form.xtraTabControl1.SelectedTabPage = this.form.xtraTabControl1.TabPages[1];
+            this.form.Dto定制下单.Style_Id = this.kuanshiid;
+            this.form.Dto定制下单.STYLE_CATEGORY_CD = this.sTYLE_CATEGORY_CD;
+            this.form.Dto定制下单.STYLE_FIT_CD = this.sTYLE_FIT_CD;
+            this.form.Dto定制下单.STYLE_SIZE_GROUP_CD = this.sTYLE_SIZE_GROUP_CD;
+            this.form.Dto定制下单.STYLE_SIZE_CD = this.sTYLE_SIZE_CD;
+            ImpService.LoadChiCunCard(this.form);
+            ImpService.LoadSheJiDian(this.form, this.form.Dto定制下单.Style_Id);
+            Change.stylesizedt = ImpService.StyleCombobox(this.form.Dto定制下单.Style_Id);
+            if (Change.stylesizedt != null)
+            {
+                foreach (DataRow dr in Change.stylesizedt.Rows)
+                {
+                    //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
+                    this.form.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
+                }
+            }
+            this.form.xtraTabControl1.SelectedTabPage = this.form.xtraTabControl1.TabPages[1];
             //}
         }
 

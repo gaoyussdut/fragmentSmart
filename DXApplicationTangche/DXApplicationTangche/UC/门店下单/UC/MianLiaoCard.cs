@@ -28,7 +28,9 @@ namespace mendian
             InitializeComponent();
         }
 
-        public MianLiaoCard(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form, Frm门店下单选款式 frm) {
+        public MianLiaoCard(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form, Frm门店下单选款式 frm)
+        {
+            InitializeComponent();
             this.frm = frm;
             this.flag = true;
             this.mianliao = mianliao;
@@ -47,7 +49,7 @@ namespace mendian
             }
         }
 
-        public MianLiaoCard(String mianliao,String mianliaoid,String mianliaocd,String picurl,String picn,MianLiaochoose form)
+        public MianLiaoCard(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form)
         {
             InitializeComponent();
             this.flag = true;
@@ -81,12 +83,13 @@ namespace mendian
         }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if(this.flag==true)
+            if (this.flag == true)
             {
                 DialogResult dialogResult =
 MessageBox.Show("确认保存“" + this.label1.Text + "”吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    this.frm.Dto定制下单.SYTLE_FABRIC_ID = this.mianliaoid;
                     MianLiaochoose.mianliao = this.mianliao;
                     MianLiaochoose.mianliaoid = this.mianliaoid;
                     MianLiaochoose.mianliaocd = this.mianliaocd;
@@ -97,7 +100,7 @@ MessageBox.Show("确认保存“" + this.label1.Text + "”吗？", "保存", Me
                     return;
                 }
             }
-           
+
         }
 
     }

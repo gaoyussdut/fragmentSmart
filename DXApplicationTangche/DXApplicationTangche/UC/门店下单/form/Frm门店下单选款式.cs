@@ -13,7 +13,7 @@ using static DXApplicationTangche.UC.门店下单.form.Frm门店统一下单;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
-    public partial class Frm门店下单选款式 : DevExpress.XtraEditors.XtraForm
+    public partial class Frm门店下单选款式 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static int page { get; set; } = 1;
         public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
@@ -66,7 +66,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
             {
-                StyleCard sc = new StyleCard(this,"门店下单选款式", dr);
+                StyleCard sc = new StyleCard(this, "门店下单选款式", dr);
                 this.generateUserControl(sc, i);
                 this.panel1.Controls.Add(sc);//将控件加入panel
                 try
@@ -136,6 +136,51 @@ namespace DXApplicationTangche.UC.门店下单.form
         private void Frm门店下单选款式_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            new MianLiaochoose(this).ShowDialog();
+        }
+
+        private void mianliaoname_Click(object sender, EventArgs e)
+        {
+            new MianLiaochoose(Dto定制下单.Style_Id, this).ShowDialog();
+        }
+
+        private void Frm门店下单选款式_Activated(object sender, EventArgs e)
+        {
+            this.mianliaoname.Text = MianLiaochoose.mianliao;
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                ImpService.DynamicSaveSize(this, this.Dto定制下单);//尺寸保存
+                ImpService.DynamicSaveDesign(this, this.Dto定制下单);//设计点保存
+            }
+
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            //DataTable dt = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), Dto定制下单.Style_Id, Change.stylesizedt);
+            //ImpService.RefreshChiCun(this, dt);
+            //ImpService.CountChiCun(this);
+        }
+
+        private void jisuan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), Dto定制下单.Style_Id, Change.stylesizedt);
+            ImpService.RefreshChiCun(this, dt);
+            ImpService.CountChiCun(this);
         }
     }
 }

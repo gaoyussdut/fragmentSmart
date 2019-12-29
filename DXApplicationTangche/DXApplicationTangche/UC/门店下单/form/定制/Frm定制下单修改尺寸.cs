@@ -155,7 +155,7 @@ namespace mendian
         /// <param name="e"></param>
         private void chmianliao_Click(object sender, EventArgs e)
         {
-            new MianLiaochoose().ShowDialog();
+            //new MianLiaochoose().ShowDialog();
         }
         /// <summary>
         /// 实时加载设计点信息
@@ -188,17 +188,22 @@ namespace mendian
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            new MianLiaochoose().ShowDialog();
+            //new MianLiaochoose().ShowDialog();
         }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            new MianLiaochoose(kuanshiid).ShowDialog();
+            //new MianLiaochoose(kuanshiid).ShowDialog();
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tabControl1.TabPages[1];
+        }
+
+        private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

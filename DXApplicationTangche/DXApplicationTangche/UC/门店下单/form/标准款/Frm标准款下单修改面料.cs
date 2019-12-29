@@ -55,7 +55,7 @@ namespace DXApplicationTangche
 
         private void mianliaoname_Click(object sender, EventArgs e)
         {
-            new MianLiaochoose(Change.kuanshiid).ShowDialog();
+            //new MianLiaochoose(Change.kuanshiid).ShowDialog();
         }
 
         private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace DXApplicationTangche
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            new MianLiaochoose().ShowDialog();
+            //new MianLiaochoose().ShowDialog();
         }
 
         private void Frm标准款下单具体_Activated(object sender, EventArgs e)

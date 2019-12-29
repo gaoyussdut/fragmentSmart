@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DXApplicationTangche.UC.门店下单.form;
 
 namespace mendian
 {
@@ -19,6 +20,7 @@ namespace mendian
         public String fIT_ITEM_VALUE = "";
         //public ReviseStyle form;
         public Change change;
+        public Frm门店下单选款式 frm;
         public ChiCunCard()
         {
             InitializeComponent();
@@ -32,6 +34,16 @@ namespace mendian
             this.label1.Text = nAME_CN;
             fIT_ITEM_VALUE = fit_item_value;
             this.change = change;          
+        }
+        public ChiCunCard(String itemcd, String itemvalue, String namecn, String fit_item_value, Frm门店下单选款式 frm)
+        {
+            iTEM_CD = itemcd;
+            iTEM_VALUE = itemvalue;
+            nAME_CN = namecn;
+            InitializeComponent();
+            this.label1.Text = nAME_CN;
+            fIT_ITEM_VALUE = fit_item_value;
+            this.frm = frm;
         }
 
         //public ChiCunCard(String itemcd, String itemvalue, String namecn, String fit_item_value,ReviseStyle form)
@@ -67,7 +79,7 @@ namespace mendian
         {
             try
             {
-                //ImpService.CountChiCun(form);
+                ImpService.CountChiCun(this.frm);
             }
             catch
             {
@@ -79,7 +91,7 @@ namespace mendian
         {
             try
             {
-                //ImpService.CountChiCun(form);
+                ImpService.CountChiCun(this.frm);
             }
             catch
             {

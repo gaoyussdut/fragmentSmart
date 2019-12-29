@@ -10,6 +10,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using DiaoPaiDaYin;
 using DXApplicationTangche;
+using DXApplicationTangche.UC.门店下单.form;
+using DXApplicationTangche.UC.门店下单.DTO;
 
 namespace mendian
 {
@@ -121,7 +123,7 @@ namespace mendian
                 }
             }
             return dt;
-        }  
+        }
         /// <summary>
         /// 获得STYLE_SIZE_CD
         /// </summary>
@@ -603,91 +605,91 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// 修改款式尺寸动态加载
         /// </summary>
         /// <param name="form"></param>
-//        public static void ReviseLoadChiCunCard(ReviseStyle form)
-//        {
-//            DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
-//" sp.FIT_ITEM_VALUE,\n" +
-//" property.PROPERTY_CD propertyCd,\n" +
-//"/*量体属性CD*/\n" +
-//"property.PROPERTY_VALUE propertyValue,\n" +
-//"/*量体VALUE*/\n" +
-//" sp.ITEM_IN_FROM propertyInFrom,\n" +
-//"/*量体属性值可增加范围从*/\n" +
-//" sp.ITEM_IN_TO propertyInTo,\n" +
-//"/*量体属性值可增加范围到*/\n" +
-//" sp.ITEM_OUT_FROM propertyOutFrom,\n" +
-//"/*量体属性值可缩减范围从*/\n" +
-//" sp.ITEM_OUT_TO propertyOutTo,\n" +
-//"/*量体属性值可缩减范围到*/\n" +
-//" property.PROPERTY_NAME_CN propertyNameCn,\n" +
-//"/*量体属性中文名称*/\n" +
-//" property.FIT_USE_TYPE_CD fitUseTypeCd,\n" +
-//"/*0-非净量体，1-净量体*/\n" +
-//" property.PROPERTY_UNIT_CD propertyUnitCd ,\n" +
-//" sp.ITEM_SORT,\n" +
-//" sp.ITEM_CD,\n" +
-//" sp.ITEM_VALUE\n" +
-//"FROM\n" +
-//" a_fit_property_p property\n" +
-//" LEFT JOIN a_size_fit_p sp ON property.PROPERTY_CD = sp.ITEM_CD \n" +
-//" AND property.PROPERTY_VALUE = sp.ITEM_VALUE \n" +
-//"WHERE\n" +
-//" property.PROPERTY_CD IN ( SELECT PROPERTY_VALUE FROM a_fit_property_p WHERE style_category_cd = '" + ReviseStyle.sTYLE_CATEGORY_CD + "' ) \n" +
-//" AND property.DEL_FLG = 0 \n" +
-//"  AND sp.FIT_CD = '" + ReviseStyle.sTYLE_FIT_CD + "'  /*款式*/\n" +
-//" AND sp.SIZEGROUP_CD = '" + ReviseStyle.sTYLE_SIZE_GROUP_CD + "' \n" +
-//"-- AND sp.SIZE_CD = '" + ReviseStyle.sTYLE_SIZE_CD + "'   /*尺码*/\n" +
-//" AND property.FIT_USE_TYPE_CD = \"FIT_USE_TYPE-FIT_TYPE_20\" \n" +
-//" AND sp.ENABLE_FLAG = 1 \n" +
-//" AND property.FIT_FLAG = 1 \n" +
-//" AND sp.ITEM_VALUE != \"CIRCU_ITEM_09\" \n" +
-//"GROUP BY property.PROPERTY_VALUE  \n" +
-//"ORDER BY\n" +
-//" -- property.PROPERTY_CD,sp.ITEM_SORT ASC\n" +
-//" sp.ITEM_SORT ASC");
-//            //form.panel3.Controls.Clear();
-//            height = 0;
-//            width = 0;
-//            int i = 0;
-//            panelLocition = new PanelLocition(form.panel4.Width, form.panel4.Height, dt.Rows.Count);
-//            ChiCunHead hhh = new ChiCunHead();
-//            ImpService.generateUserControl(hhh, i);
-//            form.panel4.Controls.Add(hhh);
-//            i++;
-//            foreach (DataRow dr in dt.Rows)
-//            {
-//                ChiCunCard ccc = new ChiCunCard(dr["ITEM_CD"].ToString().Trim(), dr["ITEM_VALUE"].ToString(), dr["propertyNameCn"].ToString(), dr["FIT_ITEM_VALUE"].ToString(), form);
-//                ImpService.generateUserControl(ccc, i);
-//                form.panel4.Controls.Add(ccc);//将控件加入panel 
+        //        public static void ReviseLoadChiCunCard(ReviseStyle form)
+        //        {
+        //            DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
+        //" sp.FIT_ITEM_VALUE,\n" +
+        //" property.PROPERTY_CD propertyCd,\n" +
+        //"/*量体属性CD*/\n" +
+        //"property.PROPERTY_VALUE propertyValue,\n" +
+        //"/*量体VALUE*/\n" +
+        //" sp.ITEM_IN_FROM propertyInFrom,\n" +
+        //"/*量体属性值可增加范围从*/\n" +
+        //" sp.ITEM_IN_TO propertyInTo,\n" +
+        //"/*量体属性值可增加范围到*/\n" +
+        //" sp.ITEM_OUT_FROM propertyOutFrom,\n" +
+        //"/*量体属性值可缩减范围从*/\n" +
+        //" sp.ITEM_OUT_TO propertyOutTo,\n" +
+        //"/*量体属性值可缩减范围到*/\n" +
+        //" property.PROPERTY_NAME_CN propertyNameCn,\n" +
+        //"/*量体属性中文名称*/\n" +
+        //" property.FIT_USE_TYPE_CD fitUseTypeCd,\n" +
+        //"/*0-非净量体，1-净量体*/\n" +
+        //" property.PROPERTY_UNIT_CD propertyUnitCd ,\n" +
+        //" sp.ITEM_SORT,\n" +
+        //" sp.ITEM_CD,\n" +
+        //" sp.ITEM_VALUE\n" +
+        //"FROM\n" +
+        //" a_fit_property_p property\n" +
+        //" LEFT JOIN a_size_fit_p sp ON property.PROPERTY_CD = sp.ITEM_CD \n" +
+        //" AND property.PROPERTY_VALUE = sp.ITEM_VALUE \n" +
+        //"WHERE\n" +
+        //" property.PROPERTY_CD IN ( SELECT PROPERTY_VALUE FROM a_fit_property_p WHERE style_category_cd = '" + ReviseStyle.sTYLE_CATEGORY_CD + "' ) \n" +
+        //" AND property.DEL_FLG = 0 \n" +
+        //"  AND sp.FIT_CD = '" + ReviseStyle.sTYLE_FIT_CD + "'  /*款式*/\n" +
+        //" AND sp.SIZEGROUP_CD = '" + ReviseStyle.sTYLE_SIZE_GROUP_CD + "' \n" +
+        //"-- AND sp.SIZE_CD = '" + ReviseStyle.sTYLE_SIZE_CD + "'   /*尺码*/\n" +
+        //" AND property.FIT_USE_TYPE_CD = \"FIT_USE_TYPE-FIT_TYPE_20\" \n" +
+        //" AND sp.ENABLE_FLAG = 1 \n" +
+        //" AND property.FIT_FLAG = 1 \n" +
+        //" AND sp.ITEM_VALUE != \"CIRCU_ITEM_09\" \n" +
+        //"GROUP BY property.PROPERTY_VALUE  \n" +
+        //"ORDER BY\n" +
+        //" -- property.PROPERTY_CD,sp.ITEM_SORT ASC\n" +
+        //" sp.ITEM_SORT ASC");
+        //            //form.panel3.Controls.Clear();
+        //            height = 0;
+        //            width = 0;
+        //            int i = 0;
+        //            panelLocition = new PanelLocition(form.panel4.Width, form.panel4.Height, dt.Rows.Count);
+        //            ChiCunHead hhh = new ChiCunHead();
+        //            ImpService.generateUserControl(hhh, i);
+        //            form.panel4.Controls.Add(hhh);
+        //            i++;
+        //            foreach (DataRow dr in dt.Rows)
+        //            {
+        //                ChiCunCard ccc = new ChiCunCard(dr["ITEM_CD"].ToString().Trim(), dr["ITEM_VALUE"].ToString(), dr["propertyNameCn"].ToString(), dr["FIT_ITEM_VALUE"].ToString(), form);
+        //                ImpService.generateUserControl(ccc, i);
+        //                form.panel4.Controls.Add(ccc);//将控件加入panel 
 
-//                i++;
-//            }
-//            DataTable dtt = SQLmtm.GetDataTable("SELECT\n" +
-//"	*,\n" +
-//"	SUBSTRING_INDEX( ap.REMARKS, ',', 1 )AS pv1,\n" +
-//"	SUBSTRING_INDEX( ap.REMARKS, ',', -1 )AS pv2\n" +
-//"FROM\n" +
-//"	a_customer_fit_r ar\n" +
-//"	LEFT JOIN a_fit_property_p ap ON ar.ITEM_VALUE = ap.PROPERTY_VALUE \n" +
-//"WHERE\n" +
-//"	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
-//            foreach (Control card in form.panel4.Controls)
-//            {
-//                if (card is ChiCunCard)
-//                {
-//                    ChiCunCard c = (ChiCunCard)card;
-//                    foreach (DataRow dr in dtt.Rows)
-//                    {
-//                        if (c.fIT_ITEM_VALUE == dr["ITEM_VALUE"].ToString())
-//                        //if (dr["pv1"].ToString() == card.iTEM_VALUE || dr["pv2"].ToString() == card.iTEM_VALUE)
-//                        {
-//                            c.kehu.Text = dr["FIT_VALUE"].ToString();
-//                            c.tiaozheng.Text = dr["FIT_VALUE_CALCULATE"].ToString();
-//                        }
-//                    }
-//                }
-//            }
-//        }
+        //                i++;
+        //            }
+        //            DataTable dtt = SQLmtm.GetDataTable("SELECT\n" +
+        //"	*,\n" +
+        //"	SUBSTRING_INDEX( ap.REMARKS, ',', 1 )AS pv1,\n" +
+        //"	SUBSTRING_INDEX( ap.REMARKS, ',', -1 )AS pv2\n" +
+        //"FROM\n" +
+        //"	a_customer_fit_r ar\n" +
+        //"	LEFT JOIN a_fit_property_p ap ON ar.ITEM_VALUE = ap.PROPERTY_VALUE \n" +
+        //"WHERE\n" +
+        //"	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
+        //            foreach (Control card in form.panel4.Controls)
+        //            {
+        //                if (card is ChiCunCard)
+        //                {
+        //                    ChiCunCard c = (ChiCunCard)card;
+        //                    foreach (DataRow dr in dtt.Rows)
+        //                    {
+        //                        if (c.fIT_ITEM_VALUE == dr["ITEM_VALUE"].ToString())
+        //                        //if (dr["pv1"].ToString() == card.iTEM_VALUE || dr["pv2"].ToString() == card.iTEM_VALUE)
+        //                        {
+        //                            c.kehu.Text = dr["FIT_VALUE"].ToString();
+        //                            c.tiaozheng.Text = dr["FIT_VALUE_CALCULATE"].ToString();
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
 
         public static void generateUserControl(System.Windows.Forms.UserControl userControl, int i)
         {
@@ -730,27 +732,27 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
     new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
         }
 
-    //    public static void ReviseDynamicSaveSize(ReviseStyle form, int sTYLE_FIT_ID, String customername)
-    //    {
-    //        ImpService.TurnChiCunZero(form);
-    //        Fit_ValueDTo fitv = new Fit_ValueDTo();
-    //        foreach (Control card in form.panel4.Controls)
-    //        {
-    //            if (card is ChiCunCard)
-    //            {
-    //                ChiCunCard c = (ChiCunCard)card;
-    //                fitv.icadd(c.iTEM_CD);
-    //                fitv.ivadd(c.iTEM_VALUE);
-    //                //fitv.fvadd(c.chengyi.Text);
-    //                fitv.fmvadd(c.iTEM_VALUE);
-    //                //fitv.invadd(c.jia.Text);
-    //                //fitv.outvadd(c.jian.Text);
-    //            }
-    //        }
-    //        SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString(), customername, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
-    //        SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
-    //new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
-    //    }
+        //    public static void ReviseDynamicSaveSize(ReviseStyle form, int sTYLE_FIT_ID, String customername)
+        //    {
+        //        ImpService.TurnChiCunZero(form);
+        //        Fit_ValueDTo fitv = new Fit_ValueDTo();
+        //        foreach (Control card in form.panel4.Controls)
+        //        {
+        //            if (card is ChiCunCard)
+        //            {
+        //                ChiCunCard c = (ChiCunCard)card;
+        //                fitv.icadd(c.iTEM_CD);
+        //                fitv.ivadd(c.iTEM_VALUE);
+        //                //fitv.fvadd(c.chengyi.Text);
+        //                fitv.fmvadd(c.iTEM_VALUE);
+        //                //fitv.invadd(c.jia.Text);
+        //                //fitv.outvadd(c.jian.Text);
+        //            }
+        //        }
+        //        SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString(), customername, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
+        //        SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
+        //new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
+        //    }
 
         /// <summary>
         /// 刷新尺寸
@@ -783,21 +785,21 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// <param name="dt"></param>
         //public static void RefreshChiCun(ReviseStyle form, DataTable dt)
         //{
-            //foreach (DataRow dr in dt.Rows)
-            //{
-            //    foreach (Control card in form.panel4.Controls)
-            //    {
-            //        if (card is ChiCunCard)
-            //        {
-            //            ChiCunCard c = (ChiCunCard)card;
-            //            if (dr["ITEM_VALUE"].ToString() == c.iTEM_VALUE)
-            //            {
-            //                c.biaozhun.Text = dr["ITEM_FIT_VALUE"].ToString();
-            //                break;
-            //            }
-            //        }
-            //    }
-            //}
+        //foreach (DataRow dr in dt.Rows)
+        //{
+        //    foreach (Control card in form.panel4.Controls)
+        //    {
+        //        if (card is ChiCunCard)
+        //        {
+        //            ChiCunCard c = (ChiCunCard)card;
+        //            if (dr["ITEM_VALUE"].ToString() == c.iTEM_VALUE)
+        //            {
+        //                c.biaozhun.Text = dr["ITEM_FIT_VALUE"].ToString();
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
         //}
         /// <summary>
         /// 将空尺寸设为0
@@ -831,25 +833,25 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// <param name="form"></param>
         //public static void TurnChiCunZero(ReviseStyle form)
         //{
-            //foreach (Control card in form.panel4.Controls)
-            //{
-            //    if (card is ChiCunCard)
-            //    {
-            //        ChiCunCard c = (ChiCunCard)card;
-            //        if (c.biaozhun.Text == "")
-            //        {
-            //            c.biaozhun.Text = "0";
-            //        }
-            //        if (c.jia.Text == "")
-            //        {
-            //            c.jia.Text = "0";
-            //        }
-            //        if (c.jian.Text == "")
-            //        {
-            //            c.jian.Text = "0";
-            //        }
-            //    }
-            //}
+        //foreach (Control card in form.panel4.Controls)
+        //{
+        //    if (card is ChiCunCard)
+        //    {
+        //        ChiCunCard c = (ChiCunCard)card;
+        //        if (c.biaozhun.Text == "")
+        //        {
+        //            c.biaozhun.Text = "0";
+        //        }
+        //        if (c.jia.Text == "")
+        //        {
+        //            c.jia.Text = "0";
+        //        }
+        //        if (c.jian.Text == "")
+        //        {
+        //            c.jian.Text = "0";
+        //        }
+        //    }
+        //}
         //}
         /// <summary>
         /// 计算成衣尺寸
@@ -873,15 +875,15 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// <param name="form"></param>
         //public static void CountChiCun(ReviseStyle form)
         //{
-            //ImpService.TurnChiCunZero(form);
-            //foreach (Control card in form.panel4.Controls)
-            //{
-            //    if (card is ChiCunCard)
-            //    {
-            //        ChiCunCard c = (ChiCunCard)card;
-            //        c.chengyi.Text = (Convert.ToDouble(c.biaozhun.Text) + Convert.ToDouble(c.jia.Text) - Convert.ToDouble(c.jian.Text)).ToString();
-            //    }
-            //}
+        //ImpService.TurnChiCunZero(form);
+        //foreach (Control card in form.panel4.Controls)
+        //{
+        //    if (card is ChiCunCard)
+        //    {
+        //        ChiCunCard c = (ChiCunCard)card;
+        //        c.chengyi.Text = (Convert.ToDouble(c.biaozhun.Text) + Convert.ToDouble(c.jia.Text) - Convert.ToDouble(c.jian.Text)).ToString();
+        //    }
+        //}
         //}
         /// <summary>
         /// 修改款式修改尺寸
@@ -1143,15 +1145,15 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 "			a.delete_flag = 0 \n" +
 "			AND a.material_category IN ( 'MATERIAL_CATEGORY-Fabric', 'MATERIAL_CATEGORY-ButtonL', 'MATERIAL_CATEGORY-Suit_Fabric', 'MATERIAL_CATEGORY-Suit_Material' ) \n" +
 "			AND ar.SHOP_ID = 18 \n" +
-"			AND ( a.material_name_cn LIKE '%"+ str + "%' OR a.material_code LIKE '%"+ str + "%' ) \n" +
+"			AND ( a.material_name_cn LIKE '%" + str + "%' OR a.material_code LIKE '%" + str + "%' ) \n" +
 "			AND a.material_category = 'MATERIAL_CATEGORY-Fabric' \n" +
 "		ORDER BY\n" +
 "			a.MATERIAL_CATEGORY,\n" +
 "			a.MATERIAL_ID \n" +
 "		) AS s1 ON ap.ITEM_VALUE = s1.id \n" +
 "	WHERE\n" +
-"	ap.PARENT_ID IN ( SELECT id FROM a_kuanshi_p WHERE STYLEID = '"+ id + "' AND ITEM_VALUE = 'mianliaoid' ) \n" +
-"	AND ITEM_NAME_CN LIKE '%"+ str + "%' "+
+"	ap.PARENT_ID IN ( SELECT id FROM a_kuanshi_p WHERE STYLEID = '" + id + "' AND ITEM_VALUE = 'mianliaoid' ) \n" +
+"	AND ITEM_NAME_CN LIKE '%" + str + "%' " +
 " LIMIT " + ((page - 1) * 36).ToString() + ",36";
             return SQLmtm.GetDataTable(sql);
         }
@@ -1199,15 +1201,15 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "	LEFT JOIN w_dict_option_p AS dop ON fr.ITEM_VALUE = dop.ITEM_CD  " +
 "	AND fr.FIT_VALUE = dop.ITEM_VALUE  " +
 "WHERE " +
-"	fcr.CUSTOMER_ID = '"+id.ToString()+"' " +
+"	fcr.CUSTOMER_ID = '" + id.ToString() + "' " +
 "	AND fcr.DEFAULT_FLAG = '1'";
             DataTable dt = SQLmtm.GetDataTable(sql);
-            if(dt.Rows.Count!=0)
+            if (dt.Rows.Count != 0)
             {
                 ci.Add(new CustomerInformation("客户姓名", dt.Rows[0]["CUSTOMER_NAME"].ToString()));
-                foreach(DataRow dr in dt.Rows)
+                foreach (DataRow dr in dt.Rows)
                 {
-                    if(dr["ITEM_NAME_CN"].ToString()!="")
+                    if (dr["ITEM_NAME_CN"].ToString() != "")
                     {
                         ci.Add(new CustomerInformation(dr["PROPERTY_NAME_CN"].ToString(), dr["ITEM_NAME_CN"].ToString()));
                     }
@@ -1248,8 +1250,8 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             sql = sql + "sp.SYS_STYLE_ID = '" + id + "';";
             return SQLmtm.GetDataRow(sql);
         }
-     
-          public static DataRow GetDataRowFromOrder(String id)
+
+        public static DataRow GetDataRowFromOrder(String id)
         {
             String sql = "SELECT\n" +
                 "	sp.SYS_STYLE_ID,\n" +
@@ -1285,7 +1287,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "FROM\n" +
 "	s_style_fit_r \n" +
 "WHERE\n" +
-"	STYLE_ID = '"+styleid+"'";
+"	STYLE_ID = '" + styleid + "'";
             DataRow chengyidr = SQLmtm.GetDataRow(sql);
             List<String> itemCdList = new List<String>(chengyidr["itemCd"].ToString().Split(','));
             List<String> itemValueList = new List<String>(chengyidr["itemValue"].ToString().Split(','));
@@ -1352,7 +1354,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// <returns></returns>
         public static DataTable GetOrder(String orderno, int order_type)
         {
-            String sql = "SELECT * FROM v_order_with_type WHERE order_type ='"+ order_type + "'" +
+            String sql = "SELECT * FROM v_order_with_type WHERE order_type ='" + order_type + "'" +
                 " and ORDER_NO like '%" + orderno + "%'";
             return SQLmtm.GetDataTable(sql);
         }
@@ -1361,7 +1363,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// </summary>
         /// <param name="orderno"></param>
         /// <returns></returns>
-        public static DataTable GetNotPrintedData(String orderno,DateTime startTime,DateTime endTime,int order_type)
+        public static DataTable GetNotPrintedData(String orderno, DateTime startTime, DateTime endTime, int order_type)
         {
             String sql = "SELECT " +
                 "	*  " +
@@ -1370,8 +1372,8 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 "WHERE " +
                 "	ORDER_NO NOT IN ( SELECT ORDER_NO FROM a_product_log_p ) " +
                 "	AND ORDER_NO LIKE '%" + orderno + "%' " +
-                " and ORDER_DATE between '" +startTime.ToString()+"' and '"+endTime.ToString()+"'"+
-                " and order_type ='"+order_type+"'"+
+                " and ORDER_DATE between '" + startTime.ToString() + "' and '" + endTime.ToString() + "'" +
+                " and order_type ='" + order_type + "'" +
                 "	order by ORDER_DATE";
             return SQLmtm.GetDataTable(sql);
         }
@@ -1392,12 +1394,12 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "	a_customer_p AS acp " +
 "LEFT JOIN a_customer_address_p AS cap ON cap.CUSTOMER_ID = acp.CUSTOMER_ID " +
 "WHERE " +
-"	acp.CUSTOMER_FIRST_NAME LIKE '%"+str+"%'  " +
-"	OR acp.CUSTOMER_LAST_NAME LIKE '%"+str+"%'  " +
+"	acp.CUSTOMER_FIRST_NAME LIKE '%" + str + "%'  " +
+"	OR acp.CUSTOMER_LAST_NAME LIKE '%" + str + "%'  " +
 "	OR acp.MOBILE LIKE '%" + str + "%'  " +
 "	OR cap.CONSIGNEE LIKE '%" + str + "%'  " +
 "ORDER BY " +
-"	acp.CREATE_DATE DESC  " ;
+"	acp.CREATE_DATE DESC  ";
             return SQLmtm.GetDataTable(sql);
         }
 
@@ -1466,7 +1468,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "		WHERE\n" +
 "			a.delete_flag = 0 \n" +
 "			AND a.material_category IN ( 'MATERIAL_CATEGORY-Fabric', 'MATERIAL_CATEGORY-ButtonL', 'MATERIAL_CATEGORY-Suit_Fabric', 'MATERIAL_CATEGORY-Suit_Material' ) \n" +
-"			AND ar.SHOP_ID = 18  AND a.MATERIAL_ID ='"+mlid+"'\n" +
+"			AND ar.SHOP_ID = 18  AND a.MATERIAL_ID ='" + mlid + "'\n" +
 //"			AND ( a.material_name_cn LIKE '%" + mlname + "%' OR a.material_code LIKE '%" + mlname + "%' ) \n" +
 "           AND a.material_category ='MATERIAL_CATEGORY-Fabric'" +
 "		ORDER BY\n" +
@@ -1476,7 +1478,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             return SQLmtm.GetDataRow(sql)["picn"].ToString();
         }
 
-        public static List<CustomerInformation> AddSomething(List<CustomerInformation> ci,String information,String value)
+        public static List<CustomerInformation> AddSomething(List<CustomerInformation> ci, String information, String value)
         {
             List<CustomerInformation> customerInformation = new List<CustomerInformation>();
             customerInformation.Add(new CustomerInformation(information, value));
@@ -1484,7 +1486,8 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             return customerInformation;
         }
 
-        public static DataTable getOrderTypeCode() {
+        public static DataTable getOrderTypeCode()
+        {
             String sql = "select * from t_order_type_code;";
             return SQLmtm.GetDataTable(sql);
         }
@@ -1503,7 +1506,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
     new string[] { Change.styleid.ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["OPTION_VALUE"].ToString(), "1", "0" });
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("错误信息: " + ex.Message);
                 return;
@@ -1526,7 +1529,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 fitv.invadd("0");
                 fitv.outvadd("0");
             }
-            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] {  "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] {  CreateCustomer.cUSTOMER_ID.ToString(), CreateCustomer.customer_name, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
+            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { CreateCustomer.cUSTOMER_ID.ToString(), CreateCustomer.customer_name, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
             SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
     new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
         }
@@ -1557,7 +1560,249 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" },
     new string[] { Change.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, MianLiaochoose.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Change.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
         }
+
+        public static void LoadSheJiDian(Frm门店下单选款式 frm, String styleid)
+        {  
+            frm.panel3.Controls.Clear();
+            DataTable dt = SQLmtm.GetDataTable("select * from a_kuanshi_p where STYLEID =" + styleid);
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("请联系管理员完善相关信息");
+                return;
+            }
+            height = 0;
+            width = 0;
+            int i = 0;
+            panelLocition = new PanelLocition(frm.panel3.Width, frm.panel3.Height, dt.Rows.Count);
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr["ITEM_VALUE"].ToString() != "mianliaoid")
+                {
+                    SheJiDianChooseCard chooseCard = new SheJiDianChooseCard(dr["id"].ToString(), dr["ITEM_NAME_CN"].ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["DEFAULT_NAME_CN"].ToString(), dr["DEFAULT_CD"].ToString(), dr["DEFAULT_VALUE"].ToString(), "");
+                    ArrayUC(chooseCard, i);
+                    frm.panel3.Controls.Add(chooseCard);
+                    i++;
+                }
+                else
+                {
+                    MianLiaochoose.mianliaocd = dr["DEFAULT_CD"].ToString();
+                    MianLiaochoose.mianliaoid = dr["DEFAULT_VALUE"].ToString();
+                    MianLiaochoose.mianliao = frm.mianliaoname.Text = dr["DEFAULT_NAME_CN"].ToString();
+                }
+            }
+        }
+
+        public static void LoadChiCunCard(Frm门店下单选款式 frm)
+        {
+            DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
+" sp.FIT_ITEM_VALUE,\n" +
+" property.PROPERTY_CD propertyCd,\n" +
+"/*量体属性CD*/\n" +
+"property.PROPERTY_VALUE propertyValue,\n" +
+"/*量体VALUE*/\n" +
+" sp.ITEM_IN_FROM propertyInFrom,\n" +
+"/*量体属性值可增加范围从*/\n" +
+" sp.ITEM_IN_TO propertyInTo,\n" +
+"/*量体属性值可增加范围到*/\n" +
+" sp.ITEM_OUT_FROM propertyOutFrom,\n" +
+"/*量体属性值可缩减范围从*/\n" +
+" sp.ITEM_OUT_TO propertyOutTo,\n" +
+"/*量体属性值可缩减范围到*/\n" +
+" property.PROPERTY_NAME_CN propertyNameCn,\n" +
+"/*量体属性中文名称*/\n" +
+" property.FIT_USE_TYPE_CD fitUseTypeCd,\n" +
+"/*0-非净量体，1-净量体*/\n" +
+" property.PROPERTY_UNIT_CD propertyUnitCd ,\n" +
+" sp.ITEM_SORT,\n" +
+" sp.ITEM_CD,\n" +
+" sp.ITEM_VALUE\n" +
+"FROM\n" +
+" a_fit_property_p property\n" +
+" LEFT JOIN a_size_fit_p sp ON property.PROPERTY_CD = sp.ITEM_CD \n" +
+" AND property.PROPERTY_VALUE = sp.ITEM_VALUE \n" +
+"WHERE\n" +
+" property.PROPERTY_CD IN ( SELECT PROPERTY_VALUE FROM a_fit_property_p WHERE style_category_cd = '" + frm.Dto定制下单.STYLE_CATEGORY_CD + "' ) \n" +
+" AND property.DEL_FLG = 0 \n" +
+"  AND sp.FIT_CD = '" + frm.Dto定制下单.STYLE_FIT_CD + "'  /*款式*/\n" +
+" AND sp.SIZEGROUP_CD = '" + frm.Dto定制下单.STYLE_SIZE_GROUP_CD + "' \n" +
+"-- AND sp.SIZE_CD = '" + frm.Dto定制下单.STYLE_SIZE_CD + "'   /*尺码*/\n" +
+" AND property.FIT_USE_TYPE_CD = \"FIT_USE_TYPE-FIT_TYPE_20\" \n" +
+" AND sp.ENABLE_FLAG = 1 \n" +
+" AND property.FIT_FLAG = 1 \n" +
+" AND sp.ITEM_VALUE != \"CIRCU_ITEM_09\" \n" +
+"GROUP BY property.PROPERTY_VALUE  \n" +
+"ORDER BY\n" +
+" -- property.PROPERTY_CD,sp.ITEM_SORT ASC\n" +
+" sp.ITEM_SORT ASC");
+            //change.panel3.Controls.Clear();
+            height = 0;
+            width = 0;
+            int i = 0;
+            panelLocition = new PanelLocition(frm.panel4.Width, frm.panel4.Height, dt.Rows.Count);
+            ChiCunHead hhh = new ChiCunHead();
+            ImpService.generateUserControl(hhh, i);
+            frm.panel4.Controls.Clear();
+            frm.panel4.Controls.Add(hhh);
+            i++;
+            foreach (DataRow dr in dt.Rows)
+            {
+                ChiCunCard ccc = new ChiCunCard(dr["ITEM_CD"].ToString().Trim(), dr["ITEM_VALUE"].ToString(), dr["propertyNameCn"].ToString(), dr["FIT_ITEM_VALUE"].ToString(), frm);
+                ImpService.generateUserControl(ccc, i);
+                frm.panel4.Controls.Add(ccc);//将控件加入panel                
+                i++;
+            }
+            //DataTable ddt=SQLmtm.GetDataTable("")
+            DataTable dtt = SQLmtm.GetDataTable("SELECT\n" +
+"	*,\n" +
+"	SUBSTRING_INDEX( ap.REMARKS, ',', 1 )AS pv1,\n" +
+"	SUBSTRING_INDEX( ap.REMARKS, ',', -1 )AS pv2\n" +
+"FROM\n" +
+"	a_customer_fit_r ar\n" +
+"	LEFT JOIN a_fit_property_p ap ON ar.ITEM_VALUE = ap.PROPERTY_VALUE \n" +
+"WHERE\n" +
+"	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
+            foreach (Control card in frm.panel4.Controls)
+            {
+                if (card is ChiCunCard)
+                {
+                    ChiCunCard c = (ChiCunCard)card;
+                    foreach (DataRow dr in dtt.Rows)
+                    {
+                        if (dr["pv1"].ToString() == c.iTEM_VALUE || dr["pv2"].ToString() == c.iTEM_VALUE)
+                        {
+                            c.kehu.Text = dr["FIT_VALUE"].ToString();
+                            c.tiaozheng.Text = dr["FIT_VALUE_CALCULATE"].ToString();
+                        }
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 动态设计点保存
+        /// </summary>
+        /// <param name="frm"></param>
+        /// <param name="dto"></param>
+        public static void DynamicSaveSize(Frm门店下单选款式 frm, Dto定制下单 dto)
+        {
+            ImpService.TurnChiCunZero(frm);
+            Fit_ValueDTo fitv = new Fit_ValueDTo();
+            foreach (Control card in frm.panel4.Controls)
+            {
+                if (card is ChiCunCard)
+                {
+                    ChiCunCard c = (ChiCunCard)card;
+                    fitv.icadd(c.iTEM_CD);
+                    fitv.ivadd(c.iTEM_VALUE);
+                    fitv.fvadd(c.chengyi.Text);
+                    fitv.fmvadd(c.iTEM_VALUE);
+                    fitv.invadd(c.jia.Text);
+                    fitv.outvadd(c.jian.Text);
+                }
+            }
+            dto.build尺寸(
+                fitv.iTEM_CD
+                , fitv.iTEM_VALUE
+                , fitv.fitValue
+                , fitv.fM_VALUE
+                , fitv.iN_VALUE
+                , fitv.oUT_VALUE
+                , "0"
+                , "0"
+                , CreateCustomer.customer_countid.ToString()
+                , "AUDIT_PHASE_CD-PHASE_CD_10"
+                , "1"
+                , "46"
+                );
+            //        SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString(), customername, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
+            //        SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
+            //new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
+        }
+        /// <summary>
+        /// 尺寸空设为0
+        /// </summary>
+        /// <param name="frm"></param>
+        public static void TurnChiCunZero(Frm门店下单选款式 frm)
+        {
+            foreach (Control card in frm.panel4.Controls)
+            {
+                if (card is ChiCunCard)
+                {
+                    ChiCunCard c = (ChiCunCard)card;
+                    if (c.biaozhun.Text == "")
+                    {
+                        c.biaozhun.Text = "0";
+                    }
+                    if (c.jia.Text == "")
+                    {
+                        c.jia.Text = "0";
+                    }
+                    if (c.jian.Text == "")
+                    {
+                        c.jian.Text = "0";
+                    }
+                }
+
+            }
+        }
+        /// <summary>
+        /// 动态保存设计点
+        /// </summary>
+        /// <param name="frm"></param>
+        /// <param name="dto"></param>
+        public static void DynamicSaveDesign(Frm门店下单选款式 frm,Dto定制下单 dto)
+        {
+            SheJiDianChooseCard c = new SheJiDianChooseCard();
+            foreach (Control card in frm.panel3.Controls)
+            {
+                if (card is SheJiDianChooseCard)
+                {
+                    c = (SheJiDianChooseCard)card;
+                    dto.build设计点(c.PitemCd, c.PitemValue, c.itemValue, "1", "0");
+//                    SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" },
+//new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, "1", "0" });
+                }
+            }
+        }
+        /// <summary>
+        /// 刷新尺寸
+        /// </summary>
+        /// <param name="frm"></param>
+        /// <param name="dt"></param>
+        public static void RefreshChiCun(Frm门店下单选款式 frm, DataTable dt)
+        {
+            foreach (DataRow dr in dt.Rows)
+            {
+                foreach (Control card in frm.panel4.Controls)
+                {
+                    if (card is ChiCunCard)
+                    {
+                        ChiCunCard c = (ChiCunCard)card;
+                        if (dr["ITEM_VALUE"].ToString() == c.iTEM_VALUE)
+                        {
+                            c.biaozhun.Text = dr["ITEM_FIT_VALUE"].ToString();
+                            break;
+                        }
+
+                    }
+                }
+            }
+        }
+        /// <summary>
+        /// 计算成衣尺寸
+        /// </summary>
+        /// <param name="frm"></param>
+        public static void CountChiCun(Frm门店下单选款式 frm)
+        {
+            ImpService.TurnChiCunZero(frm);
+            foreach (Control card in frm.panel4.Controls)
+            {
+                if (card is ChiCunCard)
+                {
+                    ChiCunCard c = (ChiCunCard)card;
+                    c.chengyi.Text = (Convert.ToDouble(c.biaozhun.Text) + Convert.ToDouble(c.jia.Text) - Convert.ToDouble(c.jian.Text)).ToString();
+                }
+            }
+        }
     }
 }
-
 

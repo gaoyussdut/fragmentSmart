@@ -326,6 +326,7 @@ namespace mendian
             this.chicun01.Name = "chicun01";
             this.chicun01.Size = new System.Drawing.Size(133, 24);
             this.chicun01.TabIndex = 129;
+            this.chicun01.SelectedIndexChanged += new System.EventHandler(this.chicun01_SelectedIndexChanged);
             // 
             // label65
             // 
