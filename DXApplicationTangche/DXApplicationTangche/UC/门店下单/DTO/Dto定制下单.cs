@@ -22,7 +22,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
         public void build设计点(String ITEM_CD, String ITEM_VALUE, String OPTION_VALUE, String ENABLE_FLAG, String DELETE_FLAG)
         {
-            this.Dto设计点s.Add(new Dto设计点(ITEM_CD, ITEM_VALUE, OPTION_VALUE, ENABLE_FLAG, DELETE_FLAG));
+            this.dto设计点s.Add(new Dto设计点(ITEM_CD, ITEM_VALUE, OPTION_VALUE, ENABLE_FLAG, DELETE_FLAG));
         }
 
         public void build尺寸(String ITEM_CD, String ITEM_VALUE, String FIT_VALUE, String FM_VALUE, String IN_VALUE, String OUT_VALUE, String STATUS, String DELETE_FLAG, String CUSTOMER_COUNT_IDSTYLE_ID, String PHASE_CD, String VERSION, String CREATE_USER) {
