@@ -16,6 +16,7 @@ using mendian;
 using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
 using DXApplicationTangche.UC.门店下单.DTO;
+using DXApplicationTangche.UC.门店下单.form.标准款;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
@@ -150,6 +151,11 @@ namespace DXApplicationTangche.UC.门店下单.form
         {
             this.gridControl订单分录一览.DataSource = this.orderModel.OrderDtos;
             this.tileView1.RefreshData();
+        }
+
+        private void tileBarItem2_ItemClick(object sender, TileItemEventArgs e)
+        {
+            new Frm扫码下单().ShowDialog();
         }
     }
 }

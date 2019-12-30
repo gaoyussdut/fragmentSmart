@@ -114,8 +114,10 @@
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="service\ResourceService.cs" />
+    <Compile Include="service\StockService.cs" />
     <Compile Include="UC\门店下单\DTO\Dto定制下单.cs" />
     <Compile Include="UC\门店下单\DTO\OrderDto.cs" />
+    <Compile Include="UC\门店下单\DTO\ShopStockDto.cs" />
     <Compile Include="UC\门店下单\form\Frm门店下单选款式.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +129,12 @@
     </Compile>
     <Compile Include="UC\门店下单\form\Frm门店统一下单.Designer.cs">
       <DependentUpon>Frm门店统一下单.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\门店下单\form\标准款\Frm扫码下单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\form\标准款\Frm扫码下单.Designer.cs">
+      <DependentUpon>Frm扫码下单.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\form\标准款\Frm标准款下单.cs">
       <SubType>Form</SubType>
@@ -323,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\Frm门店统一下单.resx">
       <DependentUpon>Frm门店统一下单.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\form\标准款\Frm扫码下单.resx">
+      <DependentUpon>Frm扫码下单.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\标准款\Frm标准款下单.resx">
       <DependentUpon>Frm标准款下单.cs</DependentUpon>
