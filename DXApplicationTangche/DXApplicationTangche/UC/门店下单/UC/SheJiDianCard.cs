@@ -19,6 +19,7 @@ namespace mendian
         public SheJiDianChooseCard card = new SheJiDianChooseCard();
         public AllSheJiDian allform = new AllSheJiDian();
         public DefaultSheJiDian form;
+        
         private bool flag;
         public SheJiDianCard()
         {
@@ -75,6 +76,7 @@ namespace mendian
                 this.card.itemValue = this.itemValue;
                 this.card.textBox1.Text = this.itemValue + ":" + this.itemName;
                 this.card.picn = this.picN;
+                this.card.pic = this.pictureBox1.Image;
                 if (this.flag == true)
                 {
                     this.form.Close();

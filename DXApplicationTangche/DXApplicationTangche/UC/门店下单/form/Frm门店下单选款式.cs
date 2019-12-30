@@ -164,6 +164,7 @@ namespace DXApplicationTangche.UC.门店下单.form
                 ImpService.DynamicSaveDesign(this, this.Dto定制下单);//设计点保存
                 this.frm.buildOrderModel(this.Dto定制下单);
                 this.frm.refreshGridControl();
+                this.addPics();
                 MessageBox.Show("保存成功");
                 this.Close();
             }
@@ -201,8 +202,6 @@ namespace DXApplicationTangche.UC.门店下单.form
                     }
                 }
             }
-            this.gridControl1.DataSource = this.pics;
-            this.tileView1.RefreshData();
         }
     }
 

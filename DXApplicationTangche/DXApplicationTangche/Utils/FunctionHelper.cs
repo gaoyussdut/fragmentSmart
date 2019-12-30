@@ -19,6 +19,8 @@ namespace DevExpress.XtraGrid.Demos.util
             set { _systemTime = value; }
         }
 
+        public string Uuid { get => uuid; set => uuid = value; }
+
         #region 日期操作
 
         /// <summary>
@@ -300,6 +302,6 @@ namespace DevExpress.XtraGrid.Demos.util
         }
         #endregion
 
-        public static string uuid = System.Guid.NewGuid().ToString("N");
+        private string uuid = System.Guid.NewGuid().ToString("N");
     }
 }

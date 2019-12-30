@@ -30,16 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm门店下单选款式));
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            this.colPic = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.colPicName = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.colpicstyle = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStyle = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -72,10 +62,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barEditItemNumber = new DevExpress.XtraBars.BarEditItem();
@@ -86,7 +72,6 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPageStyle.SuspendLayout();
@@ -110,44 +95,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.dockPanel1.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // colPic
-            // 
-            this.colPic.Caption = "各种图片";
-            this.colPic.ColumnEdit = this.repositoryItemPictureEdit1;
-            this.colPic.FieldName = "Picture";
-            this.colPic.Name = "colPic";
-            this.colPic.Visible = true;
-            this.colPic.VisibleIndex = 0;
-            // 
-            // repositoryItemPictureEdit1
-            // 
-            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            // 
-            // colPicName
-            // 
-            this.colPicName.Caption = "名称";
-            this.colPicName.FieldName = "Name";
-            this.colPicName.Name = "colPicName";
-            this.colPicName.OptionsColumn.ShowCaption = true;
-            this.colPicName.Visible = true;
-            this.colPicName.VisibleIndex = 1;
-            // 
-            // colpicstyle
-            // 
-            this.colpicstyle.Caption = "类别";
-            this.colpicstyle.FieldName = "Style";
-            this.colpicstyle.Name = "colpicstyle";
-            this.colpicstyle.OptionsColumn.ShowCaption = true;
-            this.colpicstyle.Visible = true;
-            this.colpicstyle.VisibleIndex = 2;
             // 
             // xtraTabControl1
             // 
@@ -155,7 +105,7 @@
             this.xtraTabControl1.Location = new System.Drawing.Point(0, 166);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageStyle;
-            this.xtraTabControl1.Size = new System.Drawing.Size(694, 333);
+            this.xtraTabControl1.Size = new System.Drawing.Size(933, 333);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageStyle,
@@ -167,7 +117,7 @@
             // 
             this.xtraTabPageStyle.Controls.Add(this.layoutControl1);
             this.xtraTabPageStyle.Name = "xtraTabPageStyle";
-            this.xtraTabPageStyle.Size = new System.Drawing.Size(692, 303);
+            this.xtraTabPageStyle.Size = new System.Drawing.Size(931, 303);
             this.xtraTabPageStyle.Text = "选择款式";
             // 
             // layoutControl1
@@ -181,7 +131,7 @@
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(692, 303);
+            this.layoutControl1.Size = new System.Drawing.Size(931, 303);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -192,7 +142,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(12, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(668, 204);
+            this.panel1.Size = new System.Drawing.Size(907, 204);
             this.panel1.TabIndex = 4;
             // 
             // textBox1
@@ -200,7 +150,7 @@
             this.textBox1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(365, 43);
+            this.textBox1.Size = new System.Drawing.Size(496, 43);
             this.textBox1.TabIndex = 5;
             // 
             // simpleButton11
@@ -208,9 +158,9 @@
             this.simpleButton11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(381, 12);
+            this.simpleButton11.Location = new System.Drawing.Point(512, 12);
             this.simpleButton11.Name = "simpleButton11";
-            this.simpleButton11.Size = new System.Drawing.Size(132, 43);
+            this.simpleButton11.Size = new System.Drawing.Size(180, 43);
             this.simpleButton11.StyleController = this.layoutControl1;
             this.simpleButton11.TabIndex = 6;
             this.simpleButton11.Text = "搜索";
@@ -221,13 +171,13 @@
             this.label5.BackColor = System.Drawing.Color.SkyBlue;
             this.label5.Location = new System.Drawing.Point(12, 267);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(213, 24);
+            this.label5.Size = new System.Drawing.Size(452, 24);
             this.label5.TabIndex = 10;
             // 
             // fenYeLan1
             // 
             this.fenYeLan1.BackColor = System.Drawing.Color.SkyBlue;
-            this.fenYeLan1.Location = new System.Drawing.Point(229, 267);
+            this.fenYeLan1.Location = new System.Drawing.Point(468, 267);
             this.fenYeLan1.Margin = new System.Windows.Forms.Padding(4);
             this.fenYeLan1.Name = "fenYeLan1";
             this.fenYeLan1.Size = new System.Drawing.Size(451, 24);
@@ -245,7 +195,7 @@
             this.layoutControlItem7,
             this.layoutControlItem6});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(692, 303);
+            this.Root.Size = new System.Drawing.Size(931, 303);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -254,7 +204,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(672, 208);
+            this.layoutControlItem1.Size = new System.Drawing.Size(911, 208);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -266,7 +216,7 @@
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(35, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(369, 47);
+            this.layoutControlItem2.Size = new System.Drawing.Size(500, 47);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -275,11 +225,11 @@
             // 
             this.layoutControlItem3.Control = this.simpleButton11;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(369, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(500, 0);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(108, 47);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(136, 47);
+            this.layoutControlItem3.Size = new System.Drawing.Size(184, 47);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -288,9 +238,9 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(505, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(684, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(167, 47);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(227, 47);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
@@ -299,7 +249,7 @@
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 255);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(217, 28);
+            this.layoutControlItem7.Size = new System.Drawing.Size(456, 28);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -307,7 +257,7 @@
             // 
             this.layoutControlItem6.Control = this.fenYeLan1;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem6.Location = new System.Drawing.Point(217, 255);
+            this.layoutControlItem6.Location = new System.Drawing.Point(456, 255);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(455, 47);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(455, 28);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -470,8 +420,6 @@
             // dockManager1
             // 
             this.dockManager1.Form = this;
-            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel1});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -485,86 +433,6 @@
             "DevExpress.XtraBars.TabFormControl",
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.ID = new System.Guid("634ad780-c536-40e0-8bd3-a6736ffabf97");
-            this.dockPanel1.Location = new System.Drawing.Point(694, 166);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(239, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(239, 333);
-            this.dockPanel1.Text = "款式预览";
-            // 
-            // dockPanel1_Container
-            // 
-            this.dockPanel1_Container.Controls.Add(this.gridControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 30);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(232, 300);
-            this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.tileView1;
-            this.gridControl1.MenuManager = this.ribbonControl1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemPictureEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(232, 300);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.tileView1});
-            // 
-            // tileView1
-            // 
-            this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colPic,
-            this.colPicName,
-            this.colpicstyle});
-            this.tileView1.GridControl = this.gridControl1;
-            this.tileView1.Name = "tileView1";
-            this.tileView1.OptionsTiles.GroupTextPadding = new System.Windows.Forms.Padding(12, 8, 12, 8);
-            this.tileView1.OptionsTiles.IndentBetweenGroups = 0;
-            this.tileView1.OptionsTiles.IndentBetweenItems = 0;
-            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(156, 212);
-            this.tileView1.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.List;
-            this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileView1.OptionsTiles.Padding = new System.Windows.Forms.Padding(0);
-            this.tileView1.OptionsTiles.RowCount = 0;
-            tableRowDefinition1.Length.Value = 33D;
-            tableRowDefinition2.Length.Value = 139D;
-            tableRowDefinition3.Length.Value = 24D;
-            this.tileView1.TileRows.Add(tableRowDefinition1);
-            this.tileView1.TileRows.Add(tableRowDefinition2);
-            this.tileView1.TileRows.Add(tableRowDefinition3);
-            tileViewItemElement1.Column = this.colPicName;
-            tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement1.RowIndex = 2;
-            tileViewItemElement1.Text = "colPicName";
-            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileViewItemElement2.Appearance.Normal.Font = new System.Drawing.Font("Tahoma", 13F);
-            tileViewItemElement2.Appearance.Normal.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
-            tileViewItemElement2.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement2.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement2.Column = this.colpicstyle;
-            tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement2.Text = "colpicstyle";
-            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.Column = this.colPic;
-            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement3.RowIndex = 1;
-            tileViewItemElement3.Text = "colPic";
-            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileView1.TileTemplate.Add(tileViewItemElement1);
-            this.tileView1.TileTemplate.Add(tileViewItemElement2);
-            this.tileView1.TileTemplate.Add(tileViewItemElement3);
             // 
             // ribbonControl1
             // 
@@ -646,7 +514,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 525);
             this.Controls.Add(this.xtraTabControl1);
-            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Frm门店下单选款式";
@@ -656,7 +523,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Activated += new System.EventHandler(this.Frm门店下单选款式_Activated);
             this.Load += new System.EventHandler(this.Frm门店下单选款式_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPageStyle.ResumeLayout(false);
@@ -682,10 +548,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.dockPanel1.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.ResumeLayout(false);
@@ -697,8 +559,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPageStyle;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageFabric;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageDesign;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageSize;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
@@ -738,11 +598,5 @@
         private DevExpress.XtraBars.BarEditItem barEditItemNumber;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
-        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
-        private DevExpress.XtraGrid.Columns.TileViewColumn colPic;
-        private DevExpress.XtraGrid.Columns.TileViewColumn colPicName;
-        private DevExpress.XtraGrid.Columns.TileViewColumn colpicstyle;
     }
 }

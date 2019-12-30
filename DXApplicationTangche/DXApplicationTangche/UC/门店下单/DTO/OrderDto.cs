@@ -46,7 +46,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         #endregion
 
         public OrderDto(Dto定制下单 dto定制下单) {
-            this.ID = FunctionHelper.uuid;
+            this.ID = new FunctionHelper().Uuid;
             this.dto设计点s = dto定制下单.Dto设计点s; //  设计点信息
             this.dto尺寸 = dto定制下单.Dto尺寸; //  尺寸信息
 
@@ -92,7 +92,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         /// <param name="STYLE_PUBLISH_CATEGORY_CD"></param>
         /// <param name="ORDER_TYPE"></param>
         public OrderDto(String CUSTOMER_ID, String shop_id, String shop_name, String style_id, String ORDER_NO, int ORDER_NUMBER, DateTime ORDER_DATE, String STYLE_SIZE_CD, String STYLE_NAME_CN, String SYTLE_YEAR, String SYTLE_SEASON, String REF_STYLE_ID, String SYTLE_FABRIC_ID, String MATERIAL_NAME_CN, String MATERIAL_COLOR, String STYLE_PUBLISH_CATEGORY_CD, int ORDER_TYPE,String PictureName) {
-            this.ID = FunctionHelper.uuid;
+            this.ID = new FunctionHelper().Uuid;
             this.CUSTOMER_ID = CUSTOMER_ID;
             this.shop_id = shop_id;
             this.shop_name = shop_name;

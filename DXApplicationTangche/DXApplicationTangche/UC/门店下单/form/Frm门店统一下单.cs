@@ -162,6 +162,16 @@ namespace DXApplicationTangche.UC.门店下单.form
         private void tileView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             String ID = (String)tileView1.GetRowCellValue(e.FocusedRowHandle, "ID");
+            this.show设计点(ID);
+        }
+
+        private void tileView1_ItemClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
+        {
+            String ID = (String)tileView1.GetRowCellValue(e.Item.RowHandle, "ID");
+            this.show设计点(ID);
+        }
+
+        private void show设计点(String ID) {
             DataRow dataRow = this.tileView1.GetDataRow(this.tileView1.FocusedRowHandle);
 
             List<Dto设计点> dto设计点s = new List<Dto设计点>();
