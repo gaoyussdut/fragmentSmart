@@ -15,6 +15,7 @@ namespace DXApplicationTangche.UC.门店下单.form
 {
     public partial class Frm门店下单选款式 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public List<Pic各种> pics = new List<Pic各种>();
         public static int page { get; set; } = 1;
         public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
 
@@ -172,6 +173,49 @@ namespace DXApplicationTangche.UC.门店下单.form
             DataTable dt = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), Dto定制下单.Style_Id, Change.stylesizedt);
             ImpService.RefreshChiCun(this, dt);
             ImpService.CountChiCun(this);
+        }
+
+        public void addPics()
+        {
+            try
+            {
+                this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.Dto定制下单.SYTLE_FABRIC_ID)),this.mianliaoname.Text,"面料"));
+            }
+            catch
+            {
+                this.pics.Add(new Pic各种(Image.FromFile(@"pic\SSHIRT.jpg"),this.mianliaoname.Text,"面料"));
+            }
+            SheJiDianChooseCard c = new SheJiDianChooseCard();
+            foreach (Control card in this.panel3.Controls)
+            {
+                if (card is SheJiDianChooseCard)
+                {
+                    c = (SheJiDianChooseCard)card;
+                    try
+                    {
+                        this.pics.Add(new Pic各种(Image.FromFile(@"pic\"+ImpService.GetPicn(c.itemValue)),c.itemName,c.PitemName));
+                    }
+                    catch
+                    {
+                        this.pics.Add(new Pic各种(Image.FromFile(@"pic\SSHIRT.jpg"),c.itemName,c.PitemName));
+                    }
+                }
+            }
+            this.gridControl1.DataSource = this.pics;
+            this.tileView1.RefreshData();
+        }
+    }
+
+    public class Pic各种
+    {
+        public Image Picture { get; set; }
+        public String Name { get; set; }
+        public String Style { get; set; }
+        public Pic各种(Image pic,String Name,String Style )
+        {
+            this.Picture = pic;
+            this.Name = Name;
+            this.Style = Style;
         }
     }
 }

@@ -74,6 +74,7 @@ namespace mendian
                 this.card.itemCd = this.itemCd;
                 this.card.itemValue = this.itemValue;
                 this.card.textBox1.Text = this.itemValue + ":" + this.itemName;
+                this.card.picn = this.picN;
                 if (this.flag == true)
                 {
                     this.form.Close();

@@ -122,6 +122,7 @@ namespace mendian
                     this.frm.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
                 }
             }
+            this.frm.addPics();
             this.frm.xtraTabControl1.SelectedTabPage = this.frm.xtraTabControl1.TabPages[1];
             //}
         }

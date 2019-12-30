@@ -20,6 +20,7 @@ namespace mendian
         public String itemCd { get; set; }
         public String itemValue { get; set; }
         public String picurl { get; set; }
+        public String picn { get; set; }
         public SheJiDianChooseCard()
         {
             InitializeComponent();
