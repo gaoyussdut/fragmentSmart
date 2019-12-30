@@ -1,5 +1,7 @@
-﻿using System;
+﻿using mendian;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,9 +24,9 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         private List<Dto设计点> dto设计点s = new List<Dto设计点>();   //  设计点
         private Dto尺寸 dto尺寸;  //  尺寸
 
-        public void build设计点(String ITEM_CD, String ITEM_VALUE, String OPTION_VALUE, String ENABLE_FLAG, String DELETE_FLAG)
+        public void build设计点(String ITEM_CD, String ITEM_VALUE, String OPTION_VALUE, String ENABLE_FLAG, String DELETE_FLAG, String Name, String Style, String picName)
         {
-            this.dto设计点s.Add(new Dto设计点(ITEM_CD, ITEM_VALUE, OPTION_VALUE, ENABLE_FLAG, DELETE_FLAG));
+            this.dto设计点s.Add(new Dto设计点(ITEM_CD, ITEM_VALUE, OPTION_VALUE, ENABLE_FLAG, DELETE_FLAG, Name, Style, picName));
         }
 
         public void build尺寸(String ITEM_CD, String ITEM_VALUE, String FIT_VALUE, String FM_VALUE, String IN_VALUE, String OUT_VALUE, String STATUS, String DELETE_FLAG, String CUSTOMER_COUNT_IDSTYLE_ID, String PHASE_CD, String VERSION, String CREATE_USER) {
@@ -38,13 +40,23 @@ namespace DXApplicationTangche.UC.门店下单.DTO
     /// </summary>
     public class Dto设计点
     {
-        public Dto设计点(string iTEM_CD, string iTEM_VALUE, string oPTION_VALUE, string eNABLE_FLAG, string dELETE_FLAG)
+        public Dto设计点(string iTEM_CD, string iTEM_VALUE, string oPTION_VALUE, string eNABLE_FLAG, string dELETE_FLAG, String Name, String Style,String picName)
         {
             this.ITEM_CD = iTEM_CD;
             this.ITEM_VALUE = iTEM_VALUE;
             this.OPTION_VALUE = oPTION_VALUE;
             this.ENABLE_FLAG = eNABLE_FLAG;
             this.DELETE_FLAG = dELETE_FLAG;
+            try
+            {
+                this.Picture = Image.FromFile(ImpService.GetPicn(picName));
+            }
+            catch (Exception) {
+                this.Picture = Image.FromFile(@"pic\SSHIRT.jpg");
+            }
+
+            this.Name = Name;
+            this.Style = Style;
         }
 
         public String ITEM_CD { get; set; }
@@ -52,6 +64,10 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public String OPTION_VALUE { get; set; }
         public String ENABLE_FLAG { get; set; }
         public String DELETE_FLAG { get; set; }
+
+        public Image Picture { get; set; }
+        public String Name { get; set; }
+        public String Style { get; set; }
     }
 
     public class Dto尺寸

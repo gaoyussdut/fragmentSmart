@@ -1790,7 +1790,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 if (card is SheJiDianChooseCard)
                 {
                     c = (SheJiDianChooseCard)card;
-                    dto.build设计点(c.PitemCd, c.PitemValue, c.itemValue, "1", "0");
+                    dto.build设计点(c.PitemCd, c.PitemValue, c.itemValue, "1", "0",c.itemName,c.PitemName, c.itemValue);
 //                    SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" },
 //new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, "1", "0" });
                 }

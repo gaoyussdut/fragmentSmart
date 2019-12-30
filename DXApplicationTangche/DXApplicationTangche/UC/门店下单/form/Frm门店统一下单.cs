@@ -157,5 +157,24 @@ namespace DXApplicationTangche.UC.门店下单.form
         {
             new Frm扫码下单().ShowDialog();
         }
+
+
+        private void tileView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            String ID = (String)tileView1.GetRowCellValue(e.FocusedRowHandle, "ID");
+            DataRow dataRow = this.tileView1.GetDataRow(this.tileView1.FocusedRowHandle);
+
+            List<Dto设计点> dto设计点s = new List<Dto设计点>();
+            foreach (OrderDto orderDto in this.orderModel.OrderDtos)
+            {
+                if (ID.Equals(orderDto.ID))
+                {
+                    dto设计点s = orderDto.Dto设计点s;
+                    break;
+                }
+            }
+            this.gridControl设计点.DataSource = dto设计点s;
+            this.tileView1.RefreshData();
+        }
     }
 }
