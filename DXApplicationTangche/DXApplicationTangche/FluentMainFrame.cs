@@ -95,5 +95,10 @@ namespace DXApplicationTangche
         {
             this.initPanel(new Frm门店统一下单());
         }
+
+        private void accordionControlElement21_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm打标());
+        }
     }
 }

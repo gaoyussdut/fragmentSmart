@@ -1,0 +1,165 @@
+﻿using DiaoPaiDaYin;
+using mendian;
+using Seagull.BarTender.Print;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DXApplicationTangche
+{
+    public partial class Frm打标 : DevExpress.XtraEditors.XtraForm
+    {
+        public DTO无订单打印 dto无订单打印 = new DTO无订单打印();
+        public DataTable stylesizedt = new DataTable();
+        public DataTable chooseStyleSize = new DataTable();
+        public String json;
+        public String sTYLE_SIZE_CD;
+        public Frm打标()
+        {
+            InitializeComponent();
+        }
+
+        private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.chooseStyleSize = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), this.styleid.Text.Trim(), this.stylesizedt);
+                this.gridControl1.DataSource = this.chooseStyleSize;
+                this.gridControl1.Refresh();
+                this.sTYLE_SIZE_CD = this.chooseStyleSize.Rows[0]["SIZE_CD"].ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void styleid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13) //判断是回车键
+            {
+                try
+                {
+                    this.stylename.Text = SQLmtm.GetDataRow("SELECT STYLE_NAME_CN FROM s_style_p WHERE SYS_STYLE_ID='" + this.styleid.Text.Trim() + "'")["STYLE_NAME_CN"].ToString();
+                    this.stylesizedt = ImpService.StyleCombobox(this.styleid.Text.Trim());
+                    if (this.stylesizedt != null)
+                    {
+                        foreach (DataRow dr in this.stylesizedt.Rows)
+                        {
+                            //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
+                            this.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.dto无订单打印.buildDTO无订单打印(this.shopid.Text.Trim(), this.styleid.Text.Trim(), this.mianliaoid.Text.Trim(),this.mianliaocd.Text.Trim(), this.chicun01.Text.Trim());
+            this.dto无订单打印.builddto尺寸(this.chooseStyleSize);
+            this.dto无订单打印.json = Newtonsoft.Json.JsonConvert.SerializeObject(this.dto无订单打印);
+            ImpService.SiveINa_noorder_print_p(this.dto无订单打印);
+            Engine btEngine = new Engine();
+            btEngine.Start();
+            //string lj = AppDomain.CurrentDomain.BaseDirectory + "顺丰订单模板.btw";  //test.btw是BT的模板
+            //string lj = AppDomain.CurrentDomain.BaseDirectory + "001.btw";  //test.btw是BT的模板
+            String lj = "C:\\001.btw";
+            LabelFormatDocument btFormat = btEngine.Documents.Open(lj);
+            //指定打印机名 
+            //btFormat.PrintSetup.PrinterName = "HPRT HLP106S-UE";
+            //btFormat.PrintSetup.PrinterName = "TEC";
+            btFormat.PrintSetup.PrinterName = "POSTEK G-3106";
+            //打印份数                   
+            btFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
+            //改变标签打印数份连载 
+            btFormat.PrintSetup.NumberOfSerializedLabels = 2;
+            //对BTW模版相应字段进行赋值 
+            btFormat.SubStrings["kuanhao"].Value = this.stylename.Text;
+            btFormat.SubStrings["haoxing"].Value = this.chicun01.Text;
+            btFormat.SubStrings["mianliaohao"].Value = this.mianliaocd.Text;
+            btFormat.SubStrings["chengfen"].Value = this.chengfan.Text;
+            btFormat.SubStrings["shoujia"].Value = "¥" + this.shoujia.Text;
+            int i = 1;
+            foreach (dto尺寸 cy in this.dto无订单打印.dtos)
+            {
+                if (Convert.ToDouble(cy.fit_item_value) != 0)
+                {
+                    btFormat.SubStrings[i.ToString()].Value = cy.item_name_cn + " " + cy.fit_item_value;
+                    //btFormat.SubStrings[i.ToString()+i.ToString()].Value = cy.fitValue;
+                    i++;
+                }
+                if (i > 10)
+                {
+                    break;
+                }
+            }
+            btFormat.SubStrings["styleid"].Value = this.dto无订单打印.clothes_log_id;
+            Messages messages;
+            int waitout = 10000; // 10秒 超时 
+            Result nResult1 = btFormat.Print("吊牌" + this.dto无订单打印.clothes_log_id, waitout, out messages);
+            btFormat.PrintSetup.Cache.FlushInterval = CacheFlushInterval.PerSession;
+            //不保存对打开模板的修改 
+            btFormat.Close(SaveOptions.DoNotSaveChanges);
+            //结束打印引擎                  
+            btEngine.Stop();
+            ///////////////////////////////////////////
+            this.print条码();
+        }
+
+        private void mianliaoid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13) //判断是回车键
+            {
+                try
+                {
+                    this.mianliaocd.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "cd");
+                    this.chengfan.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "dd");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        public void print条码()
+        {
+            Engine btEngine = new Engine();
+            btEngine.Start();
+            //string lj = AppDomain.CurrentDomain.BaseDirectory + "顺丰订单模板.btw";  //test.btw是BT的模板
+            //string lj = AppDomain.CurrentDomain.BaseDirectory + "001.btw";  //test.btw是BT的模板
+            String lj2 = "C:\\002.btw";
+            LabelFormatDocument btFormat = btEngine.Documents.Open(lj2);
+            //指定打印机名 
+            //btFormat.PrintSetup.PrinterName = "HPRT HLP106S-UE";
+            //btFormat2.PrintSetup.PrinterName = "TEC";
+            btFormat.PrintSetup.PrinterName = "POSTEK G-3106";
+            //打印份数                   
+            btFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
+            //改变标签打印数份连载 
+            btFormat.PrintSetup.NumberOfSerializedLabels = 2;
+            //对BTW模版相应字段进行赋值 
+
+            btFormat.SubStrings["styleid"].Value = this.dto无订单打印.clothes_log_id;
+            Messages messages1;
+            int waitout1 = 10000; // 10秒 超时 
+            Result nResult2 = btFormat.Print("条码" + this.dto无订单打印.clothes_log_id, waitout1, out messages1);
+            btFormat.PrintSetup.Cache.FlushInterval = CacheFlushInterval.PerSession;
+            //不保存对打开模板的修改 
+            btFormat.Close(SaveOptions.DoNotSaveChanges);
+            //结束打印引擎                  
+            btEngine.Stop();
+        }
+    }
+}

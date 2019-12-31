@@ -107,11 +107,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO无订单打印.cs" />
     <Compile Include="FluentMainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FluentMainFrame.Designer.cs">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm打标.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm打标.Designer.cs">
+      <DependentUpon>Frm打标.cs</DependentUpon>
     </Compile>
     <Compile Include="service\ResourceService.cs" />
     <Compile Include="service\StockService.cs" />
@@ -325,6 +332,9 @@
     <Compile Include="Utils\DBUtil.cs" />
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm打标.resx">
+      <DependentUpon>Frm打标.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\Frm门店下单选款式.resx">
       <DependentUpon>Frm门店下单选款式.cs</DependentUpon>

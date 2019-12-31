@@ -17,7 +17,8 @@ namespace mendian
 {
     class ImpService
     {
-        public static void generateOrderSytleInfo(OrderDto orderDto) {
+        public static void generateOrderSytleInfo(OrderDto orderDto)
+        {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +
                 "	STYLE_SIZE_CD,\n" +
@@ -28,7 +29,7 @@ namespace mendian
                 "FROM\n" +
                 "	s_style_p \n" +
                 "WHERE\n" +
-                "	SYS_STYLE_ID = '"+ orderDto.style_id + "'";
+                "	SYS_STYLE_ID = '" + orderDto.style_id + "'";
 
             DataRow dataRow = SQLmtm.GetDataRow(sql);
             orderDto.STYLE_SIZE_CD = dataRow["STYLE_SIZE_CD"].ToString();
@@ -44,7 +45,7 @@ namespace mendian
                 "FROM\n" +
                 "	i_material_p \n" +
                 "WHERE\n" +
-                "	MATERIAL_ID = '"+ orderDto.SYTLE_FABRIC_ID + "'";
+                "	MATERIAL_ID = '" + orderDto.SYTLE_FABRIC_ID + "'";
             dataRow = SQLmtm.GetDataRow(sql);
             orderDto.MATERIAL_NAME_CN = dataRow["MATERIAL_NAME_CN"].ToString();
             orderDto.MATERIAL_COLOR = dataRow["MATERIAL_COLOR"].ToString();
@@ -1240,7 +1241,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             if (dt.Rows.Count != 0)
             {
                 ci.Add(new CustomerInformation("收件人姓名", dt.Rows[0]["CUSTOMER_NAME"].ToString()));
-                foreach(DataRow dr in dt.Rows)
+                foreach (DataRow dr in dt.Rows)
                 {
                     if (dr["ITEM_NAME_CN"].ToString() != "")
                     {
@@ -1595,7 +1596,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         }
 
         public static void LoadSheJiDian(Frm门店下单选款式 frm, String styleid)
-        {  
+        {
             frm.panel3.Controls.Clear();
             DataTable dt = SQLmtm.GetDataTable("select * from a_kuanshi_p where STYLEID =" + styleid);
             if (dt.Rows.Count == 0)
@@ -1782,7 +1783,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// </summary>
         /// <param name="frm"></param>
         /// <param name="dto"></param>
-        public static void DynamicSaveDesign(Frm门店下单选款式 frm,Dto定制下单 dto)
+        public static void DynamicSaveDesign(Frm门店下单选款式 frm, Dto定制下单 dto)
         {
             SheJiDianChooseCard c = new SheJiDianChooseCard();
             foreach (Control card in frm.panel3.Controls)
@@ -1790,9 +1791,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 if (card is SheJiDianChooseCard)
                 {
                     c = (SheJiDianChooseCard)card;
-                    dto.build设计点(c.PitemCd, c.PitemValue, c.itemValue, "1", "0",c.itemName,c.PitemName,c.pic);
-//                    SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" },
-//new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, "1", "0" });
+                    dto.build设计点(c.PitemCd, c.PitemValue, c.itemValue, "1", "0", c.itemName, c.PitemName, c.pic);
+                    //                    SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" },
+                    //new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, "1", "0" });
                 }
             }
         }
@@ -1899,7 +1900,98 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             {
                 return "SSHIRT.jpg";
             }
-            
+
+        }
+        /// <summary>
+        /// 根据面料id查询面料CD
+        /// </summary>
+        /// <param name="mlid"></param>
+        /// <returns></returns>
+        public static String GetMianLiaoCD(String mlid, String tab)
+        {
+            String sql = "SELECT\n" +
+"	*,CONCAT(s1.materialCode,':',s1.materialNameCn) AS mianliao,\n" +
+"SUBSTRING_INDEX( s1.filePath, '/',- 1 ) AS picn,s1.materialCode,s1.materialComposition,\n" +
+"	CONCAT( 'https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/', SUBSTRING_INDEX( s1.filePath, '/',- 1 ) ) AS picurl \n" +
+"FROM\n" +
+"	(\n" +
+"	SELECT\n" +
+"		a.material_id AS \"id\",\n" +
+"		a.material_file_id AS \"fileId\",\n" +
+"		a.material_name_cn AS \"materialNameCn\",\n" +
+"		a.material_name_en AS \"materialNameEn\",\n" +
+"		a.material_code AS \"materialCode\",\n" +
+"		a.material_use_type AS \"materialUseType\",\n" +
+"		a.material_type_cd AS \"materialTypeCd\",\n" +
+"		a.material_composition AS \"materialComposition\",\n" +
+"		a.material_spec AS \"materialSpec\",\n" +
+"		a.material_unit_cd AS \"materialUnitCd\",\n" +
+"		a.material_year AS \"materialYear\",\n" +
+"		a.material_color AS \"materialColor\",\n" +
+"		a.material_season AS \"materialSeason\",\n" +
+"		a.remarks AS \"remarks\",\n" +
+"		a.material_category AS \"materialStyleCategory\",\n" +
+"		a.model_filepath AS \"modelFilepath\",\n" +
+"	CASE\n" +
+"			\n" +
+"			WHEN file.FILE_PATH IS NOT NULL \n" +
+"			AND file.FILE_PATH != '' THEN\n" +
+"				REPLACE ( CONCAT( file.FILE_PATH, file.UPLOAD_FILE ), 'fragsmart-erp', 'fragsmart-mtm' ) ELSE REPLACE ( CONCAT( upload_file.FILE_PATH, upload_file.UPLOAD_FILE ), 'fragsmart-erp', 'fragsmart-mtm' ) \n" +
+"				END AS filePath,\n" +
+"			a_login_user_p.LAST_NAME AS \"createby.lastName\",\n" +
+"			a_login_user_p.FIRST_NAME AS \"createby.firstName\",\n" +
+"			IFNULL( s.material_sale_price, 0 ) AS \"materialPrice.materialSalePrice\",\n" +
+"			IFNULL( inventory_material.MATERIAL_QUANTITY, 0 ) AS \"inventoryMaterial.materialQuantity\",\n" +
+"			a.MATERIAL_LEVEL AS \"materialLevel\",\n" +
+"			a.MATERIAL_STYLE AS \"materialStyle\",\n" +
+"			a.MATERIAL_WEAVE AS \"materialWeave\",\n" +
+"		CASE\n" +
+"				\n" +
+"				WHEN adp.ITEM_VALUE = \"A_150\" THEN\n" +
+"				150 \n" +
+"				WHEN adp.ITEM_VALUE = \"B_180\" THEN\n" +
+"				180 \n" +
+"				WHEN adp.ITEM_VALUE = \"C_240\" THEN\n" +
+"				240 \n" +
+"				WHEN adp.ITEM_VALUE = \"D_320\" THEN\n" +
+"				320 ELSE 0 \n" +
+"			END AS \"materiaFacPrice\" \n" +
+"		FROM\n" +
+"			i_material_p a\n" +
+"			LEFT JOIN a_shop_material_r ar ON a.MATERIAL_ID = ar.MATERIAL_ID\n" +
+"			LEFT JOIN a_login_user_p a_login_user_p ON a_login_user_p.login_user_id = a.create_user\n" +
+"			LEFT JOIN i_material_price_s s ON s.material_id = a.material_id \n" +
+"			AND s.SHOP_ID = 18\n" +
+"			INNER JOIN i_inventory_material_p inventory_material ON inventory_material.material_id = a.material_id\n" +
+"			LEFT JOIN w_upload_file_p file ON a.material_file_id = file.FILE_ID \n" +
+"			AND file.FTP_FILE = \"/material\"\n" +
+"			LEFT JOIN a_upload_file_p upload_file ON upload_file.FILE_ID = a.MATERIAL_FILE_ID \n" +
+"			AND upload_file.FILE_KBN = 0 \n" +
+"			AND upload_file.FTP_FILE = \"/material\"\n" +
+"			LEFT JOIN a_dict_p adp ON a.MATERIAL_LEVEL = CONCAT( adp.ITEM_CD, \"-\", adp.ITEM_VALUE ) \n" +
+"		WHERE\n" +
+"			a.delete_flag = 0 \n" +
+"			AND a.material_category IN ( 'MATERIAL_CATEGORY-Fabric', 'MATERIAL_CATEGORY-ButtonL', 'MATERIAL_CATEGORY-Suit_Fabric', 'MATERIAL_CATEGORY-Suit_Material' ) \n" +
+"			AND ar.SHOP_ID = 18  AND a.MATERIAL_ID ='" + mlid + "'\n" +
+//"			AND ( a.material_name_cn LIKE '%" + mlname + "%' OR a.material_code LIKE '%" + mlname + "%' ) \n" +
+"           AND a.material_category ='MATERIAL_CATEGORY-Fabric'" +
+"		ORDER BY\n" +
+"			a.MATERIAL_CATEGORY,\n" +
+"			a.MATERIAL_ID \n" +
+"	) AS s1";
+            if (tab == "cd")
+            {
+                return SQLmtm.GetDataRow(sql)["materialCode"].ToString();
+            }
+            else
+            {
+                return SQLmtm.GetDataRow(sql)["materialComposition"].ToString();
+            }
+        }
+
+        public static void SiveINa_noorder_print_p(DTO无订单打印 dTO)
+        {
+            int i = SQLmtm.DoInsert("a_noorder_print_p", new string[] { "clothes_log_id", "shop_id", "style_id", "materials_id", "size_cd", "json" }, new string[] { dTO.clothes_log_id, dTO.shop_id, dTO.style_id, dTO.materials_id, dTO.size_cd, dTO.json });
         }
     }
 }
