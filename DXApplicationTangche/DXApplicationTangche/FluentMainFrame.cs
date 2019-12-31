@@ -5,6 +5,7 @@ using DXApplicationTangche.UC;
 using DXApplicationTangche.UC.库存;
 using DXApplicationTangche.UC.库存.门店验货;
 using DXApplicationTangche.UC.门店下单.form;
+using DXApplicationTangche.UC.门店下单.form.标准款;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static DXApplicationTangche.UC.门店下单.form.标准款.Frm扫码下单;
 
 namespace DXApplicationTangche
 {
@@ -78,7 +80,8 @@ namespace DXApplicationTangche
 
         private void ElementShopStockIn_Click(object sender, EventArgs e)
         {
-            this.initPanel(new XtraForm门店验货());
+            //this.initPanel(new XtraForm门店验货());
+            this.initPanel(new Frm扫码下单(Enum进出库类型.出库));
         }
 
         private void accordionControlElement4_Click(object sender, EventArgs e)

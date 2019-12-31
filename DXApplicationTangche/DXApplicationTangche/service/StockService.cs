@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static DXApplicationTangche.UC.门店下单.form.标准款.Frm扫码下单;
 
 namespace DXApplicationTangche.service
 {
@@ -42,6 +43,40 @@ namespace DXApplicationTangche.service
                 shopStockDtos.Add(new ShopStockDto(dataRow));
             }
             return shopStockDtos;
+        }
+
+        /// <summary>
+        /// 出入库
+        /// </summary>
+        /// <param name="enum进出库类型"></param>
+        /// <param name="barCode"></param>
+        public static void generateLedge(Enum进出库类型 enum进出库类型,String barCode) {
+            String sql = "SELECT 1 FROM a_noorder_print_p WHERE clothes_log_id = '"+ barCode + "'";
+            DataTable dataTable = SQLmtm.GetDataTable(sql);
+            if (dataTable.Rows.Count == 0) {
+                throw new Exception("条码"+barCode+"不存在！");
+            }
+
+            sql = "INSERT INTO t_inventory_sub_ledger ( shop_id, ref_style_id, style_fabric_id, amount, bill_id, STYLE_SIZE_CD, create_date ) SELECT\n" +
+                "shop_id,\n" +
+                "style_id,\n" +
+                "materials_id,\n";
+            if (enum进出库类型.Equals(Enum进出库类型.出库))
+            {
+                sql += "1,\n";
+            }
+            else {
+                sql += "-1,\n";
+            }
+
+            sql +="clothes_log_id,\n" +
+                "size_cd,\n" +
+                "now( ) \n" +
+                "FROM\n" +
+                "	a_noorder_print_p \n" +
+                "WHERE\n" +
+                "	clothes_log_id = '"+ barCode + "'";
+            SQLmtm.ExecuteSql(sql);
         }
     }
 }

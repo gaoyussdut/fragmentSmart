@@ -17,6 +17,7 @@ using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.门店下单.form.标准款;
+using static DXApplicationTangche.UC.门店下单.form.标准款.Frm扫码下单;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
@@ -155,7 +156,7 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void tileBarItem2_ItemClick(object sender, TileItemEventArgs e)
         {
-            new Frm扫码下单().ShowDialog();
+            new Frm扫码下单(Enum进出库类型.出库).ShowDialog();
         }
 
 
