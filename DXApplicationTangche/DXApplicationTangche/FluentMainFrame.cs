@@ -81,7 +81,7 @@ namespace DXApplicationTangche
         private void ElementShopStockIn_Click(object sender, EventArgs e)
         {
             //this.initPanel(new XtraForm门店验货());
-            this.initPanel(new Frm扫码下单(Enum进出库类型.出库));
+            this.initPanel(new Frm扫码下单(Enum进出库类型.入库));
         }
 
         private void accordionControlElement4_Click(object sender, EventArgs e)

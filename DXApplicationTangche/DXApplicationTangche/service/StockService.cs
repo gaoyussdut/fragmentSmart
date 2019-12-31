@@ -35,7 +35,8 @@ namespace DXApplicationTangche.service
                 "	STYLE_NAME_CN,\n" +
                 "	STYLE_PUBLISH_CATEGORY_CD \n" +
                 "FROM\n" +
-                "	v_stock_inventory \n";
+                "	v_stock_inventory \n" +
+                "   where amount<>0";
             DataTable dataTable = SQLmtm.GetDataTable(sql);
 
             List<ShopStockDto> shopStockDtos = new List<ShopStockDto>();

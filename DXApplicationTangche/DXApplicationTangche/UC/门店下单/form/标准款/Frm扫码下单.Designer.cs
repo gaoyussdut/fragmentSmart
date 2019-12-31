@@ -47,8 +47,9 @@
             this.dockPanel扫码 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.label扫码 = new System.Windows.Forms.Label();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.label扫码 = new System.Windows.Forms.Label();
+            this.colamount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
@@ -86,7 +87,8 @@
             this.colSTYLE_SIZE_CD,
             this.colMATERIAL_ID,
             this.colMATERIAL_NAME_CN,
-            this.col});
+            this.col,
+            this.colamount});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -145,7 +147,7 @@
             this.colSYTLE_YEAR.MinWidth = 25;
             this.colSYTLE_YEAR.Name = "colSYTLE_YEAR";
             this.colSYTLE_YEAR.Visible = true;
-            this.colSYTLE_YEAR.VisibleIndex = 3;
+            this.colSYTLE_YEAR.VisibleIndex = 4;
             this.colSYTLE_YEAR.Width = 94;
             // 
             // colSYTLE_SEASON
@@ -155,7 +157,7 @@
             this.colSYTLE_SEASON.MinWidth = 25;
             this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
             this.colSYTLE_SEASON.Visible = true;
-            this.colSYTLE_SEASON.VisibleIndex = 4;
+            this.colSYTLE_SEASON.VisibleIndex = 5;
             this.colSYTLE_SEASON.Width = 94;
             // 
             // colSTYLE_SIZE_CD
@@ -165,7 +167,7 @@
             this.colSTYLE_SIZE_CD.MinWidth = 25;
             this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
             this.colSTYLE_SIZE_CD.Visible = true;
-            this.colSTYLE_SIZE_CD.VisibleIndex = 5;
+            this.colSTYLE_SIZE_CD.VisibleIndex = 6;
             this.colSTYLE_SIZE_CD.Width = 94;
             // 
             // colMATERIAL_ID
@@ -183,7 +185,7 @@
             this.colMATERIAL_NAME_CN.MinWidth = 25;
             this.colMATERIAL_NAME_CN.Name = "colMATERIAL_NAME_CN";
             this.colMATERIAL_NAME_CN.Visible = true;
-            this.colMATERIAL_NAME_CN.VisibleIndex = 6;
+            this.colMATERIAL_NAME_CN.VisibleIndex = 7;
             this.colMATERIAL_NAME_CN.Width = 94;
             // 
             // col
@@ -194,7 +196,7 @@
             this.col.MinWidth = 25;
             this.col.Name = "col";
             this.col.Visible = true;
-            this.col.VisibleIndex = 7;
+            this.col.VisibleIndex = 8;
             this.col.Width = 94;
             // 
             // repositoryItemPictureEdit1
@@ -255,6 +257,16 @@
             this.tablePanel1.Size = new System.Drawing.Size(1063, 91);
             this.tablePanel1.TabIndex = 0;
             // 
+            // textEdit1
+            // 
+            this.tablePanel1.SetColumn(this.textEdit1, 1);
+            this.textEdit1.Location = new System.Drawing.Point(11, 46);
+            this.textEdit1.Name = "textEdit1";
+            this.tablePanel1.SetRow(this.textEdit1, 1);
+            this.textEdit1.Size = new System.Drawing.Size(1049, 24);
+            this.textEdit1.TabIndex = 1;
+            this.textEdit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
+            // 
             // label扫码
             // 
             this.label扫码.AutoSize = true;
@@ -267,15 +279,15 @@
             this.label扫码.TabIndex = 0;
             this.label扫码.Text = "请扫码条码下单";
             // 
-            // textEdit1
+            // colamount
             // 
-            this.tablePanel1.SetColumn(this.textEdit1, 1);
-            this.textEdit1.Location = new System.Drawing.Point(11, 46);
-            this.textEdit1.Name = "textEdit1";
-            this.tablePanel1.SetRow(this.textEdit1, 1);
-            this.textEdit1.Size = new System.Drawing.Size(1049, 24);
-            this.textEdit1.TabIndex = 1;
-            this.textEdit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
+            this.colamount.Caption = "库存数量";
+            this.colamount.FieldName = "amount";
+            this.colamount.MinWidth = 25;
+            this.colamount.Name = "colamount";
+            this.colamount.Visible = true;
+            this.colamount.VisibleIndex = 3;
+            this.colamount.Width = 94;
             // 
             // Frm扫码下单
             // 
@@ -323,5 +335,6 @@
         private DevExpress.Utils.Layout.TablePanel tablePanel1;
         private System.Windows.Forms.Label label扫码;
         private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colamount;
     }
 }
