@@ -20,6 +20,8 @@ namespace DXApplicationTangche
         public DataTable chooseStyleSize = new DataTable();
         public String json;
         public String sTYLE_SIZE_CD;
+        public String shopid;
+        public DataTable shop;
         public Frm打标()
         {
             InitializeComponent();
@@ -46,6 +48,7 @@ namespace DXApplicationTangche
             {
                 try
                 {
+                    this.chicun01.Items.Clear();
                     this.stylename.Text = SQLmtm.GetDataRow("SELECT STYLE_NAME_CN FROM s_style_p WHERE SYS_STYLE_ID='" + this.styleid.Text.Trim() + "'")["STYLE_NAME_CN"].ToString();
                     this.stylesizedt = ImpService.StyleCombobox(this.styleid.Text.Trim());
                     if (this.stylesizedt != null)
@@ -66,10 +69,41 @@ namespace DXApplicationTangche
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            this.dto无订单打印.buildDTO无订单打印(this.shopid.Text.Trim(), this.styleid.Text.Trim(), this.mianliaoid.Text.Trim(),this.mianliaocd.Text.Trim(), this.chicun01.Text.Trim());
-            this.dto无订单打印.builddto尺寸(this.chooseStyleSize);
-            this.dto无订单打印.json = Newtonsoft.Json.JsonConvert.SerializeObject(this.dto无订单打印);
+            foreach(DataRow dr in this.shop.Rows)
+            {
+                if(dr["shop_name"].ToString()==this.shopname.Text.Trim())
+                {
+                    this.shopid = dr["shop_id"].ToString();
+                    break;
+                }
+            }
+            this.dto无订单打印.buildDTO无订单打印(this.shopid, this.styleid.Text.Trim(), this.mianliaoid.Text.Trim(),this.mianliaocd.Text.Trim(), this.chicun01.Text.Trim());
+            //this.dto无订单打印.builddto尺寸(this.chooseStyleSize);
+            //this.dto无订单打印.json = Newtonsoft.Json.JsonConvert.SerializeObject(this.dto无订单打印);
+            this.dto无订单打印.json = "";
             ImpService.SiveINa_noorder_print_p(this.dto无订单打印);
+            ///////////////////////////////////////////
+            //this.print信息();
+            this.print条码();
+        }
+
+        private void mianliaoid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13) //判断是回车键
+            {
+                try
+                {
+                    this.mianliaocd.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "cd");
+                    this.chengfan.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "dd");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        public void print信息()
+        {
             Engine btEngine = new Engine();
             btEngine.Start();
             //string lj = AppDomain.CurrentDomain.BaseDirectory + "顺丰订单模板.btw";  //test.btw是BT的模板
@@ -113,26 +147,7 @@ namespace DXApplicationTangche
             btFormat.Close(SaveOptions.DoNotSaveChanges);
             //结束打印引擎                  
             btEngine.Stop();
-            ///////////////////////////////////////////
-            this.print条码();
         }
-
-        private void mianliaoid_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == 13) //判断是回车键
-            {
-                try
-                {
-                    this.mianliaocd.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "cd");
-                    this.chengfan.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "dd");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-        }
-
         public void print条码()
         {
             Engine btEngine = new Engine();
@@ -143,8 +158,8 @@ namespace DXApplicationTangche
             LabelFormatDocument btFormat = btEngine.Documents.Open(lj2);
             //指定打印机名 
             //btFormat.PrintSetup.PrinterName = "HPRT HLP106S-UE";
-            //btFormat2.PrintSetup.PrinterName = "TEC";
-            btFormat.PrintSetup.PrinterName = "POSTEK G-3106";
+            btFormat.PrintSetup.PrinterName = "TEC";
+            //btFormat.PrintSetup.PrinterName = "POSTEK G-3106";
             //打印份数                   
             btFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
             //改变标签打印数份连载 
@@ -160,6 +175,53 @@ namespace DXApplicationTangche
             btFormat.Close(SaveOptions.DoNotSaveChanges);
             //结束打印引擎                  
             btEngine.Stop();
+        }
+
+        private void Frm打标_Load(object sender, EventArgs e)
+        {
+            this.shop = SQLmtm.GetDataTable("SELECT * FROM  t_shop");
+            foreach (DataRow dr in this.shop.Rows)
+            {
+                //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
+                this.shopname.Items.Add(Convert.ToString(dr["shop_name"]));
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            DataRow dr = SQLmtm.GetDataRow("SELECT * FROM a_noorder_print_p WHERE clothes_log_id='" + this.tiaomaid.Text.Trim() + "';");
+            if (e.KeyValue == 13) //判断是回车键
+            {
+                try
+                {
+                    List<Grid2information> grid2Information = new List<Grid2information>();
+                    grid2Information.Add(new Grid2information("店铺", SQLmtm.GetDataRow("SELECT * FROM t_shop WHERE shop_id='" + dr["shop_id"].ToString() + "'")["shop_name"].ToString()));
+                    grid2Information.Add(new Grid2information("styleid", dr["style_id"].ToString()));
+                    grid2Information.Add(new Grid2information("款式名称", SQLmtm.GetDataRow("SELECT STYLE_NAME_CN FROM s_style_p WHERE SYS_STYLE_ID='" + dr["style_id"].ToString() + "'")["STYLE_NAME_CN"].ToString()));
+                    grid2Information.Add(new Grid2information("面料id", dr["materials_id"].ToString()));
+                    grid2Information.Add(new Grid2information("面料号", ImpService.GetMianLiaoCD(dr["materials_id"].ToString(), "dd")));
+                    grid2Information.Add(new Grid2information("尺寸", dr["size_cd"].ToString()));
+                    this.gridControl2.DataSource = grid2Information;
+                    this.gridControl2.Refresh();
+                }
+                catch
+                {
+
+                }
+                
+            }
+
+        }
+    }
+
+    public class Grid2information
+    {
+        public String style { get; set; } = "";
+        public String value { get; set; } = "";
+        public Grid2information(String l1,String l2)
+        {
+            this.style = l1;
+            this.value = l2;
         }
     }
 }

@@ -10,13 +10,13 @@ namespace DXApplicationTangche
 {
     public class DTO无订单打印
     {
-        public String clothes_log_id { get; set; }
-        public String shop_id { get; set; }
-        public String style_id { get; set; }
-        public String materials_id { get; set; }
-        public String materials_cd { get; set; }
-        public String size_cd { get; set; }
-        public String json { get; set; }
+        public String clothes_log_id { get; set; } = "";
+        public String shop_id { get; set; } = "1";
+        public String style_id { get; set; } = "";
+        public String materials_id { get; set; } = "";
+        public String materials_cd { get; set; } = "";
+        public String size_cd { get; set; } = "";
+        public String json { get; set; } = "";
         public List<dto尺寸> dtos = new List<dto尺寸>();
         public DTO无订单打印()
         { 
@@ -32,10 +32,12 @@ namespace DXApplicationTangche
         }
         public void builddto尺寸(DataTable dt)
         {
+            List<dto尺寸> dtoss = new List<dto尺寸>();
             foreach(DataRow dr in dt.Rows)
             {
-                this.dtos.Add(new dto尺寸(dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_NAME_CN"].ToString(), dr["ITEM_FIT_VALUE"].ToString()));
+                dtoss.Add(new dto尺寸(dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_NAME_CN"].ToString(), dr["ITEM_FIT_VALUE"].ToString()));
             }
+            this.dtos = dtoss;
         }
     }
 
