@@ -63,10 +63,7 @@ namespace DXApplicationTangche
         }
 
 
-        private void ElementStockOut_Click(object sender, EventArgs e)
-        {
-            this.initPanel(new XtraFrm门店出库());
-        }
+        
 
         private void ElementStoreOrder_Click(object sender, EventArgs e)
         {
@@ -76,6 +73,12 @@ namespace DXApplicationTangche
         private void accordionControlElement3_Click(object sender, EventArgs e)
         {
             this.initPanel(new QueryTag());
+        }
+
+        private void ElementStockOut_Click(object sender, EventArgs e)
+        {
+            //this.initPanel(new XtraFrm门店出库());
+            this.initPanel(new Frm扫码下单(Enum进出库类型.出库));
         }
 
         private void ElementShopStockIn_Click(object sender, EventArgs e)
