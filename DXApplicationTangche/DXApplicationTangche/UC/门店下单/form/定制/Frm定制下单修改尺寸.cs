@@ -52,12 +52,12 @@ namespace mendian
         }
         private void sizechange_Click(object sender, EventArgs e)
         {
-            new SizeChange().ShowDialog();
+            new Frm尺寸变更().ShowDialog();
         }
 
         private void stylechange_Click(object sender, EventArgs e)
         {
-            new StyleChange().ShowDialog();
+            new Frm款式变更().ShowDialog();
         }
 
 
@@ -89,7 +89,7 @@ namespace mendian
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                if (MianLiaochoose.mianliaoid == "" || this.chicun01.Text == "" || this.shuliang.Text == "")
+                if (Frm面料选择.mianliaoid == "" || this.chicun01.Text == "" || this.shuliang.Text == "")
                 {
                     MessageBox.Show("请填写完整");
                     return;
@@ -155,7 +155,7 @@ namespace mendian
         /// <param name="e"></param>
         private void chmianliao_Click(object sender, EventArgs e)
         {
-            //new MianLiaochoose().ShowDialog();
+            //new Frm面料选择().ShowDialog();
         }
         /// <summary>
         /// 实时加载设计点信息
@@ -164,11 +164,11 @@ namespace mendian
         /// <param name="e"></param>
         private void Change_Activated(object sender, EventArgs e)
         {
-            //if (MianLiaochoose.dr != null)
+            //if (Frm面料选择.dr != null)
             //{
-            //    this.mianliao.Text = Convert.ToString(MianLiaochoose.dr["面料编码"]);
+            //    this.mianliao.Text = Convert.ToString(Frm面料选择.dr["面料编码"]);
             //}
-            this.mianliaoname.Text = MianLiaochoose.mianliao;
+            this.mianliaoname.Text = Frm面料选择.mianliao;
             //ImpService.SpyStatic();
             //ImpService.realTimeLoading(this);
         }
@@ -188,12 +188,12 @@ namespace mendian
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            //new MianLiaochoose().ShowDialog();
+            //new Frm面料选择().ShowDialog();
         }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            //new MianLiaochoose(kuanshiid).ShowDialog();
+            //new Frm面料选择(kuanshiid).ShowDialog();
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)

@@ -77,7 +77,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.fenYeLan1 = new mendian.UC分页();
+            this.uc分页 = new mendian.UC分页();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -223,7 +223,7 @@
             this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.simpleButton11);
             this.layoutControl1.Controls.Add(this.label5);
-            this.layoutControl1.Controls.Add(this.fenYeLan1);
+            this.layoutControl1.Controls.Add(this.uc分页);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -483,14 +483,14 @@
             this.label5.Size = new System.Drawing.Size(520, 34);
             this.label5.TabIndex = 10;
             // 
-            // fenYeLan1
+            // uc分页
             // 
-            this.fenYeLan1.BackColor = System.Drawing.Color.SkyBlue;
-            this.fenYeLan1.Location = new System.Drawing.Point(536, 355);
-            this.fenYeLan1.Margin = new System.Windows.Forms.Padding(5);
-            this.fenYeLan1.Name = "fenYeLan1";
-            this.fenYeLan1.Size = new System.Drawing.Size(516, 34);
-            this.fenYeLan1.TabIndex = 9;
+            this.uc分页.BackColor = System.Drawing.Color.SkyBlue;
+            this.uc分页.Location = new System.Drawing.Point(536, 355);
+            this.uc分页.Margin = new System.Windows.Forms.Padding(5);
+            this.uc分页.Name = "uc分页";
+            this.uc分页.Size = new System.Drawing.Size(516, 34);
+            this.uc分页.TabIndex = 9;
             // 
             // Root
             // 
@@ -564,7 +564,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.fenYeLan1;
+            this.layoutControlItem6.Control = this.uc分页;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
             this.layoutControlItem6.Location = new System.Drawing.Point(524, 343);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(520, 60);
@@ -826,7 +826,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraEditors.SimpleButton simpleButton11;
         private System.Windows.Forms.Label label5;
-        private mendian.UC分页 fenYeLan1;
+        private mendian.UC分页 uc分页;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;

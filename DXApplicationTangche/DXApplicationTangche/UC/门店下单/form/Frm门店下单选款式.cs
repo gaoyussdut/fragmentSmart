@@ -20,8 +20,6 @@ namespace DXApplicationTangche.UC.门店下单.form
         public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
 
         private PanelLocition panelLocition;
-        int height = 0;//用户控件纵坐标
-        int width = 0;  //用户控件横坐标
 
         private Frm门店统一下单 frm;
 
@@ -30,8 +28,8 @@ namespace DXApplicationTangche.UC.门店下单.form
         public Frm门店下单选款式(Frm门店统一下单 frm, Enum下单类型 enum下单类型)
         {
             InitializeComponent();
-            this.fenYeLan1.xiaye.Click += new EventHandler(this.xiaye_Button);
-            this.fenYeLan1.shangye.Click += new EventHandler(this.shangye_Button);
+            this.uc分页.xiaye.Click += new EventHandler(this.xiaye_Button);
+            this.uc分页.shangye.Click += new EventHandler(this.shangye_Button);
 
             this.frm = frm;
             dto定制下单 = new Dto定制下单();
@@ -39,10 +37,6 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
-            this.splashScreenManager.ShowWaitForm();
-            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
-            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-
             Frm标准款下单.page = 1;
 
             //  图片布局
@@ -53,51 +47,14 @@ namespace DXApplicationTangche.UC.门店下单.form
         /// </summary>
         private void generatePictureLayout()
         {
-            height = 0;
-            width = 0;
-            int i = 0;
-            //DataTable dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
-            //if (dt.Rows.Count == 0)
-            //{
-            //    MessageBox.Show("已经是最后一页");
-            //    Frm标准款下单.page--;
-            //    dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
-            //}
+            this.splashScreenManager.ShowWaitForm();
+            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
+            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             this.gridControl选择款式.DataSource = ImpService.initStyleInfo(this.textBox1.Text, Frm标准款下单.page);
-            //panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-            //foreach (DataRow dr in dt.Rows)
-            //{
-            //    UC款式卡片 sc = new UC款式卡片(this, "门店下单选款式", dr);
-            //    this.generateUserControl(sc, i);
-            //    this.panel1.Controls.Add(sc);//将控件加入panel
-            //    try
-            //    {
-            //        sc.stylecardpicbox.Image = Image.FromFile(sc.picture);
-            //    }
-            //    catch
-            //    {
-
-            //    }
-            //    i++;
-            //}
-            this.fenYeLan1.label1.Text = Frm标准款下单.page.ToString();
+            this.uc分页.label1.Text = Frm标准款下单.page.ToString();
             this.splashScreenManager.CloseWaitForm();
         }
-        public void generateUserControl(UserControl userControl, int i)
-        {
-            userControl.Name = "pic" + i.ToString();
-            //userControl.Size = new Size(200, 30);
-            if (i != 0)
-            {
-                if (i % 7 == 0)
-                {
-                    width = 0;
-                    height += 200;
-                }
-            }
-            userControl.Location = new Point(panelLocition.UcLeft + width * 160, panelLocition.UcHeight + height);//控件位置
-            width++;
-        }
+
         /// <summary>
         /// 下一页
         /// </summary>
@@ -105,10 +62,6 @@ namespace DXApplicationTangche.UC.门店下单.form
         /// <param name="e"></param>
         private void xiaye_Button(object sender, EventArgs e)
         {
-            //  初始化页面
-            this.splashScreenManager.ShowWaitForm();
-            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
-            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             Frm标准款下单.page++;
             //  图片布局
             this.generatePictureLayout();
@@ -125,9 +78,7 @@ namespace DXApplicationTangche.UC.门店下单.form
                 MessageBox.Show("已经到首页");
                 return;
             }
-            this.splashScreenManager.ShowWaitForm();
-            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
-            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
+
             Frm标准款下单.page--;
 
             //  图片布局
@@ -141,17 +92,17 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            new MianLiaochoose(this).ShowDialog();
+            new Frm面料选择(this).ShowDialog();
         }
 
         private void mianliaoname_Click(object sender, EventArgs e)
         {
-            new MianLiaochoose(Dto定制下单.Style_Id, this).ShowDialog();
+            new Frm面料选择(Dto定制下单.Style_Id, this).ShowDialog();
         }
 
         private void Frm门店下单选款式_Activated(object sender, EventArgs e)
         {
-            this.mianliaoname.Text = MianLiaochoose.mianliao;
+            this.mianliaoname.Text = Frm面料选择.mianliao;
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

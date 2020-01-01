@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class SizeChange
+    partial class Frm尺寸变更
     {
         /// <summary>
         /// Required designer variable.

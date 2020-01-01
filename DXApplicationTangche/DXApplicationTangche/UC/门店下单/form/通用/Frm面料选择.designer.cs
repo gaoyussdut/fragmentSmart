@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class MianLiaochoose
+    partial class Frm面料选择
     {
         /// <summary>
         /// Required designer variable.
@@ -187,17 +187,17 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
-            // MianLiaochoose
+            // Frm面料选择
             // 
             this.AcceptButton = this.simpleButton1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 661);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "MianLiaochoose";
+            this.Name = "Frm面料选择";
             this.Text = "面料选择";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MianLiaochoose_Load);
+            this.Load += new System.EventHandler(this.Frm面料选择_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();

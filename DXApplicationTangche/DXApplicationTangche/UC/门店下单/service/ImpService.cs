@@ -310,7 +310,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             //Change.styleid = Convert.ToInt32(drstyle["SYS_STYLE_ID"]);
             //Change.styleid++;
             SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" },
-    new string[] { Change.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, MianLiaochoose.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Change.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
+    new string[] { Change.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, Frm面料选择.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Change.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
         }
 
         /// <summary>
@@ -1117,9 +1117,9 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                 }
                 else
                 {
-                    MianLiaochoose.mianliaocd = dr["DEFAULT_CD"].ToString();
-                    MianLiaochoose.mianliaoid = dr["DEFAULT_VALUE"].ToString();
-                    MianLiaochoose.mianliao = change.mianliaoname.Text = dr["DEFAULT_NAME_CN"].ToString();
+                    Frm面料选择.mianliaocd = dr["DEFAULT_CD"].ToString();
+                    Frm面料选择.mianliaoid = dr["DEFAULT_VALUE"].ToString();
+                    Frm面料选择.mianliao = change.mianliaoname.Text = dr["DEFAULT_NAME_CN"].ToString();
                 }
             }
         }
@@ -1623,9 +1623,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// </summary>
         public static void ClearStaticVariable()
         {
-            MianLiaochoose.mianliao = "";
-            MianLiaochoose.mianliaocd = "";
-            MianLiaochoose.mianliaoid = "";
+            Frm面料选择.mianliao = "";
+            Frm面料选择.mianliaocd = "";
+            Frm面料选择.mianliaoid = "";
         }
         /// <summary>
         /// 获得最新的styleid
@@ -1643,7 +1643,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         public static void insertS_Style_P(UC款式卡片 uc)
         {
             SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" },
-    new string[] { Change.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, MianLiaochoose.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Change.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
+    new string[] { Change.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, Frm面料选择.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Change.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
         }
 
         public static void LoadSheJiDian(Frm门店下单选款式 frm, String styleid)
@@ -1670,9 +1670,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 }
                 else
                 {
-                    MianLiaochoose.mianliaocd = dr["DEFAULT_CD"].ToString();
-                    MianLiaochoose.mianliaoid = dr["DEFAULT_VALUE"].ToString();
-                    MianLiaochoose.mianliao = frm.mianliaoname.Text = dr["DEFAULT_NAME_CN"].ToString();
+                    Frm面料选择.mianliaocd = dr["DEFAULT_CD"].ToString();
+                    Frm面料选择.mianliaoid = dr["DEFAULT_VALUE"].ToString();
+                    Frm面料选择.mianliao = frm.mianliaoname.Text = dr["DEFAULT_NAME_CN"].ToString();
                 }
             }
         }

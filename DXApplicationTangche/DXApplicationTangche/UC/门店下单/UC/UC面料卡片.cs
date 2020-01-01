@@ -18,7 +18,7 @@ namespace mendian
         public String mianliaocd;
         public String picurl;
         public String picn;
-        public MianLiaochoose form;
+        public Frm面料选择 form;
         public bool flag;
 
         private Frm门店下单选款式 frm;
@@ -28,7 +28,7 @@ namespace mendian
             InitializeComponent();
         }
 
-        public UC面料卡片(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form, Frm门店下单选款式 frm)
+        public UC面料卡片(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, Frm面料选择 form, Frm门店下单选款式 frm)
         {
             InitializeComponent();
             this.frm = frm;
@@ -49,7 +49,7 @@ namespace mendian
             }
         }
 
-        public UC面料卡片(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form)
+        public UC面料卡片(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, Frm面料选择 form)
         {
             InitializeComponent();
             this.flag = true;
@@ -90,9 +90,9 @@ MessageBox.Show("确认保存“" + this.label1.Text + "”吗？", "保存", Me
                 if (dialogResult == DialogResult.Yes)
                 {
                     this.frm.Dto定制下单.SYTLE_FABRIC_ID = this.mianliaoid;
-                    MianLiaochoose.mianliao = this.mianliao;
-                    MianLiaochoose.mianliaoid = this.mianliaoid;
-                    MianLiaochoose.mianliaocd = this.mianliaocd;
+                    Frm面料选择.mianliao = this.mianliao;
+                    Frm面料选择.mianliaoid = this.mianliaoid;
+                    Frm面料选择.mianliaocd = this.mianliaocd;
                     this.form.Close();
                 }
                 else

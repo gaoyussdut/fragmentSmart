@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class StyleChange : Form
+    public partial class Frm款式变更 : Form
     {
-        public StyleChange()
+        public Frm款式变更()
         {
             this.WindowState = FormWindowState.Maximized;//窗体最大化
             InitializeComponent();

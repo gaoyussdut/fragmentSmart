@@ -55,7 +55,7 @@ namespace DXApplicationTangche
 
         private void mianliaoname_Click(object sender, EventArgs e)
         {
-            //new MianLiaochoose(Change.kuanshiid).ShowDialog();
+            //new Frm面料选择(Change.kuanshiid).ShowDialog();
         }
 
         private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,17 +75,17 @@ namespace DXApplicationTangche
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            //new MianLiaochoose().ShowDialog();
+            //new Frm面料选择().ShowDialog();
         }
 
         private void Frm标准款下单具体_Activated(object sender, EventArgs e)
         {
-            this.mianliaoname.Text = MianLiaochoose.mianliao;
+            this.mianliaoname.Text = Frm面料选择.mianliao;
             try
             {
                 List<CustomerInformation> ci = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
                 this.printedView.refresh(
-                    @"pic\" + ImpService.GetMianLiaoFile(MianLiaochoose.mianliaoid), ci);
+                    @"pic\" + ImpService.GetMianLiaoFile(Frm面料选择.mianliaoid), ci);
             }
             catch
             {

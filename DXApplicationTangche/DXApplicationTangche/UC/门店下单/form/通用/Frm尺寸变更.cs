@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class SizeChange : Form
+    public partial class Frm尺寸变更 : Form
     {
         //private Change form = new Change(StyleCard uc);
-        public SizeChange()
+        public Frm尺寸变更()
         {
             this.WindowState = FormWindowState.Maximized;//窗体最大化
             InitializeComponent();

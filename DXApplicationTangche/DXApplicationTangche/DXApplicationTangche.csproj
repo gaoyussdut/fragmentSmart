@@ -245,17 +245,17 @@
     <Compile Include="UC\门店下单\DTO\MianLiaoPicList.cs" />
     <Compile Include="UC\门店下单\DTO\SheJiDianPic.cs" />
     <Compile Include="UC\门店下单\DTO\SheJiDianPicList.cs" />
-    <Compile Include="UC\门店下单\form\通用\SizeChange.cs">
+    <Compile Include="UC\门店下单\form\通用\Frm尺寸变更.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\form\通用\SizeChange.designer.cs">
-      <DependentUpon>SizeChange.cs</DependentUpon>
+    <Compile Include="UC\门店下单\form\通用\Frm尺寸变更.designer.cs">
+      <DependentUpon>Frm尺寸变更.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\form\通用\StyleChange.cs">
+    <Compile Include="UC\门店下单\form\通用\Frm款式变更.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\form\通用\StyleChange.designer.cs">
-      <DependentUpon>StyleChange.cs</DependentUpon>
+    <Compile Include="UC\门店下单\form\通用\Frm款式变更.designer.cs">
+      <DependentUpon>Frm款式变更.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\DTO\StylePic.cs" />
     <Compile Include="UC\门店下单\DTO\StylePicList.cs" />
@@ -405,11 +405,11 @@
     <EmbeddedResource Include="UC\门店下单\form\定制\Frm默认设计点.resx">
       <DependentUpon>Frm默认设计点.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\form\通用\SizeChange.resx">
-      <DependentUpon>SizeChange.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\form\通用\Frm尺寸变更.resx">
+      <DependentUpon>Frm尺寸变更.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\form\通用\StyleChange.resx">
-      <DependentUpon>StyleChange.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\form\通用\Frm款式变更.resx">
+      <DependentUpon>Frm款式变更.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\UC\UC分页.resx">
       <DependentUpon>UC分页.cs</DependentUpon>

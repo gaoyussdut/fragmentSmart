@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class StyleChange
+    partial class Frm款式变更
     {
         /// <summary>
         /// Required designer variable.

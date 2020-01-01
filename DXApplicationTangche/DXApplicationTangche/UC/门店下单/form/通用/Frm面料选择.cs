@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class MianLiaochoose : Form
+    public partial class Frm面料选择 : Form
     {
         public static int page { get; set; }
         public static String mianliaoid { get; set; }
@@ -24,7 +24,7 @@ namespace mendian
         private Frm门店下单选款式 frm;
         int height = 0;
         int width = 0;
-        public MianLiaochoose(Frm门店下单选款式 frm)
+        public Frm面料选择(Frm门店下单选款式 frm)
         {
             InitializeComponent();
             this.frm = frm;
@@ -33,7 +33,7 @@ namespace mendian
             this.fenYeLan1.shangye.Click += new EventHandler(this.shangye_Button);
         }
 
-        public MianLiaochoose(String styleid, Frm门店下单选款式 frm)
+        public Frm面料选择(String styleid, Frm门店下单选款式 frm)
         {
             InitializeComponent();
             this.frm = frm;
@@ -72,15 +72,15 @@ namespace mendian
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-            MianLiaochoose.page++;
+            Frm面料选择.page++;
             if (this.flag == false)
             {
-                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, MianLiaochoose.page);
+                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
                 if (dt.Rows.Count == 0)
                 {
                     MessageBox.Show("已经是最后一页");
-                    MianLiaochoose.page--;
-                    dt = ImpService.GetMianLiao(this.textBox1.Text, MianLiaochoose.page);
+                    Frm面料选择.page--;
+                    dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
                 }
                 this.panel1.Controls.Clear();
                 height = 0;
@@ -98,12 +98,12 @@ namespace mendian
             }
             else
             {
-                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, MianLiaochoose.page);
+                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, Frm面料选择.page);
                 if (dt.Rows.Count == 0)
                 {
                     MessageBox.Show("已经是最后一页");
-                    MianLiaochoose.page--;
-                    dt = ImpService.GetMianLiao(this.textBox1.Text, MianLiaochoose.page);
+                    Frm面料选择.page--;
+                    dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
                 }
                 this.panel1.Controls.Clear();
                 height = 0;
@@ -119,7 +119,7 @@ namespace mendian
                     i++;
                 }
             }
-            this.fenYeLan1.label1.Text = MianLiaochoose.page.ToString();
+            this.fenYeLan1.label1.Text = Frm面料选择.page.ToString();
             this.splashScreenManager.CloseWaitForm();
         }
         /// <summary>
@@ -129,7 +129,7 @@ namespace mendian
         /// <param name="e"></param>
         private void shangye_Button(object sender, EventArgs e)
         {
-            if (MianLiaochoose.page == 1)
+            if (Frm面料选择.page == 1)
             {
                 MessageBox.Show("已经到首页");
                 return;
@@ -137,14 +137,14 @@ namespace mendian
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-            MianLiaochoose.page--;
+            Frm面料选择.page--;
             this.panel1.Controls.Clear();
             height = 0;
             width = 0;
             int i = 0;
             if (this.flag == false)
             {
-                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, MianLiaochoose.page);
+                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -157,7 +157,7 @@ namespace mendian
             }
             else
             {
-                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, MianLiaochoose.page);
+                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, Frm面料选择.page);
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -168,7 +168,7 @@ namespace mendian
                     i++;
                 }
             }
-            this.fenYeLan1.label1.Text = MianLiaochoose.page.ToString();
+            this.fenYeLan1.label1.Text = Frm面料选择.page.ToString();
             this.splashScreenManager.CloseWaitForm();
         }
         /// <summary>
@@ -179,14 +179,14 @@ namespace mendian
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-            MianLiaochoose.page = 1;
+            Frm面料选择.page = 1;
             this.panel1.Controls.Clear();
             height = 0;
             width = 0;
             int i = 0;
             if (flag == false)
             {
-                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, MianLiaochoose.page);
+                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -199,7 +199,7 @@ namespace mendian
             }
             else
             {
-                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, MianLiaochoose.page);
+                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, Frm面料选择.page);
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
@@ -213,7 +213,7 @@ namespace mendian
             this.splashScreenManager.CloseWaitForm();
         }
 
-        private void MianLiaochoose_Load(object sender, EventArgs e)
+        private void Frm面料选择_Load(object sender, EventArgs e)
         {
             DoButtonClick();
         }
