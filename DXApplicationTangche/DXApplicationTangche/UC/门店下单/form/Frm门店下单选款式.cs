@@ -53,33 +53,33 @@ namespace DXApplicationTangche.UC.门店下单.form
         /// </summary>
         private void generatePictureLayout()
         {
-            this.panel1.Controls.Clear();
             height = 0;
             width = 0;
             int i = 0;
-            DataTable dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("已经是最后一页");
-                Frm标准款下单.page--;
-                dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
-            }
-            panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-            foreach (DataRow dr in dt.Rows)
-            {
-                UC款式卡片 sc = new UC款式卡片(this, "门店下单选款式", dr);
-                this.generateUserControl(sc, i);
-                this.panel1.Controls.Add(sc);//将控件加入panel
-                try
-                {
-                    sc.stylecardpicbox.Image = Image.FromFile(sc.picture);
-                }
-                catch
-                {
+            //DataTable dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
+            //if (dt.Rows.Count == 0)
+            //{
+            //    MessageBox.Show("已经是最后一页");
+            //    Frm标准款下单.page--;
+            //    dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
+            //}
+            this.gridControl选择款式.DataSource = ImpService.initStyleInfo(this.textBox1.Text, Frm标准款下单.page);
+            //panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
+            //foreach (DataRow dr in dt.Rows)
+            //{
+            //    UC款式卡片 sc = new UC款式卡片(this, "门店下单选款式", dr);
+            //    this.generateUserControl(sc, i);
+            //    this.panel1.Controls.Add(sc);//将控件加入panel
+            //    try
+            //    {
+            //        sc.stylecardpicbox.Image = Image.FromFile(sc.picture);
+            //    }
+            //    catch
+            //    {
 
-                }
-                i++;
-            }
+            //    }
+            //    i++;
+            //}
             this.fenYeLan1.label1.Text = Frm标准款下单.page.ToString();
             this.splashScreenManager.CloseWaitForm();
         }

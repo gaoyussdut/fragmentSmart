@@ -51,6 +51,57 @@ namespace mendian
             orderDto.MATERIAL_COLOR = dataRow["MATERIAL_COLOR"].ToString();
         }
 
+        public static List<款式图片Dto> initStyleInfo(String flag, int page)
+        {
+            DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
+                " style.SYS_STYLE_ID AS styleId,\n" +
+                " style.STYLE_CD \"styleEntity.styleCd\",\n" +
+                " style.STYLE_NAME_CN \"styleEntity.styleNameCn\",\n" +
+                " style.STYLE_CATEGORY_CD \"styleEntity.styleCategoryCd\",\n" +
+                " style.STYLE_DRESS_CATEGORY \"styleEntity.styleDressCategory\",\n" +
+                " style.STYLE_DESIGN_TYPE \"styleEntity.styleDesignType\",\n" +
+                " style.STYLE_PUBLISH_CATEGORY_CD \"styleEntity.stylePublishCategoryCd\",\n" +
+                " style.SYTLE_YEAR \"styleEntity.sytleYear\",\n" +
+                " style.SYTLE_SEASON \"styleEntity.sytleSeason\",\n" +
+                " style.STYLE_FIT_CD \"styleEntity.styleFitCd\",\n" +
+                " material.MATERIAL_NAME_CN AS \"materialEntity.materialNameCn\",\n" +
+                " material.MATERIAL_NAME_EN AS \"materialEntity.materialNameEn\",\n" +
+                " material.material_id \"materialEntity.id\",\n" +
+                " GROUP_CONCAT( DISTINCT material.MATERIAL_CODE ) \"materialEntity.materialCode\",\n" +
+                " style.VERSION,\n" +
+                " style.CREATE_USER,\n" +
+                " style.STYLE_MAKE_TYPE \"styleEntity.styleMakeType\",\n" +
+                " style.STYLE_SIZE_GROUP_CD \"styleEntity.styleSizeGroupCd\",\n" +
+                " style.STYLE_SIZE_CD \"styleEntity.styleSizeCd\",\n" +
+                " style.STYLE_FIT_BODY_TYPE \"styleEntity.styleFitBodyType\",\n" +
+                " CONCAT( login_user.FIRST_NAME, login_user.LAST_NAME ) \"user.loginName\",\n" +
+                " style.CREATE_DATE,\n" +
+                " style.COVER_PHOTO_PATH \"styleEntity.coverPhotoPath\", \n" +
+                "SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1) AS picn," +
+                " CONCAT('https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/',SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1)) AS picurl \n" +
+                "FROM\n" +
+                " s_style_p style\n" +
+                " LEFT JOIN i_material_p material ON FIND_IN_SET( CAST( material.MATERIAL_ID AS CHAR ), style.SYTLE_FABRIC_ID )\n" +
+                " LEFT JOIN a_login_user_p login_user ON login_user.LOGIN_USER_ID = style.CREATE_USER \n" +
+                "WHERE\n" +
+                " style.DELETE_FLAG = 0 \n" +
+                " AND style.STYLE_NAME_CN IS NOT NULL \n" +
+                "   AND style.STYLE_KBN != 'STYLE_SOURCE-STYLE_SOURCE_50' \n" +
+                " AND ( style.SHOP_ID = 18 OR style.SHOP_ID = 0 )\n" +
+                "AND style.STYLE_NAME_CN LIKE '%" + flag + "%'\n" +
+                "GROUP BY\n" +
+                " style.SYS_STYLE_ID \n" +
+                "ORDER BY\n" +
+                " style.UPDATE_DATE DESC \n" +
+                " LIMIT " + ((page - 1) * 21).ToString() + ",21");
+            List<款式图片Dto> 款式图片Dtos = new List<款式图片Dto>();
+            foreach (DataRow dataRow in dt.Rows) {
+                款式图片Dtos.Add(new 款式图片Dto(flag,dataRow));
+            }
+
+            return 款式图片Dtos;
+        }
+
         /// <summary>
         /// 查找款式
         /// </summary>
@@ -59,46 +110,46 @@ namespace mendian
         public static DataTable initStyle(String str, int page)
         {
             DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
-" style.SYS_STYLE_ID AS styleId,\n" +
-" style.STYLE_CD \"styleEntity.styleCd\",\n" +
-" style.STYLE_NAME_CN \"styleEntity.styleNameCn\",\n" +
-" style.STYLE_CATEGORY_CD \"styleEntity.styleCategoryCd\",\n" +
-" style.STYLE_DRESS_CATEGORY \"styleEntity.styleDressCategory\",\n" +
-" style.STYLE_DESIGN_TYPE \"styleEntity.styleDesignType\",\n" +
-" style.STYLE_PUBLISH_CATEGORY_CD \"styleEntity.stylePublishCategoryCd\",\n" +
-" style.SYTLE_YEAR \"styleEntity.sytleYear\",\n" +
-" style.SYTLE_SEASON \"styleEntity.sytleSeason\",\n" +
-" style.STYLE_FIT_CD \"styleEntity.styleFitCd\",\n" +
-" material.MATERIAL_NAME_CN AS \"materialEntity.materialNameCn\",\n" +
-" material.MATERIAL_NAME_EN AS \"materialEntity.materialNameEn\",\n" +
-" material.material_id \"materialEntity.id\",\n" +
-" GROUP_CONCAT( DISTINCT material.MATERIAL_CODE ) \"materialEntity.materialCode\",\n" +
-" style.VERSION,\n" +
-" style.CREATE_USER,\n" +
-" style.STYLE_MAKE_TYPE \"styleEntity.styleMakeType\",\n" +
-" style.STYLE_SIZE_GROUP_CD \"styleEntity.styleSizeGroupCd\",\n" +
-" style.STYLE_SIZE_CD \"styleEntity.styleSizeCd\",\n" +
-" style.STYLE_FIT_BODY_TYPE \"styleEntity.styleFitBodyType\",\n" +
-" CONCAT( login_user.FIRST_NAME, login_user.LAST_NAME ) \"user.loginName\",\n" +
-" style.CREATE_DATE,\n" +
-" style.COVER_PHOTO_PATH \"styleEntity.coverPhotoPath\", \n" +
-"SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1) AS picn," +
-" CONCAT('https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/',SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1)) AS picurl \n" +
-"FROM\n" +
-" s_style_p style\n" +
-" LEFT JOIN i_material_p material ON FIND_IN_SET( CAST( material.MATERIAL_ID AS CHAR ), style.SYTLE_FABRIC_ID )\n" +
-" LEFT JOIN a_login_user_p login_user ON login_user.LOGIN_USER_ID = style.CREATE_USER \n" +
-"WHERE\n" +
-" style.DELETE_FLAG = 0 \n" +
-" AND style.STYLE_NAME_CN IS NOT NULL \n" +
-"   AND style.STYLE_KBN != 'STYLE_SOURCE-STYLE_SOURCE_50' \n" +
-" AND ( style.SHOP_ID = 18 OR style.SHOP_ID = 0 )\n" +
-"AND style.STYLE_NAME_CN LIKE '%" + str + "%'\n" +
-"GROUP BY\n" +
-" style.SYS_STYLE_ID \n" +
-"ORDER BY\n" +
-" style.UPDATE_DATE DESC \n" +
-" LIMIT " + ((page - 1) * 21).ToString() + ",21");
+                " style.SYS_STYLE_ID AS styleId,\n" +
+                " style.STYLE_CD \"styleEntity.styleCd\",\n" +
+                " style.STYLE_NAME_CN \"styleEntity.styleNameCn\",\n" +
+                " style.STYLE_CATEGORY_CD \"styleEntity.styleCategoryCd\",\n" +
+                " style.STYLE_DRESS_CATEGORY \"styleEntity.styleDressCategory\",\n" +
+                " style.STYLE_DESIGN_TYPE \"styleEntity.styleDesignType\",\n" +
+                " style.STYLE_PUBLISH_CATEGORY_CD \"styleEntity.stylePublishCategoryCd\",\n" +
+                " style.SYTLE_YEAR \"styleEntity.sytleYear\",\n" +
+                " style.SYTLE_SEASON \"styleEntity.sytleSeason\",\n" +
+                " style.STYLE_FIT_CD \"styleEntity.styleFitCd\",\n" +
+                " material.MATERIAL_NAME_CN AS \"materialEntity.materialNameCn\",\n" +
+                " material.MATERIAL_NAME_EN AS \"materialEntity.materialNameEn\",\n" +
+                " material.material_id \"materialEntity.id\",\n" +
+                " GROUP_CONCAT( DISTINCT material.MATERIAL_CODE ) \"materialEntity.materialCode\",\n" +
+                " style.VERSION,\n" +
+                " style.CREATE_USER,\n" +
+                " style.STYLE_MAKE_TYPE \"styleEntity.styleMakeType\",\n" +
+                " style.STYLE_SIZE_GROUP_CD \"styleEntity.styleSizeGroupCd\",\n" +
+                " style.STYLE_SIZE_CD \"styleEntity.styleSizeCd\",\n" +
+                " style.STYLE_FIT_BODY_TYPE \"styleEntity.styleFitBodyType\",\n" +
+                " CONCAT( login_user.FIRST_NAME, login_user.LAST_NAME ) \"user.loginName\",\n" +
+                " style.CREATE_DATE,\n" +
+                " style.COVER_PHOTO_PATH \"styleEntity.coverPhotoPath\", \n" +
+                "SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1) AS picn," +
+                " CONCAT('https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/',SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1)) AS picurl \n" +
+                "FROM\n" +
+                " s_style_p style\n" +
+                " LEFT JOIN i_material_p material ON FIND_IN_SET( CAST( material.MATERIAL_ID AS CHAR ), style.SYTLE_FABRIC_ID )\n" +
+                " LEFT JOIN a_login_user_p login_user ON login_user.LOGIN_USER_ID = style.CREATE_USER \n" +
+                "WHERE\n" +
+                " style.DELETE_FLAG = 0 \n" +
+                " AND style.STYLE_NAME_CN IS NOT NULL \n" +
+                "   AND style.STYLE_KBN != 'STYLE_SOURCE-STYLE_SOURCE_50' \n" +
+                " AND ( style.SHOP_ID = 18 OR style.SHOP_ID = 0 )\n" +
+                "AND style.STYLE_NAME_CN LIKE '%" + str + "%'\n" +
+                "GROUP BY\n" +
+                " style.SYS_STYLE_ID \n" +
+                "ORDER BY\n" +
+                " style.UPDATE_DATE DESC \n" +
+                " LIMIT " + ((page - 1) * 21).ToString() + ",21");
             return dt;
         }
         /// <summary>
