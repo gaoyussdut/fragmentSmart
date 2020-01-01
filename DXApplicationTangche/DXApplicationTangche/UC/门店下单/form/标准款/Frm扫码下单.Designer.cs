@@ -43,13 +43,13 @@
             this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.col = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.colamount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel扫码 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label扫码 = new System.Windows.Forms.Label();
-            this.colamount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
@@ -203,6 +203,16 @@
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
             // 
+            // colamount
+            // 
+            this.colamount.Caption = "库存数量";
+            this.colamount.FieldName = "amount";
+            this.colamount.MinWidth = 25;
+            this.colamount.Name = "colamount";
+            this.colamount.Visible = true;
+            this.colamount.VisibleIndex = 3;
+            this.colamount.Width = 94;
+            // 
             // dockManager1
             // 
             this.dockManager1.Form = this;
@@ -265,7 +275,7 @@
             this.tablePanel1.SetRow(this.textEdit1, 1);
             this.textEdit1.Size = new System.Drawing.Size(1049, 24);
             this.textEdit1.TabIndex = 1;
-            this.textEdit1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit1_KeyPress);
+            this.textEdit1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyDown);
             // 
             // label扫码
             // 
@@ -278,16 +288,6 @@
             this.label扫码.Size = new System.Drawing.Size(113, 18);
             this.label扫码.TabIndex = 0;
             this.label扫码.Text = "请扫码条码下单";
-            // 
-            // colamount
-            // 
-            this.colamount.Caption = "库存数量";
-            this.colamount.FieldName = "amount";
-            this.colamount.MinWidth = 25;
-            this.colamount.Name = "colamount";
-            this.colamount.Visible = true;
-            this.colamount.VisibleIndex = 3;
-            this.colamount.Width = 94;
             // 
             // Frm扫码下单
             // 

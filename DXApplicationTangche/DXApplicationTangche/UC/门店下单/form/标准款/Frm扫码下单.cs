@@ -47,22 +47,26 @@ namespace DXApplicationTangche.UC.门店下单.form.标准款
             this.gridControl1.DataSource = StockService.getStopStockAll();
         }
 
-        private void textEdit1_KeyPress(object sender, KeyPressEventArgs e)
+        private void textEdit1_KeyDown(object sender, KeyEventArgs e)
         {
-            try
+            if (e.KeyValue == 13) //判断是回车键
             {
-                //  执行出入库
-                StockService.generateLedge(this.enum进出库类型, this.textEdit1.Text);
-            }
-            catch (Exception exception){
-                MessageBox.Show(exception.Message);
-                return;
-            }
+                try
+                {
+                    //  执行出入库
+                    StockService.generateLedge(this.enum进出库类型, this.textEdit1.Text);
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                    return;
+                }
 
-            //  后续处理
-            this.textEdit1.Text = "";
-            this.gridControl1.DataSource = StockService.getStopStockAll();
-            this.gridView1.RefreshData();
+                //  后续处理
+                this.textEdit1.Text = "";
+                this.gridControl1.DataSource = StockService.getStopStockAll();
+                this.gridView1.RefreshData();
+            }
         }
     }
 }
