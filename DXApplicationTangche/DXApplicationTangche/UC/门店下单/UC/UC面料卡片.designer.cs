@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class MianLiaoCard
+    partial class UC面料卡片
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -36,9 +36,10 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("宋体", 11F);
-            this.label1.Location = new System.Drawing.Point(3, 173);
+            this.label1.Location = new System.Drawing.Point(4, 216);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 55);
+            this.label1.Size = new System.Drawing.Size(219, 69);
             this.label1.TabIndex = 8;
             this.label1.Text = "面料";
             // 
@@ -46,21 +47,23 @@
             // 
             this.pictureBox1.Image = global::DXApplicationTangche.Properties.Resources.QQ图片20190724112541;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(170, 170);
+            this.pictureBox1.Size = new System.Drawing.Size(227, 212);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // MianLiaoCard
+            // UC面料卡片
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "MianLiaoCard";
-            this.Size = new System.Drawing.Size(170, 228);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "UC面料卡片";
+            this.Size = new System.Drawing.Size(227, 285);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

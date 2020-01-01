@@ -12,7 +12,7 @@ using DXApplicationTangche.UC.门店下单.form;
 
 namespace mendian
 {
-    public partial class StyleCard : UserControl
+    public partial class UC款式卡片 : DevExpress.XtraEditors.XtraUserControl
     {
         public String kuanshiid = "";
         public String kuanshimingcheng = "";
@@ -35,12 +35,12 @@ namespace mendian
         public String flag;
         public Frm门店下单选款式 frm;
 
-        public StyleCard()
+        public UC款式卡片()
         {
             InitializeComponent();
         }
 
-        public StyleCard(String flag, DataRow dr)
+        public UC款式卡片(String flag, DataRow dr)
         {
             InitializeComponent();
             this.flag = flag;
@@ -63,7 +63,7 @@ namespace mendian
             //sc.jiage = cd.jiage;
             this.picture = @"pic\" + dr["picn"].ToString();
         }
-        public StyleCard(Frm门店下单选款式 form, String flag, DataRow dr)
+        public UC款式卡片(Frm门店下单选款式 form, String flag, DataRow dr)
         {
             InitializeComponent();
             this.frm = form;

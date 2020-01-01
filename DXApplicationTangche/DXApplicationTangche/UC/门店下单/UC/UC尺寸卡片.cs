@@ -11,7 +11,7 @@ using DXApplicationTangche.UC.门店下单.form;
 
 namespace mendian
 {
-    public partial class ChiCunCard : UserControl
+    public partial class UC尺寸卡片 : DevExpress.XtraEditors.XtraUserControl
     {
         public String iTEM_CD = "";
         public String iTEM_VALUE = "";
@@ -21,11 +21,11 @@ namespace mendian
         //public ReviseStyle form;
         public Change change;
         public Frm门店下单选款式 frm;
-        public ChiCunCard()
+        public UC尺寸卡片()
         {
             InitializeComponent();
         }
-        public ChiCunCard(String itemcd, String itemvalue, String namecn,String fit_item_value,Change change)
+        public UC尺寸卡片(String itemcd, String itemvalue, String namecn,String fit_item_value,Change change)
         {
             iTEM_CD = itemcd;
             iTEM_VALUE = itemvalue;           
@@ -35,7 +35,7 @@ namespace mendian
             fIT_ITEM_VALUE = fit_item_value;
             this.change = change;          
         }
-        public ChiCunCard(String itemcd, String itemvalue, String namecn, String fit_item_value, Frm门店下单选款式 frm)
+        public UC尺寸卡片(String itemcd, String itemvalue, String namecn, String fit_item_value, Frm门店下单选款式 frm)
         {
             iTEM_CD = itemcd;
             iTEM_VALUE = itemvalue;

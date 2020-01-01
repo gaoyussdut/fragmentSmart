@@ -11,7 +11,7 @@ using DXApplicationTangche.UC.门店下单.form;
 
 namespace mendian
 {
-    public partial class MianLiaoCard : UserControl
+    public partial class UC面料卡片 : DevExpress.XtraEditors.XtraUserControl
     {
         public String mianliao;
         public String mianliaoid;
@@ -23,12 +23,12 @@ namespace mendian
 
         private Frm门店下单选款式 frm;
 
-        public MianLiaoCard()
+        public UC面料卡片()
         {
             InitializeComponent();
         }
 
-        public MianLiaoCard(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form, Frm门店下单选款式 frm)
+        public UC面料卡片(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form, Frm门店下单选款式 frm)
         {
             InitializeComponent();
             this.frm = frm;
@@ -49,7 +49,7 @@ namespace mendian
             }
         }
 
-        public MianLiaoCard(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form)
+        public UC面料卡片(String mianliao, String mianliaoid, String mianliaocd, String picurl, String picn, MianLiaochoose form)
         {
             InitializeComponent();
             this.flag = true;
@@ -69,7 +69,7 @@ namespace mendian
             }
         }
 
-        public MianLiaoCard(String pic)
+        public UC面料卡片(String pic)
         {
             InitializeComponent();
             this.flag = false;

@@ -252,7 +252,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// </summary>
         /// <param name="change"></param>
         /// <param name="uc"></param>
-        public static void insertS_Style_P(Change change, StyleCard uc)
+        public static void insertS_Style_P(Change change, UC款式卡片 uc)
         {
             Change.sTYLE_SIZE_CD = ImpService.SizeCD(change.chicun01.Text.Trim(), Change.stylesizedt);
             //DataRow drstyle = SQLmtm.GetDataRow("SELECT MAX(SYS_STYLE_ID) SYS_STYLE_ID FROM `s_style_p`");
@@ -551,7 +551,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// </summary>
         /// <param name="change"></param>
         /// <param name="sc"></param>
-        public static void LoadChiCunCard(Change change, StyleCard sc)
+        public static void LoadChiCunCard(Change change, UC款式卡片 sc)
         {
             DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
 " sp.FIT_ITEM_VALUE,\n" +
@@ -598,13 +598,13 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             width = 0;
             int i = 0;
             panelLocition = new PanelLocition(change.panel4.Width, change.panel4.Height, dt.Rows.Count);
-            ChiCunHead hhh = new ChiCunHead();
+            UC尺寸头 hhh = new UC尺寸头();
             ImpService.generateUserControl(hhh, i);
             change.panel4.Controls.Add(hhh);
             i++;
             foreach (DataRow dr in dt.Rows)
             {
-                ChiCunCard ccc = new ChiCunCard(dr["ITEM_CD"].ToString().Trim(), dr["ITEM_VALUE"].ToString(), dr["propertyNameCn"].ToString(), dr["FIT_ITEM_VALUE"].ToString(), change);
+                UC尺寸卡片 ccc = new UC尺寸卡片(dr["ITEM_CD"].ToString().Trim(), dr["ITEM_VALUE"].ToString(), dr["propertyNameCn"].ToString(), dr["FIT_ITEM_VALUE"].ToString(), change);
                 ImpService.generateUserControl(ccc, i);
                 change.panel4.Controls.Add(ccc);//将控件加入panel                
                 i++;
@@ -621,9 +621,9 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 "	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
             foreach (Control card in change.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     foreach (DataRow dr in dtt.Rows)
                     {
                         if (dr["pv1"].ToString() == c.iTEM_VALUE || dr["pv2"].ToString() == c.iTEM_VALUE)
@@ -750,9 +750,9 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             Fit_ValueDTo fitv = new Fit_ValueDTo();
             foreach (Control card in change.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     fitv.icadd(c.iTEM_CD);
                     fitv.ivadd(c.iTEM_VALUE);
                     fitv.fvadd(c.chengyi.Text);
@@ -799,9 +799,9 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             {
                 foreach (Control card in change.panel4.Controls)
                 {
-                    if (card is ChiCunCard)
+                    if (card is UC尺寸卡片)
                     {
-                        ChiCunCard c = (ChiCunCard)card;
+                        UC尺寸卡片 c = (UC尺寸卡片)card;
                         if (dr["ITEM_VALUE"].ToString() == c.iTEM_VALUE)
                         {
                             c.biaozhun.Text = dr["ITEM_FIT_VALUE"].ToString();
@@ -843,9 +843,9 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         {
             foreach (Control card in change.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     if (c.biaozhun.Text == "")
                     {
                         c.biaozhun.Text = "0";
@@ -896,9 +896,9 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             ImpService.TurnChiCunZero(change);
             foreach (Control card in change.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     c.chengyi.Text = (Convert.ToDouble(c.biaozhun.Text) + Convert.ToDouble(c.jia.Text) - Convert.ToDouble(c.jian.Text)).ToString();
                 }
             }
@@ -1059,7 +1059,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             {
                 if (dr["ITEM_VALUE"].ToString() != "mianliaoid")
                 {
-                    SheJiDianChooseCard chooseCard = new SheJiDianChooseCard(dr["id"].ToString(), dr["ITEM_NAME_CN"].ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["DEFAULT_NAME_CN"].ToString(), dr["DEFAULT_CD"].ToString(), dr["DEFAULT_VALUE"].ToString(), "");
+                    UC设计点选择 chooseCard = new UC设计点选择(dr["id"].ToString(), dr["ITEM_NAME_CN"].ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["DEFAULT_NAME_CN"].ToString(), dr["DEFAULT_CD"].ToString(), dr["DEFAULT_VALUE"].ToString(), "");
                     ArrayUC(chooseCard, i);
                     change.panel6.Controls.Add(chooseCard);
                     i++;
@@ -1197,12 +1197,12 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// <param name="change"></param>
         public static void DynamicSaveDesign(Change change)
         {
-            SheJiDianChooseCard c = new SheJiDianChooseCard();
+            UC设计点选择 c = new UC设计点选择();
             foreach (Control card in change.panel6.Controls)
             {
-                if (card is SheJiDianChooseCard)
+                if (card is UC设计点选择)
                 {
-                    c = (SheJiDianChooseCard)card;
+                    c = (UC设计点选择)card;
                     SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" },
 new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, "1", "0" });
                 }
@@ -1589,7 +1589,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// 标准款s_style_p写入数据
         /// </summary>
         /// <param name="uc"></param>
-        public static void insertS_Style_P(StyleCard uc)
+        public static void insertS_Style_P(UC款式卡片 uc)
         {
             SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" },
     new string[] { Change.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, MianLiaochoose.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Change.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
@@ -1612,7 +1612,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             {
                 if (dr["ITEM_VALUE"].ToString() != "mianliaoid")
                 {
-                    SheJiDianChooseCard chooseCard = new SheJiDianChooseCard(dr["id"].ToString(), dr["ITEM_NAME_CN"].ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["DEFAULT_NAME_CN"].ToString(), dr["DEFAULT_CD"].ToString(), dr["DEFAULT_VALUE"].ToString(), "");
+                    UC设计点选择 chooseCard = new UC设计点选择(dr["id"].ToString(), dr["ITEM_NAME_CN"].ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["DEFAULT_NAME_CN"].ToString(), dr["DEFAULT_CD"].ToString(), dr["DEFAULT_VALUE"].ToString(), "");
                     ArrayUC(chooseCard, i);
                     frm.panel3.Controls.Add(chooseCard);
                     i++;
@@ -1673,14 +1673,14 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             width = 0;
             int i = 0;
             panelLocition = new PanelLocition(frm.panel4.Width, frm.panel4.Height, dt.Rows.Count);
-            ChiCunHead hhh = new ChiCunHead();
+            UC尺寸头 hhh = new UC尺寸头();
             ImpService.generateUserControl(hhh, i);
             frm.panel4.Controls.Clear();
             frm.panel4.Controls.Add(hhh);
             i++;
             foreach (DataRow dr in dt.Rows)
             {
-                ChiCunCard ccc = new ChiCunCard(dr["ITEM_CD"].ToString().Trim(), dr["ITEM_VALUE"].ToString(), dr["propertyNameCn"].ToString(), dr["FIT_ITEM_VALUE"].ToString(), frm);
+                UC尺寸卡片 ccc = new UC尺寸卡片(dr["ITEM_CD"].ToString().Trim(), dr["ITEM_VALUE"].ToString(), dr["propertyNameCn"].ToString(), dr["FIT_ITEM_VALUE"].ToString(), frm);
                 ImpService.generateUserControl(ccc, i);
                 frm.panel4.Controls.Add(ccc);//将控件加入panel                
                 i++;
@@ -1697,9 +1697,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 "	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
             foreach (Control card in frm.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     foreach (DataRow dr in dtt.Rows)
                     {
                         if (dr["pv1"].ToString() == c.iTEM_VALUE || dr["pv2"].ToString() == c.iTEM_VALUE)
@@ -1722,9 +1722,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             Fit_ValueDTo fitv = new Fit_ValueDTo();
             foreach (Control card in frm.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     fitv.icadd(c.iTEM_CD);
                     fitv.ivadd(c.iTEM_VALUE);
                     fitv.fvadd(c.chengyi.Text);
@@ -1759,9 +1759,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         {
             foreach (Control card in frm.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     if (c.biaozhun.Text == "")
                     {
                         c.biaozhun.Text = "0";
@@ -1785,12 +1785,12 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// <param name="dto"></param>
         public static void DynamicSaveDesign(Frm门店下单选款式 frm, Dto定制下单 dto)
         {
-            SheJiDianChooseCard c = new SheJiDianChooseCard();
+            UC设计点选择 c = new UC设计点选择();
             foreach (Control card in frm.panel3.Controls)
             {
-                if (card is SheJiDianChooseCard)
+                if (card is UC设计点选择)
                 {
-                    c = (SheJiDianChooseCard)card;
+                    c = (UC设计点选择)card;
                     dto.build设计点(c.PitemCd, c.PitemValue, c.itemValue, "1", "0", c.itemName, c.PitemName, c.pic);
                     //                    SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" },
                     //new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, "1", "0" });
@@ -1808,9 +1808,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             {
                 foreach (Control card in frm.panel4.Controls)
                 {
-                    if (card is ChiCunCard)
+                    if (card is UC尺寸卡片)
                     {
-                        ChiCunCard c = (ChiCunCard)card;
+                        UC尺寸卡片 c = (UC尺寸卡片)card;
                         if (dr["ITEM_VALUE"].ToString() == c.iTEM_VALUE)
                         {
                             c.biaozhun.Text = dr["ITEM_FIT_VALUE"].ToString();
@@ -1830,9 +1830,9 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             ImpService.TurnChiCunZero(frm);
             foreach (Control card in frm.panel4.Controls)
             {
-                if (card is ChiCunCard)
+                if (card is UC尺寸卡片)
                 {
-                    ChiCunCard c = (ChiCunCard)card;
+                    UC尺寸卡片 c = (UC尺寸卡片)card;
                     c.chengyi.Text = (Convert.ToDouble(c.biaozhun.Text) + Convert.ToDouble(c.jia.Text) - Convert.ToDouble(c.jian.Text)).ToString();
                 }
             }

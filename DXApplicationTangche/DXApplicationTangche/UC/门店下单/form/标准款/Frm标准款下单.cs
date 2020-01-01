@@ -117,7 +117,7 @@ namespace DXApplicationTangche
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
             {
-                StyleCard sc = new StyleCard("标准款下单具体", dr);
+                UC款式卡片 sc = new UC款式卡片("标准款下单具体", dr);
                 this.generateUserControl(sc, i);
                 this.panel1.Controls.Add(sc);//将控件加入panel
                 try

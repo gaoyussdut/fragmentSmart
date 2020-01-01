@@ -24,13 +24,13 @@ namespace mendian
         //private List<ReducedFkeyField> fields = new List<ReducedFkeyField>();
         private String tkid;
         //private Dictionary<String, String> relationCaptionAndKey = new Dictionary<string, string>();
-        private StyleCard uc = new StyleCard();
+        private UC款式卡片 uc = new UC款式卡片();
         public Change()
         {
             this.WindowState = FormWindowState.Maximized;//窗体最大化
             InitializeComponent();
         }
-        public Change(StyleCard uc)
+        public Change(UC款式卡片 uc)
         {
             this.WindowState = FormWindowState.Maximized;//窗体最大化
             this.uc = uc;

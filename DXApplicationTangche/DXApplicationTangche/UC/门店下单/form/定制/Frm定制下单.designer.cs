@@ -35,7 +35,7 @@ namespace mendian
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.label5 = new System.Windows.Forms.Label();
-            this.fenYeLan1 = new mendian.FenYeLan();
+            this.fenYeLan1 = new mendian.UC分页();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -589,7 +589,7 @@ namespace mendian
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private FenYeLan fenYeLan1;
+        private UC分页 fenYeLan1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private System.Windows.Forms.Label label5;

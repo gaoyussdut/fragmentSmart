@@ -190,11 +190,11 @@
       <DependentUpon>XtraForm门店验货.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\OrderModel.cs" />
-    <Compile Include="UC\门店下单\UC\ChiCunHead.cs">
+    <Compile Include="UC\门店下单\UC\UC尺寸头.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\UC\ChiCunHead.designer.cs">
-      <DependentUpon>ChiCunHead.cs</DependentUpon>
+    <Compile Include="UC\门店下单\UC\UC尺寸头.designer.cs">
+      <DependentUpon>UC尺寸头.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\form\定制\Frm设计点.cs">
       <SubType>Form</SubType>
@@ -208,11 +208,11 @@
     <Compile Include="UC\门店下单\form\定制\Frm定制下单修改尺寸.designer.cs">
       <DependentUpon>Frm定制下单修改尺寸.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\UC\ChiCunCard.cs">
+    <Compile Include="UC\门店下单\UC\UC尺寸卡片.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\UC\ChiCunCard.designer.cs">
-      <DependentUpon>ChiCunCard.cs</DependentUpon>
+    <Compile Include="UC\门店下单\UC\UC尺寸卡片.designer.cs">
+      <DependentUpon>UC尺寸卡片.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\ListToDatatable.cs" />
     <Compile Include="Utils\PanelLocition.cs" />
@@ -259,11 +259,11 @@
     <Compile Include="UC\门店下单\DTO\StylePic.cs" />
     <Compile Include="UC\门店下单\DTO\StylePicList.cs" />
     <Compile Include="UC\门店下单\DTO\StyleSize.cs" />
-    <Compile Include="UC\门店下单\UC\FenYeLan.cs">
+    <Compile Include="UC\门店下单\UC\UC分页.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\UC\FenYeLan.designer.cs">
-      <DependentUpon>FenYeLan.cs</DependentUpon>
+    <Compile Include="UC\门店下单\UC\UC分页.designer.cs">
+      <DependentUpon>UC分页.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\service\ImpService.cs" />
     <Compile Include="UC\门店下单\form\定制\Frm定制下单.cs">
@@ -272,11 +272,11 @@
     <Compile Include="UC\门店下单\form\定制\Frm定制下单.designer.cs">
       <DependentUpon>Frm定制下单.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\UC\MianLiaoCard.cs">
+    <Compile Include="UC\门店下单\UC\UC面料卡片.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\UC\MianLiaoCard.designer.cs">
-      <DependentUpon>MianLiaoCard.cs</DependentUpon>
+    <Compile Include="UC\门店下单\UC\UC面料卡片.designer.cs">
+      <DependentUpon>UC面料卡片.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\form\通用\Frm面料选择.cs">
       <SubType>Form</SubType>
@@ -284,23 +284,23 @@
     <Compile Include="UC\门店下单\form\通用\Frm面料选择.designer.cs">
       <DependentUpon>Frm面料选择.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\UC\SheJiDianCard.cs">
+    <Compile Include="UC\门店下单\UC\UC设计点卡片.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\UC\SheJiDianCard.designer.cs">
-      <DependentUpon>SheJiDianCard.cs</DependentUpon>
+    <Compile Include="UC\门店下单\UC\UC设计点卡片.designer.cs">
+      <DependentUpon>UC设计点卡片.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\UC\SheJiDianChooseCard.cs">
+    <Compile Include="UC\门店下单\UC\UC设计点选择.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\UC\SheJiDianChooseCard.designer.cs">
-      <DependentUpon>SheJiDianChooseCard.cs</DependentUpon>
+    <Compile Include="UC\门店下单\UC\UC设计点选择.designer.cs">
+      <DependentUpon>UC设计点选择.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\UC\StyleCard.cs">
+    <Compile Include="UC\门店下单\UC\UC款式卡片.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC\门店下单\UC\StyleCard.Designer.cs">
-      <DependentUpon>StyleCard.cs</DependentUpon>
+    <Compile Include="UC\门店下单\UC\UC款式卡片.Designer.cs">
+      <DependentUpon>UC款式卡片.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\通用\WaitForm.cs">
       <SubType>Form</SubType>
@@ -377,8 +377,8 @@
     <EmbeddedResource Include="UC\库存\门店验货\XtraForm门店验货.resx">
       <DependentUpon>XtraForm门店验货.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\UC\ChiCunHead.resx">
-      <DependentUpon>ChiCunHead.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\UC\UC尺寸头.resx">
+      <DependentUpon>UC尺寸头.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\库存\XtraUC库存一览.resx">
       <DependentUpon>XtraUC库存一览.cs</DependentUpon>
@@ -392,8 +392,8 @@
     <EmbeddedResource Include="UC\门店下单\form\定制\Frm定制下单修改尺寸.resx">
       <DependentUpon>Frm定制下单修改尺寸.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\UC\ChiCunCard.resx">
-      <DependentUpon>ChiCunCard.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\UC\UC尺寸卡片.resx">
+      <DependentUpon>UC尺寸卡片.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\客户管理\CreateCustomer.resx">
       <DependentUpon>CreateCustomer.cs</DependentUpon>
@@ -410,26 +410,26 @@
     <EmbeddedResource Include="UC\门店下单\form\通用\StyleChange.resx">
       <DependentUpon>StyleChange.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\UC\FenYeLan.resx">
-      <DependentUpon>FenYeLan.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\UC\UC分页.resx">
+      <DependentUpon>UC分页.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\定制\Frm定制下单.resx">
       <DependentUpon>Frm定制下单.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\UC\MianLiaoCard.resx">
-      <DependentUpon>MianLiaoCard.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\UC\UC面料卡片.resx">
+      <DependentUpon>UC面料卡片.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\通用\Frm面料选择.resx">
       <DependentUpon>Frm面料选择.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\UC\SheJiDianCard.resx">
-      <DependentUpon>SheJiDianCard.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\UC\UC设计点卡片.resx">
+      <DependentUpon>UC设计点卡片.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\UC\SheJiDianChooseCard.resx">
-      <DependentUpon>SheJiDianChooseCard.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\UC\UC设计点选择.resx">
+      <DependentUpon>UC设计点选择.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\UC\StyleCard.resx">
-      <DependentUpon>StyleCard.cs</DependentUpon>
+    <EmbeddedResource Include="UC\门店下单\UC\UC款式卡片.resx">
+      <DependentUpon>UC款式卡片.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

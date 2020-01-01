@@ -13,14 +13,14 @@ namespace mendian
     public partial class DefaultSheJiDian : Form
     {
         private PanelLocition panelLocition;
-        public SheJiDianChooseCard card = new SheJiDianChooseCard();
+        public UC设计点选择 card = new UC设计点选择();
         int height = 0;//用户控件纵坐标
         int width = 0;  //用户控件横坐标
         public DefaultSheJiDian()
         {
             InitializeComponent();
         }
-        public DefaultSheJiDian(SheJiDianChooseCard card)
+        public DefaultSheJiDian(UC设计点选择 card)
         {
             InitializeComponent();
             this.card = card;
@@ -45,12 +45,12 @@ namespace mendian
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach(DataRow dr in dt.Rows)
             {
-                SheJiDianCard card = new SheJiDianCard(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["picn"].ToString(),this,this.card);
+                UC设计点卡片 card = new UC设计点卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), dr["picn"].ToString(),this,this.card);
                 generateUserControl(card, i);
                 this.panel1.Controls.Add(card);
                 i++;
             }
-            SheJiDianCard carD = new SheJiDianCard("无", this.card.PitemValue, "无", "", this, this.card);
+            UC设计点卡片 carD = new UC设计点卡片("无", this.card.PitemValue, "无", "", this, this.card);
             generateUserControl(carD, i);
             this.panel1.Controls.Add(carD);
             this.splashScreenManager1.CloseWaitForm();

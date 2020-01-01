@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class ChiCunCard
+    partial class UC尺寸卡片
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -42,9 +42,10 @@
             this.tiaozheng.AutoSize = true;
             this.tiaozheng.BackColor = System.Drawing.Color.White;
             this.tiaozheng.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tiaozheng.Location = new System.Drawing.Point(314, 7);
+            this.tiaozheng.Location = new System.Drawing.Point(419, 9);
+            this.tiaozheng.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.tiaozheng.Name = "tiaozheng";
-            this.tiaozheng.Size = new System.Drawing.Size(22, 24);
+            this.tiaozheng.Size = new System.Drawing.Size(28, 30);
             this.tiaozheng.TabIndex = 158;
             this.tiaozheng.Text = "0";
             // 
@@ -53,9 +54,10 @@
             this.kehu.AutoSize = true;
             this.kehu.BackColor = System.Drawing.Color.White;
             this.kehu.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.kehu.Location = new System.Drawing.Point(226, 7);
+            this.kehu.Location = new System.Drawing.Point(301, 9);
+            this.kehu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.kehu.Name = "kehu";
-            this.kehu.Size = new System.Drawing.Size(22, 24);
+            this.kehu.Size = new System.Drawing.Size(28, 30);
             this.kehu.TabIndex = 157;
             this.kehu.Text = "0";
             // 
@@ -64,9 +66,10 @@
             this.chengyi.AutoSize = true;
             this.chengyi.BackColor = System.Drawing.Color.White;
             this.chengyi.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.chengyi.Location = new System.Drawing.Point(676, 5);
+            this.chengyi.Location = new System.Drawing.Point(901, 6);
+            this.chengyi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.chengyi.Name = "chengyi";
-            this.chengyi.Size = new System.Drawing.Size(22, 24);
+            this.chengyi.Size = new System.Drawing.Size(28, 30);
             this.chengyi.TabIndex = 156;
             this.chengyi.Text = "0";
             // 
@@ -74,9 +77,10 @@
             // 
             this.jian.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.jian.ForeColor = System.Drawing.Color.Red;
-            this.jian.Location = new System.Drawing.Point(583, 5);
+            this.jian.Location = new System.Drawing.Point(777, 6);
+            this.jian.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.jian.Name = "jian";
-            this.jian.Size = new System.Drawing.Size(54, 26);
+            this.jian.Size = new System.Drawing.Size(71, 30);
             this.jian.TabIndex = 155;
             this.jian.Text = "0";
             this.jian.TextChanged += new System.EventHandler(this.jian_TextChanged);
@@ -86,9 +90,10 @@
             // 
             this.jia.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.jia.ForeColor = System.Drawing.Color.Blue;
-            this.jia.Location = new System.Drawing.Point(496, 5);
+            this.jia.Location = new System.Drawing.Point(661, 6);
+            this.jia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.jia.Name = "jia";
-            this.jia.Size = new System.Drawing.Size(54, 26);
+            this.jia.Size = new System.Drawing.Size(71, 30);
             this.jia.TabIndex = 154;
             this.jia.Text = "0";
             this.jia.TextChanged += new System.EventHandler(this.jia_TextChanged);
@@ -97,9 +102,10 @@
             // biaozhun
             // 
             this.biaozhun.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.biaozhun.Location = new System.Drawing.Point(399, 5);
+            this.biaozhun.Location = new System.Drawing.Point(532, 6);
+            this.biaozhun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.biaozhun.Name = "biaozhun";
-            this.biaozhun.Size = new System.Drawing.Size(70, 26);
+            this.biaozhun.Size = new System.Drawing.Size(92, 30);
             this.biaozhun.TabIndex = 153;
             this.biaozhun.Text = "0";
             // 
@@ -107,15 +113,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(3, 5);
+            this.label1.Location = new System.Drawing.Point(4, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 24);
+            this.label1.Size = new System.Drawing.Size(43, 30);
             this.label1.TabIndex = 152;
             this.label1.Text = "·";
             // 
             // ChiCunCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.tiaozheng);
@@ -125,8 +132,9 @@
             this.Controls.Add(this.jia);
             this.Controls.Add(this.biaozhun);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ChiCunCard";
-            this.Size = new System.Drawing.Size(751, 34);
+            this.Size = new System.Drawing.Size(1001, 42);
             this.ResumeLayout(false);
             this.PerformLayout();
 

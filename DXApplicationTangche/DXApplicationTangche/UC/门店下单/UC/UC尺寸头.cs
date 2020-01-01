@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class ChiCunHead : UserControl
+    public partial class UC尺寸头 : DevExpress.XtraEditors.XtraUserControl
     {
-        public ChiCunHead()
+        public UC尺寸头()
         {
             InitializeComponent();
         }

@@ -67,7 +67,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
             {
-                StyleCard sc = new StyleCard(this, "门店下单选款式", dr);
+                UC款式卡片 sc = new UC款式卡片(this, "门店下单选款式", dr);
                 this.generateUserControl(sc, i);
                 this.panel1.Controls.Add(sc);//将控件加入panel
                 try
@@ -186,12 +186,12 @@ namespace DXApplicationTangche.UC.门店下单.form
             {
                 this.pics.Add(new Pic各种(Image.FromFile(@"pic\SSHIRT.jpg"),this.mianliaoname.Text,"面料"));
             }
-            SheJiDianChooseCard c = new SheJiDianChooseCard();
+            UC设计点选择 c = new UC设计点选择();
             foreach (Control card in this.panel3.Controls)
             {
-                if (card is SheJiDianChooseCard)
+                if (card is UC设计点选择)
                 {
-                    c = (SheJiDianChooseCard)card;
+                    c = (UC设计点选择)card;
                     try
                     {
                         this.pics.Add(new Pic各种(Image.FromFile(@"pic\"+ImpService.GetPicn(c.itemValue)),c.itemName,c.PitemName));

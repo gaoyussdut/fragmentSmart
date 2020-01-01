@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class SheJiDianChooseCard
+    partial class UC设计点选择
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -35,9 +35,10 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(408, 5);
+            this.simpleButton1.Location = new System.Drawing.Point(544, 6);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(100, 29);
             this.simpleButton1.TabIndex = 90;
             this.simpleButton1.Text = "选择";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -46,31 +47,34 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 16F);
-            this.label1.Location = new System.Drawing.Point(-1, 4);
+            this.label1.Location = new System.Drawing.Point(-1, 5);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 22);
+            this.label1.Size = new System.Drawing.Size(39, 27);
             this.label1.TabIndex = 89;
             this.label1.Text = "·";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(192, 3);
+            this.textBox1.Location = new System.Drawing.Point(256, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(199, 26);
+            this.textBox1.Size = new System.Drawing.Size(264, 30);
             this.textBox1.TabIndex = 91;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
-            // SheJiDianChooseCard
+            // UC设计点卡片
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label1);
-            this.Name = "SheJiDianChooseCard";
-            this.Size = new System.Drawing.Size(490, 32);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "UC设计点卡片";
+            this.Size = new System.Drawing.Size(653, 40);
             this.ResumeLayout(false);
             this.PerformLayout();
 

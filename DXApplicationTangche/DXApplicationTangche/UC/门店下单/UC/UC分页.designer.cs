@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class FenYeLan
+    partial class UC分页
     {
         /// <summary> 
         /// 必需的设计器变量。

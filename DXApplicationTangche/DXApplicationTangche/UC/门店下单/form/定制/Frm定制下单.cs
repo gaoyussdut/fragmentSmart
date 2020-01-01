@@ -176,7 +176,7 @@ namespace mendian
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
             {
-                StyleCard sc = new StyleCard("Change", dr);
+                UC款式卡片 sc = new UC款式卡片("Change", dr);
                 this.generateUserControl(sc, i);
                 this.panel1.Controls.Add(sc);//将控件加入panel
                 try

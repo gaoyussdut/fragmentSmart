@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class SheJiDianChooseCard : UserControl
+    public partial class UC设计点选择 : DevExpress.XtraEditors.XtraUserControl
     {
         public String id { get; set; }
         public String PitemName { get; set; }
@@ -22,11 +22,11 @@ namespace mendian
         public String picurl { get; set; }
         public String picn { get; set; }
         public Image pic { get; set; }
-        public SheJiDianChooseCard()
+        public UC设计点选择()
         {
             InitializeComponent();
         }
-        public SheJiDianChooseCard(String id,String pitemname,String pitemcd,String pitemvalue,String itemname,String itemcd,String itemvalue,String picurl)
+        public UC设计点选择(String id,String pitemname,String pitemcd,String pitemvalue,String itemname,String itemcd,String itemvalue,String picurl)
         {
             InitializeComponent();
             this.id = id;

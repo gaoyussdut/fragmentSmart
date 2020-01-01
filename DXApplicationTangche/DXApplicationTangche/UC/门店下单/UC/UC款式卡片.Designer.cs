@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class StyleCard
+    partial class UC款式卡片
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -36,9 +36,10 @@
             // stylecardlabel
             // 
             this.stylecardlabel.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.stylecardlabel.Location = new System.Drawing.Point(3, 178);
+            this.stylecardlabel.Location = new System.Drawing.Point(4, 222);
+            this.stylecardlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.stylecardlabel.Name = "stylecardlabel";
-            this.stylecardlabel.Size = new System.Drawing.Size(136, 40);
+            this.stylecardlabel.Size = new System.Drawing.Size(181, 50);
             this.stylecardlabel.TabIndex = 1;
             this.stylecardlabel.Text = "款式";
             // 
@@ -47,21 +48,23 @@
             this.stylecardpicbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.stylecardpicbox.Image = global::DXApplicationTangche.Properties.Resources.QQ图片20190724112541;
             this.stylecardpicbox.Location = new System.Drawing.Point(0, 0);
+            this.stylecardpicbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.stylecardpicbox.Name = "stylecardpicbox";
-            this.stylecardpicbox.Size = new System.Drawing.Size(140, 175);
+            this.stylecardpicbox.Size = new System.Drawing.Size(187, 219);
             this.stylecardpicbox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.stylecardpicbox.TabIndex = 0;
             this.stylecardpicbox.TabStop = false;
             this.stylecardpicbox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // StyleCard
+            // UC款式卡片
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.stylecardlabel);
             this.Controls.Add(this.stylecardpicbox);
-            this.Name = "StyleCard";
-            this.Size = new System.Drawing.Size(142, 221);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "UC款式卡片";
+            this.Size = new System.Drawing.Size(189, 276);
             ((System.ComponentModel.ISupportInitialize)(this.stylecardpicbox)).EndInit();
             this.ResumeLayout(false);
 

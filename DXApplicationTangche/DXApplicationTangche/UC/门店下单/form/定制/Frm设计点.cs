@@ -13,7 +13,7 @@ namespace mendian
 {
     public partial class AllSheJiDian : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
-        private SheJiDianChooseCard card;
+        private UC设计点选择 card;
         private PanelLocition panelLocition;
         private int height = 0;
         private int width = 0;
@@ -22,7 +22,7 @@ namespace mendian
             InitializeComponent();
         }
 
-        public AllSheJiDian(SheJiDianChooseCard card)
+        public AllSheJiDian(UC设计点选择 card)
         {
             InitializeComponent();
             this.card = card;
@@ -97,7 +97,7 @@ namespace mendian
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
             {
-                SheJiDianCard card = new SheJiDianCard(dr["itemNameCn"].ToString(), dr["itemCode"].ToString(), dr["itemValue"].ToString(), dr["picn"].ToString(), this, this.card);
+                UC设计点卡片 card = new UC设计点卡片(dr["itemNameCn"].ToString(), dr["itemCode"].ToString(), dr["itemValue"].ToString(), dr["picn"].ToString(), this, this.card);
                 this.generateUserControl(card, i);
                 this.panel1.Controls.Add(card);//将控件加入panel
                 //oc.pictureBox1.Click += new EventHandler(this.picture_Click);

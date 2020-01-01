@@ -89,7 +89,7 @@ namespace mendian
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    MianLiaoCard oc = new MianLiaoCard(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+                    UC面料卡片 oc = new UC面料卡片(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
                     this.generateUserControl(oc, i);
                     this.panel1.Controls.Add(oc);//将控件加入panel
                                                  //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
@@ -112,7 +112,7 @@ namespace mendian
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    MianLiaoCard oc = new MianLiaoCard(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+                    UC面料卡片 oc = new UC面料卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
                     this.generateUserControl(oc, i);
                     this.panel1.Controls.Add(oc);//将控件加入panel
                                                  //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
@@ -148,7 +148,7 @@ namespace mendian
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    MianLiaoCard oc = new MianLiaoCard(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+                    UC面料卡片 oc = new UC面料卡片(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
                     this.generateUserControl(oc, i);
                     this.panel1.Controls.Add(oc);//将控件加入panel
                                                  //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
@@ -161,7 +161,7 @@ namespace mendian
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    MianLiaoCard oc = new MianLiaoCard(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+                    UC面料卡片 oc = new UC面料卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
                     this.generateUserControl(oc, i);
                     this.panel1.Controls.Add(oc);//将控件加入panel
                                                  //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
@@ -190,7 +190,7 @@ namespace mendian
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    MianLiaoCard oc = new MianLiaoCard(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+                    UC面料卡片 oc = new UC面料卡片(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
                     this.generateUserControl(oc, i);
                     this.panel1.Controls.Add(oc);//将控件加入panel
                                                  //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
@@ -203,7 +203,7 @@ namespace mendian
                 panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
                 foreach (DataRow dr in dt.Rows)
                 {
-                    MianLiaoCard oc = new MianLiaoCard(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+                    UC面料卡片 oc = new UC面料卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
                     this.generateUserControl(oc, i);
                     this.panel1.Controls.Add(oc);//将控件加入panel
                                                  //oc.pictureBox1.Click += new EventHandler(this.picture_Click);

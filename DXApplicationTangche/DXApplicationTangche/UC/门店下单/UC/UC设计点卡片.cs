@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class SheJiDianCard : UserControl
+    public partial class UC设计点卡片 : DevExpress.XtraEditors.XtraUserControl
     {
         public String itemName { get; set; } = "";
         public String itemCd { get; set; } = "";
         public String itemValue { get; set; } = "";
         public String picN { get; set; } = "";
-        public SheJiDianChooseCard card = new SheJiDianChooseCard();
+        public UC设计点选择 card = new UC设计点选择();
         public AllSheJiDian allform = new AllSheJiDian();
         public DefaultSheJiDian form;
         
         private bool flag;
-        public SheJiDianCard()
+        public UC设计点卡片()
         {
             InitializeComponent();
         }
-        public SheJiDianCard(String itemname, String itemcd, String itemvalue, String picn, DefaultSheJiDian form, SheJiDianChooseCard card)
+        public UC设计点卡片(String itemname, String itemcd, String itemvalue, String picn, DefaultSheJiDian form, UC设计点选择 card)
         {
             InitializeComponent();
             this.flag = true;
@@ -44,7 +44,7 @@ namespace mendian
             {
             }
         }
-        public SheJiDianCard(String itemname, String itemcd, String itemvalue, String picn, AllSheJiDian allform, SheJiDianChooseCard card)
+        public UC设计点卡片(String itemname, String itemcd, String itemvalue, String picn, AllSheJiDian allform, UC设计点选择 card)
         {
             InitializeComponent();
             this.flag = false;

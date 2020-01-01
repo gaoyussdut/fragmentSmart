@@ -16,12 +16,12 @@ namespace DXApplicationTangche
     {
         public DataTable chooseStyleSize = new DataTable();
         public PrintedView printedView = new PrintedView();
-        public StyleCard styleCard { get; set; }
+        public UC款式卡片 styleCard { get; set; }
         public Frm标准款下单具体()
         {
             InitializeComponent();
         }
-        public Frm标准款下单具体(StyleCard styleCard)
+        public Frm标准款下单具体(UC款式卡片 styleCard)
         { 
             ImpService.ClearStaticVariable();
             this.WindowState = FormWindowState.Maximized;//窗体最大化

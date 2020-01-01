@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class FenYeLan : UserControl
+    public partial class UC分页 : UserControl
     {
-        public FenYeLan()
+        public UC分页()
         {
             InitializeComponent();
         }
