@@ -203,6 +203,37 @@ namespace DXApplicationTangche.UC.门店下单.form
                 }
             }
         }
+
+        private void tileView1_ItemRightClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("确认选择该款式？", "款式选择", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Dto定制下单.Style_Id = this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleId").ToString();
+                this.Dto定制下单.STYLE_CATEGORY_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString();
+                this.Dto定制下单.STYLE_FIT_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_FIT_CD").ToString();
+                this.Dto定制下单.STYLE_SIZE_GROUP_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_GROUP_CD").ToString();
+                this.Dto定制下单.STYLE_SIZE_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_CD").ToString();
+                this.Dto定制下单.SYTLE_FABRIC_ID = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialId").ToString();
+
+                //  控件行为
+                this.mianliaoname.Text = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialNameCn").ToString();
+                ImpService.LoadChiCunCard(this);
+                ImpService.LoadSheJiDian(this, this.Dto定制下单.Style_Id);
+                Change.stylesizedt = ImpService.StyleCombobox(this.Dto定制下单.Style_Id);
+                if (Change.stylesizedt != null)
+                {
+                    foreach (DataRow dr in Change.stylesizedt.Rows)
+                    {
+                        //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
+                        this.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
+                    }
+                }
+                this.addPics();
+                this.xtraTabControl1.SelectedTabPage = this.xtraTabControl1.TabPages[1];
+            }
+
+        }
     }
 
     public class Pic各种

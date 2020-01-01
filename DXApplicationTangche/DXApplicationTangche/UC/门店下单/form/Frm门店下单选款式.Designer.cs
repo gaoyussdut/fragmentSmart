@@ -85,10 +85,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.xtraTabPage选择款式 = new DevExpress.XtraTab.XtraTabPage();
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPageFabric = new DevExpress.XtraTab.XtraTabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.mianliaoname = new System.Windows.Forms.TextBox();
@@ -126,10 +122,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            this.xtraTabPage选择款式.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
-            this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.xtraTabPageFabric.SuspendLayout();
             this.panel2.SuspendLayout();
             this.xtraTabPageDesign.SuspendLayout();
@@ -212,7 +204,6 @@
             this.xtraTabControl1.Size = new System.Drawing.Size(1066, 437);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage选择款式,
             this.xtraTabPageStyle,
             this.xtraTabPageFabric,
             this.xtraTabPageDesign,
@@ -356,6 +347,7 @@
             this.tileView1.TileTemplate.Add(tileViewItemElement3);
             this.tileView1.TileTemplate.Add(tileViewItemElement4);
             this.tileView1.TileTemplate.Add(tileViewItemElement5);
+            this.tileView1.ItemRightClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemRightClick);
             // 
             // colStyleId
             // 
@@ -583,51 +575,6 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // xtraTabPage选择款式
-            // 
-            this.xtraTabPage选择款式.Controls.Add(this.tablePanel1);
-            this.xtraTabPage选择款式.Name = "xtraTabPage选择款式";
-            this.xtraTabPage选择款式.Size = new System.Drawing.Size(1064, 401);
-            this.xtraTabPage选择款式.Text = "选择款式";
-            // 
-            // tablePanel1
-            // 
-            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 5F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 55F)});
-            this.tablePanel1.Controls.Add(this.label1);
-            this.tablePanel1.Controls.Add(this.textEdit1);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Name = "tablePanel1";
-            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 31.60001F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1064, 401);
-            this.tablePanel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.tablePanel1.SetColumn(this.label1, 0);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(3, 7);
-            this.label1.Name = "label1";
-            this.tablePanel1.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(83, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "回车检索：";
-            // 
-            // textEdit1
-            // 
-            this.tablePanel1.SetColumn(this.textEdit1, 1);
-            this.textEdit1.Location = new System.Drawing.Point(92, 4);
-            this.textEdit1.MenuManager = this.ribbonControl1;
-            this.textEdit1.Name = "textEdit1";
-            this.tablePanel1.SetRow(this.textEdit1, 0);
-            this.textEdit1.Size = new System.Drawing.Size(969, 24);
-            this.textEdit1.TabIndex = 1;
-            // 
             // xtraTabPageFabric
             // 
             this.xtraTabPageFabric.Controls.Add(this.panel2);
@@ -850,11 +797,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            this.xtraTabPage选择款式.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
-            this.tablePanel1.ResumeLayout(false);
-            this.tablePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.xtraTabPageFabric.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -916,10 +858,6 @@
         private DevExpress.XtraBars.BarEditItem barEditItemNumber;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage选择款式;
-        private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraGrid.GridControl gridControl选择款式;
         private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraGrid.Columns.TileViewColumn colStyleId;
