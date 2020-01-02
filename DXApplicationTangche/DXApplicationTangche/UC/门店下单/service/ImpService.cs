@@ -2080,7 +2080,6 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 "	v_style_p\n" +
                 "	order by CREATE_DATE";
             List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
-            List<版型Dto> 版型Dtos = new List<版型Dto>();
 
             List<String> FIT_CDs = new List<string>();  //  版型id
             DataTable dataTable = SQLmtm.GetDataTable(sql);
@@ -2091,6 +2090,8 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                     FIT_CDs.Add(款式图片一览Dto.STYLE_FIT_CD);    //  版型
                 }
             }
+            款式异常Model model =new 款式异常Model(款式图片一览Dtos);
+
             if (FIT_CDs.Count > 0) {
                 sql = "SELECT DISTINCT\n" +
                     "	FIT_CD,\n" +
@@ -2105,11 +2106,12 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                     "	SIZEGROUP_CD,\n" +
                     "	SIZE_CD";
                 dataTable = SQLmtm.GetDataTable(sql);
-                foreach (DataRow dataRow in dataTable.Rows) {
-                    版型Dtos.Add(new 版型Dto(dataRow));
-                }
+                //List<String> EGS_GROUP_SIZEs = new List<string>();   //  数字尺码
+                //List<String> IGS_GROUP_SIZEs = new List<string>();  //  英文尺码
+                model.generateSize_Fit(dataTable);
             }
-            return new 款式异常Model(款式图片一览Dtos, 版型Dtos);
+            
+            return model;
         }
     }
 }

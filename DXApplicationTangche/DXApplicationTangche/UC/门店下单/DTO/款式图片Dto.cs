@@ -70,6 +70,78 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public Image Picture { get; set; }
         public Byte ENABLE_FLAG { get; set; }
         public DateTime CREATE_DATE { get; set; }
+
+        public String ErrorMessage { get; set; }
+
+        public List<版型尺码DTO> 版型尺码DTOs { get => 版型尺码Dtos; set => 版型尺码Dtos = value; }
+
+        private List<版型尺码DTO> 版型尺码Dtos = new List<版型尺码DTO>();
+
+        public 款式图片一览Dto build版型尺码(
+            Dictionary<String, List<String>> EGS_GROUP_SIZEs    //  数字尺码
+            , Dictionary<String, List<String>> IGS_GROUP_SIZEs  //  英文尺码
+            )
+        {
+            try
+            {
+                if (!EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD))
+                {
+                    this.ErrorMessage += "[没有数字尺码]";
+                }
+                if (!IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)) {
+                    this.ErrorMessage += "[没有英文尺码]";
+                }
+            }
+            catch {
+                this.ErrorMessage += "[没有尺寸值]";
+                return this;
+            }
+
+            if (
+                EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)
+                && IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)
+                && EGS_GROUP_SIZEs[this.STYLE_FIT_CD].Count == EGS_GROUP_SIZEs[this.STYLE_FIT_CD].Count
+                )
+            {
+                //  正常情况
+                for (int i = 0; i < EGS_GROUP_SIZEs[this.STYLE_FIT_CD].Count; i++)
+                {
+                    this.版型尺码Dtos.Add(
+                        new 版型尺码DTO(
+                            this.STYLE_FIT_CD
+                            , EGS_GROUP_SIZEs[this.STYLE_FIT_CD][i]
+                            , IGS_GROUP_SIZEs[this.STYLE_FIT_CD][i])
+                        );
+
+                }
+            } else if (!EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)&& IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)) {
+                //  没有数字尺码
+                for (int i = 0; i < IGS_GROUP_SIZEs[this.STYLE_FIT_CD].Count; i++)
+                {
+                    this.版型尺码Dtos.Add(
+                            new 版型尺码DTO(
+                                this.STYLE_FIT_CD
+                                , null
+                                , IGS_GROUP_SIZEs[this.STYLE_FIT_CD][i])
+                            );
+                }
+            }
+            else if (EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD) && !IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD))
+            {
+                //  没有数字尺码
+                for (int i = 0; i < EGS_GROUP_SIZEs[this.STYLE_FIT_CD].Count; i++)
+                {
+                    this.版型尺码Dtos.Add(
+                            new 版型尺码DTO(
+                                this.STYLE_FIT_CD
+                                , EGS_GROUP_SIZEs[this.STYLE_FIT_CD][i]
+                                , null)
+                            );
+                }
+
+            }
+            return this;
+        }
         public 款式图片一览Dto(DataRow dr) {
             this.SYS_STYLE_ID = dr["SYS_STYLE_ID"].ToString();
             this.CUSTOMER_COUNT_ID = dr["CUSTOMER_COUNT_ID"].ToString();
@@ -97,22 +169,22 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             {
                 this.Picture = Image.FromFile(@"pic\" + dr["PIC_NAME"].ToString());
             }
-            catch { 
+            catch {
+                this.ErrorMessage += "[没有款式图片]";
             }
             this.ENABLE_FLAG = Convert.ToByte(dr["ENABLE_FLAG"].ToString());
             this.CREATE_DATE = Convert.ToDateTime( dr["CREATE_DATE"].ToString());
         }
     }
 
-    public class 版型Dto { 
-        public String FIT_CD { get; set; }
-        public String SIZEGROUP_CD { get; set; }
-        public String SIZE_CD { get; set; }
-
-        public 版型Dto(DataRow dataRow) {
-            this.FIT_CD = dataRow["FIT_CD"].ToString();
-            this.SIZEGROUP_CD = dataRow["SIZEGROUP_CD"].ToString();
-            this.SIZE_CD = dataRow["SIZE_CD"].ToString();
+    public class 版型尺码DTO { 
+        public String FIT_CD { get; set; }  //  版型id
+        public String EGS_GROUP_SIZE { get; set; }  //  数字尺码
+        public String IGS_GROUP_SIZE { get; set; }   //  英文尺码
+        public 版型尺码DTO(String FIT_CD,String EGS_GROUP_SIZE,String IGS_GROUP_SIZE) {
+            this.FIT_CD = FIT_CD;
+            this.EGS_GROUP_SIZE = EGS_GROUP_SIZE;
+            this.IGS_GROUP_SIZE = IGS_GROUP_SIZE;
         }
     }
 }

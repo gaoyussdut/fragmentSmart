@@ -18,19 +18,18 @@ namespace DXApplicationTangche.UC.款式异常
         public Frm款式异常()
         {
             InitializeComponent();
-            this.款式异常Model = ImpService.getAllStyle().initData();
-            this.gridControl款式一览.DataSource = 款式异常Model.Views;
-            this.comboBox年份.DataSource = this.款式异常Model.List年份;
-            this.comboBox服装种类.DataSource = this.款式异常Model.List服装种类;
+
         }
 
         /// <summary>
         /// 刷新数据
         /// </summary>
         private void RefreshData() {
+
             this.款式异常Model.build款式异常Model(this.comboBox年份.Text, this.comboBox服装种类.Text);
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.tileView款式异常.RefreshData();
+
         }
 
         private void comboBox服装种类_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,9 +44,31 @@ namespace DXApplicationTangche.UC.款式异常
 
         private void simpleButton重置_Click(object sender, EventArgs e)
         {
+            this.splashScreenManager.ShowWaitForm();
+            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
+            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
+
             this.款式异常Model = ImpService.getAllStyle().initData();
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.tileView款式异常.RefreshData();
+            this.comboBox年份.DataSource = this.款式异常Model.List年份;
+            this.comboBox服装种类.DataSource = this.款式异常Model.List服装种类;
+
+            this.splashScreenManager.CloseWaitForm();
+        }
+
+        private void Frm款式异常_Load(object sender, EventArgs e)
+        {
+            this.splashScreenManager.ShowWaitForm();
+            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
+            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
+
+            this.款式异常Model = ImpService.getAllStyle().initData();
+            this.gridControl款式一览.DataSource = 款式异常Model.Views;
+            this.comboBox年份.DataSource = this.款式异常Model.List年份;
+            this.comboBox服装种类.DataSource = this.款式异常Model.List服装种类;
+
+            this.splashScreenManager.CloseWaitForm();
         }
     }
 }

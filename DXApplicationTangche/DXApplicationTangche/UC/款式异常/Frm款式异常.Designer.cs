@@ -40,22 +40,27 @@
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition7 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan2 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan3 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan4 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan5 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan6 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             this.colPicture = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.colSTYLE_PUBLISH_CATEGORY_CD = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colSTYLE_NAME_CN = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colSYTLE_YEAR = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colSYTLE_SEASON = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colErrorMessage = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.gridControl款式一览 = new DevExpress.XtraGrid.GridControl();
             this.tileView款式异常 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.colSYS_STYLE_ID = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -80,11 +85,11 @@
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.label服装种类 = new System.Windows.Forms.Label();
-            this.label年份 = new System.Windows.Forms.Label();
-            this.comboBox服装种类 = new System.Windows.Forms.ComboBox();
-            this.comboBox年份 = new System.Windows.Forms.ComboBox();
             this.simpleButton重置 = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBox年份 = new System.Windows.Forms.ComboBox();
+            this.comboBox服装种类 = new System.Windows.Forms.ComboBox();
+            this.label年份 = new System.Windows.Forms.Label();
+            this.label服装种类 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl款式一览)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView款式异常)).BeginInit();
@@ -154,6 +159,20 @@
             this.colSYTLE_SEASON.VisibleIndex = 12;
             this.colSYTLE_SEASON.Width = 94;
             // 
+            // colErrorMessage
+            // 
+            this.colErrorMessage.Caption = "异常信息";
+            this.colErrorMessage.FieldName = "ErrorMessage";
+            this.colErrorMessage.MinWidth = 25;
+            this.colErrorMessage.Name = "colErrorMessage";
+            this.colErrorMessage.Visible = true;
+            this.colErrorMessage.VisibleIndex = 23;
+            this.colErrorMessage.Width = 94;
+            // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
             // gridControl款式一览
             // 
             this.gridControl款式一览.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -192,7 +211,8 @@
             this.colPIC_URL,
             this.colPicture,
             this.colENABLE_FLAG,
-            this.colCREATE_DATE});
+            this.colCREATE_DATE,
+            this.colErrorMessage});
             this.tileView款式异常.ColumnSet.GroupColumn = this.colSTYLE_PUBLISH_CATEGORY_CD;
             this.tileView款式异常.GridControl = this.gridControl款式一览;
             this.tileView款式异常.Name = "tileView款式异常";
@@ -213,6 +233,7 @@
             this.tileView款式异常.TileRows.Add(tableRowDefinition4);
             this.tileView款式异常.TileRows.Add(tableRowDefinition5);
             this.tileView款式异常.TileRows.Add(tableRowDefinition6);
+            this.tileView款式异常.TileRows.Add(tableRowDefinition7);
             tableSpan1.ColumnSpan = 3;
             tableSpan1.RowIndex = 4;
             tableSpan2.ColumnSpan = 3;
@@ -224,11 +245,14 @@
             tableSpan5.ColumnSpan = 3;
             tableSpan5.RowIndex = 1;
             tableSpan5.RowSpan = 3;
+            tableSpan6.ColumnSpan = 5;
+            tableSpan6.RowIndex = 6;
             this.tileView款式异常.TileSpans.Add(tableSpan1);
             this.tileView款式异常.TileSpans.Add(tableSpan2);
             this.tileView款式异常.TileSpans.Add(tableSpan3);
             this.tileView款式异常.TileSpans.Add(tableSpan4);
             this.tileView款式异常.TileSpans.Add(tableSpan5);
+            this.tileView款式异常.TileSpans.Add(tableSpan6);
             tileViewItemElement1.Column = this.colPicture;
             tileViewItemElement1.ColumnIndex = 3;
             tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
@@ -261,11 +285,20 @@
             tileViewItemElement5.RowIndex = 5;
             tileViewItemElement5.Text = "colSYTLE_SEASON";
             tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.Appearance.Normal.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
+            tileViewItemElement6.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement6.Column = this.colErrorMessage;
+            tileViewItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement6.RowIndex = 6;
+            tileViewItemElement6.Text = "colErrorMessage";
+            tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement1);
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement2);
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement3);
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement4);
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement5);
+            this.tileView款式异常.TileTemplate.Add(tileViewItemElement6);
             // 
             // colSYS_STYLE_ID
             // 
@@ -506,39 +539,16 @@
             this.tablePanel1.Size = new System.Drawing.Size(340, 498);
             this.tablePanel1.TabIndex = 0;
             // 
-            // label服装种类
+            // simpleButton重置
             // 
-            this.label服装种类.AutoSize = true;
-            this.tablePanel1.SetColumn(this.label服装种类, 0);
-            this.label服装种类.Location = new System.Drawing.Point(3, 39);
-            this.label服装种类.Name = "label服装种类";
-            this.tablePanel1.SetRow(this.label服装种类, 0);
-            this.label服装种类.Size = new System.Drawing.Size(68, 18);
-            this.label服装种类.TabIndex = 0;
-            this.label服装种类.Text = "服装种类";
-            // 
-            // label年份
-            // 
-            this.label年份.AutoSize = true;
-            this.tablePanel1.SetColumn(this.label年份, 0);
-            this.label年份.Location = new System.Drawing.Point(3, 138);
-            this.label年份.Name = "label年份";
-            this.tablePanel1.SetRow(this.label年份, 1);
-            this.label年份.Size = new System.Drawing.Size(38, 18);
-            this.label年份.TabIndex = 1;
-            this.label年份.Text = "年份";
-            // 
-            // comboBox服装种类
-            // 
-            this.tablePanel1.SetColumn(this.comboBox服装种类, 1);
-            this.comboBox服装种类.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox服装种类.FormattingEnabled = true;
-            this.comboBox服装种类.Location = new System.Drawing.Point(106, 36);
-            this.comboBox服装种类.Name = "comboBox服装种类";
-            this.tablePanel1.SetRow(this.comboBox服装种类, 0);
-            this.comboBox服装种类.Size = new System.Drawing.Size(231, 26);
-            this.comboBox服装种类.TabIndex = 3;
-            this.comboBox服装种类.SelectedIndexChanged += new System.EventHandler(this.comboBox服装种类_SelectedIndexChanged);
+            this.tablePanel1.SetColumn(this.simpleButton重置, 1);
+            this.simpleButton重置.Location = new System.Drawing.Point(106, 239);
+            this.simpleButton重置.Name = "simpleButton重置";
+            this.tablePanel1.SetRow(this.simpleButton重置, 2);
+            this.simpleButton重置.Size = new System.Drawing.Size(231, 29);
+            this.simpleButton重置.TabIndex = 6;
+            this.simpleButton重置.Text = "重置";
+            this.simpleButton重置.Click += new System.EventHandler(this.simpleButton重置_Click);
             // 
             // comboBox年份
             // 
@@ -552,16 +562,39 @@
             this.comboBox年份.TabIndex = 4;
             this.comboBox年份.SelectedIndexChanged += new System.EventHandler(this.comboBox年份_SelectedIndexChanged);
             // 
-            // simpleButton重置
+            // comboBox服装种类
             // 
-            this.tablePanel1.SetColumn(this.simpleButton重置, 1);
-            this.simpleButton重置.Location = new System.Drawing.Point(106, 239);
-            this.simpleButton重置.Name = "simpleButton重置";
-            this.tablePanel1.SetRow(this.simpleButton重置, 2);
-            this.simpleButton重置.Size = new System.Drawing.Size(231, 29);
-            this.simpleButton重置.TabIndex = 6;
-            this.simpleButton重置.Text = "重置";
-            this.simpleButton重置.Click += new System.EventHandler(this.simpleButton重置_Click);
+            this.tablePanel1.SetColumn(this.comboBox服装种类, 1);
+            this.comboBox服装种类.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox服装种类.FormattingEnabled = true;
+            this.comboBox服装种类.Location = new System.Drawing.Point(106, 36);
+            this.comboBox服装种类.Name = "comboBox服装种类";
+            this.tablePanel1.SetRow(this.comboBox服装种类, 0);
+            this.comboBox服装种类.Size = new System.Drawing.Size(231, 26);
+            this.comboBox服装种类.TabIndex = 3;
+            this.comboBox服装种类.SelectedIndexChanged += new System.EventHandler(this.comboBox服装种类_SelectedIndexChanged);
+            // 
+            // label年份
+            // 
+            this.label年份.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label年份, 0);
+            this.label年份.Location = new System.Drawing.Point(3, 138);
+            this.label年份.Name = "label年份";
+            this.tablePanel1.SetRow(this.label年份, 1);
+            this.label年份.Size = new System.Drawing.Size(38, 18);
+            this.label年份.TabIndex = 1;
+            this.label年份.Text = "年份";
+            // 
+            // label服装种类
+            // 
+            this.label服装种类.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label服装种类, 0);
+            this.label服装种类.Location = new System.Drawing.Point(3, 39);
+            this.label服装种类.Name = "label服装种类";
+            this.tablePanel1.SetRow(this.label服装种类, 0);
+            this.label服装种类.Size = new System.Drawing.Size(68, 18);
+            this.label服装种类.TabIndex = 0;
+            this.label服装种类.Text = "服装种类";
             // 
             // Frm款式异常
             // 
@@ -572,6 +605,7 @@
             this.Controls.Add(this.dockPanel1);
             this.Name = "Frm款式异常";
             this.Text = "Frm款式异常";
+            this.Load += new System.EventHandler(this.Frm款式异常_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl款式一览)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView款式异常)).EndInit();
@@ -622,5 +656,7 @@
         private System.Windows.Forms.ComboBox comboBox年份;
         private System.Windows.Forms.ComboBox comboBox服装种类;
         private DevExpress.XtraEditors.SimpleButton simpleButton重置;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colErrorMessage;
+        public DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

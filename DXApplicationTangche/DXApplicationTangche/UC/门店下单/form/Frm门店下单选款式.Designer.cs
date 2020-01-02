@@ -50,6 +50,7 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm门店下单选款式));
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.colPicture = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.colStyleNameCn = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -77,7 +78,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.simpleButton11 = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.uc分页 = new mendian.UC分页();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -102,7 +102,6 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -134,6 +133,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
             // 
             // colPicture
             // 
@@ -223,7 +226,6 @@
             this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.simpleButton11);
             this.layoutControl1.Controls.Add(this.label5);
-            this.layoutControl1.Controls.Add(this.uc分页);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -483,15 +485,6 @@
             this.label5.Size = new System.Drawing.Size(520, 34);
             this.label5.TabIndex = 10;
             // 
-            // uc分页
-            // 
-            this.uc分页.BackColor = System.Drawing.Color.SkyBlue;
-            this.uc分页.Location = new System.Drawing.Point(536, 355);
-            this.uc分页.Margin = new System.Windows.Forms.Padding(5);
-            this.uc分页.Name = "uc分页";
-            this.uc分页.Size = new System.Drawing.Size(516, 34);
-            this.uc分页.TabIndex = 9;
-            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -564,7 +557,6 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.uc分页;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
             this.layoutControlItem6.Location = new System.Drawing.Point(524, 343);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(520, 60);
@@ -754,10 +746,6 @@
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
             // 
-            // splashScreenManager
-            // 
-            this.splashScreenManager.ClosingDelay = 500;
-            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Name = "ribbonPage2";
@@ -834,7 +822,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         public DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.TextBox mianliaoname;
@@ -870,5 +857,6 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn colSYTLE_YEAR;
         private DevExpress.XtraGrid.Columns.TileViewColumn colSYTLE_SEASON;
         private DevExpress.XtraGrid.Columns.TileViewColumn colSTYLE_SIZE_CD;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

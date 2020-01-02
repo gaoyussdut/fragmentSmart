@@ -2,6 +2,7 @@
 using mendian;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,6 @@ namespace DXApplicationTangche.UC.款式异常
 {
     class 款式异常Model
     {
-        List<版型Dto> 版型Dtos = new List<版型Dto>();  //  版型
         private List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
 
         //  展示视图
@@ -24,12 +24,58 @@ namespace DXApplicationTangche.UC.款式异常
         public List<string> List服装种类 { get => list服装种类; set => list服装种类 = value; }
         public List<string> List年份 { get => list年份; set => list年份 = value; }
 
-        public 款式异常Model(
-            List<款式图片一览Dto> 款式图片一览Dtos
-            , List<版型Dto> 版型Dtos
-            ) {
+        /// <summary>
+        /// 生成尺寸信息
+        /// </summary>
+        /// <param name="dataTable"></param>
+        public void generateSize_Fit(DataTable dataTable) {
+            Dictionary<String, List<String>> EGS_GROUP_SIZEs = new Dictionary<string, List<string>>();  //  数字尺码
+            Dictionary<String, List<String>> IGS_GROUP_SIZEs = new Dictionary<string, List<string>>();  //  英文尺码
+
+            const String EGS_GROUP_SIZEStr = "GROUP_SIZE-EGS_GROUP_SIZE";   //  数字尺码组
+            const String IGS_GROUP_SIZEStr = "GROUP_SIZE-IGS_GROUP_SIZE";   //  英文尺码组
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                if (EGS_GROUP_SIZEStr.Equals(dataRow["SIZEGROUP_CD"].ToString()))
+                {
+                    //  数字尺码组
+                    if (EGS_GROUP_SIZEs.ContainsKey(dataRow["FIT_CD"].ToString()))
+                    {
+                        EGS_GROUP_SIZEs[dataRow["FIT_CD"].ToString()].Add(dataRow["SIZE_CD"].ToString());
+                    }
+                    else
+                    {
+                        EGS_GROUP_SIZEs.Add(
+                            dataRow["FIT_CD"].ToString()    //  版型id
+                            , new List<String>() { dataRow["SIZE_CD"].ToString() }  //  尺码
+                            );
+                    }
+                }
+                else if (IGS_GROUP_SIZEStr.Equals(dataRow["SIZEGROUP_CD"]))
+                {
+                    //  英文尺码组
+                    if (IGS_GROUP_SIZEs.ContainsKey(dataRow["FIT_CD"].ToString()))
+                    {
+                        IGS_GROUP_SIZEs[dataRow["FIT_CD"].ToString()].Add(dataRow["SIZE_CD"].ToString());
+                    }
+                    else
+                    {
+                        IGS_GROUP_SIZEs.Add(
+                            dataRow["FIT_CD"].ToString()    //  版型id
+                            , new List<String>() { dataRow["SIZE_CD"].ToString() }  //  尺码
+                            );
+                    }
+                }
+            }
+            //  迭代更新尺寸信息
+            foreach (款式图片一览Dto dto in this.款式图片一览Dtos)
+            {
+                dto.build版型尺码(EGS_GROUP_SIZEs, IGS_GROUP_SIZEs);
+            }
+        }
+
+        public 款式异常Model(List<款式图片一览Dto> 款式图片一览Dtos) {
             this.款式图片一览Dtos = 款式图片一览Dtos;
-            this.版型Dtos = 版型Dtos;
         }
 
         public 款式异常Model initData() {
