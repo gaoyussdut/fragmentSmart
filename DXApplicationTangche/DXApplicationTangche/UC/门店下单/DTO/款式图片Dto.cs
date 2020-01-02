@@ -77,7 +77,9 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.STYLE_CATEGORY_CD = dr["STYLE_CATEGORY_CD"].ToString();
             this.STYLE_DRESS_CATEGORY = dr["STYLE_DRESS_CATEGORY"].ToString();
             this.STYLE_DESIGN_TYPE = dr["STYLE_DESIGN_TYPE"].ToString();
-            this.STYLE_PUBLISH_CATEGORY_CD = dr["STYLE_PUBLISH_CATEGORY_CD"].ToString();
+            this.STYLE_PUBLISH_CATEGORY_CD = String.IsNullOrEmpty(dr["STYLE_PUBLISH_CATEGORY_CD"].ToString())
+                ? "无"
+                :dr["STYLE_PUBLISH_CATEGORY_CD"].ToString();
             this.REF_STYLE_ID = dr["REF_STYLE_ID"].ToString();
             this.STYLE_NAME_CN = dr["STYLE_NAME_CN"].ToString();
             this.STYLE_NAME_EN = dr["STYLE_NAME_EN"].ToString();

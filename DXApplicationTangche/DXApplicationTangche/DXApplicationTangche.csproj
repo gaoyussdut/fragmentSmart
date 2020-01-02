@@ -128,6 +128,7 @@
     <Compile Include="UC\款式异常\Frm款式异常.Designer.cs">
       <DependentUpon>Frm款式异常.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\款式异常\款式异常Model.cs" />
     <Compile Include="UC\门店下单\DTO\Dto定制下单.cs" />
     <Compile Include="UC\门店下单\DTO\OrderDto.cs" />
     <Compile Include="UC\门店下单\DTO\ShopStockDto.cs" />
