@@ -14,10 +14,11 @@ namespace DXApplicationTangche.UC.款式异常
 {
     public partial class Frm款式异常 : DevExpress.XtraEditors.XtraForm
     {
-        private 款式异常Model 款式异常Model = new 款式异常Model();
+        private 款式异常Model 款式异常Model;
         public Frm款式异常()
         {
             InitializeComponent();
+            this.款式异常Model = ImpService.getAllStyle().initData();
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.comboBox年份.DataSource = this.款式异常Model.List年份;
             this.comboBox服装种类.DataSource = this.款式异常Model.List服装种类;
@@ -44,7 +45,7 @@ namespace DXApplicationTangche.UC.款式异常
 
         private void simpleButton重置_Click(object sender, EventArgs e)
         {
-            this.款式异常Model = new 款式异常Model();
+            this.款式异常Model = ImpService.getAllStyle().initData();
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.tileView款式异常.RefreshData();
         }

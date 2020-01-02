@@ -12,6 +12,7 @@ using DiaoPaiDaYin;
 using DXApplicationTangche;
 using DXApplicationTangche.UC.门店下单.form;
 using DXApplicationTangche.UC.门店下单.DTO;
+using DXApplicationTangche.UC.款式异常;
 
 namespace mendian
 {
@@ -163,16 +164,17 @@ namespace mendian
             DataTable dt = new DataTable();
             try
             {
-                dt = SQLmtm.GetDataTable(" SELECT\n" +
-"-- 	*,\n" +
-" DISTINCT SIZE_CD,\n" +
-" SUBSTRING_INDEX( SIZE_CD, '-',- 1 ) AS 尺寸\n" +
-"FROM\n" +
-"	`a_size_fit_p` \n" +
-"WHERE\n" +
-"	FIT_CD = '" + dr["STYLE_FIT_CD"].ToString() + "' \n" +
-"	AND STYLE_CATEGORY_CD = '" + dr["STYLE_CATEGORY_CD"].ToString() + "' \n" +
-"	AND SIZEGROUP_CD = '" + dr["STYLE_SIZE_GROUP_CD"] + "';");
+                String sql = " SELECT\n" +
+                    "-- 	*,\n" +
+                    " DISTINCT SIZE_CD,\n" +
+                    " SUBSTRING_INDEX( SIZE_CD, '-',- 1 ) AS 尺寸\n" +
+                    "FROM\n" +
+                    "	`a_size_fit_p` \n" +
+                    "WHERE\n" +
+                    "	FIT_CD = '" + dr["STYLE_FIT_CD"].ToString() + "' \n" +
+                    "	AND STYLE_CATEGORY_CD = '" + dr["STYLE_CATEGORY_CD"].ToString() + "' \n" +
+                    "	AND SIZEGROUP_CD = '" + dr["STYLE_SIZE_GROUP_CD"] + "';";
+                dt = SQLmtm.GetDataTable(sql);
             }
             catch
             {
@@ -2049,7 +2051,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// 取得所有款式信息
         /// </summary>
         /// <returns></returns>
-        public static List<款式图片一览Dto> getAllStyle() {
+        public static 款式异常Model getAllStyle() {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +
                 "	CUSTOMER_COUNT_ID,\n" +
@@ -2078,11 +2080,36 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 "	v_style_p\n" +
                 "	order by CREATE_DATE";
             List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
+            List<版型Dto> 版型Dtos = new List<版型Dto>();
+
+            List<String> FIT_CDs = new List<string>();  //  版型id
             DataTable dataTable = SQLmtm.GetDataTable(sql);
             foreach (DataRow dataRow in dataTable.Rows) {
-                款式图片一览Dtos.Add(new 款式图片一览Dto(dataRow));
+                款式图片一览Dto 款式图片一览Dto = new 款式图片一览Dto(dataRow);
+                款式图片一览Dtos.Add(款式图片一览Dto);
+                if (!FIT_CDs.Contains(款式图片一览Dto.STYLE_FIT_CD)) {
+                    FIT_CDs.Add(款式图片一览Dto.STYLE_FIT_CD);    //  版型
+                }
             }
-            return 款式图片一览Dtos;
+            if (FIT_CDs.Count > 0) {
+                sql = "SELECT DISTINCT\n" +
+                    "	FIT_CD,\n" +
+                    "	SIZEGROUP_CD,\n" +
+                    "	SIZE_CD \n" +
+                    "FROM\n" +
+                    "	a_size_fit_p \n" +
+                    "WHERE\n" +
+                    "	FIT_CD IN ( '"+ String.Join("','", FIT_CDs) + "' ) \n" +
+                    "ORDER BY\n" +
+                    "	FIT_CD,\n" +
+                    "	SIZEGROUP_CD,\n" +
+                    "	SIZE_CD";
+                dataTable = SQLmtm.GetDataTable(sql);
+                foreach (DataRow dataRow in dataTable.Rows) {
+                    版型Dtos.Add(new 版型Dto(dataRow));
+                }
+            }
+            return new 款式异常Model(款式图片一览Dtos, 版型Dtos);
         }
     }
 }

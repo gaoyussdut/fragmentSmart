@@ -103,4 +103,16 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.CREATE_DATE = Convert.ToDateTime( dr["CREATE_DATE"].ToString());
         }
     }
+
+    public class 版型Dto { 
+        public String FIT_CD { get; set; }
+        public String SIZEGROUP_CD { get; set; }
+        public String SIZE_CD { get; set; }
+
+        public 版型Dto(DataRow dataRow) {
+            this.FIT_CD = dataRow["FIT_CD"].ToString();
+            this.SIZEGROUP_CD = dataRow["SIZEGROUP_CD"].ToString();
+            this.SIZE_CD = dataRow["SIZE_CD"].ToString();
+        }
+    }
 }

@@ -10,6 +10,7 @@ namespace DXApplicationTangche.UC.款式异常
 {
     class 款式异常Model
     {
+        List<版型Dto> 版型Dtos = new List<版型Dto>();  //  版型
         private List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
 
         //  展示视图
@@ -23,8 +24,15 @@ namespace DXApplicationTangche.UC.款式异常
         public List<string> List服装种类 { get => list服装种类; set => list服装种类 = value; }
         public List<string> List年份 { get => list年份; set => list年份 = value; }
 
-        public 款式异常Model() {
-            this.款式图片一览Dtos = ImpService.getAllStyle();
+        public 款式异常Model(
+            List<款式图片一览Dto> 款式图片一览Dtos
+            , List<版型Dto> 版型Dtos
+            ) {
+            this.款式图片一览Dtos = 款式图片一览Dtos;
+            this.版型Dtos = 版型Dtos;
+        }
+
+        public 款式异常Model initData() {
             this.views.AddRange(this.款式图片一览Dtos);
             foreach (款式图片一览Dto dto in this.款式图片一览Dtos)
             {
@@ -42,6 +50,7 @@ namespace DXApplicationTangche.UC.款式异常
             {
                 this.build款式异常Model(List年份[0], List服装种类[0]);
             }
+            return this;
         }
 
         public 款式异常Model build款式异常Model(String 年份, String 服装种类) {
