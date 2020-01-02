@@ -4,6 +4,7 @@ using DiaoPaiDaYin;
 using DXApplicationTangche.UC;
 using DXApplicationTangche.UC.库存;
 using DXApplicationTangche.UC.库存.门店验货;
+using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.form;
 using DXApplicationTangche.UC.门店下单.form.标准款;
 using mendian;
@@ -105,6 +106,11 @@ namespace DXApplicationTangche
         private void accordionControlElement21_Click(object sender, EventArgs e)
         {
             this.initPanel(new Frm打标());
+        }
+
+        private void accordionControlElement6_Click_1(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm款式异常());
         }
     }
 }

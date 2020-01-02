@@ -19,8 +19,6 @@ namespace DXApplicationTangche.UC.门店下单.form
         public static int page { get; set; } = 1;
         public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
 
-        private PanelLocition panelLocition;
-
         private Frm门店统一下单 frm;
 
         private Dto定制下单 dto定制下单;
