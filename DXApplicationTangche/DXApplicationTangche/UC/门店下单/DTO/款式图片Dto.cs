@@ -78,18 +78,22 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         private List<版型尺码DTO> 版型尺码Dtos = new List<版型尺码DTO>();
 
         public 款式图片一览Dto build版型尺码(
-            Dictionary<String, List<String>> EGS_GROUP_SIZEs    //  数字尺码
-            , Dictionary<String, List<String>> IGS_GROUP_SIZEs  //  英文尺码
+            Dictionary<String, List<String>> EGS_GROUP_SIZEs    //  欧洲尺码
+            , Dictionary<String, List<String>> IGS_GROUP_SIZEs  //  国际尺码
             )
         {
             try
             {
                 if (!EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD))
                 {
-                    this.ErrorMessage += "[没有数字尺码]";
+                    this.ErrorMessage += "[没有欧洲尺码]";
                 }
                 if (!IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)) {
-                    this.ErrorMessage += "[没有英文尺码]";
+                    this.ErrorMessage += "[没有国际尺码]";
+                }
+                if (!EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD) && !IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD))
+                {
+                    this.ErrorMessage += "[没有尺寸值]";
                 }
             }
             catch {
@@ -115,7 +119,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
                 }
             } else if (!EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)&& IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD)) {
-                //  没有数字尺码
+                //  没有欧洲尺码
                 for (int i = 0; i < IGS_GROUP_SIZEs[this.STYLE_FIT_CD].Count; i++)
                 {
                     this.版型尺码Dtos.Add(
@@ -128,7 +132,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             }
             else if (EGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD) && !IGS_GROUP_SIZEs.ContainsKey(this.STYLE_FIT_CD))
             {
-                //  没有数字尺码
+                //  没有欧洲尺码
                 for (int i = 0; i < EGS_GROUP_SIZEs[this.STYLE_FIT_CD].Count; i++)
                 {
                     this.版型尺码Dtos.Add(
@@ -179,8 +183,8 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
     public class 版型尺码DTO { 
         public String FIT_CD { get; set; }  //  版型id
-        public String EGS_GROUP_SIZE { get; set; }  //  数字尺码
-        public String IGS_GROUP_SIZE { get; set; }   //  英文尺码
+        public String EGS_GROUP_SIZE { get; set; }  //  欧洲尺码
+        public String IGS_GROUP_SIZE { get; set; }   //  国际尺码
         public 版型尺码DTO(String FIT_CD,String EGS_GROUP_SIZE,String IGS_GROUP_SIZE) {
             this.FIT_CD = FIT_CD;
             this.EGS_GROUP_SIZE = EGS_GROUP_SIZE;

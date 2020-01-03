@@ -129,11 +129,11 @@ namespace DXApplicationTangche.UC.门店下单.form
         {
             try
             {
-                this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.Dto定制下单.SYTLE_FABRIC_ID)),this.mianliaoname.Text,"面料"));
+                this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.Dto定制下单.SYTLE_FABRIC_ID)), this.mianliaoname.Text, "面料"));
             }
             catch
             {
-                this.pics.Add(new Pic各种(Image.FromFile(@"pic\SSHIRT.jpg"),this.mianliaoname.Text,"面料"));
+                this.pics.Add(new Pic各种(Image.FromFile(@"pic\SSHIRT.jpg"), this.mianliaoname.Text, "面料"));
             }
             UC设计点选择 c = new UC设计点选择();
             foreach (Control card in this.panel3.Controls)
@@ -143,11 +143,11 @@ namespace DXApplicationTangche.UC.门店下单.form
                     c = (UC设计点选择)card;
                     try
                     {
-                        this.pics.Add(new Pic各种(Image.FromFile(@"pic\"+ImpService.GetPicn(c.itemValue)),c.itemName,c.PitemName));
+                        this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetPicn(c.itemValue)), c.itemName, c.PitemName));
                     }
                     catch
                     {
-                        this.pics.Add(new Pic各种(Image.FromFile(@"pic\SSHIRT.jpg"),c.itemName,c.PitemName));
+                        this.pics.Add(new Pic各种(Image.FromFile(@"pic\SSHIRT.jpg"), c.itemName, c.PitemName));
                     }
                 }
             }
@@ -190,7 +190,7 @@ namespace DXApplicationTangche.UC.门店下单.form
         public Image Picture { get; set; }
         public String Name { get; set; }
         public String Style { get; set; }
-        public Pic各种(Image pic,String Name,String Style )
+        public Pic各种(Image pic, String Name, String Style)
         {
             this.Picture = pic;
             this.Name = Name;
