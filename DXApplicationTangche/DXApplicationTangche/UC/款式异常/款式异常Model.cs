@@ -12,6 +12,7 @@ namespace DXApplicationTangche.UC.款式异常
     class 款式异常Model
     {
         private List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
+        private List<款式图片一览Dto> 送审款式s = new List<款式图片一览Dto>();
 
         //  展示视图
         private List<款式图片一览Dto> views = new List<款式图片一览Dto>();
@@ -23,6 +24,7 @@ namespace DXApplicationTangche.UC.款式异常
         public List<款式图片一览Dto> Views { get => views; set => views = value; }
         public List<string> List服装种类 { get => list服装种类; set => list服装种类 = value; }
         public List<string> List年份 { get => list年份; set => list年份 = value; }
+        public List<款式图片一览Dto> 送审款式s1 { get => 送审款式s; set => 送审款式s = value; }
 
         /// <summary>
         /// 生成尺寸信息
@@ -110,6 +112,22 @@ namespace DXApplicationTangche.UC.款式异常
                 }
             }
             this.Views = dtos;
+            return this;
+        }
+
+        public 款式异常Model build送审款式(String style_id) {
+            foreach (款式图片一览Dto dto in this.款式图片一览Dtos) {
+                if (style_id.Equals(dto.SYS_STYLE_ID)) {
+                    if (this.送审款式s.Contains(dto))
+                    {
+                        throw new Exception(dto.STYLE_NAME_CN + "已在待审列表中");
+                    }
+                    else {
+                        this.送审款式s.Add(dto);
+                        break;
+                    }
+                }
+            }
             return this;
         }
 

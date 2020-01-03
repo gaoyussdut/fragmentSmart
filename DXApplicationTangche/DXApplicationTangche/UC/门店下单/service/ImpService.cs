@@ -2051,7 +2051,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// 取得所有款式信息
         /// </summary>
         /// <returns></returns>
-        public static 款式异常Model getAllStyle() {
+        public static 款式异常Model getAllStyle(byte ENABLE_FLAG) {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +
                 "	CUSTOMER_COUNT_ID,\n" +
@@ -2078,6 +2078,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 "	CREATE_DATE\n" +
                 "FROM\n" +
                 "	v_style_p\n" +
+                " where v_style_p.ENABLE_FLAG = '"+ ENABLE_FLAG + "'"+
                 "	order by CREATE_DATE";
             List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
 

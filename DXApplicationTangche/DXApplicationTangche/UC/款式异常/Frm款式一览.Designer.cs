@@ -1,6 +1,6 @@
 ﻿namespace DXApplicationTangche.UC.款式异常
 {
-    partial class Frm款式异常
+    partial class Frm款式一览
     {
         /// <summary>
         /// Required designer variable.
@@ -82,6 +82,10 @@
             this.colENABLE_FLAG = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colCREATE_DATE = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.gridControl待办 = new DevExpress.XtraGrid.GridControl();
+            this.gridView待办 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
@@ -90,10 +94,19 @@
             this.comboBox服装种类 = new System.Windows.Forms.ComboBox();
             this.label年份 = new System.Windows.Forms.Label();
             this.label服装种类 = new System.Windows.Forms.Label();
+            this.colSYS_STYLE_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_NAME_CN1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_CATEGORY_CD1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYTLE_YEAR1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYTLE_SEASON1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl款式一览)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView款式异常)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel2.SuspendLayout();
+            this.dockPanel2_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl待办)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView待办)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
@@ -181,7 +194,7 @@
             this.gridControl款式一览.Name = "gridControl款式一览";
             this.gridControl款式一览.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl款式一览.Size = new System.Drawing.Size(777, 539);
+            this.gridControl款式一览.Size = new System.Drawing.Size(777, 189);
             this.gridControl款式一览.TabIndex = 0;
             this.gridControl款式一览.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView款式异常});
@@ -299,6 +312,7 @@
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement4);
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement5);
             this.tileView款式异常.TileTemplate.Add(tileViewItemElement6);
+            this.tileView款式异常.ItemClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView款式异常_ItemClick);
             // 
             // colSYS_STYLE_ID
             // 
@@ -484,6 +498,7 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel2,
             this.dockPanel1});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
@@ -499,6 +514,50 @@
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
             // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel2.FloatVertical = true;
+            this.dockPanel2.ID = new System.Guid("d6f07db8-97a4-463b-aeea-f12d02d8007d");
+            this.dockPanel2.Location = new System.Drawing.Point(0, 189);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 350);
+            this.dockPanel2.Size = new System.Drawing.Size(1127, 350);
+            this.dockPanel2.Text = "待办一览";
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Controls.Add(this.gridControl待办);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 39);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1119, 307);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // gridControl待办
+            // 
+            this.gridControl待办.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl待办.Location = new System.Drawing.Point(0, 0);
+            this.gridControl待办.MainView = this.gridView待办;
+            this.gridControl待办.Name = "gridControl待办";
+            this.gridControl待办.Size = new System.Drawing.Size(1119, 307);
+            this.gridControl待办.TabIndex = 0;
+            this.gridControl待办.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView待办});
+            // 
+            // gridView待办
+            // 
+            this.gridView待办.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colSYS_STYLE_ID1,
+            this.colSTYLE_NAME_CN1,
+            this.colSTYLE_CATEGORY_CD1,
+            this.colSYTLE_YEAR1,
+            this.colSYTLE_SEASON1});
+            this.gridView待办.GridControl = this.gridControl待办;
+            this.gridView待办.Name = "gridView待办";
+            this.gridView待办.OptionsBehavior.Editable = false;
+            this.gridView待办.OptionsView.ShowGroupPanel = false;
+            // 
             // dockPanel1
             // 
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
@@ -507,7 +566,7 @@
             this.dockPanel1.Location = new System.Drawing.Point(777, 0);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(350, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(350, 539);
+            this.dockPanel1.Size = new System.Drawing.Size(350, 189);
             this.dockPanel1.Text = "筛选";
             // 
             // dockPanel1_Container
@@ -515,7 +574,7 @@
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(6, 37);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(340, 498);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(340, 148);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // tablePanel1
@@ -536,7 +595,7 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 101.9999F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 111.6002F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(340, 498);
+            this.tablePanel1.Size = new System.Drawing.Size(340, 148);
             this.tablePanel1.TabIndex = 0;
             // 
             // simpleButton重置
@@ -596,20 +655,73 @@
             this.label服装种类.TabIndex = 0;
             this.label服装种类.Text = "服装种类";
             // 
-            // Frm款式异常
+            // colSYS_STYLE_ID1
+            // 
+            this.colSYS_STYLE_ID1.Caption = "gridColumn1";
+            this.colSYS_STYLE_ID1.FieldName = "SYS_STYLE_ID";
+            this.colSYS_STYLE_ID1.MinWidth = 25;
+            this.colSYS_STYLE_ID1.Name = "colSYS_STYLE_ID1";
+            this.colSYS_STYLE_ID1.Width = 94;
+            // 
+            // colSTYLE_NAME_CN1
+            // 
+            this.colSTYLE_NAME_CN1.Caption = "款式名称";
+            this.colSTYLE_NAME_CN1.FieldName = "STYLE_NAME_CN";
+            this.colSTYLE_NAME_CN1.MinWidth = 25;
+            this.colSTYLE_NAME_CN1.Name = "colSTYLE_NAME_CN1";
+            this.colSTYLE_NAME_CN1.Visible = true;
+            this.colSTYLE_NAME_CN1.VisibleIndex = 0;
+            this.colSTYLE_NAME_CN1.Width = 94;
+            // 
+            // colSTYLE_CATEGORY_CD1
+            // 
+            this.colSTYLE_CATEGORY_CD1.Caption = "服装种类";
+            this.colSTYLE_CATEGORY_CD1.FieldName = "STYLE_CATEGORY_CD";
+            this.colSTYLE_CATEGORY_CD1.MinWidth = 25;
+            this.colSTYLE_CATEGORY_CD1.Name = "colSTYLE_CATEGORY_CD1";
+            this.colSTYLE_CATEGORY_CD1.Visible = true;
+            this.colSTYLE_CATEGORY_CD1.VisibleIndex = 1;
+            this.colSTYLE_CATEGORY_CD1.Width = 94;
+            // 
+            // colSYTLE_YEAR1
+            // 
+            this.colSYTLE_YEAR1.Caption = "年份";
+            this.colSYTLE_YEAR1.FieldName = "SYTLE_YEAR";
+            this.colSYTLE_YEAR1.MinWidth = 25;
+            this.colSYTLE_YEAR1.Name = "colSYTLE_YEAR1";
+            this.colSYTLE_YEAR1.Visible = true;
+            this.colSYTLE_YEAR1.VisibleIndex = 2;
+            this.colSYTLE_YEAR1.Width = 94;
+            // 
+            // colSYTLE_SEASON1
+            // 
+            this.colSYTLE_SEASON1.Caption = "季节";
+            this.colSYTLE_SEASON1.FieldName = "SYTLE_SEASON";
+            this.colSYTLE_SEASON1.MinWidth = 25;
+            this.colSYTLE_SEASON1.Name = "colSYTLE_SEASON1";
+            this.colSYTLE_SEASON1.Visible = true;
+            this.colSYTLE_SEASON1.VisibleIndex = 3;
+            this.colSYTLE_SEASON1.Width = 94;
+            // 
+            // Frm款式一览
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 539);
             this.Controls.Add(this.gridControl款式一览);
             this.Controls.Add(this.dockPanel1);
-            this.Name = "Frm款式异常";
+            this.Controls.Add(this.dockPanel2);
+            this.Name = "Frm款式一览";
             this.Text = "Frm款式异常";
             this.Load += new System.EventHandler(this.Frm款式异常_Load);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl款式一览)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView款式异常)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel2_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl待办)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView待办)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
@@ -658,5 +770,14 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton重置;
         private DevExpress.XtraGrid.Columns.TileViewColumn colErrorMessage;
         public DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraGrid.GridControl gridControl待办;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView待办;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYS_STYLE_ID1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_NAME_CN1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_CATEGORY_CD1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_YEAR1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_SEASON1;
     }
 }

@@ -110,7 +110,12 @@ namespace DXApplicationTangche
 
         private void accordionControlElement6_Click_1(object sender, EventArgs e)
         {
-            this.initPanel(new Frm款式异常());
+            this.initPanel(new Frm款式一览(1));
+        }
+
+        private void accordionControlElement24_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm款式一览(0));
         }
     }
 }
