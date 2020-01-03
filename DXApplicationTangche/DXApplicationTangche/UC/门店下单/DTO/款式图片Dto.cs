@@ -73,7 +73,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
         public String ErrorMessage { get; set; }
 
-        public List<版型尺码DTO> 版型尺码DTOs { get => 版型尺码Dtos; set => 版型尺码Dtos = value; }
+        public List<版型尺码DTO> 尺码一览 { get => 版型尺码Dtos; set => 版型尺码Dtos = value; }
 
         private List<版型尺码DTO> 版型尺码Dtos = new List<版型尺码DTO>();
 
@@ -183,12 +183,15 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
     public class 版型尺码DTO { 
         public String FIT_CD { get; set; }  //  版型id
-        public String EGS_GROUP_SIZE { get; set; }  //  欧洲尺码
-        public String IGS_GROUP_SIZE { get; set; }   //  国际尺码
+        public string 欧洲尺码组 { get => eGS_GROUP_SIZE; set => eGS_GROUP_SIZE = value; }
+        public string 国际尺码组 { get => iGS_GROUP_SIZE; set => iGS_GROUP_SIZE = value; }
+
+        private String eGS_GROUP_SIZE;   //  欧洲尺码
+        private String iGS_GROUP_SIZE;    //  国际尺码
         public 版型尺码DTO(String FIT_CD,String EGS_GROUP_SIZE,String IGS_GROUP_SIZE) {
             this.FIT_CD = FIT_CD;
-            this.EGS_GROUP_SIZE = EGS_GROUP_SIZE;
-            this.IGS_GROUP_SIZE = IGS_GROUP_SIZE;
+            this.eGS_GROUP_SIZE = EGS_GROUP_SIZE;
+            this.iGS_GROUP_SIZE = IGS_GROUP_SIZE;
         }
     }
 }
