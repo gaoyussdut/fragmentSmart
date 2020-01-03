@@ -54,6 +54,7 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm款式一览));
             this.colPicture = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.colSTYLE_PUBLISH_CATEGORY_CD = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -65,7 +66,7 @@
             this.gridView待办 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSYS_STYLE_ID1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_NAME_CN1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTYLE_CATEGORY_CD1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_PUBLISH_CATEGORY_CD1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSYTLE_YEAR1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSYTLE_SEASON1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
@@ -92,14 +93,20 @@
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.simpleButton重置 = new DevExpress.XtraEditors.SimpleButton();
-            this.comboBox年份 = new System.Windows.Forms.ComboBox();
-            this.comboBox服装种类 = new System.Windows.Forms.ComboBox();
-            this.label年份 = new System.Windows.Forms.Label();
-            this.label服装种类 = new System.Windows.Forms.Label();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem服装种类 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox服装种类 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.barEditItem年份 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox年份 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl待办)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView待办)).BeginInit();
@@ -108,10 +115,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel2.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
-            this.dockPanel1.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
-            this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox服装种类)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox年份)).BeginInit();
             this.SuspendLayout();
             // 
             // colPicture
@@ -192,7 +198,7 @@
             this.gridControl待办.Location = new System.Drawing.Point(0, 0);
             this.gridControl待办.MainView = this.gridView待办;
             this.gridControl待办.Name = "gridControl待办";
-            this.gridControl待办.Size = new System.Drawing.Size(1119, 307);
+            this.gridControl待办.Size = new System.Drawing.Size(436, 432);
             this.gridControl待办.TabIndex = 0;
             this.gridControl待办.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView待办});
@@ -202,7 +208,7 @@
             this.gridView待办.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colSYS_STYLE_ID1,
             this.colSTYLE_NAME_CN1,
-            this.colSTYLE_CATEGORY_CD1,
+            this.colSTYLE_PUBLISH_CATEGORY_CD1,
             this.colSYTLE_YEAR1,
             this.colSYTLE_SEASON1});
             this.gridView待办.GridControl = this.gridControl待办;
@@ -226,17 +232,17 @@
             this.colSTYLE_NAME_CN1.Name = "colSTYLE_NAME_CN1";
             this.colSTYLE_NAME_CN1.Visible = true;
             this.colSTYLE_NAME_CN1.VisibleIndex = 0;
-            this.colSTYLE_NAME_CN1.Width = 94;
+            this.colSTYLE_NAME_CN1.Width = 230;
             // 
-            // colSTYLE_CATEGORY_CD1
+            // colSTYLE_PUBLISH_CATEGORY_CD1
             // 
-            this.colSTYLE_CATEGORY_CD1.Caption = "服装种类";
-            this.colSTYLE_CATEGORY_CD1.FieldName = "STYLE_CATEGORY_CD";
-            this.colSTYLE_CATEGORY_CD1.MinWidth = 25;
-            this.colSTYLE_CATEGORY_CD1.Name = "colSTYLE_CATEGORY_CD1";
-            this.colSTYLE_CATEGORY_CD1.Visible = true;
-            this.colSTYLE_CATEGORY_CD1.VisibleIndex = 1;
-            this.colSTYLE_CATEGORY_CD1.Width = 94;
+            this.colSTYLE_PUBLISH_CATEGORY_CD1.Caption = "服装种类";
+            this.colSTYLE_PUBLISH_CATEGORY_CD1.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
+            this.colSTYLE_PUBLISH_CATEGORY_CD1.MinWidth = 25;
+            this.colSTYLE_PUBLISH_CATEGORY_CD1.Name = "colSTYLE_PUBLISH_CATEGORY_CD1";
+            this.colSTYLE_PUBLISH_CATEGORY_CD1.Visible = true;
+            this.colSTYLE_PUBLISH_CATEGORY_CD1.VisibleIndex = 1;
+            this.colSTYLE_PUBLISH_CATEGORY_CD1.Width = 71;
             // 
             // colSYTLE_YEAR1
             // 
@@ -246,7 +252,7 @@
             this.colSYTLE_YEAR1.Name = "colSYTLE_YEAR1";
             this.colSYTLE_YEAR1.Visible = true;
             this.colSYTLE_YEAR1.VisibleIndex = 2;
-            this.colSYTLE_YEAR1.Width = 94;
+            this.colSYTLE_YEAR1.Width = 55;
             // 
             // colSYTLE_SEASON1
             // 
@@ -256,7 +262,7 @@
             this.colSYTLE_SEASON1.Name = "colSYTLE_SEASON1";
             this.colSYTLE_SEASON1.Visible = true;
             this.colSYTLE_SEASON1.VisibleIndex = 3;
-            this.colSYTLE_SEASON1.Width = 94;
+            this.colSYTLE_SEASON1.Width = 47;
             // 
             // splashScreenManager
             // 
@@ -265,12 +271,12 @@
             // gridControl款式一览
             // 
             this.gridControl款式一览.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl款式一览.Location = new System.Drawing.Point(0, 0);
+            this.gridControl款式一览.Location = new System.Drawing.Point(0, 202);
             this.gridControl款式一览.MainView = this.tileView款式异常;
             this.gridControl款式一览.Name = "gridControl款式一览";
             this.gridControl款式一览.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl款式一览.Size = new System.Drawing.Size(777, 189);
+            this.gridControl款式一览.Size = new System.Drawing.Size(681, 473);
             this.gridControl款式一览.TabIndex = 0;
             this.gridControl款式一览.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView款式异常});
@@ -574,8 +580,7 @@
             // 
             this.dockManager1.Form = this;
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel2,
-            this.dockPanel1});
+            this.dockPanel2});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -593,128 +598,153 @@
             // dockPanel2
             // 
             this.dockPanel2.Controls.Add(this.dockPanel2_Container);
-            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel2.FloatVertical = true;
             this.dockPanel2.ID = new System.Guid("d6f07db8-97a4-463b-aeea-f12d02d8007d");
-            this.dockPanel2.Location = new System.Drawing.Point(0, 189);
+            this.dockPanel2.Location = new System.Drawing.Point(681, 202);
             this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 350);
-            this.dockPanel2.Size = new System.Drawing.Size(1127, 350);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(446, 222);
+            this.dockPanel2.Size = new System.Drawing.Size(446, 473);
             this.dockPanel2.Text = "待办一览";
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.gridControl待办);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 39);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(6, 37);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1119, 307);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(436, 432);
             this.dockPanel2_Container.TabIndex = 0;
             // 
-            // dockPanel1
+            // ribbonControl1
             // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.ID = new System.Guid("87bb3058-809b-4d54-8dc7-4f1ff28cd631");
-            this.dockPanel1.Location = new System.Drawing.Point(777, 0);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(350, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(350, 189);
-            this.dockPanel1.Text = "筛选";
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.ribbonControl1.SearchEditItem,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barEditItem服装种类,
+            this.barEditItem年份,
+            this.barButtonItem5});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox服装种类,
+            this.repositoryItemComboBox年份});
+            this.ribbonControl1.Size = new System.Drawing.Size(1127, 202);
             // 
-            // dockPanel1_Container
+            // barButtonItem1
             // 
-            this.dockPanel1_Container.Controls.Add(this.tablePanel1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(6, 37);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(340, 148);
-            this.dockPanel1_Container.TabIndex = 0;
+            this.barButtonItem1.Caption = "维护尺寸信息";
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // tablePanel1
+            // barButtonItem2
             // 
-            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 18.14F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 41.86F)});
-            this.tablePanel1.Controls.Add(this.simpleButton重置);
-            this.tablePanel1.Controls.Add(this.comboBox年份);
-            this.tablePanel1.Controls.Add(this.comboBox服装种类);
-            this.tablePanel1.Controls.Add(this.label年份);
-            this.tablePanel1.Controls.Add(this.label服装种类);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Name = "tablePanel1";
-            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 96.39993F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 101.9999F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 111.6002F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(340, 148);
-            this.tablePanel1.TabIndex = 0;
+            this.barButtonItem2.Caption = "维护设计点信息";
+            this.barButtonItem2.Id = 2;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // simpleButton重置
+            // barButtonItem3
             // 
-            this.tablePanel1.SetColumn(this.simpleButton重置, 1);
-            this.simpleButton重置.Location = new System.Drawing.Point(106, 239);
-            this.simpleButton重置.Name = "simpleButton重置";
-            this.tablePanel1.SetRow(this.simpleButton重置, 2);
-            this.simpleButton重置.Size = new System.Drawing.Size(231, 29);
-            this.simpleButton重置.TabIndex = 6;
-            this.simpleButton重置.Text = "重置";
-            this.simpleButton重置.Click += new System.EventHandler(this.simpleButton重置_Click);
+            this.barButtonItem3.Caption = "启动下线流程";
+            this.barButtonItem3.Id = 3;
+            this.barButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem3.ImageOptions.SvgImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // comboBox年份
+            // barButtonItem4
             // 
-            this.tablePanel1.SetColumn(this.comboBox年份, 1);
-            this.comboBox年份.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox年份.FormattingEnabled = true;
-            this.comboBox年份.Location = new System.Drawing.Point(106, 135);
-            this.comboBox年份.Name = "comboBox年份";
-            this.tablePanel1.SetRow(this.comboBox年份, 1);
-            this.comboBox年份.Size = new System.Drawing.Size(231, 26);
-            this.comboBox年份.TabIndex = 4;
-            this.comboBox年份.SelectedIndexChanged += new System.EventHandler(this.comboBox年份_SelectedIndexChanged);
+            this.barButtonItem4.Caption = "申请转为量产";
+            this.barButtonItem4.Id = 4;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
-            // comboBox服装种类
+            // barEditItem服装种类
             // 
-            this.tablePanel1.SetColumn(this.comboBox服装种类, 1);
-            this.comboBox服装种类.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox服装种类.FormattingEnabled = true;
-            this.comboBox服装种类.Location = new System.Drawing.Point(106, 36);
-            this.comboBox服装种类.Name = "comboBox服装种类";
-            this.tablePanel1.SetRow(this.comboBox服装种类, 0);
-            this.comboBox服装种类.Size = new System.Drawing.Size(231, 26);
-            this.comboBox服装种类.TabIndex = 3;
-            this.comboBox服装种类.SelectedIndexChanged += new System.EventHandler(this.comboBox服装种类_SelectedIndexChanged);
+            this.barEditItem服装种类.Caption = "服装种类";
+            this.barEditItem服装种类.Edit = this.repositoryItemComboBox服装种类;
+            this.barEditItem服装种类.EditWidth = 100;
+            this.barEditItem服装种类.Id = 6;
+            this.barEditItem服装种类.Name = "barEditItem服装种类";
             // 
-            // label年份
+            // repositoryItemComboBox服装种类
             // 
-            this.label年份.AutoSize = true;
-            this.tablePanel1.SetColumn(this.label年份, 0);
-            this.label年份.Location = new System.Drawing.Point(3, 138);
-            this.label年份.Name = "label年份";
-            this.tablePanel1.SetRow(this.label年份, 1);
-            this.label年份.Size = new System.Drawing.Size(38, 18);
-            this.label年份.TabIndex = 1;
-            this.label年份.Text = "年份";
+            this.repositoryItemComboBox服装种类.AutoHeight = false;
+            this.repositoryItemComboBox服装种类.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox服装种类.Name = "repositoryItemComboBox服装种类";
+            this.repositoryItemComboBox服装种类.SelectedIndexChanged += new System.EventHandler(this.repositoryItemComboBox服装种类_SelectedIndexChanged);
             // 
-            // label服装种类
+            // barEditItem年份
             // 
-            this.label服装种类.AutoSize = true;
-            this.tablePanel1.SetColumn(this.label服装种类, 0);
-            this.label服装种类.Location = new System.Drawing.Point(3, 39);
-            this.label服装种类.Name = "label服装种类";
-            this.tablePanel1.SetRow(this.label服装种类, 0);
-            this.label服装种类.Size = new System.Drawing.Size(68, 18);
-            this.label服装种类.TabIndex = 0;
-            this.label服装种类.Text = "服装种类";
+            this.barEditItem年份.Caption = "年份";
+            this.barEditItem年份.Edit = this.repositoryItemComboBox年份;
+            this.barEditItem年份.EditWidth = 100;
+            this.barEditItem年份.Id = 7;
+            this.barEditItem年份.Name = "barEditItem年份";
+            // 
+            // repositoryItemComboBox年份
+            // 
+            this.repositoryItemComboBox年份.AutoHeight = false;
+            this.repositoryItemComboBox年份.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox年份.Name = "repositoryItemComboBox年份";
+            this.repositoryItemComboBox年份.SelectedIndexChanged += new System.EventHandler(this.repositoryItemComboBox年份_SelectedIndexChanged);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "重置";
+            this.barButtonItem5.Id = 8;
+            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "款式信息维护";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "基础信息维护";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "流程管理";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barEditItem服装种类);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barEditItem年份);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "筛选";
             // 
             // Frm款式一览
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 539);
+            this.ClientSize = new System.Drawing.Size(1127, 675);
             this.Controls.Add(this.gridControl款式一览);
-            this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.dockPanel2);
+            this.Controls.Add(this.ribbonControl1);
             this.Name = "Frm款式一览";
             this.Text = "Frm款式异常";
             this.Load += new System.EventHandler(this.Frm款式异常_Load);
@@ -726,12 +756,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel2.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
-            this.dockPanel1.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
-            this.tablePanel1.ResumeLayout(false);
-            this.tablePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox服装种类)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox年份)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -764,14 +793,6 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn colENABLE_FLAG;
         private DevExpress.XtraGrid.Columns.TileViewColumn colCREATE_DATE;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
-        private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private System.Windows.Forms.Label label年份;
-        private System.Windows.Forms.Label label服装种类;
-        private System.Windows.Forms.ComboBox comboBox年份;
-        private System.Windows.Forms.ComboBox comboBox服装种类;
-        private DevExpress.XtraEditors.SimpleButton simpleButton重置;
         private DevExpress.XtraGrid.Columns.TileViewColumn colErrorMessage;
         public DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
@@ -780,8 +801,22 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView待办;
         private DevExpress.XtraGrid.Columns.GridColumn colSYS_STYLE_ID1;
         private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_NAME_CN1;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_CATEGORY_CD1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_PUBLISH_CATEGORY_CD1;
         private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_YEAR1;
         private DevExpress.XtraGrid.Columns.GridColumn colSYTLE_SEASON1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarEditItem barEditItem服装种类;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox服装种类;
+        private DevExpress.XtraBars.BarEditItem barEditItem年份;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox年份;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

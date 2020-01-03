@@ -43,13 +43,18 @@ namespace DXApplicationTangche.UC.款式异常
                     //  数字尺码组
                     if (EGS_GROUP_SIZEs.ContainsKey(dataRow["FIT_CD"].ToString()))
                     {
-                        EGS_GROUP_SIZEs[dataRow["FIT_CD"].ToString()].Add(dataRow["SIZE_CD"].ToString());
+                        EGS_GROUP_SIZEs[dataRow["FIT_CD"].ToString()]
+                            .Add(
+                                dataRow["SIZE_CD"].ToString().Replace("EGS_GROUP_SIZE-","")
+                            );
                     }
                     else
                     {
                         EGS_GROUP_SIZEs.Add(
                             dataRow["FIT_CD"].ToString()    //  版型id
-                            , new List<String>() { dataRow["SIZE_CD"].ToString() }  //  尺码
+                            , new List<String>() { 
+                                dataRow["SIZE_CD"].ToString().Replace("EGS_GROUP_SIZE-","")
+                            }  //  尺码
                             );
                     }
                 }
@@ -58,13 +63,18 @@ namespace DXApplicationTangche.UC.款式异常
                     //  英文尺码组
                     if (IGS_GROUP_SIZEs.ContainsKey(dataRow["FIT_CD"].ToString()))
                     {
-                        IGS_GROUP_SIZEs[dataRow["FIT_CD"].ToString()].Add(dataRow["SIZE_CD"].ToString());
+                        IGS_GROUP_SIZEs[dataRow["FIT_CD"].ToString()]
+                            .Add(
+                                dataRow["SIZE_CD"].ToString().Replace("IGS_GROUP_SIZE-", "")
+                            );
                     }
                     else
                     {
                         IGS_GROUP_SIZEs.Add(
                             dataRow["FIT_CD"].ToString()    //  版型id
-                            , new List<String>() { dataRow["SIZE_CD"].ToString() }  //  尺码
+                            , new List<String>() { 
+                                dataRow["SIZE_CD"].ToString().Replace("IGS_GROUP_SIZE-", "")
+                            }  //  尺码
                             );
                     }
                 }
