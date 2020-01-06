@@ -54,8 +54,8 @@ namespace DiaoPaiDaYin
                         LabelFormatDocument btFormat = btEngine.Documents.Open(lj);
                         //指定打印机名 
                         //btFormat.PrintSetup.PrinterName = "HPRT HLP106S-UE";
-                        btFormat.PrintSetup.PrinterName = "TEC";
-                        //btFormat.PrintSetup.PrinterName = "POSTEK G-3106";
+                        //btFormat.PrintSetup.PrinterName = "TEC";
+                        btFormat.PrintSetup.PrinterName = "POSTEK G-3106";
                         //打印份数                   
                         btFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
                         //改变标签打印数份连载 
