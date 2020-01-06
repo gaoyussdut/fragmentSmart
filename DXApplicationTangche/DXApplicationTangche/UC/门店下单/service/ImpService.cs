@@ -2051,7 +2051,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// 取得所有款式信息
         /// </summary>
         /// <returns></returns>
-        public static 款式异常Model getAllStyle(byte ENABLE_FLAG) {
+        public static 款式Model getAllStyle(byte ENABLE_FLAG) {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +
                 "	CUSTOMER_COUNT_ID,\n" +
@@ -2091,7 +2091,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                     FIT_CDs.Add(款式图片一览Dto.STYLE_FIT_CD);    //  版型
                 }
             }
-            款式异常Model model =new 款式异常Model(款式图片一览Dtos);
+            款式Model model =new 款式Model(款式图片一览Dtos);
 
             if (FIT_CDs.Count > 0) {
                 sql = "SELECT DISTINCT\n" +
@@ -2113,6 +2113,48 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             }
             
             return model;
+        }
+
+        public static List<面料DTO> get面料DTOs(List<String> SYTLE_FABRIC_ID) {
+            String sql = "SELECT\n" +
+                "	id,\n" +
+                "	fileId,\n" +
+                "	materialNameCn,\n" +
+                "	materialNameEn,\n" +
+                "	materialCode,\n" +
+                "	materialUseType,\n" +
+                "	materialTypeCd,\n" +
+                "	materialComposition,\n" +
+                "	materialSpec,\n" +
+                "	materialUnitCd,\n" +
+                "	materialYear,\n" +
+                "	materialColor,\n" +
+                "	materialSeason,\n" +
+                "	remarks,\n" +
+                "	materialStyleCategory,\n" +
+                "	modelFilepath,\n" +
+                "	filePath,\n" +
+                "	createby_lastName,\n" +
+                "	createby_firstName,\n" +
+                "	materialPrice_materialSalePrice,\n" +
+                "	inventoryMaterial_materialQuantity,\n" +
+                "	materialLevel,\n" +
+                "	materialStyle,\n" +
+                "	materialWeave,\n" +
+                "	materiaFacPrice,\n" +
+                "	mianliao,\n" +
+                "	picn,\n" +
+                "	picurl \n" +
+                "FROM\n" +
+                "	V_MATERIAL_CATEGORY_Fabric \n" +
+                "WHERE\n" +
+                "	id IN ( '"+ String.Join("','",SYTLE_FABRIC_ID) +"' );";
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            List<面料DTO> 面料DTOs = new List<面料DTO>();
+            foreach (DataRow dr in dt.Rows) {
+                面料DTOs.Add(new 面料DTO(dr));
+            }
+            return 面料DTOs;
         }
     }
 }

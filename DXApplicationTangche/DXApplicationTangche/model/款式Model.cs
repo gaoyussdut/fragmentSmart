@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DXApplicationTangche.UC.款式异常
 {
-    class 款式异常Model
+    class 款式Model
     {
         private List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
         private List<款式图片一览Dto> 送审款式s = new List<款式图片一览Dto>();
@@ -86,11 +86,11 @@ namespace DXApplicationTangche.UC.款式异常
             }
         }
 
-        public 款式异常Model(List<款式图片一览Dto> 款式图片一览Dtos) {
+        public 款式Model(List<款式图片一览Dto> 款式图片一览Dtos) {
             this.款式图片一览Dtos = 款式图片一览Dtos;
         }
 
-        public 款式异常Model initData() {
+        public 款式Model initData() {
             this.views.AddRange(this.款式图片一览Dtos);
             foreach (款式图片一览Dto dto in this.款式图片一览Dtos)
             {
@@ -111,7 +111,7 @@ namespace DXApplicationTangche.UC.款式异常
             return this;
         }
 
-        public 款式异常Model build款式异常Model(String 年份, String 服装种类) {
+        public 款式Model build款式异常Model(String 年份, String 服装种类) {
             this.Views.Clear();
             List<款式图片一览Dto> dtos = new List<款式图片一览Dto>();
             foreach (款式图片一览Dto dto in this.款式图片一览Dtos)
@@ -119,13 +119,14 @@ namespace DXApplicationTangche.UC.款式异常
                 if (dto.SYTLE_YEAR.Equals(年份) && dto.STYLE_PUBLISH_CATEGORY_CD.Equals(服装种类))
                 {
                     dtos.Add(dto);
+                    continue;
                 }
             }
             this.Views = dtos;
             return this;
         }
 
-        public 款式异常Model build送审款式(String style_id) {
+        public 款式Model build送审款式(String style_id) {
             foreach (款式图片一览Dto dto in this.款式图片一览Dtos) {
                 if (style_id.Equals(dto.SYS_STYLE_ID)) {
                     if (this.送审款式s.Contains(dto))
@@ -134,6 +135,7 @@ namespace DXApplicationTangche.UC.款式异常
                     }
                     else {
                         this.送审款式s.Add(dto);
+                        dto.build面料();
                         break;
                     }
                 }

@@ -134,11 +134,11 @@
     <Compile Include="UC\款式异常\SplashScreen1.Designer.cs">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\款式异常\款式异常Model.cs" />
-    <Compile Include="UC\门店下单\DTO\Dto定制下单.cs" />
-    <Compile Include="UC\门店下单\DTO\OrderDto.cs" />
-    <Compile Include="UC\门店下单\DTO\ShopStockDto.cs" />
-    <Compile Include="UC\门店下单\DTO\款式图片Dto.cs" />
+    <Compile Include="model\款式Model.cs" />
+    <Compile Include="DTO\Dto定制下单.cs" />
+    <Compile Include="DTO\OrderDto.cs" />
+    <Compile Include="DTO\ShopStockDto.cs" />
+    <Compile Include="DTO\款式图片Dto.cs" />
     <Compile Include="UC\门店下单\form\Frm门店下单选款式.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,7 +244,7 @@
     <Compile Include="UC\客户管理\CustomerChoose.designer.cs">
       <DependentUpon>CustomerChoose.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\DTO\CustomerInformationDto.cs" />
+    <Compile Include="DTO\CustomerInformationDto.cs" />
     <Compile Include="UC\门店下单\service\DealXML.cs" />
     <Compile Include="UC\门店下单\form\定制\Frm默认设计点.cs">
       <SubType>Form</SubType>
@@ -252,12 +252,12 @@
     <Compile Include="UC\门店下单\form\定制\Frm默认设计点.designer.cs">
       <DependentUpon>Frm默认设计点.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\DTO\FitValueCalculate.cs" />
-    <Compile Include="UC\门店下单\DTO\Fit_ValueDTo.cs" />
-    <Compile Include="UC\门店下单\DTO\MianLiaoPic.cs" />
-    <Compile Include="UC\门店下单\DTO\MianLiaoPicList.cs" />
-    <Compile Include="UC\门店下单\DTO\SheJiDianPic.cs" />
-    <Compile Include="UC\门店下单\DTO\SheJiDianPicList.cs" />
+    <Compile Include="DTO\FitValueCalculate.cs" />
+    <Compile Include="DTO\Fit_ValueDTo.cs" />
+    <Compile Include="DTO\MianLiaoPic.cs" />
+    <Compile Include="DTO\MianLiaoPicList.cs" />
+    <Compile Include="DTO\SheJiDianPic.cs" />
+    <Compile Include="DTO\SheJiDianPicList.cs" />
     <Compile Include="UC\门店下单\form\通用\Frm尺寸变更.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,9 +270,9 @@
     <Compile Include="UC\门店下单\form\通用\Frm款式变更.designer.cs">
       <DependentUpon>Frm款式变更.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\门店下单\DTO\StylePic.cs" />
-    <Compile Include="UC\门店下单\DTO\StylePicList.cs" />
-    <Compile Include="UC\门店下单\DTO\StyleSize.cs" />
+    <Compile Include="DTO\StylePic.cs" />
+    <Compile Include="DTO\StylePicList.cs" />
+    <Compile Include="DTO\StyleSize.cs" />
     <Compile Include="UC\门店下单\UC\UC分页.cs">
       <SubType>UserControl</SubType>
     </Compile>

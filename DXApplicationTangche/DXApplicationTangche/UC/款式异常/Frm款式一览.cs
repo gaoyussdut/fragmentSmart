@@ -14,7 +14,7 @@ namespace DXApplicationTangche.UC.款式异常
 {
     public partial class Frm款式一览 : DevExpress.XtraEditors.XtraForm
     {
-        private 款式异常Model 款式异常Model;
+        private 款式Model 款式异常Model;
         private byte ENABLE_FLAG;   //  是否启用
         public Frm款式一览(byte ENABLE_FLAG)
         {
