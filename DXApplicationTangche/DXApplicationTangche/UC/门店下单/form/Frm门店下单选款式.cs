@@ -1,4 +1,5 @@
-﻿using DXApplicationTangche.UC.门店下单.DTO;
+﻿using DXApplicationTangche.UC.款式异常;
+using DXApplicationTangche.UC.门店下单.DTO;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace DXApplicationTangche.UC.门店下单.form
 {
     public partial class Frm门店下单选款式 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private 门店下单选款式Model model;
         public List<Pic各种> pics = new List<Pic各种>();
         public static int page { get; set; } = 1;
         public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
@@ -48,7 +50,8 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-            this.gridControl选择款式.DataSource = ImpService.initStyleInfo(this.textBox1.Text, Frm标准款下单.page);
+            this.model = new 门店下单选款式Model(this.textBox1.Text, Frm标准款下单.page);
+            this.gridControl选择款式.DataSource = this.model.款式图片;
             this.uc分页.label1.Text = Frm标准款下单.page.ToString();
             this.splashScreenManager.CloseWaitForm();
         }

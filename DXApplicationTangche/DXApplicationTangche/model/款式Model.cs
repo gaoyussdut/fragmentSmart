@@ -1,11 +1,12 @@
 ﻿using DXApplicationTangche.UC.门店下单.DTO;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.Data;
 
 namespace DXApplicationTangche.UC.款式异常
 {
-    class 款式Model
+    public class 款式Model
     {
         #region 变量
         private List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
@@ -172,5 +173,17 @@ namespace DXApplicationTangche.UC.款式异常
             }
         }
         #endregion
+    }
+
+    public class 门店下单选款式Model {
+        private List<款式图片Dto> 款式图片dtos = new List<款式图片Dto>();
+        private 款式图片Dto 款式图片Dto;
+
+        public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
+        public 款式图片Dto 选中款式 { get => 款式图片Dto; set => 款式图片Dto = value; }
+
+        public 门店下单选款式Model(String flag, int page) { 
+            this.款式图片dtos = ImpService.initStyleInfo(flag, page);
+        }
     }
 }
