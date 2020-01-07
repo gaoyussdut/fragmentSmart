@@ -2156,6 +2156,15 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             }
             return 面料DTOs;
         }
+        /// <summary>
+        /// 所有面料
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetAllMaterial()
+        {
+            String sql = "SELECT id,materialNameCn,materialCode,materialComposition FROM v_material_category_fabric";
+            return SQLmtm.GetDataTable(sql);
+        }
     }
 }
 

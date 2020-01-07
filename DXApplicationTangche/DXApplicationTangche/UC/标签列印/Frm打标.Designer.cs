@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmaterial_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterital_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterialCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterialComposition = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colstyle = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -43,7 +49,7 @@
             this.colSizeNameCn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSize = new DevExpress.XtraGrid.Columns.GridColumn();
             this.mianliaocd = new System.Windows.Forms.TextBox();
-            this.chengfan = new System.Windows.Forms.TextBox();
+            this.chengfen = new System.Windows.Forms.TextBox();
             this.shoujia = new System.Windows.Forms.TextBox();
             this.mianliaoid = new System.Windows.Forms.TextBox();
             this.styleid = new System.Windows.Forms.TextBox();
@@ -51,7 +57,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -61,8 +66,12 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -71,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
@@ -81,10 +89,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
             this.layoutControl1.Controls.Add(this.gridControl2);
             this.layoutControl1.Controls.Add(this.tiaomaid);
             this.layoutControl1.Controls.Add(this.shopname);
@@ -93,7 +104,7 @@
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Controls.Add(this.mianliaocd);
-            this.layoutControl1.Controls.Add(this.chengfan);
+            this.layoutControl1.Controls.Add(this.chengfen);
             this.layoutControl1.Controls.Add(this.shoujia);
             this.layoutControl1.Controls.Add(this.mianliaoid);
             this.layoutControl1.Controls.Add(this.styleid);
@@ -104,6 +115,66 @@
             this.layoutControl1.Size = new System.Drawing.Size(933, 525);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // searchLookUpEdit1
+            // 
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(63, 85);
+            this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
+            this.searchLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.searchLookUpEdit1.Properties.Appearance.Options.UseFont = true;
+            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.NullText = "";
+            this.searchLookUpEdit1.Properties.PopupView = this.searchLookUpEdit1View;
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(454, 30);
+            this.searchLookUpEdit1.StyleController = this.layoutControl1;
+            this.searchLookUpEdit1.TabIndex = 18;
+            this.searchLookUpEdit1.Popup += new System.EventHandler(this.searchLookUpEdit1_Popup);
+            this.searchLookUpEdit1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEdit1_CustomDisplayText);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colmaterial_id,
+            this.colmaterital_name,
+            this.colmaterialCode,
+            this.colmaterialComposition});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
+            // 
+            // colmaterial_id
+            // 
+            this.colmaterial_id.Caption = "gridColumn1";
+            this.colmaterial_id.FieldName = "id";
+            this.colmaterial_id.Name = "colmaterial_id";
+            // 
+            // colmaterital_name
+            // 
+            this.colmaterital_name.Caption = "面料名称";
+            this.colmaterital_name.FieldName = "materialNameCn";
+            this.colmaterital_name.Name = "colmaterital_name";
+            this.colmaterital_name.Visible = true;
+            this.colmaterital_name.VisibleIndex = 0;
+            // 
+            // colmaterialCode
+            // 
+            this.colmaterialCode.Caption = "面料号";
+            this.colmaterialCode.FieldName = "materialCode";
+            this.colmaterialCode.Name = "colmaterialCode";
+            this.colmaterialCode.Visible = true;
+            this.colmaterialCode.VisibleIndex = 1;
+            // 
+            // colmaterialComposition
+            // 
+            this.colmaterialComposition.Caption = "成分";
+            this.colmaterialComposition.FieldName = "materialComposition";
+            this.colmaterialComposition.Name = "colmaterialComposition";
+            this.colmaterialComposition.Visible = true;
+            this.colmaterialComposition.VisibleIndex = 2;
             // 
             // gridControl2
             // 
@@ -122,6 +193,7 @@
             this.colvalue});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // colstyle
             // 
@@ -150,7 +222,7 @@
             // shopname
             // 
             this.shopname.FormattingEnabled = true;
-            this.shopname.Location = new System.Drawing.Point(63, 133);
+            this.shopname.Location = new System.Drawing.Point(63, 191);
             this.shopname.Name = "shopname";
             this.shopname.Size = new System.Drawing.Size(454, 22);
             this.shopname.TabIndex = 15;
@@ -185,10 +257,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 206);
+            this.gridControl1.Location = new System.Drawing.Point(12, 240);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(505, 274);
+            this.gridControl1.Size = new System.Drawing.Size(505, 240);
             this.gridControl1.TabIndex = 10;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -200,6 +272,7 @@
             this.colSize});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colSizeNameCn
             // 
@@ -219,29 +292,28 @@
             // 
             // mianliaocd
             // 
-            this.mianliaocd.Location = new System.Drawing.Point(63, 109);
+            this.mianliaocd.Location = new System.Drawing.Point(63, 143);
             this.mianliaocd.Name = "mianliaocd";
             this.mianliaocd.Size = new System.Drawing.Size(454, 20);
             this.mianliaocd.TabIndex = 9;
             // 
-            // chengfan
+            // chengfen
             // 
-            this.chengfan.Location = new System.Drawing.Point(63, 158);
-            this.chengfan.Name = "chengfan";
-            this.chengfan.Size = new System.Drawing.Size(454, 20);
-            this.chengfan.TabIndex = 8;
+            this.chengfen.Location = new System.Drawing.Point(63, 167);
+            this.chengfen.Name = "chengfen";
+            this.chengfen.Size = new System.Drawing.Size(454, 20);
+            this.chengfen.TabIndex = 8;
             // 
             // shoujia
             // 
-            this.shoujia.Location = new System.Drawing.Point(63, 182);
+            this.shoujia.Location = new System.Drawing.Point(63, 216);
             this.shoujia.Name = "shoujia";
-            this.shoujia.ReadOnly = true;
             this.shoujia.Size = new System.Drawing.Size(454, 20);
             this.shoujia.TabIndex = 7;
             // 
             // mianliaoid
             // 
-            this.mianliaoid.Location = new System.Drawing.Point(63, 85);
+            this.mianliaoid.Location = new System.Drawing.Point(63, 119);
             this.mianliaoid.Name = "mianliaoid";
             this.mianliaoid.Size = new System.Drawing.Size(454, 20);
             this.mianliaoid.TabIndex = 5;
@@ -263,7 +335,6 @@
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem4,
-            this.layoutControlItem5,
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8,
@@ -272,7 +343,9 @@
             this.layoutControlItem11,
             this.emptySpaceItem2,
             this.layoutControlItem9,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.layoutControlItem13,
+            this.layoutControlItem5});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(933, 525);
             this.Root.TextVisible = false;
@@ -289,7 +362,7 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.mianliaoid;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 73);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 107);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(509, 24);
             this.layoutControlItem2.Text = "面料id";
@@ -298,25 +371,16 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.shoujia;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 170);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 204);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(509, 24);
             this.layoutControlItem4.Text = "售价";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.chengfan;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 146);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(509, 24);
-            this.layoutControlItem5.Text = "成分";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
-            // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.mianliaocd;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 97);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 131);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(509, 24);
             this.layoutControlItem6.Text = "面料号";
@@ -325,9 +389,9 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gridControl1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 194);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 228);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(509, 278);
+            this.layoutControlItem7.Size = new System.Drawing.Size(509, 244);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -361,7 +425,7 @@
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.shopname;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 121);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 179);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(509, 25);
             this.layoutControlItem11.Text = "店铺";
@@ -393,6 +457,24 @@
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
             // 
+            // layoutControlItem13
+            // 
+            this.layoutControlItem13.Control = this.searchLookUpEdit1;
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 73);
+            this.layoutControlItem13.Name = "layoutControlItem13";
+            this.layoutControlItem13.Size = new System.Drawing.Size(509, 34);
+            this.layoutControlItem13.Text = "面料";
+            this.layoutControlItem13.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.chengfen;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 155);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(509, 24);
+            this.layoutControlItem5.Text = "成分";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
+            // 
             // Frm打标
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -404,6 +486,8 @@
             this.Load += new System.EventHandler(this.Frm打标_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -412,7 +496,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
@@ -422,6 +505,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,7 +517,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.TextBox mianliaocd;
-        private System.Windows.Forms.TextBox chengfan;
+        private System.Windows.Forms.TextBox chengfen;
         private System.Windows.Forms.TextBox shoujia;
         private System.Windows.Forms.TextBox mianliaoid;
         private System.Windows.Forms.TextBox styleid;
@@ -461,5 +546,12 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraGrid.Columns.GridColumn colstyle;
         private DevExpress.XtraGrid.Columns.GridColumn colvalue;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaterial_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaterital_name;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaterialCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colmaterialComposition;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
     }
 }

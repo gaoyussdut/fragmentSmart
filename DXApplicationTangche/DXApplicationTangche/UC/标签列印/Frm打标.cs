@@ -1,4 +1,8 @@
-﻿using DiaoPaiDaYin;
+﻿using DevExpress.Utils.Win;
+using DevExpress.XtraEditors.Popup;
+using DevExpress.XtraGrid.Editors;
+using DevExpress.XtraLayout;
+using DiaoPaiDaYin;
 using mendian;
 using Seagull.BarTender.Print;
 using System;
@@ -78,12 +82,12 @@ namespace DXApplicationTangche
                 }
             }
             this.dto无订单打印.buildDTO无订单打印(this.shopid, this.styleid.Text.Trim(), this.mianliaoid.Text.Trim(),this.mianliaocd.Text.Trim(), this.chicun01.Text.Trim());
-            //this.dto无订单打印.builddto尺寸(this.chooseStyleSize);
+            this.dto无订单打印.builddto尺寸(this.chooseStyleSize);
             //this.dto无订单打印.json = Newtonsoft.Json.JsonConvert.SerializeObject(this.dto无订单打印);
             this.dto无订单打印.json = "";
             ImpService.SiveINa_noorder_print_p(this.dto无订单打印);
             ///////////////////////////////////////////
-            //this.print信息();
+            this.print信息();
             this.print条码();
         }
 
@@ -94,7 +98,7 @@ namespace DXApplicationTangche
                 try
                 {
                     this.mianliaocd.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "cd");
-                    this.chengfan.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "dd");
+                    this.chengfen.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "dd");
                 }
                 catch (Exception ex)
                 {
@@ -122,7 +126,7 @@ namespace DXApplicationTangche
             btFormat.SubStrings["kuanhao"].Value = this.stylename.Text;
             btFormat.SubStrings["haoxing"].Value = this.chicun01.Text;
             btFormat.SubStrings["mianliaohao"].Value = this.mianliaocd.Text;
-            btFormat.SubStrings["chengfen"].Value = this.chengfan.Text;
+            btFormat.SubStrings["chengfen"].Value = this.chengfen.Text;
             btFormat.SubStrings["shoujia"].Value = "¥" + this.shoujia.Text;
             int i = 1;
             foreach (dto尺寸 cy in this.dto无订单打印.dtos)
@@ -179,6 +183,7 @@ namespace DXApplicationTangche
 
         private void Frm打标_Load(object sender, EventArgs e)
         {
+            this.searchLookUpEdit1.Properties.DataSource = ImpService.GetAllMaterial();
             this.shop = SQLmtm.GetDataTable("SELECT * FROM  t_shop");
             foreach (DataRow dr in this.shop.Rows)
             {
@@ -212,6 +217,63 @@ namespace DXApplicationTangche
             }
 
         }
+        #region 选择面料
+        private void searchLookUpEdit1_Popup(object sender, EventArgs e)
+        {
+            //得到当前SearchLookUpEdit弹出窗体
+            PopupSearchLookUpEditForm form = (sender as IPopupControl).PopupWindow as PopupSearchLookUpEditForm;
+            SearchEditLookUpPopup popup = form.Controls.OfType<SearchEditLookUpPopup>().FirstOrDefault();
+            LayoutControl layout = popup.Controls.OfType<LayoutControl>().FirstOrDefault();
+            //如果窗体内空间没有确认按钮，则自定义确认simplebutton，取消simplebutton，选中结果label
+            if (layout.Controls.OfType<Control>().Where(ct => ct.Name == "btOK").FirstOrDefault() == null)
+            {
+                //得到空的空间
+                EmptySpaceItem a = layout.Items.Where(it => it.TypeName == "EmptySpaceItem").FirstOrDefault() as EmptySpaceItem;
+
+                //得到取消按钮，重写点击事件
+                Control clearBtn = layout.Controls.OfType<Control>().Where(ct => ct.Name == "btClear").FirstOrDefault();
+                LayoutControlItem clearLCI = (LayoutControlItem)layout.GetItemByControl(clearBtn);
+                clearBtn.Click += clearBtn_Click;
+
+                //添加一个simplebutton控件(确认按钮)
+                LayoutControlItem myLCI = (LayoutControlItem)clearLCI.Owner.CreateLayoutItem(clearLCI.Parent);
+                myLCI.TextVisible = false;
+            }
+        }
+
+        private void searchLookUpEdit1View_Click(object sender, EventArgs e)
+        {
+            var a = this.searchLookUpEdit1.Properties.View.GetSelectedRows();
+            foreach (int rowHandle in a)
+            {
+                this.dto无订单打印.materials_id //  no
+                    = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "id").ToString();//id 是 Value Member
+                this.dto无订单打印.materials_cd //  no
+                    = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "materialCode").ToString();//id 是 Value Member
+                this.dto无订单打印.materialComposition = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "materialComposition").ToString();
+                this.dto无订单打印.materialNameCn = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "materialNameCn").ToString();
+            }
+            this.mianliaoid.Text = this.dto无订单打印.materials_id;
+            this.mianliaocd.Text = this.dto无订单打印.materials_cd;
+            this.chengfen.Text = this.dto无订单打印.materialComposition;
+        }
+
+        /// <summary>
+        /// 清除按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            this.searchLookUpEdit1.ToolTip = null;
+            searchLookUpEdit1.EditValue = null;
+        }
+        private void searchLookUpEdit1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (null != e.Value)
+                e.DisplayText = this.dto无订单打印.materialNameCn;
+        }
+        #endregion
     }
 
     public class Grid2information

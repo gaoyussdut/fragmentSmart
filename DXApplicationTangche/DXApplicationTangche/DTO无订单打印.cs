@@ -15,6 +15,8 @@ namespace DXApplicationTangche
         public String style_id { get; set; } = "";
         public String materials_id { get; set; } = "";
         public String materials_cd { get; set; } = "";
+        public String materialNameCn { get; set; } = "";
+        public String materialComposition { get; set; } = "";
         public String size_cd { get; set; } = "";
         public String json { get; set; } = "";
         public List<dto尺寸> dtos = new List<dto尺寸>();
