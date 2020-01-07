@@ -123,8 +123,8 @@ namespace DXApplicationTangche.UC.门店下单.form
         }
         private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable dt = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), Dto定制下单.Style_Id, Change.stylesizedt);
-            ImpService.RefreshChiCun(this, dt);
+            this.model.build选中尺寸(this.chicun01.Text.Trim(), Dto定制下单.Style_Id, Change.stylesizedt);
+            ImpService.RefreshChiCun(this, this.model.选中尺寸);
             ImpService.CountChiCun(this);
         }
 
@@ -172,6 +172,7 @@ namespace DXApplicationTangche.UC.门店下单.form
                 this.mianliaoname.Text = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialNameCn").ToString();
                 ImpService.LoadChiCunCard(this);
                 ImpService.LoadSheJiDian(this, this.Dto定制下单.Style_Id);
+                this.model.build款式全尺寸(this.dto定制下单.Style_Id);
                 Change.stylesizedt = ImpService.StyleCombobox(this.Dto定制下单.Style_Id);
                 if (Change.stylesizedt != null)
                 {

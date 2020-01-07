@@ -178,12 +178,23 @@ namespace DXApplicationTangche.UC.款式异常
     public class 门店下单选款式Model {
         private List<款式图片Dto> 款式图片dtos = new List<款式图片Dto>();
         private 款式图片Dto 款式图片Dto;
-
+        private DataTable 款式尺寸dt;
+        private DataTable 选中尺寸dt;
         public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
         public 款式图片Dto 选中款式 { get => 款式图片Dto; set => 款式图片Dto = value; }
+        public DataTable 款式全尺寸 { get => 款式尺寸dt; set => 款式尺寸dt = value; }
+        public DataTable 选中尺寸 { get => 选中尺寸dt; set => 选中尺寸dt = value; }
 
         public 门店下单选款式Model(String flag, int page) { 
             this.款式图片dtos = ImpService.initStyleInfo(flag, page);
+        }
+        public void build款式全尺寸(String styleid)
+        {
+            this.款式尺寸dt = ImpService.StyleCombobox(styleid);
+        }
+        public void build选中尺寸(String size,String styleid,DataTable dt)
+        {
+            this.选中尺寸dt = ImpService.StyleValue(size, styleid, dt);
         }
     }
 }
