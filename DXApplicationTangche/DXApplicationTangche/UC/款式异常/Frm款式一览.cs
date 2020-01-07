@@ -27,7 +27,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// </summary>
         private void RefreshData() {
 
-            this.款式异常Model.build款式异常Model(this.barEditItem年份.EditValue.ToString(), this.barEditItem服装种类.EditValue.ToString());
+            this.款式异常Model.buildView(this.barEditItem年份.EditValue.ToString(), this.barEditItem服装种类.EditValue.ToString());
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.tileView款式异常.RefreshData();
 
@@ -39,7 +39,7 @@ namespace DXApplicationTangche.UC.款式异常
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
 
-            this.款式异常Model = ImpService.getAllStyle(this.ENABLE_FLAG).initData();
+            this.款式异常Model = ImpService.getAllStyle(this.ENABLE_FLAG);
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.initCombo();
 
@@ -76,7 +76,7 @@ namespace DXApplicationTangche.UC.款式异常
                 MessageBox.Show(exception.Message);
             }
 
-            this.gridControl待办.DataSource = this.款式异常Model.送审款式s1;
+            this.gridControl待办.DataSource = this.款式异常Model.送审款式;
             this.gridView待办.RefreshData();
         }
 
@@ -86,7 +86,7 @@ namespace DXApplicationTangche.UC.款式异常
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
 
-            this.款式异常Model = ImpService.getAllStyle(this.ENABLE_FLAG).initData();
+            this.款式异常Model = ImpService.getAllStyle(this.ENABLE_FLAG);
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.tileView款式异常.RefreshData();
             this.initCombo();

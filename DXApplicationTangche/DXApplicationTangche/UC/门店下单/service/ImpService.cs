@@ -2109,10 +2109,10 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 dataTable = SQLmtm.GetDataTable(sql);
                 //List<String> EGS_GROUP_SIZEs = new List<string>();   //  数字尺码
                 //List<String> IGS_GROUP_SIZEs = new List<string>();  //  英文尺码
-                model.generateSize_Fit(dataTable);
+                model.buildSizeFit(dataTable);
             }
             
-            return model;
+            return model.buildView();
         }
 
         public static List<面料DTO> get面料DTOs(List<String> SYTLE_FABRIC_ID) {
