@@ -1,11 +1,7 @@
 ﻿using DXApplicationTangche.UC.门店下单.DTO;
-using mendian;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DXApplicationTangche.UC.款式异常
 {
@@ -45,8 +41,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// </summary>
         /// <returns></returns>
         public 款式Model buildView()
-        {
-            this.views.AddRange(this.款式图片一览Dtos);
+        {            
             foreach (款式图片一览Dto dto in this.款式图片一览Dtos)
             {
                 if (!this.List服装种类.Contains(dto.STYLE_PUBLISH_CATEGORY_CD))
@@ -62,6 +57,10 @@ namespace DXApplicationTangche.UC.款式异常
             if (List年份.Count > 0 && List服装种类.Count > 0)
             {
                 this.buildView(List年份[0], List服装种类[0]);
+            }
+            else {
+                this.views.Clear();
+                this.views.AddRange(this.款式图片一览Dtos);
             }
             return this;
         }
