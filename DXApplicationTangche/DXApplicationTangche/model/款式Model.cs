@@ -75,16 +75,14 @@ namespace DXApplicationTangche.UC.款式异常
         public 款式Model buildView(String 年份, String 服装种类)
         {
             this.Views.Clear();
-            List<款式图片一览Dto> dtos = new List<款式图片一览Dto>();
             foreach (款式图片一览Dto dto in this.款式图片一览Dtos)
             {
                 if (dto.SYTLE_YEAR.Equals(年份) && dto.STYLE_PUBLISH_CATEGORY_CD.Equals(服装种类))
                 {
-                    dtos.Add(dto);
+                    this.Views.Add(dto);
                     continue;
                 }
             }
-            this.Views = dtos;
             return this;
         }
 
