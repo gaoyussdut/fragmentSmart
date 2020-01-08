@@ -45,7 +45,11 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.SYTLE_FABRIC_ID = 款式卡片DTO.mianliaoid;
             return this;
         }
-
+        public Dto定制下单 build面料(String SYTLE_FABRIC_ID)
+        {
+            this.SYTLE_FABRIC_ID = SYTLE_FABRIC_ID;
+            return this;
+        }
     }
 
     /// <summary>

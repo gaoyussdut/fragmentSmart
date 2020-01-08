@@ -304,7 +304,7 @@
             this.dockPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.OriginalSize = new System.Drawing.Size(322, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(282, 536);
+            this.dockPanel1.Size = new System.Drawing.Size(322, 536);
             this.dockPanel1.Text = "订单详情";
             // 
             // dockPanel1_Container
@@ -314,7 +314,7 @@
             this.dockPanel1_Container.Location = new System.Drawing.Point(3, 30);
             this.dockPanel1_Container.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(275, 503);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(315, 503);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl2
@@ -323,7 +323,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 159);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(275, 344);
+            this.gridControl2.Size = new System.Drawing.Size(315, 344);
             this.gridControl2.TabIndex = 52;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -384,14 +384,14 @@
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 27.60001F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 32.39999F),
             new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(275, 159);
+            this.tablePanel1.Size = new System.Drawing.Size(315, 159);
             this.tablePanel1.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.tablePanel1.SetColumn(this.label5, 0);
-            this.label5.Location = new System.Drawing.Point(3, 123);
+            this.label5.Location = new System.Drawing.Point(3, 138);
             this.label5.Name = "label5";
             this.tablePanel1.SetRow(this.label5, 4);
             this.label5.Size = new System.Drawing.Size(55, 14);
@@ -401,7 +401,7 @@
             // searchLookUpEdit1
             // 
             this.tablePanel1.SetColumn(this.searchLookUpEdit1, 1);
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(73, 115);
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(83, 134);
             this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchLookUpEdit1.Name = "searchLookUpEdit1";
             this.searchLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -411,7 +411,7 @@
             this.searchLookUpEdit1.Properties.NullText = "";
             this.searchLookUpEdit1.Properties.PopupView = this.gridView3;
             this.tablePanel1.SetRow(this.searchLookUpEdit1, 4);
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(199, 30);
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(229, 23);
             this.searchLookUpEdit1.TabIndex = 53;
             this.searchLookUpEdit1.Popup += new System.EventHandler(this.searchLookUpEdit1_Popup);
             this.searchLookUpEdit1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEdit1_CustomDisplayText);
@@ -472,51 +472,51 @@
             // 
             this.tablePanel1.SetColumn(this.textEdit总金额, 1);
             this.textEdit总金额.Enabled = false;
-            this.textEdit总金额.Location = new System.Drawing.Point(73, 79);
+            this.textEdit总金额.Location = new System.Drawing.Point(83, 106);
             this.textEdit总金额.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit总金额.Name = "textEdit总金额";
             this.tablePanel1.SetRow(this.textEdit总金额, 3);
-            this.textEdit总金额.Size = new System.Drawing.Size(199, 20);
+            this.textEdit总金额.Size = new System.Drawing.Size(229, 20);
             this.textEdit总金额.TabIndex = 9;
             // 
             // textEdit门店
             // 
             this.tablePanel1.SetColumn(this.textEdit门店, 1);
             this.textEdit门店.Enabled = false;
-            this.textEdit门店.Location = new System.Drawing.Point(73, 58);
+            this.textEdit门店.Location = new System.Drawing.Point(83, 76);
             this.textEdit门店.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit门店.Name = "textEdit门店";
             this.tablePanel1.SetRow(this.textEdit门店, 2);
-            this.textEdit门店.Size = new System.Drawing.Size(199, 17);
+            this.textEdit门店.Size = new System.Drawing.Size(229, 20);
             this.textEdit门店.TabIndex = 8;
             // 
             // textEdit订单号
             // 
             this.tablePanel1.SetColumn(this.textEdit订单号, 1);
             this.textEdit订单号.Enabled = false;
-            this.textEdit订单号.Location = new System.Drawing.Point(73, 3);
+            this.textEdit订单号.Location = new System.Drawing.Point(83, 7);
             this.textEdit订单号.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit订单号.Name = "textEdit订单号";
             this.tablePanel1.SetRow(this.textEdit订单号, 0);
-            this.textEdit订单号.Size = new System.Drawing.Size(199, 20);
+            this.textEdit订单号.Size = new System.Drawing.Size(229, 20);
             this.textEdit订单号.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
             this.tablePanel1.SetColumn(this.dateTimePicker1, 1);
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(73, 30);
+            this.dateTimePicker1.Location = new System.Drawing.Point(83, 42);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.tablePanel1.SetRow(this.dateTimePicker1, 1);
-            this.dateTimePicker1.Size = new System.Drawing.Size(199, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(229, 22);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.tablePanel1.SetColumn(this.label4, 0);
-            this.label4.Location = new System.Drawing.Point(3, 82);
+            this.label4.Location = new System.Drawing.Point(3, 109);
             this.label4.Name = "label4";
             this.tablePanel1.SetRow(this.label4, 3);
             this.label4.Size = new System.Drawing.Size(43, 14);
@@ -527,7 +527,7 @@
             // 
             this.label3.AutoSize = true;
             this.tablePanel1.SetColumn(this.label3, 0);
-            this.label3.Location = new System.Drawing.Point(3, 59);
+            this.label3.Location = new System.Drawing.Point(3, 79);
             this.label3.Name = "label3";
             this.tablePanel1.SetRow(this.label3, 2);
             this.label3.Size = new System.Drawing.Size(55, 14);
@@ -538,7 +538,7 @@
             // 
             this.label2.AutoSize = true;
             this.tablePanel1.SetColumn(this.label2, 0);
-            this.label2.Location = new System.Drawing.Point(3, 34);
+            this.label2.Location = new System.Drawing.Point(3, 46);
             this.label2.Name = "label2";
             this.tablePanel1.SetRow(this.label2, 1);
             this.label2.Size = new System.Drawing.Size(55, 14);
@@ -549,7 +549,7 @@
             // 
             this.label1.AutoSize = true;
             this.tablePanel1.SetColumn(this.label1, 0);
-            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Location = new System.Drawing.Point(3, 10);
             this.label1.Name = "label1";
             this.tablePanel1.SetRow(this.label1, 0);
             this.label1.Size = new System.Drawing.Size(43, 14);
@@ -561,11 +561,11 @@
             this.dockPanel3.Controls.Add(this.dockPanel3_Container);
             this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
             this.dockPanel3.ID = new System.Guid("dbd6f430-9f49-4062-88bb-afe1ad422a52");
-            this.dockPanel3.Location = new System.Drawing.Point(282, 0);
+            this.dockPanel3.Location = new System.Drawing.Point(322, 0);
             this.dockPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel3.Name = "dockPanel3";
             this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 168);
-            this.dockPanel3.Size = new System.Drawing.Size(775, 131);
+            this.dockPanel3.Size = new System.Drawing.Size(735, 168);
             // 
             // dockPanel3_Container
             // 
@@ -573,7 +573,7 @@
             this.dockPanel3_Container.Location = new System.Drawing.Point(3, 30);
             this.dockPanel3_Container.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(769, 97);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(729, 134);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // tileBar1
@@ -589,7 +589,7 @@
             this.tileBar1.Name = "tileBar1";
             this.tileBar1.Padding = new System.Windows.Forms.Padding(19, 5, 19, 5);
             this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
-            this.tileBar1.Size = new System.Drawing.Size(769, 135);
+            this.tileBar1.Size = new System.Drawing.Size(729, 135);
             this.tileBar1.TabIndex = 2;
             this.tileBar1.Text = "tileBar1";
             // 
@@ -688,11 +688,11 @@
             this.dockPanel2.Controls.Add(this.dockPanel2_Container);
             this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel2.ID = new System.Guid("3e4e003d-23d7-433f-84a1-e780b7fae0a0");
-            this.dockPanel2.Location = new System.Drawing.Point(786, 131);
+            this.dockPanel2.Location = new System.Drawing.Point(747, 168);
             this.dockPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel2.Name = "dockPanel2";
             this.dockPanel2.OriginalSize = new System.Drawing.Size(310, 200);
-            this.dockPanel2.Size = new System.Drawing.Size(271, 405);
+            this.dockPanel2.Size = new System.Drawing.Size(310, 368);
             this.dockPanel2.Text = "设计点预览";
             // 
             // dockPanel2_Container
@@ -701,7 +701,7 @@
             this.dockPanel2_Container.Location = new System.Drawing.Point(4, 30);
             this.dockPanel2_Container.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(264, 372);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(303, 335);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // gridControl设计点
@@ -714,7 +714,7 @@
             this.gridControl设计点.Name = "gridControl设计点";
             this.gridControl设计点.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit2});
-            this.gridControl设计点.Size = new System.Drawing.Size(264, 372);
+            this.gridControl设计点.Size = new System.Drawing.Size(303, 335);
             this.gridControl设计点.TabIndex = 0;
             this.gridControl设计点.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView2,
@@ -773,13 +773,13 @@
             // 
             this.gridControl订单分录一览.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl订单分录一览.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl订单分录一览.Location = new System.Drawing.Point(282, 131);
+            this.gridControl订单分录一览.Location = new System.Drawing.Point(322, 168);
             this.gridControl订单分录一览.MainView = this.tileView1;
             this.gridControl订单分录一览.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl订单分录一览.Name = "gridControl订单分录一览";
             this.gridControl订单分录一览.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl订单分录一览.Size = new System.Drawing.Size(504, 405);
+            this.gridControl订单分录一览.Size = new System.Drawing.Size(425, 368);
             this.gridControl订单分录一览.TabIndex = 3;
             this.gridControl订单分录一览.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});

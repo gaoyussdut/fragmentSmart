@@ -181,6 +181,7 @@ namespace DXApplicationTangche.UC.款式异常
         private 款式图片Dto 款式图片Dto;
         private DataTable 款式尺寸dt;
         private DataTable 选中尺寸dt;
+        public Dto定制下单 Dto定制下单;
         public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
         public 款式图片Dto 选中款式 { get => 款式图片Dto; set => 款式图片Dto = value; }
         public DataTable 款式全尺寸 { get => 款式尺寸dt; set => 款式尺寸dt = value; }
@@ -198,15 +199,29 @@ namespace DXApplicationTangche.UC.款式异常
             this.选中尺寸dt = ImpService.StyleValue(size, styleid, dt);
         }
     }
-    public class 面料Model
+    public class 面料图片Model
     {
-        private List<面料图片DTo> 面料图片DTos = new List<面料图片DTo>();
-
-        public 面料Model(String str, int page)
+        private List<面料图片Dto> 面料图片DTos = new List<面料图片Dto>();
+        private 面料图片Dto 面料图片;
+        public 面料图片Model(String str, int page)
         {
             this.面料图片DTos = ImpService.GetMianLiao(str, page);
         }
-
-        internal List<面料图片DTo> 面料卡s { get => 面料图片DTos; set => 面料图片DTos = value; }
+        public 面料图片Model(String styleid,String str,int page)
+        {
+            this.面料图片DTos = ImpService.DefaultMianLiao(styleid, str, page);
+        }
+        internal List<面料图片Dto> 面料卡s { get => 面料图片DTos; set => 面料图片DTos = value; }
+        internal 面料图片Dto 面料 { get => 面料图片; set => 面料图片 = value; }
     }
+    public class 设计点图片Model
+    {
+        private List<设计点图片Dto> 设计点图片Dtos = new List<设计点图片Dto>();
+        public 设计点图片Model(String itemcd,String str)
+        {
+            this.设计点s = ImpService.GetDesign(itemcd,str);
+        }
+        internal List<设计点图片Dto> 设计点s { get => 设计点图片Dtos; set => 设计点图片Dtos = value; }
+    }
+
 }

@@ -93,12 +93,12 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            new Frm面料选择(this).ShowDialog();
+            new Frm面料选择(Dto定制下单.Style_Id,Frm面料选择.Enum选择面料类型.全部,this.model).ShowDialog();
         }
 
         private void mianliaoname_Click(object sender, EventArgs e)
         {
-            new Frm面料选择(Dto定制下单.Style_Id, this).ShowDialog();
+            new Frm面料选择(Dto定制下单.Style_Id, Frm面料选择.Enum选择面料类型.默认,this.model).ShowDialog();
         }
 
         private void Frm门店下单选款式_Activated(object sender, EventArgs e)

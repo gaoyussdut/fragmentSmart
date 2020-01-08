@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace DXApplicationTangche.DTO
 {
-    class 面料图片DTo
+    class 面料图片Dto
     {
         public String materialid { get; set; }
         public String materialcd { get; set; }
         public String materialname { get; set; }
         public Image Picture { get; set; }
-        public 面料图片DTo (DataRow dr)
+        public 面料图片Dto (DataRow dr)
         {
             this.materialid = dr["id"].ToString();
             this.materialcd = dr["materialCode"].ToString();
