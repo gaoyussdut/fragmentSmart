@@ -1,4 +1,5 @@
-﻿using DXApplicationTangche.UC.门店下单.DTO;
+﻿using DXApplicationTangche.DTO;
+using DXApplicationTangche.UC.门店下单.DTO;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -196,5 +197,16 @@ namespace DXApplicationTangche.UC.款式异常
         {
             this.选中尺寸dt = ImpService.StyleValue(size, styleid, dt);
         }
+    }
+    public class 面料Model
+    {
+        private List<面料图片DTo> 面料图片DTos = new List<面料图片DTo>();
+
+        public 面料Model(String str, int page)
+        {
+            this.面料图片DTos = ImpService.GetMianLiao(str, page);
+        }
+
+        internal List<面料图片DTo> 面料卡s { get => 面料图片DTos; set => 面料图片DTos = value; }
     }
 }

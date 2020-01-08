@@ -42,7 +42,14 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.SYTLE_YEAR = dr["styleEntity.sytleYear"].ToString();
             this.SYTLE_SEASON = dr["styleEntity.sytleSeason"].ToString();
             this.STYLE_SIZE_CD = dr["styleEntity.styleSizeCd"].ToString();
-            this.Picture = Image.FromFile(@"pic\" + dr["picn"].ToString());
+            try
+            {
+                this.Picture = Image.FromFile(@"pic\" + dr["picn"].ToString());
+            }
+            catch
+            {
+                this.Picture= Image.FromFile(@"pic\SSHIRT.jpg");
+            }
         }
     }
 

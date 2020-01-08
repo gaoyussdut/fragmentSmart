@@ -1,4 +1,5 @@
-﻿using DXApplicationTangche.UC.门店下单.form;
+﻿using DXApplicationTangche.UC.款式异常;
+using DXApplicationTangche.UC.门店下单.form;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace mendian
 {
     public partial class Frm面料选择 : Form
     {
+        public 面料Model model { get; set; }
         public static int page { get; set; }
         public static String mianliaoid { get; set; }
         public static String mianliao { get; set; }
@@ -27,6 +29,7 @@ namespace mendian
         public Frm面料选择(Frm门店下单选款式 frm)
         {
             InitializeComponent();
+            Frm面料选择.page = 1;
             this.frm = frm;
             this.flag = false;
             this.fenYeLan1.xiaye.Click += new EventHandler(this.xiaye_Button);
@@ -45,7 +48,8 @@ namespace mendian
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            DoButtonClick();
+            generatePictureLayout();
+            //DoButtonClick();
         }
         public void generateUserControl(UserControl userControl, int i)
         {
@@ -69,58 +73,14 @@ namespace mendian
         /// <param name="e"></param>
         private void xiaye_Button(object sender, EventArgs e)
         {
-            this.splashScreenManager.ShowWaitForm();
-            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
-            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             Frm面料选择.page++;
-            if (this.flag == false)
+            generatePictureLayout();
+            if (this.model.面料卡s.Count==0)
             {
-                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("已经是最后一页");
-                    Frm面料选择.page--;
-                    dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
-                }
-                this.panel1.Controls.Clear();
-                height = 0;
-                width = 0;
-                int i = 0;
-                panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    UC面料卡片 oc = new UC面料卡片(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
-                    this.generateUserControl(oc, i);
-                    this.panel1.Controls.Add(oc);//将控件加入panel
-                                                 //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
-                    i++;
-                }
+                MessageBox.Show("已经是最后一页");
+                Frm面料选择.page--;
+                generatePictureLayout();
             }
-            else
-            {
-                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, Frm面料选择.page);
-                if (dt.Rows.Count == 0)
-                {
-                    MessageBox.Show("已经是最后一页");
-                    Frm面料选择.page--;
-                    dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
-                }
-                this.panel1.Controls.Clear();
-                height = 0;
-                width = 0;
-                int i = 0;
-                panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    UC面料卡片 oc = new UC面料卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
-                    this.generateUserControl(oc, i);
-                    this.panel1.Controls.Add(oc);//将控件加入panel
-                                                 //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
-                    i++;
-                }
-            }
-            this.fenYeLan1.label1.Text = Frm面料选择.page.ToString();
-            this.splashScreenManager.CloseWaitForm();
         }
         /// <summary>
         /// 上一页
@@ -134,88 +94,65 @@ namespace mendian
                 MessageBox.Show("已经到首页");
                 return;
             }
-            this.splashScreenManager.ShowWaitForm();
-            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
-            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             Frm面料选择.page--;
-            this.panel1.Controls.Clear();
-            height = 0;
-            width = 0;
-            int i = 0;
-            if (this.flag == false)
-            {
-                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
-                panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    UC面料卡片 oc = new UC面料卡片(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
-                    this.generateUserControl(oc, i);
-                    this.panel1.Controls.Add(oc);//将控件加入panel
-                                                 //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
-                    i++;
-                }
-            }
-            else
-            {
-                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, Frm面料选择.page);
-                panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    UC面料卡片 oc = new UC面料卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
-                    this.generateUserControl(oc, i);
-                    this.panel1.Controls.Add(oc);//将控件加入panel
-                                                 //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
-                    i++;
-                }
-            }
-            this.fenYeLan1.label1.Text = Frm面料选择.page.ToString();
-            this.splashScreenManager.CloseWaitForm();
+            generatePictureLayout();
         }
         /// <summary>
         /// 显示所有
         /// </summary>
-        private void DoButtonClick()
+        //private void DoButtonClick()
+        //{
+        //    this.splashScreenManager.ShowWaitForm();
+        //    this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
+        //    this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
+        //    Frm面料选择.page = 1;
+        //    this.panel1.Controls.Clear();
+        //    height = 0;
+        //    width = 0;
+        //    int i = 0;
+        //    if (flag == false)
+        //    {
+        //        DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
+        //        panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
+        //        foreach (DataRow dr in dt.Rows)
+        //        {
+        //            UC面料卡片 oc = new UC面料卡片(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+        //            this.generateUserControl(oc, i);
+        //            this.panel1.Controls.Add(oc);//将控件加入panel
+        //                                         //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
+        //            i++;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, Frm面料选择.page);
+        //        panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
+        //        foreach (DataRow dr in dt.Rows)
+        //        {
+        //            UC面料卡片 oc = new UC面料卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
+        //            this.generateUserControl(oc, i);
+        //            this.panel1.Controls.Add(oc);//将控件加入panel
+        //                                         //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
+        //            i++;
+        //        }
+        //    }
+        //    this.splashScreenManager.CloseWaitForm();
+        //}
+
+        private void Frm面料选择_Load(object sender, EventArgs e)
+        {
+            //DoButtonClick();
+            generatePictureLayout();
+        }
+        private void generatePictureLayout()
         {
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-            Frm面料选择.page = 1;
-            this.panel1.Controls.Clear();
-            height = 0;
-            width = 0;
-            int i = 0;
-            if (flag == false)
-            {
-                DataTable dt = ImpService.GetMianLiao(this.textBox1.Text, Frm面料选择.page);
-                panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    UC面料卡片 oc = new UC面料卡片(dr["mianliao"].ToString(), dr["id"].ToString(), dr["materialCode"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
-                    this.generateUserControl(oc, i);
-                    this.panel1.Controls.Add(oc);//将控件加入panel
-                                                 //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
-                    i++;
-                }
-            }
-            else
-            {
-                DataTable dt = ImpService.DefaultMianLiao(this.styleid, this.textBox1.Text, Frm面料选择.page);
-                panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    UC面料卡片 oc = new UC面料卡片(dr["ITEM_NAME_CN"].ToString(), dr["ITEM_VALUE"].ToString(), dr["ITEM_CD"].ToString(), dr["picurl"].ToString(), dr["picn"].ToString(), this,this.frm);
-                    this.generateUserControl(oc, i);
-                    this.panel1.Controls.Add(oc);//将控件加入panel
-                                                 //oc.pictureBox1.Click += new EventHandler(this.picture_Click);
-                    i++;
-                }
-            }
+            this.model = new 面料Model(this.textBox1.Text, Frm面料选择.page);
+            this.gridControl1.DataSource = this.model.面料卡s;
+            this.fenYeLan1.label1.Text = Frm面料选择.page.ToString();
             this.splashScreenManager.CloseWaitForm();
-        }
-
-        private void Frm面料选择_Load(object sender, EventArgs e)
-        {
-            DoButtonClick();
         }
     }
 }

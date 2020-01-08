@@ -28,11 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan3 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan4 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            this.colpic = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.colMaterialName = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.fenYeLan1 = new mendian.UC分页();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.colMaterialID = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colMaterialCD = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -41,8 +59,13 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -51,6 +74,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // colpic
+            // 
+            this.colpic.Caption = "面料图片";
+            this.colpic.ColumnEdit = this.repositoryItemPictureEdit1;
+            this.colpic.FieldName = "Picture";
+            this.colpic.Name = "colpic";
+            this.colpic.Visible = true;
+            this.colpic.VisibleIndex = 0;
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            // 
+            // colMaterialName
+            // 
+            this.colMaterialName.Caption = "面料名称";
+            this.colMaterialName.FieldName = "materialname";
+            this.colMaterialName.Name = "colMaterialName";
+            this.colMaterialName.Visible = true;
+            this.colMaterialName.VisibleIndex = 1;
             // 
             // layoutControl1
             // 
@@ -98,10 +142,85 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.gridControl1);
             this.panel1.Location = new System.Drawing.Point(12, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1060, 564);
             this.panel1.TabIndex = 7;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.tileView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemImageEdit1,
+            this.repositoryItemPictureEdit1});
+            this.gridControl1.Size = new System.Drawing.Size(1060, 564);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.tileView1});
+            // 
+            // tileView1
+            // 
+            this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colpic,
+            this.colMaterialName,
+            this.colMaterialID,
+            this.colMaterialCD});
+            this.tileView1.GridControl = this.gridControl1;
+            this.tileView1.Name = "tileView1";
+            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(200, 200);
+            this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileView1.OptionsTiles.RowCount = 0;
+            this.tileView1.TileColumns.Add(tableColumnDefinition4);
+            this.tileView1.TileColumns.Add(tableColumnDefinition5);
+            this.tileView1.TileColumns.Add(tableColumnDefinition6);
+            tableRowDefinition4.Length.Value = 83D;
+            tableRowDefinition5.Length.Value = 93D;
+            tableRowDefinition6.Length.Value = 40D;
+            this.tileView1.TileRows.Add(tableRowDefinition4);
+            this.tileView1.TileRows.Add(tableRowDefinition5);
+            this.tileView1.TileRows.Add(tableRowDefinition6);
+            tableSpan3.ColumnSpan = 3;
+            tableSpan3.RowSpan = 2;
+            tableSpan4.ColumnSpan = 3;
+            tableSpan4.RowIndex = 2;
+            this.tileView1.TileSpans.Add(tableSpan3);
+            this.tileView1.TileSpans.Add(tableSpan4);
+            tileViewItemElement3.Column = this.colpic;
+            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement3.Text = "colpic";
+            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.Column = this.colMaterialName;
+            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement4.RowIndex = 2;
+            tileViewItemElement4.Text = "colMaterialName";
+            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileView1.TileTemplate.Add(tileViewItemElement3);
+            this.tileView1.TileTemplate.Add(tileViewItemElement4);
+            // 
+            // colMaterialID
+            // 
+            this.colMaterialID.Caption = "面料id";
+            this.colMaterialID.FieldName = "id";
+            this.colMaterialID.Name = "colMaterialID";
+            // 
+            // colMaterialCD
+            // 
+            this.colMaterialCD.Caption = "面料CD";
+            this.colMaterialCD.FieldName = "materialcd";
+            this.colMaterialCD.Name = "colMaterialCD";
+            // 
+            // repositoryItemImageEdit1
+            // 
+            this.repositoryItemImageEdit1.AutoHeight = false;
+            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
             // 
             // layoutControlGroup1
             // 
@@ -198,8 +317,13 @@
             this.Text = "面料选择";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm面料选择_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
@@ -226,5 +350,13 @@
         private UC分页 fenYeLan1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colpic;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colMaterialName;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colMaterialID;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colMaterialCD;
     }
 }

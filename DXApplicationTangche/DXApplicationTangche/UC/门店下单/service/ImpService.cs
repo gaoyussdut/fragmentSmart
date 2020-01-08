@@ -13,6 +13,7 @@ using DXApplicationTangche;
 using DXApplicationTangche.UC.门店下单.form;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.款式异常;
+using DXApplicationTangche.DTO;
 
 namespace mendian
 {
@@ -520,9 +521,9 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// <param name="str"></param>
         /// <param name="page"></param>
         /// <returns></returns>
-        public static DataTable GetMianLiao(String str, int page)
+        public static List<面料图片DTo> GetMianLiao(String str, int page)
         {
-            DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
+            String sql = "SELECT\n" +
 "	*,CONCAT(s1.materialCode,':',s1.materialNameCn) AS mianliao,\n" +
 "SUBSTRING_INDEX( s1.filePath, '/',- 1 ) AS picn,\n" +
 "	CONCAT( 'https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/', SUBSTRING_INDEX( s1.filePath, '/',- 1 ) ) AS picurl \n" +
@@ -551,8 +552,8 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 "			AND file.FILE_PATH != '' THEN\n" +
 "				REPLACE ( CONCAT( file.FILE_PATH, file.UPLOAD_FILE ), 'fragsmart-erp', 'fragsmart-mtm' ) ELSE REPLACE ( CONCAT( upload_file.FILE_PATH, upload_file.UPLOAD_FILE ), 'fragsmart-erp', 'fragsmart-mtm' ) \n" +
 "				END AS filePath,\n" +
-"			a_login_user_p.LAST_NAME AS \"createby.lastName\",\n" +
-"			a_login_user_p.FIRST_NAME AS \"createby.firstName\",\n" +
+"			a_login_user_p.LAST_NAME AS \"createby_lastName\",\n" +
+"			a_login_user_p.FIRST_NAME AS \"createby_firstName\",\n" +
 "			IFNULL( s.material_sale_price, 0 ) AS \"materialPrice.materialSalePrice\",\n" +
 "			IFNULL( inventory_material.MATERIAL_QUANTITY, 0 ) AS \"inventoryMaterial.materialQuantity\",\n" +
 "			a.MATERIAL_LEVEL AS \"materialLevel\",\n" +
@@ -592,8 +593,14 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 "			a.MATERIAL_CATEGORY,\n" +
 "			a.MATERIAL_ID \n" +
 " LIMIT " + ((page - 1) * 36).ToString() + ",36" +
-"	) AS s1");
-            return dt;
+"	) AS s1";
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            List<面料图片DTo> 面料图片dtos = new List<面料图片DTo>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                面料图片dtos.Add(new 面料图片DTo(dr));
+            }
+            return 面料图片dtos;
         }
 
         private static PanelLocition panelLocition;
