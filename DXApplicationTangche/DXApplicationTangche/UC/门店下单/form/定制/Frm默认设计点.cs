@@ -30,7 +30,7 @@ namespace mendian
             this.splashScreenManager1.ShowWaitForm();
             this.splashScreenManager1.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager1.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
-            DataTable dt = ImpService.DefaultItem(card.id);
+            DataTable dt = new DataTable();
             if (dt.Rows.Count == 0)
             {
                 this.splashScreenManager1.CloseWaitForm();

@@ -182,7 +182,7 @@ namespace DXApplicationTangche.UC.款式异常
         private 款式图片Dto 款式图片Dto;
         private DataTable 款式尺寸dt;
         private DataTable 选中尺寸dt;
-        public Dto定制下单 Dto定制下单;
+        public Dto定制下单 Dto定制下单=new Dto定制下单();
         #endregion
 
         #region 属性
@@ -248,6 +248,10 @@ namespace DXApplicationTangche.UC.款式异常
         public 设计点图片Model(String itemcd,String str)
         {
             this.设计点s = ImpService.GetDesign(itemcd,str);
+        }
+        public 设计点图片Model(String id)
+        {
+            this.设计点s = ImpService.DefaultItem(id);
         }
         internal List<设计点图片Dto> 设计点s { get => 设计点图片Dtos; set => 设计点图片Dtos = value; }
     }

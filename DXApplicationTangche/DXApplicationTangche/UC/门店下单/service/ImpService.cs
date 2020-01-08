@@ -1152,20 +1152,26 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static DataTable DefaultItem(String id)
+        public static List<设计点图片Dto> DefaultItem(String id)
         {
             String sql = "SELECT\n" +
-"	a.ITEM_CD,\n" +
-"	a.ITEM_VALUE,\n" +
+"	a.ITEM_CD AS 'itemCD',\n" +
+"	a.ITEM_VALUE AS 'itemValue',\n" +
 "	w.UPLOAD_FILE AS picn,\n" +
-"	a.ITEM_NAME_CN\n" +
+"	a.ITEM_NAME_CN AS 'itemNameCN'\n" +
 "FROM\n" +
 "	a_kuanshi_p a\n" +
 "	LEFT JOIN w_upload_file_p w ON a.FILE_ID = w.FILE_ID \n" +
 "WHERE\n" +
 "	a.FILE_ID IS NOT NULL \n" +
 "	AND a.PARENT_ID = '" + id + "';";
-            return SQLmtm.GetDataTable(sql);
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            List<设计点图片Dto> 设计点图片Dtos = new List<设计点图片Dto>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                设计点图片Dtos.Add(new 设计点图片Dto(dr));
+            }
+            return 设计点图片Dtos;
         }
         /// <summary>
         /// 查询默认面料

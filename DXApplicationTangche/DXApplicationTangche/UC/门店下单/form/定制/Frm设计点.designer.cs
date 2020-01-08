@@ -63,6 +63,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.toolbarFormControl1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormControl();
+            this.colpicn = new DevExpress.XtraGrid.Columns.TileViewColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -165,7 +166,8 @@
             this.colitemcd,
             this.colitemvalue,
             this.colitemname,
-            this.colpic});
+            this.colpic,
+            this.colpicn});
             this.tileView1.GridControl = this.gridControl1;
             this.tileView1.Name = "tileView1";
             this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(248, 200);
@@ -199,17 +201,18 @@
             tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileView1.TileTemplate.Add(tileViewItemElement1);
             this.tileView1.TileTemplate.Add(tileViewItemElement2);
+            this.tileView1.ItemClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemClick);
             // 
             // colitemcd
             // 
             this.colitemcd.Caption = "itemcd";
-            this.colitemcd.FieldNameSortGroup = "itemCD";
+            this.colitemcd.FieldName = "item_cd";
             this.colitemcd.Name = "colitemcd";
             // 
             // colitemvalue
             // 
             this.colitemvalue.Caption = "itemvalue";
-            this.colitemvalue.FieldName = "itemValue";
+            this.colitemvalue.FieldName = "item_value";
             this.colitemvalue.Name = "colitemvalue";
             // 
             // toolbarFormManager1
@@ -335,6 +338,12 @@
             this.toolbarFormControl1.TabStop = false;
             this.toolbarFormControl1.ToolbarForm = this;
             // 
+            // colpicn
+            // 
+            this.colpicn.Caption = "picn";
+            this.colpicn.FieldName = "picn";
+            this.colpicn.Name = "colpicn";
+            // 
             // AllSheJiDian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -394,5 +403,6 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn colpic;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMRUEdit repositoryItemMRUEdit1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colpicn;
     }
 }

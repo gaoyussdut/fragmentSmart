@@ -153,6 +153,12 @@
     <Compile Include="UC\门店下单\form\Frm门店统一下单.Designer.cs">
       <DependentUpon>Frm门店统一下单.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\门店下单\form\定制\Frm默认设计点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\form\定制\Frm默认设计点.designer.cs">
+      <DependentUpon>Frm默认设计点.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\门店下单\form\标准款\Frm扫码下单.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,12 +255,6 @@
     </Compile>
     <Compile Include="DTO\CustomerInformationDto.cs" />
     <Compile Include="UC\门店下单\service\DealXML.cs" />
-    <Compile Include="UC\门店下单\form\定制\Frm默认设计点.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UC\门店下单\form\定制\Frm默认设计点.designer.cs">
-      <DependentUpon>Frm默认设计点.cs</DependentUpon>
-    </Compile>
     <Compile Include="DTO\FitValueCalculate.cs" />
     <Compile Include="DTO\Fit_ValueDTo.cs" />
     <Compile Include="DTO\MianLiaoPic.cs" />
@@ -365,6 +365,9 @@
     <EmbeddedResource Include="UC\门店下单\form\Frm门店统一下单.resx">
       <DependentUpon>Frm门店统一下单.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\form\定制\Frm默认设计点.resx">
+      <DependentUpon>Frm默认设计点.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\标准款\Frm扫码下单.resx">
       <DependentUpon>Frm扫码下单.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,9 +426,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\客户管理\CustomerChoose.resx">
       <DependentUpon>CustomerChoose.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\门店下单\form\定制\Frm默认设计点.resx">
-      <DependentUpon>Frm默认设计点.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\通用\Frm尺寸变更.resx">
       <DependentUpon>Frm尺寸变更.cs</DependentUpon>

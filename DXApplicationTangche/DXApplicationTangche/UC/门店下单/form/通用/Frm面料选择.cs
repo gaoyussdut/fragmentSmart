@@ -36,11 +36,11 @@ namespace mendian
             this.fenYeLan1.shangye.Click += new EventHandler(this.shangye_Button);
             if(this.enum选择面料类型==Enum选择面料类型.默认)
             {
-                this.Name = "默认面料选择";
+                this.Text = "默认面料选择";
             }
             else if(this.enum选择面料类型==Enum选择面料类型.全部)
             {
-                this.Name = "全部面料选择";
+                this.Text = "全部面料选择";
             }
         }
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -105,8 +105,10 @@ namespace mendian
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                String id = (String)tileView1.GetRowCellValue(e.Item.RowHandle, "id");
+                Frm面料选择.mianliao = (String)tileView1.GetRowCellValue(e.Item.RowHandle, "materialname");
+                String id = (String)tileView1.GetRowCellValue(e.Item.RowHandle, "materialid");
                 this.选Model.Dto定制下单.build面料(id);
+                this.Close();
             }      
         }
     }

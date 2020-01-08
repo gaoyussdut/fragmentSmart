@@ -43,12 +43,22 @@ namespace mendian
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            new DefaultSheJiDian(this).ShowDialog();
+            new AllSheJiDian(this,AllSheJiDian.Enum选择设计点类型.默认).ShowDialog();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            new AllSheJiDian(this).ShowDialog();
+            new AllSheJiDian(this,AllSheJiDian.Enum选择设计点类型.全部).ShowDialog();
+        }
+        public UC设计点选择 build设计点(String itemName,String itemCd,String itemValue,String picn,Image pic)
+        {
+            this.itemName = itemName;
+            this.itemCd = itemCd;
+            this.itemValue = itemValue;
+            this.textBox1.Text = itemValue + ":" + this.itemName;
+            this.picn = picn;
+            this.pic = pic;
+            return this;
         }
     }
 }

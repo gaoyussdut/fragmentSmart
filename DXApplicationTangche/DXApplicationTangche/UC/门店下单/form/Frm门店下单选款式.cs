@@ -111,9 +111,12 @@ namespace DXApplicationTangche.UC.门店下单.form
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                try {
+                try
+                {
                     this.model.verify订单();
-                }catch (Exception ex){
+                }
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                     return;
                 }

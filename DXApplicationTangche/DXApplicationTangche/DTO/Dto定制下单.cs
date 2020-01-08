@@ -81,7 +81,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
                 throw new Exception("设计点为空");
             }
             if (this.Dto尺寸 == null) {
-                throw new Exception(尺寸为空");
+                throw new Exception("尺寸为空");
             }
         }
     }
