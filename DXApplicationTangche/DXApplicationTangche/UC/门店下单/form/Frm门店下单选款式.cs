@@ -111,6 +111,12 @@ namespace DXApplicationTangche.UC.门店下单.form
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                try {
+                    this.model.verify订单();
+                }catch (Exception ex){
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
                 this.dto定制下单.ORDER_NUMBER = Convert.ToInt32(this.barEditItemNumber.EditValue);
                 ImpService.DynamicSaveSize(this, this.Dto定制下单);//尺寸保存
                 ImpService.DynamicSaveDesign(this, this.Dto定制下单);//设计点保存

@@ -177,27 +177,55 @@ namespace DXApplicationTangche.UC.款式异常
     }
 
     public class 门店下单选款式Model {
+        #region 变量
         private List<款式图片Dto> 款式图片dtos = new List<款式图片Dto>();
         private 款式图片Dto 款式图片Dto;
         private DataTable 款式尺寸dt;
         private DataTable 选中尺寸dt;
         public Dto定制下单 Dto定制下单;
-        public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
-        public 款式图片Dto 选中款式 { get => 款式图片Dto; set => 款式图片Dto = value; }
-        public DataTable 款式全尺寸 { get => 款式尺寸dt; set => 款式尺寸dt = value; }
-        public DataTable 选中尺寸 { get => 选中尺寸dt; set => 选中尺寸dt = value; }
+        #endregion
 
-        public 门店下单选款式Model(String flag, int page) { 
+        #region 属性
+        public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
+        public DataTable 选中尺寸 { get => 选中尺寸dt; set => 选中尺寸dt = value; }
+        #endregion
+
+        #region 构造函数
+        public 门店下单选款式Model(String flag, int page)
+        {
             this.款式图片dtos = ImpService.initStyleInfo(flag, page);
         }
-        public void build款式全尺寸(String styleid)
+        #endregion
+
+        #region build方法
+        public 门店下单选款式Model build款式全尺寸(String styleid)
         {
             this.款式尺寸dt = ImpService.StyleCombobox(styleid);
+            return this;
         }
-        public void build选中尺寸(String size,String styleid,DataTable dt)
+        public 门店下单选款式Model build选中尺寸(String size, String styleid, DataTable dt)
         {
             this.选中尺寸dt = ImpService.StyleValue(size, styleid, dt);
+            return this;
         }
+        #endregion
+
+        #region 校验方法
+        /// <summary>
+        /// 校验订单方法
+        /// </summary>
+        /// <returns></returns>
+        public bool verify订单() {
+            try
+            {
+                this.Dto定制下单.verify订单();
+            }
+            catch (Exception ex) {
+                throw ex;
+            }
+            return true;
+        }
+        #endregion
     }
     public class 面料图片Model
     {

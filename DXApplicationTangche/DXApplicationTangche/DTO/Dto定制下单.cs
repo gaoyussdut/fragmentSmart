@@ -50,6 +50,40 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.SYTLE_FABRIC_ID = SYTLE_FABRIC_ID;
             return this;
         }
+
+        public void verify订单()
+        {
+            if (String.IsNullOrEmpty(this.Style_Id))
+            {
+                throw new Exception("款式id为空");
+            }
+            if (String.IsNullOrEmpty(this.SYTLE_FABRIC_ID))
+            {
+                throw new Exception("面料id为空");
+            }
+            if (String.IsNullOrEmpty(this.STYLE_CATEGORY_CD))
+            {
+                throw new Exception("服装种类为空");
+            }
+            if (String.IsNullOrEmpty(this.STYLE_FIT_CD))
+            {
+                throw new Exception("版型为空");
+            }
+            if (String.IsNullOrEmpty(this.STYLE_SIZE_GROUP_CD))
+            {
+                throw new Exception("尺码为空");
+            }
+            if (this.ORDER_NUMBER<=0)
+            {
+                throw new Exception("订单数量必须大于0");
+            }
+            if (this.Dto设计点s.Count == 0) {
+                throw new Exception("设计点为空");
+            }
+            if (this.Dto尺寸 == null) {
+                throw new Exception(尺寸为空");
+            }
+        }
     }
 
     /// <summary>
