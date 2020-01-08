@@ -59,6 +59,7 @@ namespace DXApplicationTangche.UC.门店下单.form.标准款
             }
 
             this.gridControl1.DataSource = StockService.getStopStockAll();
+            this.gridView1.ExpandAllGroups();
         }
 
         private void textEdit1_KeyDown(object sender, KeyEventArgs e)

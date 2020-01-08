@@ -58,12 +58,11 @@
             this.accordionControlElement19 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement20 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementStock = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.ElementStockOut = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementShopStockIn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementShopOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
@@ -300,20 +299,12 @@
             // ElementStock
             // 
             this.ElementStock.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.ElementStockOut,
             this.ElementShopStockIn,
             this.ElementShopOrder,
             this.accordionControlElement23});
             this.ElementStock.Expanded = true;
             this.ElementStock.Name = "ElementStock";
             this.ElementStock.Text = "进销存管理";
-            // 
-            // ElementStockOut
-            // 
-            this.ElementStockOut.Name = "ElementStockOut";
-            this.ElementStockOut.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ElementStockOut.Text = "扫码出货";
-            this.ElementStockOut.Click += new System.EventHandler(this.ElementStockOut_Click);
             // 
             // ElementShopStockIn
             // 
@@ -326,7 +317,15 @@
             // 
             this.ElementShopOrder.Name = "ElementShopOrder";
             this.ElementShopOrder.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.ElementShopOrder.Text = "门店销售";
+            this.ElementShopOrder.Text = "门店销售出库";
+            this.ElementShopOrder.Click += new System.EventHandler(this.ElementStockOut_Click);
+            // 
+            // accordionControlElement23
+            // 
+            this.accordionControlElement23.Name = "accordionControlElement23";
+            this.accordionControlElement23.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement23.Text = "门店调拨";
+            this.accordionControlElement23.Click += new System.EventHandler(this.accordionControlElement23_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -337,13 +336,6 @@
             this.fluentDesignFormControl1.Size = new System.Drawing.Size(790, 37);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
-            // 
-            // accordionControlElement23
-            // 
-            this.accordionControlElement23.Name = "accordionControlElement23";
-            this.accordionControlElement23.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement23.Text = "门店调拨";
-            this.accordionControlElement23.Click += new System.EventHandler(this.accordionControlElement23_Click);
             // 
             // FluentMainFrame
             // 
@@ -376,7 +368,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement ElementStock;
         private DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl fluentDesignFormControl1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement ElementStockOut;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ElementShopStockIn;
         private DevExpress.XtraBars.Navigation.AccordionControlElement ElementShopOrder;
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame;

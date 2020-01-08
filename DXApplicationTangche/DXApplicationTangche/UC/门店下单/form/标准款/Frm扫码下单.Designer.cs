@@ -30,20 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colshop_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colshop_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSYS_STYLE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTYLE_PUBLISH_CATEGORY_CD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTYLE_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSYTLE_YEAR = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSYTLE_SEASON = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMATERIAL_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPicture = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.colamount = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel扫码 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -56,8 +43,20 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colshop_type = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colshop_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colshop_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYS_STYLE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_PUBLISH_CATEGORY_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYTLE_YEAR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSYTLE_SEASON = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMATERIAL_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPicture = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colamount = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel扫码.SuspendLayout();
@@ -67,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -82,142 +82,9 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colshop_id,
-            this.colshop_name,
-            this.colSYS_STYLE_ID,
-            this.colSTYLE_PUBLISH_CATEGORY_CD,
-            this.colSTYLE_NAME_CN,
-            this.colSYTLE_YEAR,
-            this.colSYTLE_SEASON,
-            this.colSTYLE_SIZE_CD,
-            this.colMATERIAL_ID,
-            this.colMATERIAL_NAME_CN,
-            this.colPicture,
-            this.colamount});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colshop_id
-            // 
-            this.colshop_id.Caption = "shop_id";
-            this.colshop_id.FieldName = "shop_id";
-            this.colshop_id.MinWidth = 25;
-            this.colshop_id.Name = "colshop_id";
-            this.colshop_id.Width = 94;
-            // 
-            // colshop_name
-            // 
-            this.colshop_name.Caption = "店名";
-            this.colshop_name.FieldName = "shop_name";
-            this.colshop_name.MinWidth = 25;
-            this.colshop_name.Name = "colshop_name";
-            this.colshop_name.Visible = true;
-            this.colshop_name.VisibleIndex = 0;
-            this.colshop_name.Width = 94;
-            // 
-            // colSYS_STYLE_ID
-            // 
-            this.colSYS_STYLE_ID.Caption = "SYS_STYLE_ID";
-            this.colSYS_STYLE_ID.FieldName = "SYS_STYLE_ID";
-            this.colSYS_STYLE_ID.MinWidth = 25;
-            this.colSYS_STYLE_ID.Name = "colSYS_STYLE_ID";
-            this.colSYS_STYLE_ID.Width = 94;
-            // 
-            // colSTYLE_PUBLISH_CATEGORY_CD
-            // 
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Caption = "服装种类";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 25;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 1;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
-            // 
-            // colSTYLE_NAME_CN
-            // 
-            this.colSTYLE_NAME_CN.Caption = "款名";
-            this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.MinWidth = 25;
-            this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.Visible = true;
-            this.colSTYLE_NAME_CN.VisibleIndex = 2;
-            this.colSTYLE_NAME_CN.Width = 94;
-            // 
-            // colSYTLE_YEAR
-            // 
-            this.colSYTLE_YEAR.Caption = "年份";
-            this.colSYTLE_YEAR.FieldName = "SYTLE_YEAR";
-            this.colSYTLE_YEAR.MinWidth = 25;
-            this.colSYTLE_YEAR.Name = "colSYTLE_YEAR";
-            this.colSYTLE_YEAR.Visible = true;
-            this.colSYTLE_YEAR.VisibleIndex = 4;
-            this.colSYTLE_YEAR.Width = 94;
-            // 
-            // colSYTLE_SEASON
-            // 
-            this.colSYTLE_SEASON.Caption = "季节";
-            this.colSYTLE_SEASON.FieldName = "SYTLE_SEASON";
-            this.colSYTLE_SEASON.MinWidth = 25;
-            this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
-            this.colSYTLE_SEASON.Visible = true;
-            this.colSYTLE_SEASON.VisibleIndex = 5;
-            this.colSYTLE_SEASON.Width = 94;
-            // 
-            // colSTYLE_SIZE_CD
-            // 
-            this.colSTYLE_SIZE_CD.Caption = "尺码";
-            this.colSTYLE_SIZE_CD.FieldName = "STYLE_SIZE_CD";
-            this.colSTYLE_SIZE_CD.MinWidth = 25;
-            this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
-            this.colSTYLE_SIZE_CD.Visible = true;
-            this.colSTYLE_SIZE_CD.VisibleIndex = 6;
-            this.colSTYLE_SIZE_CD.Width = 94;
-            // 
-            // colMATERIAL_ID
-            // 
-            this.colMATERIAL_ID.Caption = "MATERIAL_ID";
-            this.colMATERIAL_ID.FieldName = "MATERIAL_ID";
-            this.colMATERIAL_ID.MinWidth = 25;
-            this.colMATERIAL_ID.Name = "colMATERIAL_ID";
-            this.colMATERIAL_ID.Width = 94;
-            // 
-            // colMATERIAL_NAME_CN
-            // 
-            this.colMATERIAL_NAME_CN.Caption = "面料名称";
-            this.colMATERIAL_NAME_CN.FieldName = "MATERIAL_NAME_CN";
-            this.colMATERIAL_NAME_CN.MinWidth = 25;
-            this.colMATERIAL_NAME_CN.Name = "colMATERIAL_NAME_CN";
-            this.colMATERIAL_NAME_CN.Visible = true;
-            this.colMATERIAL_NAME_CN.VisibleIndex = 7;
-            this.colMATERIAL_NAME_CN.Width = 94;
-            // 
-            // colPicture
-            // 
-            this.colPicture.Caption = "面料图片";
-            this.colPicture.ColumnEdit = this.repositoryItemPictureEdit1;
-            this.colPicture.FieldName = "Picture";
-            this.colPicture.MinWidth = 25;
-            this.colPicture.Name = "colPicture";
-            this.colPicture.Width = 94;
-            // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            // 
-            // colamount
-            // 
-            this.colamount.Caption = "库存数量";
-            this.colamount.FieldName = "amount";
-            this.colamount.MinWidth = 25;
-            this.colamount.Name = "colamount";
-            this.colamount.Visible = true;
-            this.colamount.VisibleIndex = 3;
-            this.colamount.Width = 94;
             // 
             // dockManager1
             // 
@@ -360,6 +227,149 @@
             this.colshop_type.Visible = true;
             this.colshop_type.VisibleIndex = 1;
             // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colshop_id,
+            this.colshop_name,
+            this.colSYS_STYLE_ID,
+            this.colSTYLE_PUBLISH_CATEGORY_CD,
+            this.colSTYLE_NAME_CN,
+            this.colSYTLE_YEAR,
+            this.colSYTLE_SEASON,
+            this.colSTYLE_SIZE_CD,
+            this.colMATERIAL_ID,
+            this.colMATERIAL_NAME_CN,
+            this.colPicture,
+            this.colamount});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colshop_name, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colshop_id
+            // 
+            this.colshop_id.Caption = "shop_id";
+            this.colshop_id.FieldName = "shop_id";
+            this.colshop_id.MinWidth = 25;
+            this.colshop_id.Name = "colshop_id";
+            this.colshop_id.Visible = true;
+            this.colshop_id.VisibleIndex = 0;
+            this.colshop_id.Width = 94;
+            // 
+            // colshop_name
+            // 
+            this.colshop_name.Caption = "店名";
+            this.colshop_name.FieldName = "shop_name";
+            this.colshop_name.MinWidth = 25;
+            this.colshop_name.Name = "colshop_name";
+            this.colshop_name.Visible = true;
+            this.colshop_name.VisibleIndex = 1;
+            this.colshop_name.Width = 94;
+            // 
+            // colSYS_STYLE_ID
+            // 
+            this.colSYS_STYLE_ID.Caption = "SYS_STYLE_ID";
+            this.colSYS_STYLE_ID.FieldName = "SYS_STYLE_ID";
+            this.colSYS_STYLE_ID.MinWidth = 25;
+            this.colSYS_STYLE_ID.Name = "colSYS_STYLE_ID";
+            this.colSYS_STYLE_ID.Visible = true;
+            this.colSYS_STYLE_ID.VisibleIndex = 1;
+            this.colSYS_STYLE_ID.Width = 94;
+            // 
+            // colSTYLE_PUBLISH_CATEGORY_CD
+            // 
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Caption = "服装种类";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 25;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 2;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
+            // 
+            // colSTYLE_NAME_CN
+            // 
+            this.colSTYLE_NAME_CN.Caption = "款名";
+            this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.MinWidth = 25;
+            this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.Visible = true;
+            this.colSTYLE_NAME_CN.VisibleIndex = 3;
+            this.colSTYLE_NAME_CN.Width = 94;
+            // 
+            // colSYTLE_YEAR
+            // 
+            this.colSYTLE_YEAR.Caption = "年份";
+            this.colSYTLE_YEAR.FieldName = "SYTLE_YEAR";
+            this.colSYTLE_YEAR.MinWidth = 25;
+            this.colSYTLE_YEAR.Name = "colSYTLE_YEAR";
+            this.colSYTLE_YEAR.Visible = true;
+            this.colSYTLE_YEAR.VisibleIndex = 4;
+            this.colSYTLE_YEAR.Width = 94;
+            // 
+            // colSYTLE_SEASON
+            // 
+            this.colSYTLE_SEASON.Caption = "季节";
+            this.colSYTLE_SEASON.FieldName = "SYTLE_SEASON";
+            this.colSYTLE_SEASON.MinWidth = 25;
+            this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
+            this.colSYTLE_SEASON.Visible = true;
+            this.colSYTLE_SEASON.VisibleIndex = 5;
+            this.colSYTLE_SEASON.Width = 94;
+            // 
+            // colSTYLE_SIZE_CD
+            // 
+            this.colSTYLE_SIZE_CD.Caption = "尺码";
+            this.colSTYLE_SIZE_CD.FieldName = "STYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.MinWidth = 25;
+            this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.Visible = true;
+            this.colSTYLE_SIZE_CD.VisibleIndex = 6;
+            this.colSTYLE_SIZE_CD.Width = 94;
+            // 
+            // colMATERIAL_ID
+            // 
+            this.colMATERIAL_ID.Caption = "MATERIAL_ID";
+            this.colMATERIAL_ID.FieldName = "MATERIAL_ID";
+            this.colMATERIAL_ID.MinWidth = 25;
+            this.colMATERIAL_ID.Name = "colMATERIAL_ID";
+            this.colMATERIAL_ID.Visible = true;
+            this.colMATERIAL_ID.VisibleIndex = 7;
+            this.colMATERIAL_ID.Width = 94;
+            // 
+            // colMATERIAL_NAME_CN
+            // 
+            this.colMATERIAL_NAME_CN.Caption = "面料名称";
+            this.colMATERIAL_NAME_CN.FieldName = "MATERIAL_NAME_CN";
+            this.colMATERIAL_NAME_CN.MinWidth = 25;
+            this.colMATERIAL_NAME_CN.Name = "colMATERIAL_NAME_CN";
+            this.colMATERIAL_NAME_CN.Visible = true;
+            this.colMATERIAL_NAME_CN.VisibleIndex = 8;
+            this.colMATERIAL_NAME_CN.Width = 94;
+            // 
+            // colPicture
+            // 
+            this.colPicture.Caption = "面料图片";
+            this.colPicture.ColumnEdit = this.repositoryItemPictureEdit1;
+            this.colPicture.FieldName = "Picture";
+            this.colPicture.MinWidth = 25;
+            this.colPicture.Name = "colPicture";
+            this.colPicture.Visible = true;
+            this.colPicture.VisibleIndex = 9;
+            this.colPicture.Width = 94;
+            // 
+            // colamount
+            // 
+            this.colamount.Caption = "库存数量";
+            this.colamount.FieldName = "amount";
+            this.colamount.MinWidth = 25;
+            this.colamount.Name = "colamount";
+            this.colamount.Visible = true;
+            this.colamount.VisibleIndex = 10;
+            this.colamount.Width = 94;
+            // 
             // Frm扫码下单
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -371,7 +381,6 @@
             this.Text = "Frm扫码下单";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel扫码.ResumeLayout(false);
@@ -382,6 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,6 +399,19 @@
         #endregion
 
         private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel扫码;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private System.Windows.Forms.Label label扫码;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
+        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colshop_type;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colshop_id;
         private DevExpress.XtraGrid.Columns.GridColumn colshop_name;
@@ -401,19 +424,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_ID;
         private DevExpress.XtraGrid.Columns.GridColumn colMATERIAL_NAME_CN;
         private DevExpress.XtraGrid.Columns.GridColumn colPicture;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
-        private DevExpress.XtraBars.Docking.DockManager dockManager1;
-        private DevExpress.XtraBars.Docking.DockPanel dockPanel扫码;
-        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
-        private DevExpress.Utils.Layout.TablePanel tablePanel1;
-        private System.Windows.Forms.Label label扫码;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colamount;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn colshop_type;
     }
 }
