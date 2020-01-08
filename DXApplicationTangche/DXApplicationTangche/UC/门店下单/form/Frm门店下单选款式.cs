@@ -161,6 +161,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             DialogResult dialogResult = MessageBox.Show("确认选择该款式？", "款式选择", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                //  TODO    改为build
                 this.Dto定制下单.Style_Id = this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleId").ToString();
                 this.Dto定制下单.STYLE_CATEGORY_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString();
                 this.Dto定制下单.STYLE_FIT_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_FIT_CD").ToString();
@@ -170,8 +171,14 @@ namespace DXApplicationTangche.UC.门店下单.form
 
                 //  控件行为
                 this.mianliaoname.Text = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialNameCn").ToString();
+                //  TODO    改为tileview，不准传任何控件进去
+                //  TODO    不允许使用DataTable
                 ImpService.LoadChiCunCard(this);
+                //  TODO    不准传任何控件进去
+                //  TODO    不允许使用DataTable
                 ImpService.LoadSheJiDian(this, this.Dto定制下单.Style_Id);
+
+
                 this.model.build款式全尺寸(this.dto定制下单.Style_Id);
                 Change.stylesizedt = ImpService.StyleCombobox(this.Dto定制下单.Style_Id);
                 if (Change.stylesizedt != null)
