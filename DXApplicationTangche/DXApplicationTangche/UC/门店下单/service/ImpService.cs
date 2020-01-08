@@ -197,15 +197,15 @@ namespace mendian
                 if (dr["尺寸"].ToString() == size)
                 {
                     dt = SQLmtm.GetDataTable("SELECT\n" +
-"	*,\n" +
-"	SUBSTRING_INDEX( SIZE_CD, '-',- 1 ) \n" +
-"FROM\n" +
-"	`a_size_fit_p` \n" +
-"WHERE\n" +
-"	FIT_CD = '" + st["STYLE_FIT_CD"].ToString() + "' \n" +
-"	AND STYLE_CATEGORY_CD = '" + st["STYLE_CATEGORY_CD"].ToString() + "' \n" +
-"	AND SIZEGROUP_CD = '" + st["STYLE_SIZE_GROUP_CD"] + "' \n" +
-"	AND SIZE_CD = '" + dr["SIZE_CD"].ToString() + "';");
+                    "	*,\n" +
+                    "	SUBSTRING_INDEX( SIZE_CD, '-',- 1 ) \n" +
+                    "FROM\n" +
+                    "	`a_size_fit_p` \n" +
+                    "WHERE\n" +
+                    "	FIT_CD = '" + st["STYLE_FIT_CD"].ToString() + "' \n" +
+                    "	AND STYLE_CATEGORY_CD = '" + st["STYLE_CATEGORY_CD"].ToString() + "' \n" +
+                    "	AND SIZEGROUP_CD = '" + st["STYLE_SIZE_GROUP_CD"] + "' \n" +
+                    "	AND SIZE_CD = '" + dr["SIZE_CD"].ToString() + "';");
                     break;
                 }
             }
@@ -1682,45 +1682,45 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         public static void LoadChiCunCard(Frm门店下单选款式 frm)
         {
             DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
-" sp.FIT_ITEM_VALUE,\n" +
-" property.PROPERTY_CD propertyCd,\n" +
-"/*量体属性CD*/\n" +
-"property.PROPERTY_VALUE propertyValue,\n" +
-"/*量体VALUE*/\n" +
-" sp.ITEM_IN_FROM propertyInFrom,\n" +
-"/*量体属性值可增加范围从*/\n" +
-" sp.ITEM_IN_TO propertyInTo,\n" +
-"/*量体属性值可增加范围到*/\n" +
-" sp.ITEM_OUT_FROM propertyOutFrom,\n" +
-"/*量体属性值可缩减范围从*/\n" +
-" sp.ITEM_OUT_TO propertyOutTo,\n" +
-"/*量体属性值可缩减范围到*/\n" +
-" property.PROPERTY_NAME_CN propertyNameCn,\n" +
-"/*量体属性中文名称*/\n" +
-" property.FIT_USE_TYPE_CD fitUseTypeCd,\n" +
-"/*0-非净量体，1-净量体*/\n" +
-" property.PROPERTY_UNIT_CD propertyUnitCd ,\n" +
-" sp.ITEM_SORT,\n" +
-" sp.ITEM_CD,\n" +
-" sp.ITEM_VALUE\n" +
-"FROM\n" +
-" a_fit_property_p property\n" +
-" LEFT JOIN a_size_fit_p sp ON property.PROPERTY_CD = sp.ITEM_CD \n" +
-" AND property.PROPERTY_VALUE = sp.ITEM_VALUE \n" +
-"WHERE\n" +
-" property.PROPERTY_CD IN ( SELECT PROPERTY_VALUE FROM a_fit_property_p WHERE style_category_cd = '" + frm.Dto定制下单.STYLE_CATEGORY_CD + "' ) \n" +
-" AND property.DEL_FLG = 0 \n" +
-"  AND sp.FIT_CD = '" + frm.Dto定制下单.STYLE_FIT_CD + "'  /*款式*/\n" +
-" AND sp.SIZEGROUP_CD = '" + frm.Dto定制下单.STYLE_SIZE_GROUP_CD + "' \n" +
-"-- AND sp.SIZE_CD = '" + frm.Dto定制下单.STYLE_SIZE_CD + "'   /*尺码*/\n" +
-" AND property.FIT_USE_TYPE_CD = \"FIT_USE_TYPE-FIT_TYPE_20\" \n" +
-" AND sp.ENABLE_FLAG = 1 \n" +
-" AND property.FIT_FLAG = 1 \n" +
-" AND sp.ITEM_VALUE != \"CIRCU_ITEM_09\" \n" +
-"GROUP BY property.PROPERTY_VALUE  \n" +
-"ORDER BY\n" +
-" -- property.PROPERTY_CD,sp.ITEM_SORT ASC\n" +
-" sp.ITEM_SORT ASC");
+                " sp.FIT_ITEM_VALUE,\n" +
+                " property.PROPERTY_CD propertyCd,\n" +
+                "/*量体属性CD*/\n" +
+                "property.PROPERTY_VALUE propertyValue,\n" +
+                "/*量体VALUE*/\n" +
+                " sp.ITEM_IN_FROM propertyInFrom,\n" +
+                "/*量体属性值可增加范围从*/\n" +
+                " sp.ITEM_IN_TO propertyInTo,\n" +
+                "/*量体属性值可增加范围到*/\n" +
+                " sp.ITEM_OUT_FROM propertyOutFrom,\n" +
+                "/*量体属性值可缩减范围从*/\n" +
+                " sp.ITEM_OUT_TO propertyOutTo,\n" +
+                "/*量体属性值可缩减范围到*/\n" +
+                " property.PROPERTY_NAME_CN propertyNameCn,\n" +
+                "/*量体属性中文名称*/\n" +
+                " property.FIT_USE_TYPE_CD fitUseTypeCd,\n" +
+                "/*0-非净量体，1-净量体*/\n" +
+                " property.PROPERTY_UNIT_CD propertyUnitCd ,\n" +
+                " sp.ITEM_SORT,\n" +
+                " sp.ITEM_CD,\n" +
+                " sp.ITEM_VALUE\n" +
+                "FROM\n" +
+                " a_fit_property_p property\n" +
+                " LEFT JOIN a_size_fit_p sp ON property.PROPERTY_CD = sp.ITEM_CD \n" +
+                " AND property.PROPERTY_VALUE = sp.ITEM_VALUE \n" +
+                "WHERE\n" +
+                " property.PROPERTY_CD IN ( SELECT PROPERTY_VALUE FROM a_fit_property_p WHERE style_category_cd = '" + frm.Dto定制下单.STYLE_CATEGORY_CD + "' ) \n" +
+                " AND property.DEL_FLG = 0 \n" +
+                "  AND sp.FIT_CD = '" + frm.Dto定制下单.STYLE_FIT_CD + "'  /*款式*/\n" +
+                " AND sp.SIZEGROUP_CD = '" + frm.Dto定制下单.STYLE_SIZE_GROUP_CD + "' \n" +
+                "-- AND sp.SIZE_CD = '" + frm.Dto定制下单.STYLE_SIZE_CD + "'   /*尺码*/\n" +
+                " AND property.FIT_USE_TYPE_CD = \"FIT_USE_TYPE-FIT_TYPE_20\" \n" +
+                " AND sp.ENABLE_FLAG = 1 \n" +
+                " AND property.FIT_FLAG = 1 \n" +
+                " AND sp.ITEM_VALUE != \"CIRCU_ITEM_09\" \n" +
+                "GROUP BY property.PROPERTY_VALUE  \n" +
+                "ORDER BY\n" +
+                " -- property.PROPERTY_CD,sp.ITEM_SORT ASC\n" +
+                " sp.ITEM_SORT ASC");
             //change.panel3.Controls.Clear();
             height = 0;
             width = 0;
@@ -1740,14 +1740,14 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             }
             //DataTable ddt=SQLmtm.GetDataTable("")
             DataTable dtt = SQLmtm.GetDataTable("SELECT\n" +
-"	*,\n" +
-"	SUBSTRING_INDEX( ap.REMARKS, ',', 1 )AS pv1,\n" +
-"	SUBSTRING_INDEX( ap.REMARKS, ',', -1 )AS pv2\n" +
-"FROM\n" +
-"	a_customer_fit_r ar\n" +
-"	LEFT JOIN a_fit_property_p ap ON ar.ITEM_VALUE = ap.PROPERTY_VALUE \n" +
-"WHERE\n" +
-"	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
+                "	*,\n" +
+                "	SUBSTRING_INDEX( ap.REMARKS, ',', 1 )AS pv1,\n" +
+                "	SUBSTRING_INDEX( ap.REMARKS, ',', -1 )AS pv2\n" +
+                "FROM\n" +
+                "	a_customer_fit_r ar\n" +
+                "	LEFT JOIN a_fit_property_p ap ON ar.ITEM_VALUE = ap.PROPERTY_VALUE \n" +
+                "WHERE\n" +
+                "	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
             foreach (Control card in frm.panel4.Controls)
             {
                 if (card is UC尺寸卡片)

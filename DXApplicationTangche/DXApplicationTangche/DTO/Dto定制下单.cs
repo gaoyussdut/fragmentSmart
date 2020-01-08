@@ -1,4 +1,5 @@
-﻿using mendian;
+﻿using DXApplicationTangche.UC.门店下单.UC;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -24,13 +25,25 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         private List<Dto设计点> dto设计点s = new List<Dto设计点>();   //  设计点
         private Dto尺寸 dto尺寸;  //  尺寸
 
-        public void build设计点(String ITEM_CD, String ITEM_VALUE, String OPTION_VALUE, String ENABLE_FLAG, String DELETE_FLAG, String Name, String Style,Image pic)
+        public Dto定制下单 build设计点(String ITEM_CD, String ITEM_VALUE, String OPTION_VALUE, String ENABLE_FLAG, String DELETE_FLAG, String Name, String Style,Image pic)
         {
             this.dto设计点s.Add(new Dto设计点(ITEM_CD, ITEM_VALUE, OPTION_VALUE, ENABLE_FLAG, DELETE_FLAG, Name, Style, pic));
+            return this;
         }
 
-        public void build尺寸(String ITEM_CD, String ITEM_VALUE, String FIT_VALUE, String FM_VALUE, String IN_VALUE, String OUT_VALUE, String STATUS, String DELETE_FLAG, String CUSTOMER_COUNT_IDSTYLE_ID, String PHASE_CD, String VERSION, String CREATE_USER) {
+        public Dto定制下单 build尺寸(String ITEM_CD, String ITEM_VALUE, String FIT_VALUE, String FM_VALUE, String IN_VALUE, String OUT_VALUE, String STATUS, String DELETE_FLAG, String CUSTOMER_COUNT_IDSTYLE_ID, String PHASE_CD, String VERSION, String CREATE_USER) {
             this.dto尺寸 = new Dto尺寸(ITEM_CD, ITEM_VALUE, FIT_VALUE, FM_VALUE, IN_VALUE, OUT_VALUE, STATUS, DELETE_FLAG, CUSTOMER_COUNT_IDSTYLE_ID, PHASE_CD, VERSION, CREATE_USER);
+            return this;
+        }
+
+        public Dto定制下单 build款式卡片(款式卡片DTO 款式卡片DTO) {
+            this.Style_Id = 款式卡片DTO.kuanshiid;
+            this.STYLE_CATEGORY_CD = 款式卡片DTO.sTYLE_CATEGORY_CD;
+            this.STYLE_FIT_CD = 款式卡片DTO.sTYLE_FIT_CD;
+            this.STYLE_SIZE_GROUP_CD = 款式卡片DTO.sTYLE_SIZE_GROUP_CD;
+            this.STYLE_SIZE_CD = 款式卡片DTO.sTYLE_SIZE_CD;
+            this.SYTLE_FABRIC_ID = 款式卡片DTO.mianliaoid;
+            return this;
         }
 
     }

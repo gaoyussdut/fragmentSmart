@@ -228,6 +228,7 @@
     <Compile Include="UC\门店下单\UC\UC尺寸卡片.designer.cs">
       <DependentUpon>UC尺寸卡片.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\门店下单\UC\款式卡片DTO.cs" />
     <Compile Include="Utils\ListToDatatable.cs" />
     <Compile Include="Utils\PanelLocition.cs" />
     <Compile Include="Utils\RestCall.cs" />
