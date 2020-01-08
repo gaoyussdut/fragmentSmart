@@ -16,6 +16,7 @@ using DevExpress.XtraLayout;
 using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
 using DXApplicationTangche.UC.库存.service;
+using DXApplicationTangche.service;
 
 namespace DXApplicationTangche.UC.库存
 {
@@ -99,7 +100,7 @@ namespace DXApplicationTangche.UC.库存
                 BarCodeInfoDto barCodeInfo;
                 try
                 {
-                    barCodeInfo = StockService.getStockOutBarCodeInfo(this.textEdit扫码.Text);
+                    barCodeInfo = StockBillService.getStockOutBarCodeInfo(this.textEdit扫码.Text);
                 }
                 catch (Exception ex)
                 {
@@ -145,7 +146,7 @@ namespace DXApplicationTangche.UC.库存
             DialogResult dialogResult= MessageBox.Show("确认出货？", "出货提醒", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dialogResult == DialogResult.OK) {
                 //  出库
-                StockService.generateStockOut(this.dateTimePicker1.Value, this.textEdit出库单号.Text, this.shopId, this.barCodeInfoDtos);
+                StockBillService.generateStockOut(this.dateTimePicker1.Value, this.textEdit出库单号.Text, this.shopId, this.barCodeInfoDtos);
                 //  提醒
                 MessageBox.Show("出库单号"+this.textEdit出库单号.Text + "已出库完成");
                 //  单号变更

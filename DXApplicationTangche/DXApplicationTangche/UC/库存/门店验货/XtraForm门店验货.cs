@@ -46,7 +46,7 @@ namespace DXApplicationTangche.UC.库存.门店验货
                 BarCodeInfoDto barCodeInfo;
                 try
                 {
-                    barCodeInfo = StockService.getStockInBarCodeInfo(this.textEdit扫码.Text);
+                    barCodeInfo = StockBillService.getStockInBarCodeInfo(this.textEdit扫码.Text);
                 }
                 catch (Exception ex)
                 {
@@ -57,7 +57,7 @@ namespace DXApplicationTangche.UC.库存.门店验货
                 //  订单信息更新
                 if (String.IsNullOrEmpty(this.textEdit出库单号.Text))
                 {
-                    DataTable dataTable = StockService.getStockInInfo(barCodeInfo.LOG_ID);
+                    DataTable dataTable = StockBillService.getStockInInfo(barCodeInfo.LOG_ID);
                     this.textEdit出库单号.Text = dataTable.Rows[0]["godown_code"].ToString();
                     this.dateTimePicker1.Value = Convert.ToDateTime(dataTable.Rows[0]["godown_date"].ToString());
                     this.textEdit门店.Text = dataTable.Rows[0]["shop_name"].ToString(); 
@@ -98,7 +98,7 @@ namespace DXApplicationTangche.UC.库存.门店验货
             if (dialogResult == DialogResult.OK)
             {
                 //  库存明细账
-                StockService.generateInventoryLedge(barIds, this.shopId, this.textEdit出库单号.Text, "验货入库", false);
+                StockBillService.generateInventoryLedge(barIds, this.shopId, this.textEdit出库单号.Text, "验货入库", false);
                 //  提醒
                 MessageBox.Show("出库单号" + this.textEdit出库单号.Text + "已入库完成");
                 //  单号变更

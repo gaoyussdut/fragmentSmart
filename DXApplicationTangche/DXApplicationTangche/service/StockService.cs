@@ -52,23 +52,45 @@ namespace DXApplicationTangche.service
         /// </summary>
         /// <param name="enum进出库类型"></param>
         /// <param name="barCode"></param>
-        public static void generateLedge(Enum进出库类型 enum进出库类型,String barCode) {
+        public static void generateLedge(Enum进出库类型 enum进出库类型,String barCode,String shopId) {
+            switch (enum进出库类型) {
+                case Enum进出库类型.调拨:
+                    generate门店扫码调拨(barCode, shopId);
+                    break;
+                default:
+                    generate门店扫码出入库(enum进出库类型,barCode);
+                    break;
+            }                
+        }
+
+        private static void generate门店扫码调拨(String barCode, String shopId) {
+            if (String.IsNullOrEmpty(shopId)) {
+                throw new Exception("请选择调拨门店");
+            }
+            generate门店扫码出入库(Enum进出库类型.出库, barCode); //  调拨出库
+            generate门店扫码出入库(Enum进出库类型.入库, barCode, shopId);   //  调拨入库
+        }
+
+        private static void generate门店扫码出入库(Enum进出库类型 enum进出库类型, String barCode) {
             String sql = "SELECT dispath_type FROM a_noorder_print_p WHERE clothes_log_id = '" + barCode + "'";
             DataTable dataTable = SQLmtm.GetDataTable(sql);
             if (dataTable.Rows.Count == 0)
             {
                 throw new Exception("条码" + barCode + "不存在！");
             }
-            else {
+            else
+            {
                 Enum在库类别 enum在库类别;
                 try
                 {
                     enum在库类别 = (Enum在库类别)Convert.ToInt32(dataTable.Rows[0]["dispath_type"].ToString());
                 }
-                catch {
+                catch
+                {
                     enum在库类别 = Enum在库类别.成品仓;
                 }
-                if (enum在库类别.Equals(Enum在库类别.已出库) && enum进出库类型.Equals(Enum进出库类型.出库)) {
+                if (enum在库类别.Equals(Enum在库类别.已出库) && enum进出库类型.Equals(Enum进出库类型.出库))
+                {
                     throw new Exception("条码" + barCode + "已出库！");
                 }
                 if (enum在库类别.Equals(Enum在库类别.在库) && enum进出库类型.Equals(Enum进出库类型.入库))
@@ -86,20 +108,83 @@ namespace DXApplicationTangche.service
             {
                 sql += "-1,\n";
             }
-            else {
+            else
+            {
                 sql += "1,\n";
             }
 
-            sql +="clothes_log_id,\n" +
+            sql += "clothes_log_id,\n" +
                 "size_cd,\n" +
                 "now( ) \n" +
                 "FROM\n" +
                 "	a_noorder_print_p \n" +
                 "WHERE\n" +
-                "	clothes_log_id = '"+ barCode + "'";
+                "	clothes_log_id = '" + barCode + "'";
             SQLmtm.ExecuteSql(sql);
             //  更新库存状态
-            sql = "update a_noorder_print_p set dispath_type = '"+(int)getEnum在库类别(enum进出库类型) + "' WHERE clothes_log_id = '" + barCode + "'";
+            sql = "update a_noorder_print_p set dispath_type = '" + (int)getEnum在库类别(enum进出库类型) + "' WHERE clothes_log_id = '" + barCode + "'";
+            SQLmtm.ExecuteSql(sql);
+        }
+
+        /// <summary>
+        /// 指定门店出入库
+        /// </summary>
+        /// <param name="enum进出库类型"></param>
+        /// <param name="barCode"></param>
+        /// <param name="shop_id"></param>
+        private static void generate门店扫码出入库(Enum进出库类型 enum进出库类型, String barCode,String shop_id)
+        {
+            String sql = "SELECT dispath_type FROM a_noorder_print_p WHERE clothes_log_id = '" + barCode + "'";
+            DataTable dataTable = SQLmtm.GetDataTable(sql);
+            if (dataTable.Rows.Count == 0)
+            {
+                throw new Exception("条码" + barCode + "不存在！");
+            }
+            else
+            {
+                Enum在库类别 enum在库类别;
+                try
+                {
+                    enum在库类别 = (Enum在库类别)Convert.ToInt32(dataTable.Rows[0]["dispath_type"].ToString());
+                }
+                catch
+                {
+                    enum在库类别 = Enum在库类别.成品仓;
+                }
+                if (enum在库类别.Equals(Enum在库类别.已出库) && enum进出库类型.Equals(Enum进出库类型.出库))
+                {
+                    throw new Exception("条码" + barCode + "已出库！");
+                }
+                if (enum在库类别.Equals(Enum在库类别.在库) && enum进出库类型.Equals(Enum进出库类型.入库))
+                {
+                    throw new Exception("条码" + barCode + "已入库！");
+                }
+            }
+
+            //  生成库存明细账
+            sql = "INSERT INTO t_inventory_sub_ledger ( shop_id, ref_style_id, style_fabric_id, amount, bill_id, STYLE_SIZE_CD, create_date ) SELECT\n" +
+                shop_id + ",\n" +
+                "style_id,\n" +
+                "materials_id,\n";
+            if (enum进出库类型.Equals(Enum进出库类型.出库))
+            {
+                sql += "-1,\n";
+            }
+            else
+            {
+                sql += "1,\n";
+            }
+
+            sql += "clothes_log_id,\n" +
+                "size_cd,\n" +
+                "now( ) \n" +
+                "FROM\n" +
+                "	a_noorder_print_p \n" +
+                "WHERE\n" +
+                "	clothes_log_id = '" + barCode + "'";
+            SQLmtm.ExecuteSql(sql);
+            //  更新库存状态
+            sql = "update a_noorder_print_p set dispath_type = '" + (int)getEnum在库类别(enum进出库类型) + "' WHERE clothes_log_id = '" + barCode + "'";
             SQLmtm.ExecuteSql(sql);
         }
 
@@ -117,6 +202,22 @@ namespace DXApplicationTangche.service
                 default:
                     return Enum在库类别.成品仓;
             }
+        }
+    }
+
+    /// <summary>
+    /// 门店服务
+    /// </summary>
+    class ShopService
+    {
+        /// <summary>
+        /// 取得所有门店
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable getShopAll()
+        {
+            String sql = "select shop_id,shop_name,shop_type from t_shop";
+            return SQLmtm.GetDataTable(sql);
         }
     }
 }

@@ -44,14 +44,14 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.STYLE_NAME_CN = dataRow["STYLE_NAME_CN"].ToString();
             this.STYLE_PUBLISH_CATEGORY_CD = dataRow["STYLE_PUBLISH_CATEGORY_CD"].ToString();
 
-            try
-            {
-                this.Picture = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.MATERIAL_ID));
-            }
-            catch
-            {
-                this.Picture = Image.FromFile(@"pic\SSHIRT.jpg");
-            }
+            //try
+            //{
+            //    this.Picture = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.MATERIAL_ID));
+            //}
+            //catch
+            //{
+            //    this.Picture = Image.FromFile(@"pic\SSHIRT.jpg");
+            //}
         }
     }
 }

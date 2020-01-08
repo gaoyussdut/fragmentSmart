@@ -12,7 +12,7 @@ namespace DXApplicationTangche.UC.库存.service
     /// <summary>
     /// 库存服务
     /// </summary>
-    class StockService
+    class StockBillService
     {
         /// <summary>
         /// 门店验货扫描取barcode方法
@@ -176,20 +176,6 @@ namespace DXApplicationTangche.UC.库存.service
                 + "     STYLE_ID,"
                 + "     SYTLE_FABRIC_ID";
             SQLmtm.ExecuteSql(sql);
-        }
-    }
-
-    /// <summary>
-    /// 门店服务
-    /// </summary>
-    class ShopService {
-        /// <summary>
-        /// 取得所有门店
-        /// </summary>
-        /// <returns></returns>
-        public static DataTable getShopAll() {
-            String sql = "select shop_id,shop_name,shop_type from t_shop";
-            return SQLmtm.GetDataTable(sql);
         }
     }
 }

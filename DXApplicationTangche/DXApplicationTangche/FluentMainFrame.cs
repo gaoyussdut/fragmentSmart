@@ -117,5 +117,10 @@ namespace DXApplicationTangche
         {
             this.initPanel(new Frm款式一览(0));
         }
+
+        private void accordionControlElement23_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm扫码下单(Enum进出库类型.调拨));
+        }
     }
 }

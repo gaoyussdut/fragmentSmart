@@ -47,6 +47,7 @@
             this.accordionControlElement15 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement24 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement7 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement8 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement9 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -62,7 +63,7 @@
             this.ElementShopOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.accordionControlElement24 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
@@ -229,6 +230,13 @@
             this.accordionControlElement6.Text = "款式一览";
             this.accordionControlElement6.Click += new System.EventHandler(this.accordionControlElement6_Click_1);
             // 
+            // accordionControlElement24
+            // 
+            this.accordionControlElement24.Name = "accordionControlElement24";
+            this.accordionControlElement24.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement24.Text = "已下线款式一览";
+            this.accordionControlElement24.Click += new System.EventHandler(this.accordionControlElement24_Click);
+            // 
             // accordionControlElement7
             // 
             this.accordionControlElement7.Name = "accordionControlElement7";
@@ -271,6 +279,7 @@
             this.accordionControlElement18.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement19,
             this.ElementStock});
+            this.accordionControlElement18.Expanded = true;
             this.accordionControlElement18.Name = "accordionControlElement18";
             this.accordionControlElement18.Text = "门店管理";
             // 
@@ -293,7 +302,9 @@
             this.ElementStock.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.ElementStockOut,
             this.ElementShopStockIn,
-            this.ElementShopOrder});
+            this.ElementShopOrder,
+            this.accordionControlElement23});
+            this.ElementStock.Expanded = true;
             this.ElementStock.Name = "ElementStock";
             this.ElementStock.Text = "进销存管理";
             // 
@@ -327,12 +338,12 @@
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
-            // accordionControlElement24
+            // accordionControlElement23
             // 
-            this.accordionControlElement24.Name = "accordionControlElement24";
-            this.accordionControlElement24.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement24.Text = "已下线款式一览";
-            this.accordionControlElement24.Click += new System.EventHandler(this.accordionControlElement24_Click);
+            this.accordionControlElement23.Name = "accordionControlElement23";
+            this.accordionControlElement23.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement23.Text = "门店调拨";
+            this.accordionControlElement23.Click += new System.EventHandler(this.accordionControlElement23_Click);
             // 
             // FluentMainFrame
             // 
@@ -394,5 +405,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement9;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement22;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement24;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement23;
     }
 }
