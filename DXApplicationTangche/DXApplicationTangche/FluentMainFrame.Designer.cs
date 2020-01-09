@@ -63,6 +63,7 @@
             this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
@@ -75,10 +76,9 @@
             // 
             this.fluentDesignFormContainer1.Controls.Add(this.navigationFrame);
             this.fluentDesignFormContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(297, 37);
-            this.fluentDesignFormContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.fluentDesignFormContainer1.Location = new System.Drawing.Point(260, 30);
             this.fluentDesignFormContainer1.Name = "fluentDesignFormContainer1";
-            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(493, 571);
+            this.fluentDesignFormContainer1.Size = new System.Drawing.Size(431, 443);
             this.fluentDesignFormContainer1.TabIndex = 0;
             // 
             // navigationFrame
@@ -86,12 +86,12 @@
             this.navigationFrame.Controls.Add(this.navigationPage库存);
             this.navigationFrame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationFrame.Location = new System.Drawing.Point(0, 0);
-            this.navigationFrame.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.navigationFrame.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.navigationFrame.Name = "navigationFrame";
             this.navigationFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.navigationPage库存});
             this.navigationFrame.SelectedPage = this.navigationPage库存;
-            this.navigationFrame.Size = new System.Drawing.Size(493, 571);
+            this.navigationFrame.Size = new System.Drawing.Size(431, 443);
             this.navigationFrame.TabIndex = 3;
             this.navigationFrame.Text = "navigationFrame1";
             this.navigationFrame.TransitionAnimationProperties.FrameInterval = 5000;
@@ -99,9 +99,8 @@
             // navigationPage库存
             // 
             this.navigationPage库存.Caption = "navigationPage库存";
-            this.navigationPage库存.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navigationPage库存.Name = "navigationPage库存";
-            this.navigationPage库存.Size = new System.Drawing.Size(493, 571);
+            this.navigationPage库存.Size = new System.Drawing.Size(431, 443);
             // 
             // accordionControl1
             // 
@@ -111,12 +110,11 @@
             this.accordionControlElement10,
             this.accordionControlElement16,
             this.accordionControlElement18});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 37);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 30);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
             this.accordionControl1.ShowFilterControl = DevExpress.XtraBars.Navigation.ShowFilterControl.Always;
-            this.accordionControl1.Size = new System.Drawing.Size(297, 571);
+            this.accordionControl1.Size = new System.Drawing.Size(260, 443);
             this.accordionControl1.TabIndex = 1;
             this.accordionControl1.ViewType = DevExpress.XtraBars.Navigation.AccordionControlViewType.HamburgerMenu;
             // 
@@ -331,27 +329,30 @@
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
             this.fluentDesignFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.fluentDesignFormControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.fluentDesignFormControl1.Name = "fluentDesignFormControl1";
-            this.fluentDesignFormControl1.Size = new System.Drawing.Size(790, 37);
+            this.fluentDesignFormControl1.Size = new System.Drawing.Size(691, 30);
             this.fluentDesignFormControl1.TabIndex = 2;
             this.fluentDesignFormControl1.TabStop = false;
             // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
             // FluentMainFrame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 608);
+            this.ClientSize = new System.Drawing.Size(691, 473);
             this.ControlContainer = this.fluentDesignFormContainer1;
             this.Controls.Add(this.fluentDesignFormContainer1);
             this.Controls.Add(this.accordionControl1);
             this.Controls.Add(this.fluentDesignFormControl1);
             this.FluentDesignFormControl = this.fluentDesignFormControl1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FluentMainFrame";
             this.NavigationControl = this.accordionControl1;
             this.Text = "春衫体验店进销存管理系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FluentMainFrame_Load);
             this.fluentDesignFormContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).EndInit();
             this.navigationFrame.ResumeLayout(false);
@@ -397,5 +398,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement22;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement24;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement23;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

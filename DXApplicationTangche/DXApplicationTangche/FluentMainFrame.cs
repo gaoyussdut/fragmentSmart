@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using DiaoPaiDaYin;
+using DXApplicationTangche.service;
 using DXApplicationTangche.UC;
 using DXApplicationTangche.UC.库存;
 using DXApplicationTangche.UC.库存.门店验货;
@@ -121,6 +122,15 @@ namespace DXApplicationTangche
         private void accordionControlElement23_Click(object sender, EventArgs e)
         {
             this.initPanel(new Frm扫码下单(Enum进出库类型.调拨));
+        }
+
+        private void FluentMainFrame_Load(object sender, EventArgs e)
+        {
+            this.splashScreenManager.ShowWaitForm();
+            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
+            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
+            ResourceService.synPictureResouces();
+            this.splashScreenManager.CloseWaitForm();
         }
     }
 }
