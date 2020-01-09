@@ -14,45 +14,41 @@ using DXApplicationTangche.UC.门店下单.form;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.DTO;
+using DevExpress.XtraGrid.Demos.util;
 
 namespace mendian
 {
     class ImpService
     {
-        public static void generateOrderSytleInfo(OrderDto orderDto)
+        public static DataRow generateStyleInfo(String REF_STYLE_ID)
         {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +
                 "	STYLE_SIZE_CD,\n" +
                 "	STYLE_NAME_CN,\n" +
-                "	SYTLE_YEAR,\n" +
+                "	SYTLE_YEAR,STYLE_DRESS_CATEGORY,STYLE_DESIGN_TYPE,\n" +
                 "	( CASE `s_style_p`.`SYTLE_SEASON` WHEN 'SEASON-SEASON_10' THEN '春季' WHEN 'SEASON-SEASON_20' THEN '秋季' ELSE `s_style_p`.`SYTLE_SEASON` END ) AS `SYTLE_SEASON`,\n" +
                 "	( CASE `s_style_p`.`STYLE_PUBLISH_CATEGORY_CD` WHEN 'PUBLISH_STYLE_CATEGORY-MShirt' THEN '男士衬衫' WHEN 'PUBLISH_STYLE_CATEGORY-WShirt' THEN '女式衬衫' ELSE `s_style_p`.`STYLE_PUBLISH_CATEGORY_CD` END ) AS `STYLE_PUBLISH_CATEGORY_CD` \n" +
                 "FROM\n" +
                 "	s_style_p \n" +
                 "WHERE\n" +
-                "	SYS_STYLE_ID = '" + orderDto.style_id + "'";
+                "	SYS_STYLE_ID = '" + REF_STYLE_ID + "'";
 
-            DataRow dataRow = SQLmtm.GetDataRow(sql);
-            orderDto.STYLE_SIZE_CD = dataRow["STYLE_SIZE_CD"].ToString();
-            orderDto.STYLE_NAME_CN = dataRow["STYLE_NAME_CN"].ToString();
-            orderDto.SYTLE_YEAR = dataRow["SYTLE_YEAR"].ToString();
-            orderDto.SYTLE_SEASON = dataRow["SYTLE_SEASON"].ToString();
-            orderDto.STYLE_PUBLISH_CATEGORY_CD = dataRow["STYLE_PUBLISH_CATEGORY_CD"].ToString();
-
-            sql = "SELECT\n" +
+            return SQLmtm.GetDataRow(sql);
+        }
+        public static DataRow generateMaterialInfo(String SYTLE_FABRIC_ID)
+        {
+            String sql = "SELECT\n" +
                 "	MATERIAL_ID,\n" +
                 "	MATERIAL_NAME_CN,\n" +
                 "	MATERIAL_COLOR \n" +
                 "FROM\n" +
                 "	i_material_p \n" +
                 "WHERE\n" +
-                "	MATERIAL_ID = '" + orderDto.SYTLE_FABRIC_ID + "'";
-            dataRow = SQLmtm.GetDataRow(sql);
-            orderDto.MATERIAL_NAME_CN = dataRow["MATERIAL_NAME_CN"].ToString();
-            orderDto.MATERIAL_COLOR = dataRow["MATERIAL_COLOR"].ToString();
-        }
+                "	MATERIAL_ID = '" + SYTLE_FABRIC_ID + "'";
+            return SQLmtm.GetDataRow(sql);
 
+        }
         public static List<款式图片Dto> initStyleInfo(String flag, int page)
         {
             DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
@@ -97,8 +93,9 @@ namespace mendian
                 " style.UPDATE_DATE DESC \n" +
                 " LIMIT " + ((page - 1) * 21).ToString() + ",21");
             List<款式图片Dto> 款式图片Dtos = new List<款式图片Dto>();
-            foreach (DataRow dataRow in dt.Rows) {
-                款式图片Dtos.Add(new 款式图片Dto(flag,dataRow));
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                款式图片Dtos.Add(new 款式图片Dto(flag, dataRow));
             }
 
             return 款式图片Dtos;
@@ -596,7 +593,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 "	) AS s1";
             DataTable dt = SQLmtm.GetDataTable(sql);
             List<面料图片Dto> 面料图片dtos = new List<面料图片Dto>();
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 面料图片dtos.Add(new 面料图片Dto(dr));
             }
@@ -1167,7 +1164,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 "	AND a.PARENT_ID = '" + id + "';";
             DataTable dt = SQLmtm.GetDataTable(sql);
             List<设计点图片Dto> 设计点图片Dtos = new List<设计点图片Dto>();
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 设计点图片Dtos.Add(new 设计点图片Dto(dr));
             }
@@ -1259,7 +1256,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 " LIMIT " + ((page - 1) * 36).ToString() + ",36";
             DataTable dt = SQLmtm.GetDataTable(sql);
             List<面料图片Dto> 面料图片dtos = new List<面料图片Dto>();
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 面料图片dtos.Add(new 面料图片Dto(dr));
             }
@@ -1729,11 +1726,11 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 " LEFT JOIN a_size_fit_p sp ON property.PROPERTY_CD = sp.ITEM_CD \n" +
                 " AND property.PROPERTY_VALUE = sp.ITEM_VALUE \n" +
                 "WHERE\n" +
-                " property.PROPERTY_CD IN ( SELECT PROPERTY_VALUE FROM a_fit_property_p WHERE style_category_cd = '" + frm.Dto定制下单.STYLE_CATEGORY_CD + "' ) \n" +
+                " property.PROPERTY_CD IN ( SELECT PROPERTY_VALUE FROM a_fit_property_p WHERE style_category_cd = '" + frm.model.Dto定制下单.STYLE_CATEGORY_CD + "' ) \n" +
                 " AND property.DEL_FLG = 0 \n" +
-                "  AND sp.FIT_CD = '" + frm.Dto定制下单.STYLE_FIT_CD + "'  /*款式*/\n" +
-                " AND sp.SIZEGROUP_CD = '" + frm.Dto定制下单.STYLE_SIZE_GROUP_CD + "' \n" +
-                "-- AND sp.SIZE_CD = '" + frm.Dto定制下单.STYLE_SIZE_CD + "'   /*尺码*/\n" +
+                "  AND sp.FIT_CD = '" + frm.model.Dto定制下单.STYLE_FIT_CD + "'  /*款式*/\n" +
+                " AND sp.SIZEGROUP_CD = '" + frm.model.Dto定制下单.STYLE_SIZE_GROUP_CD + "' \n" +
+                "-- AND sp.SIZE_CD = '" + frm.model.Dto定制下单.STYLE_SIZE_CD + "'   /*尺码*/\n" +
                 " AND property.FIT_USE_TYPE_CD = \"FIT_USE_TYPE-FIT_TYPE_20\" \n" +
                 " AND sp.ENABLE_FLAG = 1 \n" +
                 " AND property.FIT_FLAG = 1 \n" +
@@ -2072,7 +2069,8 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
         /// 取得所有款式信息
         /// </summary>
         /// <returns></returns>
-        public static 款式Model getAllStyle(byte ENABLE_FLAG) {
+        public static 款式Model getAllStyle(byte ENABLE_FLAG)
+        {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +
                 "	CUSTOMER_COUNT_ID,\n" +
@@ -2099,22 +2097,25 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 "	CREATE_DATE\n" +
                 "FROM\n" +
                 "	v_style_p\n" +
-                " where v_style_p.ENABLE_FLAG = '"+ ENABLE_FLAG + "'"+
+                " where v_style_p.ENABLE_FLAG = '" + ENABLE_FLAG + "'" +
                 "	order by CREATE_DATE";
             List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
 
             List<String> FIT_CDs = new List<string>();  //  版型id
             DataTable dataTable = SQLmtm.GetDataTable(sql);
-            foreach (DataRow dataRow in dataTable.Rows) {
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
                 款式图片一览Dto 款式图片一览Dto = new 款式图片一览Dto(dataRow);
                 款式图片一览Dtos.Add(款式图片一览Dto);
-                if (!FIT_CDs.Contains(款式图片一览Dto.STYLE_FIT_CD)) {
+                if (!FIT_CDs.Contains(款式图片一览Dto.STYLE_FIT_CD))
+                {
                     FIT_CDs.Add(款式图片一览Dto.STYLE_FIT_CD);    //  版型
                 }
             }
-            款式Model model =new 款式Model(款式图片一览Dtos);
+            款式Model model = new 款式Model(款式图片一览Dtos);
 
-            if (FIT_CDs.Count > 0) {
+            if (FIT_CDs.Count > 0)
+            {
                 sql = "SELECT DISTINCT\n" +
                     "	FIT_CD,\n" +
                     "	SIZEGROUP_CD,\n" +
@@ -2122,7 +2123,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                     "FROM\n" +
                     "	a_size_fit_p \n" +
                     "WHERE\n" +
-                    "	FIT_CD IN ( '"+ String.Join("','", FIT_CDs) + "' ) \n" +
+                    "	FIT_CD IN ( '" + String.Join("','", FIT_CDs) + "' ) \n" +
                     "ORDER BY\n" +
                     "	FIT_CD,\n" +
                     "	SIZEGROUP_CD,\n" +
@@ -2132,11 +2133,12 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 //List<String> IGS_GROUP_SIZEs = new List<string>();  //  英文尺码
                 model.buildSizeFit(dataTable);
             }
-            
+
             return model.buildView();
         }
 
-        public static List<面料DTO> get面料DTOs(List<String> SYTLE_FABRIC_ID) {
+        public static List<面料DTO> get面料DTOs(List<String> SYTLE_FABRIC_ID)
+        {
             String sql = "SELECT\n" +
                 "	id,\n" +
                 "	fileId,\n" +
@@ -2169,10 +2171,11 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 "FROM\n" +
                 "	V_MATERIAL_CATEGORY_Fabric \n" +
                 "WHERE\n" +
-                "	id IN ( '"+ String.Join("','",SYTLE_FABRIC_ID) +"' );";
+                "	id IN ( '" + String.Join("','", SYTLE_FABRIC_ID) + "' );";
             DataTable dt = SQLmtm.GetDataTable(sql);
             List<面料DTO> 面料DTOs = new List<面料DTO>();
-            foreach (DataRow dr in dt.Rows) {
+            foreach (DataRow dr in dt.Rows)
+            {
                 面料DTOs.Add(new 面料DTO(dr));
             }
             return 面料DTOs;
@@ -2186,7 +2189,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             String sql = "SELECT id,materialNameCn,materialCode,materialComposition FROM v_material_category_fabric";
             return SQLmtm.GetDataTable(sql);
         }
-        public static List<设计点图片Dto> GetDesign(String itemcd,String str)
+        public static List<设计点图片Dto> GetDesign(String itemcd, String str)
         {
             String sql = "SELECT\n" +
 " a.DESIGN_ID id,\n" +
@@ -2223,20 +2226,40 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
 " LEFT JOIN a_ognization_desgin_r adr ON a.DESIGN_ID = adr.DESGIN_ID \n" +
 "WHERE\n" +
 " a.STYLE_CATEGORY_CD = 'STYLE_CATEGORY-SHIRT' and a.DESIGN_ID IN ( SELECT DESGIN_ID FROM a_shop_desgin_r WHERE SHOP_ID = 18 ) \n" +
-" AND a.ITEM_CD='"+itemcd+"'\n" +
+" AND a.ITEM_CD='" + itemcd + "'\n" +
 " AND a.DELETE_FLAG = 0 \n" +
 " AND adr.OGNIZATION_ID = 95 \n" +
-" AND (a.ITEM_VALUE LIKE '%"+str+"%' OR a.ITEM_NAME_CN LIKE '%"+str+"%') "+
+" AND (a.ITEM_VALUE LIKE '%" + str + "%' OR a.ITEM_NAME_CN LIKE '%" + str + "%') " +
 "ORDER BY\n" +
 " a.item_sort,\n" +
 " a.UPDATE_DATE DESC";
             DataTable dt = SQLmtm.GetDataTable(sql);
             List<设计点图片Dto> 设计点图片dtos = new List<设计点图片Dto>();
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 设计点图片dtos.Add(new 设计点图片Dto(dr));
             }
             return 设计点图片dtos;
+        }
+        public static void DynamicSaveOrder(OrderDto orderDto)
+        {
+            DataRow drstyle = SQLmtm.GetDataRow("SELECT MAX(SYS_STYLE_ID) SYS_STYLE_ID FROM `s_style_p`");
+            orderDto.style_id = (Convert.ToInt32(drstyle["SYS_STYLE_ID"])+1).ToString();
+            //orderDto.style_id = FunctionHelper.generateBillNo("s_style_p", "SYS_STYLE_ID", "", "0000");
+            SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" }, new string[] { orderDto.style_id, "AUDIT_PHASE_CD-PHASE_CD_10", orderDto.Dto尺寸.ITEM_CD, orderDto.Dto尺寸.ITEM_VALUE, orderDto.Dto尺寸.FIT_VALUE, orderDto.Dto尺寸.FM_VALUE, "0", "1", "46", orderDto.Dto尺寸.IN_VALUE, orderDto.Dto尺寸.OUT_VALUE });
+            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] {  "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { orderDto.CUSTOMER_ID, orderDto.CUSTOMER_NAME, orderDto.Dto尺寸.ITEM_CD, orderDto.Dto尺寸.ITEM_VALUE, orderDto.Dto尺寸.FIT_VALUE, orderDto.Dto尺寸.FM_VALUE, orderDto.Dto尺寸.IN_VALUE, orderDto.Dto尺寸.OUT_VALUE, "0", "0", orderDto.CUSTOMER_COUNT_ID });
+            SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" }, new string[] { orderDto.style_id, "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", orderDto.STYLE_CATEGORY_CD, orderDto.SYTLE_FABRIC_ID, orderDto.STYLE_SIZE_GROUP_CD, orderDto.STYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", orderDto.STYLE_NAME_CN, "", orderDto.CUSTOMER_COUNT_ID, orderDto.STYLE_FIT_CD, orderDto.REF_STYLE_ID, orderDto.STYLE_DRESS_CATEGORY, orderDto.STYLE_DESIGN_TYPE, orderDto.STYLE_PUBLISH_CATEGORY_CD, orderDto.SYTLE_YEAR, orderDto.SYTLE_SEASON });
+            foreach (Dto设计点 dto in orderDto.Dto设计点s)
+            {
+                SQLmtm.DoInsert("s_style_option_r", new string[] { "SYS_STYLE_ID", "ITEM_CD", "ITEM_VALUE", "OPTION_VALUE", "ENABLE_FLAG", "DELETE_FLAG" }, new string[] { orderDto.style_id, dto.ITEM_CD, dto.ITEM_VALUE, dto.OPTION_VALUE, "1", "0" });
+            }
+            RestCall.httpGetMethod("https://shirtmtm.com/fragsmart-mtm/customer/update/payment?styleId=" + orderDto.style_id + "&customerId=" + orderDto.CUSTOMER_ID + "&addressId=" + orderDto.ADDRESS_ID + "&number=" + orderDto.ORDER_NUMBER);
+            //RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + orderDto.style_id + "&customerId=" + orderDto.CUSTOMER_ID + "&addressId=" + orderDto.ADDRESS_ID + "&number=" + orderDto.ORDER_NUMBER);
+            DataRow ORDER_ID = SQLmtm.GetDataRow("SELECT MAX(ORDER_ID) AS ORDER_ID FROM `o_order_p`");
+            int order_id = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
+            //order_id++;
+            SQLmtm.DoInsert("o_order_brand_r", new string[] { "OGNIZATION_ID", "SHOP_ID", "BRAND_ID", "ORDER_ID" }, new string[] { "95", "18", "", order_id.ToString() });
+            SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "1" });
         }
     }
 }

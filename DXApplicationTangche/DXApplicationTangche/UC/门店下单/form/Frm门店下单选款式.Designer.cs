@@ -237,9 +237,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.gridControl选择款式);
-            this.panel1.Location = new System.Drawing.Point(11, 57);
+            this.panel1.Location = new System.Drawing.Point(12, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(909, 208);
+            this.panel1.Size = new System.Drawing.Size(907, 204);
             this.panel1.TabIndex = 4;
             // 
             // gridControl选择款式
@@ -253,7 +253,7 @@
             this.gridControl选择款式.Name = "gridControl选择款式";
             this.gridControl选择款式.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl选择款式.Size = new System.Drawing.Size(907, 206);
+            this.gridControl选择款式.Size = new System.Drawing.Size(905, 202);
             this.gridControl选择款式.TabIndex = 1;
             this.gridControl选择款式.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -418,6 +418,7 @@
             this.barEditItemNumber.EditWidth = 80;
             this.barEditItemNumber.Id = 2;
             this.barEditItemNumber.Name = "barEditItemNumber";
+            this.barEditItemNumber.EditValueChanged += new System.EventHandler(this.barEditItemNumber_EditValueChanged);
             // 
             // repositoryItemTextEdit1
             // 
@@ -430,7 +431,7 @@
             this.ribbonPageGroup1,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
+            this.ribbonPage1.Text = "定制下单";
             // 
             // ribbonPageGroup1
             // 
@@ -452,9 +453,9 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(11, 10);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(497, 43);
+            this.textBox1.Size = new System.Drawing.Size(496, 43);
             this.textBox1.TabIndex = 5;
             // 
             // simpleButton11
@@ -462,7 +463,7 @@
             this.simpleButton11.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton11.Appearance.Options.UseFont = true;
             this.simpleButton11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton11.ImageOptions.Image")));
-            this.simpleButton11.Location = new System.Drawing.Point(512, 10);
+            this.simpleButton11.Location = new System.Drawing.Point(512, 12);
             this.simpleButton11.Name = "simpleButton11";
             this.simpleButton11.Size = new System.Drawing.Size(180, 43);
             this.simpleButton11.StyleController = this.layoutControl1;
@@ -473,16 +474,16 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.SkyBlue;
-            this.label5.Location = new System.Drawing.Point(11, 269);
+            this.label5.Location = new System.Drawing.Point(12, 267);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(454, 24);
+            this.label5.Size = new System.Drawing.Size(452, 24);
             this.label5.TabIndex = 10;
             // 
             // uc分页
             // 
             this.uc分页.BackColor = System.Drawing.Color.SkyBlue;
-            this.uc分页.Location = new System.Drawing.Point(469, 269);
-            this.uc分页.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.uc分页.Location = new System.Drawing.Point(468, 267);
+            this.uc分页.Margin = new System.Windows.Forms.Padding(4);
             this.uc分页.Name = "uc分页";
             this.uc分页.Size = new System.Drawing.Size(451, 24);
             this.uc分页.TabIndex = 9;
@@ -508,7 +509,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(913, 212);
+            this.layoutControlItem1.Size = new System.Drawing.Size(911, 208);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -520,7 +521,7 @@
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(35, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(501, 47);
+            this.layoutControlItem2.Size = new System.Drawing.Size(500, 47);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -529,7 +530,7 @@
             // 
             this.layoutControlItem3.Control = this.simpleButton11;
             this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(501, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(500, 0);
             this.layoutControlItem3.MaxSize = new System.Drawing.Size(0, 47);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(108, 47);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -542,18 +543,18 @@
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.CustomizationFormText = "emptySpaceItem2";
-            this.emptySpaceItem2.Location = new System.Drawing.Point(685, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(684, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(228, 47);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(227, 47);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.label5;
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem7";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 259);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 255);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(458, 28);
+            this.layoutControlItem7.Size = new System.Drawing.Size(456, 28);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -561,7 +562,7 @@
             // 
             this.layoutControlItem6.Control = this.uc分页;
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem6.Location = new System.Drawing.Point(458, 259);
+            this.layoutControlItem6.Location = new System.Drawing.Point(456, 255);
             this.layoutControlItem6.MaxSize = new System.Drawing.Size(455, 47);
             this.layoutControlItem6.MinSize = new System.Drawing.Size(455, 28);
             this.layoutControlItem6.Name = "layoutControlItem6";
@@ -574,7 +575,7 @@
             // 
             this.xtraTabPageFabric.Controls.Add(this.panel2);
             this.xtraTabPageFabric.Name = "xtraTabPageFabric";
-            this.xtraTabPageFabric.Size = new System.Drawing.Size(931, 310);
+            this.xtraTabPageFabric.Size = new System.Drawing.Size(931, 303);
             this.xtraTabPageFabric.Text = "面料选择";
             // 
             // panel2
@@ -585,7 +586,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(931, 310);
+            this.panel2.Size = new System.Drawing.Size(931, 303);
             this.panel2.TabIndex = 0;
             // 
             // mianliaoname
@@ -621,7 +622,7 @@
             // 
             this.xtraTabPageDesign.Controls.Add(this.panel3);
             this.xtraTabPageDesign.Name = "xtraTabPageDesign";
-            this.xtraTabPageDesign.Size = new System.Drawing.Size(931, 310);
+            this.xtraTabPageDesign.Size = new System.Drawing.Size(931, 303);
             this.xtraTabPageDesign.Text = "设计点选择";
             // 
             // panel3
@@ -630,14 +631,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(931, 310);
+            this.panel3.Size = new System.Drawing.Size(931, 303);
             this.panel3.TabIndex = 0;
             // 
             // xtraTabPageSize
             // 
             this.xtraTabPageSize.Controls.Add(this.layoutControl2);
             this.xtraTabPageSize.Name = "xtraTabPageSize";
-            this.xtraTabPageSize.Size = new System.Drawing.Size(931, 310);
+            this.xtraTabPageSize.Size = new System.Drawing.Size(931, 303);
             this.xtraTabPageSize.Text = "尺寸选择";
             // 
             // layoutControl2
@@ -648,7 +649,7 @@
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(931, 310);
+            this.layoutControl2.Size = new System.Drawing.Size(931, 303);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
@@ -656,9 +657,9 @@
             // 
             this.panel5.Controls.Add(this.chicun01);
             this.panel5.Controls.Add(this.label65);
-            this.panel5.Location = new System.Drawing.Point(11, 10);
+            this.panel5.Location = new System.Drawing.Point(12, 12);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(909, 50);
+            this.panel5.Size = new System.Drawing.Size(907, 50);
             this.panel5.TabIndex = 5;
             // 
             // chicun01
@@ -684,9 +685,9 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
-            this.panel4.Location = new System.Drawing.Point(11, 64);
+            this.panel4.Location = new System.Drawing.Point(12, 66);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(909, 236);
+            this.panel4.Size = new System.Drawing.Size(907, 225);
             this.panel4.TabIndex = 4;
             // 
             // layoutControlGroup1
@@ -697,7 +698,7 @@
             this.layoutControlItem4,
             this.layoutControlItem5});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 310);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(931, 303);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
@@ -705,7 +706,7 @@
             this.layoutControlItem4.Control = this.panel4;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 54);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(913, 240);
+            this.layoutControlItem4.Size = new System.Drawing.Size(911, 229);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -716,7 +717,7 @@
             this.layoutControlItem5.MaxSize = new System.Drawing.Size(0, 54);
             this.layoutControlItem5.MinSize = new System.Drawing.Size(104, 54);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(913, 54);
+            this.layoutControlItem5.Size = new System.Drawing.Size(911, 54);
             this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;

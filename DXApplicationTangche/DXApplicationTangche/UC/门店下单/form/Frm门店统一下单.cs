@@ -47,17 +47,6 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.orderModel.buildAddOrderDtos(dto定制下单);
         }
 
-        //  测试方法
-        private void initData() {
-            this.orderModel.buildAddOrderDtos("257","18","春衫SSHIRT","70053","SS.SSWX.180415",1,Convert.ToDateTime("2018/11/2 20:59"),"EGS_GROUP_SIZE - 48","正装舒适款","2018","秋季","70008","8755","蓝色经典提花","MATERIAL_COLOR - BLUE","男士衬衫",1, "SSXF02.jpg");
-            this.orderModel.buildAddOrderDtos("275", "18","春衫SSHIRT","70057","SS.SSWX.180416",1, Convert.ToDateTime("2018/11/2 20:59"), "EGS_GROUP_SIZE - 42","正装舒适款","2018","秋季","70008","8755","蓝色经典提花","MATERIAL_COLOR - BLUE","男士衬衫",1, "SSXF02.jpg");
-            this.orderModel.buildAddOrderDtos("258", "18","春衫SSHIRT","70061","SS.SSWX.180417",1, Convert.ToDateTime("2018/11/2 20:59"), "EGS_GROUP_SIZE - 44","正装修身款","2018","秋季","70009","8749","白色经典斜纹","MATERIAL_COLOR - WHITE","男士衬衫",1, "SSXF02.jpg");
-            this.orderModel.buildAddOrderDtos("281", "18","春衫SSHIRT","70062","SS.SSWX.180418",1, Convert.ToDateTime("2018/11/2 20:59"), "EGS_GROUP_SIZE - 42","正装修身款","2018","秋季","70009","8755","蓝色经典提花","MATERIAL_COLOR - BLUE","男士衬衫",1, "SSXF02.jpg");
-            this.orderModel.buildAddOrderDtos("284", "18","春衫SSHIRT","70064","SS.SSWX.180419",1, Convert.ToDateTime("2018/11/2 20:59"), "EGS_GROUP_SIZE - 44","正装修身款","2018","秋季","70009","8753","白色经典提花","MATERIAL_COLOR - WHITE","男士衬衫",1, "SSXF02.jpg");
-            this.orderModel.buildAddOrderDtos("281", "18", "春衫SSHIRT", "70062", "SS.SSWX.180418", 1, Convert.ToDateTime("2018/11/2 20:59"), "EGS_GROUP_SIZE - 42", "正装修身款", "2018", "秋季", "70009", "8755", "蓝色经典提花", "MATERIAL_COLOR - BLUE", "男士衬衫", 2, "SSXF02.jpg");
-            this.orderModel.buildAddOrderDtos("284", "18", "春衫SSHIRT", "70064", "SS.SSWX.180419", 1, Convert.ToDateTime("2018/11/2 20:59"), "EGS_GROUP_SIZE - 44", "正装修身款", "2018", "秋季", "70009", "8753", "白色经典提花", "MATERIAL_COLOR - WHITE", "男士衬衫", 2, "SSXF02.jpg");
-        }
-
         private void Frm门店统一下单_Load(object sender, EventArgs e)
         {
             this.searchLookUpEdit1.Properties.DataSource = ImpService.GetCustomerData("");
@@ -186,6 +175,26 @@ namespace DXApplicationTangche.UC.门店下单.form
             }
             this.gridControl设计点.DataSource = dto设计点s;
             this.tileView1.RefreshData();
+        }
+
+        private void siveorder_Click(object sender, EventArgs e)
+        {
+            this.splashScreenManager.ShowWaitForm();
+            this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
+            this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
+            try
+            {
+                this.orderModel.SaveOrderInDatabase();
+                this.splashScreenManager.CloseWaitForm();
+                MessageBox.Show("保存成功");
+            }
+            catch (Exception ex)
+            {
+                this.splashScreenManager.CloseWaitForm();
+                MessageBox.Show(ex.Message);
+            }
+            
+            
         }
     }
 }

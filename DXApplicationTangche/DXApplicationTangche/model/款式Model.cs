@@ -195,6 +195,10 @@ namespace DXApplicationTangche.UC.款式异常
         {
             this.款式图片dtos = ImpService.initStyleInfo(flag, page);
         }
+        public 门店下单选款式Model()
+        {
+
+        }
         #endregion
 
         #region build方法
@@ -206,6 +210,7 @@ namespace DXApplicationTangche.UC.款式异常
         public 门店下单选款式Model build选中尺寸(String size, String styleid, DataTable dt)
         {
             this.选中尺寸dt = ImpService.StyleValue(size, styleid, dt);
+            //this.Dto定制下单.STYLE_SIZE_CD= ImpService.SizeCD(size, this.选中尺寸dt);
             return this;
         }
         #endregion

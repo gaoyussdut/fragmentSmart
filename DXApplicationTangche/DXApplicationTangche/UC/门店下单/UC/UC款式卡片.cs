@@ -104,16 +104,16 @@ namespace mendian
             //}
             //else if(this.flag=="门店下单选款式")
             //{
-            this.frm.Dto定制下单.Style_Id = this.kuanshiid;
-            this.frm.Dto定制下单.STYLE_CATEGORY_CD = this.sTYLE_CATEGORY_CD;
-            this.frm.Dto定制下单.STYLE_FIT_CD = this.sTYLE_FIT_CD;
-            this.frm.Dto定制下单.STYLE_SIZE_GROUP_CD = this.sTYLE_SIZE_GROUP_CD;
-            this.frm.Dto定制下单.STYLE_SIZE_CD = this.sTYLE_SIZE_CD;
-            this.frm.Dto定制下单.SYTLE_FABRIC_ID = this.mianliaoid;
+            this.frm.model.Dto定制下单.Style_Id = this.kuanshiid;
+            this.frm.model.Dto定制下单.STYLE_CATEGORY_CD = this.sTYLE_CATEGORY_CD;
+            this.frm.model.Dto定制下单.STYLE_FIT_CD = this.sTYLE_FIT_CD;
+            this.frm.model.Dto定制下单.STYLE_SIZE_GROUP_CD = this.sTYLE_SIZE_GROUP_CD;
+            //this.frm.model.Dto定制下单.STYLE_SIZE_CD = this.sTYLE_SIZE_CD;
+            this.frm.model.Dto定制下单.SYTLE_FABRIC_ID = this.mianliaoid;
             this.frm.mianliaoname.Text = this.mianliaomingcheng;
             ImpService.LoadChiCunCard(this.frm);
-            ImpService.LoadSheJiDian(this.frm, this.frm.Dto定制下单.Style_Id);
-            Change.stylesizedt = ImpService.StyleCombobox(this.frm.Dto定制下单.Style_Id);
+            ImpService.LoadSheJiDian(this.frm, this.frm.model.Dto定制下单.Style_Id);
+            Change.stylesizedt = ImpService.StyleCombobox(this.frm.model.Dto定制下单.Style_Id);
             if (Change.stylesizedt != null)
             {
                 foreach (DataRow dr in Change.stylesizedt.Rows)

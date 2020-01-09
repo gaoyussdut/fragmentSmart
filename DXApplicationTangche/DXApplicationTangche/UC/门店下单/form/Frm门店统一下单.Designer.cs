@@ -130,6 +130,8 @@
             this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colMATERIAL_COLOR = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colORDER_TYPE = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.siveorder = new DevExpress.XtraEditors.SimpleButton();
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -309,6 +311,7 @@
             // 
             // dockPanel1_Container
             // 
+            this.dockPanel1_Container.Controls.Add(this.siveorder);
             this.dockPanel1_Container.Controls.Add(this.gridControl2);
             this.dockPanel1_Container.Controls.Add(this.tablePanel1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(3, 30);
@@ -982,6 +985,20 @@
             this.colORDER_TYPE.VisibleIndex = 8;
             this.colORDER_TYPE.Width = 82;
             // 
+            // siveorder
+            // 
+            this.siveorder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.siveorder.Location = new System.Drawing.Point(0, 473);
+            this.siveorder.Name = "siveorder";
+            this.siveorder.Size = new System.Drawing.Size(315, 30);
+            this.siveorder.TabIndex = 53;
+            this.siveorder.Text = "下单";
+            this.siveorder.Click += new System.EventHandler(this.siveorder_Click);
+            // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
             // Frm门店统一下单
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1088,5 +1105,7 @@
         private DevExpress.XtraGrid.Columns.TileViewColumn colPicture;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton siveorder;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DXApplicationTangche.UC.门店下单.DTO;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,33 +19,6 @@ namespace DXApplicationTangche.UC.门店下单
         internal List<OrderDto> OrderDtos { get => orderDtos; set => orderDtos = value; }
         #endregion
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="ID"></param>
-        /// <param name="CUSTOMER_ID"></param>
-        /// <param name="shop_id"></param>
-        /// <param name="shop_name"></param>
-        /// <param name="style_id"></param>
-        /// <param name="ORDER_NO"></param>
-        /// <param name="ORDER_NUMBER"></param>
-        /// <param name="ORDER_DATE"></param>
-        /// <param name="STYLE_SIZE_CD"></param>
-        /// <param name="STYLE_NAME_CN"></param>
-        /// <param name="SYTLE_YEAR"></param>
-        /// <param name="SYTLE_SEASON"></param>
-        /// <param name="REF_STYLE_ID"></param>
-        /// <param name="SYTLE_FABRIC_ID"></param>
-        /// <param name="MATERIAL_NAME_CN"></param>
-        /// <param name="MATERIAL_COLOR"></param>
-        /// <param name="STYLE_PUBLISH_CATEGORY_CD"></param>
-        /// <param name="ORDER_TYPE"></param>
-        /// <returns></returns>
-        public OrderModel buildAddOrderDtos(String CUSTOMER_ID, String shop_id, String shop_name, String style_id, String ORDER_NO, int ORDER_NUMBER, DateTime ORDER_DATE, String STYLE_SIZE_CD, String STYLE_NAME_CN, String SYTLE_YEAR, String SYTLE_SEASON, String REF_STYLE_ID, String SYTLE_FABRIC_ID, String MATERIAL_NAME_CN, String MATERIAL_COLOR, String STYLE_PUBLISH_CATEGORY_CD, int ORDER_TYPE,String PictureName) {
-            this.orderDtos.Add(new OrderDto(CUSTOMER_ID, shop_id, shop_name, style_id, ORDER_NO, ORDER_NUMBER, ORDER_DATE, STYLE_SIZE_CD, STYLE_NAME_CN, SYTLE_YEAR, SYTLE_SEASON, REF_STYLE_ID, SYTLE_FABRIC_ID, MATERIAL_NAME_CN, MATERIAL_COLOR, STYLE_PUBLISH_CATEGORY_CD, ORDER_TYPE, PictureName));
-            return this;
-        }
-
         public OrderModel buildAddOrderDtos(Dto定制下单 dto定制下单) {
             this.orderDtos.Add(new OrderDto(dto定制下单));
             return this;
@@ -63,6 +37,29 @@ namespace DXApplicationTangche.UC.门店下单
                 }
             }
             return this;
+        }
+
+        public OrderModel buildCustomer()
+        {
+            foreach(OrderDto orderDto in this.OrderDtos)
+            {
+                orderDto.CUSTOMER_ID = CreateCustomer.cUSTOMER_ID.ToString();
+                orderDto.CUSTOMER_COUNT_ID = CreateCustomer.customer_countid.ToString();
+                orderDto.CUSTOMER_NAME = CreateCustomer.customer_name;
+                orderDto.ADDRESS_ID = CreateCustomer.aDDRESS_ID.ToString();
+            }
+            return this;
+        }
+        /// <summary>
+        /// 订单存入数据库
+        /// </summary>
+        public void SaveOrderInDatabase()
+        {
+            this.buildCustomer();
+            foreach (OrderDto orderDto in OrderDtos)
+            {
+                ImpService.DynamicSaveOrder(orderDto);
+            }
         }
     }
 }

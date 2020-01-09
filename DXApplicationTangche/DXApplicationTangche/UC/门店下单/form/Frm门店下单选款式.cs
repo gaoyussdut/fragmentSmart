@@ -16,14 +16,14 @@ namespace DXApplicationTangche.UC.门店下单.form
 {
     public partial class Frm门店下单选款式 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private 门店下单选款式Model model;
+        public 门店下单选款式Model model = new 门店下单选款式Model();
         public List<Pic各种> pics = new List<Pic各种>();
         public static int page { get; set; } = 1;
-        public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
+        //public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
 
         private Frm门店统一下单 frm;
 
-        private Dto定制下单 dto定制下单;
+        //private Dto定制下单 dto定制下单;
 
         public Frm门店下单选款式(Frm门店统一下单 frm, Enum下单类型 enum下单类型)
         {
@@ -32,7 +32,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.uc分页.shangye.Click += new EventHandler(this.shangye_Button);
 
             this.frm = frm;
-            dto定制下单 = new Dto定制下单();
+            this.model.Dto定制下单 = new Dto定制下单();
         }
 
         private void simpleButton11_Click(object sender, EventArgs e)
@@ -93,12 +93,12 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            new Frm面料选择(Dto定制下单.Style_Id,Frm面料选择.Enum选择面料类型.全部,this.model).ShowDialog();
+            new Frm面料选择(this.model.Dto定制下单.Style_Id,Frm面料选择.Enum选择面料类型.全部,this.model).ShowDialog();
         }
 
         private void mianliaoname_Click(object sender, EventArgs e)
         {
-            new Frm面料选择(Dto定制下单.Style_Id, Frm面料选择.Enum选择面料类型.默认,this.model).ShowDialog();
+            new Frm面料选择(this.model.Dto定制下单.Style_Id, Frm面料选择.Enum选择面料类型.默认,this.model).ShowDialog();
         }
 
         private void Frm门店下单选款式_Activated(object sender, EventArgs e)
@@ -111,6 +111,12 @@ namespace DXApplicationTangche.UC.门店下单.form
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                //this.model.Dto定制下单.ORDER_NUMBER = Convert.ToInt32(this.barEditItemNumber.EditValue);
+                ImpService.DynamicSaveSize(this, this.model.Dto定制下单);//尺寸保存
+                ImpService.DynamicSaveDesign(this, this.model.Dto定制下单);//设计点保存
+                this.frm.buildOrderModel(this.model.Dto定制下单);
+                this.frm.refreshGridControl();
+                //this.addPics();
                 try
                 {
                     this.model.verify订单();
@@ -120,19 +126,14 @@ namespace DXApplicationTangche.UC.门店下单.form
                     MessageBox.Show(ex.Message);
                     return;
                 }
-                this.dto定制下单.ORDER_NUMBER = Convert.ToInt32(this.barEditItemNumber.EditValue);
-                ImpService.DynamicSaveSize(this, this.Dto定制下单);//尺寸保存
-                ImpService.DynamicSaveDesign(this, this.Dto定制下单);//设计点保存
-                this.frm.buildOrderModel(this.Dto定制下单);
-                this.frm.refreshGridControl();
-                this.addPics();
                 MessageBox.Show("保存成功");
                 this.Close();
             }
         }
         private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.model.build选中尺寸(this.chicun01.Text.Trim(), Dto定制下单.Style_Id, Change.stylesizedt);
+            this.model.build选中尺寸(this.chicun01.Text.Trim(), this.model.Dto定制下单.Style_Id, Change.stylesizedt);
+            this.model.Dto定制下单.STYLE_SIZE_CD= ImpService.SizeCD(this.chicun01.Text.Trim(), Change.stylesizedt);
             ImpService.RefreshChiCun(this, this.model.选中尺寸);
             ImpService.CountChiCun(this);
         }
@@ -141,7 +142,7 @@ namespace DXApplicationTangche.UC.门店下单.form
         {
             try
             {
-                this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.Dto定制下单.SYTLE_FABRIC_ID)), this.mianliaoname.Text, "面料"));
+                this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.model.Dto定制下单.SYTLE_FABRIC_ID)), this.mianliaoname.Text, "面料"));
             }
             catch
             {
@@ -171,12 +172,12 @@ namespace DXApplicationTangche.UC.门店下单.form
             if (dialogResult == DialogResult.Yes)
             {
                 //  TODO    改为build
-                this.Dto定制下单.Style_Id = this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleId").ToString();
-                this.Dto定制下单.STYLE_CATEGORY_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString();
-                this.Dto定制下单.STYLE_FIT_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_FIT_CD").ToString();
-                this.Dto定制下单.STYLE_SIZE_GROUP_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_GROUP_CD").ToString();
-                this.Dto定制下单.STYLE_SIZE_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_CD").ToString();
-                this.Dto定制下单.SYTLE_FABRIC_ID = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialId").ToString();
+                this.model.Dto定制下单.Style_Id = this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleId").ToString();
+                this.model.Dto定制下单.STYLE_CATEGORY_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString();
+                this.model.Dto定制下单.STYLE_FIT_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_FIT_CD").ToString();
+                this.model.Dto定制下单.STYLE_SIZE_GROUP_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_GROUP_CD").ToString();
+                //this.model.Dto定制下单.STYLE_SIZE_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_CD").ToString();
+                this.model.Dto定制下单.SYTLE_FABRIC_ID = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialId").ToString();
 
                 //  控件行为
                 this.mianliaoname.Text = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialNameCn").ToString();
@@ -185,11 +186,12 @@ namespace DXApplicationTangche.UC.门店下单.form
                 ImpService.LoadChiCunCard(this);
                 //  TODO    不准传任何控件进去
                 //  TODO    不允许使用DataTable
-                ImpService.LoadSheJiDian(this, this.Dto定制下单.Style_Id);
+                ImpService.LoadSheJiDian(this, this.model.Dto定制下单.Style_Id);
 
 
-                this.model.build款式全尺寸(this.dto定制下单.Style_Id);
-                Change.stylesizedt = ImpService.StyleCombobox(this.Dto定制下单.Style_Id);
+                this.model.build款式全尺寸(this.model.Dto定制下单.Style_Id);
+                Change.stylesizedt = ImpService.StyleCombobox(this.model.Dto定制下单.Style_Id);
+                this.chicun01.Items.Clear();
                 if (Change.stylesizedt != null)
                 {
                     foreach (DataRow dr in Change.stylesizedt.Rows)
@@ -202,6 +204,11 @@ namespace DXApplicationTangche.UC.门店下单.form
                 this.xtraTabControl1.SelectedTabPage = this.xtraTabControl1.TabPages[1];
             }
 
+        }
+
+        private void barEditItemNumber_EditValueChanged(object sender, EventArgs e)
+        {
+            this.model.Dto定制下单.build数量(this.barEditItemNumber.EditValue.ToString());
         }
     }
 

@@ -89,7 +89,7 @@ namespace mendian
 MessageBox.Show("确认保存“" + this.label1.Text + "”吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    this.frm.Dto定制下单.SYTLE_FABRIC_ID = this.mianliaoid;
+                    this.frm.model.Dto定制下单.SYTLE_FABRIC_ID = this.mianliaoid;
                     Frm面料选择.mianliao = this.mianliao;
                     Frm面料选择.mianliaoid = this.mianliaoid;
                     Frm面料选择.mianliaocd = this.mianliaocd;

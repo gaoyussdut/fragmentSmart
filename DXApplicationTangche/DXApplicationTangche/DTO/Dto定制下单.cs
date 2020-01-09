@@ -18,6 +18,9 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public String STYLE_SIZE_GROUP_CD { get; set; }//尺码组
         public String STYLE_SIZE_CD { get; set; }//尺码
         public int ORDER_NUMBER { get; set; }   //  订单数量
+        public String STYLE_DRESS_CATEGORY { get; set; }
+        public String STYLE_DESIGN_TYPE { get; set; }
+
 
         public List<Dto设计点> Dto设计点s { get => dto设计点s; }
         public Dto尺寸 Dto尺寸 { get => dto尺寸; }
@@ -36,21 +39,31 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             return this;
         }
 
-        public Dto定制下单 build款式卡片(款式卡片DTO 款式卡片DTO) {
-            this.Style_Id = 款式卡片DTO.kuanshiid;
-            this.STYLE_CATEGORY_CD = 款式卡片DTO.sTYLE_CATEGORY_CD;
-            this.STYLE_FIT_CD = 款式卡片DTO.sTYLE_FIT_CD;
-            this.STYLE_SIZE_GROUP_CD = 款式卡片DTO.sTYLE_SIZE_GROUP_CD;
-            this.STYLE_SIZE_CD = 款式卡片DTO.sTYLE_SIZE_CD;
-            this.SYTLE_FABRIC_ID = 款式卡片DTO.mianliaoid;
-            return this;
-        }
+        //public Dto定制下单 build款式卡片(款式卡片DTO 款式卡片DTO) {
+        //    this.Style_Id = 款式卡片DTO.kuanshiid;
+        //    this.STYLE_CATEGORY_CD = 款式卡片DTO.sTYLE_CATEGORY_CD;
+        //    this.STYLE_FIT_CD = 款式卡片DTO.sTYLE_FIT_CD;
+        //    this.STYLE_SIZE_GROUP_CD = 款式卡片DTO.sTYLE_SIZE_GROUP_CD;
+        //    this.STYLE_SIZE_CD = 款式卡片DTO.sTYLE_SIZE_CD;
+        //    this.SYTLE_FABRIC_ID = 款式卡片DTO.mianliaoid;
+        //    return this;
+        //}
         public Dto定制下单 build面料(String SYTLE_FABRIC_ID)
         {
             this.SYTLE_FABRIC_ID = SYTLE_FABRIC_ID;
             return this;
         }
-
+        public Dto定制下单 build数量(String ORDER_NUMBER)
+        {
+            try
+            {
+                this.ORDER_NUMBER = Convert.ToInt32(ORDER_NUMBER);
+            }
+            catch (Exception)
+            {                
+            }
+            return this;
+        }
         public void verify订单()
         {
             if (String.IsNullOrEmpty(this.Style_Id))
