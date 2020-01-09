@@ -15,58 +15,54 @@ namespace mendian
         public SheJiDianPicList()
         {
             DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
-"S1.itemCode,\n" +
-"s1.itemValue ,\n" +
-"s1.itemNameCn,\n" +
-"S2.UPLOAD_FILE AS picn,\n" +
-"s2.picurl \n" +
+" a.DESIGN_ID id,\n" +
+" a.STYLE_CATEGORY_CD styleCategoryCD,\n" +
+" a.FILE_ID fileID,\n" +
+" a.ITEM_CD itemCode,\n" +
+" a.ITEM_VALUE itemValue,\n" +
+" a.ITEM_NAME_CN itemNameCn,\n" +
+" CONCAT( file.FILE_PATH, file.UPLOAD_FILE ) \"picurl\",\n" +
+"  file.UPLOAD_FILE \"picn\",\n" +
+" a.ITEM_NAME_EN itemNameEN,\n" +
+" a.ITEM_NAME_JP itemNameJP,\n" +
+" IFNULL( a.ITEM_COST, 0 ) itemCost,\n" +
+" a.REMARKS remarks,\n" +
+" a.ENABLE_FLAG enableFlag,\n" +
+" a.DELETE_FLAG deleteFlag,\n" +
+" a.HAVETO_FLAG haveToFlag,\n" +
+" a.VERSION version,\n" +
+" a.CREATE_DATE createDate,\n" +
+" a.CREATE_USER \"createBy.id\",\n" +
+" a.UPDATE_USER \"updateBy.id\",\n" +
+" a.ITEM_SORT itemSort,\n" +
+" a.ITEM_CATEGORY_CD itemCategoryCD,\n" +
+" file.FILE_ID \"uploadFile.fileId\",\n" +
+" file.FILE_SOURCE \"uploadFile.fileSource\",\n" +
+" file.MODULE_KBN \"uploadFile.moduleKbn\",\n" +
+" file.FTP_FILE \"uploadFile.ftpFile\",\n" +
+" file.FILE_PATH \"uploadFile.filePath\",\n" +
+" CONCAT( p.FIRST_NAME, p.LAST_NAME ) \"updateBy.firstName\" \n" +
 "FROM\n" +
-"(\n" +
-"SELECT\n" +
-"	ap.ITEM_VALUE itemValue,\n" +
-"	ap.DESIGN_ID id,\n" +
-"	CONCAT( ap.ITEM_VALUE, \":\", ap.ITEM_NAME_CN ) itemNameCn,\n" +
-"	ap.ITEM_CD itemCode,\n" +
-"	adp.ITEM_CD itemParentCode \n" +
-"FROM\n" +
-"	a_designoption_p ap\n" +
-"	LEFT JOIN a_designoption_p adp ON adp.ITEM_VALUE = ap.ITEM_CD\n" +
-"	LEFT JOIN a_ognization_desgin_r adr ON ap.DESIGN_ID = adr.DESGIN_ID \n" +
+" a_designoption_p a\n" +
+" LEFT JOIN a_login_user_p p ON a.UPDATE_USER = p.login_user_id\n" +
+" LEFT JOIN w_upload_file_p file ON a.FILE_ID = file.FILE_ID \n" +
+" LEFT JOIN a_ognization_desgin_r adr ON a.DESIGN_ID = adr.DESGIN_ID \n" +
 "WHERE\n" +
-"	( ap.ITEM_CATEGORY_CD = \"\" OR ap.ITEM_CATEGORY_CD IS NULL ) \n" +
-"	AND ap.STYLE_CATEGORY_CD = 'STYLE_CATEGORY-SHIRT' \n" +
-"	-- AND ap.ITEM_CD = '4SFP' -- AND ap.ITEM_CD IN ( SELECT ap.ITEM_VALUE itemValue FROM a_designoption_p ap WHERE ap.ITEM_CATEGORY_CD ='ITEM_TYPE_CD-10' )\n" +
-"	\n" +
-"	AND adr.OGNIZATION_ID = 95 \n" +
-"	AND ap.ITEM_VALUE IN (\n" +
-"	SELECT\n" +
-"		ap.ITEM_VALUE itemValue \n" +
-"	FROM\n" +
-"		a_designoption_p ap \n" +
-"	WHERE\n" +
-"		ap.DESIGN_ID IN ( SELECT ar.DESGIN_ID FROM a_shop_desgin_r ar WHERE ar.SHOP_ID = 18 ) \n" +
-"	) \n" +
+" a.STYLE_CATEGORY_CD = 'STYLE_CATEGORY-SHIRT' and a.DESIGN_ID IN ( SELECT DESGIN_ID FROM a_shop_desgin_r WHERE SHOP_ID = 18 ) \n" +
+" \n" +
+" AND a.DELETE_FLAG = 0 \n" +
+" AND adr.OGNIZATION_ID = 95 \n" +
 "ORDER BY\n" +
-"	ap.ITEM_CD,\n" +
-"	ap.ITEM_SORT ASC \n" +
-") AS s1\n" +
-"LEFT JOIN (\n" +
-"SELECT\n" +
-"	a.ITEM_CD,\n" +
-"	a.ITEM_VALUE,\n" +
-"	a.ITEM_NAME_CN,\n" +
-"	CONCAT( 'https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/', w.UPLOAD_FILE ) AS picurl,\n" +
-"	w.* \n" +
-"FROM\n" +
-"	a_designoption_p a\n" +
-"	LEFT JOIN w_upload_file_p w ON a.FILE_ID = w.FILE_ID \n" +
-"WHERE\n" +
-"	a.FILE_ID IS NOT NULL \n" +
-") AS s2 ON s1.itemCode = s2.ITEM_CD \n" +
-"AND s1.itemValue = s2.ITEM_VALUE");
+" a.item_sort,\n" +
+" a.UPDATE_DATE DESC");
             foreach (DataRow dr in dt.Rows)
             {
-                this.shejidianpiclist.Add(new SheJiDianPic(dr["itemCode"].ToString().Trim(), dr["itemValue"].ToString().Trim(), dr["itemNameCn"].ToString().Trim(), dr["picn"].ToString().Trim(), dr["picurl"].ToString().Trim()));
+                String picurl = dr["picurl"].ToString().Trim();
+                if(picurl!="")
+                {
+                    picurl = "shirtmtm.com" + picurl;
+                }
+                this.shejidianpiclist.Add(new SheJiDianPic(dr["itemCode"].ToString().Trim(), dr["itemValue"].ToString().Trim(), dr["itemNameCn"].ToString().Trim(), dr["picn"].ToString().Trim(), picurl));
             }
         }
 
