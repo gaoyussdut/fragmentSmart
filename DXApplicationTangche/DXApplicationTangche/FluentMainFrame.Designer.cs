@@ -164,7 +164,6 @@
             this.accordionControlElement11,
             this.accordionControlElement12,
             this.accordionControlElement1});
-            this.accordionControlElement10.Expanded = true;
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Text = "查询";
             // 
@@ -218,7 +217,6 @@
             this.accordionControlElement8,
             this.accordionControlElement9,
             this.accordionControlElement22});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "款式管理";
             // 
@@ -278,7 +276,6 @@
             this.accordionControlElement18.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement19,
             this.ElementStock});
-            this.accordionControlElement18.Expanded = true;
             this.accordionControlElement18.Name = "accordionControlElement18";
             this.accordionControlElement18.Text = "门店管理";
             // 
@@ -302,7 +299,6 @@
             this.ElementShopStockIn,
             this.ElementShopOrder,
             this.accordionControlElement23});
-            this.ElementStock.Expanded = true;
             this.ElementStock.Name = "ElementStock";
             this.ElementStock.Text = "进销存管理";
             // 

@@ -234,31 +234,60 @@ namespace DXApplicationTangche.UC.款式异常
     }
     public class 面料图片Model
     {
+        #region 变量和属性
         private List<面料图片Dto> 面料图片DTos = new List<面料图片Dto>();
-        private 面料图片Dto 面料图片;
+        internal List<面料图片Dto> 面料卡s { get => 面料图片DTos; set => 面料图片DTos = value; }
+        #endregion
+
+        #region 构造函数
+        /// <summary>
+        /// 全部面料
+        /// </summary>
+        /// <param name="str">模糊查询字段</param>
+        /// <param name="page"></param>
         public 面料图片Model(String str, int page)
         {
             this.面料图片DTos = ImpService.GetMianLiao(str, page);
         }
+        /// <summary>
+        /// 款式的默认面料
+        /// </summary>
+        /// <param name="styleid"></param>
+        /// <param name="str">模糊查询字段</param>
+        /// <param name="page"></param>
         public 面料图片Model(String styleid,String str,int page)
         {
             this.面料图片DTos = ImpService.DefaultMianLiao(styleid, str, page);
         }
-        internal List<面料图片Dto> 面料卡s { get => 面料图片DTos; set => 面料图片DTos = value; }
-        internal 面料图片Dto 面料 { get => 面料图片; set => 面料图片 = value; }
+        #endregion
+
     }
     public class 设计点图片Model
     {
+        #region 变量和属性
         private List<设计点图片Dto> 设计点图片Dtos = new List<设计点图片Dto>();
-        public 设计点图片Model(String itemcd,String str)
+        internal List<设计点图片Dto> 设计点s { get => 设计点图片Dtos; set => 设计点图片Dtos = value; }
+        #endregion
+
+        #region 构造函数
+        /// <summary>
+        /// 根据设计点查询设计点图片
+        /// </summary>
+        /// <param name="itemcd">设计点</param>
+        /// <param name="str">模糊查询字段</param>
+        public 设计点图片Model(String itemcd, String str)
         {
-            this.设计点s = ImpService.GetDesign(itemcd,str);
+            this.设计点s = ImpService.GetDesign(itemcd, str);
         }
+        /// <summary>
+        /// 查询默认项
+        /// </summary>
+        /// <param name="id"></param>
         public 设计点图片Model(String id)
         {
             this.设计点s = ImpService.DefaultItem(id);
         }
-        internal List<设计点图片Dto> 设计点s { get => 设计点图片Dtos; set => 设计点图片Dtos = value; }
+        #endregion
     }
 
 }

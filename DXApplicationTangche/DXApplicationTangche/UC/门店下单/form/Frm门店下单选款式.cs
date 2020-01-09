@@ -111,14 +111,13 @@ namespace DXApplicationTangche.UC.门店下单.form
             DialogResult dialogResult = MessageBox.Show("确认保存吗？", "保存", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
+                
                 //this.model.Dto定制下单.ORDER_NUMBER = Convert.ToInt32(this.barEditItemNumber.EditValue);
                 ImpService.DynamicSaveSize(this, this.model.Dto定制下单);//尺寸保存
                 ImpService.DynamicSaveDesign(this, this.model.Dto定制下单);//设计点保存
-                this.frm.buildOrderModel(this.model.Dto定制下单);
-                this.frm.refreshGridControl();
-                //this.addPics();
                 try
                 {
+                    //  校验订单
                     this.model.verify订单();
                 }
                 catch (Exception ex)
@@ -126,6 +125,11 @@ namespace DXApplicationTangche.UC.门店下单.form
                     MessageBox.Show(ex.Message);
                     return;
                 }
+
+                this.frm.buildOrderModel(this.model.Dto定制下单);
+                this.frm.refreshGridControl();
+                //this.addPics();
+
                 MessageBox.Show("保存成功");
                 this.Close();
             }
