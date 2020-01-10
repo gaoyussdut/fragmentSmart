@@ -60,7 +60,7 @@ namespace mendian
                 String picurl = dr["picurl"].ToString().Trim();
                 if(picurl!="")
                 {
-                    picurl = "shirtmtm.com" + picurl;
+                    picurl = "https://shirtmtm.com" + picurl;
                 }
                 this.shejidianpiclist.Add(new SheJiDianPic(dr["itemCode"].ToString().Trim(), dr["itemValue"].ToString().Trim(), dr["itemNameCn"].ToString().Trim(), dr["picn"].ToString().Trim(), picurl));
             }

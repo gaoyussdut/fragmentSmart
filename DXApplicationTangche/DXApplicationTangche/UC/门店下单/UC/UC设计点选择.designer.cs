@@ -35,10 +35,10 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(544, 6);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton1.Location = new System.Drawing.Point(476, 6);
+            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(100, 29);
+            this.simpleButton1.Size = new System.Drawing.Size(88, 27);
             this.simpleButton1.TabIndex = 90;
             this.simpleButton1.Text = "选择";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -50,31 +50,32 @@
             this.label1.Location = new System.Drawing.Point(-1, 5);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 27);
+            this.label1.Size = new System.Drawing.Size(32, 22);
             this.label1.TabIndex = 89;
             this.label1.Text = "·";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(256, 4);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(224, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(264, 30);
+            this.textBox1.Size = new System.Drawing.Size(232, 26);
             this.textBox1.TabIndex = 91;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
-            // UC设计点卡片
+            // UC设计点选择
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "UC设计点卡片";
-            this.Size = new System.Drawing.Size(653, 40);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "UC设计点选择";
+            this.Size = new System.Drawing.Size(571, 37);
             this.ResumeLayout(false);
             this.PerformLayout();
 

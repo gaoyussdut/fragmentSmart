@@ -504,6 +504,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                     try
                     {
                         DownloadPicture(sjdp.picurl, @"pic\" + sjdp.picn, -1);
+                        //DownloadPic(sjdp.picurl, @"pic\", sjdp.picn);
                     }
                     catch
                     {
@@ -1137,7 +1138,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             {
                 if (i % 16 == 0)
                 {
-                    width = width + 500;
+                    width = width + 600;
                     height = 0;
                 }
             }
@@ -1743,7 +1744,7 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             height = 0;
             width = 0;
             int i = 0;
-            panelLocition = new PanelLocition(frm.panel4.Width, frm.panel4.Height, dt.Rows.Count);
+            panelLocition = new PanelLocition(frm.panel4.Width, frm.panel4.Height, 0);
             UC尺寸头 hhh = new UC尺寸头();
             ImpService.generateUserControl(hhh, i);
             frm.panel4.Controls.Clear();
@@ -2285,6 +2286,47 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
                 设计点dtos.Add(new 设计点DTO(dr));
             }
             return 设计点dtos;
+        }
+        /// <summary>
+        /// 下载图片
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="path"></param>
+        /// <param name="FileName"></param>
+        public static void DownloadPic(String url,String path,String FileName)
+        {
+            //string path = "http://www.quanjing.com/imgbuy/QJ9107100567.png";//下载图片的地址
+            //string newPath = string.Format(@"D:\UPLOAD\");//目标地址
+            //string ImsFileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".png"; //目标文件名
+            try
+            {
+                System.Net.WebRequest imgRequest = System.Net.WebRequest.Create(url);
+                HttpWebResponse res;
+                try
+                {
+                    res = (HttpWebResponse)imgRequest.GetResponse();
+                }
+                catch (WebException ex)
+                {
+                    res = (HttpWebResponse)ex.Response;
+                }
+                if (res.StatusCode.ToString() == "OK")
+                {
+                    System.Drawing.Image dwonImage = System.Drawing.Image.FromStream(imgRequest.GetResponse().GetResponseStream());
+                    if (!System.IO.Directory.Exists(path))//目标地址不存在自动创建
+                    {
+                        System.IO.Directory.CreateDirectory(path);
+                    }
+                    dwonImage.Save(path + FileName);
+                    dwonImage.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+            
         }
     }
 }

@@ -18,7 +18,6 @@ namespace mendian
             {
                 return ucLeft;
             }
-
             set
             {
                 ucLeft = value;
@@ -52,12 +51,12 @@ namespace mendian
         }
         public PanelLocition(int panelwidth, int panelheight, int amount)
         {
-            if (amount <= 5)
+            if (amount != 0)
             {
                 getWHLess5(panelwidth, panelheight);
 
             }
-            if (amount > 5)
+            if (amount == 0)
             {
                 getWHMore5(panelwidth, panelheight);
             }
@@ -68,13 +67,13 @@ namespace mendian
         {
             ucLeft = 30;
             panelBottom = panelHeight - 100;
-            ucHeight = 50;
+            ucHeight = 30;
         }
         private void getWHMore5(int panelWidth, int panelHeight)
         {
             ucLeft = 30;
             panelBottom = panelHeight - 100;
-            ucHeight = 50;
+            ucHeight = 5;
         }
 
     }
