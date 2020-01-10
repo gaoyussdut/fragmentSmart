@@ -30,19 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.dockPanel扫码 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.label扫码 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colshop_type = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colshop_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colshop_name = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,18 +42,31 @@
             this.colMATERIAL_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMATERIAL_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPicture = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.colamount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel扫码 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colshop_type = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.label扫码 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel扫码.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
             this.tablePanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -81,151 +81,6 @@
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // repositoryItemPictureEdit1
-            // 
-            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            // 
-            // dockManager1
-            // 
-            this.dockManager1.Form = this;
-            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
-            this.dockPanel扫码});
-            this.dockManager1.TopZIndexControls.AddRange(new string[] {
-            "DevExpress.XtraBars.BarDockControl",
-            "DevExpress.XtraBars.StandaloneBarDockControl",
-            "System.Windows.Forms.StatusBar",
-            "System.Windows.Forms.MenuStrip",
-            "System.Windows.Forms.StatusStrip",
-            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
-            "DevExpress.XtraBars.Ribbon.RibbonControl",
-            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
-            "DevExpress.XtraBars.Navigation.TileNavPane",
-            "DevExpress.XtraBars.TabFormControl",
-            "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
-            "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
-            // 
-            // dockPanel扫码
-            // 
-            this.dockPanel扫码.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel扫码.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
-            this.dockPanel扫码.ID = new System.Guid("f3132fef-8a2d-4611-8ebf-5010cb1155ff");
-            this.dockPanel扫码.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel扫码.Name = "dockPanel扫码";
-            this.dockPanel扫码.OriginalSize = new System.Drawing.Size(200, 134);
-            this.dockPanel扫码.Size = new System.Drawing.Size(1071, 134);
-            this.dockPanel扫码.Text = "扫码下单";
-            // 
-            // dockPanel1_Container
-            // 
-            this.dockPanel1_Container.Controls.Add(this.tablePanel1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 37);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(1063, 91);
-            this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // tablePanel1
-            // 
-            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 0.44F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 59.56F),
-            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
-            this.tablePanel1.Controls.Add(this.searchLookUpEdit1);
-            this.tablePanel1.Controls.Add(this.label1);
-            this.tablePanel1.Controls.Add(this.textEdit1);
-            this.tablePanel1.Controls.Add(this.label扫码);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
-            this.tablePanel1.Name = "tablePanel1";
-            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
-            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
-            this.tablePanel1.Size = new System.Drawing.Size(1063, 91);
-            this.tablePanel1.TabIndex = 0;
-            // 
-            // textEdit1
-            // 
-            this.tablePanel1.SetColumn(this.textEdit1, 1);
-            this.textEdit1.Location = new System.Drawing.Point(7, 46);
-            this.textEdit1.Name = "textEdit1";
-            this.tablePanel1.SetRow(this.textEdit1, 1);
-            this.textEdit1.Size = new System.Drawing.Size(570, 24);
-            this.textEdit1.TabIndex = 1;
-            this.textEdit1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyDown);
-            // 
-            // label扫码
-            // 
-            this.label扫码.AutoSize = true;
-            this.tablePanel1.SetColumn(this.label扫码, 1);
-            this.label扫码.ForeColor = System.Drawing.Color.Red;
-            this.label扫码.Location = new System.Drawing.Point(7, 4);
-            this.label扫码.Name = "label扫码";
-            this.tablePanel1.SetRow(this.label扫码, 0);
-            this.label扫码.Size = new System.Drawing.Size(113, 18);
-            this.label扫码.TabIndex = 0;
-            this.label扫码.Text = "请扫码条码下单";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.tablePanel1.SetColumn(this.label1, 2);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(583, 4);
-            this.label1.Name = "label1";
-            this.tablePanel1.SetRow(this.label1, 0);
-            this.label1.Size = new System.Drawing.Size(83, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "请选择门店";
-            // 
-            // searchLookUpEdit1
-            // 
-            this.tablePanel1.SetColumn(this.searchLookUpEdit1, 2);
-            this.searchLookUpEdit1.Enabled = false;
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(583, 46);
-            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
-            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEdit1.Properties.NullText = "";
-            this.searchLookUpEdit1.Properties.PopupView = this.searchLookUpEdit1View;
-            this.tablePanel1.SetRow(this.searchLookUpEdit1, 2);
-            this.searchLookUpEdit1.Size = new System.Drawing.Size(477, 24);
-            this.searchLookUpEdit1.TabIndex = 6;
-            this.searchLookUpEdit1.Popup += new System.EventHandler(this.searchLookUpEdit1_Popup);
-            this.searchLookUpEdit1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEdit1_CustomDisplayText);
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.colshop_type});
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.FieldName = "shop_id";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "店名";
-            this.gridColumn2.FieldName = "shop_name";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // colshop_type
-            // 
-            this.colshop_type.Caption = "门店类型";
-            this.colshop_type.FieldName = "shop_type";
-            this.colshop_type.Name = "colshop_type";
-            this.colshop_type.Visible = true;
-            this.colshop_type.VisibleIndex = 1;
             // 
             // gridView1
             // 
@@ -360,6 +215,10 @@
             this.colPicture.VisibleIndex = 9;
             this.colPicture.Width = 94;
             // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            // 
             // colamount
             // 
             this.colamount.Caption = "库存数量";
@@ -369,6 +228,148 @@
             this.colamount.Visible = true;
             this.colamount.VisibleIndex = 10;
             this.colamount.Width = 94;
+            // 
+            // dockManager1
+            // 
+            this.dockManager1.Form = this;
+            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel扫码});
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl",
+            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
+            "DevExpress.XtraBars.Navigation.TileNavPane",
+            "DevExpress.XtraBars.TabFormControl",
+            "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
+            "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
+            // 
+            // dockPanel扫码
+            // 
+            this.dockPanel扫码.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel扫码.Dock = DevExpress.XtraBars.Docking.DockingStyle.Top;
+            this.dockPanel扫码.ID = new System.Guid("f3132fef-8a2d-4611-8ebf-5010cb1155ff");
+            this.dockPanel扫码.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel扫码.Name = "dockPanel扫码";
+            this.dockPanel扫码.OriginalSize = new System.Drawing.Size(200, 134);
+            this.dockPanel扫码.Size = new System.Drawing.Size(1071, 134);
+            this.dockPanel扫码.Text = "扫码下单";
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.tablePanel1);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 37);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(1063, 91);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 0.44F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 59.56F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Controls.Add(this.searchLookUpEdit1);
+            this.tablePanel1.Controls.Add(this.label1);
+            this.tablePanel1.Controls.Add(this.textEdit1);
+            this.tablePanel1.Controls.Add(this.label扫码);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 0);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 26F)});
+            this.tablePanel1.Size = new System.Drawing.Size(1063, 91);
+            this.tablePanel1.TabIndex = 0;
+            // 
+            // searchLookUpEdit1
+            // 
+            this.tablePanel1.SetColumn(this.searchLookUpEdit1, 2);
+            this.searchLookUpEdit1.Enabled = false;
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(583, 46);
+            this.searchLookUpEdit1.Name = "searchLookUpEdit1";
+            this.searchLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit1.Properties.NullText = "";
+            this.searchLookUpEdit1.Properties.PopupView = this.searchLookUpEdit1View;
+            this.tablePanel1.SetRow(this.searchLookUpEdit1, 2);
+            this.searchLookUpEdit1.Size = new System.Drawing.Size(477, 24);
+            this.searchLookUpEdit1.TabIndex = 6;
+            this.searchLookUpEdit1.Popup += new System.EventHandler(this.searchLookUpEdit1_Popup);
+            this.searchLookUpEdit1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEdit1_CustomDisplayText);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.colshop_type});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.FieldName = "shop_id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "店名";
+            this.gridColumn2.FieldName = "shop_name";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // colshop_type
+            // 
+            this.colshop_type.Caption = "门店类型";
+            this.colshop_type.FieldName = "shop_type";
+            this.colshop_type.Name = "colshop_type";
+            this.colshop_type.Visible = true;
+            this.colshop_type.VisibleIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label1, 2);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(583, 4);
+            this.label1.Name = "label1";
+            this.tablePanel1.SetRow(this.label1, 0);
+            this.label1.Size = new System.Drawing.Size(83, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "请选择门店";
+            // 
+            // textEdit1
+            // 
+            this.tablePanel1.SetColumn(this.textEdit1, 1);
+            this.textEdit1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.textEdit1.Location = new System.Drawing.Point(7, 46);
+            this.textEdit1.Name = "textEdit1";
+            this.tablePanel1.SetRow(this.textEdit1, 1);
+            this.textEdit1.Size = new System.Drawing.Size(570, 24);
+            this.textEdit1.TabIndex = 1;
+            this.textEdit1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit1_KeyDown);
+            // 
+            // label扫码
+            // 
+            this.label扫码.AutoSize = true;
+            this.tablePanel1.SetColumn(this.label扫码, 1);
+            this.label扫码.ForeColor = System.Drawing.Color.Red;
+            this.label扫码.Location = new System.Drawing.Point(7, 4);
+            this.label扫码.Name = "label扫码";
+            this.tablePanel1.SetRow(this.label扫码, 0);
+            this.label扫码.Size = new System.Drawing.Size(113, 18);
+            this.label扫码.TabIndex = 0;
+            this.label扫码.Text = "请扫码条码下单";
             // 
             // Frm扫码下单
             // 
@@ -381,6 +382,7 @@
             this.Text = "Frm扫码下单";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel扫码.ResumeLayout(false);
@@ -388,10 +390,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
             this.tablePanel1.ResumeLayout(false);
             this.tablePanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
