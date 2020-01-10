@@ -2261,6 +2261,31 @@ new string[] { Change.styleid.ToString(), c.PitemCd, c.PitemValue, c.itemValue, 
             SQLmtm.DoInsert("o_order_brand_r", new string[] { "OGNIZATION_ID", "SHOP_ID", "BRAND_ID", "ORDER_ID" }, new string[] { "95", "18", "", order_id.ToString() });
             SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "1" });
         }
+        /// <summary>
+        /// build设计点
+        /// </summary>
+        /// <param name="styleid"></param>
+        /// <returns></returns>
+        public static List<设计点DTO> Get设计点DTOs(String styleid)
+        {
+            String sql = "SELECT\n" +
+"	sr.*,\n" +
+"	adp.ITEM_NAME_CN AS OPTION_NAME,\n" +
+"	adp1.ITEM_NAME_CN AS ITEM_NAME \n" +
+"FROM\n" +
+"	s_style_option_r AS sr\n" +
+"	LEFT JOIN a_designoption_p AS adp ON sr.OPTION_VALUE = adp.ITEM_VALUE\n" +
+"	LEFT JOIN a_designoption_p AS adp1 ON sr.ITEM_VALUE = adp1.ITEM_VALUE \n" +
+"WHERE\n" +
+"	sr.SYS_STYLE_ID = '"+styleid+"';";
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            List<设计点DTO> 设计点dtos = new List<设计点DTO>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                设计点dtos.Add(new 设计点DTO(dr));
+            }
+            return 设计点dtos;
+        }
     }
 }
 

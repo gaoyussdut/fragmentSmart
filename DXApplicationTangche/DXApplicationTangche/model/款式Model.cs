@@ -106,6 +106,7 @@ namespace DXApplicationTangche.UC.款式异常
                     {
                         this.送审款式s.Add(dto);
                         dto.build面料();
+                        dto.build设计点();
                         break;
                     }
                 }

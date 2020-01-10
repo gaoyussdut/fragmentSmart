@@ -83,8 +83,10 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
         public List<版型尺码DTO> 尺码一览 { get => 版型尺码Dtos; set => 版型尺码Dtos = value; }
         public List<面料DTO> 面料 { get => 面料DTOs; set => 面料DTOs = value; }
+        public List<设计点DTO> 设计点 { get => 设计点DTOs; set => 设计点DTOs = value; }
 
         private List<面料DTO> 面料DTOs = new List<面料DTO>();
+        private List<设计点DTO> 设计点DTOs = new List<设计点DTO>();
 
         private List<版型尺码DTO> 版型尺码Dtos = new List<版型尺码DTO>();
 
@@ -163,9 +165,12 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         /// </summary>
         internal void build面料()
         {
-            this.面料= ImpService.get面料DTOs(this.SYTLE_FABRIC_ID);
+            this.面料 = ImpService.get面料DTOs(this.SYTLE_FABRIC_ID);
         }
-
+        public void build设计点()
+        {
+            this.设计点 = ImpService.Get设计点DTOs(this.SYS_STYLE_ID);
+        }
         public 款式图片一览Dto(DataRow dr) {
             this.SYS_STYLE_ID = dr["SYS_STYLE_ID"].ToString();
             this.CUSTOMER_COUNT_ID = dr["CUSTOMER_COUNT_ID"].ToString();
@@ -269,7 +274,25 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public string 面料名称 { get => materialNameCn; set => materialNameCn = value; }
         public string 面料售价 { get => materialPrice_materialSalePrice; set => materialPrice_materialSalePrice = value; }
     }
+    public class 设计点DTO
+    {
+        private String ITEM_CD;
+        private String ITEM_VALUE;
+        private String OPTION_VALUE;
+        private String ITEM_NAME;
+        private String OPTION_NAME;
+        public 设计点DTO(DataRow dr)
+        {
+            this.ITEM_CD = dr["ITEM_CD"].ToString();
+            this.ITEM_VALUE = dr["ITEM_VALUE"].ToString();
+            this.OPTION_VALUE = dr["OPTION_VALUE"].ToString();
+            this.ITEM_NAME = dr["ITEM_NAME"].ToString();
+            this.OPTION_NAME = dr["OPTION_NAME"].ToString();
+        }
 
+        public string 设计点种类 { get => ITEM_NAME; set => ITEM_NAME = value; }
+        public string 设计点 { get => OPTION_NAME; set => OPTION_NAME = value; }
+    }
     public class 版型尺码DTO { 
         public String FIT_CD { get; set; }  //  版型id
         public string 欧洲尺码组 { get => eGS_GROUP_SIZE; set => eGS_GROUP_SIZE = value; }
