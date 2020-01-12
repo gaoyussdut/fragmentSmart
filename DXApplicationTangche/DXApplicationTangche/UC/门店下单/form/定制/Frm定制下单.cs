@@ -104,7 +104,7 @@ namespace mendian
             //  同步图片资源到本地
             ResourceService.synPictureResouces();
 
-            this.searchLookUpEdit1.Properties.DataSource = ImpService.GetCustomerData("");
+            this.searchLookUpEdit1.Properties.DataSource = CustomerService.GetCustomerData("");
 
             this.splashScreenManager.CloseWaitForm();
 
@@ -116,7 +116,7 @@ namespace mendian
         /// <param name="e"></param>
         private void Index_Activated(object sender, EventArgs e)
         {
-            this.gridControl2.DataSource = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
+            this.gridControl2.DataSource = CustomerService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
         }
         //private void RefreshGridcontrol(String str)
         //{
@@ -166,7 +166,7 @@ namespace mendian
             height = 0;
             width = 0;
             int i = 0;
-            DataTable dt = ImpService.initStyle(this.textBox1.Text, Frm定制下单.page);
+            DataTable dt = StyleService.initStyle(this.textBox1.Text, Frm定制下单.page);
             //if (dt.Rows.Count == 0)
             //{
             //    MessageBox.Show("已经是最后一页");
@@ -249,7 +249,7 @@ namespace mendian
                 MessageBox.Show("选择的客户未建立量体值");
                 return;
             }
-            this.gridControl2.DataSource = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
+            this.gridControl2.DataSource = CustomerService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
         }
 
         /// <summary>

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using mendian;
+using DXApplicationTangche.UC.款式异常.子菜单;
+using DXApplicationTangche.service;
 
 namespace DXApplicationTangche.UC.款式异常
 {
@@ -39,7 +41,7 @@ namespace DXApplicationTangche.UC.款式异常
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
 
-            this.款式异常Model = ImpService.getAllStyle(this.ENABLE_FLAG);
+            this.款式异常Model = StyleService.getAllStyle(this.ENABLE_FLAG);
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.initCombo();
 
@@ -86,7 +88,7 @@ namespace DXApplicationTangche.UC.款式异常
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
 
-            this.款式异常Model = ImpService.getAllStyle(this.ENABLE_FLAG);
+            this.款式异常Model = StyleService.getAllStyle(this.ENABLE_FLAG);
             this.gridControl款式一览.DataSource = 款式异常Model.Views;
             this.tileView款式异常.RefreshData();
             this.initCombo();
@@ -102,6 +104,11 @@ namespace DXApplicationTangche.UC.款式异常
         private void repositoryItemComboBox年份_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.RefreshData();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            new Frm产品下线(this.款式异常Model.送审款式).ShowDialog();
         }
     }
 }

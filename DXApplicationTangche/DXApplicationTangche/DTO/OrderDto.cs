@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraGrid.Demos.util;
+using DXApplicationTangche.service;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
     /// <summary>
     /// 订单DTO
     /// </summary>
-    class OrderDto
+    public class OrderDto
     {
         #region 属性
         public String ID { get; set; }
@@ -81,7 +82,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
             try
             {
-                this.Picture = Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.SYTLE_FABRIC_ID));
+                this.Picture = FabricService.GetMianLiaoFile(this.SYTLE_FABRIC_ID);
             }
             catch
             {
@@ -95,7 +96,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         /// 更新款式信息
         /// </summary>
         private void buildStyle() {
-            DataRow dataRow = ImpService.generateStyleInfo(this.REF_STYLE_ID);
+            DataRow dataRow = StyleService.generateStyleInfo(this.REF_STYLE_ID);
             this.STYLE_NAME_CN = dataRow["STYLE_NAME_CN"].ToString();
             this.SYTLE_YEAR = dataRow["SYTLE_YEAR"].ToString();
             this.SYTLE_SEASON = dataRow["SYTLE_SEASON"].ToString();
@@ -108,7 +109,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         /// 更新面料信息
         /// </summary>
         private void buildMaterialInfo() {
-            DataRow dataRow = ImpService.generateMaterialInfo(this.SYTLE_FABRIC_ID);
+            DataRow dataRow = FabricService.generateMaterialInfo(this.SYTLE_FABRIC_ID);
             this.MATERIAL_NAME_CN = dataRow["MATERIAL_NAME_CN"].ToString();
             this.MATERIAL_COLOR = dataRow["MATERIAL_COLOR"].ToString();
         }

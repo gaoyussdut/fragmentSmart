@@ -2,7 +2,7 @@
 
 namespace mendian
 {
-    partial class Change
+    partial class Frm定制下单修改尺寸
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace mendian
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Change));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm定制下单修改尺寸));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();

@@ -1,4 +1,5 @@
-﻿using DXApplicationTangche.UC.款式异常;
+﻿using DXApplicationTangche.service;
+using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.DTO;
 using mendian;
 using System;
@@ -136,8 +137,8 @@ namespace DXApplicationTangche.UC.门店下单.form
         }
         private void chicun01_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.model.build选中尺寸(this.chicun01.Text.Trim(), this.model.Dto定制下单.Style_Id, Change.stylesizedt);
-            this.model.Dto定制下单.STYLE_SIZE_CD= ImpService.SizeCD(this.chicun01.Text.Trim(), Change.stylesizedt);
+            this.model.build选中尺寸(this.chicun01.Text.Trim(), this.model.Dto定制下单.Style_Id, Frm定制下单修改尺寸.stylesizedt);
+            this.model.Dto定制下单.STYLE_SIZE_CD= SizeService.SizeCD(this.chicun01.Text.Trim(), Frm定制下单修改尺寸.stylesizedt);
             ImpService.RefreshChiCun(this, this.model.选中尺寸);
             ImpService.CountChiCun(this);
         }
@@ -146,7 +147,7 @@ namespace DXApplicationTangche.UC.门店下单.form
         {
             try
             {
-                this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetMianLiaoFile(this.model.Dto定制下单.SYTLE_FABRIC_ID)), this.mianliaoname.Text, "面料"));
+                this.pics.Add(new Pic各种(FabricService.GetMianLiaoFile(this.model.Dto定制下单.SYTLE_FABRIC_ID), this.mianliaoname.Text, "面料"));
             }
             catch
             {
@@ -160,7 +161,7 @@ namespace DXApplicationTangche.UC.门店下单.form
                     c = (UC设计点选择)card;
                     try
                     {
-                        this.pics.Add(new Pic各种(Image.FromFile(@"pic\" + ImpService.GetPicn(c.itemValue)), c.itemName, c.PitemName));
+                        this.pics.Add(new Pic各种(PictureService.GetImage(c.itemValue), c.itemName, c.PitemName));
                     }
                     catch
                     {
@@ -194,11 +195,11 @@ namespace DXApplicationTangche.UC.门店下单.form
 
 
                 this.model.build款式全尺寸(this.model.Dto定制下单.Style_Id);
-                Change.stylesizedt = ImpService.StyleCombobox(this.model.Dto定制下单.Style_Id);
+                Frm定制下单修改尺寸.stylesizedt = StyleService.StyleCombobox(this.model.Dto定制下单.Style_Id);
                 this.chicun01.Items.Clear();
-                if (Change.stylesizedt != null)
+                if (Frm定制下单修改尺寸.stylesizedt != null)
                 {
-                    foreach (DataRow dr in Change.stylesizedt.Rows)
+                    foreach (DataRow dr in Frm定制下单修改尺寸.stylesizedt.Rows)
                     {
                         //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
                         this.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));

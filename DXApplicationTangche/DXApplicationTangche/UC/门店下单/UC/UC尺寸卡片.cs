@@ -19,13 +19,13 @@ namespace mendian
         public String nAME_CN = "";
         public String fIT_ITEM_VALUE = "";
         //public ReviseStyle form;
-        public Change change;
+        public Frm定制下单修改尺寸 change;
         public Frm门店下单选款式 frm;
         public UC尺寸卡片()
         {
             InitializeComponent();
         }
-        public UC尺寸卡片(String itemcd, String itemvalue, String namecn,String fit_item_value,Change change)
+        public UC尺寸卡片(String itemcd, String itemvalue, String namecn,String fit_item_value, Frm定制下单修改尺寸 change)
         {
             iTEM_CD = itemcd;
             iTEM_VALUE = itemvalue;           

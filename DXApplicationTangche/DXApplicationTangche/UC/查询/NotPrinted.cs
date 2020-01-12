@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using mendian;
+using DXApplicationTangche.service;
 
 namespace DXApplicationTangche
 {
@@ -24,7 +25,7 @@ namespace DXApplicationTangche
         {
             if (e.KeyValue == 13)
             {
-                DataTable dt= ImpService.GetNotPrintedData(
+                DataTable dt= OrderService.GetNotPrintedData(
                     this.textBox1.Text
                     , this.dateTimePicker1.Value
                     , this.dateTimePicker2.Value
@@ -47,7 +48,7 @@ namespace DXApplicationTangche
             this.printedView.Dock = DockStyle.Top;
             this.view.Controls.Add(printedView);
             //  出货类型
-            this.comboBox订单类型.DataSource = ImpService.getOrderTypeCode();
+            this.comboBox订单类型.DataSource = OrderService.getOrderTypeCode();
             this.comboBox订单类型.DisplayMember = "order_type_name";
             this.comboBox订单类型.ValueMember = "order_type_id";
         }
@@ -55,12 +56,12 @@ namespace DXApplicationTangche
         private void gridView11_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             DataRow dr = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
-            List<CustomerInformation> ci = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
-            ci = ImpService.AddSomething(ci, "订单时间", dr["ORDER_DATE"].ToString());
+            List<CustomerInformation> ci = CustomerService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
+            ci = CustomerService.createCustomer(ci, "订单时间", dr["ORDER_DATE"].ToString());
             try
             {
                 this.printedView.refresh(
-                    @"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim()
+                    FabricService.GetMianLiaoFilePath(dr["SYTLE_FABRIC_ID"].ToString())
                     , ci
                     );
             }

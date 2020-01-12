@@ -1,4 +1,5 @@
-﻿using DXApplicationTangche.UC.门店下单.DTO;
+﻿using DXApplicationTangche.service;
+using DXApplicationTangche.UC.门店下单.DTO;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -58,7 +59,7 @@ namespace DXApplicationTangche.UC.门店下单
             this.buildCustomer();
             foreach (OrderDto orderDto in OrderDtos)
             {
-                ImpService.DynamicSaveOrder(orderDto);
+                OrderService.DynamicSaveOrder(orderDto);
             }
         }
     }

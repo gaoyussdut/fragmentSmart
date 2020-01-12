@@ -36,6 +36,22 @@ namespace mendian
                 }
             }
         }
+
+        /// <summary>
+        /// 将新建客户未填项设为0
+        /// </summary>
+        /// <param name="cc"></param>
+        private void customerZero()
+        {
+            this.jiankuan.Text = this.jiankuan.Text.Trim() == "" ? "0" : this.jiankuan.Text;
+            this.yaowei.Text = this.yaowei.Text.Trim() == "" ? "0" : this.yaowei.Text;
+            this.tunwei.Text = this.tunwei.Text.Trim() == "" ? "0" : this.tunwei.Text;
+            this.shenchang.Text = this.shenchang.Text.Trim() == "" ? "0" : this.shenchang.Text;
+            this.lingwei.Text = this.lingwei.Text.Trim() == "" ? "0" : this.lingwei.Text;
+            this.wanwei.Text = this.wanwei.Text.Trim() == "" ? "0" : this.wanwei.Text;
+            this.xiuchang.Text = this.xiuchang.Text.Trim() == "" ? "0" : this.xiuchang.Text;
+            this.shangbixiufei.Text = this.shangbixiufei.Text.Trim() == "" ? "0" : this.shangbixiufei.Text;
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             if(this.shengao.Text==""||this.tizhong.Text==""||this.tixing.Text==""||this.jianxing.Text==""||this.fuxing.Text==""||this.tunxing.Text=="")
@@ -43,7 +59,7 @@ namespace mendian
                 MessageBox.Show("请填写完整");
                 return;
             }
-            ImpService.customerZero(this);
+            this.customerZero();
             customer_name = this.xing.Text + this.ming.Text;
             
             if (this.sex.Text == "男")

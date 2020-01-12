@@ -16,7 +16,7 @@ namespace mendian
         {
             this.WindowState = FormWindowState.Maximized;//窗体最大化
             InitializeComponent();
-            this.label1.Text = Change.kuanshiid;
+            this.label1.Text = Frm定制下单修改尺寸.kuanshiid;
 
         }
 

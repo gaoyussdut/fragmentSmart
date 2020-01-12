@@ -3,6 +3,7 @@ using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
 using DiaoPaiDaYin;
+using DXApplicationTangche.service;
 using mendian;
 using Seagull.BarTender.Print;
 using System;
@@ -35,7 +36,7 @@ namespace DXApplicationTangche
         {
             try
             {
-                this.chooseStyleSize = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), this.styleid.Text.Trim(), this.stylesizedt);
+                this.chooseStyleSize = SizeService.StyleValue(this.chicun01.Text.Trim().ToString(), this.styleid.Text.Trim(), this.stylesizedt);
                 this.gridControl1.DataSource = this.chooseStyleSize;
                 this.gridControl1.Refresh();
                 this.sTYLE_SIZE_CD = this.chooseStyleSize.Rows[0]["SIZE_CD"].ToString();
@@ -54,7 +55,7 @@ namespace DXApplicationTangche
                 {
                     this.chicun01.Items.Clear();
                     this.stylename.Text = SQLmtm.GetDataRow("SELECT STYLE_NAME_CN FROM s_style_p WHERE SYS_STYLE_ID='" + this.styleid.Text.Trim() + "'")["STYLE_NAME_CN"].ToString();
-                    this.stylesizedt = ImpService.StyleCombobox(this.styleid.Text.Trim());
+                    this.stylesizedt = StyleService.StyleCombobox(this.styleid.Text.Trim());
                     if (this.stylesizedt != null)
                     {
                         foreach (DataRow dr in this.stylesizedt.Rows)
@@ -85,7 +86,7 @@ namespace DXApplicationTangche
             this.dto无订单打印.builddto尺寸(this.chooseStyleSize);
             //this.dto无订单打印.json = Newtonsoft.Json.JsonConvert.SerializeObject(this.dto无订单打印);
             this.dto无订单打印.json = "";
-            ImpService.SiveINa_noorder_print_p(this.dto无订单打印);
+            PrintService.save_noorder_print_p(this.dto无订单打印);
             ///////////////////////////////////////////
             this.print信息();
             this.print条码();
@@ -97,8 +98,8 @@ namespace DXApplicationTangche
             {
                 try
                 {
-                    this.mianliaocd.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "cd");
-                    this.chengfen.Text = ImpService.GetMianLiaoCD(this.mianliaoid.Text, "dd");
+                    this.mianliaocd.Text = FabricService.GetMianLiaoCD(this.mianliaoid.Text, "cd");
+                    this.chengfen.Text = FabricService.GetMianLiaoCD(this.mianliaoid.Text, "dd");
                 }
                 catch (Exception ex)
                 {
@@ -183,7 +184,7 @@ namespace DXApplicationTangche
 
         private void Frm打标_Load(object sender, EventArgs e)
         {
-            this.searchLookUpEdit1.Properties.DataSource = ImpService.GetAllMaterial();
+            this.searchLookUpEdit1.Properties.DataSource = FabricService.GetAllMaterial();
             this.shop = SQLmtm.GetDataTable("SELECT * FROM  t_shop");
             foreach (DataRow dr in this.shop.Rows)
             {
@@ -204,7 +205,7 @@ namespace DXApplicationTangche
                     grid2Information.Add(new Grid2information("styleid", dr["style_id"].ToString()));
                     grid2Information.Add(new Grid2information("款式名称", SQLmtm.GetDataRow("SELECT STYLE_NAME_CN FROM s_style_p WHERE SYS_STYLE_ID='" + dr["style_id"].ToString() + "'")["STYLE_NAME_CN"].ToString()));
                     grid2Information.Add(new Grid2information("面料id", dr["materials_id"].ToString()));
-                    grid2Information.Add(new Grid2information("面料号", ImpService.GetMianLiaoCD(dr["materials_id"].ToString(), "dd")));
+                    grid2Information.Add(new Grid2information("面料号", FabricService.GetMianLiaoCD(dr["materials_id"].ToString(), "dd")));
                     grid2Information.Add(new Grid2information("尺寸", dr["size_cd"].ToString()));
                     this.gridControl2.DataSource = grid2Information;
                     this.gridControl2.Refresh();

@@ -18,6 +18,7 @@ using DevExpress.XtraGrid.Demos.util;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.门店下单.form.标准款;
 using static DXApplicationTangche.UC.门店下单.form.标准款.Frm扫码下单;
+using DXApplicationTangche.service;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
@@ -49,7 +50,7 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void Frm门店统一下单_Load(object sender, EventArgs e)
         {
-            this.searchLookUpEdit1.Properties.DataSource = ImpService.GetCustomerData("");
+            this.searchLookUpEdit1.Properties.DataSource = CustomerService.GetCustomerData("");
         }
         #region 选择门店
         private void searchLookUpEdit1_Popup(object sender, EventArgs e)
@@ -107,7 +108,7 @@ namespace DXApplicationTangche.UC.门店下单.form
                 MessageBox.Show("选择的客户未建立量体值");
                 return;
             }
-            this.gridControl2.DataSource = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
+            this.gridControl2.DataSource = CustomerService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
         }
 
         /// <summary>

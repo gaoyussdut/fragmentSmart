@@ -1,4 +1,5 @@
 ﻿using DXApplicationTangche.DTO;
+using DXApplicationTangche.service;
 using DXApplicationTangche.UC.门店下单.DTO;
 using mendian;
 using System;
@@ -194,7 +195,7 @@ namespace DXApplicationTangche.UC.款式异常
         #region 构造函数
         public 门店下单选款式Model(String flag, int page)
         {
-            this.款式图片dtos = ImpService.initStyleInfo(flag, page);
+            this.款式图片dtos = StyleService.initStyleInfo(flag, page);
         }
         public 门店下单选款式Model()
         {
@@ -205,12 +206,12 @@ namespace DXApplicationTangche.UC.款式异常
         #region build方法
         public 门店下单选款式Model build款式全尺寸(String styleid)
         {
-            this.款式尺寸dt = ImpService.StyleCombobox(styleid);
+            this.款式尺寸dt = StyleService.StyleCombobox(styleid);
             return this;
         }
         public 门店下单选款式Model build选中尺寸(String size, String styleid, DataTable dt)
         {
-            this.选中尺寸dt = ImpService.StyleValue(size, styleid, dt);
+            this.选中尺寸dt = SizeService.StyleValue(size, styleid, dt);
             //this.Dto定制下单.STYLE_SIZE_CD= ImpService.SizeCD(size, this.选中尺寸dt);
             return this;
         }
@@ -248,7 +249,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// <param name="page"></param>
         public 面料图片Model(String str, int page)
         {
-            this.面料图片DTos = ImpService.GetMianLiao(str, page);
+            this.面料图片DTos = FabricService.GetMianLiao(str, page);
         }
         /// <summary>
         /// 款式的默认面料
@@ -258,7 +259,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// <param name="page"></param>
         public 面料图片Model(String styleid,String str,int page)
         {
-            this.面料图片DTos = ImpService.DefaultMianLiao(styleid, str, page);
+            this.面料图片DTos = FabricService.DefaultMianLiao(styleid, str, page);
         }
         #endregion
 
@@ -278,7 +279,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// <param name="str">模糊查询字段</param>
         public 设计点图片Model(String itemcd, String str)
         {
-            this.设计点s = ImpService.GetDesign(itemcd, str);
+            this.设计点s = ItemService.GetDesign(itemcd, str);
         }
         /// <summary>
         /// 查询默认项
@@ -286,7 +287,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// <param name="id"></param>
         public 设计点图片Model(String id)
         {
-            this.设计点s = ImpService.DefaultItem(id);
+            this.设计点s = ItemService.DefaultItem(id);
         }
         #endregion
     }

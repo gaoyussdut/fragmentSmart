@@ -4,6 +4,7 @@ using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
 using DiaoPaiDaYin;
+using DXApplicationTangche.service;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -63,7 +64,7 @@ namespace DXApplicationTangche
                 this.order_text//text
                     = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "ORDER_NO").ToString()+ this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "STYLE_NAME_CN").ToString();
             }
-            this.gridControl1.DataSource = ImpService.GetPrintedData(this.ORDER_NO);
+            this.gridControl1.DataSource = PrintService.GetPrintedData(this.ORDER_NO);
         }
 
         /// <summary>
@@ -94,12 +95,12 @@ namespace DXApplicationTangche
         private void gridView1_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             DataRow dr = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
-            List<CustomerInformation> ci = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
-            ci = ImpService.AddSomething(ci, "订单时间", dr["ORDER_DATE"].ToString());
+            List<CustomerInformation> ci = CustomerService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
+            ci = CustomerService.createCustomer(ci, "订单时间", dr["ORDER_DATE"].ToString());
             try
             {
                 this.printedView.refresh(
-                    @"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim()
+                    FabricService.GetMianLiaoFilePath(dr["SYTLE_FABRIC_ID"].ToString())
                     , ci
                     );
             }

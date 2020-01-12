@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DXApplicationTangche.DTO
 {
-    class 设计点图片Dto
+    public class 设计点图片Dto
     {
         public String pitem_value { get; set; }
         public String pitem_cd { get; set; }

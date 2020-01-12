@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Demos.util;
 using DXApplicationTangche;
+using DXApplicationTangche.service;
 using mendian;
 using Seagull.BarTender.Print;
 
@@ -19,7 +20,7 @@ namespace DiaoPaiDaYin
         private int order_type;//   订单类型
         public DataTable stylesizedt = new DataTable();
         public DataRow impdr = null;
-        public List<ChengYiChiCun> cycc = new List<ChengYiChiCun>();
+        public List<成衣尺寸DTO> cycc = new List<成衣尺寸DTO>();
         public int ordernumber = new int();
         public DataTable logdt = null;
         public String logid;
@@ -67,11 +68,11 @@ namespace DiaoPaiDaYin
                         btFormat.SubStrings["chengfen"].Value = this.impdr["MATERIAL_COMPOSITION"].ToString();
                         btFormat.SubStrings["shoujia"].Value = "¥" + this.impdr["STYLE_SHOP_TOTAL_PRICE"].ToString();
                         int i = 1;
-                        foreach (ChengYiChiCun cy in this.cycc)
+                        foreach (成衣尺寸DTO cy in this.cycc)
                         {
                             if (Convert.ToDouble(cy.fitValue) != 0)
                             {
-                                btFormat.SubStrings[i.ToString()].Value = ImpService.GetNameCN(cy.itemValue) + " " + cy.fitValue;
+                                btFormat.SubStrings[i.ToString()].Value = ItemService.GetNameCN(cy.itemValue) + " " + cy.fitValue;
                                 //btFormat.SubStrings[i.ToString()+i.ToString()].Value = cy.fitValue;
                                 i++;
                             }
@@ -104,22 +105,6 @@ namespace DiaoPaiDaYin
             }
         }
 
-
-
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-            this.impdr = ImpService.GetDataRowFromOrder(this.orderno.Text);
-            if (impdr == null)
-            {
-                MessageBox.Show("没有找到信息,请查看订单号是否正确");
-                return;
-            }
-            //this.mianliaohao.Text = this.impdr["MATERIAL_CODE"].ToString();
-            //this.chengfen.Text = this.impdr["MATERIAL_COMPOSITION"].ToString();
-            //this.shoujia.Text = "¥" + this.impdr["STYLE_SHOP_TOTAL_PRICE"].ToString();
-            this.cycc = ImpService.GetChengYiChiCun(this.impdr["SYS_STYLE_ID"].ToString());
-
-        }
         private void orderno_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13) //判断是回车键
@@ -127,7 +112,7 @@ namespace DiaoPaiDaYin
                 try
                 {
 
-                    this.logdt = ImpService.GetOrder(this.orderno.Text,this.order_type);
+                    this.logdt = OrderService.GetOrder(this.orderno.Text,this.order_type);
                     gridControl1.DataSource = logdt;
                     this.ordernumber = Convert.ToInt32(Convert.ToDouble(logdt.Rows[0]["ORDER_NUMBER"].ToString()));
                     //this.mianliaohao.Text = this.impdr["MATERIAL_CODE"].ToString();
@@ -135,8 +120,8 @@ namespace DiaoPaiDaYin
                     //this.shoujia.Text = "¥" + this.impdr["STYLE_SHOP_TOTAL_PRICE"].ToString();
 
                     //  TODO,bug
-                    this.impdr = ImpService.GetDataRowFromOrder(this.orderno.Text);
-                    this.cycc = ImpService.GetChengYiChiCun(this.impdr["SYS_STYLE_ID"].ToString());
+                    this.impdr = StyleService.GetDataRowFromOrder(this.orderno.Text);
+                    this.cycc = SizeService.Get成衣尺寸DTO(this.impdr["SYS_STYLE_ID"].ToString());
                 }
                 catch/*(Exception ex)*/
                 {
@@ -148,12 +133,12 @@ namespace DiaoPaiDaYin
         private void gridView1_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
         {
             DataRow dr = this.gridView1.GetDataRow(this.gridView1.FocusedRowHandle);
-            List<CustomerInformation> ci = ImpService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
-            ci = ImpService.AddSomething(ci, "订单时间", dr["ORDER_DATE"].ToString());
+            List<CustomerInformation> ci = CustomerService.GetCustomerInformation(Convert.ToInt32(dr["CUSTOMER_ID"].ToString()));
+            ci = CustomerService.createCustomer(ci, "订单时间", dr["ORDER_DATE"].ToString());
             try
             {
                 this.printedView.refresh(
-                    @"pic\" + ImpService.GetMianLiaoFile(dr["SYTLE_FABRIC_ID"].ToString()).Trim()
+                    FabricService.GetMianLiaoFilePath(dr["SYTLE_FABRIC_ID"].ToString())
                     , ci
                     );
             }

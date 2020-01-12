@@ -1,4 +1,5 @@
-﻿using mendian;
+﻿using DXApplicationTangche.service;
+using mendian;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -165,11 +166,11 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         /// </summary>
         internal void build面料()
         {
-            this.面料 = ImpService.get面料DTOs(this.SYTLE_FABRIC_ID);
+            this.面料 = FabricService.get面料DTOs(this.SYTLE_FABRIC_ID);
         }
         public void build设计点()
         {
-            this.设计点 = ImpService.Get设计点DTOs(this.SYS_STYLE_ID);
+            this.设计点 = ItemService.Get设计点DTOs(this.SYS_STYLE_ID);
         }
         public 款式图片一览Dto(DataRow dr) {
             this.SYS_STYLE_ID = dr["SYS_STYLE_ID"].ToString();

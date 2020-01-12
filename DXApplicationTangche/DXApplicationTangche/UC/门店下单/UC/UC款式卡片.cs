@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DXApplicationTangche;
 using DXApplicationTangche.UC.门店下单.form;
+using DXApplicationTangche.service;
 
 namespace mendian
 {
@@ -113,10 +114,10 @@ namespace mendian
             this.frm.mianliaoname.Text = this.mianliaomingcheng;
             ImpService.LoadChiCunCard(this.frm);
             ImpService.LoadSheJiDian(this.frm, this.frm.model.Dto定制下单.Style_Id);
-            Change.stylesizedt = ImpService.StyleCombobox(this.frm.model.Dto定制下单.Style_Id);
-            if (Change.stylesizedt != null)
+            Frm定制下单修改尺寸.stylesizedt = StyleService.StyleCombobox(this.frm.model.Dto定制下单.Style_Id);
+            if (Frm定制下单修改尺寸.stylesizedt != null)
             {
-                foreach (DataRow dr in Change.stylesizedt.Rows)
+                foreach (DataRow dr in Frm定制下单修改尺寸.stylesizedt.Rows)
                 {
                     //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
                     this.frm.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));

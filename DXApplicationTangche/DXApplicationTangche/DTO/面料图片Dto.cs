@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DXApplicationTangche.DTO
 {
-    class 面料图片Dto
+    public class 面料图片Dto
     {
         public String materialid { get; set; }
         public String materialcd { get; set; }

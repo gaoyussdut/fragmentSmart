@@ -1,4 +1,5 @@
 ﻿using DiaoPaiDaYin;
+using DXApplicationTangche.service;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace DXApplicationTangche
             this.styleCard = styleCard;
             InitializeComponent();
             this.label8.Text = styleCard.stylecardlabel.Text;
-            Change.kuanshiid = styleCard.kuanshiid;
+            Frm定制下单修改尺寸.kuanshiid = styleCard.kuanshiid;
             try
             {
                 this.pictureBox1.Image = Image.FromFile(styleCard.picture);
@@ -40,10 +41,10 @@ namespace DXApplicationTangche
         }
         private void Frm标准款下单具体_Load(object sender, EventArgs e)
         {
-            Change.stylesizedt = ImpService.StyleCombobox(styleCard.kuanshiid);
-            if (Change.stylesizedt != null)
+            Frm定制下单修改尺寸.stylesizedt = StyleService.StyleCombobox(styleCard.kuanshiid);
+            if (Frm定制下单修改尺寸.stylesizedt != null)
             {
-                foreach (DataRow dr in Change.stylesizedt.Rows)
+                foreach (DataRow dr in Frm定制下单修改尺寸.stylesizedt.Rows)
                 {
                     //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
                     this.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
@@ -62,9 +63,9 @@ namespace DXApplicationTangche
         {
             try
             {
-                this.chooseStyleSize = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), styleCard.kuanshiid, Change.stylesizedt);
+                this.chooseStyleSize = SizeService.StyleValue(this.chicun01.Text.Trim().ToString(), styleCard.kuanshiid, Frm定制下单修改尺寸.stylesizedt);
                 this.gridControl1.DataSource = this.chooseStyleSize;
-                Change.sTYLE_SIZE_CD = this.chooseStyleSize.Rows[0]["SIZE_CD"].ToString();
+                Frm定制下单修改尺寸.sTYLE_SIZE_CD = this.chooseStyleSize.Rows[0]["SIZE_CD"].ToString();
             }
             catch
             {
@@ -83,9 +84,11 @@ namespace DXApplicationTangche
             this.mianliaoname.Text = Frm面料选择.mianliao;
             try
             {
-                List<CustomerInformation> ci = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
+                List<CustomerInformation> ci = CustomerService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
                 this.printedView.refresh(
-                    @"pic\" + ImpService.GetMianLiaoFile(Frm面料选择.mianliaoid), ci);
+                    FabricService.GetMianLiaoFilePath(Frm面料选择.mianliaoid)
+                    , ci
+                    );
             }
             catch
             {
@@ -104,7 +107,7 @@ namespace DXApplicationTangche
                 }
                 try
                 {
-                    Change.styleid = ImpService.GetNewStyleID();
+                    Frm定制下单修改尺寸.styleid = StyleService.GetNewStyleID();
                     //尺寸保存
                     ImpService.StandardModelsSizeSive(this.chooseStyleSize);
                     //s_style_p写入数据
@@ -113,7 +116,7 @@ namespace DXApplicationTangche
                     ImpService.StandardModelsDesignSive();
                     //o_order_p写入数据
                     //RestCall.httpGetMethod("https://shirtmtm.com/fragsmart-mtm/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
-                    RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + Change.styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
+                    RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + Frm定制下单修改尺寸.styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
                     DataRow ORDER_ID = SQLmtm.GetDataRow("SELECT MAX(ORDER_ID) AS ORDER_ID FROM `o_order_p`");
                     int order_id = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
                     //order_id++;

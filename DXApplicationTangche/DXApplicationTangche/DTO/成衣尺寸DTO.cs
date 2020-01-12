@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace DiaoPaiDaYin
 {
-    public class ChengYiChiCun
+    public class 成衣尺寸DTO
     {
         public String itemCd;
         public String itemValue;
         public String fitValue;
 
-        public ChengYiChiCun(String itemCd,String itemValue,String fitValue)
+        public 成衣尺寸DTO(String itemCd,String itemValue,String fitValue)
         {
             this.itemCd = itemCd;
             this.itemValue = itemValue;
             this.fitValue = fitValue;
         }
 
-        public ChengYiChiCun()
+        public 成衣尺寸DTO()
         { 
         }
     }

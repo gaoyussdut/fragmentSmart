@@ -42,7 +42,7 @@ namespace DXApplicationTangche
             //  同步图片资源到本地
             ResourceService.synPictureResouces();
 
-            this.searchLookUpEdit1.Properties.DataSource = ImpService.GetCustomerData("");
+            this.searchLookUpEdit1.Properties.DataSource = CustomerService.GetCustomerData("");
             this.splashScreenManager.CloseWaitForm();
         }
 
@@ -107,12 +107,12 @@ namespace DXApplicationTangche
             height = 0;
             width = 0;
             int i = 0;
-            DataTable dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
+            DataTable dt = StyleService.initStyle(this.textBox1.Text, Frm标准款下单.page);
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("已经是最后一页");
                 Frm标准款下单.page--;
-                dt = ImpService.initStyle(this.textBox1.Text, Frm标准款下单.page);
+                dt = StyleService.initStyle(this.textBox1.Text, Frm标准款下单.page);
             }
             panelLocition = new PanelLocition(this.panel1.Width, this.panel1.Height, dt.Rows.Count);
             foreach (DataRow dr in dt.Rows)
@@ -210,7 +210,7 @@ namespace DXApplicationTangche
                 MessageBox.Show("选择的客户未建立量体值");
                 return;
             }
-            this.gridControl2.DataSource = ImpService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
+            this.gridControl2.DataSource = CustomerService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
         }
 
         /// <summary>

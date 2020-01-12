@@ -1,4 +1,5 @@
 ﻿using DiaoPaiDaYin;
+using DXApplicationTangche.service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class Change : DevExpress.XtraEditors.XtraForm
+    public partial class Frm定制下单修改尺寸 : DevExpress.XtraEditors.XtraForm
     {
         public static int styleid { get; set; }
         public static DataTable StyleDesign { get; set; }
@@ -25,12 +26,12 @@ namespace mendian
         private String tkid;
         //private Dictionary<String, String> relationCaptionAndKey = new Dictionary<string, string>();
         private UC款式卡片 uc = new UC款式卡片();
-        public Change()
+        public Frm定制下单修改尺寸()
         {
             this.WindowState = FormWindowState.Maximized;//窗体最大化
             InitializeComponent();
         }
-        public Change(UC款式卡片 uc)
+        public Frm定制下单修改尺寸(UC款式卡片 uc)
         {
             this.WindowState = FormWindowState.Maximized;//窗体最大化
             this.uc = uc;
@@ -69,7 +70,7 @@ namespace mendian
             ImpService.LoadChiCunCard(this, uc);
             ImpService.LoadSheJiDian(this, uc.kuanshiid);
 
-            stylesizedt = ImpService.StyleCombobox(uc.kuanshiid);
+            stylesizedt = StyleService.StyleCombobox(uc.kuanshiid);
             if (stylesizedt != null)
             {
                 foreach (DataRow dr in stylesizedt.Rows)
@@ -99,7 +100,7 @@ namespace mendian
                 sTYLE_FIT_ID++;
                 DataRow drcustomer = SQLmtm.GetDataRow("select * from a_customer_p where CUSTOMER_ID='" + CreateCustomer.cUSTOMER_ID.ToString() + "'");
                 string customername = Convert.ToString(drcustomer["CUSTOMER_FIRST_NAME"]) + Convert.ToString(drcustomer["CUSTOMER_LAST_NAME"]);
-                sTYLE_SIZE_CD = ImpService.SizeCD(this.chicun01.Text.Trim(), stylesizedt);
+                sTYLE_SIZE_CD = SizeService.SizeCD(this.chicun01.Text.Trim(), stylesizedt);
                 DataRow drstyle = SQLmtm.GetDataRow("SELECT MAX(SYS_STYLE_ID) SYS_STYLE_ID FROM `s_style_p`");
                 styleid = Convert.ToInt32(drstyle["SYS_STYLE_ID"]);
                 styleid++;
@@ -175,7 +176,7 @@ namespace mendian
 
         private void simpleButton4_Click_1(object sender, EventArgs e)
         {
-            DataTable dt = ImpService.StyleValue(this.chicun01.Text.Trim().ToString(), uc.kuanshiid, Change.stylesizedt);
+            DataTable dt = SizeService.StyleValue(this.chicun01.Text.Trim().ToString(), uc.kuanshiid, Frm定制下单修改尺寸.stylesizedt);
             ImpService.RefreshChiCun(this, dt);
             ImpService.CountChiCun(this);
         }

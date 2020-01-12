@@ -116,6 +116,14 @@
     <Compile Include="FluentMainFrame.Designer.cs">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="service\CustomerService.cs" />
+    <Compile Include="service\FabricService.cs" />
+    <Compile Include="service\ItemService.cs" />
+    <Compile Include="service\OrderService.cs" />
+    <Compile Include="service\PictureService.cs" />
+    <Compile Include="service\PrintService.cs" />
+    <Compile Include="service\SizeService.cs" />
+    <Compile Include="service\StyleService.cs" />
     <Compile Include="UC\标签列印\Frm打标.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,12 +132,20 @@
     </Compile>
     <Compile Include="service\ResourceService.cs" />
     <Compile Include="service\StockService.cs" />
+    <Compile Include="UC\款式异常\DTO\下线DTO.cs" />
+    <Compile Include="UC\款式异常\Frm下线审核一览.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\款式异常\Frm下线审核一览.Designer.cs">
+      <DependentUpon>Frm下线审核一览.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\款式异常\Frm款式一览.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UC\款式异常\Frm款式一览.Designer.cs">
       <DependentUpon>Frm款式一览.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\款式异常\Service下线.cs" />
     <Compile Include="UC\款式异常\SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +157,12 @@
     <Compile Include="DTO\OrderDto.cs" />
     <Compile Include="DTO\ShopStockDto.cs" />
     <Compile Include="DTO\款式图片Dto.cs" />
+    <Compile Include="UC\款式异常\子菜单\Frm产品下线.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\款式异常\子菜单\Frm产品下线.Designer.cs">
+      <DependentUpon>Frm产品下线.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\门店下单\form\Frm门店下单选款式.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,7 +355,7 @@
     <Compile Include="UC\库存\XtraUC库存一览.Designer.cs">
       <DependentUpon>XtraUC库存一览.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\标签列印\ChengYiChiCun.cs" />
+    <Compile Include="DTO\成衣尺寸DTO.cs" />
     <Compile Include="UC\标签列印\Frm吊牌打印.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,11 +375,17 @@
     <EmbeddedResource Include="UC\标签列印\Frm打标.resx">
       <DependentUpon>Frm打标.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\款式异常\Frm下线审核一览.resx">
+      <DependentUpon>Frm下线审核一览.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\款式异常\Frm款式一览.resx">
       <DependentUpon>Frm款式一览.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\款式异常\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\款式异常\子菜单\Frm产品下线.resx">
+      <DependentUpon>Frm产品下线.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\Frm门店下单选款式.resx">
       <DependentUpon>Frm门店下单选款式.cs</DependentUpon>
