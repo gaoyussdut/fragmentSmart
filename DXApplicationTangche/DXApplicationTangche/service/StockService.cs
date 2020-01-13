@@ -48,6 +48,31 @@ namespace DXApplicationTangche.service
         }
 
         /// <summary>
+        /// 根据条码查询库存
+        /// </summary>
+        /// <param name="billNo"></param>
+        /// <returns></returns>
+        public static DataTable getStopStockByBillNo(String billNo) {
+            String sql = "SELECT\n" +
+                "	t_inventory_sub_ledger.bill_id,\n" +
+                "	v_stock_inventory.shop_name,\n" +
+                "	t_inventory_sub_ledger.REF_STYLE_ID,\n" +
+                "	v_stock_inventory.STYLE_NAME_CN,\n" +
+                "	v_stock_inventory.amount,\n" +
+                "	t_inventory_sub_ledger.STYLE_SIZE_CD \n" +
+                "FROM\n" +
+                "	t_inventory_sub_ledger\n" +
+                "	LEFT JOIN v_stock_inventory ON v_stock_inventory.SYS_STYLE_ID = t_inventory_sub_ledger.REF_STYLE_ID \n" +
+                "	AND v_stock_inventory.shop_id = t_inventory_sub_ledger.shop_id \n" +
+                "WHERE\n" +
+                "	REF_STYLE_ID = '“+billNo+”' \n" +
+                "ORDER BY\n" +
+                "	create_date DESC \n" +
+                "	LIMIT 1";
+            return SQLmtm.GetDataTable(sql);
+        }
+
+        /// <summary>
         /// 出入库
         /// </summary>
         /// <param name="enum进出库类型"></param>

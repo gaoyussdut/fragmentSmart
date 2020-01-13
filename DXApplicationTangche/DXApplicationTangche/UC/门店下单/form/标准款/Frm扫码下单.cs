@@ -78,6 +78,10 @@ namespace DXApplicationTangche.UC.门店下单.form.标准款
                 }
 
                 //  后续处理
+                //  获取刚刚扫描的数据
+                this.gridControl新成衣入库.DataSource = StockService.getStopStockByBillNo(this.textEdit1.Text);
+                this.gridView2.RefreshData();
+                //  刷新库存
                 this.textEdit1.Text = "";
                 this.gridControl1.DataSource = StockService.getStopStockAll();
                 this.gridView1.RefreshData();
