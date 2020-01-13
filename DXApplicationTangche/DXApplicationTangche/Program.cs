@@ -21,6 +21,8 @@ namespace DXApplicationTangche
 
             BonusSkins.Register();
             Application.Run(new FluentMainFrame());
+            //Application.Run(new Frm更改尺寸测());
+
         }
     }
 }

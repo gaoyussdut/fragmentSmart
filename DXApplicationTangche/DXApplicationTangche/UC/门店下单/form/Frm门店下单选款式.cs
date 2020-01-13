@@ -141,6 +141,8 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.model.Dto定制下单.STYLE_SIZE_CD= SizeService.SizeCD(this.chicun01.Text.Trim(), Frm定制下单修改尺寸.stylesizedt);
             ImpService.RefreshChiCun(this, this.model.选中尺寸);
             ImpService.CountChiCun(this);
+            this.model.尺寸呈现 = SizeService.GetThisSize(this.model.Dto定制下单);
+            this.gridControlSize.DataSource = this.model.尺寸呈现;
         }
 
         public void addPics()
@@ -214,6 +216,56 @@ namespace DXApplicationTangche.UC.门店下单.form
         private void barEditItemNumber_EditValueChanged(object sender, EventArgs e)
         {
             this.model.Dto定制下单.build数量(this.barEditItemNumber.EditValue.ToString());
+        }
+
+        private void gridViewSize_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column.FieldName == "ITEM_FIT_VALUE")
+            {
+                this.model.尺寸呈现[e.RowHandle].ITEM_FIT_VALUE = Convert.ToDouble(e.Value.ToString());
+            }
+            else if (e.Column.FieldName == "IN_VALUE")
+            {
+                this.model.尺寸呈现[e.RowHandle].IN_VALUE = Convert.ToDouble(e.Value.ToString());
+            }
+            else if (e.Column.FieldName == "OUT_VALUE")
+            {
+                this.model.尺寸呈现[e.RowHandle].OUT_VALUE = Convert.ToDouble(e.Value.ToString());
+            }
+            //if (this.model.尺寸呈现[e.RowHandle].IN_VALUE > this.model.尺寸呈现[e.RowHandle].maxReasonable)
+            //{
+            //    e.Column.AppearanceCell.BackColor = Color.Red;
+            //}
+            //if (this.model.尺寸呈现[e.RowHandle].OUT_VALUE > this.model.尺寸呈现[e.RowHandle].leastReasonable)
+            //{
+            //    e.Column.AppearanceCell.BackColor = Color.Green;
+            //}
+            foreach (尺寸呈现dto dto in this.model.尺寸呈现)
+            {
+                dto.CountSize();
+            }
+            this.gridControlSize.DataSource = this.model.尺寸呈现;
+            this.gridControlSize.Refresh();
+        }
+
+        private void gridViewSize_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.Name == "colGarment")
+            {
+                if (this.model.尺寸呈现[e.RowHandle].OUT_VALUE > this.model.尺寸呈现[e.RowHandle].leastReasonable)
+                {
+                    //该行数据的该列的值不为空时时,其背景色为Red
+                    e.Appearance.BackColor = Color.Red;//设置单元格变色
+                                                       //e.Column.AppearanceCell.BackColor = Color.Red;//设置数据列变色
+                }
+                if (this.model.尺寸呈现[e.RowHandle].IN_VALUE > this.model.尺寸呈现[e.RowHandle].maxReasonable)
+                {
+                    //该行数据的该列的值不为空时时,其背景色为Red
+                    e.Appearance.BackColor = Color.Green;//设置单元格变色
+                                                       //e.Column.AppearanceCell.BackColor = Color.Red;//设置数据列变色
+                }
+
+            }
         }
     }
 
