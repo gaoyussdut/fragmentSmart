@@ -44,7 +44,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// </summary>
         /// <returns></returns>
         public 款式Model buildView()
-        {            
+        {
             foreach (款式图片一览Dto dto in this.款式图片一览Dtos)
             {
                 if (!this.List服装种类.Contains(dto.STYLE_PUBLISH_CATEGORY_CD))
@@ -61,7 +61,8 @@ namespace DXApplicationTangche.UC.款式异常
             {
                 this.buildView(List年份[0], List服装种类[0]);
             }
-            else {
+            else
+            {
                 this.views.Clear();
                 this.views.AddRange(this.款式图片一览Dtos);
             }
@@ -178,18 +179,22 @@ namespace DXApplicationTangche.UC.款式异常
         #endregion
     }
 
-    public class 门店下单选款式Model {
+    public class 门店下单选款式Model
+    {
         #region 变量
         private List<款式图片Dto> 款式图片dtos = new List<款式图片Dto>();
         private 款式图片Dto 款式图片Dto;
         private DataTable 款式尺寸dt;
         private DataTable 选中尺寸dt;
-        public Dto定制下单 Dto定制下单=new Dto定制下单();
+        public Dto定制下单 Dto定制下单 = new Dto定制下单();
+        private List<尺寸呈现dto> 尺寸呈现dtos = new List<尺寸呈现dto>();
         #endregion
 
         #region 属性
         public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
         public DataTable 选中尺寸 { get => 选中尺寸dt; set => 选中尺寸dt = value; }
+        public List<尺寸呈现dto> 尺寸呈现 { get => 尺寸呈现dtos; set => 尺寸呈现dtos = value; }
+
         #endregion
 
         #region 构造函数
@@ -222,12 +227,14 @@ namespace DXApplicationTangche.UC.款式异常
         /// 校验订单方法
         /// </summary>
         /// <returns></returns>
-        public bool verify订单() {
+        public bool verify订单()
+        {
             try
             {
                 this.Dto定制下单.verify订单();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 throw ex;
             }
             return true;
@@ -257,7 +264,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// <param name="styleid"></param>
         /// <param name="str">模糊查询字段</param>
         /// <param name="page"></param>
-        public 面料图片Model(String styleid,String str,int page)
+        public 面料图片Model(String styleid, String str, int page)
         {
             this.面料图片DTos = FabricService.DefaultMianLiao(styleid, str, page);
         }
@@ -291,5 +298,51 @@ namespace DXApplicationTangche.UC.款式异常
         }
         #endregion
     }
-
+    public class 尺寸呈现dto
+    {
+        public String ITEM_CD { get; set; }//衣服CD
+        public String ITEM_VALUE { get; set; }//衣服VALUE
+        public String PROPERTY_VALUE { get; set; }//人VALUE
+        public String FIT_VALUE { get; set; }//人尺寸值
+        public Double ITEM_FIT_VALUE { get; set; }//衣服尺寸值
+        public Double IN_VALUE { get; set; }//加值
+        public Double OUT_VALUE { get; set; }//减值
+        public String ITEM_NAME_CN { get; set; }//尺寸名称
+        public Double garmentSize { get; set; }//成衣尺寸
+        public Double leastReasonable { get; set; }//最小合理值
+        public Double maxReasonable { get; set; }//最大合理值
+        public 尺寸呈现dto(String itemcd, String itemvalue, String propertyvalue, String fitvalue, Double itemfitvalue, Double invalue, Double outvalue, String itemnamecn, Double leastReasonable, Double maxReasonable)
+        {
+            this.ITEM_CD = itemcd;
+            this.ITEM_VALUE = itemvalue;
+            this.PROPERTY_VALUE = propertyvalue;
+            this.FIT_VALUE = fitvalue;
+            this.ITEM_FIT_VALUE = itemfitvalue;
+            this.IN_VALUE = invalue;
+            this.OUT_VALUE = outvalue;
+            this.ITEM_NAME_CN = itemnamecn;
+            this.leastReasonable = leastReasonable;
+            this.maxReasonable = maxReasonable;
+        }
+        public 尺寸呈现dto CountSize()
+        {
+            this.garmentSize = this.ITEM_FIT_VALUE + this.IN_VALUE - this.OUT_VALUE;
+            return this;
+        }
+        public int CountReasonable()
+        {
+            if (this.IN_VALUE > this.maxReasonable)
+            {
+                return 1;
+            }
+            else if (this.OUT_VALUE > this.leastReasonable)
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+    }
 }

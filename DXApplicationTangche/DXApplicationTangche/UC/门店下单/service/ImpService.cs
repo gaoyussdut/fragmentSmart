@@ -237,7 +237,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 
         public static void LoadChiCunCard(Frm门店下单选款式 frm)
         {
-            DataTable dt = SQLmtm.GetDataTable("SELECT\n" +
+            String sql = "SELECT\n" +
                 " sp.FIT_ITEM_VALUE,\n" +
                 " property.PROPERTY_CD propertyCd,\n" +
                 "/*量体属性CD*/\n" +
@@ -276,7 +276,8 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                 "GROUP BY property.PROPERTY_VALUE  \n" +
                 "ORDER BY\n" +
                 " -- property.PROPERTY_CD,sp.ITEM_SORT ASC\n" +
-                " sp.ITEM_SORT ASC");
+                " sp.ITEM_SORT ASC";
+            DataTable dt = SQLmtm.GetDataTable(sql);
             //change.panel3.Controls.Clear();
             height = 0;
             width = 0;

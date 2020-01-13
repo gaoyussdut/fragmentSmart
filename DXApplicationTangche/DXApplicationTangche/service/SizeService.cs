@@ -1,4 +1,6 @@
 ﻿using DiaoPaiDaYin;
+using DXApplicationTangche.UC.款式异常;
+using DXApplicationTangche.UC.门店下单.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,7 +29,7 @@ namespace DXApplicationTangche.service
             {
                 if (dr["尺寸"].ToString() == size)
                 {
-                    dt = SQLmtm.GetDataTable("SELECT\n" +
+                    String sql = "SELECT\n" +
                     "	*,\n" +
                     "	SUBSTRING_INDEX( SIZE_CD, '-',- 1 ) \n" +
                     "FROM\n" +
@@ -36,7 +38,8 @@ namespace DXApplicationTangche.service
                     "	FIT_CD = '" + st["STYLE_FIT_CD"].ToString() + "' \n" +
                     "	AND STYLE_CATEGORY_CD = '" + st["STYLE_CATEGORY_CD"].ToString() + "' \n" +
                     "	AND SIZEGROUP_CD = '" + st["STYLE_SIZE_GROUP_CD"] + "' \n" +
-                    "	AND SIZE_CD = '" + dr["SIZE_CD"].ToString() + "';");
+                    "	AND SIZE_CD = '" + dr["SIZE_CD"].ToString() + "';";
+                    dt = SQLmtm.GetDataTable(sql);
                     break;
                 }
             }
@@ -129,5 +132,25 @@ namespace DXApplicationTangche.service
             return cycc;
         }
 
+        public static List<尺寸呈现dto> GetThisSize(Dto定制下单 dto)
+        {
+            List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
+            String sql = "SELECT\n" +
+"	S1.*,\n" +
+"	S2.* \n" +
+"FROM\n" +
+"	( SELECT * FROM a_size_fit_p WHERE FIT_CD = '" + dto.STYLE_FIT_CD + "' AND STYLE_CATEGORY_CD = '" + dto.STYLE_CATEGORY_CD + "' AND SIZE_CD = '" + dto.STYLE_SIZE_CD + "' AND SIZEGROUP_CD = '" + dto.STYLE_SIZE_GROUP_CD + "' ) AS s1\n" +
+"	LEFT JOIN ( SELECT * FROM a_reasonable_p WHERE styleID = " + dto.Style_Id + " ) AS s2 ON s1.ITEM_VALUE = s2.itemValue;";
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            String leastReasonable = "0";
+            String maxReasonable = "0";
+            foreach (DataRow dr in dt.Rows)
+            {
+                leastReasonable = dr["leastReasonable"].ToString() == "" ? "0" : dr["leastReasonable"].ToString();
+                maxReasonable = dr["maxReasonable"].ToString() == "" ? "0" : dr["maxReasonable"].ToString();
+                尺寸呈现.Add(new 尺寸呈现dto(dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), "", "", Convert.ToDouble(dr["ITEM_FIT_VALUE"].ToString()), 0, 0, dr["ITEM_NAME_CN"].ToString(), Convert.ToDouble(leastReasonable), Convert.ToDouble(maxReasonable)));
+            }
+            return 尺寸呈现;
+        }
     }
 }
