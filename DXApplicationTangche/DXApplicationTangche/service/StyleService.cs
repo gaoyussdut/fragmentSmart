@@ -88,6 +88,51 @@ namespace DXApplicationTangche.service
         }
 
         /// <summary>
+        /// 取得所有款式信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<款式图片一览Dto> getStyleByIds(List<String> ids)
+        {
+            String sql = "SELECT\n" +
+                "	SYS_STYLE_ID,\n" +
+                "	CUSTOMER_COUNT_ID,\n" +
+                "	STYLE_CD,\n" +
+                "	STYLE_CATEGORY_CD,\n" +
+                "	STYLE_DRESS_CATEGORY,\n" +
+                "	STYLE_DESIGN_TYPE,\n" +
+                "	STYLE_PUBLISH_CATEGORY_CD,\n" +
+                "	REF_STYLE_ID,\n" +
+                "	STYLE_NAME_CN,\n" +
+                "	STYLE_NAME_EN,\n" +
+                "	STYLE_FIT_CD,\n" +
+                "	SYTLE_YEAR,\n" +
+                "	SYTLE_SEASON,\n" +
+                "	SYTLE_FABRIC_ID,\n" +
+                "	STYLE_SIZE_GROUP_CD,\n" +
+                "	STYLE_SIZE_CD,\n" +
+                "	STYLE_MAKE_TYPE,\n" +
+                "	STYLE_MATERIAL_NUMBER,\n" +
+                "	STYLE_DESIGN_PRICE,\n" +
+                "	CONCAT( 'https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/', SUBSTRING_INDEX( COVER_PHOTO_PATH, '/',- 1 ) ) AS PIC_URL,\n" +
+                "	SUBSTRING_INDEX( COVER_PHOTO_PATH, '/',- 1 ) AS PIC_NAME,\n" +
+                "	ENABLE_FLAG,\n" +
+                "	CREATE_DATE\n" +
+                "FROM\n" +
+                "	v_style_p\n" +
+                " where v_style_p.SYS_STYLE_ID in ('"+String.Join("','",ids)+"')" +
+                "	order by CREATE_DATE";
+            List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
+
+            DataTable dataTable = SQLmtm.GetDataTable(sql);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                款式图片一览Dto 款式图片一览Dto = new 款式图片一览Dto(dataRow);
+                款式图片一览Dtos.Add(款式图片一览Dto);
+            }
+            return 款式图片一览Dtos;
+        }
+
+        /// <summary>
         /// 根据标准款取款式信息
         /// </summary>
         /// <param name="REF_STYLE_ID"></param>

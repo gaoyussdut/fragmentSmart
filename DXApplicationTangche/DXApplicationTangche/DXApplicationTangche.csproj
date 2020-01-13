@@ -122,6 +122,7 @@
     <Compile Include="service\OrderService.cs" />
     <Compile Include="service\PictureService.cs" />
     <Compile Include="service\PrintService.cs" />
+    <Compile Include="service\RollOffService.cs" />
     <Compile Include="service\SizeService.cs" />
     <Compile Include="service\StyleService.cs" />
     <Compile Include="UC\标签列印\Frm打标.cs">
@@ -145,6 +146,7 @@
     <Compile Include="UC\款式异常\Frm款式一览.Designer.cs">
       <DependentUpon>Frm款式一览.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\款式异常\Model\下线Model.cs" />
     <Compile Include="UC\款式异常\Service下线.cs" />
     <Compile Include="UC\款式异常\SplashScreen1.cs">
       <SubType>Form</SubType>

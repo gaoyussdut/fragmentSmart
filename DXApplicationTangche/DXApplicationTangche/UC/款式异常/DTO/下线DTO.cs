@@ -2,18 +2,20 @@
 using DXApplicationTangche.UC.门店下单.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DXApplicationTangche.UC.款式异常.DTO
 {
-    class 下线DTO
+    public class 下线DTO
     {
         #region 变量
         private String id;  //  id
         private String code;    //  下线编码
         private List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>(); //  下线款式一览
+        private DataRow dataRow;
         #endregion
 
         #region 属性
@@ -29,6 +31,15 @@ namespace DXApplicationTangche.UC.款式异常.DTO
             this.款式图片一览Dtos = 款式图片一览Dtos;
         }
 
+        public 下线DTO(DataRow dataRow)
+        {
+            this.id = dataRow["id"].ToString();
+            this.code = dataRow["code"].ToString();
+        }
 
+        public 下线DTO build款式图片(款式图片一览Dto 款式图片一览Dto) {
+            this.款式图片一览Dtos.Add(款式图片一览Dto);
+            return this;
+        }
     }
 }

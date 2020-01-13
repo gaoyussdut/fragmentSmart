@@ -132,5 +132,10 @@ namespace DXApplicationTangche
             ResourceService.synPictureResouces();
             this.splashScreenManager.CloseWaitForm();
         }
+
+        private void accordionControlElement9_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm下线审核一览());            
+        }
     }
 }

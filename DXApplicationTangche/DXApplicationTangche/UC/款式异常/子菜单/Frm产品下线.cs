@@ -26,6 +26,7 @@ namespace DXApplicationTangche.UC.款式异常.子菜单
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //  执行下线操作
             Service下线.Func产品下线(this.下线DTO);
 
             //  控件行为

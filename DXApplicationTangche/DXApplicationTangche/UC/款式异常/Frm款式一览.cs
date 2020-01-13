@@ -52,6 +52,9 @@ namespace DXApplicationTangche.UC.款式异常
         /// 初始化控件
         /// </summary>
         private void initCombo() {
+            this.repositoryItemComboBox年份.Items.Clear();
+            this.repositoryItemComboBox服装种类.Items.Clear();
+
             this.repositoryItemComboBox年份.Items.AddRange(this.款式异常Model.List年份);
             try
             {
@@ -108,7 +111,13 @@ namespace DXApplicationTangche.UC.款式异常
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            new Frm产品下线(this.款式异常Model.送审款式).ShowDialog();
+            if (this.款式异常Model.送审款式.Count == 0)
+            {
+                MessageBox.Show("请先选择要下线成衣");
+            }
+            else {
+                new Frm产品下线(this.款式异常Model.送审款式).ShowDialog();
+            }
         }
     }
 }
