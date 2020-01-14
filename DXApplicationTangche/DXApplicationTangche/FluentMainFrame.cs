@@ -8,6 +8,7 @@ using DXApplicationTangche.UC.库存.门店验货;
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.form;
 using DXApplicationTangche.UC.门店下单.form.标准款;
+using DXApplicationTangche.UC.面料;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -136,6 +137,16 @@ namespace DXApplicationTangche
         private void accordionControlElement9_Click(object sender, EventArgs e)
         {
             this.initPanel(new Frm下线审核一览());            
+        }
+
+        private void accordionControlElement26_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm面料打码());
+        }
+
+        private void accordionControlElement27_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm门店面料一览());
         }
     }
 }

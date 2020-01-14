@@ -61,6 +61,11 @@
             this.ElementShopStockIn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementShopOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement23 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement25 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement26 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement27 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement28 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement29 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
@@ -111,7 +116,8 @@
             this.accordionControlElement2,
             this.accordionControlElement10,
             this.accordionControlElement16,
-            this.accordionControlElement18});
+            this.accordionControlElement18,
+            this.accordionControlElement25});
             this.accordionControl1.Location = new System.Drawing.Point(0, 37);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
@@ -129,7 +135,7 @@
             this.accordionControlElement4,
             this.accordionControlElement21});
             this.accordionControlElement2.Name = "accordionControlElement2";
-            this.accordionControlElement2.Text = "标签列印";
+            this.accordionControlElement2.Text = "成衣标签列印";
             // 
             // ElementBarCode
             // 
@@ -165,7 +171,6 @@
             this.accordionControlElement11,
             this.accordionControlElement12,
             this.accordionControlElement1});
-            this.accordionControlElement10.Expanded = true;
             this.accordionControlElement10.Name = "accordionControlElement10";
             this.accordionControlElement10.Text = "查询";
             // 
@@ -219,7 +224,6 @@
             this.accordionControlElement8,
             this.accordionControlElement9,
             this.accordionControlElement22});
-            this.accordionControlElement1.Expanded = true;
             this.accordionControlElement1.Name = "accordionControlElement1";
             this.accordionControlElement1.Text = "款式管理";
             // 
@@ -327,6 +331,43 @@
             this.accordionControlElement23.Text = "门店调拨";
             this.accordionControlElement23.Click += new System.EventHandler(this.accordionControlElement23_Click);
             // 
+            // accordionControlElement25
+            // 
+            this.accordionControlElement25.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement26,
+            this.accordionControlElement27,
+            this.accordionControlElement28,
+            this.accordionControlElement29});
+            this.accordionControlElement25.Expanded = true;
+            this.accordionControlElement25.Name = "accordionControlElement25";
+            this.accordionControlElement25.Text = "面料管理";
+            // 
+            // accordionControlElement26
+            // 
+            this.accordionControlElement26.Name = "accordionControlElement26";
+            this.accordionControlElement26.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement26.Text = "面料打码";
+            this.accordionControlElement26.Click += new System.EventHandler(this.accordionControlElement26_Click);
+            // 
+            // accordionControlElement27
+            // 
+            this.accordionControlElement27.Name = "accordionControlElement27";
+            this.accordionControlElement27.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement27.Text = "门店面料一览";
+            this.accordionControlElement27.Click += new System.EventHandler(this.accordionControlElement27_Click);
+            // 
+            // accordionControlElement28
+            // 
+            this.accordionControlElement28.Name = "accordionControlElement28";
+            this.accordionControlElement28.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement28.Text = "面料扫码下线";
+            // 
+            // accordionControlElement29
+            // 
+            this.accordionControlElement29.Name = "accordionControlElement29";
+            this.accordionControlElement29.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement29.Text = "定制在线面料库存一览";
+            // 
             // fluentDesignFormControl1
             // 
             this.fluentDesignFormControl1.FluentDesignForm = this;
@@ -403,5 +444,10 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement24;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement23;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement25;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement26;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement27;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement28;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement29;
     }
 }
