@@ -108,6 +108,15 @@ namespace mendian
                 Frm面料选择.mianliao = (String)tileView1.GetRowCellValue(e.Item.RowHandle, "materialname");
                 String id = (String)tileView1.GetRowCellValue(e.Item.RowHandle, "materialid");
                 this.选Model.Dto定制下单.build面料(id);
+                foreach (款式信息dto dto in this.选Model.款式信息)
+                {
+                    if (dto.tab == "m")
+                    {
+                        this.选Model.款式信息.Remove(dto);
+                        this.选Model.款式信息.Add(new 款式信息dto(this.选Model.Dto定制下单.SYTLE_FABRIC_ID));
+                        break;
+                    }
+                }
                 this.Close();
             }      
         }

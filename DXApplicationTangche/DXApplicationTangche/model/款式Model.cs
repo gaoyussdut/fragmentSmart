@@ -1,10 +1,12 @@
-﻿using DXApplicationTangche.DTO;
+﻿using DiaoPaiDaYin;
+using DXApplicationTangche.DTO;
 using DXApplicationTangche.service;
 using DXApplicationTangche.UC.门店下单.DTO;
 using mendian;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 
 namespace DXApplicationTangche.UC.款式异常
 {
@@ -188,12 +190,14 @@ namespace DXApplicationTangche.UC.款式异常
         private DataTable 选中尺寸dt;
         public Dto定制下单 Dto定制下单 = new Dto定制下单();
         private List<尺寸呈现dto> 尺寸呈现dtos = new List<尺寸呈现dto>();
+        private List<款式信息dto> 款式信息dtos = new List<款式信息dto>();
         #endregion
 
         #region 属性
         public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
         public DataTable 选中尺寸 { get => 选中尺寸dt; set => 选中尺寸dt = value; }
         public List<尺寸呈现dto> 尺寸呈现 { get => 尺寸呈现dtos; set => 尺寸呈现dtos = value; }
+        public List<款式信息dto> 款式信息 { get => 款式信息dtos; set => 款式信息dtos = value; }
 
         #endregion
 
@@ -344,5 +348,59 @@ namespace DXApplicationTangche.UC.款式异常
                 return 0;
             }
         }
+
+        public void SizeConflict()
+        {
+            if(this.IN_VALUE!=0)
+            {
+                this.IN_VALUE = 0;
+            }
+            if(this.OUT_VALUE!=0)
+            {
+                this.OUT_VALUE = 0;
+            }
+        }
+    }
+    public class 款式信息dto
+    {
+        #region 变量
+        public String tab { get; set; }//类别
+        public String name { get; set; }//名称
+        public String description { get; set; }//详情
+        public Image picture { get; set; }//图片
+        #endregion
+        #region 构造方法
+        public 款式信息dto(String tab,String name, String description, Image picture)
+        {
+            this.tab = tab;
+            this.name = name;
+            this.description = description;
+            this.picture = picture;
+        }
+        public 款式信息dto (String SYTLE_FABRIC_ID)
+        {
+            try
+            {
+                DataRow dr = FabricService.GetMianLiaoDR(SYTLE_FABRIC_ID);
+                this.tab = "m";
+                this.name = dr["mianliao"].ToString();
+                this.description = dr["materialComposition"].ToString();
+                try
+                {
+                    this.picture = Image.FromFile(@"pic\" + dr["picn"].ToString());
+                }
+                catch
+                {
+                    this.picture = Image.FromFile(@"pic\SSHIRT.jpg");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+        }
+        #endregion
+
     }
 }
