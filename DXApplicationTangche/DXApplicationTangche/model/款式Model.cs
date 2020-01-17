@@ -229,10 +229,10 @@ namespace DXApplicationTangche.UC.款式异常
         /// 尺寸计算
         /// </summary>
         /// <returns></returns>
-        public 门店下单选款式Model buildCountSize(int RowHandle,String FieldName) {
+        public 门店下单选款式Model buildCountSize(int RowHandle,String FieldName,String value) {
             this.尺寸呈现[RowHandle]  //  DTO
                 .SizeConflict() //  尺寸冲突
-                .build尺寸增减值(FieldName);
+                .build尺寸增减值(FieldName,value);
 
             //  尺寸计算
             foreach (尺寸呈现dto dto in this.尺寸呈现)
@@ -388,18 +388,18 @@ namespace DXApplicationTangche.UC.款式异常
             return this;
         }
 
-        public 尺寸呈现dto build尺寸增减值(String ColumnFieldName) {
+        public 尺寸呈现dto build尺寸增减值(String ColumnFieldName,String Value) {
             if (ColumnFieldName == "ITEM_FIT_VALUE")
             {
-                this.ITEM_FIT_VALUE = Convert.ToDouble(e.Value.ToString());
+                this.ITEM_FIT_VALUE = Convert.ToDouble(Value);
             }
             else if (ColumnFieldName == "IN_VALUE")
             {
-                this.IN_VALUE = Convert.ToDouble(e.Value.ToString());
+                this.IN_VALUE = Convert.ToDouble(Value);
             }
             else if (ColumnFieldName == "OUT_VALUE")
             {
-                this.OUT_VALUE = Convert.ToDouble(e.Value.ToString());
+                this.OUT_VALUE = Convert.ToDouble(Value);
             }
             return this;
         } 

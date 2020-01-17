@@ -228,7 +228,7 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void gridViewSize_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            this.model.buildCountSize(e.RowHandle, e.Column.FieldName);    //  尺寸计算
+            this.model.buildCountSize(e.RowHandle, e.Column.FieldName, e.Value.ToString());    //  尺寸计算
 
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControlSize.Refresh();
