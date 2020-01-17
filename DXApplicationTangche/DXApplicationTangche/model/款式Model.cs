@@ -224,6 +224,23 @@ namespace DXApplicationTangche.UC.款式异常
             //this.Dto定制下单.STYLE_SIZE_CD= ImpService.SizeCD(size, this.选中尺寸dt);
             return this;
         }
+
+        /// <summary>
+        /// 尺寸计算
+        /// </summary>
+        /// <returns></returns>
+        public 门店下单选款式Model buildCountSize(int RowHandle,String FieldName) {
+            this.尺寸呈现[RowHandle]  //  DTO
+                .SizeConflict() //  尺寸冲突
+                .build尺寸增减值(FieldName);
+
+            //  尺寸计算
+            foreach (尺寸呈现dto dto in this.尺寸呈现)
+            {
+                dto.CountSize();
+            }
+            return this;
+        }
         #endregion
 
         #region 校验方法
@@ -328,6 +345,11 @@ namespace DXApplicationTangche.UC.款式异常
             this.leastReasonable = leastReasonable;
             this.maxReasonable = maxReasonable;
         }
+
+        /// <summary>
+        /// 尺寸计算
+        /// </summary>
+        /// <returns></returns>
         public 尺寸呈现dto CountSize()
         {
             this.garmentSize = this.ITEM_FIT_VALUE + this.IN_VALUE - this.OUT_VALUE;
@@ -349,7 +371,11 @@ namespace DXApplicationTangche.UC.款式异常
             }
         }
 
-        public void SizeConflict()
+        /// <summary>
+        /// 尺寸冲突
+        /// </summary>
+        /// <returns></returns>
+        public 尺寸呈现dto SizeConflict()
         {
             if(this.IN_VALUE!=0)
             {
@@ -359,7 +385,24 @@ namespace DXApplicationTangche.UC.款式异常
             {
                 this.OUT_VALUE = 0;
             }
+            return this;
         }
+
+        public 尺寸呈现dto build尺寸增减值(String ColumnFieldName) {
+            if (ColumnFieldName == "ITEM_FIT_VALUE")
+            {
+                this.ITEM_FIT_VALUE = Convert.ToDouble(e.Value.ToString());
+            }
+            else if (ColumnFieldName == "IN_VALUE")
+            {
+                this.IN_VALUE = Convert.ToDouble(e.Value.ToString());
+            }
+            else if (ColumnFieldName == "OUT_VALUE")
+            {
+                this.OUT_VALUE = Convert.ToDouble(e.Value.ToString());
+            }
+            return this;
+        } 
     }
     public class 款式信息dto
     {

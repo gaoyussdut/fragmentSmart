@@ -228,23 +228,8 @@ namespace DXApplicationTangche.UC.门店下单.form
 
         private void gridViewSize_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
-            this.model.尺寸呈现[e.RowHandle].SizeConflict();
-            if (e.Column.FieldName == "ITEM_FIT_VALUE")
-            {
-                this.model.尺寸呈现[e.RowHandle].ITEM_FIT_VALUE = Convert.ToDouble(e.Value.ToString());
-            }
-            else if (e.Column.FieldName == "IN_VALUE")
-            {
-                this.model.尺寸呈现[e.RowHandle].IN_VALUE = Convert.ToDouble(e.Value.ToString());
-            }
-            else if (e.Column.FieldName == "OUT_VALUE")
-            {
-                this.model.尺寸呈现[e.RowHandle].OUT_VALUE = Convert.ToDouble(e.Value.ToString());
-            }
-            foreach (尺寸呈现dto dto in this.model.尺寸呈现)
-            {
-                dto.CountSize();
-            }
+            this.model.buildCountSize(e.RowHandle, e.Column.FieldName);    //  尺寸计算
+
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControlSize.Refresh();
         }
