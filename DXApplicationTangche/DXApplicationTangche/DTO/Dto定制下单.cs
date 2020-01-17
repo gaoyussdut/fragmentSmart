@@ -38,7 +38,16 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.dto尺寸 = new Dto尺寸(ITEM_CD, ITEM_VALUE, FIT_VALUE, FM_VALUE, IN_VALUE, OUT_VALUE, STATUS, DELETE_FLAG, CUSTOMER_COUNT_IDSTYLE_ID, PHASE_CD, VERSION, CREATE_USER);
             return this;
         }
-
+        public Dto定制下单 build选中款式(String Style_Id, String STYLE_CATEGORY_CD, String STYLE_FIT_CD, String STYLE_SIZE_GROUP_CD, String SYTLE_FABRIC_ID)
+        {
+            this.Style_Id = Style_Id;
+            this.STYLE_CATEGORY_CD = STYLE_CATEGORY_CD;
+            this.STYLE_FIT_CD = STYLE_FIT_CD;
+            this.STYLE_SIZE_GROUP_CD = STYLE_SIZE_GROUP_CD;
+            //this.STYLE_SIZE_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_CD").ToString();
+            this.SYTLE_FABRIC_ID = SYTLE_FABRIC_ID;
+            return this;
+        }
         //public Dto定制下单 build款式卡片(款式卡片DTO 款式卡片DTO) {
         //    this.Style_Id = 款式卡片DTO.kuanshiid;
         //    this.STYLE_CATEGORY_CD = 款式卡片DTO.sTYLE_CATEGORY_CD;

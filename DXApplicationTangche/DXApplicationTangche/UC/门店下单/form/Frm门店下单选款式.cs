@@ -184,14 +184,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             DialogResult dialogResult = MessageBox.Show("确认选择该款式？", "款式选择", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                //  TODO    改为build
-                this.model.Dto定制下单.Style_Id = this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleId").ToString();
-                this.model.Dto定制下单.STYLE_CATEGORY_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString();
-                this.model.Dto定制下单.STYLE_FIT_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_FIT_CD").ToString();
-                this.model.Dto定制下单.STYLE_SIZE_GROUP_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_GROUP_CD").ToString();
-                //this.model.Dto定制下单.STYLE_SIZE_CD = this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_CD").ToString();
-                this.model.Dto定制下单.SYTLE_FABRIC_ID = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialId").ToString();
-
+                this.model.Dto定制下单.build选中款式(this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleId").ToString(), this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString(), this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_FIT_CD").ToString(), this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_SIZE_GROUP_CD").ToString(), this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialId").ToString());//添加选中款式数据
                 //  控件行为
                 this.mianliaoname.Text = this.tileView1.GetRowCellValue(e.Item.RowHandle, "MaterialNameCn").ToString();
                 //  TODO    改为tileview，不准传任何控件进去
@@ -200,9 +193,7 @@ namespace DXApplicationTangche.UC.门店下单.form
                 //  TODO    不准传任何控件进去
                 //  TODO    不允许使用DataTable
                 ImpService.LoadSheJiDian(this, this.model.Dto定制下单.Style_Id);
-                this.model.款式信息.Clear();
-                this.model.款式信息.Add(new 款式信息dto("style", this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleNameCn").ToString(), this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString(), (Image)this.tileView1.GetRowCellValue(e.Item.RowHandle, "Picture")));
-                this.model.款式信息.Add(new 款式信息dto(this.model.Dto定制下单.SYTLE_FABRIC_ID));
+                this.model.build款式信息款式("style", this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleNameCn").ToString(), this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString(), (Image)this.tileView1.GetRowCellValue(e.Item.RowHandle, "Picture")).build款式信息面料(this.model.Dto定制下单.SYTLE_FABRIC_ID);//添加更新款式信息
                 this.gridControlSI.DataSource = this.model.款式信息;
                 this.model.build款式全尺寸(this.model.Dto定制下单.Style_Id);
                 Frm定制下单修改尺寸.stylesizedt = StyleService.StyleCombobox(this.model.Dto定制下单.Style_Id);
@@ -211,7 +202,6 @@ namespace DXApplicationTangche.UC.门店下单.form
                 {
                     foreach (DataRow dr in Frm定制下单修改尺寸.stylesizedt.Rows)
                     {
-                        //this.chicun.Items.Add(Convert.ToString(dr["尺寸"]));
                         this.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
                     }
                 }

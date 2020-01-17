@@ -224,7 +224,6 @@ namespace DXApplicationTangche.UC.款式异常
             //this.Dto定制下单.STYLE_SIZE_CD= ImpService.SizeCD(size, this.选中尺寸dt);
             return this;
         }
-
         /// <summary>
         /// 尺寸计算
         /// </summary>
@@ -239,6 +238,30 @@ namespace DXApplicationTangche.UC.款式异常
             {
                 dto.CountSize();
             }
+            return this;
+        }
+        /// <summary>
+        /// 款式信息添加款式
+        /// </summary>
+        /// <param name="tab"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="picture"></param>
+        /// <returns></returns>
+        public 门店下单选款式Model build款式信息款式(String tab, String name, String description, Image picture)
+        {
+            this.款式信息.Clear();
+            this.款式信息.Add(new 款式信息dto(tab, name, description, picture));
+            return this;
+        }
+        /// <summary>
+        /// 款式信息中添加面料
+        /// </summary>
+        /// <param name="SYTLE_FABRIC_ID"></param>
+        /// <returns></returns>
+        public 门店下单选款式Model build款式信息面料(String SYTLE_FABRIC_ID)
+        {
+            this.款式信息.Add(new 款式信息dto(SYTLE_FABRIC_ID));
             return this;
         }
         #endregion

@@ -74,7 +74,7 @@ namespace DXApplicationTangche.UC.面料
         private void searchLookUpEdit1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             if (null != e.Value)
-                e.DisplayText = this.dto.materialname;
+                e.DisplayText = this.dto.materialcd + "  " + this.dto.materialname;
         }
         #endregion
 
@@ -110,7 +110,7 @@ namespace DXApplicationTangche.UC.面料
             //对BTW模版相应字段进行赋值 
 
             btFormat.SubStrings["styleid"].Value = this.dto.materialid;
-            btFormat.SubStrings["cd"].Value = this.dto.materialcd + this.dto.materialname;
+            btFormat.SubStrings["cd"].Value = this.dto.materialcd + "  "+this.dto.materialname;
             Messages messages1;
             int waitout1 = 10000; // 10秒 超时 
             Result nResult2 = btFormat.Print("条码" + this.dto.materialid, waitout1, out messages1);
