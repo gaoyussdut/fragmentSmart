@@ -232,7 +232,7 @@ namespace DXApplicationTangche.UC.款式异常
         public 门店下单选款式Model buildCountSize(int RowHandle,String FieldName,String value) {
             this.尺寸呈现[RowHandle]  //  DTO
                 .SizeConflict() //  尺寸冲突
-                .build尺寸增减值(FieldName,value);
+                .build尺寸增减值(FieldName,value);   //  根据修改列修改尺寸值
 
             //  尺寸计算
             foreach (尺寸呈现dto dto in this.尺寸呈现)
@@ -388,6 +388,12 @@ namespace DXApplicationTangche.UC.款式异常
             return this;
         }
 
+        /// <summary>
+        /// 根据修改列修改尺寸值
+        /// </summary>
+        /// <param name="ColumnFieldName"></param>
+        /// <param name="Value"></param>
+        /// <returns></returns>
         public 尺寸呈现dto build尺寸增减值(String ColumnFieldName,String Value) {
             if (ColumnFieldName == "ITEM_FIT_VALUE")
             {
