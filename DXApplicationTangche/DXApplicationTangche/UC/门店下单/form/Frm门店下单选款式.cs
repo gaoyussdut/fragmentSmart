@@ -19,7 +19,6 @@ namespace DXApplicationTangche.UC.门店下单.form
     {
         public 门店下单选款式Model model = new 门店下单选款式Model();
         public List<Pic各种> pics = new List<Pic各种>();
-        public static int page { get; set; } = 1;
         //public Dto定制下单 Dto定制下单 { get => dto定制下单; set => dto定制下单 = value; }
 
         private Frm门店统一下单 frm;
@@ -29,8 +28,6 @@ namespace DXApplicationTangche.UC.门店下单.form
         public Frm门店下单选款式(Frm门店统一下单 frm, Enum下单类型 enum下单类型)
         {
             InitializeComponent();
-            this.uc分页.xiaye.Click += new EventHandler(this.xiaye_Button);
-            this.uc分页.shangye.Click += new EventHandler(this.shangye_Button);
 
             this.frm = frm;
             this.model.Dto定制下单 = new Dto定制下单();
@@ -53,38 +50,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             this.model = new 门店下单选款式Model(this.textBox1.Text, Frm标准款下单.page);
             this.gridControl选择款式.DataSource = this.model.款式图片;
-            this.uc分页.label1.Text = Frm标准款下单.page.ToString();
             this.splashScreenManager.CloseWaitForm();
-        }
-
-        /// <summary>
-        /// 下一页
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void xiaye_Button(object sender, EventArgs e)
-        {
-            Frm标准款下单.page++;
-            //  图片布局
-            this.generatePictureLayout();
-        }
-        /// <summary>
-        /// 上一页
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void shangye_Button(object sender, EventArgs e)
-        {
-            if (Frm标准款下单.page == 1)
-            {
-                MessageBox.Show("已经到首页");
-                return;
-            }
-
-            Frm标准款下单.page--;
-
-            //  图片布局
-            this.generatePictureLayout();
         }
 
         private void Frm门店下单选款式_Load(object sender, EventArgs e)

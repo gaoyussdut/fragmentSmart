@@ -277,8 +277,9 @@ namespace DXApplicationTangche.service
                 "GROUP BY\n" +
                 " style.SYS_STYLE_ID \n" +
                 "ORDER BY\n" +
-                " style.UPDATE_DATE DESC \n" +
-                " LIMIT " + ((page - 1) * 21).ToString() + ",21");
+                " style.UPDATE_DATE DESC \n" 
+                //+" LIMIT " + ((page - 1) * 42).ToString() + ",42"
+                );
             List<款式图片Dto> 款式图片Dtos = new List<款式图片Dto>();
             foreach (DataRow dataRow in dt.Rows)
             {

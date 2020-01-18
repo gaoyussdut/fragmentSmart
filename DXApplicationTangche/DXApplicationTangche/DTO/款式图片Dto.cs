@@ -39,9 +39,9 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.STYLE_SIZE_GROUP_CD = dr["styleEntity.styleSizeGroupCd"].ToString();
             this.STYLE_DRESS_CATEGORY = dr["styleEntity.styleDressCategory"].ToString();
             this.STYLE_DESIGN_TYPE = dr["styleEntity.styleDesignType"].ToString();
-            this.STYLE_PUBLISH_CATEGORY_CD = dr["styleEntity.stylePublishCategoryCd"].ToString();
+            this.STYLE_PUBLISH_CATEGORY_CD = getSTYLE_PUBLISH_CATEGORY_CD(dr["styleEntity.stylePublishCategoryCd"].ToString());
             this.SYTLE_YEAR = dr["styleEntity.sytleYear"].ToString();
-            this.SYTLE_SEASON = dr["styleEntity.sytleSeason"].ToString();
+            this.SYTLE_SEASON = getSYTLE_SEASON(dr["styleEntity.sytleSeason"].ToString());
             this.STYLE_SIZE_CD = dr["styleEntity.styleSizeCd"].ToString();
             try
             {
@@ -51,6 +51,27 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             {
                 this.Picture= Image.FromFile(@"pic\SSHIRT.jpg");
             }
+        }
+        private static String getSYTLE_SEASON(String SYTLE_SEASON) {
+            if ("SEASON-SEASON_10".Equals(SYTLE_SEASON))
+            {
+                return "春季";
+            }
+            if ("SEASON-SEASON_20".Equals(SYTLE_SEASON))
+            {
+                return "秋季";
+            }
+            return SYTLE_SEASON;
+        }
+        private static String getSTYLE_PUBLISH_CATEGORY_CD (String STYLE_PUBLISH_CATEGORY_CD) {
+            if ("PUBLISH_STYLE_CATEGORY-WShirt".Equals(STYLE_PUBLISH_CATEGORY_CD)) {
+                return "女衬衫";
+            }
+            if ("PUBLISH_STYLE_CATEGORY-MShirt".Equals(STYLE_PUBLISH_CATEGORY_CD))
+            {
+                return "男衬衫";
+            }
+            return STYLE_PUBLISH_CATEGORY_CD;
         }
     }
 
