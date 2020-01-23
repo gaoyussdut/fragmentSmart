@@ -335,12 +335,12 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                 if (card is UC尺寸卡片)
                 {
                     UC尺寸卡片 c = (UC尺寸卡片)card;
-                    fitv.icadd(c.iTEM_CD);
-                    fitv.ivadd(c.iTEM_VALUE);
-                    fitv.fvadd(c.chengyi.Text);
-                    fitv.fmvadd(c.iTEM_VALUE);
-                    fitv.invadd(c.jia.Text);
-                    fitv.outvadd(c.jian.Text);
+                    fitv.icadd(c.iTEM_CD);//ITEM_CD 衣服CD
+                    fitv.ivadd(c.iTEM_VALUE);//ITEM_VALUE 衣服VALUE
+                    fitv.fvadd(c.chengyi.Text);// garmentSize 成衣尺寸
+                    fitv.fmvadd(c.iTEM_VALUE);//ITEM_VALUE 衣服VALUE
+                    fitv.invadd(c.jia.Text);//IN_VALUE 加值
+                    fitv.outvadd(c.jian.Text);//OUT_VALUE 减值
                 }
             }
             dto.build尺寸(
