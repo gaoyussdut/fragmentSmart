@@ -36,6 +36,10 @@
             this.colREMARKS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colORDER_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPAYMENT_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_SIZE_GROUP_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_CATEGORY_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTYLE_FIT_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl订单一览)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -59,20 +63,25 @@
             this.colSTYLE_NAME_CN,
             this.colREMARKS,
             this.colORDER_DATE,
-            this.colPAYMENT_DATE});
+            this.colPAYMENT_DATE,
+            this.colSTYLE_SIZE_GROUP_CD,
+            this.colSTYLE_SIZE_CD,
+            this.colSTYLE_CATEGORY_CD,
+            this.colSTYLE_FIT_CD});
             this.gridView1.GridControl = this.gridControl订单一览;
             this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colORDER_DATE, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // colORDER_ID
             // 
             this.colORDER_ID.Caption = "ORDER_ID";
+            this.colORDER_ID.FieldName = "ORDER_ID";
             this.colORDER_ID.MinWidth = 25;
             this.colORDER_ID.Name = "colORDER_ID";
-            this.colORDER_ID.Visible = true;
-            this.colORDER_ID.VisibleIndex = 0;
             this.colORDER_ID.Width = 94;
             // 
             // colCUSTOM_NAME
@@ -82,7 +91,7 @@
             this.colCUSTOM_NAME.MinWidth = 25;
             this.colCUSTOM_NAME.Name = "colCUSTOM_NAME";
             this.colCUSTOM_NAME.Visible = true;
-            this.colCUSTOM_NAME.VisibleIndex = 1;
+            this.colCUSTOM_NAME.VisibleIndex = 0;
             this.colCUSTOM_NAME.Width = 94;
             // 
             // colSTYLE_NAME_CN
@@ -92,7 +101,7 @@
             this.colSTYLE_NAME_CN.MinWidth = 25;
             this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
             this.colSTYLE_NAME_CN.Visible = true;
-            this.colSTYLE_NAME_CN.VisibleIndex = 2;
+            this.colSTYLE_NAME_CN.VisibleIndex = 1;
             this.colSTYLE_NAME_CN.Width = 94;
             // 
             // colREMARKS
@@ -102,7 +111,7 @@
             this.colREMARKS.MinWidth = 25;
             this.colREMARKS.Name = "colREMARKS";
             this.colREMARKS.Visible = true;
-            this.colREMARKS.VisibleIndex = 3;
+            this.colREMARKS.VisibleIndex = 2;
             this.colREMARKS.Width = 94;
             // 
             // colORDER_DATE
@@ -124,8 +133,40 @@
             this.colPAYMENT_DATE.Name = "colPAYMENT_DATE";
             this.colPAYMENT_DATE.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.colPAYMENT_DATE.Visible = true;
-            this.colPAYMENT_DATE.VisibleIndex = 4;
+            this.colPAYMENT_DATE.VisibleIndex = 3;
             this.colPAYMENT_DATE.Width = 94;
+            // 
+            // colSTYLE_SIZE_GROUP_CD
+            // 
+            this.colSTYLE_SIZE_GROUP_CD.Caption = "STYLE_SIZE_GROUP_CD";
+            this.colSTYLE_SIZE_GROUP_CD.FieldName = "STYLE_SIZE_GROUP_CD";
+            this.colSTYLE_SIZE_GROUP_CD.MinWidth = 25;
+            this.colSTYLE_SIZE_GROUP_CD.Name = "colSTYLE_SIZE_GROUP_CD";
+            this.colSTYLE_SIZE_GROUP_CD.Width = 94;
+            // 
+            // colSTYLE_SIZE_CD
+            // 
+            this.colSTYLE_SIZE_CD.Caption = "STYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.FieldName = "STYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.MinWidth = 25;
+            this.colSTYLE_SIZE_CD.Name = "colSTYLE_SIZE_CD";
+            this.colSTYLE_SIZE_CD.Width = 94;
+            // 
+            // colSTYLE_CATEGORY_CD
+            // 
+            this.colSTYLE_CATEGORY_CD.Caption = "STYLE_CATEGORY_CD";
+            this.colSTYLE_CATEGORY_CD.FieldName = "STYLE_CATEGORY_CD";
+            this.colSTYLE_CATEGORY_CD.MinWidth = 25;
+            this.colSTYLE_CATEGORY_CD.Name = "colSTYLE_CATEGORY_CD";
+            this.colSTYLE_CATEGORY_CD.Width = 94;
+            // 
+            // colSTYLE_FIT_CD
+            // 
+            this.colSTYLE_FIT_CD.Caption = "STYLE_FIT_CD";
+            this.colSTYLE_FIT_CD.FieldName = "STYLE_FIT_CD";
+            this.colSTYLE_FIT_CD.MinWidth = 25;
+            this.colSTYLE_FIT_CD.Name = "colSTYLE_FIT_CD";
+            this.colSTYLE_FIT_CD.Width = 94;
             // 
             // Frm已付款订单一览
             // 
@@ -152,5 +193,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colREMARKS;
         private DevExpress.XtraGrid.Columns.GridColumn colORDER_DATE;
         private DevExpress.XtraGrid.Columns.GridColumn colPAYMENT_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_SIZE_GROUP_CD;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_SIZE_CD;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_CATEGORY_CD;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_FIT_CD;
     }
 }

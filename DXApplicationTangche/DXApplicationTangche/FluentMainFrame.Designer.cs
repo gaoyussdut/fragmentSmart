@@ -57,6 +57,7 @@
             this.accordionControlElement18 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement19 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement20 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement30 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementStock = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementShopStockIn = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.ElementShopOrder = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -284,13 +285,16 @@
             this.accordionControlElement18.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement19,
             this.ElementStock});
+            this.accordionControlElement18.Expanded = true;
             this.accordionControlElement18.Name = "accordionControlElement18";
             this.accordionControlElement18.Text = "门店管理";
             // 
             // accordionControlElement19
             // 
             this.accordionControlElement19.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement20});
+            this.accordionControlElement20,
+            this.accordionControlElement30});
+            this.accordionControlElement19.Expanded = true;
             this.accordionControlElement19.Name = "accordionControlElement19";
             this.accordionControlElement19.Text = "销售管理";
             // 
@@ -301,6 +305,13 @@
             this.accordionControlElement20.Text = "销售下单";
             this.accordionControlElement20.Click += new System.EventHandler(this.accordionControlElement20_Click);
             // 
+            // accordionControlElement30
+            // 
+            this.accordionControlElement30.Name = "accordionControlElement30";
+            this.accordionControlElement30.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement30.Text = "订单量体值修改";
+            this.accordionControlElement30.Click += new System.EventHandler(this.accordionControlElement30_Click);
+            // 
             // ElementStock
             // 
             this.ElementStock.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -309,6 +320,7 @@
             this.accordionControlElement23});
             this.ElementStock.Name = "ElementStock";
             this.ElementStock.Text = "进销存管理";
+            this.ElementStock.Click += new System.EventHandler(this.ElementStock_Click);
             // 
             // ElementShopStockIn
             // 
@@ -338,7 +350,6 @@
             this.accordionControlElement27,
             this.accordionControlElement28,
             this.accordionControlElement29});
-            this.accordionControlElement25.Expanded = true;
             this.accordionControlElement25.Name = "accordionControlElement25";
             this.accordionControlElement25.Text = "面料管理";
             // 
@@ -449,5 +460,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement27;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement28;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement29;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement30;
     }
 }

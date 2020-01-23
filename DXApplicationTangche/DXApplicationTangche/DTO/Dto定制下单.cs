@@ -1,7 +1,9 @@
-﻿using DXApplicationTangche.UC.门店下单.UC;
+﻿using DXApplicationTangche.UC.款式异常;
+using DXApplicationTangche.UC.门店下单.UC;
 using mendian;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -141,20 +143,71 @@ namespace DXApplicationTangche.UC.门店下单.DTO
     {
         public Dto尺寸(string iTEM_CD, string iTEM_VALUE, string fIT_VALUE, string fM_VALUE, string iN_VALUE, string oUT_VALUE, string sTATUS, string dELETE_FLAG, string cUSTOMER_COUNT_ID, string pHASE_CD, string vERSION, string cREATE_USER)
         {
-            ITEM_CD = iTEM_CD;
-            ITEM_VALUE = iTEM_VALUE;
-            FIT_VALUE = fIT_VALUE;
-            FM_VALUE = fM_VALUE;
-            IN_VALUE = iN_VALUE;
-            OUT_VALUE = oUT_VALUE;
-            STATUS = sTATUS;
-            DELETE_FLAG = dELETE_FLAG;
-            CUSTOMER_COUNT_ID = cUSTOMER_COUNT_ID;
-            PHASE_CD = pHASE_CD;
-            VERSION = vERSION;
-            CREATE_USER = cREATE_USER;
+            this.ITEM_CD = iTEM_CD;
+            this.ITEM_VALUE = iTEM_VALUE;
+            this.FIT_VALUE = fIT_VALUE;
+            this.FM_VALUE = fM_VALUE;
+            this.IN_VALUE = iN_VALUE;
+            this.OUT_VALUE = oUT_VALUE;
+            this.STATUS = sTATUS;
+            this.DELETE_FLAG = dELETE_FLAG;
+            this.CUSTOMER_COUNT_ID = cUSTOMER_COUNT_ID;
+            this.PHASE_CD = pHASE_CD;
+            this.VERSION = vERSION;
+            this.CREATE_USER = cREATE_USER;
         }
 
+        /// <summary>
+        /// 从数据库取数据
+        /// </summary>
+        /// <param name="STYLE_ID"></param>
+        /// <param name="iTEM_CD"></param>
+        /// <param name="iTEM_VALUE"></param>
+        /// <param name="fIT_VALUE"></param>
+        /// <param name="fM_VALUE"></param>
+        /// <param name="iN_VALUE"></param>
+        /// <param name="oUT_VALUE"></param>
+        /// <param name="sTATUS"></param>
+        /// <param name="dELETE_FLAG"></param>
+        /// <param name="cUSTOMER_COUNT_ID"></param>
+        /// <param name="pHASE_CD"></param>
+        /// <param name="vERSION"></param>
+        /// <param name="cREATE_USER"></param>
+        public Dto尺寸(DataRow dr)
+        {
+            this.STYLE_ID = dr["STYLE_ID"].ToString();
+            this.ITEM_CD = dr["ITEM_CD"].ToString();
+            this.ITEM_VALUE = dr["ITEM_VALUE"].ToString();
+            this.FIT_VALUE = dr["FIT_VALUE"].ToString();
+            this.FM_VALUE = dr["FM_VALUE"].ToString();
+            this.IN_VALUE = dr["IN_VALUE"].ToString();
+            this.OUT_VALUE = dr["OUT_VALUE"].ToString();
+            this.DELETE_FLAG = dr["DELETE_FLAG"].ToString();
+            this.PHASE_CD = dr["PHASE_CD"].ToString();
+            this.VERSION = dr["VERSION"].ToString();
+            this.CREATE_USER = dr["CREATE_USER"].ToString();
+        }
+
+        public void build尺寸呈现dto(List<尺寸呈现dto> 尺寸呈现dto) {
+            List<String> ITEM_CD = new List<string>(this.ITEM_CD.Split(','));
+            List<String> ITEM_VALUE = new List<string>(this.ITEM_VALUE.Split(','));
+            List<String> IN_VALUE = new List<string>(this.IN_VALUE.Split(','));
+            List<String> OUT_VALUE = new List<string>(this.OUT_VALUE.Split(','));
+
+            for (int i = 0; i < 尺寸呈现dto.Count; i++) {
+                for (int j= 0;j < ITEM_VALUE.Count;j++) {
+                    if (尺寸呈现dto[i].ITEM_VALUE.Equals(ITEM_VALUE[j])) {
+                        尺寸呈现dto[i].IN_VALUE = Convert.ToDouble("NaN".Equals(IN_VALUE[j]) ? "0" : IN_VALUE[j]);
+                        尺寸呈现dto[i].OUT_VALUE = Convert.ToDouble("NaN".Equals(OUT_VALUE[j]) ? "0" : OUT_VALUE[j]);
+                        //尺寸呈现dto[i].ITEM_VALUE = ITEM_VALUE[j];
+                        尺寸呈现dto[i].CountSize();
+                        break;
+                    }                
+                }
+            }
+        }
+
+        public String STYLE_ID { get; set; }
         public String ITEM_CD { get; set; }
         public String ITEM_VALUE { get; set; }
         public String FIT_VALUE { get; set; }

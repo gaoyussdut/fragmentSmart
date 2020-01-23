@@ -134,27 +134,97 @@ namespace DXApplicationTangche.service
 
         public static List<尺寸呈现dto> GetThisSize(Dto定制下单 dto)
         {
+            return GetThisSize(dto.STYLE_FIT_CD, dto.STYLE_CATEGORY_CD, dto.STYLE_SIZE_CD, dto.STYLE_SIZE_GROUP_CD, dto.Style_Id,true);
+        }
+
+
+        private static List<尺寸呈现dto> GetThisSize(String STYLE_FIT_CD,String STYLE_CATEGORY_CD,String STYLE_SIZE_CD,String STYLE_SIZE_GROUP_CD,String Style_Id,Boolean isRef)
+        {
             List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
-            String sql = "SELECT\n" +
+            String sql;
+            if (!isRef)  //  是否标准款
+            {
+                sql = "SELECT\n" +
+                    "	S1.*,\n" +
+                    "	S2.* \n" +
+                    "FROM\n" +
+                    "	( SELECT * FROM a_size_fit_p WHERE FIT_CD = 'FIT_BODY_TYPE-1914F' AND STYLE_CATEGORY_CD = 'STYLE_CATEGORY-SHIRT' AND SIZE_CD = 'EGS_GROUP_SIZE-42' AND SIZEGROUP_CD = 'GROUP_SIZE-EGS_GROUP_SIZE' ) AS s1\n" +
+                    "	LEFT JOIN ( SELECT * FROM a_reasonable_p WHERE styleID IN ( SELECT REF_STYLE_ID FROM s_style_p WHERE SYS_STYLE_ID = " + Style_Id + " ) ) AS s2 ON s1.ITEM_VALUE = s2.itemValue;";
+            }
+            else {
+                sql = "SELECT\n" +
                 "	S1.*,\n" +
                 "	S2.* \n" +
                 "FROM\n" +
                 "	( SELECT * FROM a_size_fit_p WHERE" +
-                " FIT_CD = '" + dto.STYLE_FIT_CD + "'" +
-                " AND STYLE_CATEGORY_CD = '" + dto.STYLE_CATEGORY_CD + "'" +
-                " AND SIZE_CD = '" + dto.STYLE_SIZE_CD + "'" +
-                " AND SIZEGROUP_CD = '" + dto.STYLE_SIZE_GROUP_CD + "' ) AS s1\n" +
-                "	LEFT JOIN ( SELECT * FROM a_reasonable_p WHERE styleID = " + dto.Style_Id + " ) AS s2 ON s1.ITEM_VALUE = s2.itemValue;";
+                " FIT_CD = '" + STYLE_FIT_CD + "'" +
+                " AND STYLE_CATEGORY_CD = '" + STYLE_CATEGORY_CD + "'" +
+                " AND SIZE_CD = '" + STYLE_SIZE_CD + "'" +
+                " AND SIZEGROUP_CD = '" + STYLE_SIZE_GROUP_CD + "' ) AS s1\n" +
+                "	LEFT JOIN ( SELECT * FROM a_reasonable_p WHERE styleID = " + Style_Id + " ) AS s2 ON s1.ITEM_VALUE = s2.itemValue;";
+            }
+
             DataTable dt = SQLmtm.GetDataTable(sql);
-            String leastReasonable = "0";
-            String maxReasonable = "0";
             foreach (DataRow dr in dt.Rows)
             {
-                leastReasonable = dr["leastReasonable"].ToString() == "" ? "0" : dr["leastReasonable"].ToString();
-                maxReasonable = dr["maxReasonable"].ToString() == "" ? "0" : dr["maxReasonable"].ToString();
-                尺寸呈现.Add(new 尺寸呈现dto(dr["ITEM_CD"].ToString(), dr["ITEM_VALUE"].ToString(), "", "", Convert.ToDouble(dr["ITEM_FIT_VALUE"].ToString()), 0, 0, dr["ITEM_NAME_CN"].ToString(), Convert.ToDouble(leastReasonable), Convert.ToDouble(maxReasonable)));
+                尺寸呈现.Add(
+                    new 尺寸呈现dto(
+                        dr["ITEM_CD"].ToString()
+                        , dr["ITEM_VALUE"].ToString()
+                        , ""
+                        , ""
+                        , Convert.ToDouble(dr["ITEM_FIT_VALUE"].ToString())
+                        , 0
+                        , 0
+                        , dr["ITEM_NAME_CN"].ToString()
+                        , Convert.ToDouble(dr["leastReasonable"].ToString() == "" ? "0" : dr["leastReasonable"].ToString())
+                        , Convert.ToDouble(dr["maxReasonable"].ToString() == "" ? "0" : dr["maxReasonable"].ToString())
+                        )
+                    );
             }
             return 尺寸呈现;
+        }
+
+        public static List<尺寸呈现dto> getDto尺寸ByOrderId(String orderId, String STYLE_FIT_CD, String STYLE_CATEGORY_CD, String STYLE_SIZE_CD, String STYLE_SIZE_GROUP_CD) {
+            String sql = "SELECT\n" +
+                "	STYLE_ID,\n" +
+                "	PHASE_CD,\n" +
+                "	ITEM_CD,\n" +
+                "	ITEM_VALUE,\n" +
+                "	FIT_VALUE,\n" +
+                "	FM_VALUE,\n" +
+                "	DELETE_FLAG,\n" +
+                "	VERSION,\n" +
+                "	CREATE_USER,\n" +
+                "	IN_VALUE,\n" +
+                "	OUT_VALUE \n" +
+                "FROM\n" +
+                "	s_style_fit_r \n" +
+                "WHERE\n" +
+                "	STYLE_ID IN ( SELECT STYLE_ID FROM o_order_p WHERE ORDER_ID = '"+ orderId + "' );";
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            Dto尺寸 Dto尺寸;
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                Dto尺寸 = new Dto尺寸(dr);
+                List<尺寸呈现dto> 尺寸呈现dto = GetThisSize(STYLE_FIT_CD, STYLE_CATEGORY_CD, STYLE_SIZE_CD, STYLE_SIZE_GROUP_CD, dr["STYLE_ID"].ToString(),false);
+                Dto尺寸.build尺寸呈现dto(尺寸呈现dto);
+                return 尺寸呈现dto;
+            }
+
+            throw new Exception("没有量体值");
+        }
+
+        public static void save设计点(String Style_Id, Dto尺寸 Dto尺寸)
+        {
+            SQLmtm.DoUpdate(
+                "s_style_fit_r"
+                , new string[] { "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" }
+                , new string[] { "AUDIT_PHASE_CD-PHASE_CD_10", Dto尺寸.ITEM_CD, Dto尺寸.ITEM_VALUE, Dto尺寸.FIT_VALUE, Dto尺寸.FM_VALUE, "0", "1", "46", Dto尺寸.IN_VALUE, Dto尺寸.OUT_VALUE }
+                , new string[] { "STYLE_ID" }
+                , new string[] { Style_Id }
+                );
         }
     }
 }

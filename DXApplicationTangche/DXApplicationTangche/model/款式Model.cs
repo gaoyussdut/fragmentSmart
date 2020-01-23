@@ -264,6 +264,43 @@ namespace DXApplicationTangche.UC.款式异常
             this.款式信息.Add(new 款式信息dto(SYTLE_FABRIC_ID));
             return this;
         }
+
+        /// <summary>
+        /// 动态设计点保存
+        /// </summary>
+        /// <param name="frm"></param>
+        /// <param name="dto"></param>
+        public void build动态设计点()
+        {
+            //ImpService.TurnChiCunZero(frm);
+            Fit_ValueDTo fitv = new Fit_ValueDTo();
+            foreach (尺寸呈现dto 尺寸呈现dto in this.尺寸呈现)
+            {
+                fitv.icadd(尺寸呈现dto.ITEM_CD);//ITEM_CD 衣服CD
+                fitv.ivadd(尺寸呈现dto.ITEM_VALUE);//ITEM_VALUE 衣服VALUE
+                fitv.fvadd(Convert.ToString(尺寸呈现dto.garmentSize));// garmentSize 成衣尺寸
+                fitv.fmvadd(尺寸呈现dto.ITEM_VALUE);//ITEM_VALUE 衣服VALUE
+                fitv.invadd(Convert.ToString(尺寸呈现dto.IN_VALUE));//IN_VALUE 加值
+                fitv.outvadd(Convert.ToString(尺寸呈现dto.OUT_VALUE));//OUT_VALUE 减值
+            }
+            this.Dto定制下单.build尺寸(
+                fitv.iTEM_CD
+                , fitv.iTEM_VALUE
+                , fitv.fitValue
+                , fitv.fM_VALUE
+                , fitv.iN_VALUE
+                , fitv.oUT_VALUE
+                , "0"
+                , "0"
+                , CreateCustomer.customer_countid.ToString()
+                , "AUDIT_PHASE_CD-PHASE_CD_10"
+                , "1"
+                , "46"
+                );
+            //        SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString(), customername, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
+            //        SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
+            //new string[] { Change.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
+        }
         #endregion
 
         #region 校验方法

@@ -82,7 +82,10 @@ namespace DXApplicationTangche.UC.门店下单.form
             {
                 
                 //this.model.Dto定制下单.ORDER_NUMBER = Convert.ToInt32(this.barEditItemNumber.EditValue);
-                ImpService.DynamicSaveSize(this, this.model.Dto定制下单);//尺寸保存
+                                
+                //ImpService.DynamicSaveSize(this, this.model.Dto定制下单);//尺寸保存
+                this.model.build动态设计点();//尺寸保存
+
                 ImpService.DynamicSaveDesign(this, this.model.Dto定制下单);//设计点保存
                 try
                 {

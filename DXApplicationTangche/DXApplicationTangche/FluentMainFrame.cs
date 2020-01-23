@@ -148,5 +148,15 @@ namespace DXApplicationTangche
         {
             this.initPanel(new Frm门店面料一览());
         }
+
+        private void ElementStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void accordionControlElement30_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm已付款订单一览());
+        }
     }
 }
