@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using DXApplicationTangche.UC.门店下单.form;
 
 namespace DXApplicationTangche
 {
@@ -21,7 +22,7 @@ namespace DXApplicationTangche
 
             BonusSkins.Register();
             Application.Run(new FluentMainFrame());
-            //Application.Run(new Frm更改尺寸测());
+            //Application.Run(new Frm已付款订单一览());
 
         }
     }

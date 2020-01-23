@@ -165,6 +165,12 @@
     <Compile Include="UC\款式异常\子菜单\Frm产品下线.Designer.cs">
       <DependentUpon>Frm产品下线.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\门店下单\form\Frm已付款订单一览.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\门店下单\form\Frm已付款订单一览.Designer.cs">
+      <DependentUpon>Frm已付款订单一览.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\门店下单\form\Frm门店下单选款式.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\款式异常\子菜单\Frm产品下线.resx">
       <DependentUpon>Frm产品下线.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\门店下单\form\Frm已付款订单一览.resx">
+      <DependentUpon>Frm已付款订单一览.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\Frm门店下单选款式.resx">
       <DependentUpon>Frm门店下单选款式.cs</DependentUpon>

@@ -82,5 +82,80 @@ namespace DXApplicationTangche.service
             SQLmtm.DoInsert("o_order_brand_r", new string[] { "OGNIZATION_ID", "SHOP_ID", "BRAND_ID", "ORDER_ID" }, new string[] { "95", "18", "", order_id.ToString() });
             SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "1" });
         }
+
+        public static DataTable get未付款订单() {
+            String sql = "SELECT\n" +
+                "	s_style_p.STYLE_NAME_CN,\n" +
+                "	ORDER_ID,\n" +
+                "	o_order_p.OGNIZATION_ID,\n" +
+                "	o_order_p.SHOP_ID,\n" +
+                "	o_order_p.SHOP_NAME,\n" +
+                "	o_order_p.ORDER_NO,\n" +
+                "	o_order_p.ORDER_TYPE_CD,\n" +
+                "	o_order_p.CUSTOM_ORDER_NO,\n" +
+                "	o_order_p.CUSTOM_NAME,\n" +
+                "	o_order_p.CUSTOM_MAKE_SHIRT,\n" +
+                "	o_order_p.TRANSIT_GROUP,\n" +
+                "	o_order_p.COUNTRY,\n" +
+                "	o_order_p.SLEEVE_FLAG,\n" +
+                "	o_order_p.CUSTOMER_ID,\n" +
+                "	o_order_p.CUSTOMER_NAME,\n" +
+                "	o_order_p.FACTORY_ID,\n" +
+                "	o_order_p.STYLE_ID,\n" +
+                "	o_order_p.REF_ORDER_ID,\n" +
+                "	o_order_p.SPECIAL_ORDER,\n" +
+                "	o_order_p.TRYON_ORDER,\n" +
+                "	o_order_p.FIT_STYLE_SIZE,\n" +
+                "	o_order_p.TAILOR_ID,\n" +
+                "	o_order_p.SHIPPING_DESTINATION,\n" +
+                "	o_order_p.PAYMENT_DATE,\n" +
+                "	o_order_p.PAYMENT_CONFIRM_DATE,\n" +
+                "	o_order_p.ORDER_ACCEPT_DATE,\n" +
+                "	o_order_p.ORDER_PRO_START_DATE,\n" +
+                "	o_order_p.ORDER_PRO_END_DATE,\n" +
+                "	o_order_p.ORDER_PACK_DATE,\n" +
+                "	o_order_p.ORDER_SHIPMENTS_DATE,\n" +
+                "	o_order_p.TARGET_DATE,\n" +
+                "	o_order_p.REAL_DATE,\n" +
+                "	o_order_p.ORDER_STATUS_CD,\n" +
+                "	o_order_p.ORDER_PRODUCE_STATUS_CD,\n" +
+                "	o_order_p.ORDER_QC34,\n" +
+                "	o_order_p.ORDER_QC35,\n" +
+                "	o_order_p.ORDER_QC36,\n" +
+                "	o_order_p.ORDER_QC37,\n" +
+                "	o_order_p.ORDER_NUMBER,\n" +
+                "	o_order_p.ORDER_MATERIAL_COST,\n" +
+                "	o_order_p.ORDER_DESIGN_COST,\n" +
+                "	o_order_p.ORDER_PROCESS_COST,\n" +
+                "	o_order_p.ORDER_PACK_COST,\n" +
+                "	o_order_p.ORDER_EXPRESS_COST,\n" +
+                "	o_order_p.ORDER_SELL_ACCOUNT,\n" +
+                "	o_order_p.ORDER_OTHER_COST,\n" +
+                "	o_order_p.MATERIAL_SOURCE,\n" +
+                "	o_order_p.URGENT_CD,\n" +
+                "	o_order_p.AFTER_SALE_STATUS,\n" +
+                "	o_order_p.FIT_COMPLETE_FLAG,\n" +
+                "	o_order_p.REMARKS,\n" +
+                "	o_order_p.DELETE_FLAG,\n" +
+                "	o_order_p.VERSION,\n" +
+                "	o_order_p.CREATE_DATE,\n" +
+                "	o_order_p.UPDATE_DATE,\n" +
+                "	o_order_p.CREATE_USER,\n" +
+                "	o_order_p.UPDATE_USER,\n" +
+                "	o_order_p.SEL_KBN,\n" +
+                "	o_order_p.ACTUAL_PAYMENT_COST,\n" +
+                "	o_order_p.PREFERENTIAL_AMOUNT_COST,\n" +
+                "	o_order_p.PREFERENTIAL_PERCENTAGE,\n" +
+                "   DATE_FORMAT( o_order_p.ORDER_DATE, '%Y-%m-%d' ) AS ORDER_DATE \n" +
+                "FROM\n" +
+                "	o_order_p\n" +
+                "	LEFT JOIN s_style_p ON o_order_p.STYLE_ID = s_style_p.SYS_STYLE_ID \n" +
+                "WHERE\n" +
+                "	o_order_p.ORDER_STATUS_CD = 'ORDER_STATUS-OS_13' \n" +
+                "	AND o_order_p.SHOP_ID = '18' \n" +
+                "ORDER BY\n" +
+                "	o_order_p.order_date DESC";
+            return SQLmtm.GetDataTable(sql);
+        }
     }
 }

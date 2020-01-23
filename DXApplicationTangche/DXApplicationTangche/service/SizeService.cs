@@ -136,11 +136,15 @@ namespace DXApplicationTangche.service
         {
             List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
             String sql = "SELECT\n" +
-"	S1.*,\n" +
-"	S2.* \n" +
-"FROM\n" +
-"	( SELECT * FROM a_size_fit_p WHERE FIT_CD = '" + dto.STYLE_FIT_CD + "' AND STYLE_CATEGORY_CD = '" + dto.STYLE_CATEGORY_CD + "' AND SIZE_CD = '" + dto.STYLE_SIZE_CD + "' AND SIZEGROUP_CD = '" + dto.STYLE_SIZE_GROUP_CD + "' ) AS s1\n" +
-"	LEFT JOIN ( SELECT * FROM a_reasonable_p WHERE styleID = " + dto.Style_Id + " ) AS s2 ON s1.ITEM_VALUE = s2.itemValue;";
+                "	S1.*,\n" +
+                "	S2.* \n" +
+                "FROM\n" +
+                "	( SELECT * FROM a_size_fit_p WHERE" +
+                " FIT_CD = '" + dto.STYLE_FIT_CD + "'" +
+                " AND STYLE_CATEGORY_CD = '" + dto.STYLE_CATEGORY_CD + "'" +
+                " AND SIZE_CD = '" + dto.STYLE_SIZE_CD + "'" +
+                " AND SIZEGROUP_CD = '" + dto.STYLE_SIZE_GROUP_CD + "' ) AS s1\n" +
+                "	LEFT JOIN ( SELECT * FROM a_reasonable_p WHERE styleID = " + dto.Style_Id + " ) AS s2 ON s1.ITEM_VALUE = s2.itemValue;";
             DataTable dt = SQLmtm.GetDataTable(sql);
             String leastReasonable = "0";
             String maxReasonable = "0";

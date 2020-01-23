@@ -90,7 +90,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             if (dt.Rows.Count != 0)
             {
                 DataRow drr = SQLmtm.GetDataRow("SELECT * FROM `a_customer_fit_count_r` WHERE CUSTOMER_ID='" + CreateCustomer.cUSTOMER_ID.ToString() + "' AND DEFAULT_FLAG=1");
-                DataRow ddr = SQLmtm.GetDataRow("SELECT * FROM `a_customer_address_p` WHERE DEFAULT_ADDR_FLAG=1 AND CUSTOMER_ID='" + CreateCustomer.cUSTOMER_ID.ToString() + "'");
+                DataRow ddr = SQLmtm.GetDataRow("SELECT * FROM `a_customer_address_p` WHERE CUSTOMER_ID='" + CreateCustomer.cUSTOMER_ID.ToString() + "'");
                 if (drr == null || ddr == null)
                 {
                     CreateCustomer.cUSTOMER_ID = 0;
