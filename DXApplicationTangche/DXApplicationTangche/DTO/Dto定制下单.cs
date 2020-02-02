@@ -129,15 +129,23 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.Style = Style;
         }
         public Dto设计点(DataRow dr) {
+            this.ITEM_TYPE_NAME_CN = dr["ITEM_TYPE_NAME_CN"].ToString();
             this.Name = dr["ITEM_NAME_CN"].ToString();
             this.ITEM_CD = dr["ITEM_CD"].ToString();
             this.ITEM_VALUE = dr["ITEM_VALUE"].ToString();
-            this.Style = dr["ID"].ToString();
-            
-            this.Picture = PictureService.GetImage(this.ITEM_VALUE);    //  写的什么鸡巴玩意
+            this.OPTION_VALUE = dr["OPTION_VALUE"].ToString();            
+            this.Style = dr["SYS_STYLE_ID"].ToString();
+            try
+            {
+                this.Picture = Image.FromFile(@"pic\" + dr["UPLOAD_FILE"].ToString());
+            }
+            catch (Exception) { }
+
             this.Picture = this.Picture == null ? Image.FromFile(@"pic\SSHIRT.jpg") : this.Picture;
         }
 
+        //  设计点种类
+        public String ITEM_TYPE_NAME_CN { get; set; }
         public String ITEM_CD { get; set; }
         public String ITEM_VALUE { get; set; }
         public String OPTION_VALUE { get; set; }
@@ -145,6 +153,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public String DELETE_FLAG { get; set; }
 
         public Image Picture { get; set; }
+        //  设计点名称
         public String Name { get; set; }
         public String Style { get; set; }
     }

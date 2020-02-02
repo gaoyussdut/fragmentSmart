@@ -60,28 +60,35 @@ namespace DXApplicationTangche.service
 
         public static List<Dto设计点> get设计点BySYS_STYLE_ID(String SYS_STYLE_ID) {
             String sql = "SELECT\n" +
-                "	id,\n" +
-                "	STYLEID,\n" +
-                "	STYLE_NAME_CN,\n" +
-                "	STYLE_CATEGORY_CD,\n" +
-                "	ITEM_CATEGORY_CD,\n" +
-                "	ITEM_CD,\n" +
-                "	ITEM_VALUE,\n" +
-                "	ITEM_NAME_CN,\n" +
-                "	PARENT_ID,\n" +
-                "	PARENT_VALUE,\n" +
-                "	FILE_ID,\n" +
-                "	FLAG,\n" +
-                "	DEFAULT_CD,\n" +
-                "	DEFAULT_VALUE,\n" +
-                "	DEFAULT_NAME_CN,\n" +
-                "	PICN,\n" +
-                "	PICURL,\n" +
-                "	DEFAULT_FLAG \n" +
+                "	s_style_option_r.SYTLE_OPTION_ID,\n" +
+                "	s_style_option_r.SYS_STYLE_ID,\n" +
+                "	s_style_option_r.ITEM_CD,\n" +
+                "	s_style_option_r.ITEM_VALUE,\n" +
+                "	s_style_option_r.OPTION_VALUE,\n" +
+                "	s_style_option_r.ITEM_TYPE_NAME_CN,\n" +
+                "	s_style_option_r.ITEM_NAME_CN,\n" +
+                "	w_upload_file_p.UPLOAD_FILE \n" +
                 "FROM\n" +
-                "	a_kuanshi_p \n" +
-                "WHERE\n" +
-                "	STYLEID = ( SELECT REF_STYLE_ID FROM s_style_p WHERE SYS_STYLE_ID = '"+ SYS_STYLE_ID + "' )";
+                "	(\n" +
+                "	SELECT\n" +
+                "		sr.SYTLE_OPTION_ID,\n" +
+                "		sr.SYS_STYLE_ID,\n" +
+                "		sr.ITEM_CD,\n" +
+                "		sr.ITEM_VALUE,\n" +
+                "		sr.OPTION_VALUE,\n" +
+                "		ap1.ITEM_NAME_CN AS ITEM_TYPE_NAME_CN,\n" +
+                "		ap.ITEM_NAME_CN,\n" +
+                "		ap.FILE_ID \n" +
+                "	FROM\n" +
+                "		s_style_option_r AS sr\n" +
+                "		LEFT JOIN a_designoption_p AS ap1 ON sr.ITEM_VALUE = ap1.ITEM_VALUE\n" +
+                "		LEFT JOIN a_designoption_p AS ap ON sr.OPTION_VALUE = ap.ITEM_VALUE \n" +
+                "		AND sr.ITEM_VALUE = ap.ITEM_CD \n" +
+                "	WHERE\n" +
+                "		sr.SYS_STYLE_ID = '"+ SYS_STYLE_ID + "' \n" +
+                "		AND ap.ITEM_NAME_CN IS NOT NULL \n" +
+                "	) AS s_style_option_r\n" +
+                "	LEFT JOIN w_upload_file_p ON w_upload_file_p.FILE_ID = s_style_option_r.FILE_ID";
             List<Dto设计点> 设计点s = new List<Dto设计点>();
 
             DataTable dataTable = SQLmtm.GetDataTable(sql);
