@@ -210,9 +210,38 @@ namespace DXApplicationTangche.service
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
-        public static DataTable StyleCombobox(String str)
+        public static DataTable StyleCombobox(String styleid)
         {
-            DataRow dr = SQLmtm.GetDataRow("SELECT * FROM s_style_p WHERE SYS_STYLE_ID = '" + str + "'");
+            DataRow dr = SQLmtm.GetDataRow("SELECT SYS_STYLE_ID,SHOP_ID,STYLE_NO,CUSTOMER_COUNT_ID,STYLE_CD,STYLE_KBN,STYLE_SOURCE,STYLE_CATEGORY_CD,STYLE_DRESS_CATEGORY,STYLE_DESIGN_TYPE,STYLE_PUBLISH_CATEGORY_CD,REF_STYLE_ID,STYLE_NAME_CN,STYLE_NAME_EN,STYLE_FIT_CD,SYTLE_YEAR,SYTLE_SEASON,SYTLE_FABRIC_ID,SYTLE_FABRIC_NO,STYLE_COMPOSITION,STYLE_DESCRIBE,STYLE_COLOR_CD,STYLE_COLOR_NAME,STYLE_SIZE_GROUP_CD,STYLE_SIZE_CD,STYLE_MAKE_TYPE,STYLE_FIT_BODY_TYPE,STYLE_SEX_CD,STYLE_STANDARD,STYLE_BAR_CODE,STYLE_DESIGNER_DATE,STYLE_DESIGNER,STYLE_MATERIAL_NUMBER,STYLE_DESIGN_PRICE,STYLE_FACTORY_TOTAL_PRICE,STYLE_SHOP_TOTAL_PRICE,REMARKS,ENABLE_FLAG,DELETE_FLAG,VERSION,CREATE_DATE,UPDATE_DATE,CREATE_USER,UPDATE_USER,COVER_PHOTO_PATH FROM s_style_p WHERE SYS_STYLE_ID = '" + styleid + "'");
+            DataTable dt = new DataTable();
+            try
+            {
+                String sql = " SELECT\n" +
+                    "-- 	*,\n" +
+                    " DISTINCT SIZE_CD,\n" +
+                    " SUBSTRING_INDEX( SIZE_CD, '-',- 1 ) AS 尺寸\n" +
+                    "FROM\n" +
+                    "	`a_size_fit_p` \n" +
+                    "WHERE\n" +
+                    "	FIT_CD = '" + dr["STYLE_FIT_CD"].ToString() + "' \n" +
+                    "	AND STYLE_CATEGORY_CD = '" + dr["STYLE_CATEGORY_CD"].ToString() + "' \n" +
+                    "	AND SIZEGROUP_CD = '" + dr["STYLE_SIZE_GROUP_CD"] + "';";
+                dt = SQLmtm.GetDataTable(sql);
+            }
+            catch
+            {
+
+            }
+            return dt;
+        }
+
+        /// <summary>
+        /// 获得款式所有尺码
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static DataTable StyleCombobox(DataRow dr, String str)
+        {
             DataTable dt = new DataTable();
             try
             {
