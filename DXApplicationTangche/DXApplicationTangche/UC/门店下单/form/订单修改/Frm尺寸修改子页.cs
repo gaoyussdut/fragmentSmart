@@ -34,6 +34,8 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
             this.model.build款式全尺寸(Style_Id);
 
+            //  控件行为
+            this.pictureEdit1.Image = this.model.款式信息[0].picture;
             this.gridControlSize.DataSource = this.model.尺寸呈现;
         }
 
@@ -95,6 +97,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         private void Frm尺寸修改子页_Activated(object sender, EventArgs e)
         {
             this.mianliaoname.Text = this.model.款式信息[0].name;
+            this.pictureEdit1.Image = this.model.款式信息[0].picture;
         }
 
     }

@@ -379,6 +379,8 @@
             this.colGarment = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPage备注 = new DevExpress.XtraTab.XtraTabPage();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).BeginInit();
@@ -393,6 +395,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSize)).BeginInit();
             this.xtraTabPage备注.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage2
@@ -2694,6 +2698,7 @@
             // 
             // xtraTabPage面料
             // 
+            this.xtraTabPage面料.Controls.Add(this.pictureEdit1);
             this.xtraTabPage面料.Controls.Add(this.mianliaoname);
             this.xtraTabPage面料.Controls.Add(this.simpleButton3);
             this.xtraTabPage面料.Controls.Add(this.label67);
@@ -3160,6 +3165,32 @@
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendBackwardSubItem1);
             this.richEditBarController1.Control = this.richEditControl备注;
             // 
+            // dockManager1
+            // 
+            this.dockManager1.Form = this;
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl",
+            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
+            "DevExpress.XtraBars.Navigation.TileNavPane",
+            "DevExpress.XtraBars.TabFormControl",
+            "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
+            "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(34, 78);
+            this.pictureEdit1.MenuManager = this.ribbonControl1;
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(429, 309);
+            this.pictureEdit1.TabIndex = 98;
+            // 
             // Frm尺寸修改子页
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -3187,6 +3218,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSize)).EndInit();
             this.xtraTabPage备注.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3539,5 +3572,7 @@
         public System.Windows.Forms.TextBox mianliaoname;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private System.Windows.Forms.Label label67;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }
