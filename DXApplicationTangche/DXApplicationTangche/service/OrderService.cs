@@ -58,6 +58,38 @@ namespace DXApplicationTangche.service
             return SQLmtm.GetDataTable(sql);
         }
 
+        public static List<Dto设计点> get设计点BySYS_STYLE_ID(String SYS_STYLE_ID) {
+            String sql = "SELECT\n" +
+                "	id,\n" +
+                "	STYLEID,\n" +
+                "	STYLE_NAME_CN,\n" +
+                "	STYLE_CATEGORY_CD,\n" +
+                "	ITEM_CATEGORY_CD,\n" +
+                "	ITEM_CD,\n" +
+                "	ITEM_VALUE,\n" +
+                "	ITEM_NAME_CN,\n" +
+                "	PARENT_ID,\n" +
+                "	PARENT_VALUE,\n" +
+                "	FILE_ID,\n" +
+                "	FLAG,\n" +
+                "	DEFAULT_CD,\n" +
+                "	DEFAULT_VALUE,\n" +
+                "	DEFAULT_NAME_CN,\n" +
+                "	PICN,\n" +
+                "	PICURL,\n" +
+                "	DEFAULT_FLAG \n" +
+                "FROM\n" +
+                "	a_kuanshi_p \n" +
+                "WHERE\n" +
+                "	STYLEID = ( SELECT REF_STYLE_ID FROM s_style_p WHERE SYS_STYLE_ID = '"+ SYS_STYLE_ID + "' )";
+            List<Dto设计点> 设计点s = new List<Dto设计点>();
+
+            DataTable dataTable = SQLmtm.GetDataTable(sql);
+            foreach (DataRow dataRow in dataTable.Rows) {
+                设计点s.Add(new Dto设计点(dataRow));
+            }
+            return 设计点s;
+        }
         
 
         /// <summary>

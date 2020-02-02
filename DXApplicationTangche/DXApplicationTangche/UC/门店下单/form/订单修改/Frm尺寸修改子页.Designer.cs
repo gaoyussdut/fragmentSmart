@@ -359,6 +359,7 @@
             this.zoomRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.ZoomRibbonPageGroup();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage面料 = new DevExpress.XtraTab.XtraTabPage();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.mianliaoname = new System.Windows.Forms.TextBox();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.label67 = new System.Windows.Forms.Label();
@@ -380,7 +381,8 @@
             this.xtraTabPage备注 = new DevExpress.XtraTab.XtraTabPage();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.gridControl设计点 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).BeginInit();
@@ -390,13 +392,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage面料.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            this.xtraTabPage设计点.SuspendLayout();
             this.xtraTabPage量体值.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSize)).BeginInit();
             this.xtraTabPage备注.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl设计点)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage2
@@ -2706,6 +2711,15 @@
             this.xtraTabPage面料.Size = new System.Drawing.Size(1084, 445);
             this.xtraTabPage面料.Text = "面料";
             // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Location = new System.Drawing.Point(34, 78);
+            this.pictureEdit1.MenuManager = this.ribbonControl1;
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Size = new System.Drawing.Size(429, 309);
+            this.pictureEdit1.TabIndex = 98;
+            // 
             // mianliaoname
             // 
             this.mianliaoname.Font = new System.Drawing.Font("宋体", 12F);
@@ -2738,6 +2752,7 @@
             // 
             // xtraTabPage设计点
             // 
+            this.xtraTabPage设计点.Controls.Add(this.gridControl设计点);
             this.xtraTabPage设计点.Name = "xtraTabPage设计点";
             this.xtraTabPage设计点.Size = new System.Drawing.Size(1084, 445);
             this.xtraTabPage设计点.Text = "设计点";
@@ -2786,6 +2801,8 @@
             this.gridViewSize.Name = "gridViewSize";
             this.gridViewSize.OptionsCustomization.AllowSort = false;
             this.gridViewSize.OptionsView.ShowGroupPanel = false;
+            this.gridViewSize.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridViewSize_CustomDrawCell);
+            this.gridViewSize.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewSize_CellValueChanged);
             // 
             // colitemcd
             // 
@@ -3182,14 +3199,22 @@
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
             // 
-            // pictureEdit1
+            // gridControl设计点
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(34, 78);
-            this.pictureEdit1.MenuManager = this.ribbonControl1;
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(429, 309);
-            this.pictureEdit1.TabIndex = 98;
+            this.gridControl设计点.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl设计点.Location = new System.Drawing.Point(0, 0);
+            this.gridControl设计点.MainView = this.gridView1;
+            this.gridControl设计点.MenuManager = this.ribbonControl1;
+            this.gridControl设计点.Name = "gridControl设计点";
+            this.gridControl设计点.Size = new System.Drawing.Size(1084, 445);
+            this.gridControl设计点.TabIndex = 0;
+            this.gridControl设计点.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl设计点;
+            this.gridView1.Name = "gridView1";
             // 
             // Frm尺寸修改子页
             // 
@@ -3213,13 +3238,16 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage面料.ResumeLayout(false);
             this.xtraTabPage面料.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            this.xtraTabPage设计点.ResumeLayout(false);
             this.xtraTabPage量体值.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewSize)).EndInit();
             this.xtraTabPage备注.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl设计点)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3574,5 +3602,7 @@
         private System.Windows.Forms.Label label67;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.XtraGrid.GridControl gridControl设计点;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

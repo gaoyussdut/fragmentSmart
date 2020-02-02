@@ -220,6 +220,14 @@ namespace DXApplicationTangche.UC.款式异常
             this.build款式信息面料(dr["SYTLE_FABRIC_ID"].ToString());
             return this;
         }
+
+        public 门店下单选款式Model build设计点(String styleid)
+        {
+            List<Dto设计点> 设计点s = OrderService.get设计点BySYS_STYLE_ID(styleid);
+            this.Dto定制下单.Dto设计点s = 设计点s;
+            return this;
+        }
+
         public 门店下单选款式Model build选中尺寸(String size, String styleid, DataTable dt)
         {
             this.选中尺寸dt = SizeService.StyleValue(size, styleid, dt);
@@ -272,7 +280,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// </summary>
         /// <param name="frm"></param>
         /// <param name="dto"></param>
-        public void build动态设计点()
+        public void build尺寸保存()
         {
             //ImpService.TurnChiCunZero(frm);
             Fit_ValueDTo fitv = new Fit_ValueDTo();

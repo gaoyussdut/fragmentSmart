@@ -1,4 +1,5 @@
-﻿using DXApplicationTangche.UC.款式异常;
+﻿using DXApplicationTangche.service;
+using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.UC;
 using mendian;
 using System;
@@ -24,7 +25,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public String STYLE_DESIGN_TYPE { get; set; }
 
 
-        public List<Dto设计点> Dto设计点s { get => dto设计点s; }
+        public List<Dto设计点> Dto设计点s { get => dto设计点s; set => dto设计点s = value; }
         public Dto尺寸 Dto尺寸 { get => dto尺寸; }
 
         private List<Dto设计点> dto设计点s = new List<Dto设计点>();   //  设计点
@@ -126,6 +127,15 @@ namespace DXApplicationTangche.UC.门店下单.DTO
 
             this.Name = Name;
             this.Style = Style;
+        }
+        public Dto设计点(DataRow dr) {
+            this.Name = dr["ITEM_NAME_CN"].ToString();
+            this.ITEM_CD = dr["ITEM_CD"].ToString();
+            this.ITEM_VALUE = dr["ITEM_VALUE"].ToString();
+            this.Style = dr["ID"].ToString();
+            
+            this.Picture = PictureService.GetImage(this.ITEM_VALUE);    //  写的什么鸡巴玩意
+            this.Picture = this.Picture == null ? Image.FromFile(@"pic\SSHIRT.jpg") : this.Picture;
         }
 
         public String ITEM_CD { get; set; }

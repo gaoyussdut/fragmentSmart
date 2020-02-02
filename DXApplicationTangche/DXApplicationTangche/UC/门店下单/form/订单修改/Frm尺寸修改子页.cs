@@ -32,11 +32,12 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.REMARKS = REMARKS;
             this.Frm已付款订单一览 = Frm已付款订单一览;
 
-            this.model.build款式全尺寸(Style_Id);
+            this.model.build款式全尺寸(Style_Id).build设计点(Style_Id);
 
             //  控件行为
             this.pictureEdit1.Image = this.model.款式信息[0].picture;
             this.gridControlSize.DataSource = this.model.尺寸呈现;
+            this.gridControl设计点.DataSource = this.model.Dto定制下单.Dto设计点s;
         }
 
         private void gridViewSize_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -52,7 +53,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             }
 
             //  保存入数据库
-            this.model.build动态设计点();
+            this.model.build尺寸保存();
             SizeService.save设计点(this.Style_Id, this.model.Dto定制下单.Dto尺寸);
 
             //  刷新
