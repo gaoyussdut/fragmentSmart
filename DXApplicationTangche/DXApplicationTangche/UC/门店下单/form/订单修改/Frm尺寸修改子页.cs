@@ -101,5 +101,9 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.pictureEdit1.Image = this.model.款式信息[0].picture;
         }
 
+        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.richEditControl备注.LoadDocument("文档模板\\" + ((ComboBoxEdit)sender).SelectedText+".docx");
+        }
     }
 }
