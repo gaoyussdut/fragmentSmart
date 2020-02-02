@@ -17,12 +17,20 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
     {
         private 门店下单选款式Model 门店下单选款式Model = new 门店下单选款式Model();
         private String Style_Id;
+        private String ORDER_ID;
+        private String REMARKS;
+        private Frm已付款订单一览 Frm已付款订单一览;
+
         //private List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
-        public Frm尺寸修改子页(String Style_Id,List<尺寸呈现dto> lst)
+        public Frm尺寸修改子页(String Style_Id,List<尺寸呈现dto> lst,String ORDER_ID,String REMARKS, Frm已付款订单一览 Frm已付款订单一览)
         {
             InitializeComponent();
             this.Style_Id = Style_Id;
             this.门店下单选款式Model.尺寸呈现 = lst;
+            this.ORDER_ID = ORDER_ID;
+            this.REMARKS = REMARKS;
+            this.Frm已付款订单一览 = Frm已付款订单一览;
+
             this.gridControlSize.DataSource = this.门店下单选款式Model.尺寸呈现;
         }
 

@@ -27,6 +27,7 @@ namespace DXApplicationTangche.UC.门店下单.form
         {
             this.gridControl订单一览.DataSource = OrderService.get未付款订单();
             this.gridView1.Columns["ORDER_DATE"].SortOrder = ColumnSortOrder.Descending;
+            this.gridView1.ExpandAllGroups();
         }
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
@@ -39,7 +40,23 @@ namespace DXApplicationTangche.UC.门店下单.form
                 , this.gridView1.GetDataRow(e.RowHandle)["STYLE_SIZE_GROUP_CD"].ToString()
                 );
 
-            new Frm尺寸修改子页(this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString(),lst).ShowDialog();
+            new Frm尺寸修改子页(
+                this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
+                ,lst
+                ,this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
+                , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
+                ,this
+                ).ShowDialog();
+        }
+
+        /// <summary>
+        /// 刷新数据
+        /// </summary>
+        public void refreshData() {
+            this.gridControl订单一览.DataSource = OrderService.get未付款订单();
+            this.gridView1.Columns["ORDER_DATE"].SortOrder = ColumnSortOrder.Descending;
+            this.gridView1.RefreshData();
+            this.gridView1.ExpandAllGroups();
         }
     }
 }
