@@ -163,7 +163,7 @@ namespace DXApplicationTangche.UC.门店下单.form
                 //  TODO    不允许使用DataTable
                 ImpService.LoadSheJiDian(this, this.model.Dto定制下单.Style_Id);
                 this.model.build款式信息款式("style", this.tileView1.GetRowCellValue(e.Item.RowHandle, "StyleNameCn").ToString(), this.tileView1.GetRowCellValue(e.Item.RowHandle, "STYLE_CATEGORY_CD").ToString(), (Image)this.tileView1.GetRowCellValue(e.Item.RowHandle, "Picture")).build款式信息面料(this.model.Dto定制下单.SYTLE_FABRIC_ID);//添加更新款式信息
-                this.gridControlSI.DataSource = this.model.款式信息;
+                this.gridControlSI.DataSource = this.model.面料信息;
                 this.model.build款式全尺寸(this.model.Dto定制下单.Style_Id);
                 Frm定制下单修改尺寸.stylesizedt = StyleService.StyleCombobox(this.model.Dto定制下单.Style_Id);
                 this.chicun01.Items.Clear();

@@ -36,7 +36,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.model.build款式全尺寸(Style_Id).build设计点(Style_Id);
 
             //  控件行为
-            this.pictureEdit1.Image = this.model.款式信息[0].picture;
+            this.gridControl面料.DataSource = this.model.面料信息;
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControl设计点.DataSource = this.model.Dto定制下单.Dto设计点s;
             //  模板  TODO
@@ -102,8 +102,9 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
         private void Frm尺寸修改子页_Activated(object sender, EventArgs e)
         {
-            this.mianliaoname.Text = this.model.款式信息[0].name;
-            this.pictureEdit1.Image = this.model.款式信息[0].picture;
+            this.mianliaoname.Text = this.model.面料信息[0].name;
+            this.gridControl面料.DataSource = this.model.面料信息;
+            this.tileView2.RefreshData();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

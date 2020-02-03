@@ -190,14 +190,14 @@ namespace DXApplicationTangche.UC.款式异常
         private DataTable 选中尺寸dt;
         public Dto定制下单 Dto定制下单 = new Dto定制下单();
         private List<尺寸呈现dto> 尺寸呈现dtos = new List<尺寸呈现dto>();
-        private List<款式信息dto> 款式信息dtos = new List<款式信息dto>();
+        private List<面料信息dto> 面料信息dtos = new List<面料信息dto>();
         #endregion
 
         #region 属性
         public List<款式图片Dto> 款式图片 { get => 款式图片dtos; set => 款式图片dtos = value; }
         public DataTable 选中尺寸 { get => 选中尺寸dt; set => 选中尺寸dt = value; }
         public List<尺寸呈现dto> 尺寸呈现 { get => 尺寸呈现dtos; set => 尺寸呈现dtos = value; }
-        public List<款式信息dto> 款式信息 { get => 款式信息dtos; set => 款式信息dtos = value; }
+        public List<面料信息dto> 面料信息 { get => 面料信息dtos; set => 面料信息dtos = value; }
 
         #endregion
 
@@ -260,8 +260,8 @@ namespace DXApplicationTangche.UC.款式异常
         /// <returns></returns>
         public 门店下单选款式Model build款式信息款式(String tab, String name, String description, Image picture)
         {
-            this.款式信息.Clear();
-            this.款式信息.Add(new 款式信息dto(tab, name, description, picture));
+            this.面料信息.Clear();
+            this.面料信息.Add(new 面料信息dto(tab, name, description, picture));
             return this;
         }
         /// <summary>
@@ -271,7 +271,7 @@ namespace DXApplicationTangche.UC.款式异常
         /// <returns></returns>
         public 门店下单选款式Model build款式信息面料(String SYTLE_FABRIC_ID)
         {
-            this.款式信息.Add(new 款式信息dto(SYTLE_FABRIC_ID));
+            this.面料信息.Add(new 面料信息dto(SYTLE_FABRIC_ID));
             return this;
         }
 
@@ -480,7 +480,7 @@ namespace DXApplicationTangche.UC.款式异常
             return this;
         } 
     }
-    public class 款式信息dto
+    public class 面料信息dto
     {
         #region 变量
         public String tab { get; set; }//类别
@@ -489,14 +489,14 @@ namespace DXApplicationTangche.UC.款式异常
         public Image picture { get; set; }//图片
         #endregion
         #region 构造方法
-        public 款式信息dto(String tab,String name, String description, Image picture)
+        public 面料信息dto(String tab,String name, String description, Image picture)
         {
             this.tab = tab;
             this.name = name;
             this.description = description;
             this.picture = picture;
         }
-        public 款式信息dto (String SYTLE_FABRIC_ID)
+        public 面料信息dto(String SYTLE_FABRIC_ID)
         {
             try
             {
