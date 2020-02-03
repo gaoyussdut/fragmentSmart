@@ -17,7 +17,7 @@ namespace mendian
         public String itemValue { get; set; } = "";
         public String picN { get; set; } = "";
         public UC设计点选择 card = new UC设计点选择();
-        public AllSheJiDian allform = new AllSheJiDian();
+        public Frm设计点 allform = new Frm设计点();
         public DefaultSheJiDian form;
         
         private bool flag;
@@ -44,7 +44,7 @@ namespace mendian
             {
             }
         }
-        public UC设计点卡片(String itemname, String itemcd, String itemvalue, String picn, AllSheJiDian allform, UC设计点选择 card)
+        public UC设计点卡片(String itemname, String itemcd, String itemvalue, String picn, Frm设计点 allform, UC设计点选择 card)
         {
             InitializeComponent();
             this.flag = false;

@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class AllSheJiDian
+    partial class Frm设计点
     {
         /// <summary>
         /// Required designer variable.

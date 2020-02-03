@@ -156,6 +156,14 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         //  设计点名称
         public String Name { get; set; }
         public String Style { get; set; }
+
+        public Dto设计点 build设计点(String itemName, String itemValue,Image pic)
+        {
+            this.Name = itemName;
+            this.OPTION_VALUE = itemValue;
+            this.Picture = pic;
+            return this;
+        }
     }
 
     public class Dto尺寸

@@ -46,7 +46,7 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            this.colITEM_NAME_CN = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colName = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colITEM_TYPE_NAME_CN = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colPicture = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -442,16 +442,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // colITEM_NAME_CN
+            // colName
             // 
-            this.colITEM_NAME_CN.Caption = "设计点名称";
-            this.colITEM_NAME_CN.FieldName = "ITEM_NAME_CN";
-            this.colITEM_NAME_CN.MinWidth = 25;
-            this.colITEM_NAME_CN.Name = "colITEM_NAME_CN";
-            this.colITEM_NAME_CN.OptionsColumn.ShowCaption = true;
-            this.colITEM_NAME_CN.Visible = true;
-            this.colITEM_NAME_CN.VisibleIndex = 1;
-            this.colITEM_NAME_CN.Width = 94;
+            this.colName.Caption = "设计点名称";
+            this.colName.FieldName = "Name";
+            this.colName.MinWidth = 25;
+            this.colName.Name = "colName";
+            this.colName.OptionsColumn.ShowCaption = true;
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 1;
+            this.colName.Width = 94;
             // 
             // colITEM_TYPE_NAME_CN
             // 
@@ -2876,7 +2876,7 @@
             // 
             this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colITEM_TYPE_NAME_CN,
-            this.colITEM_NAME_CN,
+            this.colName,
             this.colPicture});
             this.tileView1.GridControl = this.gridControl设计点;
             this.tileView1.Name = "tileView1";
@@ -2899,7 +2899,7 @@
             this.tileView1.TileSpans.Add(tableSpan1);
             this.tileView1.TileSpans.Add(tableSpan2);
             this.tileView1.TileSpans.Add(tableSpan3);
-            tileViewItemElement1.Column = this.colITEM_NAME_CN;
+            tileViewItemElement1.Column = this.colName;
             tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement1.RowIndex = 1;
@@ -2919,6 +2919,7 @@
             this.tileView1.TileTemplate.Add(tileViewItemElement1);
             this.tileView1.TileTemplate.Add(tileViewItemElement2);
             this.tileView1.TileTemplate.Add(tileViewItemElement3);
+            this.tileView1.ItemDoubleClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemDoubleClick);
             // 
             // xtraTabPage量体值
             // 
@@ -3843,7 +3844,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraGrid.Columns.TileViewColumn colITEM_TYPE_NAME_CN;
-        private DevExpress.XtraGrid.Columns.TileViewColumn colITEM_NAME_CN;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colName;
         private DevExpress.XtraGrid.Columns.TileViewColumn colPicture;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
