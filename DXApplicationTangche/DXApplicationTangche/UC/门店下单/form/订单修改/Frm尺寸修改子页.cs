@@ -103,8 +103,9 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         private void Frm尺寸修改子页_Activated(object sender, EventArgs e)
         {
             this.mianliaoname.Text = this.model.面料信息[0].name;
-            this.gridControl面料.DataSource = this.model.面料信息;
+            //this.gridControl面料.DataSource = this.model.面料信息;
             this.tileView2.RefreshData();
+            this.tileView1.RefreshData();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
