@@ -38,6 +38,10 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.pictureEdit1.Image = this.model.款式信息[0].picture;
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControl设计点.DataSource = this.model.Dto定制下单.Dto设计点s;
+            //  模板  TODO
+            ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("样品下单");
+            ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("定制下单");
+            this.barEditItemTemplate.EditValue = ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items[0];
         }
 
         private void gridViewSize_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -101,9 +105,15 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.pictureEdit1.Image = this.model.款式信息[0].picture;
         }
 
-        private void comboBoxEdit1_SelectedIndexChanged(object sender, EventArgs e)
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.richEditControl备注.LoadDocument("文档模板\\" + ((ComboBoxEdit)sender).SelectedText+".docx");
+            this.layoutControl1.SaveLayoutToXml(this.barEditItemTemplate.EditValue+".xml");
+        }
+
+        private void repositoryItemComboBox1_EditValueChanged(object sender, EventArgs e)
+        {
+            this.layoutControl1.RestoreLayoutFromXml("layout_xml\\" + this.barEditItemTemplate.EditValue + ".xml");
+            this.richEditControl备注.LoadDocument("文档模板\\" + this.barEditItemTemplate.EditValue + ".docx");
         }
     }
 }
