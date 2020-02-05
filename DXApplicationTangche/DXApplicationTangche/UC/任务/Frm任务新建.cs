@@ -8,32 +8,27 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using DXApplicationTangche.service;
 using DevExpress.XtraEditors.Popup;
 using DevExpress.Utils.Win;
 using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
-using DiaoPaiDaYin;
+using DXApplicationTangche.service;
+using System.IO;
 
 namespace DXApplicationTangche.UC.任务
 {
-    public partial class Frm待办任务 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Frm任务新建 : DevExpress.XtraEditors.XtraForm
     {
-
-        public Frm待办任务()
+        public Frm任务新建()
         {
             InitializeComponent();
+            this.searchLookUpEditTaskTemplate.Properties.DataSource = TaskService.getTaskTemplateDTO();            
         }
 
-        private void Frm待办任务_Load(object sender, EventArgs e)
-        {
-            this.searchLookUpEditUser.Properties.DataSource = UserService.getUserAll();
-        }
-
-
-        #region 选择负责人
-        private String userId;  //  用户id
-        private String userName;    //  用户名
+        #region 选择任务模板
+        private String TEMPLATE_ID;  //  任务模板ID
+        private String TEMPLATE_NAME;    //  任务模板名称
+        private String TEMPLATE_XML;    //  任务模板
         private void searchLookUpEditUser_Popup(object sender, EventArgs e)
         {
             //得到当前SearchLookUpEdit弹出窗体
@@ -59,15 +54,19 @@ namespace DXApplicationTangche.UC.任务
 
         private void searchLookUpEdit1View_Click(object sender, EventArgs e)
         {
-            var a = this.searchLookUpEditUser.Properties.View.GetSelectedRows();
+            var a = this.searchLookUpEditTaskTemplate.Properties.View.GetSelectedRows();
             foreach (int rowHandle in a)
             {
-                this.userId
-                    = this.searchLookUpEditUser.Properties.View.GetRowCellValue(rowHandle, "LOGIN_USER_ID").ToString();//id 是 Value Member
-                this.userName 
-                    = this.searchLookUpEditUser.Properties.View.GetRowCellValue(rowHandle, "FIRST_NAME").ToString()
-                    + this.searchLookUpEditUser.Properties.View.GetRowCellValue(rowHandle, "LAST_NAME").ToString()
-                    ;//id 是 Value Member
+                this.TEMPLATE_ID
+                    = this.searchLookUpEditTaskTemplate.Properties.View.GetRowCellValue(rowHandle, "TEMPLATE_ID").ToString();//id 是 Value Member
+                this.TEMPLATE_NAME
+                    = this.searchLookUpEditTaskTemplate.Properties.View.GetRowCellValue(rowHandle, "TEMPLATE_NAME").ToString();//id 是 Value Member
+                this.TEMPLATE_XML
+                    = this.searchLookUpEditTaskTemplate.Properties.View.GetRowCellValue(rowHandle, "TEMPLATE_XML").ToString();//id 是 Value Member
+
+                System.IO.File.WriteAllText(this.TEMPLATE_ID + ".xml", this.TEMPLATE_XML);  //  写入文件
+
+                this.layoutControlTaskTemplate.RestoreLayoutFromXml("layout_xml\\定制下单.xml");
             }
             //  TODO    刷新一览
         }
@@ -79,37 +78,14 @@ namespace DXApplicationTangche.UC.任务
         /// <param name="e"></param>
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            this.searchLookUpEditUser.ToolTip = null;
-            this.searchLookUpEditUser.EditValue = null;
+            this.searchLookUpEditTaskTemplate.ToolTip = null;
+            this.searchLookUpEditTaskTemplate.EditValue = null;
         }
         private void searchLookUpEditUser_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             if (null != e.Value)
-                e.DisplayText = this.userName;
+                e.DisplayText = this.TEMPLATE_NAME;
         }
         #endregion
-
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(this.userId))
-            {
-                this.gridControl任务.DataSource = TaskService.getUserTasks(this.userId, this.dateTimePickerStart.Value.ToString(), this.dateTimePickerEnd.Value.ToString());
-                this.gridView1.ExpandAllGroups();
-            }
-            else {
-                MessageBox.Show("请选择负责人");
-            }
-        }
-
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        {
-            new Frm任务新建().ShowDialog();
-        }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            new Frm任务新建().ShowDialog();
-        }
     }
 }

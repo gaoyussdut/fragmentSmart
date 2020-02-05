@@ -44,5 +44,36 @@ namespace DXApplicationTangche.service
 
             return userTaskDTOs;
         }
+
+        /// <summary>
+        /// 取得所有任务模板
+        /// </summary>
+        /// <returns></returns>
+        public static List<TaskTemplateDTO> getTaskTemplateDTO() {
+            String sql = "SELECT\n" +
+                "	TEMPLATE_ID,TEMPLATE_NAME,TEMPLATE_XML \n" +
+                "FROM\n" +
+                "	t_task_template;";
+
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            List<TaskTemplateDTO> taskTemplateDTOs = new List<TaskTemplateDTO>();
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                taskTemplateDTOs.Add(new TaskTemplateDTO(dataRow));
+            }
+
+            return taskTemplateDTOs;
+        }
+
+        /// <summary>
+        /// 取得所有任务模板
+        /// </summary>
+        /// <returns></returns>
+        public static void updateTaskTemplate(String TEMPLATE_ID, String TEMPLATE_XML)
+        {
+            String sql = "update t_task_template set TEMPLATE_XML='"+ TEMPLATE_XML 
+                + "' where TEMPLATE_ID = '"+ TEMPLATE_ID + "'";
+            SQLmtm.ExecuteSql(sql);            
+        }
     }
 }

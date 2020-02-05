@@ -6,6 +6,7 @@ using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using DXApplicationTangche.UC.门店下单.form;
+using DXApplicationTangche.UC.任务;
 
 namespace DXApplicationTangche
 {
@@ -22,7 +23,7 @@ namespace DXApplicationTangche
 
             BonusSkins.Register();
             Application.Run(new FluentMainFrame());
-            //Application.Run(new Frm已付款订单一览());
+            //Application.Run(new Frm任务模板());
 
         }
     }

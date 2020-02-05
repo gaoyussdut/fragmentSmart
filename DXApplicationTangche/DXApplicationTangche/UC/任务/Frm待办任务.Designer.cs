@@ -100,6 +100,7 @@
             this.barButtonItem1.Id = 1;
             this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
             this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -153,6 +154,7 @@
             // 
             // searchLookUpEditUser
             // 
+            this.searchLookUpEditUser.EditValue = "";
             this.searchLookUpEditUser.Location = new System.Drawing.Point(75, 12);
             this.searchLookUpEditUser.MenuManager = this.ribbonControl1;
             this.searchLookUpEditUser.Name = "searchLookUpEditUser";
@@ -329,6 +331,7 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSTATUS_DESC, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colID
             // 
@@ -407,6 +410,7 @@
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Frm待办任务";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm待办任务_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
