@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class CreateCustomer
+    partial class Frm客户
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateCustomer));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm客户));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.kehujibenxinxi = new System.Windows.Forms.TabPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();

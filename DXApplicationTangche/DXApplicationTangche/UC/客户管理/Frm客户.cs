@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace mendian
 {
-    public partial class CreateCustomer : DevExpress.XtraBars.ToolbarForm.ToolbarForm
+    public partial class Frm客户 : DevExpress.XtraBars.ToolbarForm.ToolbarForm
     {
         public static int cUSTOMER_ID { get; set; }
         public String sEX_CD;
@@ -20,7 +20,7 @@ namespace mendian
         public static int aDDRESS_ID;
         public static String customer_name { get; set; }
         public static int customer_countid { get; set; }
-        public CreateCustomer()
+        public Frm客户()
         {
             InitializeComponent();
             initCombobox();

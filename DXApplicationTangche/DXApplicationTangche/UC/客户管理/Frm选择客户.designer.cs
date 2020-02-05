@@ -1,6 +1,6 @@
 ﻿namespace mendian
 {
-    partial class CustomerChoose
+    partial class Frm选择客户
     {
         /// <summary>
         /// Required designer variable.

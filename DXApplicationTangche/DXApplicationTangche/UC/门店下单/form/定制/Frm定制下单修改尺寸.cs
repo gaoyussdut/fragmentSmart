@@ -98,7 +98,7 @@ namespace mendian
                 DataRow drstylefit = SQLmtm.GetDataRow("SELECT MAX(STYLE_FIT_ID) as STYLE_FIT_ID FROM `a_customer_fit_value_r`");
                 int sTYLE_FIT_ID = Convert.ToInt32(drstylefit["STYLE_FIT_ID"]);
                 sTYLE_FIT_ID++;
-                DataRow drcustomer = SQLmtm.GetDataRow("select * from a_customer_p where CUSTOMER_ID='" + CreateCustomer.cUSTOMER_ID.ToString() + "'");
+                DataRow drcustomer = SQLmtm.GetDataRow("select * from a_customer_p where CUSTOMER_ID='" + Frm客户.cUSTOMER_ID.ToString() + "'");
                 string customername = Convert.ToString(drcustomer["CUSTOMER_FIRST_NAME"]) + Convert.ToString(drcustomer["CUSTOMER_LAST_NAME"]);
                 sTYLE_SIZE_CD = SizeService.SizeCD(this.chicun01.Text.Trim(), stylesizedt);
                 DataRow drstyle = SQLmtm.GetDataRow("SELECT MAX(SYS_STYLE_ID) SYS_STYLE_ID FROM `s_style_p`");
@@ -119,7 +119,7 @@ namespace mendian
                 ImpService.DynamicSaveDesign(this);
                 //o_order_p
                 //RestCall.httpGetMethod("https://shirtmtm.com/fragsmart-mtm/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
-                RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
+                RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + Frm客户.cUSTOMER_ID.ToString() + "&addressId=" + Frm客户.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
                 DataRow ORDER_ID = SQLmtm.GetDataRow("SELECT MAX(ORDER_ID) AS ORDER_ID FROM `o_order_p`");
                 int order_id = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
                 //order_id++;

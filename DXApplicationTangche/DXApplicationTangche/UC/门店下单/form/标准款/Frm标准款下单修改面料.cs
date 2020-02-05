@@ -84,7 +84,7 @@ namespace DXApplicationTangche
             this.mianliaoname.Text = Frm面料选择.mianliao;
             try
             {
-                List<CustomerInformation> ci = CustomerService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
+                List<CustomerInformation> ci = CustomerService.GetCustomerInformation(Frm客户.cUSTOMER_ID);
                 this.printedView.refresh(
                     FabricService.GetMianLiaoFilePath(Frm面料选择.mianliaoid)
                     , ci
@@ -116,7 +116,7 @@ namespace DXApplicationTangche
                     ImpService.StandardModelsDesignSive();
                     //o_order_p写入数据
                     //RestCall.httpGetMethod("https://shirtmtm.com/fragsmart-mtm/customer/update/payment?styleId=" + styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
-                    RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + Frm定制下单修改尺寸.styleid.ToString() + "&customerId=" + CreateCustomer.cUSTOMER_ID.ToString() + "&addressId=" + CreateCustomer.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
+                    RestCall.httpGetMethod("http://localhost:8080/customer/update/payment?styleId=" + Frm定制下单修改尺寸.styleid.ToString() + "&customerId=" + Frm客户.cUSTOMER_ID.ToString() + "&addressId=" + Frm客户.aDDRESS_ID.ToString() + "&number=" + this.shuliang.Text);
                     DataRow ORDER_ID = SQLmtm.GetDataRow("SELECT MAX(ORDER_ID) AS ORDER_ID FROM `o_order_p`");
                     int order_id = Convert.ToInt32(ORDER_ID["ORDER_ID"]);
                     //order_id++;

@@ -3,6 +3,7 @@ using DevExpress.XtraEditors;
 using DiaoPaiDaYin;
 using DXApplicationTangche.service;
 using DXApplicationTangche.UC;
+using DXApplicationTangche.UC.任务;
 using DXApplicationTangche.UC.库存;
 using DXApplicationTangche.UC.库存.门店验货;
 using DXApplicationTangche.UC.款式异常;
@@ -130,7 +131,8 @@ namespace DXApplicationTangche
             this.splashScreenManager.ShowWaitForm();
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");     // 信息
-            ResourceService.synPictureResouces();
+            ResourceService.synPictureResouces();   //  资源同步
+            this.initPanel(new Frm待办任务());
             this.splashScreenManager.CloseWaitForm();
         }
 
@@ -157,6 +159,11 @@ namespace DXApplicationTangche
         private void accordionControlElement30_Click(object sender, EventArgs e)
         {
             this.initPanel(new Frm已付款订单一览());
+        }
+
+        private void accordionControlElement32_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm待办任务());
         }
     }
 }

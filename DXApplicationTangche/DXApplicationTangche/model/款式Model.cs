@@ -302,7 +302,7 @@ namespace DXApplicationTangche.UC.款式异常
                 , fitv.oUT_VALUE
                 , "0"
                 , "0"
-                , CreateCustomer.customer_countid.ToString()
+                , Frm客户.customer_countid.ToString()
                 , "AUDIT_PHASE_CD-PHASE_CD_10"
                 , "1"
                 , "46"

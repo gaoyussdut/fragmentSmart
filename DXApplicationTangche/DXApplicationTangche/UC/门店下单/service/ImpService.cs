@@ -66,11 +66,11 @@ namespace mendian
         {
             SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE"
                                                                                     ,"IN_VALUE","OUT_VALUE","STATUS","DELETE_FLAG","CUSTOMER_COUNT_ID"},
-new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , customername ,
+new string[] { sTYLE_FIT_ID.ToString(), Frm客户.cUSTOMER_ID.ToString() , customername ,
                 "SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_POSTU003,SHIRT_POSTU003,SHIRT_POSTU003,SHIRT_POSTU003,",
                 "CIRCU_ITEM_01,CIRCU_ITEM_02,CIRCU_ITEM_03,CIRCU_ITEM_04,CIRCU_ITEM_05,CIRCU_ITEM_06,CIRCU_ITEM_07,LENGT_ITEM_08,CIRCU_ITEM_08,CIRCU_ITEM_18,CIRCU_ITEM_17,LENGT_ITEM_01,LENGT_ITEM_02,POSTU_ITEM_09,POSTU_ITEM_07,LENGT_ITEM_05,LENGT_ITEM_06,POSTU_ITEM_01,POSTU_ITEM_02,CIRCU_ITEM_21,CIRCU_ITEM_19,",
                 ftvl,"CIRCU_ITEM_01,CIRCU_ITEM_02,CIRCU_ITEM_03,CIRCU_ITEM_04,CIRCU_ITEM_05,CIRCU_ITEM_06,CIRCU_ITEM_07,LENGT_ITEM_08,CIRCU_ITEM_08,CIRCU_ITEM_18,CIRCU_ITEM_17,LENGT_ITEM_01,LENGT_ITEM_02,POSTU_ITEM_09,POSTU_ITEM_07,LENGT_ITEM_05,LENGT_ITEM_06,POSTU_ITEM_01,POSTU_ITEM_02,CIRCU_ITEM_21,CIRCU_ITEM_19,",
-                inftvl,outftvl,"0","0",CreateCustomer.customer_countid.ToString()});
+                inftvl,outftvl,"0","0",Frm客户.customer_countid.ToString()});
             SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
     new string[] { Frm定制下单修改尺寸.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", "SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_CIRCU001,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_LENGT002,SHIRT_POSTU003,SHIRT_POSTU003,SHIRT_POSTU003,SHIRT_POSTU003" ,
                    "CIRCU_ITEM_01,CIRCU_ITEM_02,CIRCU_ITEM_03,CIRCU_ITEM_04,CIRCU_ITEM_05,CIRCU_ITEM_06,CIRCU_ITEM_07,LENGT_ITEM_08,CIRCU_ITEM_08,CIRCU_ITEM_18,CIRCU_ITEM_17,LENGT_ITEM_01,LENGT_ITEM_02,POSTU_ITEM_09,POSTU_ITEM_07,LENGT_ITEM_05,LENGT_ITEM_06,POSTU_ITEM_01,POSTU_ITEM_02,CIRCU_ITEM_21,CIRCU_ITEM_19",
@@ -156,7 +156,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                 fitv.invadd("0");
                 fitv.outvadd("0");
             }
-            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { CreateCustomer.cUSTOMER_ID.ToString(), CreateCustomer.customer_name, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
+            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { Frm客户.cUSTOMER_ID.ToString(), Frm客户.customer_name, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", Frm客户.customer_countid.ToString() });
             SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
     new string[] { Frm定制下单修改尺寸.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
         }
@@ -201,7 +201,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
         public static void insertS_Style_P(UC款式卡片 uc)
         {
             SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" },
-    new string[] { Frm定制下单修改尺寸.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, Frm面料选择.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Frm定制下单修改尺寸.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
+    new string[] { Frm定制下单修改尺寸.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, Frm面料选择.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Frm定制下单修改尺寸.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", Frm客户.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
         }
 
         public static void LoadSheJiDian(Frm门店下单选款式 frm, String styleid)
@@ -304,7 +304,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                 "	a_customer_fit_r ar\n" +
                 "	LEFT JOIN a_fit_property_p ap ON ar.ITEM_VALUE = ap.PROPERTY_VALUE \n" +
                 "WHERE\n" +
-                "	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
+                "	FIT_COUNT_ID = '" + Frm客户.customer_countid + "'");
             foreach (Control card in frm.panel4.Controls)
             {
                 if (card is UC尺寸卡片)
@@ -352,7 +352,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                 , fitv.oUT_VALUE
                 , "0"
                 , "0"
-                , CreateCustomer.customer_countid.ToString()
+                , Frm客户.customer_countid.ToString()
                 , "AUDIT_PHASE_CD-PHASE_CD_10"
                 , "1"
                 , "46"
@@ -459,7 +459,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
             //Change.styleid = Convert.ToInt32(drstyle["SYS_STYLE_ID"]);
             //Change.styleid++;
             SQLmtm.DoInsert("s_style_p", new string[] { "SYS_STYLE_ID", "SHOP_ID", "STYLE_CD", "STYLE_KBN", "STYLE_CATEGORY_CD", "SYTLE_FABRIC_ID", "STYLE_SIZE_GROUP_CD", "STYLE_SIZE_CD", "STYLE_MAKE_TYPE", "ENABLE_FLAG", "DELETE_FLAG", "VERSION", "STYLE_NAME_CN", "REMARKS", "CUSTOMER_COUNT_ID", "STYLE_FIT_CD", "REF_STYLE_ID", "STYLE_DRESS_CATEGORY", "STYLE_DESIGN_TYPE", "STYLE_PUBLISH_CATEGORY_CD", "SYTLE_YEAR", "SYTLE_SEASON" },
-    new string[] { Frm定制下单修改尺寸.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, Frm面料选择.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Frm定制下单修改尺寸.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", CreateCustomer.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
+    new string[] { Frm定制下单修改尺寸.styleid.ToString(), "18", "", "STYLE_SOURCE-STYLE_SOURCE_50", uc.sTYLE_CATEGORY_CD, Frm面料选择.mianliaoid, uc.sTYLE_SIZE_GROUP_CD, Frm定制下单修改尺寸.sTYLE_SIZE_CD, "4SMA-4M", "1", "0", "1", uc.kuanshimingcheng, "", Frm客户.customer_countid.ToString(), uc.sTYLE_FIT_CD, uc.kuanshiid, uc.sTYLE_DRESS_CATEGORY, uc.sTYLE_DESIGN_TYPE, uc.sTYLE_PUBLISH_CATEGORY_CD, uc.sYTLE_YEAR, uc.sYTLE_SEASON });
         }
 
         private static PanelLocition panelLocition;
@@ -537,7 +537,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
 "	a_customer_fit_r ar\n" +
 "	LEFT JOIN a_fit_property_p ap ON ar.ITEM_VALUE = ap.PROPERTY_VALUE \n" +
 "WHERE\n" +
-"	FIT_COUNT_ID = '" + CreateCustomer.customer_countid + "'");
+"	FIT_COUNT_ID = '" + Frm客户.customer_countid + "'");
             foreach (Control card in change.panel4.Controls)
             {
                 if (card is UC尺寸卡片)
@@ -681,7 +681,7 @@ new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString() , 
                     fitv.outvadd(c.jian.Text);
                 }
             }
-            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { sTYLE_FIT_ID.ToString(), CreateCustomer.cUSTOMER_ID.ToString(), customername, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", CreateCustomer.customer_countid.ToString() });
+            SQLmtm.DoInsert("a_customer_fit_value_r", new string[] { "STYLE_FIT_ID", "CUSTOMER_ID", "CUSTOMER_NAME", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "IN_VALUE", "OUT_VALUE", "STATUS", "DELETE_FLAG", "CUSTOMER_COUNT_ID" }, new string[] { sTYLE_FIT_ID.ToString(), Frm客户.cUSTOMER_ID.ToString(), customername, fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, fitv.iN_VALUE, fitv.oUT_VALUE, "0", "0", Frm客户.customer_countid.ToString() });
             SQLmtm.DoInsert("s_style_fit_r", new string[] { "STYLE_ID", "PHASE_CD", "ITEM_CD", "ITEM_VALUE", "FIT_VALUE", "FM_VALUE", "DELETE_FLAG", "VERSION", "CREATE_USER", "IN_VALUE", "OUT_VALUE" },
     new string[] { Frm定制下单修改尺寸.styleid.ToString(), "AUDIT_PHASE_CD-PHASE_CD_10", fitv.iTEM_CD, fitv.iTEM_VALUE, fitv.fitValue, fitv.fM_VALUE, "0", "1", "46", fitv.iN_VALUE, fitv.oUT_VALUE });
         }

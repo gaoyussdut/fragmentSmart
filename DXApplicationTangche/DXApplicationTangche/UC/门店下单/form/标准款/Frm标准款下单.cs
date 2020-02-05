@@ -183,34 +183,34 @@ namespace DXApplicationTangche
             var a = this.searchLookUpEdit1.Properties.View.GetSelectedRows();
             foreach (int rowHandle in a)
             {
-                CreateCustomer.cUSTOMER_ID //  no
+                Frm客户.cUSTOMER_ID //  no
                     = Convert.ToInt32(this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "ID").ToString());//id 是 Value Member
-                CreateCustomer.customer_name //  no
+                Frm客户.customer_name //  no
                     = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "客户姓名").ToString();//id 是 Value Member
             }
-            DataTable dt = SQLmtm.GetDataTable("SELECT * FROM (SELECT * FROM a_customer_fit_r) s1 RIGHT JOIN (SELECT * FROM a_customer_fit_count_r WHERE CUSTOMER_ID ='" + CreateCustomer.cUSTOMER_ID + "' AND DEFAULT_FLAG ='1') s2 on s1.FIT_COUNT_ID=s2.ID");
+            DataTable dt = SQLmtm.GetDataTable("SELECT * FROM (SELECT * FROM a_customer_fit_r) s1 RIGHT JOIN (SELECT * FROM a_customer_fit_count_r WHERE CUSTOMER_ID ='" + Frm客户.cUSTOMER_ID + "' AND DEFAULT_FLAG ='1') s2 on s1.FIT_COUNT_ID=s2.ID");
             if (dt.Rows.Count != 0)
             {
-                DataRow drr = SQLmtm.GetDataRow("SELECT * FROM `a_customer_fit_count_r` WHERE CUSTOMER_ID='" + CreateCustomer.cUSTOMER_ID.ToString() + "' AND DEFAULT_FLAG=1");
-                DataRow ddr = SQLmtm.GetDataRow("SELECT * FROM `a_customer_address_p` WHERE DEFAULT_ADDR_FLAG=1 AND CUSTOMER_ID='" + CreateCustomer.cUSTOMER_ID.ToString() + "'");
+                DataRow drr = SQLmtm.GetDataRow("SELECT * FROM `a_customer_fit_count_r` WHERE CUSTOMER_ID='" + Frm客户.cUSTOMER_ID.ToString() + "' AND DEFAULT_FLAG=1");
+                DataRow ddr = SQLmtm.GetDataRow("SELECT * FROM `a_customer_address_p` WHERE DEFAULT_ADDR_FLAG=1 AND CUSTOMER_ID='" + Frm客户.cUSTOMER_ID.ToString() + "'");
                 if (drr == null || ddr == null)
                 {
-                    CreateCustomer.cUSTOMER_ID = 0;
-                    CreateCustomer.customer_name = "";
+                    Frm客户.cUSTOMER_ID = 0;
+                    Frm客户.customer_name = "";
                     MessageBox.Show("缺少客户信息");
                     return;
                 }
-                CreateCustomer.customer_countid = Convert.ToInt32(drr["ID"]);
-                CreateCustomer.aDDRESS_ID = Convert.ToInt32(ddr["ADDRESS_ID"]);
+                Frm客户.customer_countid = Convert.ToInt32(drr["ID"]);
+                Frm客户.aDDRESS_ID = Convert.ToInt32(ddr["ADDRESS_ID"]);
             }
             else
             {
-                CreateCustomer.cUSTOMER_ID = 0;
-                CreateCustomer.customer_name = "";
+                Frm客户.cUSTOMER_ID = 0;
+                Frm客户.customer_name = "";
                 MessageBox.Show("选择的客户未建立量体值");
                 return;
             }
-            this.gridControl2.DataSource = CustomerService.GetCustomerInformation(CreateCustomer.cUSTOMER_ID);
+            this.gridControl2.DataSource = CustomerService.GetCustomerInformation(Frm客户.cUSTOMER_ID);
         }
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace DXApplicationTangche
         private void searchLookUpEdit1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             if (null != e.Value)
-                e.DisplayText = CreateCustomer.customer_name;
+                e.DisplayText = Frm客户.customer_name;
         }
         #endregion
     }

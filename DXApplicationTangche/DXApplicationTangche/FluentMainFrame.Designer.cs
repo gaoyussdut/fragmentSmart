@@ -70,6 +70,8 @@
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
+            this.accordionControlElement31 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement32 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
@@ -118,7 +120,8 @@
             this.accordionControlElement10,
             this.accordionControlElement16,
             this.accordionControlElement18,
-            this.accordionControlElement25});
+            this.accordionControlElement25,
+            this.accordionControlElement31});
             this.accordionControl1.Location = new System.Drawing.Point(0, 37);
             this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
@@ -285,7 +288,6 @@
             this.accordionControlElement18.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement19,
             this.ElementStock});
-            this.accordionControlElement18.Expanded = true;
             this.accordionControlElement18.Name = "accordionControlElement18";
             this.accordionControlElement18.Text = "门店管理";
             // 
@@ -294,7 +296,6 @@
             this.accordionControlElement19.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement20,
             this.accordionControlElement30});
-            this.accordionControlElement19.Expanded = true;
             this.accordionControlElement19.Name = "accordionControlElement19";
             this.accordionControlElement19.Text = "销售管理";
             // 
@@ -393,6 +394,20 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // accordionControlElement31
+            // 
+            this.accordionControlElement31.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement32});
+            this.accordionControlElement31.Name = "accordionControlElement31";
+            this.accordionControlElement31.Text = "任务一览";
+            // 
+            // accordionControlElement32
+            // 
+            this.accordionControlElement32.Name = "accordionControlElement32";
+            this.accordionControlElement32.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement32.Text = "待办任务";
+            this.accordionControlElement32.Click += new System.EventHandler(this.accordionControlElement32_Click);
+            // 
             // FluentMainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -461,5 +476,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement28;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement29;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement30;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement31;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement32;
     }
 }

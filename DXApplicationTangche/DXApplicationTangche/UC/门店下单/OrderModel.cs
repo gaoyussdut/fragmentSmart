@@ -44,10 +44,10 @@ namespace DXApplicationTangche.UC.门店下单
         {
             foreach(OrderDto orderDto in this.OrderDtos)
             {
-                orderDto.CUSTOMER_ID = CreateCustomer.cUSTOMER_ID.ToString();
-                orderDto.CUSTOMER_COUNT_ID = CreateCustomer.customer_countid.ToString();
-                orderDto.CUSTOMER_NAME = CreateCustomer.customer_name;
-                orderDto.ADDRESS_ID = CreateCustomer.aDDRESS_ID.ToString();
+                orderDto.CUSTOMER_ID = Frm客户.cUSTOMER_ID.ToString();
+                orderDto.CUSTOMER_COUNT_ID = Frm客户.customer_countid.ToString();
+                orderDto.CUSTOMER_NAME = Frm客户.customer_name;
+                orderDto.ADDRESS_ID = Frm客户.aDDRESS_ID.ToString();
             }
             return this;
         }

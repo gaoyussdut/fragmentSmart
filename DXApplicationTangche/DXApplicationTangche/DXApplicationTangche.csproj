@@ -127,6 +127,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="DTO\设计点图片Dto.cs" />
     <Compile Include="DTO\面料图片DTo.cs" />
     <Compile Include="DTO无订单打印.cs" />
@@ -145,6 +146,13 @@
     <Compile Include="service\RollOffService.cs" />
     <Compile Include="service\SizeService.cs" />
     <Compile Include="service\StyleService.cs" />
+    <Compile Include="service\UserService.cs" />
+    <Compile Include="UC\任务\Frm待办任务.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\任务\Frm待办任务.Designer.cs">
+      <DependentUpon>Frm待办任务.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\标签列印\Frm打标.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,17 +329,17 @@
     <Compile Include="Utils\PanelLocition.cs" />
     <Compile Include="Utils\RestCall.cs" />
     <Compile Include="Utils\MetaData.cs" />
-    <Compile Include="UC\客户管理\CreateCustomer.cs">
+    <Compile Include="UC\客户管理\Frm客户.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UC\客户管理\CreateCustomer.designer.cs">
-      <DependentUpon>CreateCustomer.cs</DependentUpon>
+    <Compile Include="UC\客户管理\Frm客户.designer.cs">
+      <DependentUpon>Frm客户.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC\客户管理\CustomerChoose.cs">
+    <Compile Include="UC\客户管理\Frm选择客户.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UC\客户管理\CustomerChoose.designer.cs">
-      <DependentUpon>CustomerChoose.cs</DependentUpon>
+    <Compile Include="UC\客户管理\Frm选择客户.designer.cs">
+      <DependentUpon>Frm选择客户.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\CustomerInformationDto.cs" />
     <Compile Include="UC\门店下单\service\DealXML.cs" />
@@ -430,6 +438,9 @@
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\任务\Frm待办任务.resx">
+      <DependentUpon>Frm待办任务.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\标签列印\Frm打标.resx">
       <DependentUpon>Frm打标.cs</DependentUpon>
     </EmbeddedResource>
@@ -513,11 +524,11 @@
     <EmbeddedResource Include="UC\门店下单\UC\UC尺寸卡片.resx">
       <DependentUpon>UC尺寸卡片.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\客户管理\CreateCustomer.resx">
-      <DependentUpon>CreateCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="UC\客户管理\Frm客户.resx">
+      <DependentUpon>Frm客户.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\客户管理\CustomerChoose.resx">
-      <DependentUpon>CustomerChoose.cs</DependentUpon>
+    <EmbeddedResource Include="UC\客户管理\Frm选择客户.resx">
+      <DependentUpon>Frm选择客户.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\通用\Frm尺寸变更.resx">
       <DependentUpon>Frm尺寸变更.cs</DependentUpon>
