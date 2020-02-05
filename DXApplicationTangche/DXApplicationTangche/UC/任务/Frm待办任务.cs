@@ -88,5 +88,18 @@ namespace DXApplicationTangche.UC.任务
                 e.DisplayText = this.userName;
         }
         #endregion
+
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(this.userId))
+            {
+                this.gridControl任务.DataSource = TaskService.getUserTasks(this.userId, this.dateTimePickerStart.Value.ToString(), this.dateTimePickerEnd.Value.ToString());
+                this.gridView1.ExpandAllGroups();
+            }
+            else {
+                MessageBox.Show("请选择负责人");
+            }
+        }
     }
 }

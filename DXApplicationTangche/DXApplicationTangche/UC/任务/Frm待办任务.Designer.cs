@@ -36,11 +36,13 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.searchLookUpEditUser = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colFIRST_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLAST_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLOGIN_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLOGIN_USER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.comboBoxEditStatus = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
@@ -50,9 +52,16 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemUser = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridControl任务 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colLOGIN_USER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUSER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUSERNAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATE_TIME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTATUS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSTATUS_DESC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTEMPLATE_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -65,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl任务)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +128,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.searchLookUpEditUser);
             this.layoutControl1.Controls.Add(this.comboBoxEditStatus);
             this.layoutControl1.Controls.Add(this.dateTimePickerEnd);
@@ -129,6 +140,16 @@
             this.layoutControl1.Size = new System.Drawing.Size(1332, 120);
             this.layoutControl1.TabIndex = 2;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(668, 79);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(652, 27);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.Text = "查询";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // searchLookUpEditUser
             // 
@@ -181,6 +202,12 @@
             this.colLOGIN_NAME.Visible = true;
             this.colLOGIN_NAME.VisibleIndex = 2;
             // 
+            // colLOGIN_USER_ID
+            // 
+            this.colLOGIN_USER_ID.Caption = "LOGIN_USER_ID";
+            this.colLOGIN_USER_ID.FieldName = "LOGIN_USER_ID";
+            this.colLOGIN_USER_ID.Name = "colLOGIN_USER_ID";
+            // 
             // comboBoxEditStatus
             // 
             this.comboBoxEditStatus.Location = new System.Drawing.Point(75, 79);
@@ -188,7 +215,7 @@
             this.comboBoxEditStatus.Name = "comboBoxEditStatus";
             this.comboBoxEditStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditStatus.Size = new System.Drawing.Size(1245, 24);
+            this.comboBoxEditStatus.Size = new System.Drawing.Size(589, 24);
             this.comboBoxEditStatus.StyleController = this.layoutControl1;
             this.comboBoxEditStatus.TabIndex = 7;
             // 
@@ -215,7 +242,8 @@
             this.layoutControlItem2,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItemUser});
+            this.layoutControlItemUser,
+            this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(1332, 120);
             this.Root.TextVisible = false;
@@ -251,7 +279,7 @@
             this.layoutControlItem4.Control = this.comboBoxEditStatus;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 67);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1312, 33);
+            this.layoutControlItem4.Size = new System.Drawing.Size(656, 33);
             this.layoutControlItem4.Text = "状态";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 18);
             // 
@@ -263,6 +291,15 @@
             this.layoutControlItemUser.Size = new System.Drawing.Size(1312, 28);
             this.layoutControlItemUser.Text = "负责人";
             this.layoutControlItemUser.TextSize = new System.Drawing.Size(60, 18);
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.simpleButton1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(656, 67);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(656, 33);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
             // 
             // gridControl任务
             // 
@@ -278,15 +315,84 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colID,
+            this.colUSER_ID,
+            this.colUSERNAME,
+            this.colCREATE_TIME,
+            this.colSTATUS,
+            this.colSTATUS_DESC,
+            this.colTEMPLATE_NAME});
             this.gridView1.GridControl = this.gridControl任务;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSTATUS_DESC, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
-            // colLOGIN_USER_ID
+            // colID
             // 
-            this.colLOGIN_USER_ID.Caption = "LOGIN_USER_ID";
-            this.colLOGIN_USER_ID.FieldName = "LOGIN_USER_ID";
-            this.colLOGIN_USER_ID.Name = "colLOGIN_USER_ID";
+            this.colID.Caption = "ID";
+            this.colID.FieldName = "ID";
+            this.colID.MinWidth = 25;
+            this.colID.Name = "colID";
+            this.colID.Width = 94;
+            // 
+            // colUSER_ID
+            // 
+            this.colUSER_ID.Caption = "USER_ID";
+            this.colUSER_ID.FieldName = "USER_ID";
+            this.colUSER_ID.MinWidth = 25;
+            this.colUSER_ID.Name = "colUSER_ID";
+            this.colUSER_ID.Width = 94;
+            // 
+            // colUSERNAME
+            // 
+            this.colUSERNAME.Caption = "负责人";
+            this.colUSERNAME.FieldName = "USERNAME";
+            this.colUSERNAME.MinWidth = 25;
+            this.colUSERNAME.Name = "colUSERNAME";
+            this.colUSERNAME.Visible = true;
+            this.colUSERNAME.VisibleIndex = 0;
+            this.colUSERNAME.Width = 94;
+            // 
+            // colCREATE_TIME
+            // 
+            this.colCREATE_TIME.Caption = "时间";
+            this.colCREATE_TIME.FieldName = "CREATE_TIME";
+            this.colCREATE_TIME.MinWidth = 25;
+            this.colCREATE_TIME.Name = "colCREATE_TIME";
+            this.colCREATE_TIME.Visible = true;
+            this.colCREATE_TIME.VisibleIndex = 1;
+            this.colCREATE_TIME.Width = 94;
+            // 
+            // colSTATUS
+            // 
+            this.colSTATUS.Caption = "STATUS";
+            this.colSTATUS.FieldName = "STATUS";
+            this.colSTATUS.MinWidth = 25;
+            this.colSTATUS.Name = "colSTATUS";
+            this.colSTATUS.Width = 94;
+            // 
+            // colSTATUS_DESC
+            // 
+            this.colSTATUS_DESC.Caption = "状态";
+            this.colSTATUS_DESC.FieldName = "STATUS_DESC";
+            this.colSTATUS_DESC.MinWidth = 25;
+            this.colSTATUS_DESC.Name = "colSTATUS_DESC";
+            this.colSTATUS_DESC.Visible = true;
+            this.colSTATUS_DESC.VisibleIndex = 5;
+            this.colSTATUS_DESC.Width = 94;
+            // 
+            // colTEMPLATE_NAME
+            // 
+            this.colTEMPLATE_NAME.Caption = "任务模板名称";
+            this.colTEMPLATE_NAME.FieldName = "TEMPLATE_NAME";
+            this.colTEMPLATE_NAME.MinWidth = 25;
+            this.colTEMPLATE_NAME.Name = "colTEMPLATE_NAME";
+            this.colTEMPLATE_NAME.Visible = true;
+            this.colTEMPLATE_NAME.VisibleIndex = 2;
+            this.colTEMPLATE_NAME.Width = 94;
             // 
             // Frm待办任务
             // 
@@ -314,6 +420,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl任务)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -333,7 +440,6 @@
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraGrid.GridControl gridControl任务;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
@@ -347,5 +453,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLAST_NAME;
         private DevExpress.XtraGrid.Columns.GridColumn colLOGIN_NAME;
         private DevExpress.XtraGrid.Columns.GridColumn colLOGIN_USER_ID;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colID;
+        private DevExpress.XtraGrid.Columns.GridColumn colUSER_ID;
+        private DevExpress.XtraGrid.Columns.GridColumn colUSERNAME;
+        private DevExpress.XtraGrid.Columns.GridColumn colCREATE_TIME;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTATUS;
+        private DevExpress.XtraGrid.Columns.GridColumn colSTATUS_DESC;
+        private DevExpress.XtraGrid.Columns.GridColumn colTEMPLATE_NAME;
     }
 }
