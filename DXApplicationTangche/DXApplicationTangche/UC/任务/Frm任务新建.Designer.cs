@@ -324,7 +324,6 @@
             this.floatingPictureToolsArrangePageGroup1 = new DevExpress.XtraRichEdit.UI.FloatingPictureToolsArrangePageGroup();
             this.fileRibbonPage1 = new DevExpress.XtraRichEdit.UI.FileRibbonPage();
             this.commonRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.CommonRibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.homeRibbonPage1 = new DevExpress.XtraRichEdit.UI.HomeRibbonPage();
             this.clipboardRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.ClipboardRibbonPageGroup();
             this.fontRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.FontRibbonPageGroup();
@@ -358,20 +357,18 @@
             this.zoomRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.ZoomRibbonPageGroup();
             this.repositoryItemSearchLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.layoutControlTaskTemplate = new DevExpress.XtraLayout.LayoutControl();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.searchLookUpEditTaskTemplate = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colTEMPLATE_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTEMPLATE_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).BeginInit();
@@ -381,19 +378,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlTaskTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditTaskTemplate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -803,11 +800,11 @@
             // 
             // richEditControl1
             // 
-            this.richEditControl1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.richEditControl1.Location = new System.Drawing.Point(181, 0);
+            this.richEditControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richEditControl1.Location = new System.Drawing.Point(0, 0);
             this.richEditControl1.MenuManager = this.ribbonControl1;
             this.richEditControl1.Name = "richEditControl1";
-            this.richEditControl1.Size = new System.Drawing.Size(971, 393);
+            this.richEditControl1.Size = new System.Drawing.Size(764, 393);
             this.richEditControl1.TabIndex = 2;
             // 
             // fontSizeIncreaseItem1
@@ -2252,7 +2249,7 @@
             this.barEditItemTaskTempLate.Edit = this.repositoryItemComboBox1;
             this.barEditItemTaskTempLate.EditWidth = 100;
             this.barEditItemTaskTempLate.Id = 262;
-            this.barEditItemTaskTempLate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barEditItem1.ImageOptions.SvgImage")));
+            this.barEditItemTaskTempLate.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barEditItemTaskTempLate.ImageOptions.SvgImage")));
             this.barEditItemTaskTempLate.Name = "barEditItemTaskTempLate";
             // 
             // repositoryItemComboBox1
@@ -2429,8 +2426,7 @@
             // fileRibbonPage1
             // 
             this.fileRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.commonRibbonPageGroup1,
-            this.ribbonPageGroup1});
+            this.commonRibbonPageGroup1});
             this.fileRibbonPage1.Name = "fileRibbonPage1";
             // 
             // commonRibbonPageGroup1
@@ -2445,12 +2441,6 @@
             this.commonRibbonPageGroup1.ItemLinks.Add(this.printItem1, "P");
             this.commonRibbonPageGroup1.ItemLinks.Add(this.printPreviewItem1);
             this.commonRibbonPageGroup1.Name = "commonRibbonPageGroup1";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barEditItemTaskTempLate);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "combo";
             // 
             // homeRibbonPage1
             // 
@@ -2946,34 +2936,6 @@
             this.richEditBarController1.BarItems.Add(this.floatingObjectSendBackwardSubItem1);
             this.richEditBarController1.Control = this.richEditControl1;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.layoutControlTaskTemplate);
-            this.panel1.Controls.Add(this.richEditControl1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 293);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1152, 393);
-            this.panel1.TabIndex = 9;
-            // 
-            // layoutControlTaskTemplate
-            // 
-            this.layoutControlTaskTemplate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControlTaskTemplate.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlTaskTemplate.Name = "layoutControlTaskTemplate";
-            this.layoutControlTaskTemplate.Root = this.Root;
-            this.layoutControlTaskTemplate.Size = new System.Drawing.Size(181, 393);
-            this.layoutControlTaskTemplate.TabIndex = 3;
-            this.layoutControlTaskTemplate.Text = "layoutControl1";
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(181, 393);
-            this.Root.TextVisible = false;
-            // 
             // dockManager1
             // 
             this.dockManager1.Form = this;
@@ -3023,6 +2985,46 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // searchLookUpEditTaskTemplate
+            // 
+            this.searchLookUpEditTaskTemplate.EditValue = "";
+            this.searchLookUpEditTaskTemplate.Location = new System.Drawing.Point(105, 12);
+            this.searchLookUpEditTaskTemplate.MenuManager = this.ribbonControl1;
+            this.searchLookUpEditTaskTemplate.Name = "searchLookUpEditTaskTemplate";
+            this.searchLookUpEditTaskTemplate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEditTaskTemplate.Properties.PopupView = this.searchLookUpEdit1View;
+            this.searchLookUpEditTaskTemplate.Size = new System.Drawing.Size(1006, 24);
+            this.searchLookUpEditTaskTemplate.StyleController = this.layoutControl1;
+            this.searchLookUpEditTaskTemplate.TabIndex = 4;
+            this.searchLookUpEditTaskTemplate.Popup += new System.EventHandler(this.searchLookUpEditUser_Popup);
+            this.searchLookUpEditTaskTemplate.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEditUser_CustomDisplayText);
+            // 
+            // searchLookUpEdit1View
+            // 
+            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colTEMPLATE_ID,
+            this.colTEMPLATE_NAME});
+            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
+            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
+            // 
+            // colTEMPLATE_ID
+            // 
+            this.colTEMPLATE_ID.Caption = "模板id";
+            this.colTEMPLATE_ID.FieldName = "TEMPLATE_ID";
+            this.colTEMPLATE_ID.Name = "colTEMPLATE_ID";
+            // 
+            // colTEMPLATE_NAME
+            // 
+            this.colTEMPLATE_NAME.Caption = "模板名称";
+            this.colTEMPLATE_NAME.FieldName = "TEMPLATE_NAME";
+            this.colTEMPLATE_NAME.Name = "colTEMPLATE_NAME";
+            this.colTEMPLATE_NAME.Visible = true;
+            this.colTEMPLATE_NAME.VisibleIndex = 0;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -3033,21 +3035,6 @@
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(1123, 58);
             this.layoutControlGroup1.TextVisible = false;
-            // 
-            // searchLookUpEditTaskTemplate
-            // 
-            this.searchLookUpEditTaskTemplate.EditValue = "";
-            this.searchLookUpEditTaskTemplate.Location = new System.Drawing.Point(114, 12);
-            this.searchLookUpEditTaskTemplate.MenuManager = this.ribbonControl1;
-            this.searchLookUpEditTaskTemplate.Name = "searchLookUpEditTaskTemplate";
-            this.searchLookUpEditTaskTemplate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEditTaskTemplate.Properties.PopupView = this.searchLookUpEdit1View;
-            this.searchLookUpEditTaskTemplate.Size = new System.Drawing.Size(997, 24);
-            this.searchLookUpEditTaskTemplate.StyleController = this.layoutControl1;
-            this.searchLookUpEditTaskTemplate.TabIndex = 4;
-            this.searchLookUpEditTaskTemplate.Popup += new System.EventHandler(this.searchLookUpEditUser_Popup);
-            this.searchLookUpEditTaskTemplate.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEditUser_CustomDisplayText);
             // 
             // layoutControlItem1
             // 
@@ -3066,39 +3053,25 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(1103, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // searchLookUpEdit1View
+            // splitContainer1
             // 
-            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colTEMPLATE_ID,
-            this.colTEMPLATE_NAME});
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 293);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // colTEMPLATE_ID
+            // splitContainer1.Panel2
             // 
-            this.colTEMPLATE_ID.Caption = "模板id";
-            this.colTEMPLATE_ID.FieldName = "TEMPLATE_ID";
-            this.colTEMPLATE_ID.Name = "colTEMPLATE_ID";
-            this.colTEMPLATE_ID.Visible = true;
-            this.colTEMPLATE_ID.VisibleIndex = 0;
-            // 
-            // colTEMPLATE_NAME
-            // 
-            this.colTEMPLATE_NAME.Caption = "模板名称";
-            this.colTEMPLATE_NAME.FieldName = "TEMPLATE_NAME";
-            this.colTEMPLATE_NAME.Name = "colTEMPLATE_NAME";
-            this.colTEMPLATE_NAME.Visible = true;
-            this.colTEMPLATE_NAME.VisibleIndex = 1;
+            this.splitContainer1.Panel2.Controls.Add(this.richEditControl1);
+            this.splitContainer1.Size = new System.Drawing.Size(1152, 393);
+            this.splitContainer1.SplitterDistance = 384;
+            this.splitContainer1.TabIndex = 12;
             // 
             // Frm任务新建
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 686);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.dockPanel1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Frm任务新建";
@@ -3112,19 +3085,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSearchLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlTaskTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditTaskTemplate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3454,11 +3427,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchLookUpEdit repositoryItemSearchLookUpEdit1;
         private DevExpress.XtraBars.BarEditItem barEditItemTaskTempLate;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
-        private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraLayout.LayoutControl layoutControlTaskTemplate;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
@@ -3470,5 +3439,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraGrid.Columns.GridColumn colTEMPLATE_ID;
         private DevExpress.XtraGrid.Columns.GridColumn colTEMPLATE_NAME;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

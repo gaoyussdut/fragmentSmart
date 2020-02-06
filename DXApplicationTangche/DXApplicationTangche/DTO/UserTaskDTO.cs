@@ -49,11 +49,9 @@ namespace DXApplicationTangche.DTO
     public class TaskTemplateDTO {
         public String TEMPLATE_ID { get; set; }  //  任务模板ID
         public String TEMPLATE_NAME { get; set; }    //  任务模板名称
-        public String TEMPLATE_XML { get; set; }    //  任务模板
         public TaskTemplateDTO(DataRow dataRow) {
             this.TEMPLATE_ID = dataRow["TEMPLATE_ID"].ToString();
             this.TEMPLATE_NAME = dataRow["TEMPLATE_NAME"].ToString();
-            this.TEMPLATE_XML = dataRow["TEMPLATE_XML"].ToString();
         }
     }
 }

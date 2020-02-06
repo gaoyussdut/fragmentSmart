@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,36 +13,20 @@ using DevExpress.Utils.Win;
 using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
 using DXApplicationTangche.service;
-using System.IO;
-using DXApplicationTangche.UC.门店下单.form.订单修改.任务模板UC;
-using DXApplicationTangche.UC.任务.任务模板UC;
 
-namespace DXApplicationTangche.UC.任务
+namespace DXApplicationTangche.UC.门店下单.form.订单修改.任务模板UC
 {
-    public partial class Frm任务新建 : DevExpress.XtraEditors.XtraForm
+    public partial class UC任务模板默认 : DevExpress.XtraEditors.XtraUserControl
     {
-        public Frm任务新建()
+        public UC任务模板默认()
         {
             InitializeComponent();
-            this.searchLookUpEditTaskTemplate.Properties.DataSource = TaskService.getTaskTemplateDTO();
-            this.initPanel(new UC任务模板默认()); //  加载任务看板
+            this.searchLookUpEditUser.Properties.DataSource = UserService.getUserAll();
         }
 
-        /// <summary>
-        /// 初始化panel
-        /// </summary>
-        /// <param name="frm"></param>
-        private void initPanel(UserControl uc)
-        {
-            this.splitContainer1.Panel1.Controls.Clear();
-            this.splitContainer1.Panel1.Controls.Add(uc);
-            uc.Dock = System.Windows.Forms.DockStyle.Fill;
-            uc.Show();
-        }
-
-        #region 选择任务模板
-        private String TEMPLATE_ID;  //  任务模板ID
-        private String TEMPLATE_NAME;    //  任务模板名称
+        #region 选择负责人
+        private String userId;  //  用户id
+        private String userName;    //  用户名
         private void searchLookUpEditUser_Popup(object sender, EventArgs e)
         {
             //得到当前SearchLookUpEdit弹出窗体
@@ -68,18 +52,17 @@ namespace DXApplicationTangche.UC.任务
 
         private void searchLookUpEdit1View_Click(object sender, EventArgs e)
         {
-            var a = this.searchLookUpEditTaskTemplate.Properties.View.GetSelectedRows();
+            var a = this.searchLookUpEditUser.Properties.View.GetSelectedRows();
             foreach (int rowHandle in a)
             {
-                this.TEMPLATE_ID
-                    = this.searchLookUpEditTaskTemplate.Properties.View.GetRowCellValue(rowHandle, "TEMPLATE_ID").ToString();//id 是 Value Member
-                this.TEMPLATE_NAME
-                    = this.searchLookUpEditTaskTemplate.Properties.View.GetRowCellValue(rowHandle, "TEMPLATE_NAME").ToString();//id 是 Value Member
+                this.userId
+                    = this.searchLookUpEditUser.Properties.View.GetRowCellValue(rowHandle, "LOGIN_USER_ID").ToString();//id 是 Value Member
+                this.userName
+                    = this.searchLookUpEditUser.Properties.View.GetRowCellValue(rowHandle, "FIRST_NAME").ToString()
+                    + this.searchLookUpEditUser.Properties.View.GetRowCellValue(rowHandle, "LAST_NAME").ToString()
+                    ;//id 是 Value Member
             }
-            //  TODO    刷新模板
-            if ("1".Equals(this.TEMPLATE_ID)) {
-                this.initPanel(new UC软件异常());
-            }
+            //  TODO    刷新一览
         }
 
         /// <summary>
@@ -89,13 +72,13 @@ namespace DXApplicationTangche.UC.任务
         /// <param name="e"></param>
         private void clearBtn_Click(object sender, EventArgs e)
         {
-            this.searchLookUpEditTaskTemplate.ToolTip = null;
-            this.searchLookUpEditTaskTemplate.EditValue = null;
+            this.searchLookUpEditUser.ToolTip = null;
+            this.searchLookUpEditUser.EditValue = null;
         }
         private void searchLookUpEditUser_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             if (null != e.Value)
-                e.DisplayText = this.TEMPLATE_NAME;
+                e.DisplayText = this.userName;
         }
         #endregion
     }

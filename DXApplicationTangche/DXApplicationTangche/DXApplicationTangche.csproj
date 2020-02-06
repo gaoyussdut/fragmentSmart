@@ -167,6 +167,12 @@
     <Compile Include="UC\任务\Frm待办任务.Designer.cs">
       <DependentUpon>Frm待办任务.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\任务\任务模板UC\UC软件异常.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\任务\任务模板UC\UC软件异常.Designer.cs">
+      <DependentUpon>UC软件异常.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\标签列印\Frm打标.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +294,12 @@
     </Compile>
     <Compile Include="UC\门店下单\form\订单修改\Frm尺寸修改子页.Designer.cs">
       <DependentUpon>Frm尺寸修改子页.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\任务\任务模板UC\UC任务模板默认.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\任务\任务模板UC\UC任务模板默认.Designer.cs">
+      <DependentUpon>UC任务模板默认.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\门店下单\OrderModel.cs" />
     <Compile Include="UC\门店下单\UC\UC尺寸头.cs">
@@ -461,6 +473,9 @@
     <EmbeddedResource Include="UC\任务\Frm待办任务.resx">
       <DependentUpon>Frm待办任务.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\任务\任务模板UC\UC软件异常.resx">
+      <DependentUpon>UC软件异常.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\标签列印\Frm打标.resx">
       <DependentUpon>Frm打标.cs</DependentUpon>
     </EmbeddedResource>
@@ -525,6 +540,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\form\订单修改\Frm尺寸修改子页.resx">
       <DependentUpon>Frm尺寸修改子页.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\任务\任务模板UC\UC任务模板默认.resx">
+      <DependentUpon>UC任务模板默认.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\门店下单\UC\UC尺寸头.resx">
       <DependentUpon>UC尺寸头.cs</DependentUpon>

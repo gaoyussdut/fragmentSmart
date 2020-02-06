@@ -51,7 +51,7 @@ namespace DXApplicationTangche.service
         /// <returns></returns>
         public static List<TaskTemplateDTO> getTaskTemplateDTO() {
             String sql = "SELECT\n" +
-                "	TEMPLATE_ID,TEMPLATE_NAME,TEMPLATE_XML \n" +
+                "	TEMPLATE_ID,TEMPLATE_NAME \n" +
                 "FROM\n" +
                 "	t_task_template;";
 
