@@ -185,7 +185,8 @@ namespace DXApplicationTangche.service
             return 尺寸呈现;
         }
 
-        public static List<尺寸呈现dto> getDto尺寸ByOrderId(String orderId, String STYLE_FIT_CD, String STYLE_CATEGORY_CD, String STYLE_SIZE_CD, String STYLE_SIZE_GROUP_CD) {
+        public static List<尺寸呈现dto> getDto尺寸ByOrderId(String orderId, String STYLE_FIT_CD, String STYLE_CATEGORY_CD, String STYLE_SIZE_CD, String STYLE_SIZE_GROUP_CD,String CUSTOMER_ID) {
+            //  尺寸
             String sql = "SELECT\n" +
                 "	STYLE_ID,\n" +
                 "	PHASE_CD,\n" +
@@ -203,15 +204,41 @@ namespace DXApplicationTangche.service
                 "WHERE\n" +
                 "	STYLE_ID IN ( SELECT STYLE_ID FROM o_order_p WHERE ORDER_ID = '"+ orderId + "' );";
             DataTable dt = SQLmtm.GetDataTable(sql);
-            Dto尺寸 Dto尺寸;
+            //  客户量体值
+            sql = "SELECT\n" +
+                "	customer_fit.CUSTOMER_FIT_ID,\n" +
+                "	customer_fit.CUSTOMER_ID,\n" +
+                "	customer_fit.STYLE_CATEGORY_CD,\n" +
+                "	customer_fit.ITEM_CD,\n" +
+                "	customer_fit.ITEM_VALUE,\n" +
+                "	customer_fit.FIT_VALUE,\n" +
+                "	property.PROPERTY_NAME_CN,\n" +
+                "	property.PROPERTY_CD,\n" +
+                "	property.PROPERTY_VALUE,\n" +
+                "	property.PROPERTY_UNIT_CD,\n" +
+                "	customer_fit.STYLE_CATEGORY_CD \n" +
+                "FROM\n" +
+                "	a_customer_fit_r customer_fit\n" +
+                "	LEFT JOIN a_fit_property_p property ON property.PROPERTY_CD = customer_fit.ITEM_CD \n" +
+                "	AND property.PROPERTY_VALUE = customer_fit.ITEM_VALUE \n" +
+                "WHERE\n" +
+                "	customer_fit.DELETE_FLAG = 0 \n" +
+                "	AND customer_fit.CUSTOMER_ID = '" + CUSTOMER_ID + "' \n" +
+                "	AND customer_fit.CREATE_DATE = ( SELECT CREATE_DATE FROM a_customer_fit_r WHERE CUSTOMER_ID = '"+ CUSTOMER_ID + "' ORDER BY CREATE_DATE DESC LIMIT 1 ) \n" +
+                "ORDER BY\n" +
+                "	property.PROPERTY_COST";
+            DataTable dataTable客户量体值 = SQLmtm.GetDataTable(sql);
 
+            
+            Dto尺寸 Dto尺寸;
             foreach (DataRow dr in dt.Rows)
             {
                 Dto尺寸 = new Dto尺寸(dr);
-                List<尺寸呈现dto> 尺寸呈现dto = GetThisSize(STYLE_FIT_CD, STYLE_CATEGORY_CD, STYLE_SIZE_CD, STYLE_SIZE_GROUP_CD, dr["STYLE_ID"].ToString(),false);
-                Dto尺寸.build尺寸呈现dto(尺寸呈现dto);
+                List<尺寸呈现dto> 尺寸呈现dto = SizeService.GetThisSize(STYLE_FIT_CD, STYLE_CATEGORY_CD, STYLE_SIZE_CD, STYLE_SIZE_GROUP_CD, dr["STYLE_ID"].ToString(),false);
+                Dto尺寸.build尺寸呈现dto(尺寸呈现dto, dataTable客户量体值);
                 return 尺寸呈现dto;
             }
+
 
             throw new Exception("没有量体值");
         }

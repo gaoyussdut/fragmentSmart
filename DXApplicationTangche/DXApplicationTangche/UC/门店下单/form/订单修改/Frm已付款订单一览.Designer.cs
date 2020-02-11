@@ -40,6 +40,7 @@
             this.colSTYLE_SIZE_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_CATEGORY_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_FIT_CD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTOMER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl订单一览)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +68,8 @@
             this.colSTYLE_SIZE_GROUP_CD,
             this.colSTYLE_SIZE_CD,
             this.colSTYLE_CATEGORY_CD,
-            this.colSTYLE_FIT_CD});
+            this.colSTYLE_FIT_CD,
+            this.colCUSTOMER_ID});
             this.gridView1.GridControl = this.gridControl订单一览;
             this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
@@ -168,6 +170,14 @@
             this.colSTYLE_FIT_CD.Name = "colSTYLE_FIT_CD";
             this.colSTYLE_FIT_CD.Width = 94;
             // 
+            // colCUSTOMER_ID
+            // 
+            this.colCUSTOMER_ID.Caption = "CUSTOMER_ID";
+            this.colCUSTOMER_ID.FieldName = "CUSTOMER_ID";
+            this.colCUSTOMER_ID.MinWidth = 25;
+            this.colCUSTOMER_ID.Name = "colCUSTOMER_ID";
+            this.colCUSTOMER_ID.Width = 94;
+            // 
             // Frm已付款订单一览
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -197,5 +207,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_SIZE_CD;
         private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_CATEGORY_CD;
         private DevExpress.XtraGrid.Columns.GridColumn colSTYLE_FIT_CD;
+        private DevExpress.XtraGrid.Columns.GridColumn colCUSTOMER_ID;
     }
 }

@@ -38,7 +38,10 @@ namespace DXApplicationTangche.UC.门店下单.form
                 , this.gridView1.GetDataRow(e.RowHandle)["STYLE_CATEGORY_CD"].ToString()
                 , this.gridView1.GetDataRow(e.RowHandle)["STYLE_SIZE_CD"].ToString()
                 , this.gridView1.GetDataRow(e.RowHandle)["STYLE_SIZE_GROUP_CD"].ToString()
+                , this.gridView1.GetDataRow(e.RowHandle)["CUSTOMER_ID"].ToString()
                 );
+            //  CUSTOMER_ID
+            
 
             new Frm尺寸修改子页(
                 this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()

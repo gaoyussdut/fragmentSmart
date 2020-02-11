@@ -402,6 +402,7 @@ namespace DXApplicationTangche.UC.款式异常
         public Double garmentSize { get; set; }//成衣尺寸
         public Double leastReasonable { get; set; }//最小合理值
         public Double maxReasonable { get; set; }//最大合理值
+        public Double CUSTOMER_FIT_VALUE { get; set; }  //  客户量体值
         public 尺寸呈现dto(String itemcd, String itemvalue, String propertyvalue, String fitvalue, Double itemfitvalue, Double invalue, Double outvalue, String itemnamecn, Double leastReasonable, Double maxReasonable)
         {
             this.ITEM_CD = itemcd;
