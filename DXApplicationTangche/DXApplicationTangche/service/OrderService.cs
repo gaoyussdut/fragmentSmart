@@ -136,7 +136,18 @@ namespace DXApplicationTangche.service
             SQLmtm.DoInsert("t_order_type", new string[] { "ORDER_ID", "ORDER_TYPE" }, new string[] { order_id.ToString(), "1" });
         }
 
-        public static DataTable get未付款订单() {
+        public static DataTable get订单(List<String> status) {
+            String str;
+            if (status == null || status.Count == 0) {
+                throw new Exception("请选择订单状态");
+            }
+            else if (status.Count == 1) {
+                str = status[0];
+            }
+            else {
+                str = String.Join("','", status);
+            }
+
             String sql = "SELECT\n" +
                 "	s_style_p.STYLE_NAME_CN,\n" +
                 "	s_style_p.STYLE_FIT_CD,\n" +
@@ -208,7 +219,7 @@ namespace DXApplicationTangche.service
                 "	o_order_p\n" +
                 "	LEFT JOIN s_style_p ON o_order_p.STYLE_ID = s_style_p.SYS_STYLE_ID \n" +
                 "WHERE\n" +
-                "	o_order_p.ORDER_STATUS_CD in ('ORDER_STATUS-OS_13' ,'ORDER_STATUS-OS_11' ) \n" +
+                "	o_order_p.ORDER_STATUS_CD in ('" + str + "' ) \n" +
                 "	AND o_order_p.SHOP_ID = '18' \n" +
                 "ORDER BY\n" +
                 "	o_order_p.order_date DESC";

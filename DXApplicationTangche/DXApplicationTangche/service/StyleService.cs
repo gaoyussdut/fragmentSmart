@@ -15,11 +15,52 @@ namespace DXApplicationTangche.service
     /// </summary>
     public class StyleService
     {
-        /// <summary>
-        /// 取得所有款式信息
-        /// </summary>
-        /// <returns></returns>
-        public static 款式Model getAllStyle(byte ENABLE_FLAG)
+
+        public static 款式图片一览Dto getStyleByORDER_ID(String ORDER_ID)
+        {
+            String sql = "SELECT\n" +
+                "	SYS_STYLE_ID,\n" +
+                "	CUSTOMER_COUNT_ID,\n" +
+                "	STYLE_CD,\n" +
+                "	STYLE_CATEGORY_CD,\n" +
+                "	STYLE_DRESS_CATEGORY,\n" +
+                "	STYLE_DESIGN_TYPE,\n" +
+                "	STYLE_PUBLISH_CATEGORY_CD,\n" +
+                "	REF_STYLE_ID,\n" +
+                "	STYLE_NAME_CN,\n" +
+                "	STYLE_NAME_EN,\n" +
+                "	STYLE_FIT_CD,\n" +
+                "	SYTLE_YEAR,\n" +
+                "	SYTLE_SEASON,\n" +
+                "	SYTLE_FABRIC_ID,\n" +
+                "	STYLE_SIZE_GROUP_CD,\n" +
+                "	STYLE_SIZE_CD,\n" +
+                "	STYLE_MAKE_TYPE,\n" +
+                "	STYLE_MATERIAL_NUMBER,\n" +
+                "	STYLE_DESIGN_PRICE,\n" +
+                "	CONCAT( 'https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/', SUBSTRING_INDEX( COVER_PHOTO_PATH, '/',- 1 ) ) AS PIC_URL,\n" +
+                "	SUBSTRING_INDEX( COVER_PHOTO_PATH, '/',- 1 ) AS PIC_NAME,\n" +
+                "	ENABLE_FLAG,\n" +
+                "	CREATE_DATE\n" +
+                "FROM\n" +
+                "	s_style_p\n" +
+                " where s_style_p.SYS_STYLE_ID in (select STYLE_ID from o_order_p where order_id = '" + ORDER_ID+"')" +
+                "	order by CREATE_DATE";
+            List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
+
+            DataTable dataTable = SQLmtm.GetDataTable(sql);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                return new 款式图片一览Dto(dataRow);
+            }
+            throw new Exception("没有款式信息");
+        }
+
+            /// <summary>
+            /// 取得所有款式信息
+            /// </summary>
+            /// <returns></returns>
+            public static 款式Model getAllStyle(byte ENABLE_FLAG)
         {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +

@@ -21,6 +21,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         private String Style_Id;
         private String ORDER_ID;
         private String REMARKS;
+        private List<DTO.款式图片一览Dto> 款式图片一览Dtos = new List<DTO.款式图片一览Dto>();
         private Frm已付款订单一览 Frm已付款订单一览;
 
         //private List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
@@ -32,10 +33,13 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.ORDER_ID = ORDER_ID;
             this.REMARKS = REMARKS;
             this.Frm已付款订单一览 = Frm已付款订单一览;
+            this.款式图片一览Dtos.Add(StyleService.getStyleByORDER_ID(ORDER_ID));
 
+            //  尺寸
             this.model.build款式全尺寸(Style_Id).build设计点(Style_Id);
 
             //  控件行为
+            this.gridControl款式.DataSource = this.款式图片一览Dtos;
             this.gridControl面料.DataSource = this.model.面料信息;
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControl设计点.DataSource = this.model.Dto定制下单.Dto设计点s;

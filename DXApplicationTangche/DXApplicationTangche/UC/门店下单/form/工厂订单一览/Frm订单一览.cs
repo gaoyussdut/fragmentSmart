@@ -16,9 +16,9 @@ using DXApplicationTangche.UC.门店下单.form.订单修改;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
-    public partial class Frm已付款订单一览 : DevExpress.XtraEditors.XtraForm
+    public partial class Frm订单一览 : DevExpress.XtraEditors.XtraForm
     {
-        public Frm已付款订单一览()
+        public Frm订单一览()
         {
             InitializeComponent();
         }
@@ -46,13 +46,13 @@ namespace DXApplicationTangche.UC.门店下单.form
             //  CUSTOMER_ID
             
 
-            new Frm尺寸修改子页(
-                this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
-                ,lst
-                ,this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
-                , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
-                ,this
-                ).ShowDialog();
+            //new Frm尺寸修改子页(
+            //    this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
+            //    ,lst
+            //    ,this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
+            //    , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
+            //    ,this
+            //    ).ShowDialog();
         }
 
         /// <summary>

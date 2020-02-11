@@ -221,6 +221,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
                 this.Picture = Image.FromFile(@"pic\" + dr["PIC_NAME"].ToString());
             }
             catch {
+                this.Picture = Image.FromFile(@"pic\SSHIRT.jpg");
                 this.ErrorMessage += "[没有款式图片]";
             }
             this.ENABLE_FLAG = Convert.ToByte(dr["ENABLE_FLAG"].ToString());
