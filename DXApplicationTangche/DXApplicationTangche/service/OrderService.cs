@@ -1,6 +1,7 @@
 ﻿using DiaoPaiDaYin;
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.DTO;
+using DXApplicationTangche.UC.门店下单.form;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,24 @@ namespace DXApplicationTangche.service
     /// </summary>
     public class OrderService
     {
+        public static List<Order_Status> getOrderStatus() {
+            String sql = "SELECT\n" +
+                "	CONCAT( ITEM_CD, '-', ITEM_VALUE ) AS ITEM_VALUE,\n" +
+                "	ITEM_NAME_CN \n" +
+                "FROM\n" +
+                "	a_dict_p \n" +
+                "WHERE\n" +
+                "	item_cd LIKE 'ORDER_STATUS'";
+            DataTable dataTable=  SQLmtm.GetDataTable(sql);
+
+            List<Order_Status> order_Statuses = new List<Order_Status>();
+            order_Statuses.Add(new Order_Status("全部"));
+
+            foreach (DataRow dataRow in dataTable.Rows) {
+                order_Statuses.Add(new Order_Status(dataRow));
+            }
+            return order_Statuses;
+        }
         /// <summary>
         /// 查询订单
         /// </summary>
@@ -186,6 +205,7 @@ namespace DXApplicationTangche.service
                 "	o_order_p.TARGET_DATE,\n" +
                 "	o_order_p.REAL_DATE,\n" +
                 "	o_order_p.ORDER_STATUS_CD,\n" +
+                "	ORDER_STATUS.ITEM_NAME_CN,\n" +
                 "	o_order_p.ORDER_PRODUCE_STATUS_CD,\n" +
                 "	o_order_p.ORDER_QC34,\n" +
                 "	o_order_p.ORDER_QC35,\n" +
@@ -218,6 +238,14 @@ namespace DXApplicationTangche.service
                 "FROM\n" +
                 "	o_order_p\n" +
                 "	LEFT JOIN s_style_p ON o_order_p.STYLE_ID = s_style_p.SYS_STYLE_ID \n" +
+                "   LEFT JOIN\n" +
+                "(SELECT\n" +
+                "	CONCAT( ITEM_CD, '-', ITEM_VALUE ) AS ITEM_VALUE,\n" +
+                "	ITEM_NAME_CN \n" +
+                "FROM\n" +
+                "	a_dict_p \n" +
+                "WHERE\n" +
+                "item_cd LIKE 'ORDER_STATUS' ) ORDER_STATUS ON ORDER_STATUS.ITEM_VALUE = o_order_p.ORDER_STATUS_CD\n" +
                 "WHERE\n" +
                 "	o_order_p.ORDER_STATUS_CD in ('" + str + "' ) \n" +
                 "	AND o_order_p.SHOP_ID = '18' \n" +

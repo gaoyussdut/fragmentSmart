@@ -43,6 +43,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.gridControl面料.DataSource = this.model.面料信息;
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControl设计点.DataSource = this.model.Dto定制下单.Dto设计点s;
+            this.textBoxREMARKS.Text = this.REMARKS;
             //  模板  TODO
             ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("样品下单");
             ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("定制下单");
@@ -106,8 +107,6 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
         private void Frm尺寸修改子页_Activated(object sender, EventArgs e)
         {
-            this.mianliaoname.Text = this.model.面料信息[0].name;
-            //this.gridControl面料.DataSource = this.model.面料信息;
             this.tileView2.RefreshData();
             this.tileView1.RefreshData();
         }

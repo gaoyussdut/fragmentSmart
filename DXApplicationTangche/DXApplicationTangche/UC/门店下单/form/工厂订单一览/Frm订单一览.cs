@@ -34,23 +34,11 @@ namespace DXApplicationTangche.UC.门店下单.form
         /// 初始化状态数据
         /// </summary>
         private void initStatusData() {
-            this.status_code = "ORDER_STATUS-OS_20";
-            this.status_name = "待加工";
-            this.searchLookUpEdit1.EditValue = "待加工";
+            this.status_code = null;
+            this.status_name = "全部";
+            this.searchLookUpEdit1.EditValue = this.status_name;
 
-            this.Order_Status.Add(new Order_Status("客户未确认", "ORDER_STATUS-OS_05"));
-            this.Order_Status.Add(new Order_Status("客户已确认", "ORDER_STATUS-OS_10"));
-            this.Order_Status.Add(new Order_Status("提交待付款", "ORDER_STATUS-OS_11"));
-            this.Order_Status.Add(new Order_Status("付款待确认", "ORDER_STATUS-OS_12"));
-            this.Order_Status.Add(new Order_Status("已付款", "ORDER_STATUS-OS_13"));
-            this.Order_Status.Add(new Order_Status("待加工", "ORDER_STATUS-OS_20"));
-            this.Order_Status.Add(new Order_Status("订单取消", "ORDER_STATUS-OS_80"));
-            this.Order_Status.Add(new Order_Status("客户收货", "ORDER_STATUS-OS_60"));
-            this.Order_Status.Add(new Order_Status("客户退款", "ORDER_STATUS-OS_16"));
-            this.Order_Status.Add(new Order_Status("已评价", "ORDER_STATUS-OS_65"));
-            this.Order_Status.Add(new Order_Status("生产完成", "ORDER_STATUS-OS_40"));
-            this.Order_Status.Add(new Order_Status("客户待收货", "ORDER_STATUS-OS_55"));
-            this.Order_Status.Add(new Order_Status("订单返工", "ORDER_STATUS-OS_9"));
+            this.Order_Status = OrderService.getOrderStatus();
             this.searchLookUpEdit1.Properties.DataSource = this.Order_Status;
         }
 
@@ -58,7 +46,16 @@ namespace DXApplicationTangche.UC.门店下单.form
         {
             initStatusData();   //  初始化状态数据
             List<String> status = new List<string>();
-            status.Add(this.status_code);
+            if (String.IsNullOrEmpty(this.status_code))
+            {
+                foreach (Order_Status orderStatus in this.Order_Status) {
+                    status.Add(orderStatus.code);
+                }
+            }
+            else {
+                status.Add(this.status_code);
+            }
+            
             this.gridControl订单一览.DataSource = OrderService.get订单(status);
             this.gridView1.Columns["ORDER_DATE"].SortOrder = ColumnSortOrder.Descending;
             this.gridView1.ExpandAllGroups();
@@ -130,8 +127,13 @@ namespace DXApplicationTangche.UC.门店下单.form
             var a = this.searchLookUpEdit1.Properties.View.GetSelectedRows();
             foreach (int rowHandle in a)
             {
-                this.status_code //  no
-                    = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "code").ToString();//id 是 Value Member
+                try
+                {
+                    this.status_code //  no
+                        = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "code").ToString();//id 是 Value Member
+                }
+                catch { }
+
                 this.status_name //  no
                     = this.searchLookUpEdit1.Properties.View.GetRowCellValue(rowHandle, "name").ToString();//id 是 Value Member
             }
@@ -164,10 +166,14 @@ namespace DXApplicationTangche.UC.门店下单.form
     {
         public String code { get; set; }
         public String name { get; set; }
-        public Order_Status(String name, String code)
-        {
-            this.code = code;
+
+        public Order_Status(String name) {
             this.name = name;
+        }
+        public Order_Status(DataRow dataRow)
+        {
+            this.code = dataRow["ITEM_VALUE"].ToString();
+            this.name = dataRow["ITEM_NAME_CN"].ToString();
         }
     }
 }

@@ -42,19 +42,17 @@
             this.colSTYLE_CATEGORY_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSTYLE_FIT_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTOMER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colORDER_STATUS_CD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colITEM_NAME_CN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl订单一览)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -66,8 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +91,9 @@
             this.colSTYLE_SIZE_CD,
             this.colSTYLE_CATEGORY_CD,
             this.colSTYLE_FIT_CD,
-            this.colCUSTOMER_ID});
+            this.colCUSTOMER_ID,
+            this.colORDER_STATUS_CD,
+            this.colITEM_NAME_CN});
             this.gridView1.GridControl = this.gridControl订单一览;
             this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
@@ -148,13 +146,14 @@
             this.colORDER_DATE.FieldName = "ORDER_DATE";
             this.colORDER_DATE.MinWidth = 25;
             this.colORDER_DATE.Name = "colORDER_DATE";
+            this.colORDER_DATE.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.colORDER_DATE.Visible = true;
             this.colORDER_DATE.VisibleIndex = 4;
             this.colORDER_DATE.Width = 94;
             // 
             // colPAYMENT_DATE
             // 
-            this.colPAYMENT_DATE.Caption = "付款时间";
+            this.colPAYMENT_DATE.Caption = "下单时间";
             this.colPAYMENT_DATE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colPAYMENT_DATE.FieldName = "PAYMENT_DATE";
             this.colPAYMENT_DATE.MinWidth = 25;
@@ -204,6 +203,14 @@
             this.colCUSTOMER_ID.Name = "colCUSTOMER_ID";
             this.colCUSTOMER_ID.Width = 94;
             // 
+            // colORDER_STATUS_CD
+            // 
+            this.colORDER_STATUS_CD.Caption = "STATUS_CD";
+            this.colORDER_STATUS_CD.FieldName = "ORDER_STATUS_CD";
+            this.colORDER_STATUS_CD.MinWidth = 25;
+            this.colORDER_STATUS_CD.Name = "colORDER_STATUS_CD";
+            this.colORDER_STATUS_CD.Width = 94;
+            // 
             // dockManager1
             // 
             this.dockManager1.Form = this;
@@ -245,8 +252,6 @@
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
-            this.layoutControl1.Controls.Add(this.dateTimePickerEnd);
-            this.layoutControl1.Controls.Add(this.dateTimePickerStart);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -276,28 +281,12 @@
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
             // 
-            // dateTimePickerEnd
-            // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(75, 69);
-            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(230, 26);
-            this.dateTimePickerEnd.TabIndex = 6;
-            // 
-            // dateTimePickerStart
-            // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(75, 40);
-            this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(230, 26);
-            this.dateTimePickerStart.TabIndex = 5;
-            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.emptySpaceItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
             this.layoutControlItem1});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(317, 421);
@@ -306,28 +295,10 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 86);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 28);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(297, 315);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(297, 373);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.dateTimePickerStart;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(297, 29);
-            this.layoutControlItem2.Text = "开始时间";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 18);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.dateTimePickerEnd;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 57);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(297, 29);
-            this.layoutControlItem3.Text = "结束时间";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 18);
             // 
             // layoutControlItem1
             // 
@@ -337,6 +308,16 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(297, 28);
             this.layoutControlItem1.Text = "订单状态";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 18);
+            // 
+            // colITEM_NAME_CN
+            // 
+            this.colITEM_NAME_CN.Caption = "状态";
+            this.colITEM_NAME_CN.FieldName = "ITEM_NAME_CN";
+            this.colITEM_NAME_CN.MinWidth = 25;
+            this.colITEM_NAME_CN.Name = "colITEM_NAME_CN";
+            this.colITEM_NAME_CN.Visible = true;
+            this.colITEM_NAME_CN.VisibleIndex = 4;
+            this.colITEM_NAME_CN.Width = 94;
             // 
             // Frm订单一览
             // 
@@ -359,8 +340,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
 
@@ -385,14 +364,12 @@
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn colORDER_STATUS_CD;
+        private DevExpress.XtraGrid.Columns.GridColumn colITEM_NAME_CN;
     }
 }
