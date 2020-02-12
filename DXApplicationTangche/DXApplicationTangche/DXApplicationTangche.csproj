@@ -140,6 +140,8 @@
     </Compile>
     <Compile Include="service\CustomerService.cs" />
     <Compile Include="service\FabricService.cs" />
+    <Compile Include="service\FileBinaryConvertHelper.cs" />
+    <Compile Include="service\FileService.cs" />
     <Compile Include="service\ItemService.cs" />
     <Compile Include="service\OrderService.cs" />
     <Compile Include="service\PictureService.cs" />

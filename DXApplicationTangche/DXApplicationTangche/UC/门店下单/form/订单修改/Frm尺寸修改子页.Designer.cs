@@ -455,6 +455,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -917,10 +919,11 @@
             this.floatingObjectSendToBackItem1,
             this.floatingObjectSendBehindTextItem1,
             this.barButtonItem2,
-            this.barEditItemTemplate});
+            this.barEditItemTemplate,
+            this.barButtonItem3});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbonControl1.MaxItemId = 265;
+            this.ribbonControl1.MaxItemId = 267;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.headerFooterToolsRibbonPageCategory1,
@@ -2691,7 +2694,8 @@
             // 
             this.fileRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.commonRibbonPageGroup1,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup3});
             this.fileRibbonPage1.Name = "fileRibbonPage1";
             // 
             // commonRibbonPageGroup1
@@ -2986,32 +2990,32 @@
             // label2
             // 
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(367, 10);
+            this.label2.Location = new System.Drawing.Point(367, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(755, 20);
+            this.label2.Size = new System.Drawing.Size(754, 20);
             this.label2.TabIndex = 103;
             this.label2.Text = "设计点";
             // 
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(11, 10);
+            this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(352, 20);
+            this.label1.Size = new System.Drawing.Size(351, 20);
             this.label1.TabIndex = 102;
             this.label1.Text = "款式";
             // 
             // gridControl款式
             // 
             this.gridControl款式.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl款式.Location = new System.Drawing.Point(11, 34);
+            this.gridControl款式.Location = new System.Drawing.Point(12, 36);
             this.gridControl款式.MainView = this.tileView3;
             this.gridControl款式.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl款式.MenuManager = this.ribbonControl1;
             this.gridControl款式.Name = "gridControl款式";
             this.gridControl款式.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1});
-            this.gridControl款式.Size = new System.Drawing.Size(352, 121);
+            this.gridControl款式.Size = new System.Drawing.Size(351, 119);
             this.gridControl款式.TabIndex = 101;
             this.gridControl款式.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView3});
@@ -3077,14 +3081,14 @@
             // gridControl设计点
             // 
             this.gridControl设计点.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl设计点.Location = new System.Drawing.Point(367, 34);
+            this.gridControl设计点.Location = new System.Drawing.Point(367, 36);
             this.gridControl设计点.MainView = this.tileView1;
             this.gridControl设计点.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl设计点.MenuManager = this.ribbonControl1;
             this.gridControl设计点.Name = "gridControl设计点";
             this.gridControl设计点.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl设计点.Size = new System.Drawing.Size(755, 284);
+            this.gridControl设计点.Size = new System.Drawing.Size(754, 280);
             this.gridControl设计点.TabIndex = 100;
             this.gridControl设计点.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -3141,12 +3145,12 @@
             // gridControl面料
             // 
             this.gridControl面料.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gridControl面料.Location = new System.Drawing.Point(11, 185);
+            this.gridControl面料.Location = new System.Drawing.Point(12, 185);
             this.gridControl面料.MainView = this.tileView2;
             this.gridControl面料.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl面料.MenuManager = this.ribbonControl1;
             this.gridControl面料.Name = "gridControl面料";
-            this.gridControl面料.Size = new System.Drawing.Size(352, 133);
+            this.gridControl面料.Size = new System.Drawing.Size(351, 131);
             this.gridControl面料.TabIndex = 98;
             this.gridControl面料.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView2});
@@ -3218,10 +3222,10 @@
             // mianliaoname
             // 
             this.mianliaoname.Font = new System.Drawing.Font("宋体", 12F);
-            this.mianliaoname.Location = new System.Drawing.Point(38, 159);
+            this.mianliaoname.Location = new System.Drawing.Point(39, 159);
             this.mianliaoname.Name = "mianliaoname";
             this.mianliaoname.ReadOnly = true;
-            this.mianliaoname.Size = new System.Drawing.Size(263, 20);
+            this.mianliaoname.Size = new System.Drawing.Size(262, 20);
             this.mianliaoname.TabIndex = 97;
             // 
             // layoutControlGroup1
@@ -3245,24 +3249,24 @@
             this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red;
             this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.mianliaoname;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 149);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 147);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(294, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(293, 26);
             this.layoutControlItem4.Text = "面料";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(24, 14);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 312);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 308);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1115, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1113, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton3;
-            this.layoutControlItem5.Location = new System.Drawing.Point(294, 149);
+            this.layoutControlItem5.Location = new System.Drawing.Point(293, 147);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(62, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
@@ -3271,18 +3275,18 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.gridControl面料;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 175);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 173);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(356, 137);
+            this.layoutControlItem6.Size = new System.Drawing.Size(355, 135);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.gridControl设计点;
-            this.layoutControlItem8.Location = new System.Drawing.Point(356, 24);
+            this.layoutControlItem8.Location = new System.Drawing.Point(355, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(759, 288);
+            this.layoutControlItem8.Size = new System.Drawing.Size(758, 284);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -3291,7 +3295,7 @@
             this.layoutControlItem7.Control = this.gridControl款式;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(356, 125);
+            this.layoutControlItem7.Size = new System.Drawing.Size(355, 123);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -3300,16 +3304,16 @@
             this.layoutControlItem9.Control = this.label1;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(356, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(355, 24);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.label2;
-            this.layoutControlItem10.Location = new System.Drawing.Point(356, 0);
+            this.layoutControlItem10.Location = new System.Drawing.Point(355, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(759, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(758, 24);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
@@ -3486,25 +3490,25 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 10);
+            this.textBox1.Location = new System.Drawing.Point(63, 12);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(331, 20);
+            this.textBox1.Size = new System.Drawing.Size(329, 20);
             this.textBox1.TabIndex = 7;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(62, 34);
+            this.textEdit1.Location = new System.Drawing.Point(63, 36);
             this.textEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textEdit1.MenuManager = this.ribbonControl1;
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(331, 20);
+            this.textEdit1.Size = new System.Drawing.Size(329, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 6;
             // 
             // comboBoxEdit2
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(62, 58);
+            this.comboBoxEdit2.Location = new System.Drawing.Point(63, 60);
             this.comboBoxEdit2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxEdit2.MenuManager = this.ribbonControl1;
             this.comboBoxEdit2.Name = "comboBoxEdit2";
@@ -3513,7 +3517,7 @@
             this.comboBoxEdit2.Properties.Items.AddRange(new object[] {
             "开单",
             "等待"});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(331, 20);
+            this.comboBoxEdit2.Size = new System.Drawing.Size(329, 20);
             this.comboBoxEdit2.StyleController = this.layoutControl1;
             this.comboBoxEdit2.TabIndex = 5;
             // 
@@ -3534,7 +3538,7 @@
             this.layoutControlItem3.Control = this.comboBoxEdit2;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(386, 274);
+            this.layoutControlItem3.Size = new System.Drawing.Size(384, 270);
             this.layoutControlItem3.Text = "订单状态";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -3543,7 +3547,7 @@
             this.layoutControlItem1.Control = this.textEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(386, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(384, 24);
             this.layoutControlItem1.Text = "负责人";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -3552,7 +3556,7 @@
             this.layoutControlItem2.Control = this.textBox1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(386, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(384, 24);
             this.layoutControlItem2.Text = "价格";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -3829,6 +3833,20 @@
             "DevExpress.XtraBars.TabFormControl",
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "保存备注";
+            this.barButtonItem3.Id = 266;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // Frm尺寸修改子页
             // 
@@ -4280,5 +4298,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

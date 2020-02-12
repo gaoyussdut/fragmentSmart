@@ -12,6 +12,7 @@ using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.service;
 using mendian;
 using static mendian.Frm设计点;
+using System.IO;
 
 namespace DXApplicationTangche.UC.门店下单.form.订单修改
 {
@@ -126,6 +127,26 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         private void tileView1_ItemDoubleClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
         {
             new Frm设计点(this.model.Dto定制下单.Dto设计点s[this.tileView1.FocusedRowHandle], Enum选择设计点类型.全部, this.Style_Id).ShowDialog();
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("是否保存",
+        "Saving a document", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                try
+                {
+                    richEditControl备注.SaveDocument(@"" + this.ORDER_ID + ".doc", DevExpress.XtraRichEdit.DocumentFormat.Doc);
+                    Byte[] byteArray = FileBinaryConvertHelper.File2Bytes(@"" + this.ORDER_ID + ".doc");
+                    String str = Convert.ToBase64String(byteArray);
+                    FileService.SaveRemarkFile(str, this.ORDER_ID + ".doc", this.ORDER_ID);
+                    File.Delete(this.ORDER_ID + ".doc");
+                    MessageBox.Show("保存成功");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("保存失败"+ex.Message);
+                }
+
         }
     }
 }

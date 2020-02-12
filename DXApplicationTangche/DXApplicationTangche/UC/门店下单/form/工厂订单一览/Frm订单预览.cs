@@ -12,6 +12,8 @@ using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.service;
 using mendian;
 using static mendian.Frm设计点;
+using DiaoPaiDaYin;
+using System.IO;
 
 namespace DXApplicationTangche.UC.门店下单.form.订单修改
 {
@@ -125,6 +127,33 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         private void tileView1_ItemDoubleClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
         {
             new Frm设计点(this.model.Dto定制下单.Dto设计点s[this.tileView1.FocusedRowHandle], Enum选择设计点类型.全部).ShowDialog();
+        }
+
+        private void Frm订单预览_Load(object sender, EventArgs e)
+        {
+            String sql = "SELECT * FROM t_remark WHERE order_id='" + this.ORDER_ID + "'";
+            DataRow dr = SQLmtm.GetDataRow(sql);
+            if (dr == null)
+            {               
+            }
+            else
+            {
+                byte[] decBytes = Convert.FromBase64String(dr["remark"].ToString());
+                FileBinaryConvertHelper.Bytes2File(decBytes, @"" + this.ORDER_ID + ".doc");
+                this.richEditControl备注.LoadDocument(@"" + this.ORDER_ID + ".doc");
+            }
+        }
+
+        private void Frm订单预览_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                File.Delete(this.ORDER_ID + ".doc");
+            }
+            catch
+            {
+
+            }
         }
     }
 }
