@@ -144,5 +144,14 @@ namespace DXApplicationTangche.service
             }
             return 设计点dtos;
         }
+        /// <summary>
+        /// 修改设计点
+        /// </summary>
+        /// <param name="Dto设计点"></param>
+        /// <param name="styleid"></param>
+        public static void Change设计点(Dto设计点 Dto设计点, String styleid)
+        {
+            SQLmtm.DoUpdate("s_style_option_r", new string[] { "OPTION_VALUE" }, new string[] { Dto设计点.OPTION_VALUE }, new string[] { "SYS_STYLE_ID", "ITEM_VALUE" }, new string[] { styleid, Dto设计点.ITEM_VALUE });
+        }
     }
 }

@@ -101,7 +101,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            new Frm面料选择(this.model.Dto定制下单.Style_Id, Frm面料选择.Enum选择面料类型.全部, this.model).ShowDialog();
+            new Frm面料选择(this.model.Dto定制下单.Style_Id, Frm面料选择.Enum选择面料类型.全部, this.model,this.Style_Id).ShowDialog();
         }
 
         private void Frm尺寸修改子页_Activated(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
         private void tileView1_ItemDoubleClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
         {
-            new Frm设计点(this.model.Dto定制下单.Dto设计点s[this.tileView1.FocusedRowHandle], Enum选择设计点类型.全部).ShowDialog();
+            new Frm设计点(this.model.Dto定制下单.Dto设计点s[this.tileView1.FocusedRowHandle], Enum选择设计点类型.全部, this.Style_Id).ShowDialog();
         }
     }
 }

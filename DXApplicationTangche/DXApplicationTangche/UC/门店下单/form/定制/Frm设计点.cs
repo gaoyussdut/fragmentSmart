@@ -1,4 +1,5 @@
 ﻿using DiaoPaiDaYin;
+using DXApplicationTangche.service;
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.DTO;
 using System;
@@ -21,7 +22,8 @@ namespace mendian
 
         private String PitemName;
         private String PitemValue;
-
+        private bool changeOrderFlag = false;//修改订单标志
+        private String styleid;//款式id修改订单用
         public Frm设计点()
         {
             InitializeComponent();
@@ -106,7 +108,39 @@ namespace mendian
                     );
             }
             catch { }
+            if(this.changeOrderFlag==true)
+            {
+                try
+                {
+                    ItemService.Change设计点(this.Dto设计点, this.styleid);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
             this.Close();
+        }
+
+        public Frm设计点(Dto设计点 Dto设计点, Enum选择设计点类型 enum选择设计点类型,String styleid)
+        {
+            InitializeComponent();
+            this.enum选择设计点类型 = enum选择设计点类型;
+            this.Dto设计点 = Dto设计点;
+            this.PitemName = Dto设计点.Name;
+            this.PitemValue = Dto设计点.ITEM_VALUE;
+            this.changeOrderFlag = true;
+            this.styleid = styleid;
+            if (this.enum选择设计点类型 == Enum选择设计点类型.全部)
+            {
+                this.Text = "选择全部" + this.PitemName;
+                generatePictureLayout();
+            }
+            if (this.enum选择设计点类型 == Enum选择设计点类型.默认)
+            {
+                this.Text = "选择默认" + this.PitemName;
+                generatePictureLayout();
+            }
         }
     }
 }

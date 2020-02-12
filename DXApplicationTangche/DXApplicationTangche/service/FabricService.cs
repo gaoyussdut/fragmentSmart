@@ -554,5 +554,14 @@ namespace DXApplicationTangche.service
             DataTable dt = SQLmtm.GetDataTable(sql);
             return dt;
         }
+        /// <summary>
+        /// 更改面料
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <param name="fabricid"></param>
+        public static void ChangeFabric(String styleid,String fabricid)
+        {
+            SQLmtm.DoUpdate("s_style_p", new string[] { "SYTLE_FABRIC_ID" }, new string[] { fabricid }, new string[] { "SYS_STYLE_ID" }, new string[] { styleid });
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DXApplicationTangche.UC.款式异常;
+﻿using DXApplicationTangche.service;
+using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.form;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,8 @@ namespace mendian
         public static String mianliao { get; set; }
         public static String mianliaocd { get; set; }
         public String styleid { get; set; }
+        public String sys_styleid { get; set; }
+        public bool changeFlag = false;//修改面料用
         public enum Enum选择面料类型 { 默认, 全部}
         public Enum选择面料类型 enum选择面料类型;
 
@@ -117,8 +120,39 @@ namespace mendian
                         break;
                     }
                 }
+                if(this.changeFlag==true)
+                {
+                    FabricService.ChangeFabric(this.sys_styleid, id);//更新数据库
+                }
                 this.Close();
             }      
+        }
+        /// <summary>
+        /// 更改面料用
+        /// </summary>
+        /// <param name="styleid"></param>
+        /// <param name="enum选择面料类型"></param>
+        /// <param name="选Model"></param>
+        /// <param name="orderid"></param>
+        public Frm面料选择(String styleid, Enum选择面料类型 enum选择面料类型, 门店下单选款式Model 选Model,String sys_styleid)
+        {
+            InitializeComponent();
+            Frm面料选择.page = 1;
+            this.选Model = 选Model;
+            this.styleid = styleid;
+            this.sys_styleid = sys_styleid;
+            this.changeFlag = true;
+            this.enum选择面料类型 = enum选择面料类型;
+            this.fenYeLan1.xiaye.Click += new EventHandler(this.xiaye_Button);
+            this.fenYeLan1.shangye.Click += new EventHandler(this.shangye_Button);
+            if (this.enum选择面料类型 == Enum选择面料类型.默认)
+            {
+                this.Text = "默认面料选择";
+            }
+            else if (this.enum选择面料类型 == Enum选择面料类型.全部)
+            {
+                this.Text = "全部面料选择";
+            }
         }
     }
 }
