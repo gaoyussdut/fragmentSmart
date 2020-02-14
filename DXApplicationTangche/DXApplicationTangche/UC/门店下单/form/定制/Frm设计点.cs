@@ -127,7 +127,7 @@ namespace mendian
             InitializeComponent();
             this.enum选择设计点类型 = enum选择设计点类型;
             this.Dto设计点 = Dto设计点;
-            this.PitemName = Dto设计点.Name;
+            this.PitemName = Dto设计点.ITEM_TYPE_NAME_CN;
             this.PitemValue = Dto设计点.ITEM_VALUE;
             this.changeOrderFlag = true;
             this.styleid = styleid;

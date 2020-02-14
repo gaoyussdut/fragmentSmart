@@ -475,6 +475,13 @@
       <DependentUpon>XtraUC条码打印.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\DBUtil.cs" />
+    <Compile Include="原型\OrderPA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="原型\OrderPA.Designer.cs">
+      <DependentUpon>OrderPA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="原型\OrderQADTO.cs" />
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -620,6 +627,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\面料\Frm面料打码.resx">
       <DependentUpon>Frm面料打码.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原型\OrderPA.resx">
+      <DependentUpon>OrderPA.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
