@@ -15,16 +15,19 @@ namespace DXApplicationTangche.原型
     public partial class UC销售备注模板 : UserControl
     {
         public const int template_id = 1;
+        public bool ifedit = true;
         public TaskDTO TaskDTO { get; set; }
         public UC销售备注模板()
         {
             InitializeComponent();
         }
-        public UC销售备注模板(TaskDTO taskDTO,bool ifedit)
+        public UC销售备注模板(TaskDTO taskDTO, bool ifedit)
         {
+            this.ifedit = ifedit;
             this.TaskDTO = taskDTO;
             InitializeComponent();
-            
+            ReadFromDTO();
+
         }
         /// <summary>
         /// 将UC内容保存至dto
@@ -46,5 +49,46 @@ namespace DXApplicationTangche.原型
             this.TaskDTO.uCDocuments.Add(new UCDocument("时间", this.dateEdit时间.Text));
             this.TaskDTO.buildData();
         }
+        /// <summary>
+        /// 从dto中读取内容
+        /// </summary>
+        /// <param name="taskDTO"></param>
+        public void ReadFromDTO()
+        {
+            this.richEditControl备注.ReadOnly = this.ifedit;
+            this.textBox负责人.ReadOnly = this.ifedit;
+            this.dateEdit时间.ReadOnly = this.ifedit;
+            if (this.TaskDTO.data == "" || this.TaskDTO.data == null)
+            {
+                this.textBox负责人.Text = "";
+                this.dateEdit时间.Text = "";
+                this.Refresh();
+                //this.TaskDTO.data = "[{\"title\":\"负责人\",\"value\":\"\"},{\"title\":\"时间\",\"value\":\"\"}]";
+            }
+            else
+            {
+                foreach (UCDocument uCDocument in this.TaskDTO.uCDocuments)
+                {
+                    switch (uCDocument.title)
+                    {
+                        case "负责人":
+                            this.textBox负责人.Text = uCDocument.value;
+                            break;
+                        case "时间":
+                            this.dateEdit时间.Text = uCDocument.value;
+                            break;
+                    }
+                }
+            }
+            this.richEditControl备注.Refresh();
+            if (this.TaskDTO.remark != "" && this.TaskDTO.remark != null)
+            {
+                byte[] decBytes = Convert.FromBase64String(this.TaskDTO.remark);
+                FileBinaryConvertHelper.Bytes2File(decBytes, @"" + this.TaskDTO.file_name + ".doc");
+                this.richEditControl备注.LoadDocument(@"" + this.TaskDTO.file_name + ".doc");
+                File.Delete(@"" + this.TaskDTO.file_name + ".doc");
+            }
+        }
+
     }
 }

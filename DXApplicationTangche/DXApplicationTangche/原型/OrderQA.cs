@@ -116,14 +116,7 @@ namespace DXApplicationTangche.原型
             new Frm面料选择(this.model.Dto定制下单.Style_Id, Frm面料选择.Enum选择面料类型.全部, this.model, this.Style_Id).ShowDialog();
         }
 
-        private void Frm尺寸修改子页_Activated(object sender, EventArgs e)
-        {
-            //this.mianliaoname.Text = this.model.面料信息[0].name;
-            ////this.gridControl面料.DataSource = this.model.面料信息;
-            //this.tileView2.RefreshData();
-            //this.tileView1.RefreshData();
-        }
-
+        
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.layoutControl1.SaveLayoutToXml(this.barEditItemTemplate.EditValue + ".xml");
@@ -158,7 +151,7 @@ namespace DXApplicationTangche.原型
                             this.uc销售备注模板.SaveToDTO();
                             break;
                     }
-                    this.任务DTO.SaveInMTM();
+                    this.任务DTO.buildserial_number().SaveInMTM();
                     MessageBox.Show("保存成功");
                 }
                 catch (Exception ex)
@@ -201,7 +194,8 @@ namespace DXApplicationTangche.原型
 
         private void barButtonItem新增模板_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.任务DTO = new TaskDTO().buildNewDTO("1", this.ORDER_ID, this.Style_Id, "1");
+            this.任务DTO = new TaskDTO().buildNewDTO(this.template_choose[this.barEditItem模板.EditValue.ToString()], this.ORDER_ID, this.Style_Id, "1");
+            this.panel1.Controls.Clear();
             try
             {
                 switch (this.template_choose[this.barEditItem模板.EditValue.ToString()])
@@ -215,9 +209,13 @@ namespace DXApplicationTangche.原型
                         break;
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show("当前时间：" + DateTime.Now.ToString() + "\n" +
+"异常信息：" + ex.Message + "\n" +
+"异常对象：" + ex.Source + "\n" +
+"调用堆栈：\n" + ex.StackTrace.Trim() + "\n" +
+"触发方法：" + ex.TargetSite + "\n");
             }
         }
 
@@ -233,18 +231,27 @@ namespace DXApplicationTangche.原型
                 this.gridControl导航.DataSource = this.TaskDTOS.taskDTOs;
                 this.gridControl导航.Refresh();
             }
-            catch
+            catch(Exception ex)
             {
-
+                MessageBox.Show("当前时间：" + DateTime.Now.ToString() + "\n" +
+"异常信息：" + ex.Message + "\n" +
+"异常对象：" + ex.Source + "\n" +
+"调用堆栈：\n" + ex.StackTrace.Trim() + "\n" +
+"触发方法：" + ex.TargetSite + "\n");
             }
         }
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            this.任务DTO = new TaskDTO().buildRead(this.gridView1.GetDataRow(e.RowHandle)["remark_id"].ToString());
-            switch (this.gridView1.GetDataRow(e.RowHandle)["template_id"].ToString())
+            this.任务DTO = new TaskDTO().buildRead(this.gridView一览.GetRowCellValue(e.RowHandle, "remark_id").ToString());
+            switch (this.gridView一览.GetRowCellValue(e.RowHandle, "template_id").ToString())
             {
-                case "1": this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, true);break;
+                case "1":
+                    this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, false); uc销售备注模板.Dock = DockStyle.Fill;
+                    this.panel1.Controls.Clear();
+                    this.panel1.Controls.Add(uc销售备注模板);
+                    this.panel1.Refresh();
+                    break;
             }
         }
     }

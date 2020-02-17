@@ -24,7 +24,11 @@ namespace DiaoPaiDaYin
             }
             catch(Exception ex)
             {
-                MessageBox.Show("错误信息: " + ex.Message);
+                MessageBox.Show("当前时间：" + DateTime.Now.ToString() + "\n" +
+"异常信息：" + ex.Message + "\n" +
+"异常对象：" + ex.Source + "\n" +
+"调用堆栈：\n" + ex.StackTrace.Trim() + "\n" +
+"触发方法：" + ex.TargetSite + "\n");
             }
             finally
             {

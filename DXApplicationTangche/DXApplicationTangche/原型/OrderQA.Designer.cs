@@ -385,12 +385,14 @@ namespace DXApplicationTangche.原型
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.gridControl导航 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridView一览 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coltemplate_group_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltemplate_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltemplate_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltemplate_group_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colremark_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colserial_number = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATE_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).BeginInit();
@@ -416,7 +418,7 @@ namespace DXApplicationTangche.原型
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl导航)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView一览)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPage2
@@ -854,7 +856,7 @@ namespace DXApplicationTangche.原型
             this.richEditControl备注.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richEditControl备注.MenuManager = this.ribbonControl1;
             this.richEditControl备注.Name = "richEditControl备注";
-            this.richEditControl备注.Size = new System.Drawing.Size(473, 386);
+            this.richEditControl备注.Size = new System.Drawing.Size(409, 386);
             this.richEditControl备注.TabIndex = 2;
             // 
             // fontSizeIncreaseItem1
@@ -2782,7 +2784,7 @@ namespace DXApplicationTangche.原型
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage备注;
-            this.xtraTabControl1.Size = new System.Drawing.Size(879, 416);
+            this.xtraTabControl1.Size = new System.Drawing.Size(815, 416);
             this.xtraTabControl1.TabIndex = 9;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage备注,
@@ -2794,7 +2796,7 @@ namespace DXApplicationTangche.原型
             this.xtraTabPage备注.Controls.Add(this.layoutControl1);
             this.xtraTabPage备注.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabPage备注.Name = "xtraTabPage备注";
-            this.xtraTabPage备注.Size = new System.Drawing.Size(877, 386);
+            this.xtraTabPage备注.Size = new System.Drawing.Size(813, 386);
             this.xtraTabPage备注.Text = "备注";
             // 
             // layoutControl1
@@ -2887,7 +2889,7 @@ namespace DXApplicationTangche.原型
             // 
             this.xtraTabPage测试.Controls.Add(this.panel1);
             this.xtraTabPage测试.Name = "xtraTabPage测试";
-            this.xtraTabPage测试.Size = new System.Drawing.Size(877, 386);
+            this.xtraTabPage测试.Size = new System.Drawing.Size(813, 386);
             this.xtraTabPage测试.Text = "测试";
             // 
             // panel1
@@ -2895,7 +2897,7 @@ namespace DXApplicationTangche.原型
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(877, 386);
+            this.panel1.Size = new System.Drawing.Size(813, 386);
             this.panel1.TabIndex = 0;
             // 
             // richEditBarController1
@@ -3179,10 +3181,10 @@ namespace DXApplicationTangche.原型
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dockPanel1.ID = new System.Guid("effddd8a-ad05-488c-be3b-40c0d9306f49");
-            this.dockPanel1.Location = new System.Drawing.Point(879, 166);
+            this.dockPanel1.Location = new System.Drawing.Point(815, 166);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(242, 200);
-            this.dockPanel1.Size = new System.Drawing.Size(242, 416);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(306, 200);
+            this.dockPanel1.Size = new System.Drawing.Size(306, 416);
             this.dockPanel1.Text = "导航";
             // 
             // dockPanel1_Container
@@ -3190,35 +3192,38 @@ namespace DXApplicationTangche.原型
             this.dockPanel1_Container.Controls.Add(this.gridControl导航);
             this.dockPanel1_Container.Location = new System.Drawing.Point(4, 30);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(235, 383);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(299, 383);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl导航
             // 
             this.gridControl导航.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl导航.Location = new System.Drawing.Point(0, 0);
-            this.gridControl导航.MainView = this.gridView1;
+            this.gridControl导航.MainView = this.gridView一览;
             this.gridControl导航.MenuManager = this.ribbonControl1;
             this.gridControl导航.Name = "gridControl导航";
-            this.gridControl导航.Size = new System.Drawing.Size(235, 383);
+            this.gridControl导航.Size = new System.Drawing.Size(299, 383);
             this.gridControl导航.TabIndex = 0;
             this.gridControl导航.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridView一览});
             // 
-            // gridView1
+            // gridView一览
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView一览.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.coltemplate_group_name,
             this.coltemplate_name,
+            this.colserial_number,
+            this.colCREATE_DATE,
             this.coltemplate_id,
             this.coltemplate_group_id,
             this.colremark_id});
-            this.gridView1.GridControl = this.gridControl导航;
-            this.gridView1.GroupCount = 1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.gridView一览.GridControl = this.gridControl导航;
+            this.gridView一览.GroupCount = 1;
+            this.gridView一览.Name = "gridView一览";
+            this.gridView一览.OptionsBehavior.Editable = false;
+            this.gridView一览.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coltemplate_group_name, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
+            this.gridView一览.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // coltemplate_group_name
             // 
@@ -3230,7 +3235,7 @@ namespace DXApplicationTangche.原型
             // 
             // coltemplate_name
             // 
-            this.coltemplate_name.Caption = "模板名称";
+            this.coltemplate_name.Caption = "任务名称";
             this.coltemplate_name.FieldName = "template_name";
             this.coltemplate_name.Name = "coltemplate_name";
             this.coltemplate_name.Visible = true;
@@ -3253,6 +3258,22 @@ namespace DXApplicationTangche.原型
             this.colremark_id.Caption = "模板id";
             this.colremark_id.FieldName = "remark_id";
             this.colremark_id.Name = "colremark_id";
+            // 
+            // colserial_number
+            // 
+            this.colserial_number.Caption = "单号";
+            this.colserial_number.FieldName = "serial_number";
+            this.colserial_number.Name = "colserial_number";
+            this.colserial_number.Visible = true;
+            this.colserial_number.VisibleIndex = 1;
+            // 
+            // colCREATE_DATE
+            // 
+            this.colCREATE_DATE.Caption = "创建时间";
+            this.colCREATE_DATE.FieldName = "CREATE_DATE";
+            this.colCREATE_DATE.Name = "colCREATE_DATE";
+            this.colCREATE_DATE.Visible = true;
+            this.colCREATE_DATE.VisibleIndex = 2;
             // 
             // OrderQA
             // 
@@ -3294,7 +3315,7 @@ namespace DXApplicationTangche.原型
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl导航)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView一览)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3645,7 +3666,7 @@ namespace DXApplicationTangche.原型
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraGrid.GridControl gridControl导航;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView一览;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage测试;
         private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraBars.BarEditItem barEditItem模板;
@@ -3657,5 +3678,7 @@ namespace DXApplicationTangche.原型
         private DevExpress.XtraGrid.Columns.GridColumn coltemplate_group_id;
         private DevExpress.XtraGrid.Columns.GridColumn coltemplate_name;
         private DevExpress.XtraGrid.Columns.GridColumn colremark_id;
+        private DevExpress.XtraGrid.Columns.GridColumn colserial_number;
+        private DevExpress.XtraGrid.Columns.GridColumn colCREATE_DATE;
     }
 }

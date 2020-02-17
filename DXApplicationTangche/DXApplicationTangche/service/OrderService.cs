@@ -274,6 +274,8 @@ namespace DXApplicationTangche.service
 "	tr.parent_id,\n" +
 "	tr.version,\n" +
 "	tr.principal,\n" +
+"	tr.serial_number,\n" +
+"	tr.status,\n" +
 "	tt.template_name,\n" +
 "	ttg.template_group_id,\n" +
 "	ttg.template_group_name \n" +
@@ -282,7 +284,7 @@ namespace DXApplicationTangche.service
 "	LEFT JOIN t_template AS tt ON tr.template_id = tt.template_id\n" +
 "	LEFT JOIN t_template_group ttg ON tt.template_group_id = ttg.template_group_id \n" +
 "WHERE\n" +
-"	tr.order_id = '78008'";
+"	tr.order_id = '"+ order_id + "'";
             DataTable dt = SQLmtm.GetDataTable(sql);
             return dt;
         }
@@ -292,7 +294,7 @@ namespace DXApplicationTangche.service
         /// <param name="taskDTo"></param>
         public static void Save订单任务(TaskDTO taskDTo)
         {
-            SQLmtm.DoInsert("t_remark", new string[] { "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id" }, new string[] { taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id });
+            SQLmtm.DoInsert("t_remark", new string[] { "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id" , "serial_number" }, new string[] { taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id,taskDTo.serial_number });
         }
         /// <summary>
         /// 获取任务,读取任务
@@ -313,6 +315,8 @@ namespace DXApplicationTangche.service
 "	tr.parent_id,\n" +
 "	tr.version,\n" +
 "	tr.principal,\n" +
+"	tr.serial_number,\n" +
+"	tr.status,\n" +
 "	tt.template_name,\n" +
 "	ttg.template_group_id,\n" +
 "	ttg.template_group_name\n" +
@@ -321,7 +325,7 @@ namespace DXApplicationTangche.service
 "	LEFT JOIN t_template AS tt ON tr.template_id = tt.template_id\n" +
 "	LEFT JOIN t_template_group AS ttg ON tt.template_group_id = ttg.template_group_id \n" +
 "WHERE\n" +
-"	tr.remark_id = '1'";
+"	tr.remark_id = '"+ remark_id + "'";
             return SQLmtm.GetDataRow(sql);
         }
     }

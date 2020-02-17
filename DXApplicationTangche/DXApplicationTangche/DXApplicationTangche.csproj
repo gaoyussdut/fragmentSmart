@@ -484,6 +484,12 @@
     </Compile>
     <Compile Include="原型\OrderQADTO.cs" />
     <Compile Include="原型\TaskDTOS.cs" />
+    <Compile Include="原型\UC客诉模板.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="原型\UC客诉模板.Designer.cs">
+      <DependentUpon>UC客诉模板.cs</DependentUpon>
+    </Compile>
     <Compile Include="原型\UC销售备注模板.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -638,6 +644,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="原型\OrderQA.resx">
       <DependentUpon>OrderQA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原型\UC客诉模板.resx">
+      <DependentUpon>UC客诉模板.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="原型\UC销售备注模板.resx">
       <DependentUpon>UC销售备注模板.cs</DependentUpon>
