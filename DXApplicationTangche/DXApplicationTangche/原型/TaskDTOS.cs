@@ -134,6 +134,12 @@ namespace DXApplicationTangche.原型
             TaskDTO taskDTO = new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString()).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString());
             return taskDTO;
         }
+
+        //public TaskDTO buildDoJson(String data)
+        //{
+        //    this.data = data;
+        //    this. Newtonsoft.Json.JsonConvert.DeserializeObject<Metadata>(previewResult.data.ToString());
+        //}
     }
     /// <summary>
     /// 单据dtos

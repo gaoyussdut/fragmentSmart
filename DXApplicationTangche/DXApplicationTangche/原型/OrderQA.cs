@@ -244,7 +244,7 @@ namespace DXApplicationTangche.原型
             this.任务DTO = new TaskDTO().buildRead(this.gridView1.GetDataRow(e.RowHandle)["remark_id"].ToString());
             switch (this.gridView1.GetDataRow(e.RowHandle)["template_id"].ToString())
             {
-                case "1": this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, true);
+                case "1": this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, true);break;
             }
         }
     }
