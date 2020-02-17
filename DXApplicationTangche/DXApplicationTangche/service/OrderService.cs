@@ -2,6 +2,7 @@
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.门店下单.form;
+using DXApplicationTangche.原型;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -252,6 +253,76 @@ namespace DXApplicationTangche.service
                 "ORDER BY\n" +
                 "	o_order_p.order_date DESC";
             return SQLmtm.GetDataTable(sql);
+        }
+        /// <summary>
+        /// 根据订单id获取任务
+        /// </summary>
+        /// <param name="order_id"></param>
+        /// <returns></returns>
+        public static DataTable get订单任务(String order_id)
+        {
+            String sql = "SELECT\n" +
+"	tr.remark_id,\n" +
+"	tr.order_id,\n" +
+"	tr.remark,\n" +
+"	tr.file_name,\n" +
+"	tr.template_id,\n" +
+"	tr.`data`,\n" +
+"	tr.style_id,\n" +
+"	tr.ref_style_id,\n" +
+"	tr.CREATE_DATE,\n" +
+"	tr.parent_id,\n" +
+"	tr.version,\n" +
+"	tr.principal,\n" +
+"	tt.template_name,\n" +
+"	ttg.template_group_id,\n" +
+"	ttg.template_group_name \n" +
+"FROM\n" +
+"	t_remark AS tr\n" +
+"	LEFT JOIN t_template AS tt ON tr.template_id = tt.template_id\n" +
+"	LEFT JOIN t_template_group ttg ON tt.template_group_id = ttg.template_group_id \n" +
+"WHERE\n" +
+"	tr.order_id = '78008'";
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            return dt;
+        }
+        /// <summary>
+        /// 保存订单任务
+        /// </summary>
+        /// <param name="taskDTo"></param>
+        public static void Save订单任务(TaskDTO taskDTo)
+        {
+            SQLmtm.DoInsert("t_remark", new string[] { "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id" }, new string[] { taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id });
+        }
+        /// <summary>
+        /// 获取任务,读取任务
+        /// </summary>
+        /// <param name="remark_id"></param>
+        public static DataRow GetTaskRead(String remark_id)
+        {
+            String sql = "SELECT\n" +
+"	tr.remark_id,\n" +
+"	tr.order_id,\n" +
+"	tr.remark,\n" +
+"	tr.file_name,\n" +
+"	tr.template_id,\n" +
+"	tr.`data`,\n" +
+"	tr.style_id,\n" +
+"	tr.ref_style_id,\n" +
+"	tr.CREATE_DATE,\n" +
+"	tr.parent_id,\n" +
+"	tr.version,\n" +
+"	tr.principal,\n" +
+"	tt.template_name,\n" +
+"	ttg.template_group_id,\n" +
+"	ttg.template_group_name\n" +
+"FROM\n" +
+"	t_remark AS tr\n" +
+"	LEFT JOIN t_template AS tt ON tr.template_id = tt.template_id\n" +
+"	LEFT JOIN t_template_group AS ttg ON tt.template_group_id = ttg.template_group_id \n" +
+"WHERE\n" +
+"	tr.remark_id = '1'";
+            return SQLmtm.GetDataRow(sql);
         }
     }
 }

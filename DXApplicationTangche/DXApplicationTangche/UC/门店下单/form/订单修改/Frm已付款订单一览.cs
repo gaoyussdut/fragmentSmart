@@ -13,6 +13,7 @@ using DevExpress.Data;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.form.订单修改;
+using DXApplicationTangche.原型;
 
 namespace DXApplicationTangche.UC.门店下单.form
 {
@@ -46,12 +47,19 @@ namespace DXApplicationTangche.UC.门店下单.form
             //  CUSTOMER_ID
             
 
-            new Frm尺寸修改子页(
+            //new Frm尺寸修改子页(
+            //    this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
+            //    ,lst
+            //    ,this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
+            //    , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
+            //    ,this
+            //    ).ShowDialog();
+            new OrderQA(
                 this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
-                ,lst
-                ,this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
+                , lst
+                , this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
                 , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
-                ,this
+                , this
                 ).ShowDialog();
         }
 

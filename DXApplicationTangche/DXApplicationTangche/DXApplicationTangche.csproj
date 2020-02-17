@@ -475,13 +475,21 @@
       <DependentUpon>XtraUC条码打印.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\DBUtil.cs" />
-    <Compile Include="原型\OrderPA.cs">
+    <Compile Include="原型\DocumentData.cs" />
+    <Compile Include="原型\OrderQA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="原型\OrderPA.Designer.cs">
-      <DependentUpon>OrderPA.cs</DependentUpon>
+    <Compile Include="原型\OrderQA.Designer.cs">
+      <DependentUpon>OrderQA.cs</DependentUpon>
     </Compile>
     <Compile Include="原型\OrderQADTO.cs" />
+    <Compile Include="原型\TaskDTOS.cs" />
+    <Compile Include="原型\UC销售备注模板.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="原型\UC销售备注模板.Designer.cs">
+      <DependentUpon>UC销售备注模板.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -628,8 +636,11 @@
     <EmbeddedResource Include="UC\面料\Frm面料打码.resx">
       <DependentUpon>Frm面料打码.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="原型\OrderPA.resx">
-      <DependentUpon>OrderPA.cs</DependentUpon>
+    <EmbeddedResource Include="原型\OrderQA.resx">
+      <DependentUpon>OrderQA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原型\UC销售备注模板.resx">
+      <DependentUpon>UC销售备注模板.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

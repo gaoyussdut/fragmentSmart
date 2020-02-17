@@ -17,20 +17,24 @@ using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.门店下单.form;
 using DiaoPaiDaYin;
 
+delegate void UCSave();
 namespace DXApplicationTangche.原型
 {
     public partial class OrderQA : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public TaskDTO 任务DTO = new TaskDTO();
+        private Dictionary<String, String> template_choose = new Dictionary<string, string>();//模板名称和id
         private 门店下单选款式Model model = new 门店下单选款式Model();
         private String Style_Id;
         private String ORDER_ID;
         private String REMARKS;
         private List<DXApplicationTangche.UC.门店下单.DTO.款式图片一览Dto> 款式图片一览Dtos = new List<DXApplicationTangche.UC.门店下单.DTO.款式图片一览Dto>();
         private Frm已付款订单一览 Frm已付款订单一览;
-
+        public UC销售备注模板 uc销售备注模板 = new UC销售备注模板();
+        public TaskDTOS TaskDTOS = new TaskDTOS();
         //private List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
         public OrderQA()
-        {
+        {           
             InitializeComponent();
         }
         public OrderQA(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS, Frm已付款订单一览 Frm已付款订单一览)
@@ -142,11 +146,19 @@ namespace DXApplicationTangche.原型
         "Saving a document", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 try
                 {
-                    richEditControl备注.SaveDocument(@"" + this.ORDER_ID + ".doc", DevExpress.XtraRichEdit.DocumentFormat.Doc);
-                    Byte[] byteArray = FileBinaryConvertHelper.File2Bytes(@"" + this.ORDER_ID + ".doc");
-                    String str = Convert.ToBase64String(byteArray);
-                    FileService.SaveRemarkFile(str, this.ORDER_ID + ".doc", this.ORDER_ID);
-                    File.Delete(this.ORDER_ID + ".doc");
+                    //richEditControl备注.SaveDocument(@"" + this.ORDER_ID + ".doc", DevExpress.XtraRichEdit.DocumentFormat.Doc);
+                    //Byte[] byteArray = FileBinaryConvertHelper.File2Bytes(@"" + this.ORDER_ID + ".doc");
+                    //String str = Convert.ToBase64String(byteArray);
+                    //FileService.SaveRemarkFile(str, this.ORDER_ID + ".doc", this.ORDER_ID);
+                    //File.Delete(this.ORDER_ID + ".doc");
+
+                    switch (this.template_choose[this.barEditItem模板.EditValue.ToString()])
+                    {
+                        case "1":
+                            this.uc销售备注模板.SaveToDTO();
+                            break;
+                    }
+                    this.任务DTO.SaveInMTM();
                     MessageBox.Show("保存成功");
                 }
                 catch (Exception ex)
@@ -158,7 +170,7 @@ namespace DXApplicationTangche.原型
 
         private void OrderQA_Load(object sender, EventArgs e)
         {
-            String sql = "SELECT\n" +
+            String sql1 = "SELECT\n" +
 "	t_remark.remark_id,\n" +
 "	t_remark.order_id,\n" +
 "	t_remark.remark,\n" +
@@ -172,7 +184,68 @@ namespace DXApplicationTangche.原型
 "	t_remark\n" +
 "	LEFT JOIN t_template ON t_remark.template_id = t_template.template_id\n" +
 "	LEFT JOIN t_template_group ON t_template.template_group_id = t_template_group.template_group_id";
-            this.treeList导航.DataSource = SQLmtm.GetDataTable(sql);
+            //this.treeList导航.DataSource = SQLmtm.GetDataTable(sql);
+            String sql = "SELECT\n" +
+"	template_id,\n" +
+"	template_group_id,\n" +
+"	template_name \n" +
+"FROM\n" +
+"	t_template";
+            DataTable dt = SQLmtm.GetDataTable(sql);
+            foreach(DataRow dr in dt.Rows)
+            {
+                this.template_choose.Add(dr["template_name"].ToString(), dr["template_id"].ToString());
+                ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)barEditItem模板.Edit).Items.Add(dr["template_name"].ToString());
+            }
+        }
+
+        private void barButtonItem新增模板_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.任务DTO = new TaskDTO().buildNewDTO("1", this.ORDER_ID, this.Style_Id, "1");
+            try
+            {
+                switch (this.template_choose[this.barEditItem模板.EditValue.ToString()])
+                {
+                    case "1":this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, true);
+                        uc销售备注模板.Dock = DockStyle.Fill;
+                        this.panel1.Controls.Add(uc销售备注模板);
+                        this.panel1.Refresh();
+
+                        
+                        break;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void OrderQA_Activated(object sender, EventArgs e)
+        {
+            //this.mianliaoname.Text = this.model.面料信息[0].name;
+            ////this.gridControl面料.DataSource = this.model.面料信息;
+            //this.tileView2.RefreshData();
+            //this.tileView1.RefreshData();
+            try
+            {
+                this.TaskDTOS.buildTaskDTOs(this.ORDER_ID);
+                this.gridControl导航.DataSource = this.TaskDTOS.taskDTOs;
+                this.gridControl导航.Refresh();
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            this.任务DTO = new TaskDTO().buildRead(this.gridView1.GetDataRow(e.RowHandle)["remark_id"].ToString());
+            switch (this.gridView1.GetDataRow(e.RowHandle)["template_id"].ToString())
+            {
+                case "1": this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, true);
+            }
         }
     }
 }
