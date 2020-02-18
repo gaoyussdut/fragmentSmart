@@ -35,48 +35,28 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.searchLookUpEditUser = new DevExpress.XtraEditors.SearchLookUpEdit();
-            this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colFIRST_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLAST_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLOGIN_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLOGIN_USER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.comboBoxEditStatus = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemUser = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridControl任务 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUSER_ID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUSERNAME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCREATE_TIME = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTATUS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSTATUS_DESC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTEMPLATE_NAME = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colORDER_ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCUSTOMER_ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCUSTOMER_NAME = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colORDER_STATUS_CD_NAME = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colSHIPPING_DESTINATION = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTEMPLATE_ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colSTYLE_ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colREF_STYLE_ID = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colSTYLE_NAME_CN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colSTATUS_ITEM_NAME_CN = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colCREATE_DATE = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colUSER_NAME = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
-            this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditUser.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditStatus.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl任务)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -127,275 +107,210 @@
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
-            // layoutControl1
-            // 
-            this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.searchLookUpEditUser);
-            this.layoutControl1.Controls.Add(this.comboBoxEditStatus);
-            this.layoutControl1.Controls.Add(this.dateTimePickerEnd);
-            this.layoutControl1.Controls.Add(this.dateTimePickerStart);
-            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 206);
-            this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(1332, 120);
-            this.layoutControl1.TabIndex = 2;
-            this.layoutControl1.Text = "layoutControl1";
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(668, 79);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(652, 27);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 9;
-            this.simpleButton1.Text = "查询";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // searchLookUpEditUser
-            // 
-            this.searchLookUpEditUser.EditValue = "";
-            this.searchLookUpEditUser.Location = new System.Drawing.Point(75, 12);
-            this.searchLookUpEditUser.MenuManager = this.ribbonControl1;
-            this.searchLookUpEditUser.Name = "searchLookUpEditUser";
-            this.searchLookUpEditUser.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.searchLookUpEditUser.Properties.PopupView = this.searchLookUpEdit1View;
-            this.searchLookUpEditUser.Size = new System.Drawing.Size(1245, 24);
-            this.searchLookUpEditUser.StyleController = this.layoutControl1;
-            this.searchLookUpEditUser.TabIndex = 8;
-            this.searchLookUpEditUser.Popup += new System.EventHandler(this.searchLookUpEditUser_Popup);
-            this.searchLookUpEditUser.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEditUser_CustomDisplayText);
-            // 
-            // searchLookUpEdit1View
-            // 
-            this.searchLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colFIRST_NAME,
-            this.colLAST_NAME,
-            this.colLOGIN_NAME,
-            this.colLOGIN_USER_ID});
-            this.searchLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
-            this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            this.searchLookUpEdit1View.Click += new System.EventHandler(this.searchLookUpEdit1View_Click);
-            // 
-            // colFIRST_NAME
-            // 
-            this.colFIRST_NAME.Caption = "姓";
-            this.colFIRST_NAME.FieldName = "FIRST_NAME";
-            this.colFIRST_NAME.Name = "colFIRST_NAME";
-            this.colFIRST_NAME.Visible = true;
-            this.colFIRST_NAME.VisibleIndex = 0;
-            // 
-            // colLAST_NAME
-            // 
-            this.colLAST_NAME.Caption = "名";
-            this.colLAST_NAME.FieldName = "LAST_NAME";
-            this.colLAST_NAME.Name = "colLAST_NAME";
-            this.colLAST_NAME.Visible = true;
-            this.colLAST_NAME.VisibleIndex = 1;
-            // 
-            // colLOGIN_NAME
-            // 
-            this.colLOGIN_NAME.Caption = "用户名";
-            this.colLOGIN_NAME.FieldName = "LOGIN_NAME";
-            this.colLOGIN_NAME.Name = "colLOGIN_NAME";
-            this.colLOGIN_NAME.Visible = true;
-            this.colLOGIN_NAME.VisibleIndex = 2;
-            // 
-            // colLOGIN_USER_ID
-            // 
-            this.colLOGIN_USER_ID.Caption = "LOGIN_USER_ID";
-            this.colLOGIN_USER_ID.FieldName = "LOGIN_USER_ID";
-            this.colLOGIN_USER_ID.Name = "colLOGIN_USER_ID";
-            // 
-            // comboBoxEditStatus
-            // 
-            this.comboBoxEditStatus.Location = new System.Drawing.Point(75, 79);
-            this.comboBoxEditStatus.MenuManager = this.ribbonControl1;
-            this.comboBoxEditStatus.Name = "comboBoxEditStatus";
-            this.comboBoxEditStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditStatus.Size = new System.Drawing.Size(589, 24);
-            this.comboBoxEditStatus.StyleController = this.layoutControl1;
-            this.comboBoxEditStatus.TabIndex = 7;
-            // 
-            // dateTimePickerEnd
-            // 
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(731, 40);
-            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(589, 26);
-            this.dateTimePickerEnd.TabIndex = 6;
-            // 
-            // dateTimePickerStart
-            // 
-            this.dateTimePickerStart.Location = new System.Drawing.Point(75, 40);
-            this.dateTimePickerStart.Name = "dateTimePickerStart";
-            this.dateTimePickerStart.Size = new System.Drawing.Size(589, 26);
-            this.dateTimePickerStart.TabIndex = 5;
-            // 
-            // Root
-            // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItemUser,
-            this.layoutControlItem1});
-            this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(1332, 120);
-            this.Root.TextVisible = false;
-            // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(656, 57);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(656, 10);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.dateTimePickerStart;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 28);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(656, 39);
-            this.layoutControlItem2.Text = "开始时间";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 18);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.dateTimePickerEnd;
-            this.layoutControlItem3.Location = new System.Drawing.Point(656, 28);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(656, 29);
-            this.layoutControlItem3.Text = "结束时间";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 18);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.comboBoxEditStatus;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 67);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(656, 33);
-            this.layoutControlItem4.Text = "状态";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 18);
-            // 
-            // layoutControlItemUser
-            // 
-            this.layoutControlItemUser.Control = this.searchLookUpEditUser;
-            this.layoutControlItemUser.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItemUser.Name = "layoutControlItemUser";
-            this.layoutControlItemUser.Size = new System.Drawing.Size(1312, 28);
-            this.layoutControlItemUser.Text = "负责人";
-            this.layoutControlItemUser.TextSize = new System.Drawing.Size(60, 18);
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.simpleButton1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(656, 67);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(656, 33);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // gridControl任务
             // 
             this.gridControl任务.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl任务.Location = new System.Drawing.Point(0, 326);
-            this.gridControl任务.MainView = this.gridView1;
+            this.gridControl任务.Location = new System.Drawing.Point(0, 206);
+            this.gridControl任务.MainView = this.bandedGridView1;
             this.gridControl任务.MenuManager = this.ribbonControl1;
             this.gridControl任务.Name = "gridControl任务";
-            this.gridControl任务.Size = new System.Drawing.Size(1332, 315);
+            this.gridControl任务.Size = new System.Drawing.Size(1332, 435);
             this.gridControl任务.TabIndex = 3;
             this.gridControl任务.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.bandedGridView1});
             // 
-            // gridView1
+            // bandedGridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.bandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand1,
+            this.gridBand2,
+            this.gridBand3,
+            this.gridBand4});
+            this.bandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.colID,
-            this.colUSER_ID,
-            this.colUSERNAME,
-            this.colCREATE_TIME,
-            this.colSTATUS,
-            this.colSTATUS_DESC,
-            this.colTEMPLATE_NAME});
-            this.gridView1.GridControl = this.gridControl任务;
-            this.gridView1.GroupCount = 1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSTATUS_DESC, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+            this.colORDER_ID,
+            this.colCUSTOMER_ID,
+            this.colCUSTOMER_NAME,
+            this.colSHIPPING_DESTINATION,
+            this.colORDER_STATUS_CD_NAME,
+            this.colTEMPLATE_ID,
+            this.colSTYLE_ID,
+            this.colSTYLE_NAME_CN,
+            this.colREF_STYLE_ID,
+            this.colCREATE_DATE,
+            this.colUSER_NAME,
+            this.colSTATUS_ITEM_NAME_CN});
+            this.bandedGridView1.GridControl = this.gridControl任务;
+            this.bandedGridView1.GroupCount = 1;
+            this.bandedGridView1.Name = "bandedGridView1";
+            this.bandedGridView1.OptionsBehavior.Editable = false;
+            this.bandedGridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSTATUS_ITEM_NAME_CN, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.AppearanceHeader.BackColor = System.Drawing.Color.Silver;
+            this.gridBand1.AppearanceHeader.Options.UseBackColor = true;
+            this.gridBand1.Caption = "订单状态";
+            this.gridBand1.Columns.Add(this.colID);
+            this.gridBand1.Columns.Add(this.colORDER_ID);
+            this.gridBand1.Columns.Add(this.colCUSTOMER_ID);
+            this.gridBand1.Columns.Add(this.colCUSTOMER_NAME);
+            this.gridBand1.Columns.Add(this.colORDER_STATUS_CD_NAME);
+            this.gridBand1.Columns.Add(this.colSHIPPING_DESTINATION);
+            this.gridBand1.Columns.Add(this.colTEMPLATE_ID);
+            this.gridBand1.Columns.Add(this.colSTYLE_ID);
+            this.gridBand1.Columns.Add(this.colREF_STYLE_ID);
+            this.gridBand1.MinWidth = 17;
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 485;
             // 
             // colID
             // 
             this.colID.Caption = "ID";
             this.colID.FieldName = "ID";
-            this.colID.MinWidth = 25;
+            this.colID.MinWidth = 788;
             this.colID.Name = "colID";
-            this.colID.Width = 94;
+            this.colID.Width = 805;
             // 
-            // colUSER_ID
+            // colORDER_ID
             // 
-            this.colUSER_ID.Caption = "USER_ID";
-            this.colUSER_ID.FieldName = "USER_ID";
-            this.colUSER_ID.MinWidth = 25;
-            this.colUSER_ID.Name = "colUSER_ID";
-            this.colUSER_ID.Width = 94;
+            this.colORDER_ID.Caption = "ORDER_ID";
+            this.colORDER_ID.FieldName = "ORDER_ID";
+            this.colORDER_ID.MinWidth = 788;
+            this.colORDER_ID.Name = "colORDER_ID";
+            this.colORDER_ID.Width = 805;
             // 
-            // colUSERNAME
+            // colCUSTOMER_ID
             // 
-            this.colUSERNAME.Caption = "负责人";
-            this.colUSERNAME.FieldName = "USERNAME";
-            this.colUSERNAME.MinWidth = 25;
-            this.colUSERNAME.Name = "colUSERNAME";
-            this.colUSERNAME.Visible = true;
-            this.colUSERNAME.VisibleIndex = 0;
-            this.colUSERNAME.Width = 94;
+            this.colCUSTOMER_ID.Caption = "CUSTOMER_ID";
+            this.colCUSTOMER_ID.FieldName = "CUSTOMER_ID";
+            this.colCUSTOMER_ID.MinWidth = 59;
+            this.colCUSTOMER_ID.Name = "colCUSTOMER_ID";
+            this.colCUSTOMER_ID.Width = 223;
             // 
-            // colCREATE_TIME
+            // colCUSTOMER_NAME
             // 
-            this.colCREATE_TIME.Caption = "时间";
-            this.colCREATE_TIME.FieldName = "CREATE_TIME";
-            this.colCREATE_TIME.MinWidth = 25;
-            this.colCREATE_TIME.Name = "colCREATE_TIME";
-            this.colCREATE_TIME.Visible = true;
-            this.colCREATE_TIME.VisibleIndex = 1;
-            this.colCREATE_TIME.Width = 94;
+            this.colCUSTOMER_NAME.Caption = "客户名称";
+            this.colCUSTOMER_NAME.FieldName = "CUSTOMER_NAME";
+            this.colCUSTOMER_NAME.MinWidth = 59;
+            this.colCUSTOMER_NAME.Name = "colCUSTOMER_NAME";
+            this.colCUSTOMER_NAME.Visible = true;
+            this.colCUSTOMER_NAME.Width = 104;
             // 
-            // colSTATUS
+            // colORDER_STATUS_CD_NAME
             // 
-            this.colSTATUS.Caption = "STATUS";
-            this.colSTATUS.FieldName = "STATUS";
-            this.colSTATUS.MinWidth = 25;
-            this.colSTATUS.Name = "colSTATUS";
-            this.colSTATUS.Width = 94;
+            this.colORDER_STATUS_CD_NAME.Caption = "订单状态";
+            this.colORDER_STATUS_CD_NAME.FieldName = "ORDER_STATUS_CD_NAME";
+            this.colORDER_STATUS_CD_NAME.MinWidth = 59;
+            this.colORDER_STATUS_CD_NAME.Name = "colORDER_STATUS_CD_NAME";
+            this.colORDER_STATUS_CD_NAME.Visible = true;
+            this.colORDER_STATUS_CD_NAME.Width = 91;
             // 
-            // colSTATUS_DESC
+            // colSHIPPING_DESTINATION
             // 
-            this.colSTATUS_DESC.Caption = "状态";
-            this.colSTATUS_DESC.FieldName = "STATUS_DESC";
-            this.colSTATUS_DESC.MinWidth = 25;
-            this.colSTATUS_DESC.Name = "colSTATUS_DESC";
-            this.colSTATUS_DESC.Visible = true;
-            this.colSTATUS_DESC.VisibleIndex = 5;
-            this.colSTATUS_DESC.Width = 94;
+            this.colSHIPPING_DESTINATION.Caption = "送货地址";
+            this.colSHIPPING_DESTINATION.FieldName = "SHIPPING_DESTINATION";
+            this.colSHIPPING_DESTINATION.MinWidth = 59;
+            this.colSHIPPING_DESTINATION.Name = "colSHIPPING_DESTINATION";
+            this.colSHIPPING_DESTINATION.Visible = true;
+            this.colSHIPPING_DESTINATION.Width = 290;
             // 
-            // colTEMPLATE_NAME
+            // colTEMPLATE_ID
             // 
-            this.colTEMPLATE_NAME.Caption = "任务模板名称";
-            this.colTEMPLATE_NAME.FieldName = "TEMPLATE_NAME";
-            this.colTEMPLATE_NAME.MinWidth = 25;
-            this.colTEMPLATE_NAME.Name = "colTEMPLATE_NAME";
-            this.colTEMPLATE_NAME.Visible = true;
-            this.colTEMPLATE_NAME.VisibleIndex = 2;
-            this.colTEMPLATE_NAME.Width = 94;
+            this.colTEMPLATE_ID.Caption = "TEMPLATE_ID";
+            this.colTEMPLATE_ID.FieldName = "TEMPLATE_ID";
+            this.colTEMPLATE_ID.MinWidth = 59;
+            this.colTEMPLATE_ID.Name = "colTEMPLATE_ID";
+            this.colTEMPLATE_ID.Width = 223;
+            // 
+            // colSTYLE_ID
+            // 
+            this.colSTYLE_ID.Caption = "STYLE_ID";
+            this.colSTYLE_ID.FieldName = "STYLE_ID";
+            this.colSTYLE_ID.MinWidth = 59;
+            this.colSTYLE_ID.Name = "colSTYLE_ID";
+            this.colSTYLE_ID.Width = 223;
+            // 
+            // colREF_STYLE_ID
+            // 
+            this.colREF_STYLE_ID.Caption = "REF_STYLE_ID";
+            this.colREF_STYLE_ID.FieldName = "REF_STYLE_ID";
+            this.colREF_STYLE_ID.MinWidth = 59;
+            this.colREF_STYLE_ID.Name = "colREF_STYLE_ID";
+            this.colREF_STYLE_ID.Width = 223;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.BackColor = System.Drawing.Color.Yellow;
+            this.gridBand2.AppearanceHeader.Options.UseBackColor = true;
+            this.gridBand2.Caption = "款式信息";
+            this.gridBand2.Columns.Add(this.colSTYLE_NAME_CN);
+            this.gridBand2.MinWidth = 13;
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 1;
+            this.gridBand2.Width = 136;
+            // 
+            // colSTYLE_NAME_CN
+            // 
+            this.colSTYLE_NAME_CN.Caption = "款式名称";
+            this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.MinWidth = 59;
+            this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
+            this.colSTYLE_NAME_CN.Visible = true;
+            this.colSTYLE_NAME_CN.Width = 136;
+            // 
+            // gridBand3
+            // 
+            this.gridBand3.AppearanceHeader.BackColor = System.Drawing.Color.Aqua;
+            this.gridBand3.AppearanceHeader.Options.UseBackColor = true;
+            this.gridBand3.Caption = "任务状态";
+            this.gridBand3.Columns.Add(this.colSTATUS_ITEM_NAME_CN);
+            this.gridBand3.Columns.Add(this.colCREATE_DATE);
+            this.gridBand3.Columns.Add(this.colUSER_NAME);
+            this.gridBand3.MinWidth = 13;
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 2;
+            this.gridBand3.Width = 410;
+            // 
+            // colSTATUS_ITEM_NAME_CN
+            // 
+            this.colSTATUS_ITEM_NAME_CN.Caption = "任务状态";
+            this.colSTATUS_ITEM_NAME_CN.FieldName = "STATUS_ITEM_NAME_CN";
+            this.colSTATUS_ITEM_NAME_CN.MinWidth = 59;
+            this.colSTATUS_ITEM_NAME_CN.Name = "colSTATUS_ITEM_NAME_CN";
+            this.colSTATUS_ITEM_NAME_CN.Visible = true;
+            this.colSTATUS_ITEM_NAME_CN.Width = 104;
+            // 
+            // colCREATE_DATE
+            // 
+            this.colCREATE_DATE.Caption = "任务指派时间";
+            this.colCREATE_DATE.FieldName = "CREATE_DATE";
+            this.colCREATE_DATE.MinWidth = 59;
+            this.colCREATE_DATE.Name = "colCREATE_DATE";
+            this.colCREATE_DATE.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.colCREATE_DATE.Visible = true;
+            this.colCREATE_DATE.Width = 118;
+            // 
+            // colUSER_NAME
+            // 
+            this.colUSER_NAME.Caption = "任务指派人";
+            this.colUSER_NAME.FieldName = "USER_NAME";
+            this.colUSER_NAME.MinWidth = 59;
+            this.colUSER_NAME.Name = "colUSER_NAME";
+            this.colUSER_NAME.Visible = true;
+            this.colUSER_NAME.Width = 188;
+            // 
+            // gridBand4
+            // 
+            this.gridBand4.AppearanceHeader.BackColor = System.Drawing.Color.Red;
+            this.gridBand4.AppearanceHeader.Options.UseBackColor = true;
+            this.gridBand4.Caption = "异常标签";
+            this.gridBand4.MinWidth = 13;
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 3;
+            this.gridBand4.Width = 268;
             // 
             // Frm待办任务
             // 
@@ -403,7 +318,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1332, 673);
             this.Controls.Add(this.gridControl任务);
-            this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "Frm待办任务";
@@ -413,20 +327,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm待办任务_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
-            this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEditUser.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditStatus.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl任务)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,32 +342,24 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraGrid.GridControl gridControl任务;
-        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
-        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditStatus;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEditUser;
-        private DevExpress.XtraGrid.Views.Grid.GridView searchLookUpEdit1View;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemUser;
-        private DevExpress.XtraGrid.Columns.GridColumn colFIRST_NAME;
-        private DevExpress.XtraGrid.Columns.GridColumn colLAST_NAME;
-        private DevExpress.XtraGrid.Columns.GridColumn colLOGIN_NAME;
-        private DevExpress.XtraGrid.Columns.GridColumn colLOGIN_USER_ID;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colUSER_ID;
-        private DevExpress.XtraGrid.Columns.GridColumn colUSERNAME;
-        private DevExpress.XtraGrid.Columns.GridColumn colCREATE_TIME;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTATUS;
-        private DevExpress.XtraGrid.Columns.GridColumn colSTATUS_DESC;
-        private DevExpress.XtraGrid.Columns.GridColumn colTEMPLATE_NAME;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colID;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colORDER_ID;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCUSTOMER_ID;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCUSTOMER_NAME;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colORDER_STATUS_CD_NAME;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSHIPPING_DESTINATION;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colTEMPLATE_ID;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSTYLE_ID;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colREF_STYLE_ID;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSTYLE_NAME_CN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSTATUS_ITEM_NAME_CN;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colCREATE_DATE;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colUSER_NAME;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
     }
 }
