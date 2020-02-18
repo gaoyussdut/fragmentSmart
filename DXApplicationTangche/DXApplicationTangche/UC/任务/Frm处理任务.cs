@@ -15,30 +15,35 @@ using static mendian.Frm设计点;
 using System.IO;
 using DiaoPaiDaYin;
 using DXApplicationTangche.原型;
-using DXApplicationTangche.UC.任务;
+using DXApplicationTangche.UC.门店下单.form;
 
-namespace DXApplicationTangche.UC.门店下单.form.订单修改
+namespace DXApplicationTangche.UC.任务
 {
-    public partial class Frm订单预览 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Frm处理任务 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public UC销售备注模板 uc销售备注模板 = new UC销售备注模板();
         public TaskDTOS TaskDTOS = new TaskDTOS();
-        public TaskDTO TaskDTO = new TaskDTO();
+        public TaskDTO 任务DTO = new TaskDTO();
         private 门店下单选款式Model model = new 门店下单选款式Model();
         private String Style_Id;
         private String ORDER_ID;
         private String REMARKS;
-        private List<DTO.款式图片一览Dto> 款式图片一览Dtos = new List<DTO.款式图片一览Dto>();
+        private List<UC.门店下单.DTO.款式图片一览Dto> 款式图片一览Dtos = new List<UC.门店下单.DTO.款式图片一览Dto>();
+        private Frm待办任务 Frm待办任务;
         //private List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
         private Dictionary<String, String> template_choose = new Dictionary<string, string>();//模板名称和id
-        public Frm订单预览(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS)
+        public Frm处理任务()
+        {
+            InitializeComponent();
+        }
+        public Frm处理任务(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS, Frm待办任务 Frm待办任务)
         {
             InitializeComponent();
             this.Style_Id = Style_Id;
             this.model.尺寸呈现 = lst;
             this.ORDER_ID = ORDER_ID;
             this.REMARKS = REMARKS;
-
+            this.Frm待办任务 = Frm待办任务;
             this.款式图片一览Dtos.Add(StyleService.getStyleByORDER_ID(ORDER_ID));
 
             //  尺寸
@@ -54,7 +59,6 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("定制下单");
             this.barEditItemTemplate.EditValue = ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items[0];
         }
-
         private void gridViewSize_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             this.model.尺寸呈现[e.RowHandle]  //  DTO
@@ -75,7 +79,6 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControlSize.Refresh();
         }
-
         private void gridViewSize_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
             //e.Appearance.BackColor = Color.NavajoWhite;
@@ -99,7 +102,6 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
                 }
             }
         }
-
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
@@ -116,22 +118,8 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             //this.gridControl面料.DataSource = this.model.面料信息;
             this.tileView2.RefreshData();
             this.tileView1.RefreshData();
-            try
-            {
-                this.TaskDTOS.buildTaskDTOs(this.ORDER_ID);
-                this.gridControl导航.DataSource = this.TaskDTOS.taskDTOs;
-                this.gridControl导航.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("当前时间：" + DateTime.Now.ToString() + "\n" +
-"异常信息：" + ex.Message + "\n" +
-"异常对象：" + ex.Source + "\n" +
-"调用堆栈：\n" + ex.StackTrace.Trim() + "\n" +
-"触发方法：" + ex.TargetSite + "\n");
-            }
+            
         }
-
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //this.layoutControl1.SaveLayoutToXml(this.barEditItemTemplate.EditValue+".xml");
@@ -160,15 +148,14 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
                     //FileService.SaveRemarkFile(str, this.ORDER_ID + ".doc", this.ORDER_ID);
                     //File.Delete(this.ORDER_ID + ".doc");
                     //switch (this.template_choose[this.barEditItem模板.EditValue.ToString()])
-                    switch (this.TaskDTO.template_id)
+                    switch (this.任务DTO.template_id)
                     {
                         case "1":
                             this.uc销售备注模板.SaveToDTO();
                             break;
                     }
-                    this.TaskDTO.buildserial_number().buildStatus(1).SaveInMTM();
+                    this.任务DTO.buildserial_number().buildStatus(1).SaveInMTM();
                     MessageBox.Show("保存成功");
-                    this.Close();
                 }
                 catch (Exception ex)
                 {
@@ -179,6 +166,20 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
         private void Frm尺寸修改子页_Load(object sender, EventArgs e)
         {
+            String sql1 = "SELECT\n" +
+"	t_remark.remark_id,\n" +
+"	t_remark.order_id,\n" +
+"	t_remark.remark,\n" +
+"	t_remark.file_name,\n" +
+"	t_remark.template_id,\n" +
+"	t_remark.data jsondata,\n" +
+"	t_template.template_name,\n" +
+"	t_template_group.template_group_id,\n" +
+"	t_template_group.template_group_name \n" +
+"FROM\n" +
+"	t_remark\n" +
+"	LEFT JOIN t_template ON t_remark.template_id = t_template.template_id\n" +
+"	LEFT JOIN t_template_group ON t_template.template_group_id = t_template_group.template_group_id";
             //this.treeList导航.DataSource = SQLmtm.GetDataTable(sql);
             String sql = "SELECT\n" +
 "	template_id,\n" +
@@ -196,25 +197,22 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
         private void barButtonItem新增模板_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (this.barEditItem模板.EditValue == null)
-            {
-                return;
-            }
-            this.TaskDTO = new TaskDTO().buildNewDTO(this.template_choose[this.barEditItem模板.EditValue.ToString()], this.ORDER_ID, this.Style_Id, "1"); 
+
+            this.任务DTO = new TaskDTO().buildNewDTO(this.template_choose[this.barEditItem模板.EditValue.ToString()], this.ORDER_ID, this.Style_Id, "1");
+            this.panel1.Controls.Clear();
             try
             {
-                //switch (this.template_choose[this.barEditItem模板.EditValue.ToString()])
-                //{
-                //    case "1":
-                //        this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, true);
-                //        uc销售备注模板.Dock = DockStyle.Fill;
-                //        this.panel1.Controls.Add(uc销售备注模板);
-                //        this.panel1.Refresh();
+                switch (this.template_choose[this.barEditItem模板.EditValue.ToString()])
+                {
+                    case "1":
+                        this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, true);
+                        uc销售备注模板.Dock = DockStyle.Fill;
+                        this.panel1.Controls.Add(uc销售备注模板);
+                        this.panel1.Refresh();
 
 
-                //        break;
-                //}
-                new Frm任务(this.TaskDTO, true).ShowDialog();
+                        break;
+                }
             }
             catch (Exception ex)
             {
@@ -226,19 +224,11 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             }
         }
 
-        private void gridView一览_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        public void Loud回复UC(String remark_id)
         {
-            this.TaskDTO = new TaskDTO().buildRead(this.gridView一览.GetRowCellValue(e.RowHandle, "remark_id").ToString());
-            //switch (this.gridView一览.GetRowCellValue(e.RowHandle, "template_id").ToString())
-            //{
-            //    case "1":
-            //        this.uc销售备注模板 = new UC销售备注模板(this.任务DTO, false); uc销售备注模板.Dock = DockStyle.Fill;
-            //        this.panel1.Controls.Clear();
-            //        this.panel1.Controls.Add(uc销售备注模板);
-            //        this.panel1.Refresh();
-            //        break;
-            //}
-            new Frm任务(this.TaskDTO, false).ShowDialog();
+            this.任务DTO = new TaskDTO().buildWithRemark_id(remark_id);
         }
+
+        
     }
 }

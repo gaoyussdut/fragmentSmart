@@ -67,7 +67,7 @@ namespace mendian
                     //}
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("选择的客户未建立量体值");
             }

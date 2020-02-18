@@ -55,9 +55,9 @@ namespace DXApplicationTangche.原型
         /// <param name="taskDTO"></param>
         public void ReadFromDTO()
         {
-            this.richEditControl备注.ReadOnly = this.ifedit;
-            this.textBox负责人.ReadOnly = this.ifedit;
-            this.dateEdit时间.ReadOnly = this.ifedit;
+            this.richEditControl备注.ReadOnly = !this.ifedit;
+            this.textBox负责人.ReadOnly = !this.ifedit;
+            this.dateEdit时间.ReadOnly = !this.ifedit;
             if (this.TaskDTO.data == "" || this.TaskDTO.data == null)
             {
                 this.textBox负责人.Text = "";

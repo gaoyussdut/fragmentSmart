@@ -276,6 +276,8 @@ namespace DXApplicationTangche.service
 "	tr.principal,\n" +
 "	tr.serial_number,\n" +
 "	tr.status,\n" +
+"   tr.A_jSON,\n" +
+"   tr.A_FILE,\n" +
 "	tt.template_name,\n" +
 "	ttg.template_group_id,\n" +
 "	ttg.template_group_name \n" +
@@ -317,6 +319,8 @@ namespace DXApplicationTangche.service
 "	tr.principal,\n" +
 "	tr.serial_number,\n" +
 "	tr.status,\n" +
+"   tr.A_jSON,\n" +
+"   tr.A_FILE,\n" +
 "	tt.template_name,\n" +
 "	ttg.template_group_id,\n" +
 "	ttg.template_group_name\n" +

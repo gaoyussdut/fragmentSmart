@@ -23,7 +23,7 @@ namespace DXApplicationTangche.原型
             DataTable dt = OrderService.get订单任务(order_id);
             foreach (DataRow dr in dt.Rows)
             {
-                this.taskDTOs.Add(new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString(), dr["serial_number"].ToString(), dr["status"].ToString(), Convert.ToDateTime(dr["CREATE_DATE"].ToString())).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString()));
+                this.taskDTOs.Add(new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString(), dr["serial_number"].ToString(), dr["status"].ToString(), Convert.ToDateTime(dr["CREATE_DATE"].ToString()), dr["A_JSON"].ToString(), dr["A_FILE"].ToString()).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString()));
             }
             return this;
         }
@@ -107,7 +107,7 @@ namespace DXApplicationTangche.原型
             this.template_group_name = template_group_name;
             return this;
         }
-        public TaskDTO(string remarkid, string template_id, string order_id, string style_id, string ref_style_id, string principal, string remark, string file_name, string parent_id, string version, string serial_number, string status, DateTime CREATE_DATE)
+        public TaskDTO(string remarkid, string template_id, string order_id, string style_id, string ref_style_id, string principal, string remark, string file_name, string parent_id, string version, string serial_number, string status, DateTime CREATE_DATE,string A_JSON,string A_FILE)
         {
             this.remark_id = remarkid;
             this.template_id = template_id;
@@ -121,6 +121,8 @@ namespace DXApplicationTangche.原型
             this.version = version;
             this.serial_number = serial_number;
             this.status = status;
+            this.A_JSON = A_JSON;
+            this.A_FILE = A_FILE;
             this.CREATE_DATE = CREATE_DATE;
             this.dic.Add("order_id", order_id);
             this.dic.Add("style_id", style_id);
@@ -163,7 +165,7 @@ namespace DXApplicationTangche.原型
         public TaskDTO buildRead(String remark_id)
         {
             DataRow dr = OrderService.GetTaskRead(remark_id);
-            TaskDTO taskDTO = new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString(), dr["serial_number"].ToString(), dr["status"].ToString(), Convert.ToDateTime(dr["CREATE_DATE"].ToString())).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString()).buildDoJson(dr["data"].ToString());
+            TaskDTO taskDTO = new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString(), dr["serial_number"].ToString(), dr["status"].ToString(), Convert.ToDateTime(dr["CREATE_DATE"].ToString()), dr["A_JSON"].ToString(), dr["A_FILE"].ToString()).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString()).buildDoJson(dr["data"].ToString());
             return taskDTO;
         }
         /// <summary>
@@ -211,6 +213,17 @@ namespace DXApplicationTangche.原型
                 case 3: this.status = "MS_03"; break;//已完成
             }
             return this;
+        }
+        /// <summary>
+        /// 通过remark_id查询任务
+        /// </summary>
+        /// <param name="remark_id"></param>
+        /// <returns></returns>
+        public TaskDTO buildWithRemark_id(String remark_id)
+        {
+            DataRow dr = OrderService.GetTaskRead(remark_id);
+            TaskDTO taskDTO = new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString(), dr["serial_number"].ToString(), dr["status"].ToString(), Convert.ToDateTime(dr["CREATE_DATE"].ToString()),dr["A_JSON"].ToString(),dr["A_FILE"].ToString()).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString()).buildDoJson(dr["data"].ToString());
+            return taskDTO;
         }
     }
     /// <summary>

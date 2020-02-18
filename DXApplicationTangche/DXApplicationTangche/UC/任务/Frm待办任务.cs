@@ -15,6 +15,7 @@ using DevExpress.XtraGrid.Editors;
 using DevExpress.XtraLayout;
 using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
+using DXApplicationTangche.UC.款式异常;
 
 namespace DXApplicationTangche.UC.任务
 {
@@ -40,6 +41,28 @@ namespace DXApplicationTangche.UC.任务
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             new Frm任务新建().ShowDialog();
+        }
+
+        private void bandedGridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            List<尺寸呈现dto> lst = SizeService.getDto尺寸ByOrderId(
+                this.bandedGridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
+                , this.bandedGridView1.GetDataRow(e.RowHandle)["STYLE_FIT_CD"].ToString()
+                , this.bandedGridView1.GetDataRow(e.RowHandle)["STYLE_CATEGORY_CD"].ToString()
+                , this.bandedGridView1.GetDataRow(e.RowHandle)["STYLE_SIZE_CD"].ToString()
+                , this.bandedGridView1.GetDataRow(e.RowHandle)["STYLE_SIZE_GROUP_CD"].ToString()
+                , this.bandedGridView1.GetDataRow(e.RowHandle)["CUSTOMER_ID"].ToString()
+                );
+            //  CUSTOMER_ID
+
+
+            new Frm处理任务(
+                this.bandedGridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
+                , lst
+                , this.bandedGridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
+                , this.bandedGridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
+                , this
+                ).ShowDialog();
         }
     }
     

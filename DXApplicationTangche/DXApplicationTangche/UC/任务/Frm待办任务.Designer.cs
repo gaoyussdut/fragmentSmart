@@ -67,11 +67,12 @@
             this.ribbonControl1.SearchEditItem,
             this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonControl1.MaxItemId = 2;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1332, 206);
+            this.ribbonControl1.Size = new System.Drawing.Size(1166, 166);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // barButtonItem1
@@ -97,10 +98,11 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 641);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 497);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1332, 32);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1166, 26);
             // 
             // ribbonPage2
             // 
@@ -110,11 +112,13 @@
             // gridControl任务
             // 
             this.gridControl任务.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl任务.Location = new System.Drawing.Point(0, 206);
+            this.gridControl任务.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl任务.Location = new System.Drawing.Point(0, 166);
             this.gridControl任务.MainView = this.bandedGridView1;
+            this.gridControl任务.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl任务.MenuManager = this.ribbonControl1;
             this.gridControl任务.Name = "gridControl任务";
-            this.gridControl任务.Size = new System.Drawing.Size(1332, 435);
+            this.gridControl任务.Size = new System.Drawing.Size(1166, 331);
             this.gridControl任务.TabIndex = 3;
             this.gridControl任务.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
@@ -140,12 +144,14 @@
             this.colCREATE_DATE,
             this.colUSER_NAME,
             this.colSTATUS_ITEM_NAME_CN});
+            this.bandedGridView1.DetailHeight = 272;
             this.bandedGridView1.GridControl = this.gridControl任务;
             this.bandedGridView1.GroupCount = 1;
             this.bandedGridView1.Name = "bandedGridView1";
             this.bandedGridView1.OptionsBehavior.Editable = false;
             this.bandedGridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSTATUS_ITEM_NAME_CN, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.bandedGridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.bandedGridView1_RowCellClick);
             // 
             // gridBand1
             // 
@@ -161,85 +167,85 @@
             this.gridBand1.Columns.Add(this.colTEMPLATE_ID);
             this.gridBand1.Columns.Add(this.colSTYLE_ID);
             this.gridBand1.Columns.Add(this.colREF_STYLE_ID);
-            this.gridBand1.MinWidth = 17;
+            this.gridBand1.MinWidth = 15;
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 485;
+            this.gridBand1.Width = 425;
             // 
             // colID
             // 
             this.colID.Caption = "ID";
             this.colID.FieldName = "ID";
-            this.colID.MinWidth = 788;
+            this.colID.MinWidth = 689;
             this.colID.Name = "colID";
-            this.colID.Width = 805;
+            this.colID.Width = 704;
             // 
             // colORDER_ID
             // 
             this.colORDER_ID.Caption = "ORDER_ID";
             this.colORDER_ID.FieldName = "ORDER_ID";
-            this.colORDER_ID.MinWidth = 788;
+            this.colORDER_ID.MinWidth = 689;
             this.colORDER_ID.Name = "colORDER_ID";
-            this.colORDER_ID.Width = 805;
+            this.colORDER_ID.Width = 704;
             // 
             // colCUSTOMER_ID
             // 
             this.colCUSTOMER_ID.Caption = "CUSTOMER_ID";
             this.colCUSTOMER_ID.FieldName = "CUSTOMER_ID";
-            this.colCUSTOMER_ID.MinWidth = 59;
+            this.colCUSTOMER_ID.MinWidth = 52;
             this.colCUSTOMER_ID.Name = "colCUSTOMER_ID";
-            this.colCUSTOMER_ID.Width = 223;
+            this.colCUSTOMER_ID.Width = 195;
             // 
             // colCUSTOMER_NAME
             // 
             this.colCUSTOMER_NAME.Caption = "客户名称";
             this.colCUSTOMER_NAME.FieldName = "CUSTOMER_NAME";
-            this.colCUSTOMER_NAME.MinWidth = 59;
+            this.colCUSTOMER_NAME.MinWidth = 52;
             this.colCUSTOMER_NAME.Name = "colCUSTOMER_NAME";
             this.colCUSTOMER_NAME.Visible = true;
-            this.colCUSTOMER_NAME.Width = 104;
+            this.colCUSTOMER_NAME.Width = 91;
             // 
             // colORDER_STATUS_CD_NAME
             // 
             this.colORDER_STATUS_CD_NAME.Caption = "订单状态";
             this.colORDER_STATUS_CD_NAME.FieldName = "ORDER_STATUS_CD_NAME";
-            this.colORDER_STATUS_CD_NAME.MinWidth = 59;
+            this.colORDER_STATUS_CD_NAME.MinWidth = 52;
             this.colORDER_STATUS_CD_NAME.Name = "colORDER_STATUS_CD_NAME";
             this.colORDER_STATUS_CD_NAME.Visible = true;
-            this.colORDER_STATUS_CD_NAME.Width = 91;
+            this.colORDER_STATUS_CD_NAME.Width = 80;
             // 
             // colSHIPPING_DESTINATION
             // 
             this.colSHIPPING_DESTINATION.Caption = "送货地址";
             this.colSHIPPING_DESTINATION.FieldName = "SHIPPING_DESTINATION";
-            this.colSHIPPING_DESTINATION.MinWidth = 59;
+            this.colSHIPPING_DESTINATION.MinWidth = 52;
             this.colSHIPPING_DESTINATION.Name = "colSHIPPING_DESTINATION";
             this.colSHIPPING_DESTINATION.Visible = true;
-            this.colSHIPPING_DESTINATION.Width = 290;
+            this.colSHIPPING_DESTINATION.Width = 254;
             // 
             // colTEMPLATE_ID
             // 
             this.colTEMPLATE_ID.Caption = "TEMPLATE_ID";
             this.colTEMPLATE_ID.FieldName = "TEMPLATE_ID";
-            this.colTEMPLATE_ID.MinWidth = 59;
+            this.colTEMPLATE_ID.MinWidth = 52;
             this.colTEMPLATE_ID.Name = "colTEMPLATE_ID";
-            this.colTEMPLATE_ID.Width = 223;
+            this.colTEMPLATE_ID.Width = 195;
             // 
             // colSTYLE_ID
             // 
             this.colSTYLE_ID.Caption = "STYLE_ID";
             this.colSTYLE_ID.FieldName = "STYLE_ID";
-            this.colSTYLE_ID.MinWidth = 59;
+            this.colSTYLE_ID.MinWidth = 52;
             this.colSTYLE_ID.Name = "colSTYLE_ID";
-            this.colSTYLE_ID.Width = 223;
+            this.colSTYLE_ID.Width = 195;
             // 
             // colREF_STYLE_ID
             // 
             this.colREF_STYLE_ID.Caption = "REF_STYLE_ID";
             this.colREF_STYLE_ID.FieldName = "REF_STYLE_ID";
-            this.colREF_STYLE_ID.MinWidth = 59;
+            this.colREF_STYLE_ID.MinWidth = 52;
             this.colREF_STYLE_ID.Name = "colREF_STYLE_ID";
-            this.colREF_STYLE_ID.Width = 223;
+            this.colREF_STYLE_ID.Width = 195;
             // 
             // gridBand2
             // 
@@ -247,19 +253,19 @@
             this.gridBand2.AppearanceHeader.Options.UseBackColor = true;
             this.gridBand2.Caption = "款式信息";
             this.gridBand2.Columns.Add(this.colSTYLE_NAME_CN);
-            this.gridBand2.MinWidth = 13;
+            this.gridBand2.MinWidth = 11;
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 1;
-            this.gridBand2.Width = 136;
+            this.gridBand2.Width = 119;
             // 
             // colSTYLE_NAME_CN
             // 
             this.colSTYLE_NAME_CN.Caption = "款式名称";
             this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.MinWidth = 59;
+            this.colSTYLE_NAME_CN.MinWidth = 52;
             this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
             this.colSTYLE_NAME_CN.Visible = true;
-            this.colSTYLE_NAME_CN.Width = 136;
+            this.colSTYLE_NAME_CN.Width = 119;
             // 
             // gridBand3
             // 
@@ -269,57 +275,58 @@
             this.gridBand3.Columns.Add(this.colSTATUS_ITEM_NAME_CN);
             this.gridBand3.Columns.Add(this.colCREATE_DATE);
             this.gridBand3.Columns.Add(this.colUSER_NAME);
-            this.gridBand3.MinWidth = 13;
+            this.gridBand3.MinWidth = 11;
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 2;
-            this.gridBand3.Width = 410;
+            this.gridBand3.Width = 358;
             // 
             // colSTATUS_ITEM_NAME_CN
             // 
             this.colSTATUS_ITEM_NAME_CN.Caption = "任务状态";
             this.colSTATUS_ITEM_NAME_CN.FieldName = "STATUS_ITEM_NAME_CN";
-            this.colSTATUS_ITEM_NAME_CN.MinWidth = 59;
+            this.colSTATUS_ITEM_NAME_CN.MinWidth = 52;
             this.colSTATUS_ITEM_NAME_CN.Name = "colSTATUS_ITEM_NAME_CN";
             this.colSTATUS_ITEM_NAME_CN.Visible = true;
-            this.colSTATUS_ITEM_NAME_CN.Width = 104;
+            this.colSTATUS_ITEM_NAME_CN.Width = 91;
             // 
             // colCREATE_DATE
             // 
             this.colCREATE_DATE.Caption = "任务指派时间";
             this.colCREATE_DATE.FieldName = "CREATE_DATE";
-            this.colCREATE_DATE.MinWidth = 59;
+            this.colCREATE_DATE.MinWidth = 52;
             this.colCREATE_DATE.Name = "colCREATE_DATE";
             this.colCREATE_DATE.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.colCREATE_DATE.Visible = true;
-            this.colCREATE_DATE.Width = 118;
+            this.colCREATE_DATE.Width = 103;
             // 
             // colUSER_NAME
             // 
             this.colUSER_NAME.Caption = "任务指派人";
             this.colUSER_NAME.FieldName = "USER_NAME";
-            this.colUSER_NAME.MinWidth = 59;
+            this.colUSER_NAME.MinWidth = 52;
             this.colUSER_NAME.Name = "colUSER_NAME";
             this.colUSER_NAME.Visible = true;
-            this.colUSER_NAME.Width = 188;
+            this.colUSER_NAME.Width = 164;
             // 
             // gridBand4
             // 
             this.gridBand4.AppearanceHeader.BackColor = System.Drawing.Color.Red;
             this.gridBand4.AppearanceHeader.Options.UseBackColor = true;
             this.gridBand4.Caption = "异常标签";
-            this.gridBand4.MinWidth = 13;
+            this.gridBand4.MinWidth = 11;
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 3;
-            this.gridBand4.Width = 268;
+            this.gridBand4.Width = 234;
             // 
             // Frm待办任务
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1332, 673);
+            this.ClientSize = new System.Drawing.Size(1166, 523);
             this.Controls.Add(this.gridControl任务);
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm待办任务";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;

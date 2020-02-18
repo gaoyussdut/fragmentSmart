@@ -79,7 +79,6 @@ namespace DXApplicationTangche.UC.门店下单.form
                 , lst
                 , this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
                 , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
-                , this
                 ).ShowDialog();
         }
 

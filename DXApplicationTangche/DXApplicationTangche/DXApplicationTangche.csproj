@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\Users\Doge\Desktop\fragmentSmart\DXApplicationTangche\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -49,6 +49,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
@@ -151,6 +160,12 @@
     <Compile Include="service\StyleService.cs" />
     <Compile Include="service\TaskService.cs" />
     <Compile Include="service\UserService.cs" />
+    <Compile Include="UC\任务\Frm任务.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\任务\Frm任务.Designer.cs">
+      <DependentUpon>Frm任务.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\任务\Frm任务新建.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +177,12 @@
     </Compile>
     <Compile Include="UC\任务\Frm任务模板.Designer.cs">
       <DependentUpon>Frm任务模板.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\任务\Frm处理任务.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC\任务\Frm处理任务.Designer.cs">
+      <DependentUpon>Frm处理任务.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\任务\Frm待办任务.cs">
       <SubType>Form</SubType>
@@ -505,11 +526,17 @@
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\任务\Frm任务.resx">
+      <DependentUpon>Frm任务.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\任务\Frm任务新建.resx">
       <DependentUpon>Frm任务新建.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\任务\Frm任务模板.resx">
       <DependentUpon>Frm任务模板.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\任务\Frm处理任务.resx">
+      <DependentUpon>Frm处理任务.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\任务\Frm待办任务.resx">
       <DependentUpon>Frm待办任务.cs</DependentUpon>
@@ -662,6 +689,7 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
