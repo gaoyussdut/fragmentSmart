@@ -102,5 +102,21 @@ namespace DXApplicationTangche.service
                 + "' where TEMPLATE_ID = '"+ TEMPLATE_ID + "'";
             SQLmtm.ExecuteSql(sql);            
         }
+        /// <summary>
+        /// 查询所有模板
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable GetTemplate()
+        {
+            String sql = "SELECT\n" +
+"	ITEM_CD,\n" +
+"	ITEM_VALUE AS template_id,\n" +
+"	ITEM_NAME_CN AS template_name \n" +
+"FROM\n" +
+"	a_dict_p \n" +
+"WHERE\n" +
+"	ITEM_CD = 'MISSION_TEMPLATE'";
+            return SQLmtm.GetDataTable(sql);
+        }
     }
 }
