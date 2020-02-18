@@ -34,6 +34,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         public Frm订单预览(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS)
         {
             InitializeComponent();
+            this.xtraTabPager任务预览.Parent = null;
             this.Style_Id = Style_Id;
             this.model.尺寸呈现 = lst;
             this.ORDER_ID = ORDER_ID;
@@ -239,6 +240,48 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             //        break;
             //}
             new Frm任务(this.TaskDTO, false).ShowDialog();
+        }
+        /// <summary>
+        /// 任务预览
+        /// </summary>
+        /// <param name="Style_Id"></param>
+        /// <param name="lst"></param>
+        /// <param name="ORDER_ID"></param>
+        /// <param name="REMARKS"></param>
+        /// <param name="tab"></param>
+        public Frm订单预览(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS,String remark_id)
+        {
+            InitializeComponent();
+            this.Style_Id = Style_Id;
+            this.model.尺寸呈现 = lst;
+            this.ORDER_ID = ORDER_ID;
+            this.REMARKS = REMARKS;
+
+            this.款式图片一览Dtos.Add(StyleService.getStyleByORDER_ID(ORDER_ID));
+
+            //  尺寸
+            this.model.build款式全尺寸(Style_Id).build设计点(Style_Id);
+
+            //  控件行为
+            this.gridControl款式.DataSource = this.款式图片一览Dtos;
+            this.gridControl面料.DataSource = this.model.面料信息;
+            this.gridControlSize.DataSource = this.model.尺寸呈现;
+            this.gridControl设计点.DataSource = this.model.Dto定制下单.Dto设计点s;
+            //  模板  TODO
+            ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("样品下单");
+            ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("定制下单");
+            this.barEditItemTemplate.EditValue = ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items[0];
+
+            this.TaskDTO = new TaskDTO().buildRead(remark_id);
+            switch (this.TaskDTO.template_id)
+            {
+                case "1":
+                    this.uc销售备注模板 = new UC销售备注模板(this.TaskDTO, false); uc销售备注模板.Dock = DockStyle.Fill;
+                    this.panel任务预览.Controls.Clear();
+                    this.panel任务预览.Controls.Add(uc销售备注模板);
+                    this.panel任务预览.Refresh();
+                    break;
+            }
         }
     }
 }
