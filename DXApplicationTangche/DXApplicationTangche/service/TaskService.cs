@@ -28,6 +28,10 @@ namespace DXApplicationTangche.service
                 "	v_order_p.SHIPPING_DESTINATION,\n" +
                 "	v_order_p.ORDER_STATUS_CD,\n" +
                 "	v_order_p.ORDER_STATUS_CD_NAME,\n" +
+                "	s_style_p.STYLE_FIT_CD,\n" +
+                "	s_style_p.STYLE_CATEGORY_CD,\n" +
+                "	s_style_p.STYLE_SIZE_CD,\n" +
+                "	s_style_p.STYLE_SIZE_GROUP_CD,"+
                 "	t_remark.remark /*备注——文档*/\n" +
                 "	,\n" +
                 "	t_remark.file_name,\n" +

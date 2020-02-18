@@ -34,7 +34,11 @@ namespace DXApplicationTangche.DTO
         public String SERIAL_NUMBER { get; set; }
         public String STATUS { get; set; }
         public String STATUS_ITEM_NAME_CN { get; set; }
-        
+        public String STYLE_FIT_CD { get; set; }
+        public String STYLE_CATEGORY_CD { get; set; }
+        public String STYLE_SIZE_CD { get; set; }
+        public String STYLE_SIZE_GROUP_CD { get; set; }
+
 
         public UserTaskDTO(DataRow dataRow) {
             this.ID = dataRow["remark_id"].ToString();
@@ -59,6 +63,11 @@ namespace DXApplicationTangche.DTO
             this.SERIAL_NUMBER = dataRow["serial_number"].ToString();
             this.STATUS = dataRow["STATUS"].ToString();
             this.STATUS_ITEM_NAME_CN = dataRow["ITEM_NAME_CN"].ToString();
+
+            this.STYLE_FIT_CD = dataRow["STYLE_FIT_CD"].ToString();
+            this.STYLE_CATEGORY_CD = dataRow["STYLE_CATEGORY_CD"].ToString();
+            this.STYLE_SIZE_CD = dataRow["STYLE_SIZE_CD"].ToString();
+            this.STYLE_SIZE_GROUP_CD = dataRow["STYLE_SIZE_GROUP_CD"].ToString();
         }
     }
 
