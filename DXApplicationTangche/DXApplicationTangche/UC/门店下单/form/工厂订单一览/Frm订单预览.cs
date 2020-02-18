@@ -34,7 +34,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         public Frm订单预览(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS)
         {
             InitializeComponent();
-            this.xtraTabPager任务预览.Parent = null;
+            this.xtraTabPager任务预览.PageVisible = false;
             this.Style_Id = Style_Id;
             this.model.尺寸呈现 = lst;
             this.ORDER_ID = ORDER_ID;
@@ -276,6 +276,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
                     this.panel任务预览.Refresh();
                     break;
             }
+            TaskService.UpdataStatus(remark_id, "MS_02");//更新任务状态
         }
     }
 }

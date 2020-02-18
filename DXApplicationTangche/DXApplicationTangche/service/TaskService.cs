@@ -118,5 +118,14 @@ namespace DXApplicationTangche.service
 "	ITEM_CD = 'MISSION_TEMPLATE'";
             return SQLmtm.GetDataTable(sql);
         }
+        /// <summary>
+        /// 更改订单状态(MS_01未签收)(MS_02已签收)(MS_03已完成)
+        /// </summary>
+        /// <param name="remark_id"></param>
+        /// <param name="status"></param>
+        public static void UpdataStatus(String remark_id,String status)
+        {
+            SQLmtm.DoUpdate("t_remark", new string[] { "status" }, new string[] { status }, new string[] { "remark_id" }, new string[] { remark_id });
+        }
     }
 }

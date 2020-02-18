@@ -16,7 +16,7 @@ namespace DXApplicationTangche.原型
     {
         public const int template_id = 1;
         public bool ifedit = true;
-        public TaskDTO TaskDTO { get; set; }
+        public TaskDTO TaskDTO = new TaskDTO();
         public UC销售备注模板()
         {
             InitializeComponent();

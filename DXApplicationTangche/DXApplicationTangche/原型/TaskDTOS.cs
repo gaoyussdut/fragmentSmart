@@ -74,7 +74,7 @@ namespace DXApplicationTangche.原型
             this.serial_number = null;//流水号
             this.status = null;//状态
             //this.CREATE_DATE = DateTime.Now;//创建时间
-            this.uCDocuments = null;//单据数据
+            this.uCDocuments = new List<UCDocument>();//单据数据
             this.dic = null;
         }
         /// <summary>
@@ -196,7 +196,7 @@ namespace DXApplicationTangche.原型
         /// <returns></returns>
         public TaskDTO buildserial_number()
         {
-            this.serial_number = FunctionHelper.generateBillNo("t_remark", "remark_id", "TR", "000000");//生成流水号
+            this.serial_number = FunctionHelper.generateBillNo("t_remark", "serial_number", "TR", "000000");//生成流水号
             return this;
         }
         /// <summary>

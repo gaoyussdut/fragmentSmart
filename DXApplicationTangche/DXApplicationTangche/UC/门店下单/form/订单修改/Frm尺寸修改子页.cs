@@ -150,13 +150,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         }
         private void Frm尺寸修改子页_Load(object sender, EventArgs e)
         {
-            String sql = "SELECT\n" +
-"	template_id,\n" +
-"	template_group_id,\n" +
-"	template_name \n" +
-"FROM\n" +
-"	t_template";
-            DataTable dt = SQLmtm.GetDataTable(sql);
+            DataTable dt = TaskService.GetTemplate();
             foreach (DataRow dr in dt.Rows)
             {
                 this.template_choose.Add(dr["template_name"].ToString(), dr["template_id"].ToString());

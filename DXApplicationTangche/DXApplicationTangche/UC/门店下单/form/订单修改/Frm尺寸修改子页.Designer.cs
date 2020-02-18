@@ -3032,7 +3032,7 @@
             // 
             this.barEditItem模板.Caption = "模板";
             this.barEditItem模板.Edit = this.repositoryItemComboBox2;
-            this.barEditItem模板.EditWidth = 100;
+            this.barEditItem模板.EditWidth = 130;
             this.barEditItem模板.Id = 267;
             this.barEditItem模板.Name = "barEditItem模板";
             // 

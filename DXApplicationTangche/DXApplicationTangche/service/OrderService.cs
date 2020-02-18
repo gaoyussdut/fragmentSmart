@@ -296,7 +296,10 @@ namespace DXApplicationTangche.service
         /// <param name="taskDTo"></param>
         public static void Save订单任务(TaskDTO taskDTo)
         {
-            SQLmtm.DoInsert("t_remark", new string[] { "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id" , "serial_number", "status" }, new string[] { taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id,taskDTo.serial_number,taskDTo.status });
+            if (taskDTo.remark_id == "" || taskDTo.remark_id == null)
+            {
+                SQLmtm.DoInsert("t_remark", new string[] { "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id", "serial_number", "status" }, new string[] { taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id, taskDTo.serial_number, taskDTo.status });
+            }    
         }
         /// <summary>
         /// 获取任务,读取任务
