@@ -229,13 +229,19 @@ namespace DXApplicationTangche.service
                 "	property.PROPERTY_COST";
             DataTable dataTable客户量体值 = SQLmtm.GetDataTable(sql);
 
-            
+            sql = "select Garment_size,Customer_measurement from garmentsize_to_customermeasurement;";
+            DataTable dataTable对应关系 = SQLmtm.GetDataTable(sql);
+            Dictionary<String, String> sizePairs = new Dictionary<string, string>();    //  量体制对应关系
+            foreach (DataRow dataRow in dataTable对应关系.Rows) {
+                sizePairs.Add(dataRow["Garment_size"].ToString(), dataRow["Customer_measurement"].ToString());
+            }
+
             Dto尺寸 Dto尺寸;
             foreach (DataRow dr in dt.Rows)
             {
                 Dto尺寸 = new Dto尺寸(dr);
                 List<尺寸呈现dto> 尺寸呈现dto = SizeService.GetThisSize(STYLE_FIT_CD, STYLE_CATEGORY_CD, STYLE_SIZE_CD, STYLE_SIZE_GROUP_CD, dr["STYLE_ID"].ToString(),false);
-                Dto尺寸.build尺寸呈现dto(尺寸呈现dto, dataTable客户量体值);
+                Dto尺寸.build尺寸呈现dto(尺寸呈现dto, dataTable客户量体值, sizePairs);
                 return 尺寸呈现dto;
             }
 

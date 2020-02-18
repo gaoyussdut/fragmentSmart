@@ -215,7 +215,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.CREATE_USER = dr["CREATE_USER"].ToString();
         }
 
-        public void build尺寸呈现dto(List<尺寸呈现dto> 尺寸呈现dto, DataTable dataTable客户量体值) {
+        public void build尺寸呈现dto(List<尺寸呈现dto> 尺寸呈现dto, DataTable dataTable客户量体值, Dictionary<String, String> sizePairs) {
             Dictionary<String, Double> dic量体制kv = new Dictionary<string, Double>();
             foreach (DataRow dataRow in dataTable客户量体值.Rows) {
                 try
@@ -236,7 +236,12 @@ namespace DXApplicationTangche.UC.门店下单.DTO
                     if (尺寸呈现dto[i].ITEM_VALUE.Equals(ITEM_VALUE[j])) {
                         尺寸呈现dto[i].IN_VALUE = Convert.ToDouble("NaN".Equals(IN_VALUE[j]) ? "0" : IN_VALUE[j]);
                         尺寸呈现dto[i].OUT_VALUE = Convert.ToDouble("NaN".Equals(OUT_VALUE[j]) ? "0" : OUT_VALUE[j]);
-                        //尺寸呈现dto[i].CUSTOMER_FIT_VALUE = dic量体制kv[尺寸呈现dto[i].ITEM_VALUE];  //  TODO    修改量体值
+                        try {
+                            尺寸呈现dto[i].CUSTOMER_FIT_VALUE = dic量体制kv[
+                                sizePairs[尺寸呈现dto[i].ITEM_VALUE]    //  成衣量体制和客户量体值转换
+                            ];  //  TODO    修改量体值
+                        } catch { }
+                        
                         //尺寸呈现dto[i].ITEM_VALUE = ITEM_VALUE[j];
                         尺寸呈现dto[i].CountSize();
                         break;
