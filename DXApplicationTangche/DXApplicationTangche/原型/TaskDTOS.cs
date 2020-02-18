@@ -47,6 +47,8 @@ namespace DXApplicationTangche.原型
         public String template_group_name { get; set; }//模板组名称
         public String serial_number { get; set; }//流水号
         public String status { get; set; }//状态
+        public String A_JSON { get; set; }//Answer Json
+        public String A_FILE { get; set; }//Anser 文件
         public DateTime CREATE_DATE { get; set; }//创建时间
         public List<UCDocument> uCDocuments { get; set; } = new List<UCDocument>();//单据数据
         public Dictionary<String, String> dic { get; set; } = new Dictionary<string, string>();
@@ -164,7 +166,11 @@ namespace DXApplicationTangche.原型
             TaskDTO taskDTO = new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString(), dr["serial_number"].ToString(), dr["status"].ToString(), Convert.ToDateTime(dr["CREATE_DATE"].ToString())).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString()).buildDoJson(dr["data"].ToString());
             return taskDTO;
         }
-
+        /// <summary>
+        /// Json反序列化
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public TaskDTO buildDoJson(String data)
         {
             this.data = data;
@@ -189,6 +195,21 @@ namespace DXApplicationTangche.原型
         public TaskDTO buildserial_number()
         {
             this.serial_number = FunctionHelper.generateBillNo("t_remark", "remark_id", "TR", "000000");//生成流水号
+            return this;
+        }
+        /// <summary>
+        /// 添加状态
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public TaskDTO buildStatus(int id)
+        {
+            switch (id)
+            {
+                case 1: this.status = "MS_01"; break;//未签收
+                case 2: this.status = "MS_02"; break;//已签收
+                case 3: this.status = "MS_03"; break;//已完成
+            }
             return this;
         }
     }

@@ -151,7 +151,7 @@ namespace DXApplicationTangche.原型
                             this.uc销售备注模板.SaveToDTO();
                             break;
                     }
-                    this.任务DTO.buildserial_number().SaveInMTM();
+                    this.任务DTO.buildserial_number().buildStatus(1).SaveInMTM();
                     MessageBox.Show("保存成功");
                 }
                 catch (Exception ex)

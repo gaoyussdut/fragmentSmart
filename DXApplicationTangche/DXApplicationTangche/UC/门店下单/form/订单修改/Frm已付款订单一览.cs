@@ -45,22 +45,22 @@ namespace DXApplicationTangche.UC.门店下单.form
                 , this.gridView1.GetDataRow(e.RowHandle)["CUSTOMER_ID"].ToString()
                 );
             //  CUSTOMER_ID
-            
 
-            //new Frm尺寸修改子页(
-            //    this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
-            //    ,lst
-            //    ,this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
-            //    , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
-            //    ,this
-            //    ).ShowDialog();
-            new OrderQA(
+
+            new Frm尺寸修改子页(
                 this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
                 , lst
                 , this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
                 , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
                 , this
                 ).ShowDialog();
+            //new OrderQA(
+            //    this.gridView1.GetDataRow(e.RowHandle)["STYLE_ID"].ToString()
+            //    , lst
+            //    , this.gridView1.GetDataRow(e.RowHandle)["ORDER_ID"].ToString()
+            //    , this.gridView1.GetDataRow(e.RowHandle)["REMARKS"].ToString()
+            //    , this
+            //    ).ShowDialog();
         }
 
         /// <summary>

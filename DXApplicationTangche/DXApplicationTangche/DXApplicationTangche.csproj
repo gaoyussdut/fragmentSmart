@@ -175,6 +175,12 @@
     <Compile Include="UC\任务\任务模板UC\UC软件异常.Designer.cs">
       <DependentUpon>UC软件异常.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\任务模板\UC销售备注模板Answer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\任务模板\UC销售备注模板Answer.Designer.cs">
+      <DependentUpon>UC销售备注模板Answer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\标签列印\Frm打标.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\任务\任务模板UC\UC软件异常.resx">
       <DependentUpon>UC软件异常.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\任务模板\UC销售备注模板Answer.resx">
+      <DependentUpon>UC销售备注模板Answer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\标签列印\Frm打标.resx">
       <DependentUpon>Frm打标.cs</DependentUpon>

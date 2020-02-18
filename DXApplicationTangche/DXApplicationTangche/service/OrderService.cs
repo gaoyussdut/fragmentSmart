@@ -294,7 +294,7 @@ namespace DXApplicationTangche.service
         /// <param name="taskDTo"></param>
         public static void Save订单任务(TaskDTO taskDTo)
         {
-            SQLmtm.DoInsert("t_remark", new string[] { "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id" , "serial_number" }, new string[] { taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id,taskDTo.serial_number });
+            SQLmtm.DoInsert("t_remark", new string[] { "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id" , "serial_number", "status" }, new string[] { taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id,taskDTo.serial_number,taskDTo.status });
         }
         /// <summary>
         /// 获取任务,读取任务
@@ -327,6 +327,14 @@ namespace DXApplicationTangche.service
 "WHERE\n" +
 "	tr.remark_id = '"+ remark_id + "'";
             return SQLmtm.GetDataRow(sql);
+        }
+        /// <summary>
+        /// 保存Answer任务
+        /// </summary>
+        /// <param name="taskDTO"></param>
+        public static void SaveAnswer任务(TaskDTO taskDTO)
+        {
+            SQLmtm.DoUpdate("t_remark", new string[] { "A_JSON", "A_FILE", "status" }, new string[] { taskDTO.A_JSON, taskDTO.A_FILE, taskDTO.status }, new string[] { "remark_id" }, new string[] { taskDTO.remark_id });
         }
     }
 }
