@@ -91,7 +91,7 @@ namespace DXApplicationTangche.service
         /// <param name="savePath">保存路径</param>
         /// <param name="timeOut">Request最大请求时间，如果为-1则无限制</param>
         /// <returns></returns>
-        private static bool DownloadPicture(string picUrl, string savePath, int timeOut)
+        public static bool DownloadPicture(string picUrl, string savePath, int timeOut)
         {
             //savePath = @"pic\" + savePath + ".jpg";
             bool value = false;

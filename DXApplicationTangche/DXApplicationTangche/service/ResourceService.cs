@@ -16,7 +16,8 @@ namespace DXApplicationTangche.service
         /// <summary>
         /// 同步图片资源到本地
         /// </summary>
-        public static void synPictureResouces() {
+        public static void synPictureResouces()
+        {
             if (!Directory.Exists(@"xml"))
             {
                 Directory.CreateDirectory(@"xml");
@@ -24,6 +25,7 @@ namespace DXApplicationTangche.service
                 DealXML.ObjectToXMLFile(new List<StylePic>() { new StylePic("1", "1", "1", "1") }, @"xml\stylepicxml.xml", Encoding.UTF8);
                 DealXML.ObjectToXMLFile(new List<MianLiaoPic>() { new MianLiaoPic("1", "1", "1", "1", "1") }, @"xml\mlpicxml.xml", Encoding.UTF8);
                 DealXML.ObjectToXMLFile(new List<SheJiDianPic>() { new SheJiDianPic("1", "1", "1", "1", "1") }, @"xml\shjdpicxml.xml", Encoding.UTF8);
+                PictureService.DownloadPicture("https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/SSHIRT.jpg", @"pic\" + "SSHIRT.jpg", -1);
             }
             //款式图片更新
             StylePicList spl = new StylePicList();
