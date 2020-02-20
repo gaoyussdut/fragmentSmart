@@ -95,7 +95,7 @@ namespace DXApplicationTangche
             this.dto无订单打印.json = "";
             PrintService.save_noorder_print_p(this.dto无订单打印);
             ///////////////////////////////////////////
-            for (int i = 0; i < Convert.ToInt32(this.numericUpDown数量.Value.ToString()); i++)
+            for (int iii = 0; iii < Convert.ToInt32(this.numericUpDown数量.Value.ToString()); iii++)
             {
                 this.print信息();
                 this.print条码();
