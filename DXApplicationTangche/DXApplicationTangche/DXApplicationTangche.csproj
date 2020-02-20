@@ -154,7 +154,7 @@
     <Compile Include="DTO\UserTaskDTO.cs" />
     <Compile Include="DTO\设计点图片Dto.cs" />
     <Compile Include="DTO\面料图片DTo.cs" />
-    <Compile Include="DTO无订单打印.cs" />
+    <Compile Include="DTO\DTO无订单打印.cs" />
     <Compile Include="FluentMainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -516,25 +516,25 @@
       <DependentUpon>XtraUC条码打印.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\DBUtil.cs" />
-    <Compile Include="原型\DocumentData.cs" />
+    <Compile Include="UC\任务\任务DTO\DocumentData.cs" />
     <Compile Include="原型\OrderQA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="原型\OrderQA.Designer.cs">
       <DependentUpon>OrderQA.cs</DependentUpon>
     </Compile>
-    <Compile Include="原型\OrderQADTO.cs" />
-    <Compile Include="原型\TaskDTOS.cs" />
-    <Compile Include="原型\UC客诉模板.cs">
+    <Compile Include="UC\任务\任务DTO\OrderQADTO.cs" />
+    <Compile Include="UC\任务\任务DTO\TaskDTOS.cs" />
+    <Compile Include="UC\任务\任务模板UC\UC客诉模板.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="原型\UC客诉模板.Designer.cs">
+    <Compile Include="UC\任务\任务模板UC\UC客诉模板.Designer.cs">
       <DependentUpon>UC客诉模板.cs</DependentUpon>
     </Compile>
-    <Compile Include="原型\UC销售备注模板.cs">
+    <Compile Include="UC\任务\任务模板UC\UC销售备注模板.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="原型\UC销售备注模板.Designer.cs">
+    <Compile Include="UC\任务\任务模板UC\UC销售备注模板.Designer.cs">
       <DependentUpon>UC销售备注模板.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FluentMainFrame.resx">
@@ -695,10 +695,10 @@
     <EmbeddedResource Include="原型\OrderQA.resx">
       <DependentUpon>OrderQA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="原型\UC客诉模板.resx">
+    <EmbeddedResource Include="UC\任务\任务模板UC\UC客诉模板.resx">
       <DependentUpon>UC客诉模板.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="原型\UC销售备注模板.resx">
+    <EmbeddedResource Include="UC\任务\任务模板UC\UC销售备注模板.resx">
       <DependentUpon>UC销售备注模板.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
