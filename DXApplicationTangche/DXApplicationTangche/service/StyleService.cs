@@ -330,6 +330,7 @@ namespace DXApplicationTangche.service
                 " style.STYLE_FIT_BODY_TYPE \"styleEntity.styleFitBodyType\",\n" +
                 " CONCAT( login_user.FIRST_NAME, login_user.LAST_NAME ) \"user.loginName\",\n" +
                 " style.CREATE_DATE,\n" +
+                " style.STYLE_SHOP_TOTAL_PRICE,\n"+
                 " style.COVER_PHOTO_PATH \"styleEntity.coverPhotoPath\", \n" +
                 "SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1) AS picn," +
                 " CONCAT('https://sshirtmtmbucket.oss-cn-zhangjiakou.aliyuncs.com/sshirtmtm/',SUBSTRING_INDEX(style.COVER_PHOTO_PATH,'/',-1)) AS picurl \n" +

@@ -26,6 +26,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
         public String SYTLE_YEAR { get; set; }
         public String SYTLE_SEASON { get; set; }
         public String STYLE_SIZE_CD { get; set; }
+        public String STYLE_SHOP_TOTAL_PRICE { get; set; }
         public String Flag;
 
         public 款式图片Dto(String flag, DataRow dr) {
@@ -43,6 +44,7 @@ namespace DXApplicationTangche.UC.门店下单.DTO
             this.SYTLE_YEAR = dr["styleEntity.sytleYear"].ToString();
             this.SYTLE_SEASON = getSYTLE_SEASON(dr["styleEntity.sytleSeason"].ToString());
             this.STYLE_SIZE_CD = dr["styleEntity.styleSizeCd"].ToString();
+            this.STYLE_SHOP_TOTAL_PRICE = dr["STYLE_SHOP_TOTAL_PRICE"].ToString();
             try
             {
                 this.Picture = Image.FromFile(@"pic\" + dr["picn"].ToString());

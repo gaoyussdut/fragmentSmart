@@ -27,6 +27,8 @@ namespace DXApplicationTangche
         public String sTYLE_SIZE_CD;
         public String shopid;
         public DataTable shop;
+        public String style_id;
+        public String style_name;
         public Frm打标()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace DXApplicationTangche
         {
             try
             {
-                this.chooseStyleSize = SizeService.StyleValue(this.chicun01.Text.Trim().ToString(), this.styleid.Text.Trim(), this.stylesizedt);
+                this.chooseStyleSize = SizeService.StyleValue(this.chicun01.Text.Trim().ToString(), this.style_id.Trim(), this.stylesizedt);
                 this.gridControl1.DataSource = this.chooseStyleSize;
                 this.gridControl1.Refresh();
                 this.sTYLE_SIZE_CD = this.chooseStyleSize.Rows[0]["SIZE_CD"].ToString();
@@ -46,7 +48,7 @@ namespace DXApplicationTangche
 
             }
         }
-
+        /*
         private void styleid_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13) //判断是回车键
@@ -71,10 +73,15 @@ namespace DXApplicationTangche
                 }
             }
         }
-
+        */
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            foreach(DataRow dr in this.shop.Rows)
+            if (this.shopname.Text.Trim() == "")
+            {
+                MessageBox.Show("请输入店铺");
+                return;
+            }
+            foreach (DataRow dr in this.shop.Rows)
             {
                 if(dr["shop_name"].ToString()==this.shopname.Text.Trim())
                 {
@@ -82,14 +89,17 @@ namespace DXApplicationTangche
                     break;
                 }
             }
-            this.dto无订单打印.buildDTO无订单打印(this.shopid, this.styleid.Text.Trim(), this.mianliaoid.Text.Trim(),this.mianliaocd.Text.Trim(), this.chicun01.Text.Trim());
+            this.dto无订单打印.buildDTO无订单打印(this.shopid, this.style_id.Trim(), this.mianliaoid.Text.Trim(),this.mianliaocd.Text.Trim(), this.chicun01.Text.Trim());
             this.dto无订单打印.builddto尺寸(this.chooseStyleSize);
             //this.dto无订单打印.json = Newtonsoft.Json.JsonConvert.SerializeObject(this.dto无订单打印);
             this.dto无订单打印.json = "";
             PrintService.save_noorder_print_p(this.dto无订单打印);
             ///////////////////////////////////////////
-            this.print信息();
-            this.print条码();
+            for (int iii = 0; iii < Convert.ToInt32(this.numericUpDown数量.Value.ToString()); iii++)
+            {
+                this.print信息();
+                this.print条码();
+            }
         }
 
         private void mianliaoid_KeyDown(object sender, KeyEventArgs e)
@@ -124,7 +134,7 @@ namespace DXApplicationTangche
             //改变标签打印数份连载 
             btFormat.PrintSetup.NumberOfSerializedLabels = 2;
             //对BTW模版相应字段进行赋值 
-            btFormat.SubStrings["kuanhao"].Value = this.stylename.Text;
+            btFormat.SubStrings["kuanhao"].Value = this.style_name;
             btFormat.SubStrings["haoxing"].Value = this.chicun01.Text;
             btFormat.SubStrings["mianliaohao"].Value = this.mianliaocd.Text;
             btFormat.SubStrings["chengfen"].Value = this.chengfen.Text;
@@ -185,6 +195,7 @@ namespace DXApplicationTangche
         private void Frm打标_Load(object sender, EventArgs e)
         {
             this.searchLookUpEdit1.Properties.DataSource = FabricService.GetAllMaterial();
+            this.searchLookUpEdit款式.Properties.DataSource = StyleService.initStyleInfo("", 1);
             this.shop = SQLmtm.GetDataTable("SELECT * FROM  t_shop");
             foreach (DataRow dr in this.shop.Rows)
             {
@@ -275,6 +286,88 @@ namespace DXApplicationTangche
                 e.DisplayText = this.dto无订单打印.materialNameCn;
         }
         #endregion
+
+        #region 选择款式
+        private void searchLookUpEdit款式_Popup(object sender, EventArgs e)
+        {
+            //得到当前SearchLookUpEdit弹出窗体
+            PopupSearchLookUpEditForm form = (sender as IPopupControl).PopupWindow as PopupSearchLookUpEditForm;
+            SearchEditLookUpPopup popup = form.Controls.OfType<SearchEditLookUpPopup>().FirstOrDefault();
+            LayoutControl layout = popup.Controls.OfType<LayoutControl>().FirstOrDefault();
+            //如果窗体内空间没有确认按钮，则自定义确认simplebutton，取消simplebutton，选中结果label
+            if (layout.Controls.OfType<Control>().Where(ct => ct.Name == "btOK").FirstOrDefault() == null)
+            {
+                //得到空的空间
+                EmptySpaceItem a = layout.Items.Where(it => it.TypeName == "EmptySpaceItem").FirstOrDefault() as EmptySpaceItem;
+
+                //得到取消按钮，重写点击事件
+                Control clearBtn = layout.Controls.OfType<Control>().Where(ct => ct.Name == "btClear").FirstOrDefault();
+                LayoutControlItem clearLCI = (LayoutControlItem)layout.GetItemByControl(clearBtn);
+                clearBtn.Click += clearBtn款式_Click;
+
+                //添加一个simplebutton控件(确认按钮)
+                LayoutControlItem myLCI = (LayoutControlItem)clearLCI.Owner.CreateLayoutItem(clearLCI.Parent);
+                myLCI.TextVisible = false;
+            }
+        }
+
+        private void searchLookUpEdit款式View_Click(object sender, EventArgs e)
+        {
+            var a = this.searchLookUpEdit款式.Properties.View.GetSelectedRows();
+            foreach (int rowHandle in a)
+            {
+
+                this.chicun01.Items.Clear();
+                this.chicun01.Text = "";
+                this.shoujia.Text = this.searchLookUpEdit款式.Properties.View.GetRowCellValue(rowHandle, "STYLE_SHOP_TOTAL_PRICE").ToString();
+                this.style_id = this.searchLookUpEdit款式.Properties.View.GetRowCellValue(rowHandle, "StyleId").ToString();
+                this.style_name = this.searchLookUpEdit款式.Properties.View.GetRowCellValue(rowHandle, "StyleNameCn").ToString();
+                this.stylesizedt = StyleService.StyleCombobox(this.style_id.Trim());
+                if (this.stylesizedt != null)
+                {
+                    foreach (DataRow dr in this.stylesizedt.Rows)
+                    {
+                        this.chicun01.Items.Add(Convert.ToString(dr["尺寸"]));
+                    }
+                }
+
+            }
+        }
+
+        /// <summary>
+        /// 清除按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearBtn款式_Click(object sender, EventArgs e)
+        {
+            this.searchLookUpEdit款式.ToolTip = null;
+            searchLookUpEdit款式.EditValue = null;
+        }
+        private void searchLookUpEdit款式_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (null != e.Value)
+                e.DisplayText = this.style_id + "  " + this.style_name;
+        }
+        #endregion
+
+        private void numericUpDown数量_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((NumericUpDown)sender).Text.Trim().IndexOf('.') > -1)
+            {
+                if (((NumericUpDown)sender).Text.Trim().Substring(((NumericUpDown)sender).Text.Trim().IndexOf('.') + 1).Length >= 0)//定义小数位
+                {
+                    if (!char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
     }
 
     public class Grid2information

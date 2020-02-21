@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.numericUpDown数量 = new System.Windows.Forms.NumericUpDown();
+            this.searchLookUpEdit款式 = new DevExpress.XtraEditors.SearchLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col款式id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.col款式名称 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit1 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmaterial_id = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,7 +47,6 @@
             this.colvalue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tiaomaid = new System.Windows.Forms.TextBox();
             this.shopname = new System.Windows.Forms.ComboBox();
-            this.stylename = new System.Windows.Forms.TextBox();
             this.chicun01 = new System.Windows.Forms.ComboBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -52,24 +57,26 @@
             this.chengfen = new System.Windows.Forms.TextBox();
             this.shoujia = new System.Windows.Forms.TextBox();
             this.mianliaoid = new System.Windows.Forms.TextBox();
-            this.styleid = new System.Windows.Forms.TextBox();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown数量)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit款式.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -77,29 +84,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.numericUpDown数量);
+            this.layoutControl1.Controls.Add(this.searchLookUpEdit款式);
             this.layoutControl1.Controls.Add(this.searchLookUpEdit1);
             this.layoutControl1.Controls.Add(this.gridControl2);
             this.layoutControl1.Controls.Add(this.tiaomaid);
             this.layoutControl1.Controls.Add(this.shopname);
-            this.layoutControl1.Controls.Add(this.stylename);
             this.layoutControl1.Controls.Add(this.chicun01);
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.gridControl1);
@@ -107,18 +115,82 @@
             this.layoutControl1.Controls.Add(this.chengfen);
             this.layoutControl1.Controls.Add(this.shoujia);
             this.layoutControl1.Controls.Add(this.mianliaoid);
-            this.layoutControl1.Controls.Add(this.styleid);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 19, 650, 400);
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(933, 525);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // numericUpDown数量
+            // 
+            this.numericUpDown数量.Location = new System.Drawing.Point(63, 484);
+            this.numericUpDown数量.Name = "numericUpDown数量";
+            this.numericUpDown数量.Size = new System.Drawing.Size(65, 22);
+            this.numericUpDown数量.TabIndex = 21;
+            this.numericUpDown数量.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown数量.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numericUpDown数量_KeyPress);
+            // 
+            // searchLookUpEdit款式
+            // 
+            this.searchLookUpEdit款式.Location = new System.Drawing.Point(63, 12);
+            this.searchLookUpEdit款式.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.searchLookUpEdit款式.Name = "searchLookUpEdit款式";
+            this.searchLookUpEdit款式.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.searchLookUpEdit款式.Properties.Appearance.Options.UseFont = true;
+            this.searchLookUpEdit款式.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.searchLookUpEdit款式.Properties.NullText = "";
+            this.searchLookUpEdit款式.Properties.PopupView = this.gridView3;
+            this.searchLookUpEdit款式.Size = new System.Drawing.Size(454, 30);
+            this.searchLookUpEdit款式.StyleController = this.layoutControl1;
+            this.searchLookUpEdit款式.TabIndex = 19;
+            this.searchLookUpEdit款式.Popup += new System.EventHandler(this.searchLookUpEdit款式_Popup);
+            this.searchLookUpEdit款式.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.searchLookUpEdit款式_CustomDisplayText);
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.col款式id,
+            this.col款式名称});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.Click += new System.EventHandler(this.searchLookUpEdit款式View_Click);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.FieldName = "id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // col款式id
+            // 
+            this.col款式id.Caption = "款式id";
+            this.col款式id.FieldName = "StyleId";
+            this.col款式id.Name = "col款式id";
+            this.col款式id.Visible = true;
+            this.col款式id.VisibleIndex = 0;
+            // 
+            // col款式名称
+            // 
+            this.col款式名称.Caption = "款式名称";
+            this.col款式名称.FieldName = "StyleNameCn";
+            this.col款式名称.Name = "col款式名称";
+            this.col款式名称.Visible = true;
+            this.col款式名称.VisibleIndex = 1;
+            // 
             // searchLookUpEdit1
             // 
-            this.searchLookUpEdit1.Location = new System.Drawing.Point(63, 85);
+            this.searchLookUpEdit1.Location = new System.Drawing.Point(63, 71);
             this.searchLookUpEdit1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchLookUpEdit1.Name = "searchLookUpEdit1";
             this.searchLookUpEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
@@ -222,22 +294,15 @@
             // shopname
             // 
             this.shopname.FormattingEnabled = true;
-            this.shopname.Location = new System.Drawing.Point(63, 191);
+            this.shopname.Location = new System.Drawing.Point(63, 177);
             this.shopname.Name = "shopname";
             this.shopname.Size = new System.Drawing.Size(454, 22);
             this.shopname.TabIndex = 15;
             // 
-            // stylename
-            // 
-            this.stylename.Location = new System.Drawing.Point(63, 36);
-            this.stylename.Name = "stylename";
-            this.stylename.Size = new System.Drawing.Size(454, 20);
-            this.stylename.TabIndex = 14;
-            // 
             // chicun01
             // 
             this.chicun01.FormattingEnabled = true;
-            this.chicun01.Location = new System.Drawing.Point(63, 60);
+            this.chicun01.Location = new System.Drawing.Point(63, 46);
             this.chicun01.Name = "chicun01";
             this.chicun01.Size = new System.Drawing.Size(454, 22);
             this.chicun01.TabIndex = 12;
@@ -247,9 +312,9 @@
             // 
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(12, 484);
+            this.simpleButton1.Location = new System.Drawing.Point(132, 484);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(505, 29);
+            this.simpleButton1.Size = new System.Drawing.Size(385, 29);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 11;
             this.simpleButton1.Text = "打印";
@@ -257,10 +322,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 240);
+            this.gridControl1.Location = new System.Drawing.Point(12, 226);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(505, 240);
+            this.gridControl1.Size = new System.Drawing.Size(505, 254);
             this.gridControl1.TabIndex = 10;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -292,77 +357,60 @@
             // 
             // mianliaocd
             // 
-            this.mianliaocd.Location = new System.Drawing.Point(63, 143);
+            this.mianliaocd.Location = new System.Drawing.Point(63, 129);
             this.mianliaocd.Name = "mianliaocd";
             this.mianliaocd.Size = new System.Drawing.Size(454, 20);
             this.mianliaocd.TabIndex = 9;
             // 
             // chengfen
             // 
-            this.chengfen.Location = new System.Drawing.Point(63, 167);
+            this.chengfen.Location = new System.Drawing.Point(63, 153);
             this.chengfen.Name = "chengfen";
             this.chengfen.Size = new System.Drawing.Size(454, 20);
             this.chengfen.TabIndex = 8;
             // 
             // shoujia
             // 
-            this.shoujia.Location = new System.Drawing.Point(63, 216);
+            this.shoujia.Location = new System.Drawing.Point(63, 202);
             this.shoujia.Name = "shoujia";
             this.shoujia.Size = new System.Drawing.Size(454, 20);
             this.shoujia.TabIndex = 7;
             // 
             // mianliaoid
             // 
-            this.mianliaoid.Location = new System.Drawing.Point(63, 119);
+            this.mianliaoid.Location = new System.Drawing.Point(63, 105);
             this.mianliaoid.Name = "mianliaoid";
             this.mianliaoid.Size = new System.Drawing.Size(454, 20);
             this.mianliaoid.TabIndex = 5;
             this.mianliaoid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.mianliaoid_KeyDown);
-            // 
-            // styleid
-            // 
-            this.styleid.Location = new System.Drawing.Point(63, 12);
-            this.styleid.Name = "styleid";
-            this.styleid.Size = new System.Drawing.Size(454, 20);
-            this.styleid.TabIndex = 4;
-            this.styleid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.styleid_KeyDown);
             // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem4,
             this.layoutControlItem6,
             this.layoutControlItem7,
             this.layoutControlItem8,
             this.layoutControlItem3,
-            this.layoutControlItem10,
             this.layoutControlItem11,
             this.emptySpaceItem2,
             this.layoutControlItem9,
             this.layoutControlItem12,
             this.layoutControlItem13,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem14,
+            this.layoutControlItem10});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(933, 525);
             this.Root.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.styleid;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(509, 24);
-            this.layoutControlItem1.Text = "styleid";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(48, 14);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.mianliaoid;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 107);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 93);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(509, 24);
             this.layoutControlItem2.Text = "面料id";
@@ -371,7 +419,7 @@
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.shoujia;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 204);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 190);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(509, 24);
             this.layoutControlItem4.Text = "售价";
@@ -380,7 +428,7 @@
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.mianliaocd;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 131);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 117);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(509, 24);
             this.layoutControlItem6.Text = "面料号";
@@ -389,43 +437,34 @@
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gridControl1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 228);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 214);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(509, 244);
+            this.layoutControlItem7.Size = new System.Drawing.Size(509, 258);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.simpleButton1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 472);
+            this.layoutControlItem8.Location = new System.Drawing.Point(120, 472);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(509, 33);
+            this.layoutControlItem8.Size = new System.Drawing.Size(389, 33);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.chicun01;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 34);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(509, 25);
             this.layoutControlItem3.Text = "尺寸";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.stylename;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(509, 24);
-            this.layoutControlItem10.Text = "款式名称";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
-            // 
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.shopname;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 179);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 165);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.Size = new System.Drawing.Size(509, 25);
             this.layoutControlItem11.Text = "店铺";
@@ -460,7 +499,7 @@
             // layoutControlItem13
             // 
             this.layoutControlItem13.Control = this.searchLookUpEdit1;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 73);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 59);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.Size = new System.Drawing.Size(509, 34);
             this.layoutControlItem13.Text = "面料";
@@ -469,11 +508,32 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.chengfen;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 155);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 141);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(509, 24);
             this.layoutControlItem5.Text = "成分";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem14
+            // 
+            this.layoutControlItem14.Control = this.searchLookUpEdit款式;
+            this.layoutControlItem14.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem14.Name = "layoutControlItem14";
+            this.layoutControlItem14.Size = new System.Drawing.Size(509, 34);
+            this.layoutControlItem14.Text = "款式";
+            this.layoutControlItem14.TextSize = new System.Drawing.Size(48, 14);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.numericUpDown数量;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 472);
+            this.layoutControlItem10.MaxSize = new System.Drawing.Size(130, 24);
+            this.layoutControlItem10.MinSize = new System.Drawing.Size(75, 24);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(120, 33);
+            this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem10.Text = "打印数量";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
             // 
             // Frm打标
             // 
@@ -486,6 +546,9 @@
             this.Load += new System.EventHandler(this.Frm打标_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown数量)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit款式.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
@@ -493,20 +556,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,9 +583,7 @@
         private System.Windows.Forms.TextBox chengfen;
         private System.Windows.Forms.TextBox shoujia;
         private System.Windows.Forms.TextBox mianliaoid;
-        private System.Windows.Forms.TextBox styleid;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
@@ -534,8 +595,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraGrid.Columns.GridColumn colSizeNameCn;
         private DevExpress.XtraGrid.Columns.GridColumn colSize;
-        private System.Windows.Forms.TextBox stylename;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private System.Windows.Forms.ComboBox shopname;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraGrid.GridControl gridControl2;
@@ -553,5 +612,13 @@
         private DevExpress.XtraGrid.Columns.GridColumn colmaterialCode;
         private DevExpress.XtraGrid.Columns.GridColumn colmaterialComposition;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        private DevExpress.XtraEditors.SearchLookUpEdit searchLookUpEdit款式;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn col款式id;
+        private DevExpress.XtraGrid.Columns.GridColumn col款式名称;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        private System.Windows.Forms.NumericUpDown numericUpDown数量;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
     }
 }
