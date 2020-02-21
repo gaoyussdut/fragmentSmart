@@ -49,7 +49,7 @@ namespace DXApplicationTangche.UC.门店下单.form
             this.splashScreenManager.SetWaitFormCaption("请稍后,正在加载中....");     // 标题
             this.splashScreenManager.SetWaitFormDescription("正在初始化.....");　　　　　// 信息
             this.model = new 门店下单选款式Model(this.textBox1.Text, Frm标准款下单.page);
-            this.gridControl选择款式.DataSource = this.model.款式图片;
+            this.gridControl选择款式.DataSource = this.model.款式图片一览;
             this.splashScreenManager.CloseWaitForm();
         }
 

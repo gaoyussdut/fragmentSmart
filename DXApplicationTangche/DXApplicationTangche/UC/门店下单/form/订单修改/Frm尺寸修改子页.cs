@@ -21,14 +21,13 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 {
     public partial class Frm尺寸修改子页 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public UC销售备注模板 uc销售备注模板 = new UC销售备注模板();
         public TaskDTOS TaskDTOS = new TaskDTOS();
         public TaskDTO TaskDTO = new TaskDTO();
-        private 门店下单选款式Model model = new 门店下单选款式Model();
+        private 门店下单选款式Model model;
         private String Style_Id;
         private String ORDER_ID;
         private String REMARKS;
-        private List<DTO.款式图片一览Dto> 款式图片一览Dtos = new List<DTO.款式图片一览Dto>();
+
         private Frm已付款订单一览 Frm已付款订单一览;
         //private List<尺寸呈现dto> 尺寸呈现 = new List<尺寸呈现dto>();
         private Dictionary<String, String> template_choose = new Dictionary<string, string>();//模板名称和id
@@ -36,17 +35,20 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         {
             InitializeComponent();
             this.Style_Id = Style_Id;
-            this.model.尺寸呈现 = lst;
             this.ORDER_ID = ORDER_ID;
+            this.model = new 门店下单选款式Model(ORDER_ID);
+            this.model.尺寸呈现 = lst;
             this.REMARKS = REMARKS;
             this.Frm已付款订单一览 = Frm已付款订单一览;
-            this.款式图片一览Dtos.Add(StyleService.getStyleByORDER_ID(ORDER_ID));
 
-            //  尺寸
-            this.model.build款式全尺寸(Style_Id).build设计点(Style_Id);
+            //  订单相关信息
+            this.model
+                .build款式全尺寸(Style_Id)
+                .build设计点(Style_Id)
+                .build款式图片();
 
             //  控件行为
-            this.gridControl款式.DataSource = this.款式图片一览Dtos;
+            this.gridControl款式.DataSource = this.model.款式图片一览;
             this.gridControl面料.DataSource = this.model.面料信息;
             this.gridControlSize.DataSource = this.model.尺寸呈现;
             this.gridControl设计点.DataSource = this.model.Dto定制下单.Dto设计点s;
