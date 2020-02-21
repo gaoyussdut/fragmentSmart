@@ -34,28 +34,12 @@
             this.comboBox优先级 = new System.Windows.Forms.ComboBox();
             this.searchLookUpEdit接收负责人 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit创建人 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit门店 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit客诉标签 = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colmaterial_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmaterital_name = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmaterialCode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmaterialComposition = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -67,6 +51,22 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterial_id = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterital_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterialCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmaterialComposition = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -163,36 +163,6 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "gridColumn1";
-            this.gridColumn9.FieldName = "id";
-            this.gridColumn9.Name = "gridColumn9";
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "面料名称";
-            this.gridColumn10.FieldName = "materialNameCn";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 0;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "面料号";
-            this.gridColumn11.FieldName = "materialCode";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 1;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "成分";
-            this.gridColumn12.FieldName = "materialComposition";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 2;
-            // 
             // searchLookUpEdit创建人
             // 
             this.searchLookUpEdit创建人.Location = new System.Drawing.Point(75, 80);
@@ -219,36 +189,6 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "gridColumn1";
-            this.gridColumn5.FieldName = "id";
-            this.gridColumn5.Name = "gridColumn5";
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "面料名称";
-            this.gridColumn6.FieldName = "materialNameCn";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 0;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "面料号";
-            this.gridColumn7.FieldName = "materialCode";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "成分";
-            this.gridColumn8.FieldName = "materialComposition";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 2;
             // 
             // searchLookUpEdit门店
             // 
@@ -277,36 +217,6 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.FieldName = "id";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "面料名称";
-            this.gridColumn2.FieldName = "materialNameCn";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "面料号";
-            this.gridColumn3.FieldName = "materialCode";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "成分";
-            this.gridColumn4.FieldName = "materialComposition";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            // 
             // searchLookUpEdit客诉标签
             // 
             this.searchLookUpEdit客诉标签.Location = new System.Drawing.Point(75, 46);
@@ -333,36 +243,6 @@
             this.searchLookUpEdit1View.Name = "searchLookUpEdit1View";
             this.searchLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.searchLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // colmaterial_id
-            // 
-            this.colmaterial_id.Caption = "gridColumn1";
-            this.colmaterial_id.FieldName = "id";
-            this.colmaterial_id.Name = "colmaterial_id";
-            // 
-            // colmaterital_name
-            // 
-            this.colmaterital_name.Caption = "面料名称";
-            this.colmaterital_name.FieldName = "materialNameCn";
-            this.colmaterital_name.Name = "colmaterital_name";
-            this.colmaterital_name.Visible = true;
-            this.colmaterital_name.VisibleIndex = 0;
-            // 
-            // colmaterialCode
-            // 
-            this.colmaterialCode.Caption = "面料号";
-            this.colmaterialCode.FieldName = "materialCode";
-            this.colmaterialCode.Name = "colmaterialCode";
-            this.colmaterialCode.Visible = true;
-            this.colmaterialCode.VisibleIndex = 1;
-            // 
-            // colmaterialComposition
-            // 
-            this.colmaterialComposition.Caption = "成分";
-            this.colmaterialComposition.FieldName = "materialComposition";
-            this.colmaterialComposition.Name = "colmaterialComposition";
-            this.colmaterialComposition.Visible = true;
-            this.colmaterialComposition.VisibleIndex = 2;
             // 
             // layoutControlGroup1
             // 
@@ -468,6 +348,126 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(321, 512);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "gridColumn1";
+            this.gridColumn9.FieldName = "id";
+            this.gridColumn9.Name = "gridColumn9";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "面料名称";
+            this.gridColumn10.FieldName = "materialNameCn";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "面料号";
+            this.gridColumn11.FieldName = "materialCode";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 1;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "成分";
+            this.gridColumn12.FieldName = "materialComposition";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 2;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "gridColumn1";
+            this.gridColumn5.FieldName = "id";
+            this.gridColumn5.Name = "gridColumn5";
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "面料名称";
+            this.gridColumn6.FieldName = "materialNameCn";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "面料号";
+            this.gridColumn7.FieldName = "materialCode";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "成分";
+            this.gridColumn8.FieldName = "materialComposition";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 2;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.FieldName = "id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "面料名称";
+            this.gridColumn2.FieldName = "materialNameCn";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "面料号";
+            this.gridColumn3.FieldName = "materialCode";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "成分";
+            this.gridColumn4.FieldName = "materialComposition";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 2;
+            // 
+            // colmaterial_id
+            // 
+            this.colmaterial_id.Caption = "gridColumn1";
+            this.colmaterial_id.FieldName = "id";
+            this.colmaterial_id.Name = "colmaterial_id";
+            // 
+            // colmaterital_name
+            // 
+            this.colmaterital_name.Caption = "面料名称";
+            this.colmaterital_name.FieldName = "materialNameCn";
+            this.colmaterital_name.Name = "colmaterital_name";
+            this.colmaterital_name.Visible = true;
+            this.colmaterital_name.VisibleIndex = 0;
+            // 
+            // colmaterialCode
+            // 
+            this.colmaterialCode.Caption = "面料号";
+            this.colmaterialCode.FieldName = "materialCode";
+            this.colmaterialCode.Name = "colmaterialCode";
+            this.colmaterialCode.Visible = true;
+            this.colmaterialCode.VisibleIndex = 1;
+            // 
+            // colmaterialComposition
+            // 
+            this.colmaterialComposition.Caption = "成分";
+            this.colmaterialComposition.FieldName = "materialComposition";
+            this.colmaterialComposition.Name = "colmaterialComposition";
+            this.colmaterialComposition.Visible = true;
+            this.colmaterialComposition.VisibleIndex = 2;
             // 
             // UC客诉模板
             // 

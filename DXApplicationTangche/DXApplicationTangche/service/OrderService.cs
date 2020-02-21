@@ -343,5 +343,73 @@ namespace DXApplicationTangche.service
         {
             SQLmtm.DoUpdate("t_remark", new string[] { "A_JSON", "A_FILE", "status" }, new string[] { taskDTO.A_JSON, taskDTO.A_FILE, taskDTO.status }, new string[] { "remark_id" }, new string[] { taskDTO.remark_id });
         }
+        /// <summary>
+        /// 获取裁剪条码
+        /// </summary>
+        /// <param name="BarCode"></param>
+        /// <returns></returns>
+        public static DataRow Get裁剪条码信息(String BarCode)
+        {
+            String sql = "SELECT\n" +
+"	QR_ID,\n" +
+"	QR_TYPE,\n" +
+"	QR_BAR_CODE,\n" +
+"	QR_CODE,\n" +
+"	QR_NAME,\n" +
+"	QR_OTHER1,\n" +
+"	QR_OTHER2,\n" +
+"	QR_OTHER3,\n" +
+"	QR_OTHER4,\n" +
+"	QR_OTHER5,\n" +
+"	QR_OTHER6,\n" +
+"	QR_OTHER7,\n" +
+"	QR_OTHER8,\n" +
+"	QR_OTHER9,\n" +
+"	QR_OTHER0,\n" +
+"	QR_OTHER10,\n" +
+"	QR_OTHER11,\n" +
+"	QR_OTHER12,\n" +
+"	QR_OTHER13,\n" +
+"	QR_OTHER14,\n" +
+"	QR_OTHER15,\n" +
+"	QR_OTHER16,\n" +
+"	QR_OTHER17,\n" +
+"	QR_OTHER18,\n" +
+"	QR_OTHER19,\n" +
+"	QR_OTHER20,\n" +
+"	QR_OTHER21,\n" +
+"	QR_OTHER22,\n" +
+"	QR_OTHER23,\n" +
+"	QR_OTHER24,\n" +
+"	QR_OTHER25,\n" +
+"	PRINT_FLAG,\n" +
+"	ENABLE_FLAG,\n" +
+"	DELETE_FLAG,\n" +
+"	REMARKS,\n" +
+"	VERSION,\n" +
+"	CREATE_DATE,\n" +
+"	CREATE_USER,\n" +
+"	UPDATE_DATE,\n" +
+"	UPDATE_USER,\n" +
+"	QR_OTHER26,\n" +
+"	QR_OTHER27,\n" +
+"	QR_OTHER28,\n" +
+"	QR_OTHER29,\n" +
+"	QR_OTHER30,\n" +
+"	QR_OTHER31,\n" +
+"	QR_OTHER32,\n" +
+"	QR_OTHER33,\n" +
+"	QR_OTHER34,\n" +
+"	QR_OTHER35 \n" +
+"FROM\n" +
+"	a_bar_code_p \n" +
+"WHERE\n" +
+"	QR_TYPE = 5 \n" +
+"	AND QR_BAR_CODE = '" + BarCode + "' \n" +
+"ORDER BY\n" +
+"	QR_OTHER0,\n" +
+"	QR_OTHER9";
+            return SQLmtm.GetDataRow(sql);
+        }
     }
 }

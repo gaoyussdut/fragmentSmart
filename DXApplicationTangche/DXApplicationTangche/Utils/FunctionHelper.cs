@@ -302,6 +302,13 @@ namespace DevExpress.XtraGrid.Demos.util
         }
         #endregion
 
+        #region json序列化
+        public static String JsonSerialization(object ob)
+        {
+            String str = Newtonsoft.Json.JsonConvert.SerializeObject(ob);
+            return str;
+        }
+        #endregion
         private string uuid = System.Guid.NewGuid().ToString("N");
     }
 }

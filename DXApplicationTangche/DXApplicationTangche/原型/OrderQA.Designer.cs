@@ -388,11 +388,12 @@ namespace DXApplicationTangche.原型
             this.gridView一览 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coltemplate_group_name = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltemplate_name = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colserial_number = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATE_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltemplate_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltemplate_group_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colremark_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colserial_number = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCREATE_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.uC裁剪条码打印1 = new DXApplicationTangche.UC.任务.任务模板UC.UC裁剪条码打印();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).BeginInit();
@@ -413,6 +414,7 @@ namespace DXApplicationTangche.原型
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.xtraTabPage测试.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
@@ -2894,6 +2896,7 @@ namespace DXApplicationTangche.原型
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.uC裁剪条码打印1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -3241,6 +3244,22 @@ namespace DXApplicationTangche.原型
             this.coltemplate_name.Visible = true;
             this.coltemplate_name.VisibleIndex = 0;
             // 
+            // colserial_number
+            // 
+            this.colserial_number.Caption = "单号";
+            this.colserial_number.FieldName = "serial_number";
+            this.colserial_number.Name = "colserial_number";
+            this.colserial_number.Visible = true;
+            this.colserial_number.VisibleIndex = 1;
+            // 
+            // colCREATE_DATE
+            // 
+            this.colCREATE_DATE.Caption = "创建时间";
+            this.colCREATE_DATE.FieldName = "CREATE_DATE";
+            this.colCREATE_DATE.Name = "colCREATE_DATE";
+            this.colCREATE_DATE.Visible = true;
+            this.colCREATE_DATE.VisibleIndex = 2;
+            // 
             // coltemplate_id
             // 
             this.coltemplate_id.Caption = "template_id";
@@ -3259,21 +3278,13 @@ namespace DXApplicationTangche.原型
             this.colremark_id.FieldName = "remark_id";
             this.colremark_id.Name = "colremark_id";
             // 
-            // colserial_number
+            // uC裁剪条码打印1
             // 
-            this.colserial_number.Caption = "单号";
-            this.colserial_number.FieldName = "serial_number";
-            this.colserial_number.Name = "colserial_number";
-            this.colserial_number.Visible = true;
-            this.colserial_number.VisibleIndex = 1;
-            // 
-            // colCREATE_DATE
-            // 
-            this.colCREATE_DATE.Caption = "创建时间";
-            this.colCREATE_DATE.FieldName = "CREATE_DATE";
-            this.colCREATE_DATE.Name = "colCREATE_DATE";
-            this.colCREATE_DATE.Visible = true;
-            this.colCREATE_DATE.VisibleIndex = 2;
+            this.uC裁剪条码打印1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC裁剪条码打印1.Location = new System.Drawing.Point(0, 0);
+            this.uC裁剪条码打印1.Name = "uC裁剪条码打印1";
+            this.uC裁剪条码打印1.Size = new System.Drawing.Size(813, 386);
+            this.uC裁剪条码打印1.TabIndex = 0;
             // 
             // OrderQA
             // 
@@ -3310,6 +3321,7 @@ namespace DXApplicationTangche.原型
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.xtraTabPage测试.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
@@ -3680,5 +3692,6 @@ namespace DXApplicationTangche.原型
         private DevExpress.XtraGrid.Columns.GridColumn colremark_id;
         private DevExpress.XtraGrid.Columns.GridColumn colserial_number;
         private DevExpress.XtraGrid.Columns.GridColumn colCREATE_DATE;
+        private UC.任务.任务模板UC.UC裁剪条码打印 uC裁剪条码打印1;
     }
 }

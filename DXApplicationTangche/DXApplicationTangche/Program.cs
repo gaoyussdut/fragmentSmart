@@ -23,8 +23,8 @@ namespace DXApplicationTangche
             Application.SetCompatibleTextRenderingDefault(false);
 
             BonusSkins.Register();
-            Application.Run(new FluentMainFrame());
-            //Application.Run(new OrderQA());
+            //Application.Run(new FluentMainFrame());
+            Application.Run(new OrderQA());
 
         }
     }

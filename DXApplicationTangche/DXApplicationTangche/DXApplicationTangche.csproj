@@ -140,6 +140,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -150,6 +151,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="model\裁剪条码打印Model.cs" />
+    <Compile Include="OldQuote\BLL\BarCodeBLL.cs" />
+    <Compile Include="OldQuote\BLL\BarCodePrintBLL.cs" />
+    <Compile Include="OldQuote\DALFactory\AbstractFactory.cs" />
+    <Compile Include="OldQuote\IDAL\IAOperatingDAL.cs" />
+    <Compile Include="OldQuote\IDAL\IBarCodeDAL.cs" />
+    <Compile Include="OldQuote\IDAL\IDesignOptionDAL.cs" />
+    <Compile Include="OldQuote\IDAL\ILoginUserDAL.cs" />
+    <Compile Include="OldQuote\IDAL\IOrderDAL.cs" />
+    <Compile Include="model\LoginUserModel.cs" />
     <Compile Include="DTO\UserDTO.cs" />
     <Compile Include="DTO\UserTaskDTO.cs" />
     <Compile Include="DTO\设计点图片Dto.cs" />
@@ -161,7 +172,26 @@
     <Compile Include="FluentMainFrame.Designer.cs">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\OrderBLL.cs" />
+    <Compile Include="model\OrderModel.cs" />
+    <Compile Include="OldQuote\IDAL\IPackageCustomDAL.cs" />
+    <Compile Include="OldQuote\IDAL\IPackageCustomDetailsDAL.cs" />
+    <Compile Include="OldQuote\IDAL\IProductionItemDAL.cs" />
+    <Compile Include="OldQuote\IDAL\IStyleOperatingDAL.cs" />
+    <Compile Include="OldQuote\IDAL\ISysManage.cs" />
+    <Compile Include="OldQuote\Model\AoperatingModel.cs" />
+    <Compile Include="OldQuote\Model\BarCodeModel.cs" />
+    <Compile Include="OldQuote\Model\DesignOptionModel.cs" />
+    <Compile Include="OldQuote\Model\LoginUserModel.cs" />
+    <Compile Include="OldQuote\Model\PackageCustomDetailsModel.cs" />
+    <Compile Include="OldQuote\Model\PackageCustomModel.cs" />
+    <Compile Include="OldQuote\Model\ProductionItemModel.cs" />
+    <Compile Include="OldQuote\Model\StyleOperatingModel.cs" />
+    <Compile Include="OldQuote\Model\SysNode.cs" />
+    <Compile Include="OldQuote\Untils\ConfigHelper.cs" />
+    <Compile Include="OldQuote\Untils\PageValidate.cs" />
     <Compile Include="service\CustomerService.cs" />
+    <Compile Include="service\DataCache.cs" />
     <Compile Include="service\FabricService.cs" />
     <Compile Include="service\FileBinaryConvertHelper.cs" />
     <Compile Include="service\FileService.cs" />
@@ -209,6 +239,12 @@
     </Compile>
     <Compile Include="UC\任务\Frm待办任务.Designer.cs">
       <DependentUpon>Frm待办任务.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\任务\任务模板UC\UC裁剪条码打印.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\任务\任务模板UC\UC裁剪条码打印.Designer.cs">
+      <DependentUpon>UC裁剪条码打印.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\任务\任务模板UC\UC软件异常.cs">
       <SubType>UserControl</SubType>
@@ -501,6 +537,7 @@
       <DependentUpon>WaitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\FunctionHelper.cs" />
+    <Compile Include="Utils\SQLerp.cs" />
     <Compile Include="Utils\SQLmtm.cs" />
     <Compile Include="UC\库存\XtraUC库存一览.cs">
       <SubType>UserControl</SubType>
@@ -563,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\任务\Frm待办任务.resx">
       <DependentUpon>Frm待办任务.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\任务\任务模板UC\UC裁剪条码打印.resx">
+      <DependentUpon>UC裁剪条码打印.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\任务\任务模板UC\UC软件异常.resx">
       <DependentUpon>UC软件异常.cs</DependentUpon>
