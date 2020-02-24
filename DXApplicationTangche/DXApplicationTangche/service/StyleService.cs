@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DXApplicationTangche.service
 {
@@ -46,21 +47,23 @@ namespace DXApplicationTangche.service
                 "	s_style_p\n" +
                 " where s_style_p.SYS_STYLE_ID in (select STYLE_ID from o_order_p where order_id = '" + ORDER_ID+"')" +
                 "	order by CREATE_DATE";
+
             List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
 
             DataTable dataTable = SQLmtm.GetDataTable(sql);
             foreach (DataRow dataRow in dataTable.Rows)
             {
                 return new 款式图片一览Dto(dataRow);
-            }
+            }           
             throw new Exception("没有款式信息");
+
         }
 
-            /// <summary>
-            /// 取得所有款式信息
-            /// </summary>
-            /// <returns></returns>
-            public static 款式Model getAllStyle(byte ENABLE_FLAG)
+        /// <summary>
+        /// 取得所有款式信息
+        /// </summary>
+        /// <returns></returns>
+        public static 款式Model getAllStyle(byte ENABLE_FLAG)
         {
             String sql = "SELECT\n" +
                 "	SYS_STYLE_ID,\n" +

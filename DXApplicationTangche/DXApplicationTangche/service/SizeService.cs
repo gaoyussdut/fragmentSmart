@@ -259,10 +259,37 @@ namespace DXApplicationTangche.service
                 , new string[] { Style_Id }
                 );
         }
-
+        /// <summary>
+        /// 使用orderID返回尺寸呈现dto
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <returns></returns>
         public static List<尺寸呈现dto> getDto尺寸WithOrderId(String orderid)
         {
+            String sql = "SELECT\n" +
+"	o_order_p.ORDER_ID,\n" +
+"	o_order_p.STYLE_ID,\n" +
+"	o_order_p.CUSTOMER_ID,\n" +
+"	s_style_p.STYLE_FIT_CD,\n" +
+"	s_style_p.STYLE_CATEGORY_CD,\n" +
+"	s_style_p.STYLE_SIZE_CD,\n" +
+"	s_style_p.STYLE_SIZE_GROUP_CD \n" +
+"FROM\n" +
+"	o_order_p\n" +
+"	LEFT JOIN s_style_p ON o_order_p.STYLE_ID = s_style_p.SYS_STYLE_ID \n" +
+"WHERE\n" +
+"	ORDER_ID = '"+orderid+"'";
+            DataRow dr = SQLmtm.GetDataRow(sql);
+            List<尺寸呈现dto> dtos = new List<尺寸呈现dto>();
+            try
+            {
+                dtos = getDto尺寸ByOrderId(orderid, dr["STYLE_FIT_CD"].ToString(), dr["STYLE_CATEGORY_CD"].ToString(), dr["STYLE_SIZE_CD"].ToString(), dr["STYLE_SIZE_GROUP_CD"].ToString(), dr["CUSTOMER_ID"].ToString());
+            }
+            catch
+            {
 
+            }
+            return dtos;
         }
     }
 }

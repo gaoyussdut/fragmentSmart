@@ -426,8 +426,37 @@ namespace DXApplicationTangche.service
 "	o_order_p \n" +
 "WHERE\n" +
 "	ORDER_ID = '"+orderid+"'";
-            DataRow dataRow = SQLmtm.GetDataRow(sql);
-            return dataRow["STYLE_ID"].ToString();
+            try
+            {
+                DataRow dataRow = SQLmtm.GetDataRow(sql);
+                return dataRow["STYLE_ID"].ToString();
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        /// <summary>
+        /// 校验订单
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <returns></returns>
+        public static Boolean VerifyOrder(String orderid)
+        {
+            DataRow dr = SQLmtm.GetDataRow("SELECT\n" +
+"	* \n" +
+"FROM\n" +
+"	o_order_p \n" +
+"WHERE\n" +
+"	ORDER_ID = '" + orderid + "'");
+            if(dr==null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

@@ -14,6 +14,8 @@ namespace DXApplicationTangche.service
     class 生产工单Service
     {
         public 门店下单选款式Model model { get; set; }
+        internal List<UserTaskDTO> UserTaskDTOs { get => userTaskDTOs; set => userTaskDTOs = value; }
+
         private UserTaskDTO currentUserTaskDTO;//  当前任务,持久化用（CUD）
         private List<UserTaskDTO> userTaskDTOs = new List<UserTaskDTO>();//  任务列表list，只用来查询
 
@@ -33,13 +35,22 @@ namespace DXApplicationTangche.service
                     .build设计点(this.model.STYLE_ID)
                     .build款式图片();
         }
-
+        public 生产工单Service(String ORDER_ID)
+        {
+            this.model = new 门店下单选款式Model(ORDER_ID);
+            this.model = this.model
+                .build尺寸呈现(SizeService.getDto尺寸WithOrderId(ORDER_ID))
+                .build款式全尺寸(this.model.STYLE_ID)
+                .build设计点(this.model.STYLE_ID)
+                .build款式图片();
+            this.build任务列表();
+        }
         /// <summary>
         /// 走redis
         /// </summary>
         /// <returns></returns>
         public 生产工单Service build任务列表() {
-            this.userTaskDTOs = TaskService.getUserTasksByOrderId(model.build订单Model().ORDER_ID);
+            this.UserTaskDTOs = TaskService.getUserTasksByOrderId(model.build订单Model().ORDER_ID);
             return this;
         }
 

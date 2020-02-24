@@ -38,6 +38,7 @@ namespace DXApplicationTangche.DTO
         public String STYLE_CATEGORY_CD { get; set; }
         public String STYLE_SIZE_CD { get; set; }
         public String STYLE_SIZE_GROUP_CD { get; set; }
+        public String TEMPLATE_NAME { get; set; }
 
 
         public UserTaskDTO(DataRow dataRow) {
@@ -68,6 +69,7 @@ namespace DXApplicationTangche.DTO
             this.STYLE_CATEGORY_CD = dataRow["STYLE_CATEGORY_CD"].ToString();
             this.STYLE_SIZE_CD = dataRow["STYLE_SIZE_CD"].ToString();
             this.STYLE_SIZE_GROUP_CD = dataRow["STYLE_SIZE_GROUP_CD"].ToString();
+            this.TEMPLATE_NAME = dataRow["TEMPLATE_NAME"].ToString();
         }
     }
 

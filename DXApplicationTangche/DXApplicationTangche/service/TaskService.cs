@@ -20,48 +20,51 @@ namespace DXApplicationTangche.service
         /// <returns></returns>
         public static List<UserTaskDTO> getUserTasks() {
             String sql = "SELECT\n" +
-                "	t_remark.remark_id,\n" +
-                "	t_remark.order_id /*订单号*/\n" +
-                "	,\n" +
-                "	v_order_p.CUSTOMER_ID,\n" +
-                "	v_order_p.CUSTOMER_NAME,\n" +
-                "	v_order_p.SHIPPING_DESTINATION,\n" +
-                "	v_order_p.ORDER_STATUS_CD,\n" +
-                "	v_order_p.ORDER_STATUS_CD_NAME,\n" +
-                "	s_style_p.STYLE_FIT_CD,\n" +
-                "	s_style_p.STYLE_CATEGORY_CD,\n" +
-                "	s_style_p.STYLE_SIZE_CD,\n" +
-                "	s_style_p.STYLE_SIZE_GROUP_CD,"+
-                "	t_remark.remark /*备注——文档*/\n" +
-                "	,\n" +
-                "	t_remark.file_name,\n" +
-                "	t_remark.template_id /*模板id*/\n" +
-                "	,\n" +
-                "	t_remark.DATA /*json数据*/\n" +
-                "	,\n" +
-                "	t_remark.style_id,\n" +
-                "	s_style_p.STYLE_NAME_CN,\n" +
-                "	t_remark.ref_style_id,\n" +
-                "	t_remark.CREATE_DATE /*创建时间*/\n" +
-                "	,\n" +
-                "	t_remark.parent_id /*父ID*/\n" +
-                "	,\n" +
-                "	t_remark.version /*版本*/\n" +
-                "	,\n" +
-                "	t_remark.principal /*负责人*/\n" +
-                "	,\n" +
-                "	CONCAT( a_login_user_p.FIRST_NAME, a_login_user_p.LAST_NAME ) AS USER_NAME /*姓名*/\n" +
-                "	,\n" +
-                "	t_remark.serial_number /*流水号*/\n" +
-                "	,\n" +
-                "	t_remark.STATUS,\n" +
-                "	MISSION_STATUS.ITEM_NAME_CN /*状态*/\n" +
-                "FROM\n" +
-                "	t_remark\n" +
-                "	LEFT JOIN v_order_p ON v_order_p.ORDER_ID = t_remark.order_id\n" +
-                "	LEFT JOIN s_style_p ON s_style_p.SYS_STYLE_ID = t_remark.style_id\n" +
-                "	LEFT JOIN a_login_user_p ON a_login_user_p.LOGIN_USER_ID = t_remark.principal\n" +
-                "	LEFT JOIN ( SELECT item_value, ITEM_NAME_CN FROM a_dict_p WHERE ITEM_CD = 'MISSION_STATUS' ) MISSION_STATUS ON MISSION_STATUS.item_value = t_remark.STATUS;";
+"	t_remark.remark_id,\n" +
+"	t_remark.order_id /*订单号*/\n" +
+"	,\n" +
+"	MISSION_TEMPLATE.ITEM_NAME_CN TEMPLATE_NAME,\n" +
+"	v_order_p.CUSTOMER_ID,\n" +
+"	v_order_p.CUSTOMER_NAME,\n" +
+"	v_order_p.SHIPPING_DESTINATION,\n" +
+"	v_order_p.ORDER_STATUS_CD,\n" +
+"	v_order_p.ORDER_STATUS_CD_NAME,\n" +
+"	s_style_p.STYLE_FIT_CD,\n" +
+"	s_style_p.STYLE_CATEGORY_CD,\n" +
+"	s_style_p.STYLE_SIZE_CD,\n" +
+"	s_style_p.STYLE_SIZE_GROUP_CD,\n" +
+"	t_remark.remark /*备注——文档*/\n" +
+"	,\n" +
+"	t_remark.file_name,\n" +
+"	t_remark.template_id /*模板id*/\n" +
+"	,\n" +
+"	t_remark.DATA /*json数据*/\n" +
+"	,\n" +
+"	t_remark.style_id,\n" +
+"	s_style_p.STYLE_NAME_CN,\n" +
+"	t_remark.ref_style_id,\n" +
+"	t_remark.CREATE_DATE /*创建时间*/\n" +
+"	,\n" +
+"	t_remark.parent_id /*父ID*/\n" +
+"	,\n" +
+"	t_remark.version /*版本*/\n" +
+"	,\n" +
+"	t_remark.principal /*负责人*/\n" +
+"	,\n" +
+"	CONCAT( a_login_user_p.FIRST_NAME, a_login_user_p.LAST_NAME ) AS USER_NAME /*姓名*/\n" +
+"	,\n" +
+"	t_remark.serial_number /*流水号*/\n" +
+"	,\n" +
+"	t_remark.STATUS,\n" +
+"	MISSION_STATUS.ITEM_NAME_CN /*状态*/\n" +
+"	\n" +
+"FROM\n" +
+"	t_remark\n" +
+"	LEFT JOIN v_order_p ON v_order_p.ORDER_ID = t_remark.order_id\n" +
+"	LEFT JOIN s_style_p ON s_style_p.SYS_STYLE_ID = t_remark.style_id\n" +
+"	LEFT JOIN a_login_user_p ON a_login_user_p.LOGIN_USER_ID = t_remark.principal\n" +
+"	LEFT JOIN ( SELECT item_value, ITEM_NAME_CN FROM a_dict_p WHERE ITEM_CD = 'MISSION_STATUS' ) MISSION_STATUS ON MISSION_STATUS.item_value = t_remark.\n" +
+"	STATUS LEFT JOIN ( SELECT item_value, ITEM_NAME_CN FROM a_dict_p WHERE ITEM_CD = 'MISSION_TEMPLATE' ) MISSION_TEMPLATE ON MISSION_TEMPLATE.item_value = t_remark.template_id";
 
             DataTable dt = SQLmtm.GetDataTable(sql);
             List<UserTaskDTO> userTaskDTOs = new List<UserTaskDTO>();
@@ -74,55 +77,59 @@ namespace DXApplicationTangche.service
 
 
         /// <summary>
-        /// 取得所有任务
+        /// 取得当前订单所有任务
         /// </summary>
         /// <returns></returns>
         public static List<UserTaskDTO> getUserTasksByOrderId(String ORDER_ID)
         {
             String sql = "SELECT\n" +
-                "	t_remark.remark_id,\n" +
-                "	t_remark.order_id /*订单号*/\n" +
-                "	,\n" +
-                "	v_order_p.CUSTOMER_ID,\n" +
-                "	v_order_p.CUSTOMER_NAME,\n" +
-                "	v_order_p.SHIPPING_DESTINATION,\n" +
-                "	v_order_p.ORDER_STATUS_CD,\n" +
-                "	v_order_p.ORDER_STATUS_CD_NAME,\n" +
-                "	s_style_p.STYLE_FIT_CD,\n" +
-                "	s_style_p.STYLE_CATEGORY_CD,\n" +
-                "	s_style_p.STYLE_SIZE_CD,\n" +
-                "	s_style_p.STYLE_SIZE_GROUP_CD," +
-                "	t_remark.remark /*备注——文档*/\n" +
-                "	,\n" +
-                "	t_remark.file_name,\n" +
-                "	t_remark.template_id /*模板id*/\n" +
-                "	,\n" +
-                "	t_remark.DATA /*json数据*/\n" +
-                "	,\n" +
-                "	t_remark.style_id,\n" +
-                "	s_style_p.STYLE_NAME_CN,\n" +
-                "	t_remark.ref_style_id,\n" +
-                "	t_remark.CREATE_DATE /*创建时间*/\n" +
-                "	,\n" +
-                "	t_remark.parent_id /*父ID*/\n" +
-                "	,\n" +
-                "	t_remark.version /*版本*/\n" +
-                "	,\n" +
-                "	t_remark.principal /*负责人*/\n" +
-                "	,\n" +
-                "	CONCAT( a_login_user_p.FIRST_NAME, a_login_user_p.LAST_NAME ) AS USER_NAME /*姓名*/\n" +
-                "	,\n" +
-                "	t_remark.serial_number /*流水号*/\n" +
-                "	,\n" +
-                "	t_remark.STATUS,\n" +
-                "	MISSION_STATUS.ITEM_NAME_CN /*状态*/\n" +
-                "FROM\n" +
-                "	t_remark\n" +
-                "	LEFT JOIN v_order_p ON v_order_p.ORDER_ID = t_remark.order_id\n" +
-                "	LEFT JOIN s_style_p ON s_style_p.SYS_STYLE_ID = t_remark.style_id\n" +
-                "	LEFT JOIN a_login_user_p ON a_login_user_p.LOGIN_USER_ID = t_remark.principal\n" +
-                "	LEFT JOIN ( SELECT item_value, ITEM_NAME_CN FROM a_dict_p WHERE ITEM_CD = 'MISSION_STATUS' ) MISSION_STATUS ON MISSION_STATUS.item_value = t_remark.STATUS;"+
-                "	where t_remark.order_id = '"+ORDER_ID+"'";
+"	t_remark.remark_id,\n" +
+"	t_remark.order_id /*订单号*/\n" +
+"	,\n" +
+"	MISSION_TEMPLATE.ITEM_NAME_CN TEMPLATE_NAME,\n" +
+"	v_order_p.CUSTOMER_ID,\n" +
+"	v_order_p.CUSTOMER_NAME,\n" +
+"	v_order_p.SHIPPING_DESTINATION,\n" +
+"	v_order_p.ORDER_STATUS_CD,\n" +
+"	v_order_p.ORDER_STATUS_CD_NAME,\n" +
+"	s_style_p.STYLE_FIT_CD,\n" +
+"	s_style_p.STYLE_CATEGORY_CD,\n" +
+"	s_style_p.STYLE_SIZE_CD,\n" +
+"	s_style_p.STYLE_SIZE_GROUP_CD,\n" +
+"	t_remark.remark /*备注——文档*/\n" +
+"	,\n" +
+"	t_remark.file_name,\n" +
+"	t_remark.template_id /*模板id*/\n" +
+"	,\n" +
+"	t_remark.DATA /*json数据*/\n" +
+"	,\n" +
+"	t_remark.style_id,\n" +
+"	s_style_p.STYLE_NAME_CN,\n" +
+"	t_remark.ref_style_id,\n" +
+"	t_remark.CREATE_DATE /*创建时间*/\n" +
+"	,\n" +
+"	t_remark.parent_id /*父ID*/\n" +
+"	,\n" +
+"	t_remark.version /*版本*/\n" +
+"	,\n" +
+"	t_remark.principal /*负责人*/\n" +
+"	,\n" +
+"	CONCAT( a_login_user_p.FIRST_NAME, a_login_user_p.LAST_NAME ) AS USER_NAME /*姓名*/\n" +
+"	,\n" +
+"	t_remark.serial_number /*流水号*/\n" +
+"	,\n" +
+"	t_remark.STATUS,\n" +
+"	MISSION_STATUS.ITEM_NAME_CN /*状态*/\n" +
+"	\n" +
+"FROM\n" +
+"	t_remark\n" +
+"	LEFT JOIN v_order_p ON v_order_p.ORDER_ID = t_remark.order_id\n" +
+"	LEFT JOIN s_style_p ON s_style_p.SYS_STYLE_ID = t_remark.style_id\n" +
+"	LEFT JOIN a_login_user_p ON a_login_user_p.LOGIN_USER_ID = t_remark.principal\n" +
+"	LEFT JOIN ( SELECT item_value, ITEM_NAME_CN FROM a_dict_p WHERE ITEM_CD = 'MISSION_STATUS' ) MISSION_STATUS ON MISSION_STATUS.item_value = t_remark.\n" +
+"	STATUS LEFT JOIN ( SELECT item_value, ITEM_NAME_CN FROM a_dict_p WHERE ITEM_CD = 'MISSION_TEMPLATE' ) MISSION_TEMPLATE ON MISSION_TEMPLATE.item_value = t_remark.template_id \n" +
+"WHERE\n" +
+"	t_remark.order_id = '"+ORDER_ID+"';";
 
             DataTable dt = SQLmtm.GetDataTable(sql);
             List<UserTaskDTO> userTaskDTOs = new List<UserTaskDTO>();
