@@ -155,8 +155,10 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             DataTable dt = TaskService.GetTemplate();
             foreach (DataRow dr in dt.Rows)
             {
-                this.template_choose.Add(dr["template_name"].ToString(), dr["template_id"].ToString());
-                ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)barEditItem模板.Edit).Items.Add(dr["template_name"].ToString());
+                if ("1".Equals(dr["template_id"].ToString())) {
+                    this.template_choose.Add(dr["template_name"].ToString(), dr["template_id"].ToString());
+                    ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)barEditItem模板.Edit).Items.Add(dr["template_name"].ToString());
+                }
             }
         }
 
