@@ -309,6 +309,8 @@ namespace DevExpress.XtraGrid.Demos.util
             return str;
         }
         #endregion
+
+
         private string uuid = System.Guid.NewGuid().ToString("N");
     }
 }

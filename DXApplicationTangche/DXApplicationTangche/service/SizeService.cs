@@ -259,5 +259,10 @@ namespace DXApplicationTangche.service
                 , new string[] { Style_Id }
                 );
         }
+
+        public static List<尺寸呈现dto> getDto尺寸WithOrderId(String orderid)
+        {
+
+        }
     }
 }

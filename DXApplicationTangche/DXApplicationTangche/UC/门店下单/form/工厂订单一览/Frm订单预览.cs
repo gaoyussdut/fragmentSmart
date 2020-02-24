@@ -36,17 +36,17 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.xtraTabPager任务预览.PageVisible = false;
             this.Style_Id = Style_Id;
             this.ORDER_ID = ORDER_ID;
-            this.model = new 门店下单选款式Model(ORDER_ID);
-            this.model.尺寸呈现 = lst;
             this.REMARKS = REMARKS;
 
             //  订单相关信息
-            this.model
+            this.model = new 门店下单选款式Model(ORDER_ID)
+                .build尺寸呈现(lst)
                 .build款式全尺寸(Style_Id)
                 .build设计点(Style_Id)
                 .build款式图片();
-
+            //  this.model.build订单Model()
             //  控件行为
+
             this.gridControl款式.DataSource = this.model.款式图片一览;
             this.gridControl面料.DataSource = this.model.面料信息;
             this.gridControlSize.DataSource = this.model.尺寸呈现;

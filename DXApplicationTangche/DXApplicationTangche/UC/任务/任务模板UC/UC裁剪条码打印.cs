@@ -317,5 +317,12 @@ namespace DXApplicationTangche.UC.任务.任务模板UC
             this.txtClipNumber.Text = "0";
             //this.txtPrintClipNumber.Text = "";
         }
+
+        private void UC裁剪条码打印_Load_1(object sender, EventArgs e)
+        {
+            this.txtClipNumber.Text = "0";
+            this.ActiveControl = this.txtBarCode;
+            printTbl = null;
+        }
     }
 }

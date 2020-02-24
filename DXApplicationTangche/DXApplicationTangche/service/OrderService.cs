@@ -2,6 +2,7 @@
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.门店下单.form;
+using DXApplicationTangche.Utils;
 using DXApplicationTangche.原型;
 using mendian;
 using System;
@@ -409,7 +410,24 @@ namespace DXApplicationTangche.service
 "ORDER BY\n" +
 "	QR_OTHER0,\n" +
 "	QR_OTHER9";
-            return SQLmtm.GetDataRow(sql);
+            return SQLerp.GetDataRow(sql);
+        }
+        /// <summary>
+        /// 通过orderid取styleid
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <returns></returns>
+        public static String GetStyleidWithOrderid(String orderid)
+        {
+            String sql = "SELECT\n" +
+"	ORDER_ID,\n" +
+"	STYLE_ID \n" +
+"FROM\n" +
+"	o_order_p \n" +
+"WHERE\n" +
+"	ORDER_ID = '"+orderid+"'";
+            DataRow dataRow = SQLmtm.GetDataRow(sql);
+            return dataRow["STYLE_ID"].ToString();
         }
     }
 }

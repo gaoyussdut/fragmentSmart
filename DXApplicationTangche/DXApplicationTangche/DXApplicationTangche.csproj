@@ -204,6 +204,7 @@
     <Compile Include="service\StyleService.cs" />
     <Compile Include="service\TaskService.cs" />
     <Compile Include="service\UserService.cs" />
+    <Compile Include="service\生产工单Service.cs" />
     <Compile Include="UC\Frm工艺流程管理.cs">
       <SubType>Form</SubType>
     </Compile>

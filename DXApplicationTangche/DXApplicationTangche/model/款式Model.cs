@@ -242,6 +242,7 @@ namespace DXApplicationTangche.UC.款式异常
     {
         #region 变量
         private String ORDER_ID;
+        public String STYLE_ID;
         private List<款式图片一览Dto> 款式图片一览Dtos = new List<款式图片一览Dto>();
         private List<款式图片Dto> 款式图片dtos = new List<款式图片Dto>();
         //private 款式图片Dto 款式图片Dto;
@@ -273,10 +274,15 @@ namespace DXApplicationTangche.UC.款式异常
         public 门店下单选款式Model(String ORDER_ID)
         {
             this.ORDER_ID = ORDER_ID;
+            this.STYLE_ID = OrderService.GetStyleidWithOrderid(this.ORDER_ID);
         }
         #endregion
 
         #region build方法
+        public 门店下单选款式Model build尺寸呈现(List<尺寸呈现dto> lst) {
+            this.尺寸呈现 = lst;
+            return this;
+        }
         public 门店下单选款式Model build款式全尺寸(String styleid)
         {
             DataRow dr = SQLmtm.GetDataRow("SELECT SYS_STYLE_ID,SHOP_ID,STYLE_NO,CUSTOMER_COUNT_ID,STYLE_CD,STYLE_KBN,STYLE_SOURCE,STYLE_CATEGORY_CD,STYLE_DRESS_CATEGORY,STYLE_DESIGN_TYPE,STYLE_PUBLISH_CATEGORY_CD,REF_STYLE_ID,STYLE_NAME_CN,STYLE_NAME_EN,STYLE_FIT_CD,SYTLE_YEAR,SYTLE_SEASON,SYTLE_FABRIC_ID,SYTLE_FABRIC_NO,STYLE_COMPOSITION,STYLE_DESCRIBE,STYLE_COLOR_CD,STYLE_COLOR_NAME,STYLE_SIZE_GROUP_CD,STYLE_SIZE_CD,STYLE_MAKE_TYPE,STYLE_FIT_BODY_TYPE,STYLE_SEX_CD,STYLE_STANDARD,STYLE_BAR_CODE,STYLE_DESIGNER_DATE,STYLE_DESIGNER,STYLE_MATERIAL_NUMBER,STYLE_DESIGN_PRICE,STYLE_FACTORY_TOTAL_PRICE,STYLE_SHOP_TOTAL_PRICE,REMARKS,ENABLE_FLAG,DELETE_FLAG,VERSION,CREATE_DATE,UPDATE_DATE,CREATE_USER,UPDATE_USER,COVER_PHOTO_PATH FROM s_style_p WHERE SYS_STYLE_ID = '" + styleid + "'");
