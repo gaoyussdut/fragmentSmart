@@ -223,7 +223,15 @@ namespace DXApplicationTangche.UC.款式异常
         public String JsonSerialization() {
             return FunctionHelper.JsonSerialization(this);
         }
-
+        /// <summary>
+        /// 反序列化方法
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public 订单Model JsonDeserialization(String str)
+        {
+            return FunctionHelper.JsonDeserialization<订单Model>(str);
+        }
         #region 属性
         //  款式图片
         public List<款式图片一览Dto> STYLE_PIC { get => 款式图片一览Dtos; set => 款式图片一览Dtos = value; }
