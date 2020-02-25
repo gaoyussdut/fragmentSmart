@@ -96,6 +96,9 @@
     <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="fastJSON, Version=2.3.0.0, Culture=neutral, PublicKeyToken=6b75a806b86095cd, processorArchitecture=MSIL">
+      <HintPath>..\packages\fastJSON.2.3.1\lib\net40\fastJSON.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -479,8 +482,11 @@
     <Compile Include="UC\面料\Frm面料扫码下线.Designer.cs">
       <DependentUpon>Frm面料扫码下线.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Cache.cs" />
+    <Compile Include="Utils\ICache.cs" />
     <Compile Include="Utils\ListToDatatable.cs" />
     <Compile Include="Utils\PanelLocition.cs" />
+    <Compile Include="Utils\Redis.cs" />
     <Compile Include="Utils\RestCall.cs" />
     <Compile Include="Utils\MetaData.cs" />
     <Compile Include="UC\客户管理\Frm客户.cs">

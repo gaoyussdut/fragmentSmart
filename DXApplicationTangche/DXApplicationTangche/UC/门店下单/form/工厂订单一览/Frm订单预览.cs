@@ -16,6 +16,8 @@ using System.IO;
 using DiaoPaiDaYin;
 using DXApplicationTangche.原型;
 using DXApplicationTangche.UC.任务;
+using DXApplicationTangche.Utils;
+using DXApplicationTangche.UC.门店下单.DTO;
 
 namespace DXApplicationTangche.UC.门店下单.form.订单修改
 {
@@ -284,6 +286,12 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            订单Model model = this.model.build订单Model();
+
+
+            Cache.Insert(model.ORDER_ID, this.model.build订单Model().JsonSerialization());
+            String rtn= Cache.Get<String>(model.ORDER_ID);
+
             String JsonStr = this.model.build订单Model().JsonSerialization();
         }
     }
