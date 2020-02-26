@@ -19,6 +19,7 @@ using DXApplicationTangche.UC.任务;
 using DXApplicationTangche.Utils;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.service.redis_service;
+using Seagull.BarTender.Print;
 
 namespace DXApplicationTangche.UC.门店下单.form.订单修改
 {
@@ -292,7 +293,36 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
                 订单Model
                 , TaskService.getUserTasksByOrderId(订单Model.ORDER_ID)
                 );
+            print条码();
+            OrderService.UpdataOrderPrintFlag(this.ORDER_ID, true);//更改订单打印状态
+        }
+        public void print条码()
+        {
+            Engine btEngine = new Engine();
+            btEngine.Start();
+            //string lj = AppDomain.CurrentDomain.BaseDirectory + "顺丰订单模板.btw";  //test.btw是BT的模板
+            //string lj = AppDomain.CurrentDomain.BaseDirectory + "001.btw";  //test.btw是BT的模板
+            String lj2 = "C:\\002.btw";
+            LabelFormatDocument btFormat = btEngine.Documents.Open(lj2);
+            //指定打印机名 
+            //btFormat.PrintSetup.PrinterName = "HPRT HLP106S-UE";
+            //btFormat.PrintSetup.PrinterName = "TEC";
+            btFormat.PrintSetup.PrinterName = "POSTEK G-3106";
+            //打印份数                   
+            btFormat.PrintSetup.IdenticalCopiesOfLabel = 1;
+            //改变标签打印数份连载 
+            btFormat.PrintSetup.NumberOfSerializedLabels = 2;
+            //对BTW模版相应字段进行赋值 
 
+            btFormat.SubStrings["styleid"].Value = this.ORDER_ID;
+            Messages messages1;
+            int waitout1 = 10000; // 10秒 超时 
+            Result nResult2 = btFormat.Print("订单条码" + this.ORDER_ID, waitout1, out messages1);
+            btFormat.PrintSetup.Cache.FlushInterval = CacheFlushInterval.PerSession;
+            //不保存对打开模板的修改 
+            btFormat.Close(SaveOptions.DoNotSaveChanges);
+            //结束打印引擎                  
+            btEngine.Stop();
         }
     }
 }

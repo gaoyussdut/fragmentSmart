@@ -30,43 +30,43 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm订单预览));
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup3 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup4 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
-            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation2 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition11 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition12 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition13 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition9 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition10 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition11 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan6 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement12 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement13 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement14 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement15 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup1 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.GalleryItemGroup galleryItemGroup2 = new DevExpress.XtraBars.Ribbon.GalleryItemGroup();
+            DevExpress.XtraBars.Ribbon.ReduceOperation reduceOperation1 = new DevExpress.XtraBars.Ribbon.ReduceOperation();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition14 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan7 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan8 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition5 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition6 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition7 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan2 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan3 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan4 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement7 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition8 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition9 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition10 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition6 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition7 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition8 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan5 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement8 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement9 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement10 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement11 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             this.colSTYLE_PUBLISH_CATEGORY_CD = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colStylePicture = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
@@ -356,6 +356,8 @@
             this.barEditItem模板 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.barButtonItem新增模板 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.headerFooterToolsRibbonPageCategory1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsRibbonPageCategory();
             this.headerFooterToolsDesignRibbonPage1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsDesignRibbonPage();
             this.headerFooterToolsDesignNavigationRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsDesignNavigationRibbonPageGroup();
@@ -379,6 +381,7 @@
             this.fileRibbonPage1 = new DevExpress.XtraRichEdit.UI.FileRibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.homeRibbonPage1 = new DevExpress.XtraRichEdit.UI.HomeRibbonPage();
             this.clipboardRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.ClipboardRibbonPageGroup();
             this.fontRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.FontRibbonPageGroup();
@@ -461,9 +464,6 @@
             this.colremark_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -509,23 +509,23 @@
             // 
             this.colSTYLE_PUBLISH_CATEGORY_CD.Caption = "服装种类";
             this.colSTYLE_PUBLISH_CATEGORY_CD.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 25;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 22;
             this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
             this.colSTYLE_PUBLISH_CATEGORY_CD.OptionsColumn.ShowCaption = true;
             this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
             this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 0;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 82;
             // 
             // colStylePicture
             // 
             this.colStylePicture.Caption = "款式图片";
             this.colStylePicture.ColumnEdit = this.repositoryItemImageEdit1;
             this.colStylePicture.FieldName = "Picture";
-            this.colStylePicture.MinWidth = 25;
+            this.colStylePicture.MinWidth = 22;
             this.colStylePicture.Name = "colStylePicture";
             this.colStylePicture.Visible = true;
             this.colStylePicture.VisibleIndex = 3;
-            this.colStylePicture.Width = 94;
+            this.colStylePicture.Width = 82;
             // 
             // repositoryItemImageEdit1
             // 
@@ -538,56 +538,56 @@
             // 
             this.colSTYLE_NAME_CN.Caption = "款式名";
             this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.MinWidth = 25;
+            this.colSTYLE_NAME_CN.MinWidth = 22;
             this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
             this.colSTYLE_NAME_CN.OptionsColumn.ShowCaption = true;
             this.colSTYLE_NAME_CN.Visible = true;
             this.colSTYLE_NAME_CN.VisibleIndex = 1;
-            this.colSTYLE_NAME_CN.Width = 94;
+            this.colSTYLE_NAME_CN.Width = 82;
             // 
             // colSYTLE_SEASON
             // 
             this.colSYTLE_SEASON.Caption = "季节";
             this.colSYTLE_SEASON.FieldName = "SYTLE_SEASON";
-            this.colSYTLE_SEASON.MinWidth = 25;
+            this.colSYTLE_SEASON.MinWidth = 22;
             this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
             this.colSYTLE_SEASON.OptionsColumn.ShowCaption = true;
             this.colSYTLE_SEASON.Visible = true;
             this.colSYTLE_SEASON.VisibleIndex = 2;
-            this.colSYTLE_SEASON.Width = 94;
+            this.colSYTLE_SEASON.Width = 82;
             // 
             // colName
             // 
             this.colName.Caption = "设计点名称";
             this.colName.FieldName = "Name";
-            this.colName.MinWidth = 25;
+            this.colName.MinWidth = 22;
             this.colName.Name = "colName";
             this.colName.OptionsColumn.ShowCaption = true;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 1;
-            this.colName.Width = 94;
+            this.colName.Width = 82;
             // 
             // colITEM_TYPE_NAME_CN
             // 
             this.colITEM_TYPE_NAME_CN.Caption = "设计点类别";
             this.colITEM_TYPE_NAME_CN.FieldName = "ITEM_TYPE_NAME_CN";
-            this.colITEM_TYPE_NAME_CN.MinWidth = 25;
+            this.colITEM_TYPE_NAME_CN.MinWidth = 22;
             this.colITEM_TYPE_NAME_CN.Name = "colITEM_TYPE_NAME_CN";
             this.colITEM_TYPE_NAME_CN.OptionsColumn.ShowCaption = true;
             this.colITEM_TYPE_NAME_CN.Visible = true;
             this.colITEM_TYPE_NAME_CN.VisibleIndex = 0;
-            this.colITEM_TYPE_NAME_CN.Width = 94;
+            this.colITEM_TYPE_NAME_CN.Width = 82;
             // 
             // colPicture
             // 
             this.colPicture.Caption = "设计点图片";
             this.colPicture.ColumnEdit = this.repositoryItemPictureEdit1;
             this.colPicture.FieldName = "Picture";
-            this.colPicture.MinWidth = 25;
+            this.colPicture.MinWidth = 22;
             this.colPicture.Name = "colPicture";
             this.colPicture.Visible = true;
             this.colPicture.VisibleIndex = 2;
-            this.colPicture.Width = 94;
+            this.colPicture.Width = 82;
             // 
             // repositoryItemPictureEdit1
             // 
@@ -597,44 +597,44 @@
             // 
             this.colpicture1.Caption = "图片";
             this.colpicture1.FieldName = "picture";
-            this.colpicture1.MinWidth = 25;
+            this.colpicture1.MinWidth = 22;
             this.colpicture1.Name = "colpicture1";
             this.colpicture1.Visible = true;
             this.colpicture1.VisibleIndex = 3;
-            this.colpicture1.Width = 94;
+            this.colpicture1.Width = 82;
             // 
             // coltab
             // 
             this.coltab.Caption = "类别";
             this.coltab.FieldName = "tab";
-            this.coltab.MinWidth = 25;
+            this.coltab.MinWidth = 22;
             this.coltab.Name = "coltab";
             this.coltab.OptionsColumn.ShowCaption = true;
             this.coltab.Visible = true;
             this.coltab.VisibleIndex = 0;
-            this.coltab.Width = 94;
+            this.coltab.Width = 82;
             // 
             // col_name
             // 
             this.col_name.Caption = "名称";
             this.col_name.FieldName = "name";
-            this.col_name.MinWidth = 25;
+            this.col_name.MinWidth = 22;
             this.col_name.Name = "col_name";
             this.col_name.OptionsColumn.ShowCaption = true;
             this.col_name.Visible = true;
             this.col_name.VisibleIndex = 1;
-            this.col_name.Width = 94;
+            this.col_name.Width = 82;
             // 
             // coldescription
             // 
             this.coldescription.Caption = "详情";
             this.coldescription.FieldName = "description";
-            this.coldescription.MinWidth = 25;
+            this.coldescription.MinWidth = 22;
             this.coldescription.Name = "coldescription";
             this.coldescription.OptionsColumn.ShowCaption = true;
             this.coldescription.Visible = true;
             this.coldescription.VisibleIndex = 2;
-            this.coldescription.Width = 94;
+            this.coldescription.Width = 82;
             // 
             // ribbonPage2
             // 
@@ -929,6 +929,7 @@
             this.barButtonItem4,
             this.barButtonItem5});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonControl1.MaxItemId = 271;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -952,7 +953,7 @@
             this.repositoryItemFloatingObjectOutlineWeight1,
             this.repositoryItemComboBox1,
             this.repositoryItemComboBox2});
-            this.ribbonControl1.Size = new System.Drawing.Size(1297, 206);
+            this.ribbonControl1.Size = new System.Drawing.Size(1135, 166);
             // 
             // undoItem1
             // 
@@ -1558,7 +1559,7 @@
             // 
             this.galleryChangeStyleItem1.Gallery.ColumnCount = 10;
             this.galleryChangeStyleItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup3});
+            galleryItemGroup1});
             this.galleryChangeStyleItem1.Gallery.ImageSize = new System.Drawing.Size(65, 46);
             this.galleryChangeStyleItem1.Id = 78;
             this.galleryChangeStyleItem1.Name = "galleryChangeStyleItem1";
@@ -2377,7 +2378,7 @@
             // 
             this.galleryChangeTableStyleItem1.Gallery.ColumnCount = 3;
             this.galleryChangeTableStyleItem1.Gallery.Groups.AddRange(new DevExpress.XtraBars.Ribbon.GalleryItemGroup[] {
-            galleryItemGroup4});
+            galleryItemGroup2});
             this.galleryChangeTableStyleItem1.Gallery.ImageSize = new System.Drawing.Size(65, 46);
             this.galleryChangeTableStyleItem1.Id = 184;
             this.galleryChangeTableStyleItem1.ModifyItemLink = null;
@@ -3057,6 +3058,21 @@
             this.barButtonItem新增模板.Name = "barButtonItem新增模板";
             this.barButtonItem新增模板.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem新增模板_ItemClick);
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "订单条码打印";
+            this.barButtonItem4.Id = 269;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "文件导出";
+            this.barButtonItem5.Id = 270;
+            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
             // headerFooterToolsRibbonPageCategory1
             // 
             this.headerFooterToolsRibbonPageCategory1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(176)))), ((int)(((byte)(35)))));
@@ -3237,6 +3253,13 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem新增模板);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "订单数据导出";
+            // 
             // homeRibbonPage1
             // 
             this.homeRibbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -3246,12 +3269,12 @@
             this.stylesRibbonPageGroup1,
             this.editingRibbonPageGroup1});
             this.homeRibbonPage1.Name = "homeRibbonPage1";
-            reduceOperation2.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable;
-            reduceOperation2.GroupName = null;
-            reduceOperation2.ItemLinkIndex = 0;
-            reduceOperation2.ItemLinksCount = 0;
-            reduceOperation2.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery;
-            this.homeRibbonPage1.ReduceOperations.Add(reduceOperation2);
+            reduceOperation1.Behavior = DevExpress.XtraBars.Ribbon.ReduceOperationBehavior.UntilAvailable;
+            reduceOperation1.GroupName = null;
+            reduceOperation1.ItemLinkIndex = 0;
+            reduceOperation1.ItemLinksCount = 0;
+            reduceOperation1.Operation = DevExpress.XtraBars.Ribbon.ReduceOperationType.Gallery;
+            this.homeRibbonPage1.ReduceOperations.Add(reduceOperation1);
             // 
             // clipboardRibbonPageGroup1
             // 
@@ -3470,10 +3493,11 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 206);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 166);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage面料;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1297, 481);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1135, 368);
             this.xtraTabControl1.TabIndex = 9;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPager任务预览,
@@ -3484,8 +3508,9 @@
             // xtraTabPage面料
             // 
             this.xtraTabPage面料.Controls.Add(this.layoutControl2);
+            this.xtraTabPage面料.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabPage面料.Name = "xtraTabPage面料";
-            this.xtraTabPage面料.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPage面料.Size = new System.Drawing.Size(1133, 338);
             this.xtraTabPage面料.Text = "面料和设计点";
             // 
             // layoutControl2
@@ -3500,39 +3525,42 @@
             this.layoutControl2.Controls.Add(this.mianliaoname);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(1295, 445);
+            this.layoutControl2.Size = new System.Drawing.Size(1133, 338);
             this.layoutControl2.TabIndex = 99;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // label2
             // 
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(419, 12);
+            this.label2.Location = new System.Drawing.Point(367, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(864, 28);
+            this.label2.Size = new System.Drawing.Size(755, 20);
             this.label2.TabIndex = 103;
             this.label2.Text = "设计点";
             // 
             // label1
             // 
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(12, 12);
+            this.label1.Location = new System.Drawing.Point(11, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(403, 28);
+            this.label1.Size = new System.Drawing.Size(352, 20);
             this.label1.TabIndex = 102;
             this.label1.Text = "款式";
             // 
             // gridControl款式
             // 
-            this.gridControl款式.Location = new System.Drawing.Point(12, 44);
+            this.gridControl款式.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl款式.Location = new System.Drawing.Point(11, 34);
             this.gridControl款式.MainView = this.tileView3;
+            this.gridControl款式.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl款式.MenuManager = this.ribbonControl1;
             this.gridControl款式.Name = "gridControl款式";
             this.gridControl款式.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1});
-            this.gridControl款式.Size = new System.Drawing.Size(403, 161);
+            this.gridControl款式.Size = new System.Drawing.Size(352, 121);
             this.gridControl款式.TabIndex = 101;
             this.gridControl款式.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView3});
@@ -3544,65 +3572,68 @@
             this.colSTYLE_NAME_CN,
             this.colSYTLE_SEASON,
             this.colStylePicture});
+            this.tileView3.DetailHeight = 272;
             this.tileView3.GridControl = this.gridControl款式;
             this.tileView3.Name = "tileView3";
             this.tileView3.OptionsTiles.ItemSize = new System.Drawing.Size(404, 200);
             this.tileView3.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.List;
             this.tileView3.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
-            tableColumnDefinition11.Length.Value = 156D;
-            tableColumnDefinition12.Length.Value = 97D;
-            tableColumnDefinition13.Length.Value = 127D;
-            this.tileView3.TileColumns.Add(tableColumnDefinition11);
-            this.tileView3.TileColumns.Add(tableColumnDefinition12);
-            this.tileView3.TileColumns.Add(tableColumnDefinition13);
-            tableRowDefinition9.Length.Value = 33D;
-            tableRowDefinition10.Length.Value = 54D;
-            tableRowDefinition11.Length.Value = 48D;
-            this.tileView3.TileRows.Add(tableRowDefinition9);
-            this.tileView3.TileRows.Add(tableRowDefinition10);
-            this.tileView3.TileRows.Add(tableRowDefinition11);
-            tableSpan6.ColumnIndex = 1;
-            tableSpan6.ColumnSpan = 2;
-            tableSpan6.RowSpan = 3;
-            this.tileView3.TileSpans.Add(tableSpan6);
-            tileViewItemElement12.Column = this.colSTYLE_PUBLISH_CATEGORY_CD;
-            tileViewItemElement12.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement12.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement12.Text = "colSTYLE_PUBLISH_CATEGORY_CD";
-            tileViewItemElement12.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement13.Column = this.colStylePicture;
-            tileViewItemElement13.ColumnIndex = 1;
-            tileViewItemElement13.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement13.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement13.RowIndex = 1;
-            tileViewItemElement13.Text = "colStylePicture";
-            tileViewItemElement13.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement14.Column = this.colSTYLE_NAME_CN;
-            tileViewItemElement14.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement14.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement14.RowIndex = 1;
-            tileViewItemElement14.Text = "colSTYLE_NAME_CN";
-            tileViewItemElement14.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement15.Column = this.colSYTLE_SEASON;
-            tileViewItemElement15.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement15.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement15.RowIndex = 2;
-            tileViewItemElement15.Text = "colSYTLE_SEASON";
-            tileViewItemElement15.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileView3.TileTemplate.Add(tileViewItemElement12);
-            this.tileView3.TileTemplate.Add(tileViewItemElement13);
-            this.tileView3.TileTemplate.Add(tileViewItemElement14);
-            this.tileView3.TileTemplate.Add(tileViewItemElement15);
+            tableColumnDefinition1.Length.Value = 156D;
+            tableColumnDefinition2.Length.Value = 97D;
+            tableColumnDefinition3.Length.Value = 127D;
+            this.tileView3.TileColumns.Add(tableColumnDefinition1);
+            this.tileView3.TileColumns.Add(tableColumnDefinition2);
+            this.tileView3.TileColumns.Add(tableColumnDefinition3);
+            tableRowDefinition1.Length.Value = 33D;
+            tableRowDefinition2.Length.Value = 54D;
+            tableRowDefinition3.Length.Value = 48D;
+            this.tileView3.TileRows.Add(tableRowDefinition1);
+            this.tileView3.TileRows.Add(tableRowDefinition2);
+            this.tileView3.TileRows.Add(tableRowDefinition3);
+            tableSpan1.ColumnIndex = 1;
+            tableSpan1.ColumnSpan = 2;
+            tableSpan1.RowSpan = 3;
+            this.tileView3.TileSpans.Add(tableSpan1);
+            tileViewItemElement1.Column = this.colSTYLE_PUBLISH_CATEGORY_CD;
+            tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement1.Text = "colSTYLE_PUBLISH_CATEGORY_CD";
+            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement2.Column = this.colStylePicture;
+            tileViewItemElement2.ColumnIndex = 1;
+            tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement2.RowIndex = 1;
+            tileViewItemElement2.Text = "colStylePicture";
+            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement3.Column = this.colSTYLE_NAME_CN;
+            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement3.RowIndex = 1;
+            tileViewItemElement3.Text = "colSTYLE_NAME_CN";
+            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.Column = this.colSYTLE_SEASON;
+            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement4.RowIndex = 2;
+            tileViewItemElement4.Text = "colSYTLE_SEASON";
+            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileView3.TileTemplate.Add(tileViewItemElement1);
+            this.tileView3.TileTemplate.Add(tileViewItemElement2);
+            this.tileView3.TileTemplate.Add(tileViewItemElement3);
+            this.tileView3.TileTemplate.Add(tileViewItemElement4);
             // 
             // gridControl设计点
             // 
-            this.gridControl设计点.Location = new System.Drawing.Point(419, 44);
+            this.gridControl设计点.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl设计点.Location = new System.Drawing.Point(367, 34);
             this.gridControl设计点.MainView = this.tileView1;
+            this.gridControl设计点.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl设计点.MenuManager = this.ribbonControl1;
             this.gridControl设计点.Name = "gridControl设计点";
             this.gridControl设计点.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl设计点.Size = new System.Drawing.Size(864, 376);
+            this.gridControl设计点.Size = new System.Drawing.Size(755, 284);
             this.gridControl设计点.TabIndex = 100;
             this.gridControl设计点.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -3613,55 +3644,58 @@
             this.colITEM_TYPE_NAME_CN,
             this.colName,
             this.colPicture});
+            this.tileView1.DetailHeight = 272;
             this.tileView1.GridControl = this.gridControl设计点;
             this.tileView1.Name = "tileView1";
             this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(328, 162);
             this.tileView1.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.Kanban;
             this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileView1.TileColumns.Add(tableColumnDefinition1);
-            this.tileView1.TileColumns.Add(tableColumnDefinition2);
-            this.tileView1.TileColumns.Add(tableColumnDefinition3);
-            this.tileView1.TileColumns.Add(tableColumnDefinition14);
-            this.tileView1.TileRows.Add(tableRowDefinition1);
-            this.tileView1.TileRows.Add(tableRowDefinition2);
-            tableSpan1.ColumnSpan = 2;
-            tableSpan1.RowIndex = 1;
-            tableSpan7.ColumnSpan = 2;
-            tableSpan8.ColumnIndex = 2;
-            tableSpan8.ColumnSpan = 2;
-            tableSpan8.RowSpan = 3;
-            this.tileView1.TileSpans.Add(tableSpan1);
-            this.tileView1.TileSpans.Add(tableSpan7);
-            this.tileView1.TileSpans.Add(tableSpan8);
-            tileViewItemElement1.Column = this.colName;
-            tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement1.RowIndex = 1;
-            tileViewItemElement1.Text = "colName";
-            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement2.Column = this.colITEM_TYPE_NAME_CN;
-            tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement2.Text = "colITEM_TYPE_NAME_CN";
-            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.Column = this.colPicture;
-            tileViewItemElement3.ColumnIndex = 3;
-            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement3.Text = "colPicture";
-            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileView1.TileTemplate.Add(tileViewItemElement1);
-            this.tileView1.TileTemplate.Add(tileViewItemElement2);
-            this.tileView1.TileTemplate.Add(tileViewItemElement3);
+            this.tileView1.TileColumns.Add(tableColumnDefinition4);
+            this.tileView1.TileColumns.Add(tableColumnDefinition5);
+            this.tileView1.TileColumns.Add(tableColumnDefinition6);
+            this.tileView1.TileColumns.Add(tableColumnDefinition7);
+            this.tileView1.TileRows.Add(tableRowDefinition4);
+            this.tileView1.TileRows.Add(tableRowDefinition5);
+            tableSpan2.ColumnSpan = 2;
+            tableSpan2.RowIndex = 1;
+            tableSpan3.ColumnSpan = 2;
+            tableSpan4.ColumnIndex = 2;
+            tableSpan4.ColumnSpan = 2;
+            tableSpan4.RowSpan = 3;
+            this.tileView1.TileSpans.Add(tableSpan2);
+            this.tileView1.TileSpans.Add(tableSpan3);
+            this.tileView1.TileSpans.Add(tableSpan4);
+            tileViewItemElement5.Column = this.colName;
+            tileViewItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement5.RowIndex = 1;
+            tileViewItemElement5.Text = "colName";
+            tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.Column = this.colITEM_TYPE_NAME_CN;
+            tileViewItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement6.Text = "colITEM_TYPE_NAME_CN";
+            tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement7.Column = this.colPicture;
+            tileViewItemElement7.ColumnIndex = 3;
+            tileViewItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement7.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement7.Text = "colPicture";
+            tileViewItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileView1.TileTemplate.Add(tileViewItemElement5);
+            this.tileView1.TileTemplate.Add(tileViewItemElement6);
+            this.tileView1.TileTemplate.Add(tileViewItemElement7);
             this.tileView1.ItemDoubleClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemDoubleClick);
             // 
             // gridControl面料
             // 
-            this.gridControl面料.Location = new System.Drawing.Point(12, 240);
+            this.gridControl面料.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl面料.Location = new System.Drawing.Point(11, 185);
             this.gridControl面料.MainView = this.tileView2;
+            this.gridControl面料.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl面料.MenuManager = this.ribbonControl1;
             this.gridControl面料.Name = "gridControl面料";
-            this.gridControl面料.Size = new System.Drawing.Size(403, 180);
+            this.gridControl面料.Size = new System.Drawing.Size(352, 133);
             this.gridControl面料.TabIndex = 98;
             this.gridControl面料.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView2});
@@ -3673,58 +3707,58 @@
             this.col_name,
             this.coldescription,
             this.colpicture1});
+            this.tileView2.DetailHeight = 272;
             this.tileView2.GridControl = this.gridControl面料;
             this.tileView2.Name = "tileView2";
             this.tileView2.OptionsTiles.ItemSize = new System.Drawing.Size(474, 218);
             this.tileView2.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.List;
             this.tileView2.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
-            tableColumnDefinition4.Length.Value = 223D;
-            tableColumnDefinition5.Length.Value = 77D;
-            tableColumnDefinition6.Length.Value = 150D;
-            this.tileView2.TileColumns.Add(tableColumnDefinition4);
-            this.tileView2.TileColumns.Add(tableColumnDefinition5);
-            this.tileView2.TileColumns.Add(tableColumnDefinition6);
-            this.tileView2.TileRows.Add(tableRowDefinition3);
-            this.tileView2.TileRows.Add(tableRowDefinition4);
-            this.tileView2.TileRows.Add(tableRowDefinition5);
-            tableSpan2.ColumnIndex = 1;
-            tableSpan2.ColumnSpan = 2;
-            tableSpan2.RowSpan = 3;
-            this.tileView2.TileSpans.Add(tableSpan2);
-            tileViewItemElement4.Column = this.colpicture1;
-            tileViewItemElement4.ColumnIndex = 1;
-            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement4.Text = "colpicture1";
-            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement5.Column = this.coltab;
-            tileViewItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement5.Text = "coltab";
-            tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement6.Column = this.col_name;
-            tileViewItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement6.RowIndex = 1;
-            tileViewItemElement6.Text = "col_name";
-            tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement7.Column = this.coldescription;
-            tileViewItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement7.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement7.RowIndex = 2;
-            tileViewItemElement7.Text = "coldescription";
-            tileViewItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileView2.TileTemplate.Add(tileViewItemElement4);
-            this.tileView2.TileTemplate.Add(tileViewItemElement5);
-            this.tileView2.TileTemplate.Add(tileViewItemElement6);
-            this.tileView2.TileTemplate.Add(tileViewItemElement7);
+            tableColumnDefinition8.Length.Value = 223D;
+            tableColumnDefinition9.Length.Value = 77D;
+            tableColumnDefinition10.Length.Value = 150D;
+            this.tileView2.TileColumns.Add(tableColumnDefinition8);
+            this.tileView2.TileColumns.Add(tableColumnDefinition9);
+            this.tileView2.TileColumns.Add(tableColumnDefinition10);
+            this.tileView2.TileRows.Add(tableRowDefinition6);
+            this.tileView2.TileRows.Add(tableRowDefinition7);
+            this.tileView2.TileRows.Add(tableRowDefinition8);
+            tableSpan5.ColumnIndex = 1;
+            tableSpan5.ColumnSpan = 2;
+            tableSpan5.RowSpan = 3;
+            this.tileView2.TileSpans.Add(tableSpan5);
+            tileViewItemElement8.Column = this.colpicture1;
+            tileViewItemElement8.ColumnIndex = 1;
+            tileViewItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement8.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement8.Text = "colpicture1";
+            tileViewItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement9.Column = this.coltab;
+            tileViewItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement9.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement9.Text = "coltab";
+            tileViewItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement10.Column = this.col_name;
+            tileViewItemElement10.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement10.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement10.RowIndex = 1;
+            tileViewItemElement10.Text = "col_name";
+            tileViewItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement11.Column = this.coldescription;
+            tileViewItemElement11.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement11.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement11.RowIndex = 2;
+            tileViewItemElement11.Text = "coldescription";
+            tileViewItemElement11.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileView2.TileTemplate.Add(tileViewItemElement8);
+            this.tileView2.TileTemplate.Add(tileViewItemElement9);
+            this.tileView2.TileTemplate.Add(tileViewItemElement10);
+            this.tileView2.TileTemplate.Add(tileViewItemElement11);
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(348, 209);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton3.Location = new System.Drawing.Point(305, 159);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(67, 27);
+            this.simpleButton3.Size = new System.Drawing.Size(58, 22);
             this.simpleButton3.StyleController = this.layoutControl2;
             this.simpleButton3.TabIndex = 96;
             this.simpleButton3.Text = "选择";
@@ -3733,11 +3767,10 @@
             // mianliaoname
             // 
             this.mianliaoname.Font = new System.Drawing.Font("宋体", 12F);
-            this.mianliaoname.Location = new System.Drawing.Point(45, 209);
-            this.mianliaoname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mianliaoname.Location = new System.Drawing.Point(38, 159);
             this.mianliaoname.Name = "mianliaoname";
             this.mianliaoname.ReadOnly = true;
-            this.mianliaoname.Size = new System.Drawing.Size(299, 25);
+            this.mianliaoname.Size = new System.Drawing.Size(263, 20);
             this.mianliaoname.TabIndex = 97;
             // 
             // layoutControlGroup1
@@ -3753,7 +3786,7 @@
             this.layoutControlItem9,
             this.layoutControlItem10});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1295, 445);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1133, 338);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
@@ -3761,53 +3794,53 @@
             this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red;
             this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.mianliaoname;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 197);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 149);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(336, 31);
+            this.layoutControlItem4.Size = new System.Drawing.Size(294, 26);
             this.layoutControlItem4.Text = "面料";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(30, 18);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(24, 14);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 412);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 312);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1275, 13);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1115, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton3;
-            this.layoutControlItem5.Location = new System.Drawing.Point(336, 197);
+            this.layoutControlItem5.Location = new System.Drawing.Point(294, 149);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(71, 31);
+            this.layoutControlItem5.Size = new System.Drawing.Size(62, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.gridControl面料;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 228);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 175);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(407, 184);
+            this.layoutControlItem6.Size = new System.Drawing.Size(356, 137);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.gridControl设计点;
-            this.layoutControlItem8.Location = new System.Drawing.Point(407, 32);
+            this.layoutControlItem8.Location = new System.Drawing.Point(356, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(868, 380);
+            this.layoutControlItem8.Size = new System.Drawing.Size(759, 288);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gridControl款式;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(407, 165);
+            this.layoutControlItem7.Size = new System.Drawing.Size(356, 125);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -3816,52 +3849,49 @@
             this.layoutControlItem9.Control = this.label1;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(407, 32);
+            this.layoutControlItem9.Size = new System.Drawing.Size(356, 24);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.label2;
-            this.layoutControlItem10.Location = new System.Drawing.Point(407, 0);
+            this.layoutControlItem10.Location = new System.Drawing.Point(356, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(868, 32);
+            this.layoutControlItem10.Size = new System.Drawing.Size(759, 24);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // xtraTabPager任务预览
             // 
             this.xtraTabPager任务预览.Controls.Add(this.panel任务预览);
-            this.xtraTabPager任务预览.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPager任务预览.Name = "xtraTabPager任务预览";
-            this.xtraTabPager任务预览.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPager任务预览.Size = new System.Drawing.Size(1133, 344);
             this.xtraTabPager任务预览.Text = "任务预览";
             // 
             // panel任务预览
             // 
             this.panel任务预览.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel任务预览.Location = new System.Drawing.Point(0, 0);
-            this.panel任务预览.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel任务预览.Name = "panel任务预览";
-            this.panel任务预览.Size = new System.Drawing.Size(1295, 445);
+            this.panel任务预览.Size = new System.Drawing.Size(1133, 344);
             this.panel任务预览.TabIndex = 0;
             // 
             // xtraTabPage量体值
             // 
             this.xtraTabPage量体值.Controls.Add(this.gridControlSize);
+            this.xtraTabPage量体值.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabPage量体值.Name = "xtraTabPage量体值";
-            this.xtraTabPage量体值.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPage量体值.Size = new System.Drawing.Size(1133, 344);
             this.xtraTabPage量体值.Text = "量体值";
             // 
             // gridControlSize
             // 
             this.gridControlSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlSize.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlSize.Location = new System.Drawing.Point(0, 0);
             this.gridControlSize.MainView = this.gridViewSize;
-            this.gridControlSize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlSize.Name = "gridControlSize";
-            this.gridControlSize.Size = new System.Drawing.Size(1295, 445);
+            this.gridControlSize.Size = new System.Drawing.Size(1133, 344);
             this.gridControlSize.TabIndex = 8;
             this.gridControlSize.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSize});
@@ -3885,8 +3915,6 @@
             this.colleast,
             this.colGarment,
             this.colCUSTOMER_FIT_VALUE});
-            this.gridViewSize.DetailHeight = 450;
-            this.gridViewSize.FixedLineWidth = 3;
             this.gridViewSize.GridControl = this.gridControlSize;
             this.gridViewSize.Name = "gridViewSize";
             this.gridViewSize.OptionsCustomization.AllowSort = false;
@@ -3898,145 +3926,120 @@
             // 
             this.colitemcd.Caption = "ITEM_CD";
             this.colitemcd.FieldName = "ITEM_CD";
-            this.colitemcd.MinWidth = 23;
             this.colitemcd.Name = "colitemcd";
-            this.colitemcd.Width = 86;
             // 
             // colitemvalue
             // 
             this.colitemvalue.Caption = "ITEM_VALUE";
             this.colitemvalue.FieldName = "ITEM_VALUE";
-            this.colitemvalue.MinWidth = 23;
             this.colitemvalue.Name = "colitemvalue";
-            this.colitemvalue.Width = 86;
             // 
             // colpropertyvalue
             // 
             this.colpropertyvalue.Caption = "PROPERTY_VALUE";
             this.colpropertyvalue.FieldName = "PROPERTY_VALUE";
-            this.colpropertyvalue.MinWidth = 23;
             this.colpropertyvalue.Name = "colpropertyvalue";
-            this.colpropertyvalue.Width = 86;
             // 
             // colfit_value
             // 
             this.colfit_value.Caption = "FIT_VALUE";
             this.colfit_value.FieldName = "FIT_VALUE";
-            this.colfit_value.MinWidth = 23;
             this.colfit_value.Name = "colfit_value";
-            this.colfit_value.Width = 86;
             // 
             // colitemnamecn
             // 
             this.colitemnamecn.Caption = "尺寸类别";
             this.colitemnamecn.FieldName = "ITEM_NAME_CN";
-            this.colitemnamecn.MinWidth = 23;
             this.colitemnamecn.Name = "colitemnamecn";
             this.colitemnamecn.OptionsColumn.AllowEdit = false;
             this.colitemnamecn.OptionsColumn.ReadOnly = true;
             this.colitemnamecn.Visible = true;
             this.colitemnamecn.VisibleIndex = 0;
-            this.colitemnamecn.Width = 86;
             // 
             // colitemfitvalue
             // 
             this.colitemfitvalue.Caption = "尺寸";
             this.colitemfitvalue.FieldName = "ITEM_FIT_VALUE";
-            this.colitemfitvalue.MinWidth = 23;
             this.colitemfitvalue.Name = "colitemfitvalue";
             this.colitemfitvalue.OptionsColumn.AllowEdit = false;
             this.colitemfitvalue.OptionsColumn.ReadOnly = true;
             this.colitemfitvalue.Visible = true;
             this.colitemfitvalue.VisibleIndex = 1;
-            this.colitemfitvalue.Width = 86;
             // 
             // colinvalue
             // 
             this.colinvalue.Caption = "加";
             this.colinvalue.FieldName = "IN_VALUE";
             this.colinvalue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("colinvalue.ImageOptions.Image")));
-            this.colinvalue.MinWidth = 23;
             this.colinvalue.Name = "colinvalue";
             this.colinvalue.Visible = true;
             this.colinvalue.VisibleIndex = 2;
-            this.colinvalue.Width = 86;
             // 
             // coloutvalue
             // 
             this.coloutvalue.Caption = "减";
             this.coloutvalue.FieldName = "OUT_VALUE";
             this.coloutvalue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("coloutvalue.ImageOptions.Image")));
-            this.coloutvalue.MinWidth = 23;
             this.coloutvalue.Name = "coloutvalue";
             this.coloutvalue.Visible = true;
             this.coloutvalue.VisibleIndex = 3;
-            this.coloutvalue.Width = 86;
             // 
             // colmax
             // 
             this.colmax.Caption = "合理大";
             this.colmax.FieldName = "maxReasonable";
-            this.colmax.MinWidth = 23;
             this.colmax.Name = "colmax";
             this.colmax.OptionsColumn.AllowEdit = false;
             this.colmax.OptionsColumn.ReadOnly = true;
             this.colmax.Visible = true;
             this.colmax.VisibleIndex = 4;
-            this.colmax.Width = 86;
             // 
             // colleast
             // 
             this.colleast.Caption = "合理小";
             this.colleast.FieldName = "leastReasonable";
-            this.colleast.MinWidth = 23;
             this.colleast.Name = "colleast";
             this.colleast.OptionsColumn.AllowEdit = false;
             this.colleast.OptionsColumn.ReadOnly = true;
             this.colleast.Visible = true;
             this.colleast.VisibleIndex = 5;
-            this.colleast.Width = 86;
             // 
             // colGarment
             // 
             this.colGarment.Caption = "成衣尺寸";
             this.colGarment.FieldName = "garmentSize";
-            this.colGarment.MinWidth = 23;
             this.colGarment.Name = "colGarment";
             this.colGarment.OptionsColumn.AllowEdit = false;
             this.colGarment.OptionsColumn.ReadOnly = true;
             this.colGarment.Visible = true;
             this.colGarment.VisibleIndex = 6;
-            this.colGarment.Width = 86;
             // 
             // colCUSTOMER_FIT_VALUE
             // 
             this.colCUSTOMER_FIT_VALUE.Caption = "客户量体值";
             this.colCUSTOMER_FIT_VALUE.FieldName = "CUSTOMER_FIT_VALUE";
-            this.colCUSTOMER_FIT_VALUE.MinWidth = 25;
+            this.colCUSTOMER_FIT_VALUE.MinWidth = 22;
             this.colCUSTOMER_FIT_VALUE.Name = "colCUSTOMER_FIT_VALUE";
             this.colCUSTOMER_FIT_VALUE.OptionsColumn.AllowEdit = false;
             this.colCUSTOMER_FIT_VALUE.Visible = true;
             this.colCUSTOMER_FIT_VALUE.VisibleIndex = 7;
-            this.colCUSTOMER_FIT_VALUE.Width = 94;
+            this.colCUSTOMER_FIT_VALUE.Width = 82;
             // 
             // xtraTabPage任务
             // 
             this.xtraTabPage任务.Controls.Add(this.gridControl导航);
-            this.xtraTabPage任务.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage任务.Name = "xtraTabPage任务";
-            this.xtraTabPage任务.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPage任务.Size = new System.Drawing.Size(1133, 344);
             this.xtraTabPage任务.Text = "任务";
             // 
             // gridControl导航
             // 
             this.gridControl导航.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl导航.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl导航.Location = new System.Drawing.Point(0, 0);
             this.gridControl导航.MainView = this.gridView一览;
-            this.gridControl导航.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl导航.MenuManager = this.ribbonControl1;
             this.gridControl导航.Name = "gridControl导航";
-            this.gridControl导航.Size = new System.Drawing.Size(1295, 445);
+            this.gridControl导航.Size = new System.Drawing.Size(1133, 344);
             this.gridControl导航.TabIndex = 2;
             this.gridControl导航.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView一览});
@@ -4051,8 +4054,6 @@
             this.coltemplate_id,
             this.coltemplate_group_id,
             this.colremark_id});
-            this.gridView一览.DetailHeight = 450;
-            this.gridView一览.FixedLineWidth = 3;
             this.gridView一览.GridControl = this.gridControl导航;
             this.gridView一览.GroupCount = 1;
             this.gridView一览.Name = "gridView一览";
@@ -4065,65 +4066,51 @@
             // 
             this.coltemplate_group_name.Caption = "模板组";
             this.coltemplate_group_name.FieldName = "template_group_name";
-            this.coltemplate_group_name.MinWidth = 23;
             this.coltemplate_group_name.Name = "coltemplate_group_name";
             this.coltemplate_group_name.Visible = true;
             this.coltemplate_group_name.VisibleIndex = 0;
-            this.coltemplate_group_name.Width = 86;
             // 
             // coltemplate_name
             // 
             this.coltemplate_name.Caption = "任务名称";
             this.coltemplate_name.FieldName = "template_name";
-            this.coltemplate_name.MinWidth = 23;
             this.coltemplate_name.Name = "coltemplate_name";
             this.coltemplate_name.Visible = true;
             this.coltemplate_name.VisibleIndex = 0;
-            this.coltemplate_name.Width = 86;
             // 
             // colserial_number
             // 
             this.colserial_number.Caption = "单号";
             this.colserial_number.FieldName = "serial_number";
-            this.colserial_number.MinWidth = 23;
             this.colserial_number.Name = "colserial_number";
             this.colserial_number.Visible = true;
             this.colserial_number.VisibleIndex = 1;
-            this.colserial_number.Width = 86;
             // 
             // colCREATE_DATE
             // 
             this.colCREATE_DATE.Caption = "创建时间";
             this.colCREATE_DATE.FieldName = "CREATE_DATE";
-            this.colCREATE_DATE.MinWidth = 23;
             this.colCREATE_DATE.Name = "colCREATE_DATE";
             this.colCREATE_DATE.Visible = true;
             this.colCREATE_DATE.VisibleIndex = 2;
-            this.colCREATE_DATE.Width = 86;
             // 
             // coltemplate_id
             // 
             this.coltemplate_id.Caption = "template_id";
             this.coltemplate_id.FieldName = "template_id";
-            this.coltemplate_id.MinWidth = 23;
             this.coltemplate_id.Name = "coltemplate_id";
-            this.coltemplate_id.Width = 86;
             // 
             // coltemplate_group_id
             // 
             this.coltemplate_group_id.Caption = "template_group_id";
             this.coltemplate_group_id.FieldName = "template_group_id";
-            this.coltemplate_group_id.MinWidth = 23;
             this.coltemplate_group_id.Name = "coltemplate_group_id";
-            this.coltemplate_group_id.Width = 86;
             // 
             // colremark_id
             // 
             this.colremark_id.Caption = "模板id";
             this.colremark_id.FieldName = "remark_id";
-            this.colremark_id.MinWidth = 23;
             this.colremark_id.Name = "colremark_id";
-            this.colremark_id.Width = 86;
             // 
             // richEditBarController1
             // 
@@ -4398,35 +4385,14 @@
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
             // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "订单数据导出";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "JSON数据导出";
-            this.barButtonItem4.Id = 269;
-            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "文件导出";
-            this.barButtonItem5.Id = 270;
-            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
             // Frm订单预览
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 687);
+            this.ClientSize = new System.Drawing.Size(1135, 534);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm订单预览";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Frm订单预览";

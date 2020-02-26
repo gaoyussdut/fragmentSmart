@@ -1,5 +1,7 @@
 ﻿using DXApplicationTangche.service;
 using DXApplicationTangche.UC.任务.任务模板UC;
+using DXApplicationTangche.UC.款式异常;
+using DXApplicationTangche.UC.门店下单.form.订单修改;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +19,7 @@ namespace DXApplicationTangche.生产工单
         public UC裁剪条码打印 uc裁剪条码打印 = new UC裁剪条码打印();
         public String ORDER_ID { get; set; }
         public String TEMPLATE_ID { get; set; }
+        private List<尺寸呈现dto> dtos = new List<尺寸呈现dto>();
         public Frm生产工单(String TEMPLATE_ID)
         {
             this.TEMPLATE_ID = TEMPLATE_ID;
@@ -46,6 +49,21 @@ namespace DXApplicationTangche.生产工单
                 }
                 
             }
+        }
+
+        private void simpleButton订单预览_Click(object sender, EventArgs e)
+        {
+            if (!OrderService.VerifyOrder(this.ORDER_ID))
+            {
+                MessageBox.Show("无此订单");
+                return;
+            }
+            this.dtos = SizeService.getDto尺寸WithOrderId(this.ORDER_ID);
+            new Frm订单预览(
+                OrderService.GetStyleidWithOrderid(this.ORDER_ID)
+                , dtos
+                , this.ORDER_ID
+                , "").ShowDialog();
         }
     }
 }

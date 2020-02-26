@@ -236,7 +236,8 @@ namespace DXApplicationTangche.service
                 "	o_order_p.ACTUAL_PAYMENT_COST,\n" +
                 "	o_order_p.PREFERENTIAL_AMOUNT_COST,\n" +
                 "	o_order_p.PREFERENTIAL_PERCENTAGE,\n" +
-                "   DATE_FORMAT( o_order_p.ORDER_DATE, '%Y-%m-%d' ) AS ORDER_DATE \n" +
+                "   DATE_FORMAT( o_order_p.ORDER_DATE, '%Y-%m-%d' ) AS ORDER_DATE,\n" +
+                "   print_flag.ITEM_NAME_CN AS PRINT_STATUS\n" +
                 "FROM\n" +
                 "	o_order_p\n" +
                 "	LEFT JOIN s_style_p ON o_order_p.STYLE_ID = s_style_p.SYS_STYLE_ID \n" +
@@ -248,6 +249,7 @@ namespace DXApplicationTangche.service
                 "	a_dict_p \n" +
                 "WHERE\n" +
                 "item_cd LIKE 'ORDER_STATUS' ) ORDER_STATUS ON ORDER_STATUS.ITEM_VALUE = o_order_p.ORDER_STATUS_CD\n" +
+                "LEFT JOIN (SELECT ITEM_NAME_CN,ITEM_VALUE FROM a_dict_p WHERE ITEM_CD='ORDER_PRINT_STATUS') print_flag ON o_order_p.PRINT_FLAG=print_flag.ITEM_VALUE "+
                 "WHERE\n" +
                 "	o_order_p.ORDER_STATUS_CD in ('" + str + "' ) \n" +
                 "	AND o_order_p.SHOP_ID = '18' \n" +
@@ -478,6 +480,22 @@ namespace DXApplicationTangche.service
             catch
             {
                 return "";
+            }
+        }
+        /// <summary>
+        /// 更改订单打印状态
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <param name="b"></param>
+        public static void UpdataOrderPrintFlag(String orderid,bool b)
+        {
+            if(b==true)
+            {
+                SQLmtm.DoUpdate("o_order_p", new string[] { "PRINT_FLAG" }, new string[] { "1" }, new string[] { "ORDER_ID" }, new string[] { orderid });
+            }
+            else
+            {
+                SQLmtm.DoUpdate("o_order_p", new string[] { "PRINT_FLAG" }, new string[] { "0" }, new string[] { "ORDER_ID" }, new string[] { orderid });
             }
         }
     }

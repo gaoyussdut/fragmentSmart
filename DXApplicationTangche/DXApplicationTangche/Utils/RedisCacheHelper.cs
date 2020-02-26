@@ -11,7 +11,7 @@ namespace DXApplicationTangche.Utils
     class RedisCacheHelper
     {
         int Default_Timeout = 600;//默认超时时间（单位秒）
-        string address = "localhost";
+        string address = "192.168.5.239";
         //JsonSerializerSettings jsonConfig = new JsonSerializerSettings() { ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore, NullValueHandling = NullValueHandling.Ignore };
         ConnectionMultiplexer connectionMultiplexer;
         IDatabase database;
