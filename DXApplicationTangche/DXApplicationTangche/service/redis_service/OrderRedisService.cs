@@ -52,7 +52,7 @@ namespace DXApplicationTangche.service.redis_service
         /// <returns></returns>
         public bool saveTask(String orderId,UserTaskDTO userTaskDTO) {
             //  保存数据
-            bool dataCached = new RedisCacheHelper().StringSet(orderId + TASK, FunctionHelper.JsonSerialization(userTaskDTO));
+            bool dataCached = new RedisCacheHelper().StringSet(userTaskDTO.ID, FunctionHelper.JsonSerialization(userTaskDTO));
             //  保存关系
             bool relationCached = new RedisCacheHelper().SetAdd(orderId + TASK, userTaskDTO.ID);
             return dataCached && relationCached;
@@ -83,7 +83,7 @@ namespace DXApplicationTangche.service.redis_service
         }
 
         /// <summary>
-        /// 根据订单id取任务列表 TODO    返回值
+        /// 根据订单NO取任务列表 TODO    返回值
         /// </summary>
         /// <param name="orderNo"></param>
         /// <returns></returns>

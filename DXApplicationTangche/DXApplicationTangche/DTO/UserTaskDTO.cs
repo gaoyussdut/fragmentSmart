@@ -40,7 +40,10 @@ namespace DXApplicationTangche.DTO
         public String STYLE_SIZE_GROUP_CD { get; set; }
         public String TEMPLATE_NAME { get; set; }
 
+        public UserTaskDTO()
+        {
 
+        }
         public UserTaskDTO(DataRow dataRow) {
             this.ID = dataRow["remark_id"].ToString();
             this.ORDER_ID = dataRow["order_id"].ToString();

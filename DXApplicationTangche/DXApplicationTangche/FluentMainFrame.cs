@@ -174,7 +174,7 @@ namespace DXApplicationTangche
 
         private void accordionControlElement37_Click(object sender, EventArgs e)
         {
-            this.initPanel(new Frm生产工单());
+            this.initPanel(new Frm生产工单("4"));
         }
     }
 }

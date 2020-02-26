@@ -458,5 +458,27 @@ namespace DXApplicationTangche.service
                 return true;
             }
         }
+        /// <summary>
+        /// 通过订单id取订单no
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <returns></returns>
+        public static String GetOrdernoWithOrderid(String orderid)
+        {
+            String sql = "SELECT\n" +
+"	SUBSTRING_INDEX( ORDER_NO, '.',- 1 ) AS ORDER_NO\n" +
+"FROM\n" +
+"	o_order_p \n" +
+"WHERE\n" +
+"	ORDER_ID = '78008'";
+            try
+            {
+                return SQLmtm.GetDataRow(sql)["ORDER_NO"].ToString();
+            }
+            catch
+            {
+                return "";
+            }
+        }
     }
 }

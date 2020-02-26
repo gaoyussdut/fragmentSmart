@@ -14,11 +14,22 @@ namespace DXApplicationTangche.UC.任务.任务模板UC
         裁剪条码打印Model Model;
         DataTable printTbl;
         public int userId = 0;
+        public String ORDER_ID { get; set; }//订单id
+        public UC裁剪条码打印(String orderid)
+        {
+            this.ORDER_ID = orderid;
+            InitializeComponent();
+            this.txtBarCode.Text = OrderService.GetOrdernoWithOrderid(ORDER_ID);
+            if (checkFrom())
+            {
+                // 设置画面显示列表数据
+                setGridViewList(setWhere());
+            }
+        }
         public UC裁剪条码打印()
         {
             InitializeComponent();
         }
-
         private void UC裁剪条码打印_Load(object sender, EventArgs e)
         {
             //this.labelLine.Width = this.Width;

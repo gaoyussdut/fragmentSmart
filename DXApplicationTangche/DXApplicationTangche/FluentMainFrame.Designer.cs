@@ -424,7 +424,7 @@
             // 
             this.accordionControlElement37.Name = "accordionControlElement37";
             this.accordionControlElement37.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement37.Text = "生产工单";
+            this.accordionControlElement37.Text = "裁剪条码打印";
             this.accordionControlElement37.Click += new System.EventHandler(this.accordionControlElement37_Click);
             // 
             // fluentDesignFormControl1
