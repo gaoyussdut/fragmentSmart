@@ -71,6 +71,8 @@
             this.accordionControlElement32 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement33 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement34 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement36 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement37 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.fluentDesignFormControl1 = new DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::mendian.WaitForm), true, true);
@@ -122,7 +124,8 @@
             this.accordionControlElement18,
             this.accordionControlElement25,
             this.accordionControlElement31,
-            this.accordionControlElement33});
+            this.accordionControlElement33,
+            this.accordionControlElement36});
             this.accordionControl1.Location = new System.Drawing.Point(0, 30);
             this.accordionControl1.Name = "accordionControl1";
             this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
@@ -398,6 +401,7 @@
             // 
             this.accordionControlElement33.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.accordionControlElement34});
+            this.accordionControlElement33.Expanded = true;
             this.accordionControlElement33.Name = "accordionControlElement33";
             this.accordionControlElement33.Text = "订单管理";
             // 
@@ -407,6 +411,21 @@
             this.accordionControlElement34.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement34.Text = "订单一览";
             this.accordionControlElement34.Click += new System.EventHandler(this.accordionControlElement34_Click);
+            // 
+            // accordionControlElement36
+            // 
+            this.accordionControlElement36.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement37});
+            this.accordionControlElement36.Expanded = true;
+            this.accordionControlElement36.Name = "accordionControlElement36";
+            this.accordionControlElement36.Text = "生产流程";
+            // 
+            // accordionControlElement37
+            // 
+            this.accordionControlElement37.Name = "accordionControlElement37";
+            this.accordionControlElement37.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement37.Text = "生产工单";
+            this.accordionControlElement37.Click += new System.EventHandler(this.accordionControlElement37_Click);
             // 
             // fluentDesignFormControl1
             // 
@@ -492,5 +511,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement32;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement33;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement34;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement36;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement37;
     }
 }

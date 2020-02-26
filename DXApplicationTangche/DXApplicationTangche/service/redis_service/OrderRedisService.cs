@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DXApplicationTangche.service.redis_service
 {
-    class OrderRedisService
+    public class OrderRedisService
     {
         private const String TASK = "_TASK";    //任务后缀
         public bool saveOrder(订单Model model, List<UserTaskDTO> userTaskDTOs) {
@@ -30,8 +30,8 @@ namespace DXApplicationTangche.service.redis_service
         /// </summary>
         /// <param name="orderId"></param>
         /// <returns></returns>
-        public String getOrderInfoById(String orderId) { 
-            return new RedisCacheHelper().StringGet(orderId);
+        public T getOrderInfoById<T>(String orderId) { 
+            return FunctionHelper.JsonDeserialization<T>(new RedisCacheHelper().StringGet(orderId));
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace DXApplicationTangche.service.redis_service
         /// </summary>
         /// <param name="orderNo"></param>
         /// <returns></returns>
-        public String getOrderInfoByOrderNo(String orderNo) {
+        public T getOrderInfoByOrderNo<T>(String orderNo) {
             String ORDER_ID = new RedisCacheHelper().StringGet(orderNo);
-            return this.getOrderInfoById(ORDER_ID);
+            return this.getOrderInfoById<T>(ORDER_ID);
         }
 
         /// <summary>
@@ -63,8 +63,8 @@ namespace DXApplicationTangche.service.redis_service
         /// </summary>
         /// <param name="taskId"></param>
         /// <returns></returns>
-        public String getTaskById(String taskId) {
-            return new RedisCacheHelper().StringGet(taskId);
+        public T getTaskById<T>(String taskId) {
+            return FunctionHelper.JsonDeserialization<T>(new RedisCacheHelper().StringGet(taskId));
         }
 
         /// <summary>
@@ -72,11 +72,11 @@ namespace DXApplicationTangche.service.redis_service
         /// </summary>
         /// <param name="orderNo"></param>
         /// <returns></returns>
-        public List<String> getTaskByOrderID(String ORDER_ID) {
+        public List<T> getTaskByOrderID<T>(String ORDER_ID) {
             List<String> taskIds = new RedisCacheHelper().GetMembers(ORDER_ID + TASK); //  任务id列表
-            List<String> taskInfo = new List<String>();
+            List<T> taskInfo = new List<T>();
             foreach (String taskId in taskIds) {
-                taskInfo.Add(this.getTaskById(taskId));
+                taskInfo.Add(this.getTaskById<T>(taskId));
             }
 
             return taskInfo;
@@ -87,9 +87,9 @@ namespace DXApplicationTangche.service.redis_service
         /// </summary>
         /// <param name="orderNo"></param>
         /// <returns></returns>
-        public List<String> getTaskByOrderNo(String orderNo) {
+        public List<T> getTaskByOrderNo<T>(String orderNo) {
             String ORDER_ID = new RedisCacheHelper().StringGet(orderNo);
-            return this.getTaskByOrderID(ORDER_ID);
+            return this.getTaskByOrderID<T>(ORDER_ID);
         }
 
         /// <summary>

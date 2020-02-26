@@ -10,7 +10,7 @@ namespace DXApplicationTangche.DTO
     /// <summary>
     /// 用户任务DTO
     /// </summary>
-    class UserTaskDTO
+    public class UserTaskDTO
     {
         public String ID { get; set; }
         public String ORDER_ID { get; set; }

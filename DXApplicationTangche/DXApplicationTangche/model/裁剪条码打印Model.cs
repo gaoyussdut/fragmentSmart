@@ -13,7 +13,14 @@ namespace DXApplicationTangche.model
         public 裁剪条码打印显示DTO 裁剪条码打印显示DTO { get; set; }
         public 裁剪条码打印Model(String BarCode)
         {
-            this.裁剪条码打印显示DTO = new 裁剪条码打印显示DTO(BarCode);
+            try
+            {
+                this.裁剪条码打印显示DTO = new 裁剪条码打印显示DTO(BarCode);
+            }
+            catch
+            {
+                this.裁剪条码打印显示DTO = new 裁剪条码打印显示DTO();
+            }
         }
     }
     public class 裁剪条码打印显示DTO
@@ -33,6 +40,15 @@ namespace DXApplicationTangche.model
             this.QR_NAME = dr["QR_NAME"].ToString();
             this.QR_BAR_CODE = dr["QR_BAR_CODE"].ToString();
             this.QR_OTHER6 = dr["QR_OTHER6"].ToString();
+        }
+        public 裁剪条码打印显示DTO()
+        {
+            this.QR_ID = "";
+            this.QR_OTHER0 = "";
+            this.QR_OTHER9 = "";
+            this.QR_NAME = "";
+            this.QR_BAR_CODE = "";
+            this.QR_OTHER6 = "";
         }
     }
     

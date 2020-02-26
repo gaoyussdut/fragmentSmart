@@ -10,6 +10,7 @@ using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.form;
 using DXApplicationTangche.UC.门店下单.form.标准款;
 using DXApplicationTangche.UC.面料;
+using DXApplicationTangche.生产工单;
 using mendian;
 using System;
 using System.Collections.Generic;
@@ -169,6 +170,11 @@ namespace DXApplicationTangche
         private void accordionControlElement34_Click(object sender, EventArgs e)
         {
             this.initPanel(new Frm订单一览());
+        }
+
+        private void accordionControlElement37_Click(object sender, EventArgs e)
+        {
+            this.initPanel(new Frm生产工单());
         }
     }
 }

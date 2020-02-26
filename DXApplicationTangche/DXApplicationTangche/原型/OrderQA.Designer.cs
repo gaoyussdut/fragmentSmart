@@ -381,6 +381,8 @@ namespace DXApplicationTangche.原型
             this.xtraTabPage测试 = new DevExpress.XtraTab.XtraTabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.uC裁剪条码打印1 = new DXApplicationTangche.UC.任务.任务模板UC.UC裁剪条码打印();
+            this.xtraTabPage测试2 = new DevExpress.XtraTab.XtraTabPage();
+            this.uC生产工单1 = new DXApplicationTangche.UC.任务.UC生产工单();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
@@ -394,8 +396,6 @@ namespace DXApplicationTangche.原型
             this.coltemplate_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltemplate_group_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colremark_id = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.xtraTabPage测试2 = new DevExpress.XtraTab.XtraTabPage();
-            this.uC生产工单1 = new DXApplicationTangche.UC.任务.UC生产工单();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemFontEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichEditFontSizeEdit1)).BeginInit();
@@ -417,13 +417,13 @@ namespace DXApplicationTangche.原型
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             this.xtraTabPage测试.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.xtraTabPage测试2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl导航)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView一览)).BeginInit();
-            this.xtraTabPage测试2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonPage2
@@ -2915,6 +2915,22 @@ namespace DXApplicationTangche.原型
             this.uC裁剪条码打印1.Size = new System.Drawing.Size(813, 386);
             this.uC裁剪条码打印1.TabIndex = 0;
             // 
+            // xtraTabPage测试2
+            // 
+            this.xtraTabPage测试2.AutoScroll = true;
+            this.xtraTabPage测试2.Controls.Add(this.uC生产工单1);
+            this.xtraTabPage测试2.Name = "xtraTabPage测试2";
+            this.xtraTabPage测试2.Size = new System.Drawing.Size(813, 386);
+            this.xtraTabPage测试2.Text = "测试2";
+            // 
+            // uC生产工单1
+            // 
+            this.uC生产工单1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.uC生产工单1.Location = new System.Drawing.Point(0, 0);
+            this.uC生产工单1.Name = "uC生产工单1";
+            this.uC生产工单1.Size = new System.Drawing.Size(813, 386);
+            this.uC生产工单1.TabIndex = 0;
+            // 
             // richEditBarController1
             // 
             this.richEditBarController1.BarItems.Add(this.undoItem1);
@@ -3290,21 +3306,6 @@ namespace DXApplicationTangche.原型
             this.colremark_id.FieldName = "remark_id";
             this.colremark_id.Name = "colremark_id";
             // 
-            // xtraTabPage测试2
-            // 
-            this.xtraTabPage测试2.Controls.Add(this.uC生产工单1);
-            this.xtraTabPage测试2.Name = "xtraTabPage测试2";
-            this.xtraTabPage测试2.Size = new System.Drawing.Size(813, 386);
-            this.xtraTabPage测试2.Text = "测试2";
-            // 
-            // uC生产工单1
-            // 
-            this.uC生产工单1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.uC生产工单1.Location = new System.Drawing.Point(0, 0);
-            this.uC生产工单1.Name = "uC生产工单1";
-            this.uC生产工单1.Size = new System.Drawing.Size(813, 386);
-            this.uC生产工单1.TabIndex = 0;
-            // 
             // OrderQA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -3341,13 +3342,13 @@ namespace DXApplicationTangche.原型
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             this.xtraTabPage测试.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.xtraTabPage测试2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.richEditBarController1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl导航)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView一览)).EndInit();
-            this.xtraTabPage测试2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

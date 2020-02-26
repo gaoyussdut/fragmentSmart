@@ -229,6 +229,7 @@
     <Compile Include="service\OrderService.cs" />
     <Compile Include="service\PictureService.cs" />
     <Compile Include="service\PrintService.cs" />
+    <Compile Include="service\redis_service\OrderRedisService.cs" />
     <Compile Include="service\RollOffService.cs" />
     <Compile Include="service\SizeService.cs" />
     <Compile Include="service\StyleService.cs" />
@@ -618,6 +619,12 @@
     <Compile Include="UC\任务\任务模板UC\UC销售备注模板.Designer.cs">
       <DependentUpon>UC销售备注模板.cs</DependentUpon>
     </Compile>
+    <Compile Include="生产工单\Frm生产工单.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="生产工单\Frm生产工单.Designer.cs">
+      <DependentUpon>Frm生产工单.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FluentMainFrame.resx">
       <DependentUpon>FluentMainFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -790,6 +797,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\任务\任务模板UC\UC销售备注模板.resx">
       <DependentUpon>UC销售备注模板.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="生产工单\Frm生产工单.resx">
+      <DependentUpon>Frm生产工单.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DXApplicationTangche_TemporaryKey.pfx" />

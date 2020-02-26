@@ -309,6 +309,7 @@ namespace DevExpress.XtraGrid.Demos.util
             return str;
         }
         #endregion
+
         #region json反序列化
         public static T JsonDeserialization<T>(String str)
         {

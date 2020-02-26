@@ -196,5 +196,38 @@ namespace DXApplicationTangche.service
         {
             SQLmtm.DoUpdate("t_remark", new string[] { "status" }, new string[] { status }, new string[] { "remark_id" }, new string[] { remark_id });
         }
+        /// <summary>
+        /// 获取生产模板
+        /// </summary>
+        /// <returns></returns>
+        public static DataTable Get生产模板()
+        {
+            String sql = "SELECT\n" +
+"	a_dict_p.ITEM_ID,\n" +
+"	a_dict_p.PARENT_ITEM_CD,\n" +
+"	a_dict_p.ITEM_CD,\n" +
+"	a_dict_p.ITEM_VALUE,\n" +
+"	a_dict_p.ITEM_SORT,\n" +
+"	a_dict_p.ITEM_REAL_VALUE,\n" +
+"	a_dict_p.ITEM_NAME_CN,\n" +
+"	a_dict_p.ITEM_SHORT_NAME_CN,\n" +
+"	a_dict_p.ITEM_NAME_EN,\n" +
+"	a_dict_p.ITEM_SHORT_NAME_EN,\n" +
+"	a_dict_p.ITEM_NAME_JP,\n" +
+"	a_dict_p.ITEM_SHORT_NAME_JP,\n" +
+"	a_dict_p.REMARKS,\n" +
+"	a_dict_p.ENABLE_FLAG,\n" +
+"	a_dict_p.DELETE_FLAG,\n" +
+"	a_dict_p.VERSION,\n" +
+"	a_dict_p.CREATE_DATE,\n" +
+"	a_dict_p.UPDATE_DATE,\n" +
+"	a_dict_p.CREATE_USER,\n" +
+"	a_dict_p.UPDATE_USER \n" +
+"FROM\n" +
+"	a_dict_p \n" +
+"WHERE\n" +
+"	a_dict_p.ITEM_CD = 'PRODUCTION_TEMPLATE'";
+            return SQLmtm.GetDataTable(sql);
+        }
     }
 }
