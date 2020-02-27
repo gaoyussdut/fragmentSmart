@@ -20,11 +20,13 @@ using DXApplicationTangche.Utils;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.service.redis_service;
 using Seagull.BarTender.Print;
+using static DXApplicationTangche.service.TaskService;
 
 namespace DXApplicationTangche.UC.门店下单.form.订单修改
 {
     public partial class Frm订单预览 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private Enum任务类别 enum任务类别= Enum任务类别.销售任务;
         public UC销售备注模板 uc销售备注模板 = new UC销售备注模板();
         public TaskDTOS TaskDTOS = new TaskDTOS();
         public TaskDTO TaskDTO = new TaskDTO();
@@ -248,9 +250,10 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
         /// <param name="ORDER_ID"></param>
         /// <param name="REMARKS"></param>
         /// <param name="tab"></param>
-        public Frm订单预览(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS,String remark_id)
+        public Frm订单预览(String Style_Id, List<尺寸呈现dto> lst, String ORDER_ID, String REMARKS,String remark_id, Enum任务类别 @enum)
         {
             InitializeComponent();
+            this.enum任务类别 = @enum;
             this.Style_Id = Style_Id;
             this.ORDER_ID = ORDER_ID;
             this.model = new 门店下单选款式Model(ORDER_ID);
@@ -272,8 +275,14 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("样品下单");
             ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items.Add("定制下单");
             this.barEditItemTemplate.EditValue = ((DevExpress.XtraEditors.Repository.RepositoryItemComboBox)this.barEditItemTemplate.Edit).Items[0];
-
-            this.TaskDTO = new TaskDTO().buildRead(remark_id);
+            if (enum任务类别 == Enum任务类别.生产任务)
+            {
+                this.TaskDTO = new TaskDTO().buildFromErp(remark_id);
+            }
+            if (enum任务类别 == Enum任务类别.销售任务)
+            {
+                this.TaskDTO = new TaskDTO().buildRead(remark_id);
+            }
             switch (this.TaskDTO.template_id)
             {
                 case "1":
@@ -294,6 +303,7 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
                 , TaskService.getUserTasksByOrderId(订单Model.ORDER_ID)
                 );
             print条码();
+            //TaskService.SaveFileToErp(this.TaskDTOS);
             OrderService.UpdataOrderPrintFlag(this.ORDER_ID, true);//更改订单打印状态
         }
         /// <summary>
@@ -335,6 +345,8 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             this.xtraTabPage任务.PageVisible = false;
             this.xtraTabPage量体值.PageVisible = false;
             this.xtraTabPage面料.PageVisible = false;
+            //this.ribbonControl1.Visible = false;
+            this.fileRibbonPage1.Visible = false;
             return this;
         }
     }

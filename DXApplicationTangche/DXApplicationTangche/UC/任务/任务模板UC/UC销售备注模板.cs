@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DXApplicationTangche.service;
 using System.IO;
+using DevExpress.XtraGrid.Demos.util;
 
 namespace DXApplicationTangche.原型
 {
@@ -17,6 +18,7 @@ namespace DXApplicationTangche.原型
         public const int template_id = 1;
         public bool ifedit = true;
         public TaskDTO TaskDTO = new TaskDTO();
+        public UCDocumentS uCDocuments = new UCDocumentS();
         public UC销售备注模板()
         {
             InitializeComponent();

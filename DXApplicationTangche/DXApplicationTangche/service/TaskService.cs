@@ -1,5 +1,7 @@
 ﻿using DiaoPaiDaYin;
 using DXApplicationTangche.DTO;
+using DXApplicationTangche.Utils;
+using DXApplicationTangche.原型;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +14,7 @@ namespace DXApplicationTangche.service
     /// <summary>
     /// 任务服务
     /// </summary>
-    class TaskService
+    public class TaskService
     {
         /// <summary>
         /// 取得所有任务
@@ -228,6 +230,58 @@ namespace DXApplicationTangche.service
 "WHERE\n" +
 "	a_dict_p.ITEM_CD = 'PRODUCTION_TEMPLATE'";
             return SQLmtm.GetDataTable(sql);
+        }
+        /// <summary>
+        /// 文档存入erp
+        /// </summary>
+        /// <param name="TaskDTOS"></param>
+        /// <returns></returns>
+        public static Boolean SaveFileToErp(TaskDTOS TaskDTOS)
+        {
+            try
+            {
+                foreach (TaskDTO taskDTo in TaskDTOS.taskDTOs)
+                {
+                    if (SQLerp.GetDataRow("SELECT * FROM t_remark WHERE remark_id='" + taskDTo.remark_id + "'") != null)
+                    {
+                        SQLerp.DoInsert("t_remark", new string[] { "remark_id", "order_id", "remark", "file_name", "template_id", "data", "style_id", "ref_style_id", "serial_number", "status" }, new string[] { taskDTo.remark_id, taskDTo.order_id, taskDTo.remark, taskDTo.file_name, taskDTo.template_id, taskDTo.data, taskDTo.style_id, taskDTo.ref_style_id, taskDTo.serial_number, taskDTo.status });
+                    }
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        /// <summary>
+        /// 任务类别枚举
+        /// </summary>
+        public enum Enum任务类别 { 销售任务,生产任务};
+        /// <summary>
+        /// usertaskdto转成taskdto
+        /// </summary>
+        /// <param name="taskDTO"></param>
+        /// <param name="userTaskDTO"></param>
+        /// <returns></returns>
+        public static TaskDTO TaskDTO_UserTaskDTO_Change(TaskDTO taskDTO, UserTaskDTO userTaskDTO)
+        {
+            taskDTO.remark_id = userTaskDTO.ID;
+            taskDTO.template_id = userTaskDTO.TEMPLATE_ID;
+            taskDTO.order_id = userTaskDTO.ORDER_ID;
+            taskDTO.style_id = userTaskDTO.STYLE_ID;
+            taskDTO.ref_style_id = userTaskDTO.REF_STYLE_ID;
+            taskDTO.principal = userTaskDTO.PRINCIPAL;
+            taskDTO.remark = userTaskDTO.REMARK;
+            taskDTO.file_name = userTaskDTO.FILE_NAME;
+            taskDTO.parent_id = userTaskDTO.PARENT_ID;
+            taskDTO.version = userTaskDTO.VERSION;
+            taskDTO.data = userTaskDTO.DATA;
+            taskDTO.template_name = userTaskDTO.TEMPLATE_NAME;
+            taskDTO.serial_number = userTaskDTO.SERIAL_NUMBER;
+            taskDTO.status = userTaskDTO.STATUS;
+            taskDTO.CREATE_DATE = userTaskDTO.CREATE_DATE;
+            return taskDTO;
         }
     }
 }
