@@ -296,6 +296,9 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             print条码();
             OrderService.UpdataOrderPrintFlag(this.ORDER_ID, true);//更改订单打印状态
         }
+        /// <summary>
+        /// 打印订单条码
+        /// </summary>
         public void print条码()
         {
             Engine btEngine = new Engine();
@@ -323,6 +326,16 @@ namespace DXApplicationTangche.UC.门店下单.form.订单修改
             btFormat.Close(SaveOptions.DoNotSaveChanges);
             //结束打印引擎                  
             btEngine.Stop();
+        }
+        /// <summary>
+        /// 隐藏tab页
+        /// </summary>
+        public Frm订单预览 HideTabcontrol()
+        {
+            this.xtraTabPage任务.PageVisible = false;
+            this.xtraTabPage量体值.PageVisible = false;
+            this.xtraTabPage面料.PageVisible = false;
+            return this;
         }
     }
 }

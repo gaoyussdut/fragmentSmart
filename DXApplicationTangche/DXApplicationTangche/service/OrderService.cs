@@ -461,18 +461,40 @@ namespace DXApplicationTangche.service
             }
         }
         /// <summary>
-        /// 通过订单id取订单no
+        /// 通过订单id取订单STYLE_BAR_CODE
         /// </summary>
         /// <param name="orderid"></param>
         /// <returns></returns>
-        public static String GetOrdernoWithOrderid(String orderid)
+        public static String GetSBCWithOrderid(String orderid)
         {
             String sql = "SELECT\n" +
-"	SUBSTRING_INDEX( ORDER_NO, '.',- 1 ) AS ORDER_NO\n" +
+"	SUBSTRING_INDEX( ORDER_NO, '.',- 1 ) AS STYLE_BAR_CODE\n" +
 "FROM\n" +
 "	o_order_p \n" +
 "WHERE\n" +
-"	ORDER_ID = '78008'";
+"	ORDER_ID = '"+ orderid + "'";
+            try
+            {
+                return SQLmtm.GetDataRow(sql)["STYLE_BAR_CODE"].ToString();
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        /// <summary>
+        /// 通过订单id取订单ORDER_NO
+        /// </summary>
+        /// <param name="orderid"></param>
+        /// <returns></returns>
+        public static String GetOrderNoWithOrderid(String orderid)
+        {
+            String sql = "SELECT\n" +
+            "	ORDER_NO\n" +
+            "FROM\n" +
+            "	o_order_p \n" +
+            "WHERE\n" +
+            "	ORDER_ID = '" + orderid + "'";
             try
             {
                 return SQLmtm.GetDataRow(sql)["ORDER_NO"].ToString();

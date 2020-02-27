@@ -19,11 +19,12 @@ namespace DXApplicationTangche.UC.任务.任务模板UC
         {
             this.ORDER_ID = orderid;
             InitializeComponent();
-            this.txtBarCode.Text = OrderService.GetOrdernoWithOrderid(ORDER_ID);
+            this.txtBarCode.Text = OrderService.GetSBCWithOrderid(ORDER_ID);
             if (checkFrom())
             {
                 // 设置画面显示列表数据
                 setGridViewList(setWhere());
+                ProduceService.UpData裁剪条码打印生产工序(this.ORDER_ID);
             }
         }
         public UC裁剪条码打印()
@@ -68,6 +69,7 @@ namespace DXApplicationTangche.UC.任务.任务模板UC
             {
                 // 设置画面显示列表数据
                 setGridViewList(setWhere());
+                ProduceService.UpData裁剪条码打印生产工序(this.ORDER_ID);
             }
         }
 

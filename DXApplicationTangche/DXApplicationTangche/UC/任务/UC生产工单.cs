@@ -106,7 +106,7 @@ namespace DXApplicationTangche.UC.任务
                 , dtos 
                 , this.gridView1.GetRowCellValue(e.RowHandle,"ORDER_ID").ToString()
                 , ""
-                ,this.gridView1.GetRowCellValue(e.RowHandle,"ID").ToString()).ShowDialog();
+                ,this.gridView1.GetRowCellValue(e.RowHandle,"ID").ToString()).HideTabcontrol().ShowDialog();
         }
     }
 }
