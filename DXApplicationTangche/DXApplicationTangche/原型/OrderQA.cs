@@ -16,6 +16,8 @@ using System.IO;
 using DXApplicationTangche.UC.门店下单.DTO;
 using DXApplicationTangche.UC.门店下单.form;
 using DiaoPaiDaYin;
+using DXApplicationTangche.service.redis_service;
+using DXApplicationTangche.DTO;
 
 delegate void UCSave();
 namespace DXApplicationTangche.原型

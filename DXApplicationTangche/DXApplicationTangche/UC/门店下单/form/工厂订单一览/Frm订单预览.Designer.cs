@@ -356,6 +356,7 @@
             this.barEditItem模板 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.barButtonItem新增模板 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.headerFooterToolsRibbonPageCategory1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsRibbonPageCategory();
             this.headerFooterToolsDesignRibbonPage1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsDesignRibbonPage();
             this.headerFooterToolsDesignNavigationRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.HeaderFooterToolsDesignNavigationRibbonPageGroup();
@@ -379,6 +380,7 @@
             this.fileRibbonPage1 = new DevExpress.XtraRichEdit.UI.FileRibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.homeRibbonPage1 = new DevExpress.XtraRichEdit.UI.HomeRibbonPage();
             this.clipboardRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.ClipboardRibbonPageGroup();
             this.fontRibbonPageGroup1 = new DevExpress.XtraRichEdit.UI.FontRibbonPageGroup();
@@ -461,9 +463,6 @@
             this.colremark_id = new DevExpress.XtraGrid.Columns.GridColumn();
             this.richEditBarController1 = new DevExpress.XtraRichEdit.UI.RichEditBarController(this.components);
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -509,23 +508,23 @@
             // 
             this.colSTYLE_PUBLISH_CATEGORY_CD.Caption = "服装种类";
             this.colSTYLE_PUBLISH_CATEGORY_CD.FieldName = "STYLE_PUBLISH_CATEGORY_CD";
-            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 25;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.MinWidth = 22;
             this.colSTYLE_PUBLISH_CATEGORY_CD.Name = "colSTYLE_PUBLISH_CATEGORY_CD";
             this.colSTYLE_PUBLISH_CATEGORY_CD.OptionsColumn.ShowCaption = true;
             this.colSTYLE_PUBLISH_CATEGORY_CD.Visible = true;
             this.colSTYLE_PUBLISH_CATEGORY_CD.VisibleIndex = 0;
-            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 94;
+            this.colSTYLE_PUBLISH_CATEGORY_CD.Width = 82;
             // 
             // colStylePicture
             // 
             this.colStylePicture.Caption = "款式图片";
             this.colStylePicture.ColumnEdit = this.repositoryItemImageEdit1;
             this.colStylePicture.FieldName = "Picture";
-            this.colStylePicture.MinWidth = 25;
+            this.colStylePicture.MinWidth = 22;
             this.colStylePicture.Name = "colStylePicture";
             this.colStylePicture.Visible = true;
             this.colStylePicture.VisibleIndex = 3;
-            this.colStylePicture.Width = 94;
+            this.colStylePicture.Width = 82;
             // 
             // repositoryItemImageEdit1
             // 
@@ -538,56 +537,56 @@
             // 
             this.colSTYLE_NAME_CN.Caption = "款式名";
             this.colSTYLE_NAME_CN.FieldName = "STYLE_NAME_CN";
-            this.colSTYLE_NAME_CN.MinWidth = 25;
+            this.colSTYLE_NAME_CN.MinWidth = 22;
             this.colSTYLE_NAME_CN.Name = "colSTYLE_NAME_CN";
             this.colSTYLE_NAME_CN.OptionsColumn.ShowCaption = true;
             this.colSTYLE_NAME_CN.Visible = true;
             this.colSTYLE_NAME_CN.VisibleIndex = 1;
-            this.colSTYLE_NAME_CN.Width = 94;
+            this.colSTYLE_NAME_CN.Width = 82;
             // 
             // colSYTLE_SEASON
             // 
             this.colSYTLE_SEASON.Caption = "季节";
             this.colSYTLE_SEASON.FieldName = "SYTLE_SEASON";
-            this.colSYTLE_SEASON.MinWidth = 25;
+            this.colSYTLE_SEASON.MinWidth = 22;
             this.colSYTLE_SEASON.Name = "colSYTLE_SEASON";
             this.colSYTLE_SEASON.OptionsColumn.ShowCaption = true;
             this.colSYTLE_SEASON.Visible = true;
             this.colSYTLE_SEASON.VisibleIndex = 2;
-            this.colSYTLE_SEASON.Width = 94;
+            this.colSYTLE_SEASON.Width = 82;
             // 
             // colName
             // 
             this.colName.Caption = "设计点名称";
             this.colName.FieldName = "Name";
-            this.colName.MinWidth = 25;
+            this.colName.MinWidth = 22;
             this.colName.Name = "colName";
             this.colName.OptionsColumn.ShowCaption = true;
             this.colName.Visible = true;
             this.colName.VisibleIndex = 1;
-            this.colName.Width = 94;
+            this.colName.Width = 82;
             // 
             // colITEM_TYPE_NAME_CN
             // 
             this.colITEM_TYPE_NAME_CN.Caption = "设计点类别";
             this.colITEM_TYPE_NAME_CN.FieldName = "ITEM_TYPE_NAME_CN";
-            this.colITEM_TYPE_NAME_CN.MinWidth = 25;
+            this.colITEM_TYPE_NAME_CN.MinWidth = 22;
             this.colITEM_TYPE_NAME_CN.Name = "colITEM_TYPE_NAME_CN";
             this.colITEM_TYPE_NAME_CN.OptionsColumn.ShowCaption = true;
             this.colITEM_TYPE_NAME_CN.Visible = true;
             this.colITEM_TYPE_NAME_CN.VisibleIndex = 0;
-            this.colITEM_TYPE_NAME_CN.Width = 94;
+            this.colITEM_TYPE_NAME_CN.Width = 82;
             // 
             // colPicture
             // 
             this.colPicture.Caption = "设计点图片";
             this.colPicture.ColumnEdit = this.repositoryItemPictureEdit1;
             this.colPicture.FieldName = "Picture";
-            this.colPicture.MinWidth = 25;
+            this.colPicture.MinWidth = 22;
             this.colPicture.Name = "colPicture";
             this.colPicture.Visible = true;
             this.colPicture.VisibleIndex = 2;
-            this.colPicture.Width = 94;
+            this.colPicture.Width = 82;
             // 
             // repositoryItemPictureEdit1
             // 
@@ -597,44 +596,44 @@
             // 
             this.colpicture1.Caption = "图片";
             this.colpicture1.FieldName = "picture";
-            this.colpicture1.MinWidth = 25;
+            this.colpicture1.MinWidth = 22;
             this.colpicture1.Name = "colpicture1";
             this.colpicture1.Visible = true;
             this.colpicture1.VisibleIndex = 3;
-            this.colpicture1.Width = 94;
+            this.colpicture1.Width = 82;
             // 
             // coltab
             // 
             this.coltab.Caption = "类别";
             this.coltab.FieldName = "tab";
-            this.coltab.MinWidth = 25;
+            this.coltab.MinWidth = 22;
             this.coltab.Name = "coltab";
             this.coltab.OptionsColumn.ShowCaption = true;
             this.coltab.Visible = true;
             this.coltab.VisibleIndex = 0;
-            this.coltab.Width = 94;
+            this.coltab.Width = 82;
             // 
             // col_name
             // 
             this.col_name.Caption = "名称";
             this.col_name.FieldName = "name";
-            this.col_name.MinWidth = 25;
+            this.col_name.MinWidth = 22;
             this.col_name.Name = "col_name";
             this.col_name.OptionsColumn.ShowCaption = true;
             this.col_name.Visible = true;
             this.col_name.VisibleIndex = 1;
-            this.col_name.Width = 94;
+            this.col_name.Width = 82;
             // 
             // coldescription
             // 
             this.coldescription.Caption = "详情";
             this.coldescription.FieldName = "description";
-            this.coldescription.MinWidth = 25;
+            this.coldescription.MinWidth = 22;
             this.coldescription.Name = "coldescription";
             this.coldescription.OptionsColumn.ShowCaption = true;
             this.coldescription.Visible = true;
             this.coldescription.VisibleIndex = 2;
-            this.coldescription.Width = 94;
+            this.coldescription.Width = 82;
             // 
             // ribbonPage2
             // 
@@ -926,9 +925,9 @@
             this.barButtonItem3,
             this.barEditItem模板,
             this.barButtonItem新增模板,
-            this.barButtonItem4,
-            this.barButtonItem5});
+            this.barButtonItem4});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonControl1.MaxItemId = 271;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
@@ -952,7 +951,7 @@
             this.repositoryItemFloatingObjectOutlineWeight1,
             this.repositoryItemComboBox1,
             this.repositoryItemComboBox2});
-            this.ribbonControl1.Size = new System.Drawing.Size(1297, 206);
+            this.ribbonControl1.Size = new System.Drawing.Size(1135, 166);
             // 
             // undoItem1
             // 
@@ -3057,6 +3056,14 @@
             this.barButtonItem新增模板.Name = "barButtonItem新增模板";
             this.barButtonItem新增模板.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem新增模板_ItemClick);
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "订单条码打印";
+            this.barButtonItem4.Id = 269;
+            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            // 
             // headerFooterToolsRibbonPageCategory1
             // 
             this.headerFooterToolsRibbonPageCategory1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(176)))), ((int)(((byte)(35)))));
@@ -3236,6 +3243,12 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.barEditItem模板);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem新增模板);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "订单数据导出";
             // 
             // homeRibbonPage1
             // 
@@ -3470,10 +3483,11 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 206);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 166);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage面料;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1297, 481);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1135, 368);
             this.xtraTabControl1.TabIndex = 9;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPager任务预览,
@@ -3484,8 +3498,9 @@
             // xtraTabPage面料
             // 
             this.xtraTabPage面料.Controls.Add(this.layoutControl2);
+            this.xtraTabPage面料.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabPage面料.Name = "xtraTabPage面料";
-            this.xtraTabPage面料.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPage面料.Size = new System.Drawing.Size(1133, 338);
             this.xtraTabPage面料.Text = "面料和设计点";
             // 
             // layoutControl2
@@ -3500,18 +3515,19 @@
             this.layoutControl2.Controls.Add(this.mianliaoname);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.layoutControlGroup1;
-            this.layoutControl2.Size = new System.Drawing.Size(1295, 445);
+            this.layoutControl2.Size = new System.Drawing.Size(1133, 338);
             this.layoutControl2.TabIndex = 99;
             this.layoutControl2.Text = "layoutControl2";
             // 
             // label2
             // 
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(419, 12);
+            this.label2.Location = new System.Drawing.Point(367, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(864, 28);
+            this.label2.Size = new System.Drawing.Size(754, 20);
             this.label2.TabIndex = 103;
             this.label2.Text = "设计点";
             // 
@@ -3520,19 +3536,21 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(403, 28);
+            this.label1.Size = new System.Drawing.Size(351, 20);
             this.label1.TabIndex = 102;
             this.label1.Text = "款式";
             // 
             // gridControl款式
             // 
-            this.gridControl款式.Location = new System.Drawing.Point(12, 44);
+            this.gridControl款式.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl款式.Location = new System.Drawing.Point(12, 36);
             this.gridControl款式.MainView = this.tileView3;
+            this.gridControl款式.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl款式.MenuManager = this.ribbonControl1;
             this.gridControl款式.Name = "gridControl款式";
             this.gridControl款式.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1});
-            this.gridControl款式.Size = new System.Drawing.Size(403, 161);
+            this.gridControl款式.Size = new System.Drawing.Size(351, 119);
             this.gridControl款式.TabIndex = 101;
             this.gridControl款式.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView3});
@@ -3544,6 +3562,7 @@
             this.colSTYLE_NAME_CN,
             this.colSYTLE_SEASON,
             this.colStylePicture});
+            this.tileView3.DetailHeight = 272;
             this.tileView3.GridControl = this.gridControl款式;
             this.tileView3.Name = "tileView3";
             this.tileView3.OptionsTiles.ItemSize = new System.Drawing.Size(404, 200);
@@ -3596,13 +3615,15 @@
             // 
             // gridControl设计点
             // 
-            this.gridControl设计点.Location = new System.Drawing.Point(419, 44);
+            this.gridControl设计点.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl设计点.Location = new System.Drawing.Point(367, 36);
             this.gridControl设计点.MainView = this.tileView1;
+            this.gridControl设计点.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl设计点.MenuManager = this.ribbonControl1;
             this.gridControl设计点.Name = "gridControl设计点";
             this.gridControl设计点.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl设计点.Size = new System.Drawing.Size(864, 376);
+            this.gridControl设计点.Size = new System.Drawing.Size(754, 280);
             this.gridControl设计点.TabIndex = 100;
             this.gridControl设计点.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -3613,6 +3634,7 @@
             this.colITEM_TYPE_NAME_CN,
             this.colName,
             this.colPicture});
+            this.tileView1.DetailHeight = 272;
             this.tileView1.GridControl = this.gridControl设计点;
             this.tileView1.Name = "tileView1";
             this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(328, 162);
@@ -3657,11 +3679,13 @@
             // 
             // gridControl面料
             // 
-            this.gridControl面料.Location = new System.Drawing.Point(12, 240);
+            this.gridControl面料.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gridControl面料.Location = new System.Drawing.Point(12, 185);
             this.gridControl面料.MainView = this.tileView2;
+            this.gridControl面料.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridControl面料.MenuManager = this.ribbonControl1;
             this.gridControl面料.Name = "gridControl面料";
-            this.gridControl面料.Size = new System.Drawing.Size(403, 180);
+            this.gridControl面料.Size = new System.Drawing.Size(351, 131);
             this.gridControl面料.TabIndex = 98;
             this.gridControl面料.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView2});
@@ -3673,6 +3697,7 @@
             this.col_name,
             this.coldescription,
             this.colpicture1});
+            this.tileView2.DetailHeight = 272;
             this.tileView2.GridControl = this.gridControl面料;
             this.tileView2.Name = "tileView2";
             this.tileView2.OptionsTiles.ItemSize = new System.Drawing.Size(474, 218);
@@ -3721,10 +3746,9 @@
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(348, 209);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.simpleButton3.Location = new System.Drawing.Point(305, 159);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(67, 27);
+            this.simpleButton3.Size = new System.Drawing.Size(58, 22);
             this.simpleButton3.StyleController = this.layoutControl2;
             this.simpleButton3.TabIndex = 96;
             this.simpleButton3.Text = "选择";
@@ -3733,11 +3757,10 @@
             // mianliaoname
             // 
             this.mianliaoname.Font = new System.Drawing.Font("宋体", 12F);
-            this.mianliaoname.Location = new System.Drawing.Point(45, 209);
-            this.mianliaoname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mianliaoname.Location = new System.Drawing.Point(39, 159);
             this.mianliaoname.Name = "mianliaoname";
             this.mianliaoname.ReadOnly = true;
-            this.mianliaoname.Size = new System.Drawing.Size(299, 25);
+            this.mianliaoname.Size = new System.Drawing.Size(262, 20);
             this.mianliaoname.TabIndex = 97;
             // 
             // layoutControlGroup1
@@ -3753,7 +3776,7 @@
             this.layoutControlItem9,
             this.layoutControlItem10});
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1295, 445);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1133, 338);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem4
@@ -3761,53 +3784,53 @@
             this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Red;
             this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.mianliaoname;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 197);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 147);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(336, 31);
+            this.layoutControlItem4.Size = new System.Drawing.Size(293, 26);
             this.layoutControlItem4.Text = "面料";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(30, 18);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(24, 14);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 412);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 308);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1275, 13);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1113, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.simpleButton3;
-            this.layoutControlItem5.Location = new System.Drawing.Point(336, 197);
+            this.layoutControlItem5.Location = new System.Drawing.Point(293, 147);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(71, 31);
+            this.layoutControlItem5.Size = new System.Drawing.Size(62, 26);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.gridControl面料;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 228);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 173);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(407, 184);
+            this.layoutControlItem6.Size = new System.Drawing.Size(355, 135);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.gridControl设计点;
-            this.layoutControlItem8.Location = new System.Drawing.Point(407, 32);
+            this.layoutControlItem8.Location = new System.Drawing.Point(355, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(868, 380);
+            this.layoutControlItem8.Size = new System.Drawing.Size(758, 284);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.gridControl款式;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(407, 165);
+            this.layoutControlItem7.Size = new System.Drawing.Size(355, 123);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
@@ -3816,52 +3839,49 @@
             this.layoutControlItem9.Control = this.label1;
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(407, 32);
+            this.layoutControlItem9.Size = new System.Drawing.Size(355, 24);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.label2;
-            this.layoutControlItem10.Location = new System.Drawing.Point(407, 0);
+            this.layoutControlItem10.Location = new System.Drawing.Point(355, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(868, 32);
+            this.layoutControlItem10.Size = new System.Drawing.Size(758, 24);
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
             // 
             // xtraTabPager任务预览
             // 
             this.xtraTabPager任务预览.Controls.Add(this.panel任务预览);
-            this.xtraTabPager任务预览.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPager任务预览.Name = "xtraTabPager任务预览";
-            this.xtraTabPager任务预览.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPager任务预览.Size = new System.Drawing.Size(1133, 338);
             this.xtraTabPager任务预览.Text = "任务预览";
             // 
             // panel任务预览
             // 
             this.panel任务预览.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel任务预览.Location = new System.Drawing.Point(0, 0);
-            this.panel任务预览.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel任务预览.Name = "panel任务预览";
-            this.panel任务预览.Size = new System.Drawing.Size(1295, 445);
+            this.panel任务预览.Size = new System.Drawing.Size(1133, 338);
             this.panel任务预览.TabIndex = 0;
             // 
             // xtraTabPage量体值
             // 
             this.xtraTabPage量体值.Controls.Add(this.gridControlSize);
+            this.xtraTabPage量体值.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabPage量体值.Name = "xtraTabPage量体值";
-            this.xtraTabPage量体值.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPage量体值.Size = new System.Drawing.Size(1133, 338);
             this.xtraTabPage量体值.Text = "量体值";
             // 
             // gridControlSize
             // 
             this.gridControlSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlSize.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlSize.Location = new System.Drawing.Point(0, 0);
             this.gridControlSize.MainView = this.gridViewSize;
-            this.gridControlSize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControlSize.Name = "gridControlSize";
-            this.gridControlSize.Size = new System.Drawing.Size(1295, 445);
+            this.gridControlSize.Size = new System.Drawing.Size(1133, 338);
             this.gridControlSize.TabIndex = 8;
             this.gridControlSize.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSize});
@@ -3885,8 +3905,6 @@
             this.colleast,
             this.colGarment,
             this.colCUSTOMER_FIT_VALUE});
-            this.gridViewSize.DetailHeight = 450;
-            this.gridViewSize.FixedLineWidth = 3;
             this.gridViewSize.GridControl = this.gridControlSize;
             this.gridViewSize.Name = "gridViewSize";
             this.gridViewSize.OptionsCustomization.AllowSort = false;
@@ -3898,145 +3916,120 @@
             // 
             this.colitemcd.Caption = "ITEM_CD";
             this.colitemcd.FieldName = "ITEM_CD";
-            this.colitemcd.MinWidth = 23;
             this.colitemcd.Name = "colitemcd";
-            this.colitemcd.Width = 86;
             // 
             // colitemvalue
             // 
             this.colitemvalue.Caption = "ITEM_VALUE";
             this.colitemvalue.FieldName = "ITEM_VALUE";
-            this.colitemvalue.MinWidth = 23;
             this.colitemvalue.Name = "colitemvalue";
-            this.colitemvalue.Width = 86;
             // 
             // colpropertyvalue
             // 
             this.colpropertyvalue.Caption = "PROPERTY_VALUE";
             this.colpropertyvalue.FieldName = "PROPERTY_VALUE";
-            this.colpropertyvalue.MinWidth = 23;
             this.colpropertyvalue.Name = "colpropertyvalue";
-            this.colpropertyvalue.Width = 86;
             // 
             // colfit_value
             // 
             this.colfit_value.Caption = "FIT_VALUE";
             this.colfit_value.FieldName = "FIT_VALUE";
-            this.colfit_value.MinWidth = 23;
             this.colfit_value.Name = "colfit_value";
-            this.colfit_value.Width = 86;
             // 
             // colitemnamecn
             // 
             this.colitemnamecn.Caption = "尺寸类别";
             this.colitemnamecn.FieldName = "ITEM_NAME_CN";
-            this.colitemnamecn.MinWidth = 23;
             this.colitemnamecn.Name = "colitemnamecn";
             this.colitemnamecn.OptionsColumn.AllowEdit = false;
             this.colitemnamecn.OptionsColumn.ReadOnly = true;
             this.colitemnamecn.Visible = true;
             this.colitemnamecn.VisibleIndex = 0;
-            this.colitemnamecn.Width = 86;
             // 
             // colitemfitvalue
             // 
             this.colitemfitvalue.Caption = "尺寸";
             this.colitemfitvalue.FieldName = "ITEM_FIT_VALUE";
-            this.colitemfitvalue.MinWidth = 23;
             this.colitemfitvalue.Name = "colitemfitvalue";
             this.colitemfitvalue.OptionsColumn.AllowEdit = false;
             this.colitemfitvalue.OptionsColumn.ReadOnly = true;
             this.colitemfitvalue.Visible = true;
             this.colitemfitvalue.VisibleIndex = 1;
-            this.colitemfitvalue.Width = 86;
             // 
             // colinvalue
             // 
             this.colinvalue.Caption = "加";
             this.colinvalue.FieldName = "IN_VALUE";
             this.colinvalue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("colinvalue.ImageOptions.Image")));
-            this.colinvalue.MinWidth = 23;
             this.colinvalue.Name = "colinvalue";
             this.colinvalue.Visible = true;
             this.colinvalue.VisibleIndex = 2;
-            this.colinvalue.Width = 86;
             // 
             // coloutvalue
             // 
             this.coloutvalue.Caption = "减";
             this.coloutvalue.FieldName = "OUT_VALUE";
             this.coloutvalue.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("coloutvalue.ImageOptions.Image")));
-            this.coloutvalue.MinWidth = 23;
             this.coloutvalue.Name = "coloutvalue";
             this.coloutvalue.Visible = true;
             this.coloutvalue.VisibleIndex = 3;
-            this.coloutvalue.Width = 86;
             // 
             // colmax
             // 
             this.colmax.Caption = "合理大";
             this.colmax.FieldName = "maxReasonable";
-            this.colmax.MinWidth = 23;
             this.colmax.Name = "colmax";
             this.colmax.OptionsColumn.AllowEdit = false;
             this.colmax.OptionsColumn.ReadOnly = true;
             this.colmax.Visible = true;
             this.colmax.VisibleIndex = 4;
-            this.colmax.Width = 86;
             // 
             // colleast
             // 
             this.colleast.Caption = "合理小";
             this.colleast.FieldName = "leastReasonable";
-            this.colleast.MinWidth = 23;
             this.colleast.Name = "colleast";
             this.colleast.OptionsColumn.AllowEdit = false;
             this.colleast.OptionsColumn.ReadOnly = true;
             this.colleast.Visible = true;
             this.colleast.VisibleIndex = 5;
-            this.colleast.Width = 86;
             // 
             // colGarment
             // 
             this.colGarment.Caption = "成衣尺寸";
             this.colGarment.FieldName = "garmentSize";
-            this.colGarment.MinWidth = 23;
             this.colGarment.Name = "colGarment";
             this.colGarment.OptionsColumn.AllowEdit = false;
             this.colGarment.OptionsColumn.ReadOnly = true;
             this.colGarment.Visible = true;
             this.colGarment.VisibleIndex = 6;
-            this.colGarment.Width = 86;
             // 
             // colCUSTOMER_FIT_VALUE
             // 
             this.colCUSTOMER_FIT_VALUE.Caption = "客户量体值";
             this.colCUSTOMER_FIT_VALUE.FieldName = "CUSTOMER_FIT_VALUE";
-            this.colCUSTOMER_FIT_VALUE.MinWidth = 25;
+            this.colCUSTOMER_FIT_VALUE.MinWidth = 22;
             this.colCUSTOMER_FIT_VALUE.Name = "colCUSTOMER_FIT_VALUE";
             this.colCUSTOMER_FIT_VALUE.OptionsColumn.AllowEdit = false;
             this.colCUSTOMER_FIT_VALUE.Visible = true;
             this.colCUSTOMER_FIT_VALUE.VisibleIndex = 7;
-            this.colCUSTOMER_FIT_VALUE.Width = 94;
+            this.colCUSTOMER_FIT_VALUE.Width = 82;
             // 
             // xtraTabPage任务
             // 
             this.xtraTabPage任务.Controls.Add(this.gridControl导航);
-            this.xtraTabPage任务.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage任务.Name = "xtraTabPage任务";
-            this.xtraTabPage任务.Size = new System.Drawing.Size(1295, 445);
+            this.xtraTabPage任务.Size = new System.Drawing.Size(1133, 338);
             this.xtraTabPage任务.Text = "任务";
             // 
             // gridControl导航
             // 
             this.gridControl导航.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl导航.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl导航.Location = new System.Drawing.Point(0, 0);
             this.gridControl导航.MainView = this.gridView一览;
-            this.gridControl导航.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl导航.MenuManager = this.ribbonControl1;
             this.gridControl导航.Name = "gridControl导航";
-            this.gridControl导航.Size = new System.Drawing.Size(1295, 445);
+            this.gridControl导航.Size = new System.Drawing.Size(1133, 338);
             this.gridControl导航.TabIndex = 2;
             this.gridControl导航.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView一览});
@@ -4051,8 +4044,6 @@
             this.coltemplate_id,
             this.coltemplate_group_id,
             this.colremark_id});
-            this.gridView一览.DetailHeight = 450;
-            this.gridView一览.FixedLineWidth = 3;
             this.gridView一览.GridControl = this.gridControl导航;
             this.gridView一览.GroupCount = 1;
             this.gridView一览.Name = "gridView一览";
@@ -4065,65 +4056,51 @@
             // 
             this.coltemplate_group_name.Caption = "模板组";
             this.coltemplate_group_name.FieldName = "template_group_name";
-            this.coltemplate_group_name.MinWidth = 23;
             this.coltemplate_group_name.Name = "coltemplate_group_name";
             this.coltemplate_group_name.Visible = true;
             this.coltemplate_group_name.VisibleIndex = 0;
-            this.coltemplate_group_name.Width = 86;
             // 
             // coltemplate_name
             // 
             this.coltemplate_name.Caption = "任务名称";
             this.coltemplate_name.FieldName = "template_name";
-            this.coltemplate_name.MinWidth = 23;
             this.coltemplate_name.Name = "coltemplate_name";
             this.coltemplate_name.Visible = true;
             this.coltemplate_name.VisibleIndex = 0;
-            this.coltemplate_name.Width = 86;
             // 
             // colserial_number
             // 
             this.colserial_number.Caption = "单号";
             this.colserial_number.FieldName = "serial_number";
-            this.colserial_number.MinWidth = 23;
             this.colserial_number.Name = "colserial_number";
             this.colserial_number.Visible = true;
             this.colserial_number.VisibleIndex = 1;
-            this.colserial_number.Width = 86;
             // 
             // colCREATE_DATE
             // 
             this.colCREATE_DATE.Caption = "创建时间";
             this.colCREATE_DATE.FieldName = "CREATE_DATE";
-            this.colCREATE_DATE.MinWidth = 23;
             this.colCREATE_DATE.Name = "colCREATE_DATE";
             this.colCREATE_DATE.Visible = true;
             this.colCREATE_DATE.VisibleIndex = 2;
-            this.colCREATE_DATE.Width = 86;
             // 
             // coltemplate_id
             // 
             this.coltemplate_id.Caption = "template_id";
             this.coltemplate_id.FieldName = "template_id";
-            this.coltemplate_id.MinWidth = 23;
             this.coltemplate_id.Name = "coltemplate_id";
-            this.coltemplate_id.Width = 86;
             // 
             // coltemplate_group_id
             // 
             this.coltemplate_group_id.Caption = "template_group_id";
             this.coltemplate_group_id.FieldName = "template_group_id";
-            this.coltemplate_group_id.MinWidth = 23;
             this.coltemplate_group_id.Name = "coltemplate_group_id";
-            this.coltemplate_group_id.Width = 86;
             // 
             // colremark_id
             // 
             this.colremark_id.Caption = "模板id";
             this.colremark_id.FieldName = "remark_id";
-            this.colremark_id.MinWidth = 23;
             this.colremark_id.Name = "colremark_id";
-            this.colremark_id.Width = 86;
             // 
             // richEditBarController1
             // 
@@ -4398,35 +4375,14 @@
             "DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl",
             "DevExpress.XtraBars.ToolbarForm.ToolbarFormControl"});
             // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "订单数据导出";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "JSON数据导出";
-            this.barButtonItem4.Id = 269;
-            this.barButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "文件导出";
-            this.barButtonItem5.Id = 270;
-            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
             // Frm订单预览
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1297, 687);
+            this.ClientSize = new System.Drawing.Size(1135, 534);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm订单预览";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Frm订单预览";
@@ -4873,7 +4829,6 @@
         private DevExpress.XtraTab.XtraTabPage xtraTabPager任务预览;
         private System.Windows.Forms.Panel panel任务预览;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }

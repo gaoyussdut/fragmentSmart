@@ -14,6 +14,7 @@ using DXApplicationTangche.UC.门店下单.form.订单修改;
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.service.redis_service;
 using DXApplicationTangche.DTO;
+using static DXApplicationTangche.service.TaskService;
 
 namespace DXApplicationTangche.UC.任务
 {
@@ -106,7 +107,7 @@ namespace DXApplicationTangche.UC.任务
                 , dtos 
                 , this.gridView1.GetRowCellValue(e.RowHandle,"ORDER_ID").ToString()
                 , ""
-                ,this.gridView1.GetRowCellValue(e.RowHandle,"ID").ToString()).ShowDialog();
+                ,this.gridView1.GetRowCellValue(e.RowHandle,"ID").ToString(), Enum任务类别.生产任务).HideTabcontrol().ShowDialog();
         }
     }
 }

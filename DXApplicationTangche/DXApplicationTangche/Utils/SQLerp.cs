@@ -11,7 +11,7 @@ namespace DXApplicationTangche.Utils
 {
     public class SQLerp
     {
-        public static string ConnStr = "server=192.168.3.7;port=3306;user id=root;password=Win2003@;database=fragsmart-erp;charset=utf8";
+        public static string ConnStr = "server=192.168.3.7;port=3306;user id=zyuser;password=Zyuser2017;database=fragsmart-erp;charset=utf8";
         //public static string ConnStr = "server=rm-8vb733a3r2o1oxjsjno.mysql.zhangbei.rds.aliyuncs.com;port=3306;user id=root;password=Win2003@;database=fragsmart-mtm-test;charset=utf8";
 
         public static void ExecuteSql(String sql)

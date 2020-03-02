@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraGrid.Demos.util;
+using DXApplicationTangche.DTO;
 using DXApplicationTangche.service;
+using DXApplicationTangche.service.redis_service;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -225,6 +227,17 @@ namespace DXApplicationTangche.原型
             TaskDTO taskDTO = new TaskDTO(dr["remark_id"].ToString(), dr["template_id"].ToString(), dr["order_id"].ToString(), dr["style_id"].ToString(), dr["ref_style_id"].ToString(), dr["principal"].ToString(), dr["remark"].ToString(), dr["file_name"].ToString(), dr["parent_id"].ToString(), dr["version"].ToString(), dr["serial_number"].ToString(), dr["status"].ToString(), Convert.ToDateTime(dr["CREATE_DATE"].ToString()),dr["A_JSON"].ToString(),dr["A_FILE"].ToString()).buildTemplateName(dr["template_name"].ToString(), dr["template_group_id"].ToString(), dr["template_group_name"].ToString()).buildDoJson(dr["data"].ToString());
             return taskDTO;
         }
+        /// <summary>
+        /// 从erp中获取文件
+        /// </summary>
+        /// <param name="remark_id"></param>
+        /// <returns></returns>
+        public TaskDTO buildFromErp(String remark_id)
+        {
+            OrderRedisService orderRedisService = new OrderRedisService();
+            UserTaskDTO userTaskDTO = orderRedisService.getTaskById<UserTaskDTO>(remark_id);
+            return TaskService.TaskDTO_UserTaskDTO_Change(this, userTaskDTO).buildDoJson(this.data);
+        }
     }
     /// <summary>
     /// 单据dtos
@@ -234,7 +247,7 @@ namespace DXApplicationTangche.原型
         public List<UCDocument> uCDocuments = new List<UCDocument>();
         public UCDocumentS()
         {
-
+            this.uCDocuments.Add(new UCDocument());
         }
     }
     /// <summary>
@@ -248,6 +261,11 @@ namespace DXApplicationTangche.原型
         {
             this.title = title;
             this.value = value;
+        }
+        public UCDocument()
+        {
+            this.title = "";
+            this.value = "";
         }
     }
 }

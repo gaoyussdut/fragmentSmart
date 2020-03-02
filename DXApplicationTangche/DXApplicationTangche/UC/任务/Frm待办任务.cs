@@ -17,6 +17,7 @@ using DiaoPaiDaYin;
 using DevExpress.XtraGrid.Demos.util;
 using DXApplicationTangche.UC.款式异常;
 using DXApplicationTangche.UC.门店下单.form.订单修改;
+using static DXApplicationTangche.service.TaskService;
 
 namespace DXApplicationTangche.UC.任务
 {
@@ -63,7 +64,7 @@ namespace DXApplicationTangche.UC.任务
                 , this.bandedGridView1.GetRowCellValue(e.RowHandle, "ORDER_ID").ToString()
                 , this.bandedGridView1.GetRowCellValue(e.RowHandle, "REMARK").ToString()
                 , this.bandedGridView1.GetRowCellValue(e.RowHandle, "ID").ToString()
-                ).ShowDialog();
+                , Enum任务类别.销售任务).ShowDialog();
         }
     }
     
